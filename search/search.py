@@ -211,8 +211,57 @@ def uniformCostSearch(problem):
 
     # This one will duplicate code from Q1, and use slightly less
     # documentation than it.
-    
-    util.raiseNotDefined()
+
+    listofactions = list()
+
+    from util import PriorityQueue
+
+    stack_of_searchnode = PriorityQueue()
+    initial_path = list()
+    initial_seen = set()
+    initial_seen.add(problem.getStartState())
+
+    for successor in problem.getSuccessors(problem.getStartState()):
+        initial_seen_with_successor_state = initial_seen.copy()
+        initial_seen_with_successor_state.add(successor[0])
+        stack_of_searchnode.push((successor[0],
+                                  initial_path + [successor[1]],
+                                  initial_seen_with_successor_state,
+                                  successor[2]),
+                                 successor[2])
+
+
+        
+    goal_path_here = list()
+
+    while not stack_of_searchnode.isEmpty() and len(goal_path_here) == 0:
+        leftmost_searchnode = stack_of_searchnode.pop()
+
+        if problem.isGoalState(leftmost_searchnode[0]):
+            goal_path_here = leftmost_searchnode[1]
+        else:
+            successor_states_of_next = problem.getSuccessors(leftmost_searchnode[0])
+            
+            for successor in successor_states_of_next:
+                new_path_with_direction_added = leftmost_searchnode[1] + [successor[1]]
+                print('trying path', new_path_with_direction_added)
+
+                if successor[0] not in leftmost_searchnode[2]:
+                    new_seen_with_successor_state = leftmost_searchnode[2].copy()
+                    new_seen_with_successor_state.add(successor[0])
+                    new_path_cost_to_get_here = leftmost_searchnode[3] + successor[2]
+                    
+                    new_searchnode_to_search_down = (successor[0],
+                                                     new_path_with_direction_added,
+                                                     new_seen_with_successor_state,
+                                                     new_path_cost_to_get_here)
+                    
+                    print('adding ', new_searchnode_to_search_down)
+                    
+                    stack_of_searchnode.push(new_searchnode_to_search_down,
+                                             new_path_cost_to_get_here)
+
+    return goal_path_here        
 
 def nullHeuristic(state, problem=None):
     """
@@ -223,8 +272,63 @@ def nullHeuristic(state, problem=None):
 
 def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+
+    listofactions = list()
+
+    from util import PriorityQueue
+
+    stack_of_searchnode = PriorityQueue()
+    initial_path = list()
+    initial_seen = set()
+    initial_seen.add(problem.getStartState())
+
+    for successor in problem.getSuccessors(problem.getStartState()):
+        initial_seen_with_successor_state = initial_seen.copy()
+        initial_seen_with_successor_state.add(successor[0])
+        initial_path_cost_to_get_here = successor[2]
+        initial_f = initial_path_cost_to_get_here + heuristic(successor[0], problem)
+        
+        stack_of_searchnode.push((successor[0],
+                                  initial_path + [successor[1]],
+                                  initial_seen_with_successor_state,
+                                  successor[2]),
+                                 successor[2])
+
+
+        
+    goal_path_here = list()
+
+    while not stack_of_searchnode.isEmpty() and len(goal_path_here) == 0:
+        leftmost_searchnode = stack_of_searchnode.pop()
+
+        if problem.isGoalState(leftmost_searchnode[0]):
+            goal_path_here = leftmost_searchnode[1]
+        else:
+            successor_states_of_next = problem.getSuccessors(leftmost_searchnode[0])
+            
+            for successor in successor_states_of_next:
+                new_path_with_direction_added = leftmost_searchnode[1] + [successor[1]]
+                print('trying path', new_path_with_direction_added)
+
+                if successor[0] not in leftmost_searchnode[2]:
+                    new_seen_with_successor_state = leftmost_searchnode[2].copy()
+                    new_seen_with_successor_state.add(successor[0])
+                    new_path_cost_to_get_here = leftmost_searchnode[3] + successor[2]
+                    
+                    new_searchnode_to_search_down = (successor[0],
+                                                     new_path_with_direction_added,
+                                                     new_seen_with_successor_state,
+                                                     new_path_cost_to_get_here)
+                    
+                    print('adding ', new_searchnode_to_search_down)
+
+                    new_f = new_path_cost_to_get_here + heuristic(successor[0],
+                                                                  problem)
+                    
+                    stack_of_searchnode.push(new_searchnode_to_search_down,
+                                             new_f)
+
+    return goal_path_here        
 
 
 # Abbreviations
