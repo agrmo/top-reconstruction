@@ -158,12 +158,60 @@ def depthFirstSearch(problem):
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+
+    # This one will duplicate code from Q1, and use slightly less
+    # documentation than it.
+
+    listofactions = list()
+
+    from game import Directions
+    from util import Queue
+
+    stack_of_searchnode = Queue()
+    initial_path = list()
+    initial_seen = set()
+    initial_seen.add(problem.getStartState())
+
+    for successor in problem.getSuccessors(problem.getStartState()):
+        initial_seen_with_successor_state = initial_seen.copy()
+        initial_seen_with_successor_state.add(successor[0])
+        stack_of_searchnode.push((successor[0],
+                                  initial_path + [successor[1]],
+                                  initial_seen_with_successor_state))
+
+
+        
+    goal_path_here = list()
+
+    while not stack_of_searchnode.isEmpty() and len(goal_path_here) == 0:
+        leftmost_searchnode = stack_of_searchnode.pop()
+
+        if problem.isGoalState(leftmost_searchnode[0]):
+            goal_path_here = leftmost_searchnode[1]
+        else:
+            successor_states_of_next = problem.getSuccessors(leftmost_searchnode[0])
+            
+            for successor in successor_states_of_next:
+                new_path_with_direction_added = leftmost_searchnode[1] + [successor[1]]
+                print('trying path', new_path_with_direction_added)
+
+                if successor[0] not in leftmost_searchnode[2]:
+                    new_seen_with_successor_state = leftmost_searchnode[2].copy()
+                    new_seen_with_successor_state.add(successor[0])
+                    new_searchnode_to_search_down = (successor[0],
+                                                     new_path_with_direction_added,
+                                                     new_seen_with_successor_state)
+                    print('adding ', new_searchnode_to_search_down)
+                    stack_of_searchnode.push(new_searchnode_to_search_down)
+
+    return goal_path_here    
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
-    "*** YOUR CODE HERE ***"
+
+    # This one will duplicate code from Q1, and use slightly less
+    # documentation than it.
+    
     util.raiseNotDefined()
 
 def nullHeuristic(state, problem=None):
