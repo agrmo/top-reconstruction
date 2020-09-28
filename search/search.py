@@ -85,9 +85,76 @@ def depthFirstSearch(problem):
     print("Start:", problem.getStartState())
     print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
-    """
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    """    
+    listofactions = list()
+
+    from game import Directions
+    from util import Stack
+
+    # Let's define a search node as (state, path, seen) for
+    # ourselves. From searchAgents. It is necessary to define a path
+    # as a list of Directions. Define seen as a set of states that the
+    # path traverses. For example [Directions.WEST] and so on.
+
+    # This algorithm is straightforward except for the code that
+    # handles loopy paths. We assume that loopy paths cannot happen,
+    # and therefore no state can be traversed twice. Then, avoiding
+    # loopy paths is easy. Just check if the state is in a set that we
+    # maintain for each search node. The reason you see such quirky
+    # set behavior is because python prefers to decompose the state
+    # tuple (x,y) which is not much of a problem.
+
+    stack_of_searchnode = Stack()
+    initial_path = list()
+    initial_seen = set()
+    initial_seen.add(problem.getStartState())
+
+    for successor in problem.getSuccessors(problem.getStartState()):
+        initial_seen_with_successor_state = initial_seen.copy()
+        initial_seen_with_successor_state.add(successor[0])
+        stack_of_searchnode.push((successor[0],
+                                  initial_path + [successor[1]],
+                                  initial_seen_with_successor_state))
+
+
+        
+    goal_path_here = list()
+
+    while not stack_of_searchnode.isEmpty() and len(goal_path_here) == 0:
+        leftmost_searchnode = stack_of_searchnode.pop()
+
+        if problem.isGoalState(leftmost_searchnode[0]):
+            goal_path_here = leftmost_searchnode[1]
+        else:
+            # The search node we're looking at is not at the goal
+            # state, so continue searching down it. Make sure to add
+            # the direction of the successor to the path so far. If
+            # there are no successors to a search node, then
+            # getSuccessors will hopefully return an empty list, and
+            # we'll traverse the next search nodes. For example, we
+            # can search deep down a path, but then pop into a shallow
+            # search node. Note that loopy paths are possible.
+            
+            successor_states_of_next = problem.getSuccessors(leftmost_searchnode[0])
+            
+            for successor in successor_states_of_next:
+                new_path_with_direction_added = leftmost_searchnode[1] + [successor[1]]
+                print('trying path', new_path_with_direction_added)
+
+                # We can check for a loopy path before we push the
+                # search node, or after we pop the search node. Let's
+                # nip it earlier rather than later.
+
+                if successor[0] not in leftmost_searchnode[2]:
+                    new_seen_with_successor_state = leftmost_searchnode[2].copy()
+                    new_seen_with_successor_state.add(successor[0])
+                    new_searchnode_to_search_down = (successor[0],
+                                                     new_path_with_direction_added,
+                                                     new_seen_with_successor_state)
+                    print('adding ', new_searchnode_to_search_down)
+                    stack_of_searchnode.push(new_searchnode_to_search_down)
+
+    return goal_path_here
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
