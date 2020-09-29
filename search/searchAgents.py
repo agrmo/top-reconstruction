@@ -401,8 +401,62 @@ def cornersHeuristic(state, problem):
     corners = problem.corners # These are the corner coordinates
     walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
 
-    "*** YOUR CODE HERE ***"
-    return 0 # Default to trivial solution
+    pathways = list()
+
+    position, cornersleft = state
+
+    for corner in cornersleft:
+        pathways.append([corner])
+
+    for i in range(len(cornersleft) - 1):
+        old_pathways = pathways.copy()
+        pathways.clear()
+        for pathway in old_pathways:
+            for corner in corners:
+                if corner not in pathway:
+                    pathways.append(pathway + [corner])
+
+    heuristic = 0
+    
+    def euclidean(x1, y1, x2, y2):
+        return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
+                    
+    for path in pathways:
+        pathiter = iter(path)
+        pairs_of_corners = list()
+
+        for corner in pathiter:
+            try:
+                pairs_of_corners.append((corner, next(pathiter)))
+            except StopIteration:
+                pass
+
+        for ((x1, y1), (x2, y2)) in pairs_of_corners:
+            heuristic += euclidean(x1, y1, x2, y2)
+
+    # question 6
+    # holy smokes
+    # 377
+    # how is this so good
+
+    # Idea: I do not know which corner will be chosen first, so
+    # compute every permutation of corners that have yet to be
+    # traversed. For each possible permutation, compute the euclidean
+    # distance from corner to corner and add it to a total heuristic.
+
+    # The very not aesthetic try except behavior exists to handle odd
+    # number of corners, where the last corner throws an exception
+    # trying to pair up at the end of the list.
+
+    # This heuristic is admissible and consistent. A solution must
+    # traverse all corners, and the total euclidean distance between
+    # the remaining corners is the minimum cost necessary to arrive at
+    # each corner assuming each action has a minimum cost of
+    # one. Therefore, the heuristic can never overestimate the true
+    # path cost and is therefore admissible.
+
+    return heuristic
+
 
 class AStarCornersAgent(SearchAgent):
     "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
