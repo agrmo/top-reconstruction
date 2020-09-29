@@ -285,24 +285,37 @@ class CornersProblem(search.SearchProblem):
             if not startingGameState.hasFood(*corner):
                 print('Warning: no food in corner ' + str(corner))
         self._expanded = 0 # DO NOT CHANGE; Number of search nodes expanded
-        # Please add any code here which you would like to use
-        # in initializing the problem
-        "*** YOUR CODE HERE ***"
 
     def getStartState(self):
         """
         Returns the start state (in your state space, not the full Pacman state
         space)
         """
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        start_cornersleft = set()
+
+        for corner in self.corners:
+            start_cornersleft.add(corner)
+
+        start_state = (self.startingPosition, frozenset(start_cornersleft))
+            
+        return start_state
 
     def isGoalState(self, state):
         """
         Returns whether this search state is a goal state of the problem.
         """
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+
+        # Agustin: At any state, the problem must be able to determine
+        # if that state is the goal state. The problem defines a goal
+        # state as Pacman having visited all four corners. Therefore,
+        # any state must be able to provide information about the
+        # corners it has visited. Therefore, we must define a state as
+        # encoding information about not only the current location of
+        # the Pacman, but also the corners it has visited so far. 
+
+        position, cornersleft = state
+        
+        return len(cornersleft) == 0
 
     def getSuccessors(self, state):
         """
@@ -315,6 +328,16 @@ class CornersProblem(search.SearchProblem):
             is the incremental cost of expanding to that successor
         """
 
+        # The quirky part here is that our search algorithms cannot
+        # know anything about the nature of a state in the state space
+        # in order to stay generic. So, the problem itself must
+        # shoehorn any modifications to the state if any modification
+        # to the state is necessary. For this problem, such is true,
+        # because we must add to the state the corners that are left
+        # to visit. To do this, update the set of visited corners when
+        # the search algorithm calls this function to return the
+        # successors of a given state.
+        
         successors = []
         for action in [Directions.NORTH, Directions.SOUTH, Directions.EAST, Directions.WEST]:
             # Add a successor state to the successor list if the action is legal
@@ -324,9 +347,28 @@ class CornersProblem(search.SearchProblem):
             #   nextx, nexty = int(x + dx), int(y + dy)
             #   hitsWall = self.walls[nextx][nexty]
 
-            "*** YOUR CODE HERE ***"
+            (x, y), cornersleft = state
+            dx, dy = Actions.directionToVector(action)
+            nextx, nexty = int(x + dx), int(y + dy)
+            next_position = (nextx, nexty)
+            
+            if not self.walls[nextx][nexty]:
+                next_cornersleft = set(cornersleft)
+                
+                if (x, y) in cornersleft:
+                    next_cornersleft.remove((x, y))
+                    
+                next_state = ((nextx, nexty), frozenset(next_cornersleft))
+
+                # Deducing from the function getCostOfActions which is
+                # right after this function, the cost of any move is
+                # always one.
+                
+                new_successor = (next_state, action, 1)
+                successors.append(new_successor)
 
         self._expanded += 1 # DO NOT CHANGE
+
         return successors
 
     def getCostOfActions(self, actions):
