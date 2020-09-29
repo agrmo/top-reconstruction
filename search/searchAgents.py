@@ -401,6 +401,7 @@ def cornersHeuristic(state, problem):
     corners = problem.corners # These are the corner coordinates
     walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
 
+
     pathways = list()
 
     position, cornersleft = state
@@ -416,12 +417,16 @@ def cornersHeuristic(state, problem):
                 if corner not in pathway:
                     pathways.append(pathway + [corner])
 
-    heuristic = 0
-    
     def euclidean(x1, y1, x2, y2):
         return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
+
+    path_heuristic_for_each_corner = dict()
+
+    submissive_heuristic = 0
                     
     for path in pathways:
+        path_heuristic = 0
+        
         pathiter = iter(path)
         pairs_of_corners = list()
 
@@ -432,12 +437,22 @@ def cornersHeuristic(state, problem):
                 pass
 
         for ((x1, y1), (x2, y2)) in pairs_of_corners:
-            heuristic += euclidean(x1, y1, x2, y2)
+            path_heuristic += euclidean(x1, y1, x2, y2)
 
-    # question 6
-    # holy smokes
-    # 377
-    # how is this so good
+        x1, y1 = position
+        x2, y2 = path[0]
+        
+        path_heuristic += euclidean(x1, y1, x2, y2)
+
+        if path[0] in path_heuristic_for_each_corner:
+            path_heuristic_for_each_corner[path[0]] = min(path_heuristic_for_each_corner[path[0]], path_heuristic)
+        else:
+            path_heuristic_for_each_corner[path[0]] = path_heuristic
+
+        submissive_heuristic = path_heuristic
+
+    for corner in cornersleft:
+        submissive_heuristic = min(submissive_heuristic, path_heuristic_for_each_corner[corner])
 
     # Idea: I do not know which corner will be chosen first, so
     # compute every permutation of corners that have yet to be
@@ -455,7 +470,7 @@ def cornersHeuristic(state, problem):
     # one. Therefore, the heuristic can never overestimate the true
     # path cost and is therefore admissible.
 
-    return heuristic
+    return submissive_heuristic
 
 
 class AStarCornersAgent(SearchAgent):
