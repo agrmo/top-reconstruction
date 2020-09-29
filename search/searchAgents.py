@@ -404,7 +404,7 @@ def cornersHeuristic(state, problem):
 
     pathways = list()
 
-    position, cornersleft = state
+    position, cornersleft = state                
 
     for corner in cornersleft:
         pathways.append([corner])
@@ -413,7 +413,7 @@ def cornersHeuristic(state, problem):
         old_pathways = pathways.copy()
         pathways.clear()
         for pathway in old_pathways:
-            for corner in corners:
+            for corner in cornersleft:
                 if corner not in pathway:
                     pathways.append(pathway + [corner])
 
