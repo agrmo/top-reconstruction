@@ -404,10 +404,12 @@ def cornersHeuristic(state, problem):
     corners = problem.corners # These are the corner coordinates
     walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
 
-
     pathways = list()
 
-    position, cornersleft = state                
+    position, cornersleft = state
+
+    if problem.isGoalState(state):
+        return 0
 
     for corner in cornersleft:
         pathways.append([corner])
@@ -582,7 +584,7 @@ def foodHeuristic(state, problem):
             pathway_starting_at_nom[nom] = [nom]
             
             while len(pathway_starting_at_nom[nom]) < len(nomsleft):
-                radius_delta = 10.0
+                radius_delta = 1.0
                 
                 # Probably captured more than one nom so halve the
                 # radius delta until we arrive at the optimal nom to
@@ -594,19 +596,19 @@ def foodHeuristic(state, problem):
                     captured = list()
                     distances_added = set()
                     for maybe_captured_nom in nomsleft:
-                        nomx, nomy = nom
+                        somex, somey = pathway_starting_at_nom[nom][-1]
                         maybex, maybey = maybe_captured_nom
-                        nom_to_maybe = euclidean(nomx, nomy, maybex, maybey)
-                        nom_to_maybe_is_captured = nom_to_maybe < radius_delta
-                        maybe_captured_not_seen = maybe_captured_nom not in pathway_starting_at_nom[nom]
+                        nom_to_maybe = euclidean(somex, somey, maybex, maybey)
+                        maybe_is_captured = nom_to_maybe < radius_delta
+                        maybe_not_seen = maybe_captured_nom not in pathway_starting_at_nom[nom]
                         dont_add_same_distance = nom_to_maybe not in distances_added
-                        
-                        if maybe_captured_not_seen and nom_to_maybe_is_captured and dont_add_same_distance:
+
+                        if maybe_not_seen and maybe_is_captured and dont_add_same_distance:
                             distances_added.add(nom_to_maybe)
                             captured.append(maybe_captured_nom)
-        
+
                     return captured
-                
+
                 locn = list_of_captured_noms()
 
                 # yo dawg, i herd you like search algorithms
@@ -627,7 +629,7 @@ def foodHeuristic(state, problem):
                     # this loop. Add it to the pathway list for this
                     # nom, and iterate the path while loop to find the
                     # next nom.
-        
+
                     pathway_starting_at_nom[nom].append(locn[0])
 
         return pathway_starting_at_nom
@@ -638,25 +640,27 @@ def foodHeuristic(state, problem):
     def get_euclidean_through_path(path):
         path_euclidean = 0
 
-        pathiter = iter(path)
+        first_iter = iter(path)
+        second_iter = iter(path)
+        next(second_iter)
+
         pairs_of_noms = list()
 
-        for nom in pathiter:
-            try:
-                pairs_of_noms.append((nom, next(pathiter)))
-            except StopIteration:
-                pass
+        for nom in zip(first_iter, second_iter):
+            pairs_of_noms.append(nom)
+            
+        from math import floor
 
         for ((x1, y1), (x2, y2)) in pairs_of_noms:
             path_euclidean += euclidean(x1, y1, x2, y2)
-
+            
         x1, y1 = position
         x2, y2 = path[0]
 
         path_euclidean += euclidean(x1, y1, x2, y2)
 
         return path_euclidean
-    
+
     # Now we have a pathway associated with each nom that supposedly
     # traverses all other noms in the shortest euclidean distance
     # possible. Let us not compute it again. Where will we put the
@@ -681,7 +685,9 @@ def foodHeuristic(state, problem):
         first_nom_path = problem.heuristicInfo['pathway_starting_at_nom'][first_nom]
         first_heuristic = get_euclidean_through_path(first_nom_path)
         heuristic = first_heuristic
-    
+
+    best_path = list()
+
     for nom in nomsleft:
         nom_path = problem.heuristicInfo['pathway_starting_at_nom'][nom]
         nom_path_truncated = list()
@@ -691,6 +697,7 @@ def foodHeuristic(state, problem):
                 nom_path_truncated.append(maybe_remaining_nom)
 
         nom_path_truncated_euclidean = get_euclidean_through_path(nom_path_truncated)
+
         heuristic = min(heuristic, nom_path_truncated_euclidean)
 
     return heuristic
