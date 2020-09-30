@@ -373,7 +373,6 @@ class CornersProblem(search.SearchProblem):
                 successors.append(new_successor)
 
         self._expanded += 1 # DO NOT CHANGE
-
         return successors
 
     def getCostOfActions(self, actions):
@@ -635,6 +634,10 @@ def foodHeuristic(state, problem):
                     # this loop. Add it to the pathway list for this
                     # nom, and iterate the path while loop to find the
                     # next nom.
+
+                    # There may be two closest noms. Ignore this
+                    # problem by using the data in the distances_added
+                    # variable.
 
                     pathway_starting_at_nom[nom].append(locn[0])
 

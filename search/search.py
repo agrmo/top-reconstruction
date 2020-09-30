@@ -90,9 +90,9 @@ def depthFirstSearch(problem):
     listofactions = list()
 
     # Agustin: Hello and welcome to PA1. The modified files are
-    # search.py and searchAgents.py. Question seven, the food problem,
-    # is the most clever thing in here, and the rest can more or less
-    # be ignored.
+    # search.py and searchAgents.py. Question seven, the foodHeuristic
+    # function in searchAgents.py, is the most clever thing in here,
+    # and the rest can more or less be ignored.
 
     # Let's define a search node as (state, path, seen) for
     # ourselves. From searchAgents. It is necessary to define a path
