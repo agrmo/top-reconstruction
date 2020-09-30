@@ -297,7 +297,7 @@ class CornersProblem(search.SearchProblem):
             start_cornersleft.add(corner)
 
         start_state = (self.startingPosition, frozenset(start_cornersleft))
-            
+        
         return start_state
 
     def isGoalState(self, state):
@@ -428,7 +428,7 @@ def cornersHeuristic(state, problem):
     path_heuristic_for_each_corner = dict()
 
     submissive_heuristic = 0
-                    
+    
     for path in pathways:
         path_heuristic = 0
         
@@ -617,13 +617,13 @@ def foodHeuristic(state, problem):
                     if len(locn) > 1:
                         radius_delta = radius_delta / 2.0
                         locn = list_of_captured_noms()
-        
+                        
                     if len(locn) < 1:
                         radius_delta += radius_delta / 2.0
                         locn = list_of_captured_noms()
-        
+                        
                 radius_around_nom += radius_delta
-        
+                
                 if len(locn) == 1:
                     # We captured a nom that is closest to the nom in
                     # this loop. Add it to the pathway list for this
