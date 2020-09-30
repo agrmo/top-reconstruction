@@ -149,7 +149,7 @@ def depthFirstSearch(problem):
                     stack_of_searchnode.push(new_searchnode_to_search_down)
 
     return goal_path_here
-    
+
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
@@ -181,7 +181,7 @@ def breadthFirstSearch(problem):
                 successor_states_of_next = problem.getSuccessors(leftmost_searchnode[0])            
 
             known_successors[leftmost_searchnode[0]] = successor_states_of_next
-                
+            
             for successor in successor_states_of_next:
                 new_path_with_direction_added = leftmost_searchnode[1] + [successor[1]]
 
