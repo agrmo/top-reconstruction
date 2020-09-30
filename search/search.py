@@ -17,7 +17,7 @@ In search.py, you will implement generic search algorithms which are called by
 Pacman agents (in searchAgents.py).
 """
 
-import util
+import utils
 
 class SearchProblem:
     """
@@ -103,15 +103,15 @@ def depthFirstSearch(problem):
     # tuple (x,y) which is not much of a problem.
 
     from util import Stack
-    stack_of_searchnode = Stack()
-    stack_of_searchnode.push((problem.getStartState(), []))    
+    search_datastructure = Stack()
+    search_datastructure.push((problem.getStartState(), []))    
     visited_states = set()
     known_successors = dict()
     visited_states.add(problem.getStartState())
     goal_path_here = list()
 
-    while not stack_of_searchnode.isEmpty() and len(goal_path_here) == 0:
-        leftmost_searchnode = stack_of_searchnode.pop()
+    while not search_datastructure.isEmpty() and len(goal_path_here) == 0:
+        leftmost_searchnode = search_datastructure.pop()
         visited_states.add(leftmost_searchnode[0])
 
         if problem.isGoalState(leftmost_searchnode[0]):
@@ -146,7 +146,7 @@ def depthFirstSearch(problem):
                 if successor[0] not in visited_states:
                     new_searchnode_to_search_down = (successor[0],
                                                      new_path_with_direction_added)
-                    stack_of_searchnode.push(new_searchnode_to_search_down)
+                    search_datastructure.push(new_searchnode_to_search_down)
 
     return goal_path_here
 
@@ -160,15 +160,15 @@ def breadthFirstSearch(problem):
     listofactions = list()
 
     from util import Queue
-    stack_of_searchnode = Queue()
+    search_datastructure = Queue()
     visited_states = set()
     visited_states.add(problem.getStartState())
     known_successors = dict()
-    stack_of_searchnode.push((problem.getStartState(), []))
+    search_datastructure.push((problem.getStartState(), []))
     goal_path_here = list()
 
-    while not stack_of_searchnode.isEmpty() and len(goal_path_here) == 0:
-        leftmost_searchnode = stack_of_searchnode.pop()
+    while not search_datastructure.isEmpty() and len(goal_path_here) == 0:
+        leftmost_searchnode = search_datastructure.pop()
 
         if problem.isGoalState(leftmost_searchnode[0]):
             goal_path_here = leftmost_searchnode[1]
@@ -189,7 +189,7 @@ def breadthFirstSearch(problem):
                     visited_states.add(successor[0])
                     new_searchnode_to_search_down = (successor[0],
                                                      new_path_with_direction_added)
-                    stack_of_searchnode.push(new_searchnode_to_search_down)
+                    search_datastructure.push(new_searchnode_to_search_down)
 
     return goal_path_here
 
@@ -201,14 +201,14 @@ def uniformCostSearch(problem):
 
     listofactions = list()
     from util import PriorityQueue
-    stack_of_searchnode = PriorityQueue()
-    stack_of_searchnode.push((problem.getStartState(), [], 0), 0)
+    search_datastructure = PriorityQueue()
+    search_datastructure.push((problem.getStartState(), [], 0), 0)
     explored_set = set()
     known_successors = dict()
     goal_path_here = list()
 
-    while not stack_of_searchnode.isEmpty() and len(goal_path_here) == 0:
-        leftmost_searchnode = stack_of_searchnode.pop()
+    while not search_datastructure.isEmpty() and len(goal_path_here) == 0:
+        leftmost_searchnode = search_datastructure.pop()
         explored_set.add(leftmost_searchnode[0])
 
         if problem.isGoalState(leftmost_searchnode[0]):
@@ -229,7 +229,7 @@ def uniformCostSearch(problem):
                 if successor[0] not in explored_set:
                     new_g = leftmost_searchnode[2] + successor[2]
                     new_searchnode_to_search_down = (successor[0], new_path_with_direction_added, new_g)
-                    stack_of_searchnode.push(new_searchnode_to_search_down, new_g)
+                    search_datastructure.push(new_searchnode_to_search_down, new_g)
 
 
     return goal_path_here    
@@ -248,14 +248,14 @@ def aStarSearch(problem, heuristic=nullHeuristic):
     listofactions = list()
 
     from util import PriorityQueue
-    stack_of_searchnode = PriorityQueue()
-    stack_of_searchnode.push((problem.getStartState(), [], 0), 0)
+    search_datastructure = PriorityQueue()
+    search_datastructure.push((problem.getStartState(), [], 0), 0)
     visited_states = set()
     known_successors = dict()
     goal_path_here = list()
 
-    while not stack_of_searchnode.isEmpty() and len(goal_path_here) == 0:
-        leftmost_searchnode = stack_of_searchnode.pop()
+    while not search_datastructure.isEmpty() and len(goal_path_here) == 0:
+        leftmost_searchnode = search_datastructure.pop()
         visited_states.add(leftmost_searchnode[0])
 
         if problem.isGoalState(leftmost_searchnode[0]):
@@ -282,7 +282,7 @@ def aStarSearch(problem, heuristic=nullHeuristic):
                                                      new_path_with_direction_added,
                                                      new_g)
 
-                    stack_of_searchnode.push(new_searchnode_to_search_down,
+                    search_datastructure.push(new_searchnode_to_search_down,
                                              new_f)
 
     return goal_path_here    
