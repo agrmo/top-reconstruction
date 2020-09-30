@@ -106,6 +106,7 @@ def depthFirstSearch(problem):
     stack_of_searchnode = Stack()
     stack_of_searchnode.push((problem.getStartState(), []))    
     visited_states = set()
+    known_successors = dict()
     visited_states.add(problem.getStartState())
     goal_path_here = list()
 
@@ -126,7 +127,14 @@ def depthFirstSearch(problem):
             # into a shallow search node. Note that loopy paths are
             # possible as of this point.
             
-            successor_states_of_next = problem.getSuccessors(leftmost_searchnode[0])
+            successor_states_of_next = []
+            
+            if leftmost_searchnode[0] in known_successors:
+                successor_states_of_next = known_successors[leftmost_searchnode[0]]
+            else:
+                successor_states_of_next = problem.getSuccessors(leftmost_searchnode[0])
+
+            known_successors[leftmost_searchnode[0]] = successor_states_of_next            
             
             for successor in successor_states_of_next:
                 new_path_with_direction_added = leftmost_searchnode[1] + [successor[1]]
@@ -155,6 +163,7 @@ def breadthFirstSearch(problem):
     stack_of_searchnode = Queue()
     visited_states = set()
     visited_states.add(problem.getStartState())
+    known_successors = dict()
     stack_of_searchnode.push((problem.getStartState(), []))
     goal_path_here = list()
 
@@ -164,8 +173,15 @@ def breadthFirstSearch(problem):
         if problem.isGoalState(leftmost_searchnode[0]):
             goal_path_here = leftmost_searchnode[1]
         else:
-            successor_states_of_next = problem.getSuccessors(leftmost_searchnode[0])
-            
+            successor_states_of_next = []
+
+            if leftmost_searchnode[0] in known_successors:
+                successor_states_of_next = known_successors[leftmost_searchnode[0]]
+            else:
+                successor_states_of_next = problem.getSuccessors(leftmost_searchnode[0])            
+
+            known_successors[leftmost_searchnode[0]] = successor_states_of_next
+                
             for successor in successor_states_of_next:
                 new_path_with_direction_added = leftmost_searchnode[1] + [successor[1]]
 
@@ -204,9 +220,10 @@ def uniformCostSearch(problem):
                 successor_states_of_next = known_successors[leftmost_searchnode[0]]
             else:
                 successor_states_of_next = problem.getSuccessors(leftmost_searchnode[0])
+
+            known_successors[leftmost_searchnode[0]] = successor_states_of_next
             
             for successor in successor_states_of_next:
-                known_successors[leftmost_searchnode[0]] = successor_states_of_next
                 new_path_with_direction_added = leftmost_searchnode[1] + [successor[1]]
 
                 if successor[0] not in explored_set:
