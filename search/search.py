@@ -249,36 +249,31 @@ def aStarSearch(problem, heuristic=nullHeuristic):
 
     from util import PriorityQueue
     stack_of_searchnode = PriorityQueue()
-    
+    stack_of_searchnode.push((problem.getStartState(), [], 0), 0)
     visited_states = set()
-    visited_states.add(problem.getStartState())
-
-    initial_path = list()
-    initial_g = 0
-
-    for successor in problem.getSuccessors(problem.getStartState()):
-        visited_states.add(successor[0])
-        initial_f = initial_g + heuristic(successor[0], problem)
-        stack_of_searchnode.push((successor[0],
-                                  initial_path + [successor[1]],
-                                  initial_g + successor[2]),
-                                 initial_f)
-
+    known_successors = dict()
     goal_path_here = list()
 
     while not stack_of_searchnode.isEmpty() and len(goal_path_here) == 0:
         leftmost_searchnode = stack_of_searchnode.pop()
+        visited_states.add(leftmost_searchnode[0])
 
         if problem.isGoalState(leftmost_searchnode[0]):
             goal_path_here = leftmost_searchnode[1]
         else:
-            successor_states_of_next = problem.getSuccessors(leftmost_searchnode[0])
+            successor_states_of_next = []
+            
+            if leftmost_searchnode[0] in known_successors:
+                successor_states_of_next = known_successors[leftmost_searchnode[0]]
+            else:
+                successor_states_of_next = problem.getSuccessors(leftmost_searchnode[0])
+
+            known_successors[leftmost_searchnode[0]] = successor_states_of_next            
             
             for successor in successor_states_of_next:
                 new_path_with_direction_added = leftmost_searchnode[1] + [successor[1]]
 
                 if successor[0] not in visited_states:
-                    visited_states.add(successor[0])
                     new_g = leftmost_searchnode[2] + successor[2]
                     new_h = heuristic(successor[0], problem)
                     new_f = new_g + new_h
