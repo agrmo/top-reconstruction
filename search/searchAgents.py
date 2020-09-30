@@ -563,9 +563,134 @@ def foodHeuristic(state, problem):
     Subsequent calls to this heuristic can access
     problem.heuristicInfo['wallCount']
     """
+
+    heuristic = 0
     position, foodGrid = state
-    "*** YOUR CODE HERE ***"
-    return 0
+    nomsleft = foodGrid.asList()
+
+    def euclidean(x1, y1, x2, y2):
+        return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
+
+    def get_pathway_starting_at_nom():
+        pathway_starting_at_nom = dict()
+        
+        for nom in nomsleft:
+            radius_around_nom = 0
+            pathway_starting_at_nom[nom] = [nom]
+            
+            while len(pathway_starting_at_nom[nom]) < len(nomsleft):
+                radius_delta = 10.0
+                
+                # Probably captured more than one nom so halve the
+                # radius delta until we arrive at the optimal nom to
+                # venture towards. Well first, we need to compute how
+                # many noms were captured. If more than one, do what I
+                # just said.
+        
+                def list_of_captured_noms():
+                    captured = list()
+                    distances_added = set()
+                    for maybe_captured_nom in nomsleft:
+                        nomx, nomy = nom
+                        maybex, maybey = maybe_captured_nom
+                        nom_to_maybe = euclidean(nomx, nomy, maybex, maybey)
+                        nom_to_maybe_is_captured = nom_to_maybe < radius_delta
+                        maybe_captured_not_seen = maybe_captured_nom not in pathway_starting_at_nom[nom]
+                        dont_add_same_distance = nom_to_maybe not in distances_added
+                        
+                        if maybe_captured_not_seen and nom_to_maybe_is_captured and dont_add_same_distance:
+                            distances_added.add(nom_to_maybe)
+                            captured.append(maybe_captured_nom)
+        
+                    return captured
+                
+                locn = list_of_captured_noms()
+
+                # yo dawg, i herd you like search algorithms
+                while len(locn) != 1:
+                    
+                    if len(locn) > 1:
+                        radius_delta = radius_delta / 2.0
+                        locn = list_of_captured_noms()
+        
+                    if len(locn) < 1:
+                        radius_delta += radius_delta / 2.0
+                        locn = list_of_captured_noms()
+        
+                radius_around_nom += radius_delta
+        
+                if len(locn) == 1:
+                    # We captured a nom that is closest to the nom in
+                    # this loop. Add it to the pathway list for this
+                    # nom, and iterate the path while loop to find the
+                    # next nom.
+        
+                    pathway_starting_at_nom[nom].append(locn[0])
+
+        return pathway_starting_at_nom
+    
+    if 'pathway_starting_at_nom' not in problem.heuristicInfo:
+        problem.heuristicInfo['pathway_starting_at_nom'] = get_pathway_starting_at_nom()
+
+    def get_euclidean_through_path(path):
+        path_euclidean = 0
+
+        pathiter = iter(path)
+        pairs_of_noms = list()
+
+        for nom in pathiter:
+            try:
+                pairs_of_noms.append((nom, next(pathiter)))
+            except StopIteration:
+                pass
+
+        for ((x1, y1), (x2, y2)) in pairs_of_noms:
+            path_euclidean += euclidean(x1, y1, x2, y2)
+
+        x1, y1 = position
+        x2, y2 = path[0]
+
+        path_euclidean += euclidean(x1, y1, x2, y2)
+
+        return path_euclidean
+    
+    # Now we have a pathway associated with each nom that supposedly
+    # traverses all other noms in the shortest euclidean distance
+    # possible. Let us not compute it again. Where will we put the
+    # info? Store an association of each nom to its optimal pathway.
+    # When a heuristic is to be calculated, find which remaining nom
+    # is nearest, traverse its pathway for noms that are still in the
+    # graph, and compute the euclidean distance to those remaining
+    # noms in the order that they were originally presented. In other
+    # words, the order of the optimal nom pathway is not calculated
+    # twice, but the euclidean distance between them is. Why must we
+    # recalculate the euclidean path distance? I don't really
+    # know. I'm in a rabbit hole.
+    
+    heuristic = 0
+    
+    if len(nomsleft) > 0:
+        # The base heuristic can only be zero if there are no noms
+        # left. Otherwise, just compute the heuristic for the first
+        # nom. Then do the min(min(min(first_nom))) cascade.
+        
+        first_nom = nomsleft[0]
+        first_nom_path = problem.heuristicInfo['pathway_starting_at_nom'][first_nom]
+        first_heuristic = get_euclidean_through_path(first_nom_path)
+        heuristic = first_heuristic
+    
+    for nom in nomsleft:
+        nom_path = problem.heuristicInfo['pathway_starting_at_nom'][nom]
+        nom_path_truncated = list()
+
+        for maybe_remaining_nom in nom_path:
+            if maybe_remaining_nom in nomsleft:
+                nom_path_truncated.append(maybe_remaining_nom)
+
+        nom_path_truncated_euclidean = get_euclidean_through_path(nom_path_truncated)
+        heuristic = min(heuristic, nom_path_truncated_euclidean)
+
+    return heuristic
 
 class ClosestDotSearchAgent(SearchAgent):
     "Search for all food using a sequence of searches"

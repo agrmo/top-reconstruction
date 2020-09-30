@@ -287,11 +287,13 @@ def aStarSearch(problem, heuristic=nullHeuristic):
                 if successor[0] not in visited_states:
                     visited_states.add(successor[0])
                     new_g = leftmost_searchnode[2] + successor[2]
-                    new_f = new_g + heuristic(successor[0], problem)
-                    
+                    new_h = heuristic(successor[0], problem)
+                    new_f = new_g + new_h
+
                     new_searchnode_to_search_down = (successor[0],
                                                      new_path_with_direction_added,
                                                      new_g)
+
                     stack_of_searchnode.push(new_searchnode_to_search_down,
                                              new_f)
 
