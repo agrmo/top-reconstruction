@@ -314,8 +314,11 @@ class CornersProblem(search.SearchProblem):
         # the Pacman, but also the corners it has visited so far. 
 
         position, cornersleft = state
-        
-        return len(cornersleft) == 0
+
+        one_corner_left = len(cornersleft) == 1
+        at_corner = position in cornersleft
+
+        return one_corner_left and at_corner
 
     def getSuccessors(self, state):
         """
