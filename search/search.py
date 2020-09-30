@@ -104,21 +104,14 @@ def depthFirstSearch(problem):
 
     from util import Stack
     stack_of_searchnode = Stack()
-    
+    stack_of_searchnode.push((problem.getStartState(), []))    
     visited_states = set()
     visited_states.add(problem.getStartState())
-
-    initial_path = list()
-
-    for successor in problem.getSuccessors(problem.getStartState()):
-        visited_states.add(successor[0])
-        stack_of_searchnode.push((successor[0],
-                                  initial_path + [successor[1]]))
-
     goal_path_here = list()
 
     while not stack_of_searchnode.isEmpty() and len(goal_path_here) == 0:
         leftmost_searchnode = stack_of_searchnode.pop()
+        visited_states.add(leftmost_searchnode[0])
 
         if problem.isGoalState(leftmost_searchnode[0]):
             goal_path_here = leftmost_searchnode[1]
@@ -143,7 +136,6 @@ def depthFirstSearch(problem):
                 # nip it earlier rather than later.                
 
                 if successor[0] not in visited_states:
-                    visited_states.add(successor[0])
                     new_searchnode_to_search_down = (successor[0],
                                                      new_path_with_direction_added)
                     stack_of_searchnode.push(new_searchnode_to_search_down)
@@ -161,17 +153,9 @@ def breadthFirstSearch(problem):
 
     from util import Queue
     stack_of_searchnode = Queue()
-    
     visited_states = set()
     visited_states.add(problem.getStartState())
-
-    initial_path = list()
-
-    for successor in problem.getSuccessors(problem.getStartState()):
-        visited_states.add(successor[0])
-        stack_of_searchnode.push((successor[0],
-                                  initial_path + [successor[1]]))
-
+    stack_of_searchnode.push((problem.getStartState(), []))
     goal_path_here = list()
 
     while not stack_of_searchnode.isEmpty() and len(goal_path_here) == 0:
