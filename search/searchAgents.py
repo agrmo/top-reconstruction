@@ -720,8 +720,14 @@ class ClosestDotSearchAgent(SearchAgent):
         walls = gameState.getWalls()
         problem = AnyFoodSearchProblem(gameState)
 
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        # Even after writing a ton of code I'm not fully confident in
+        # how to describe the difference between a problem and an
+        # agent. But, taking a look at the mazeDistance method at the
+        # bottom of this file, we can just pass a problem into bfs and
+        # bask in the laziness. I suppose that bfs is the appropriate
+        # search algorithm to use here.
+        
+        return search.bfs(problem)
 
 class AnyFoodSearchProblem(PositionSearchProblem):
     """
@@ -756,8 +762,15 @@ class AnyFoodSearchProblem(PositionSearchProblem):
         """
         x,y = state
 
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        # Lets borrow the definition of foodGrid from the previous
+        # questions, which uses the Grid type.
+
+        noms = self.food.asList()
+
+        if (x,y) in noms:
+            return True
+        
+        return False
 
 def mazeDistance(point1, point2, gameState):
     """
