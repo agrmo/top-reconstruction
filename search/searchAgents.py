@@ -336,10 +336,10 @@ class CornersProblem(search.SearchProblem):
         # in order to stay generic. So, the problem itself must
         # shoehorn any modifications to the state if any modification
         # to the state is necessary. For this problem, such is true,
-        # because we must add to the state the corners that are left
-        # to visit. To do this, update the set of visited corners when
-        # the search algorithm calls this function to return the
-        # successors of a given state.
+        # because we must communicate which nodes left to visit. To do
+        # this, update the set of visited corners when the search
+        # algorithm calls this function to return the successors of a
+        # given state.
         
         successors = []
         for action in [Directions.NORTH, Directions.SOUTH, Directions.EAST, Directions.WEST]:
@@ -363,9 +363,8 @@ class CornersProblem(search.SearchProblem):
                     
                 next_state = ((nextx, nexty), frozenset(next_cornersleft))
 
-                # Deducing from the function getCostOfActions which is
-                # right after this function, the cost of any move is
-                # always one.
+                # We know the cost of any action in this problem is
+                # one.
                 
                 new_successor = (next_state, action, 1)
                 successors.append(new_successor)
@@ -403,6 +402,17 @@ def cornersHeuristic(state, problem):
     """
     corners = problem.corners # These are the corner coordinates
     walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
+    
+    # Idea: Return as the heuristic the euclidean distance for a
+    # pathway that traverses through all corners. We'll use the same
+    # idea for the food problem as well.
+
+    # This idea is admissible and consistent. What is nice is that
+    # there is a clean division between what the code that makes it
+    # admissible, and the code that makes it consistent. The
+    # admissible part is the euclidean distance through all corners,
+    # starting at a corner. The consistent part is the extra distance
+    # from the Pacman to its nearest corner.
 
     pathways = list()
 
@@ -458,22 +468,6 @@ def cornersHeuristic(state, problem):
 
     for corner in cornersleft:
         submissive_heuristic = min(submissive_heuristic, path_heuristic_for_each_corner[corner])
-
-    # Idea: I do not know which corner will be chosen first, so
-    # compute every permutation of corners that have yet to be
-    # traversed. For each possible permutation, compute the euclidean
-    # distance from corner to corner and add it to a total heuristic.
-
-    # The very not aesthetic try except behavior exists to handle odd
-    # number of corners, where the last corner throws an exception
-    # trying to pair up at the end of the list.
-
-    # This heuristic is admissible and consistent. A solution must
-    # traverse all corners, and the total euclidean distance between
-    # the remaining corners is the minimum cost necessary to arrive at
-    # each corner assuming each action has a minimum cost of
-    # one. Therefore, the heuristic can never overestimate the true
-    # path cost and is therefore admissible.
 
     return submissive_heuristic
 
@@ -573,6 +567,15 @@ def foodHeuristic(state, problem):
     position, foodGrid = state
     nomsleft = foodGrid.asList()
 
+    # Same idea as the corners problem, which is to calculate the
+    # euclidean path from the pacman to the nearest corner, and then
+    # the euclidean pathway through the rest of the corners.
+
+    # But, we consider that we cannot calculate the euclidean distance
+    # for every permutation the foods. Ten factorial is 3628800. So,
+    # use a search algorithm to calculate the shortest path through
+    # all corners. I call it nom nearest neighbors.
+
     def euclidean(x1, y1, x2, y2):
         return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
 
@@ -648,8 +651,6 @@ def foodHeuristic(state, problem):
 
         for nom in zip(first_iter, second_iter):
             pairs_of_noms.append(nom)
-            
-        from math import floor
 
         for ((x1, y1), (x2, y2)) in pairs_of_noms:
             path_euclidean += euclidean(x1, y1, x2, y2)

@@ -17,7 +17,7 @@ In search.py, you will implement generic search algorithms which are called by
 Pacman agents (in searchAgents.py).
 """
 
-import utils
+import util
 
 class SearchProblem:
     """
@@ -89,6 +89,11 @@ def depthFirstSearch(problem):
 
     listofactions = list()
 
+    # Agustin: Hello and welcome to PA1. The modified files are
+    # search.py and searchAgents.py. Question seven, the food problem,
+    # is the most clever thing in here, and the rest can more or less
+    # be ignored.
+
     # Let's define a search node as (state, path, seen) for
     # ourselves. From searchAgents. It is necessary to define a path
     # as a list of Directions. Define seen as a set of states that the
@@ -103,16 +108,16 @@ def depthFirstSearch(problem):
     # tuple (x,y) which is not much of a problem.
 
     from util import Stack
-    search_datastructure = Stack()
-    search_datastructure.push((problem.getStartState(), []))    
-    visited_states = set()
+    searchtree = Stack()
+    searchtree.push((problem.getStartState(), []))    
+    explored_set = set()
     known_successors = dict()
-    visited_states.add(problem.getStartState())
+    explored_set.add(problem.getStartState())
     goal_path_here = list()
 
-    while not search_datastructure.isEmpty() and len(goal_path_here) == 0:
-        leftmost_searchnode = search_datastructure.pop()
-        visited_states.add(leftmost_searchnode[0])
+    while not searchtree.isEmpty() and len(goal_path_here) == 0:
+        leftmost_searchnode = searchtree.pop()
+        explored_set.add(leftmost_searchnode[0])
 
         if problem.isGoalState(leftmost_searchnode[0]):
             goal_path_here = leftmost_searchnode[1]
@@ -139,14 +144,17 @@ def depthFirstSearch(problem):
             for successor in successor_states_of_next:
                 new_path_with_direction_added = leftmost_searchnode[1] + [successor[1]]
 
-                # We can check for a loopy path before we push the
-                # search node, or after we pop the search node. Let's
-                # nip it earlier rather than later.                
+                # We still have not handled loopy paths, so do so
+                # here. We have a choice to check for loopy paths
+                # before a search node is added to the datastructure
+                # or after it is popped from the datastructure. Here,
+                # we choose the former. I am not sure if the latter is
+                # computationally correct.
 
-                if successor[0] not in visited_states:
+                if successor[0] not in explored_set:
                     new_searchnode_to_search_down = (successor[0],
                                                      new_path_with_direction_added)
-                    search_datastructure.push(new_searchnode_to_search_down)
+                    searchtree.push(new_searchnode_to_search_down)
 
     return goal_path_here
 
@@ -160,15 +168,15 @@ def breadthFirstSearch(problem):
     listofactions = list()
 
     from util import Queue
-    search_datastructure = Queue()
-    visited_states = set()
-    visited_states.add(problem.getStartState())
+    searchtree = Queue()
+    explored_set = set()
+    explored_set.add(problem.getStartState())
     known_successors = dict()
-    search_datastructure.push((problem.getStartState(), []))
+    searchtree.push((problem.getStartState(), []))
     goal_path_here = list()
 
-    while not search_datastructure.isEmpty() and len(goal_path_here) == 0:
-        leftmost_searchnode = search_datastructure.pop()
+    while not searchtree.isEmpty() and len(goal_path_here) == 0:
+        leftmost_searchnode = searchtree.pop()
 
         if problem.isGoalState(leftmost_searchnode[0]):
             goal_path_here = leftmost_searchnode[1]
@@ -185,11 +193,11 @@ def breadthFirstSearch(problem):
             for successor in successor_states_of_next:
                 new_path_with_direction_added = leftmost_searchnode[1] + [successor[1]]
 
-                if successor[0] not in visited_states:
-                    visited_states.add(successor[0])
+                if successor[0] not in explored_set:
+                    explored_set.add(successor[0])
                     new_searchnode_to_search_down = (successor[0],
                                                      new_path_with_direction_added)
-                    search_datastructure.push(new_searchnode_to_search_down)
+                    searchtree.push(new_searchnode_to_search_down)
 
     return goal_path_here
 
@@ -201,14 +209,14 @@ def uniformCostSearch(problem):
 
     listofactions = list()
     from util import PriorityQueue
-    search_datastructure = PriorityQueue()
-    search_datastructure.push((problem.getStartState(), [], 0), 0)
+    searchtree = PriorityQueue()
+    searchtree.push((problem.getStartState(), [], 0), 0)
     explored_set = set()
     known_successors = dict()
     goal_path_here = list()
 
-    while not search_datastructure.isEmpty() and len(goal_path_here) == 0:
-        leftmost_searchnode = search_datastructure.pop()
+    while not searchtree.isEmpty() and len(goal_path_here) == 0:
+        leftmost_searchnode = searchtree.pop()
         explored_set.add(leftmost_searchnode[0])
 
         if problem.isGoalState(leftmost_searchnode[0]):
@@ -229,7 +237,7 @@ def uniformCostSearch(problem):
                 if successor[0] not in explored_set:
                     new_g = leftmost_searchnode[2] + successor[2]
                     new_searchnode_to_search_down = (successor[0], new_path_with_direction_added, new_g)
-                    search_datastructure.push(new_searchnode_to_search_down, new_g)
+                    searchtree.push(new_searchnode_to_search_down, new_g)
 
 
     return goal_path_here    
@@ -248,17 +256,24 @@ def aStarSearch(problem, heuristic=nullHeuristic):
     listofactions = list()
 
     from util import PriorityQueue
-    search_datastructure = PriorityQueue()
-    search_datastructure.push((problem.getStartState(), [], 0), 0)
-    visited_states = set()
+    searchtree = PriorityQueue()
+    searchtree.push((problem.getStartState(), [], 0), 0)
+    explored_set = set()
     known_successors = dict()
     goal_path_here = list()
 
-    while not search_datastructure.isEmpty() and len(goal_path_here) == 0:
-        leftmost_searchnode = search_datastructure.pop()
-        visited_states.add(leftmost_searchnode[0])
+    while not searchtree.isEmpty() and len(goal_path_here) == 0:
+        leftmost_searchnode = searchtree.pop()
+        explored_set.add(leftmost_searchnode[0])
 
         if problem.isGoalState(leftmost_searchnode[0]):
+            # Assuming the heuristic returns zero for states which
+            # pass the goal test, any search nodes whose states are at
+            # the goal state will be popped first if prioritized by
+            # lowest heuristic. I think we must also assume that the
+            # heuristic is consistent for this to work but I'm not
+            # sure.
+            
             goal_path_here = leftmost_searchnode[1]
         else:
             successor_states_of_next = []
@@ -273,7 +288,7 @@ def aStarSearch(problem, heuristic=nullHeuristic):
             for successor in successor_states_of_next:
                 new_path_with_direction_added = leftmost_searchnode[1] + [successor[1]]
 
-                if successor[0] not in visited_states:
+                if successor[0] not in explored_set:
                     new_g = leftmost_searchnode[2] + successor[2]
                     new_h = heuristic(successor[0], problem)
                     new_f = new_g + new_h
@@ -282,8 +297,8 @@ def aStarSearch(problem, heuristic=nullHeuristic):
                                                      new_path_with_direction_added,
                                                      new_g)
 
-                    search_datastructure.push(new_searchnode_to_search_down,
-                                             new_f)
+                    searchtree.push(new_searchnode_to_search_down,
+                                    new_f)
 
     return goal_path_here    
 
