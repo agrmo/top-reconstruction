@@ -569,9 +569,9 @@ def foodHeuristic(state, problem):
     position, foodGrid = state
     nomsleft = foodGrid.asList()
 
-    # Same idea as the corners problem, which is to calculate the
+    # Same idea as the corners problem, which was to calculate the
     # euclidean path from the pacman to the nearest corner, and then
-    # the euclidean pathway through the rest of the corners.
+    # the shortest euclidean pathway through the rest of the corners.
 
     # But, we consider that we cannot calculate the euclidean distance
     # for every permutation the foods. Ten factorial is 3628800. So,
@@ -692,8 +692,6 @@ def foodHeuristic(state, problem):
         first_nom_path = problem.heuristicInfo['pathway_starting_at_nom'][first_nom]
         first_heuristic = get_euclidean_through_path(first_nom_path)
         heuristic = first_heuristic
-
-    best_path = list()
 
     for nom in nomsleft:
         nom_path = problem.heuristicInfo['pathway_starting_at_nom'][nom]
