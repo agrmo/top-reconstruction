@@ -78,32 +78,19 @@ class ReflexAgent(Agent):
         newGhostStates = successorGameState.getGhostStates()
         newScaredTimes = [ghostState.scaredTimer for ghostState in newGhostStates]
 
-        # Compute the closest capsule, and return the inverse of its distance.
+        # Stay away from the closest ghost.
 
-        newposx, newposy = newPos
-        capsulesleft = currentGameState.getCapsules()
-        closest_capsule = capsulesleft[0]
-        
-        for maybe_closest_capsule in capsulesleft:
-            bestx, besty = closest_capsule
-            capx, capy = maybe_closest_capsule
-            
-            if euclidean(newposx, newposy, capx, capy) < euclidean(newposx, newposy, bestx, besty):
-                closest_capsule = maybe_closest_capsule
+        gpositions = successorGameState.getGhostPositions()
+        newpacmanx, newpacmany = newPos
+        evaluationfunction = euclidean(newpacmanx, newpacmany, gpositions[0][0], gpositions[0][1])
 
-        # successorGameState.getScore() returns
-        # scoreEvaluationFunction, which I think is just the overall
-        # game score.        
-        # return successorGameState.getScore()
+        for gposition in gpositions:
+            ghostx, ghosty = gposition
 
-        # We got the closest capsule. Return the inverse of its
-        # distance so our score increases as we get closer to it.
+            evaluationfunction = min(evaluationfunction, euclidean(newpacmanx, newpacmany, ghostx, ghosty))
 
-        closestcapx, closestcapy = closest_capsule
-        best_distance = euclidean(newposx, newposy, closestcapx, closestcapy)
-
-        print('for newpos', newPos, 'returning ', 1.0 / best_distance)
-        return 1.0 / best_distance
+        print('eval', evaluationfunction)
+        return evaluationfunction
 
 def scoreEvaluationFunction(currentGameState):
     """
