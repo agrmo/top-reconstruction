@@ -18,6 +18,11 @@ import random, util
 
 from game import Agent
 
+# Agustin: Hello and welcome to PA2.
+
+def euclidean(x1, y1, x2, y2):
+    return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
+
 class ReflexAgent(Agent):
     """
     A reflex agent chooses an action at each choice point by examining
@@ -73,8 +78,32 @@ class ReflexAgent(Agent):
         newGhostStates = successorGameState.getGhostStates()
         newScaredTimes = [ghostState.scaredTimer for ghostState in newGhostStates]
 
-        "*** YOUR CODE HERE ***"
-        return successorGameState.getScore()
+        # Compute the closest capsule, and return the inverse of its distance.
+
+        newposx, newposy = newPos
+        capsulesleft = currentGameState.getCapsules()
+        closest_capsule = capsulesleft[0]
+        
+        for maybe_closest_capsule in capsulesleft:
+            bestx, besty = closest_capsule
+            capx, capy = maybe_closest_capsule
+            
+            if euclidean(newposx, newposy, capx, capy) < euclidean(newposx, newposy, bestx, besty):
+                closest_capsule = maybe_closest_capsule
+
+        # successorGameState.getScore() returns
+        # scoreEvaluationFunction, which I think is just the overall
+        # game score.        
+        # return successorGameState.getScore()
+
+        # We got the closest capsule. Return the inverse of its
+        # distance so our score increases as we get closer to it.
+
+        closestcapx, closestcapy = closest_capsule
+        best_distance = euclidean(newposx, newposy, closestcapx, closestcapy)
+
+        print('for newpos', newPos, 'returning ', 1.0 / best_distance)
+        return 1.0 / best_distance
 
 def scoreEvaluationFunction(currentGameState):
     """
