@@ -78,18 +78,41 @@ class ReflexAgent(Agent):
         newGhostStates = successorGameState.getGhostStates()
         newScaredTimes = [ghostState.scaredTimer for ghostState in newGhostStates]
 
-        # Stay away from the closest ghost.
+        # Return a constant, except for when a ghost is within 3
+        # euclidean units away. When a constant is returned, the
+        # caller will move the pacman randomly. When a ghost is within
+        # 3 euclideans, return a number that moves it farthest away
+        # from the closest ghost..
 
         gpositions = successorGameState.getGhostPositions()
-        newpacmanx, newpacmany = newPos
-        evaluationfunction = euclidean(newpacmanx, newpacmany, gpositions[0][0], gpositions[0][1])
+        curpacx, curpacy = currentGameState.getPacmanPosition()
+        newpacx, newpacy = newPos
+
+        a_ghost_is_within_three_euclideans = False
 
         for gposition in gpositions:
             ghostx, ghosty = gposition
 
-            evaluationfunction = min(evaluationfunction, euclidean(newpacmanx, newpacmany, ghostx, ghosty))
+            if euclidean(ghostx, ghosty, curpacx, curpacy) < 3:
+                a_ghost_is_within_three_euclideans = True
 
-        print('eval', evaluationfunction)
+                
+        if not a_ghost_is_within_three_euclideans:
+            print('returning 0 for move', action)
+            return 0
+        else:
+            closest_ghostx, closest_ghosty = gpositions[0]
+
+            for maybe_closest_ghost in gpositions:
+                maybe_closest_ghostx, maybe_closest_ghosty = maybe_closest_ghost
+
+                if euclidean(curpacx, curpacy, maybe_closest_ghostx, maybe_closest_ghosty) < euclidean(curpacx, curpacy, closest_ghostx, closest_ghosty):
+                    closest_ghostx = maybe_closest_ghostx
+                    closest_ghosty = maybe_closest_ghosty
+
+            print('returning', euclidean(newpacx, newpacy, closest_ghostx, closest_ghosty), 'for move', action)
+            return euclidean(newpacx, newpacy, closest_ghostx, closest_ghosty)
+                    
         return evaluationfunction
 
 def scoreEvaluationFunction(currentGameState):
