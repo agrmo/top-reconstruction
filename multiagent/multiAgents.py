@@ -145,16 +145,16 @@ class MultiAgentSearchAgent(Agent):
         self.evaluationFunction = util.lookup(evalFn, globals())
         self.depth = int(depth)
 
-def maxs_turn(agent, gamestate, min_layers):
-    if gamestate.isWin() or gamestate.isLose():
+def maxs_turn(current_depth, agent, gamestate, min_layers):
+    if gamestate.isWin() or gamestate.isLose() or current_depth == agent.depth:
         return agent.evaluationFunction(gamestate)
 
     # Not at terminal state. Need to ask min.
     what_directions_sir = gamestate.getLegalActions()
-    value = mins_turn(agent, gamestate.generateSuccessor(0, what_directions_sir[0]), min_layers, min_layers - 1)
+    value = mins_turn(current_depth, agent, gamestate.generateSuccessor(0, what_directions_sir[0]), min_layers, min_layers - 1)
 
     for direction in what_directions_sir:
-        value_from_min = mins_turn(agent, gamestate.generateSuccessor(0, direction), min_layers, min_layers - 1)
+        value_from_min = mins_turn(current_depth, agent, gamestate.generateSuccessor(0, direction), min_layers, min_layers - 1)
 
         if value_from_min > value:
             value = value_from_min
@@ -162,8 +162,8 @@ def maxs_turn(agent, gamestate, min_layers):
 
     return value
 
-def mins_turn(agent, gamestate, min_layers, how_many_more_min_layers):
-    if gamestate.isWin() or gamestate.isLose():
+def mins_turn(current_depth, agent, gamestate, min_layers, how_many_more_min_layers):
+    if gamestate.isWin() or gamestate.isLose() or current_depth == agent.depth:
         return agent.evaluationFunction(gamestate)
 
     # Not at terminal state. Need to ask the next layer.
@@ -171,19 +171,19 @@ def mins_turn(agent, gamestate, min_layers, how_many_more_min_layers):
     value = 1234
 
     if how_many_more_min_layers > 0:
-        value = mins_turn(agent, gamestate.generateSuccessor(0, what_directions_sir[0]), min_layers, how_many_more_min_layers - 1)
+        value = mins_turn(current_depth, agent, gamestate.generateSuccessor(0, what_directions_sir[0]), min_layers, how_many_more_min_layers - 1)
     else:
-        value = maxs_turn(agent, gamestate.generateSuccessor(0, what_directions_sir[0]), min_layers)
+        value = maxs_turn(current_depth + 1, agent, gamestate.generateSuccessor(0, what_directions_sir[0]), min_layers)
 
     for direction in what_directions_sir:
         if how_many_more_min_layers > 0:
-            value_from_min = mins_turn(agent, gamestate.generateSuccessor(0, direction), min_layers, how_many_more_min_layers - 1)
+            value_from_min = mins_turn(current_depth, agent, gamestate.generateSuccessor(0, direction), min_layers, how_many_more_min_layers - 1)
 
             if value_from_min < value:
                 value = value_from_min
 
         else:
-            value_from_max = maxs_turn(agent, gamestate.generateSuccessor(0, direction), min_layers)
+            value_from_max = maxs_turn(current_depth + 1, agent, gamestate.generateSuccessor(0, direction), min_layers)
 
             if value_from_max < value:
                 value = value_from_max
@@ -224,11 +224,17 @@ class MinimaxAgent(MultiAgentSearchAgent):
         # Not at terminal state. Need to ask min.
         what_directions_sir = gameState.getLegalActions()
         min_layers = gameState.getNumAgents() - 1
-        value = mins_turn(self, gameState.generateSuccessor(0, what_directions_sir[0]), min_layers, min_layers - 1)
+        current_depth = 0
+        
+        # Whenever it is max's turn, increment the depth. In other
+        # words, each successive min layer is at the same depth, and
+        # when min calls max, it increments the depth for max :)
+        
+        value = mins_turn(current_depth, self, gameState.generateSuccessor(0, what_directions_sir[0]), min_layers, min_layers - 1)
         direction_for_value = what_directions_sir[0]
     
         for direction in what_directions_sir:
-            value_from_min = mins_turn(self, gameState.generateSuccessor(0, direction), min_layers, min_layers - 1)
+            value_from_min = mins_turn(current_depth, self, gameState.generateSuccessor(0, direction), min_layers, min_layers - 1)
             print('max: got', value, 'for dir', direction)
     
             if value_from_min > value:
