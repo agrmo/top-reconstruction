@@ -145,6 +145,40 @@ class MultiAgentSearchAgent(Agent):
         self.evaluationFunction = util.lookup(evalFn, globals())
         self.depth = int(depth)
 
+def maxs_turn(agent, gamestate):
+    if gamestate.isWin() or gamestate.isLose():
+        return agent.evaluationFunction(gamestate)
+
+    # Not at terminal state. Need to ask min.
+    what_directions_sir = gamestate.getLegalActions()
+    value = mins_turn(agent, gamestate.generateSuccessor(0, what_directions_sir[0]))
+
+    for direction in what_directions_sir:
+        value_from_min = mins_turn(agent, gamestate.generateSuccessor(0, direction))
+
+        if value_from_min > value:
+            value = value_from_min
+            print('max: best is', value, 'for dir', direction)
+
+    return value
+
+def mins_turn(agent, gamestate):
+    if gamestate.isWin() or gamestate.isLose():
+        return agent.evaluationFunction(gamestate)
+
+    # Not at terminal state. Need to ask max.
+    what_directions_sir = gamestate.getLegalActions()
+    value = maxs_turn(agent, gamestate.generateSuccessor(0, what_directions_sir[0]))
+
+    for direction in what_directions_sir:
+        value_from_max = maxs_turn(agent, gamestate.generateSuccessor(0, direction))
+        
+        if value_from_max < value:
+            value = value_from_max
+            print('min: best is', value, 'for dir', direction)
+    
+    return value
+
 class MinimaxAgent(MultiAgentSearchAgent):
     """
     Your minimax agent (question 2)
@@ -173,8 +207,24 @@ class MinimaxAgent(MultiAgentSearchAgent):
         gameState.isLose():
         Returns whether or not the game state is a losing state
         """
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        if gameState.isWin() or gameState.isLose():
+            return self.evaluationFunction(gameState)
+    
+        # Not at terminal state. Need to ask min.
+        what_directions_sir = gameState.getLegalActions()
+        value = mins_turn(self, gameState.generateSuccessor(0, what_directions_sir[0]))
+        direction_for_value = what_directions_sir[0]
+    
+        for direction in what_directions_sir:
+            value_from_min = mins_turn(self, gameState.generateSuccessor(0, direction))
+    
+            if value_from_min > value:
+                value = value_from_min
+                print('max: best is', value, 'for dir', direction)
+                direction_for_value = direction
+    
+        return direction_for_value
+            
 
 class AlphaBetaAgent(MultiAgentSearchAgent):
     """
