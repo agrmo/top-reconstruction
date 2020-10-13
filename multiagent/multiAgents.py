@@ -145,38 +145,49 @@ class MultiAgentSearchAgent(Agent):
         self.evaluationFunction = util.lookup(evalFn, globals())
         self.depth = int(depth)
 
-def maxs_turn(agent, gamestate):
+def maxs_turn(agent, gamestate, min_layers):
     if gamestate.isWin() or gamestate.isLose():
         return agent.evaluationFunction(gamestate)
 
     # Not at terminal state. Need to ask min.
     what_directions_sir = gamestate.getLegalActions()
-    value = mins_turn(agent, gamestate.generateSuccessor(0, what_directions_sir[0]))
+    value = mins_turn(agent, gamestate.generateSuccessor(0, what_directions_sir[0]), min_layers, min_layers - 1)
 
     for direction in what_directions_sir:
-        value_from_min = mins_turn(agent, gamestate.generateSuccessor(0, direction))
+        value_from_min = mins_turn(agent, gamestate.generateSuccessor(0, direction), min_layers, min_layers - 1)
 
         if value_from_min > value:
             value = value_from_min
-            print('max: best is', value, 'for dir', direction)
+            # print('max: best is', value, 'for dir', direction)
 
     return value
 
-def mins_turn(agent, gamestate):
+def mins_turn(agent, gamestate, min_layers, how_many_more_min_layers):
     if gamestate.isWin() or gamestate.isLose():
         return agent.evaluationFunction(gamestate)
 
-    # Not at terminal state. Need to ask max.
+    # Not at terminal state. Need to ask the next layer.
     what_directions_sir = gamestate.getLegalActions()
-    value = maxs_turn(agent, gamestate.generateSuccessor(0, what_directions_sir[0]))
+    value = 1234
+
+    if how_many_more_min_layers > 0:
+        value = mins_turn(agent, gamestate.generateSuccessor(0, what_directions_sir[0]), min_layers, how_many_more_min_layers - 1)
+    else:
+        value = maxs_turn(agent, gamestate.generateSuccessor(0, what_directions_sir[0]), min_layers)
 
     for direction in what_directions_sir:
-        value_from_max = maxs_turn(agent, gamestate.generateSuccessor(0, direction))
-        
-        if value_from_max < value:
-            value = value_from_max
-            print('min: best is', value, 'for dir', direction)
-    
+        if how_many_more_min_layers > 0:
+            value_from_min = mins_turn(agent, gamestate.generateSuccessor(0, direction), min_layers, how_many_more_min_layers - 1)
+
+            if value_from_min < value:
+                value = value_from_min
+
+        else:
+            value_from_max = maxs_turn(agent, gamestate.generateSuccessor(0, direction), min_layers)
+
+            if value_from_max < value:
+                value = value_from_max
+
     return value
 
 class MinimaxAgent(MultiAgentSearchAgent):
@@ -212,17 +223,19 @@ class MinimaxAgent(MultiAgentSearchAgent):
     
         # Not at terminal state. Need to ask min.
         what_directions_sir = gameState.getLegalActions()
-        value = mins_turn(self, gameState.generateSuccessor(0, what_directions_sir[0]))
+        min_layers = gameState.getNumAgents() - 1
+        value = mins_turn(self, gameState.generateSuccessor(0, what_directions_sir[0]), min_layers, min_layers - 1)
         direction_for_value = what_directions_sir[0]
     
         for direction in what_directions_sir:
-            value_from_min = mins_turn(self, gameState.generateSuccessor(0, direction))
+            value_from_min = mins_turn(self, gameState.generateSuccessor(0, direction), min_layers, min_layers - 1)
+            print('max: got', value, 'for dir', direction)
     
             if value_from_min > value:
                 value = value_from_min
-                print('max: best is', value, 'for dir', direction)
                 direction_for_value = direction
-    
+
+        print('moving', direction_for_value, 'for value', value)
         return direction_for_value
             
 
