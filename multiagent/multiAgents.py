@@ -247,7 +247,53 @@ class MinimaxAgent(MultiAgentSearchAgent):
 
         print('moving', direction_for_value, 'for value', value)
         return direction_for_value
-            
+
+
+def maxs_turn_ab(current_depth, agent, gamestate, alpha, beta):
+    if gamestate.isWin() or gamestate.isLose() or current_depth == agent.depth:
+        return agent.evaluationFunction(gamestate)
+
+    which_directions_sir = gamestate.getLegalActions(0)
+    min_layers = gamestate.getNumAgents() - 1
+    current_min_layer_aka_ghost_index = 1
+    value = mins_turn(current_depth, agent, gamestate.generateSuccessor(0, which_directions_sir[0]), current_min_layer_aka_ghost_index)
+
+    for direction in which_directions_sir:
+        value_from_min = mins_turn(current_depth, agent, gamestate.generateSuccessor(0, direction), current_min_layer_aka_ghost_index)
+
+        if value_from_min > value:
+            value = value_from_min
+            # print('max: best is', value, 'for dir', direction)
+
+    return value
+
+def mins_turn_ab(current_depth, agent, gamestate, current_min_layer_aka_ghost_index, alpha, beta):
+    if gamestate.isWin() or gamestate.isLose() or current_depth == agent.depth:
+        return agent.evaluationFunction(gamestate)
+
+    which_directions_sir = gamestate.getLegalActions(current_min_layer_aka_ghost_index)
+    min_layers = gamestate.getNumAgents() - 1
+    value = 1234
+
+    if current_min_layer_aka_ghost_index < min_layers:
+        value = mins_turn(current_depth, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, which_directions_sir[0]), current_min_layer_aka_ghost_index + 1)
+    else:
+        value = maxs_turn(current_depth + 1, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, which_directions_sir[0]))
+
+    for direction in which_directions_sir:
+        if current_min_layer_aka_ghost_index < min_layers:
+            value_from_min = mins_turn(current_depth, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, direction), current_min_layer_aka_ghost_index + 1)
+
+            if value_from_min < value:
+                value = value_from_min
+
+        else:
+            value_from_max = maxs_turn(current_depth + 1, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, direction))
+
+            if value_from_max < value:
+                value = value_from_max
+
+    return value
 
 class AlphaBetaAgent(MultiAgentSearchAgent):
     """
@@ -258,8 +304,26 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
         """
         Returns the minimax action using self.depth and self.evaluationFunction
         """
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        if gameState.isWin() or gameState.isLose():
+            return self.evaluationFunction(gameState)
+    
+        which_directions_sir = gameState.getLegalActions()
+        current_depth = 0
+        min_layers = gameState.getNumAgents() - 1
+        current_min_layer_aka_ghost_index = 1
+        value = mins_turn(current_depth, self, gameState.generateSuccessor(0, which_directions_sir[0]), current_min_layer_aka_ghost_index)
+        direction_for_value = which_directions_sir[0]
+    
+        for direction in which_directions_sir:
+            value_from_min = mins_turn(current_depth, self, gameState.generateSuccessor(0, direction), current_min_layer_aka_ghost_index)
+            print('max: got', value, 'for dir', direction)
+    
+            if value_from_min > value:
+                value = value_from_min
+                direction_for_value = direction
+
+        print('moving', direction_for_value, 'for value', value)
+        return direction_for_value        
 
 class ExpectimaxAgent(MultiAgentSearchAgent):
     """
