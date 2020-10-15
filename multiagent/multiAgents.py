@@ -149,18 +149,13 @@ def maxs_turn(current_depth, agent, gamestate):
     if gamestate.isWin() or gamestate.isLose() or current_depth == agent.depth:
         return agent.evaluationFunction(gamestate)
 
-    # Not at terminal state. Need to ask min.
     which_directions_sir = gamestate.getLegalActions(0)
     min_layers = gamestate.getNumAgents() - 1
     current_min_layer_aka_ghost_index = 1
-    value = mins_turn(current_depth, agent, gamestate.generateSuccessor(0, which_directions_sir[0]), current_min_layer_aka_ghost_index)
+    value = -9999
 
     for direction in which_directions_sir:
-        value_from_min = mins_turn(current_depth, agent, gamestate.generateSuccessor(0, direction), current_min_layer_aka_ghost_index)
-
-        if value_from_min > value:
-            value = value_from_min
-            # print('max: best is', value, 'for dir', direction)
+        value = max(value, mins_turn(current_depth, agent, gamestate.generateSuccessor(0, direction), current_min_layer_aka_ghost_index))
 
     return value
 
@@ -168,28 +163,15 @@ def mins_turn(current_depth, agent, gamestate, current_min_layer_aka_ghost_index
     if gamestate.isWin() or gamestate.isLose() or current_depth == agent.depth:
         return agent.evaluationFunction(gamestate)
 
-    # Not at terminal state. Need to ask the next layer.
     which_directions_sir = gamestate.getLegalActions(current_min_layer_aka_ghost_index)
     min_layers = gamestate.getNumAgents() - 1
-    value = 1234
-
-    if current_min_layer_aka_ghost_index < min_layers:
-        value = mins_turn(current_depth, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, which_directions_sir[0]), current_min_layer_aka_ghost_index + 1)
-    else:
-        value = maxs_turn(current_depth + 1, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, which_directions_sir[0]))
+    value = 9999
 
     for direction in which_directions_sir:
         if current_min_layer_aka_ghost_index < min_layers:
-            value_from_min = mins_turn(current_depth, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, direction), current_min_layer_aka_ghost_index + 1)
-
-            if value_from_min < value:
-                value = value_from_min
-
+            value = min(value, mins_turn(current_depth, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, direction), current_min_layer_aka_ghost_index + 1))
         else:
-            value_from_max = maxs_turn(current_depth + 1, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, direction))
-
-            if value_from_max < value:
-                value = value_from_max
+            value = min(value, maxs_turn(current_depth + 1, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, direction)))
 
     return value
 
@@ -224,19 +206,12 @@ class MinimaxAgent(MultiAgentSearchAgent):
         if gameState.isWin() or gameState.isLose():
             return self.evaluationFunction(gameState)
     
-        # Not at terminal state. Need to ask min.
         which_directions_sir = gameState.getLegalActions()
         current_depth = 0
         min_layers = gameState.getNumAgents() - 1
-        
-        # Whenever it is max's turn, increment the depth. In other
-        # words, each successive min layer is at the same depth, and
-        # when min calls max, it increments the depth for max :)
-
         current_min_layer_aka_ghost_index = 1
-        value = mins_turn(current_depth, self, gameState.generateSuccessor(0, which_directions_sir[0]), current_min_layer_aka_ghost_index)
-        direction_for_value = which_directions_sir[0]
-    
+        value = -9999
+
         for direction in which_directions_sir:
             value_from_min = mins_turn(current_depth, self, gameState.generateSuccessor(0, direction), current_min_layer_aka_ghost_index)
             print('max: got', value, 'for dir', direction)
@@ -246,7 +221,7 @@ class MinimaxAgent(MultiAgentSearchAgent):
                 direction_for_value = direction
 
         print('moving', direction_for_value, 'for value', value)
-        return direction_for_value
+        return direction_for_value        
 
 
 def maxs_turn_ab(current_depth, agent, gamestate, alpha, beta):
@@ -256,14 +231,15 @@ def maxs_turn_ab(current_depth, agent, gamestate, alpha, beta):
     which_directions_sir = gamestate.getLegalActions(0)
     min_layers = gamestate.getNumAgents() - 1
     current_min_layer_aka_ghost_index = 1
-    value = mins_turn(current_depth, agent, gamestate.generateSuccessor(0, which_directions_sir[0]), current_min_layer_aka_ghost_index)
+    value = -9999
 
     for direction in which_directions_sir:
-        value_from_min = mins_turn(current_depth, agent, gamestate.generateSuccessor(0, direction), current_min_layer_aka_ghost_index)
+        value = max(value, mins_turn_ab(current_depth, agent, gamestate.generateSuccessor(0, direction), current_min_layer_aka_ghost_index, alpha, beta))
 
-        if value_from_min > value:
-            value = value_from_min
-            # print('max: best is', value, 'for dir', direction)
+        if value <= beta:
+            return value
+
+        alpha = max(alpha, value)
 
     return value
 
@@ -273,25 +249,18 @@ def mins_turn_ab(current_depth, agent, gamestate, current_min_layer_aka_ghost_in
 
     which_directions_sir = gamestate.getLegalActions(current_min_layer_aka_ghost_index)
     min_layers = gamestate.getNumAgents() - 1
-    value = 1234
-
-    if current_min_layer_aka_ghost_index < min_layers:
-        value = mins_turn(current_depth, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, which_directions_sir[0]), current_min_layer_aka_ghost_index + 1)
-    else:
-        value = maxs_turn(current_depth + 1, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, which_directions_sir[0]))
+    value = 9999
 
     for direction in which_directions_sir:
         if current_min_layer_aka_ghost_index < min_layers:
-            value_from_min = mins_turn(current_depth, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, direction), current_min_layer_aka_ghost_index + 1)
-
-            if value_from_min < value:
-                value = value_from_min
-
+            value = min(value, mins_turn_ab(current_depth, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, direction), current_min_layer_aka_ghost_index + 1, alpha, beta))
         else:
-            value_from_max = maxs_turn(current_depth + 1, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, direction))
+            value = min(value, maxs_turn_ab(current_depth + 1, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, direction), alpha, beta))
 
-            if value_from_max < value:
-                value = value_from_max
+        if value <= alpha:
+            return value
+
+        beta = min(beta, value)
 
     return value
 
@@ -308,19 +277,22 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
             return self.evaluationFunction(gameState)
     
         which_directions_sir = gameState.getLegalActions()
-        current_depth = 0
-        min_layers = gameState.getNumAgents() - 1
-        current_min_layer_aka_ghost_index = 1
-        value = mins_turn(current_depth, self, gameState.generateSuccessor(0, which_directions_sir[0]), current_min_layer_aka_ghost_index)
-        direction_for_value = which_directions_sir[0]
-    
+        current_depth = 1
+        min_layers = gameState.getNumAgents()
+        current_min_layer_aka_ghost_index = 0
+        value = -9999
+        alpha = -9999
+        beta = 9999
+
         for direction in which_directions_sir:
-            value_from_min = mins_turn(current_depth, self, gameState.generateSuccessor(0, direction), current_min_layer_aka_ghost_index)
+            value_from_min = mins_turn_ab(current_depth, self, gameState.generateSuccessor(0, direction), current_min_layer_aka_ghost_index, alpha, beta)
             print('max: got', value, 'for dir', direction)
     
             if value_from_min > value:
                 value = value_from_min
                 direction_for_value = direction
+
+            alpha = max(alpha, value)
 
         print('moving', direction_for_value, 'for value', value)
         return direction_for_value        
