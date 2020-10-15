@@ -233,7 +233,7 @@ def maxs_turn_ab(current_depth, agent, gamestate, alpha, beta):
     for direction in which_directions_sir:
         value = max(value, mins_turn_ab(current_depth, agent, gamestate.generateSuccessor(0, direction), current_min_layer_aka_ghost_index, alpha, beta))
 
-        if value >= beta:
+        if value > beta:
             return value
 
         alpha = max(alpha, value)
@@ -254,7 +254,7 @@ def mins_turn_ab(current_depth, agent, gamestate, current_min_layer_aka_ghost_in
         else:
             value = min(value, maxs_turn_ab(current_depth + 1, agent, gamestate.generateSuccessor(current_min_layer_aka_ghost_index, direction), alpha, beta))
 
-        if value <= alpha:
+        if value < alpha:
             return value
 
         beta = min(beta, value)
