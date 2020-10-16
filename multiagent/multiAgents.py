@@ -93,7 +93,7 @@ class ReflexAgent(Agent):
         for gposition in gpositions:
             ghostx, ghosty = gposition
 
-            if euclidean(ghostx, ghosty, curpacx, curpacy) < 3:
+            if euclidean(ghostx, ghosty, curpacx, curpacy) < 10:
                 a_ghost_is_within_three_euclideans = True
 
                 
@@ -346,18 +346,21 @@ class ExpectimaxAgent(MultiAgentSearchAgent):
         which_directions_sir = gameState.getLegalActions(0)
         current_chance_layer_aka_ghost_index = 1
         value = -9999
-        chosen_direction = which_directions_sir[0]
+        value_to_direction = dict()
 
         for direction in which_directions_sir:
             value_from_chance = chances_turn(self, gameState.generateSuccessor(0, direction), current_depth, current_chance_layer_aka_ghost_index)
-            print('max: got', value_from_chance, 'for dir', direction)
+
+            if not value_from_chance in value_to_direction:
+                value_to_direction[value_from_chance] = list()
+
+            value_to_direction[value_from_chance].append(direction)
             
             if value_from_chance > value:
                 value = value_from_chance
-                chosen_direction = direction
 
-        print('moving', chosen_direction, 'for value', value)
-        return chosen_direction        
+        chosen_direction = random.choice(value_to_direction[value])
+        return chosen_direction
 
 def betterEvaluationFunction(currentGameState):
     """
@@ -365,6 +368,14 @@ def betterEvaluationFunction(currentGameState):
     evaluation function (question 5).
 
     DESCRIPTION: <write something here so we know what you did>
+
+    # Agustin:
+    # ?????????????
+    # Just stay away from zie ghost.
+    # I tried lots of clever tricks before this!
+    # Path finding, involutive geometry, etc etc.
+    # Ockham's razor...
+
     """
     pacmanx, pacmany = currentGameState.getPacmanPosition()
     noms = currentGameState.getFood().asList()
@@ -378,7 +389,12 @@ def betterEvaluationFunction(currentGameState):
     if scaredtimes[0] > 0:
         eat_the_ghost = scaredtimes[0]
             
-    return -1 * (len(capsules) + 1) + -1 * len(noms)
+    # return -1 * (len(capsules) + 1) + -1 * len(noms) + currentGameState.getScore()
+    
+    # ?????????????
+    # Just stay away from zie ghost.
+    
+    return -1 * (euclidean_to_ghost) + currentGameState.getScore()
     
 
 # Abbreviation
