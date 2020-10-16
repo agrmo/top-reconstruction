@@ -18,7 +18,10 @@ import random, util
 
 from game import Agent
 
-# Agustin: Hello and welcome to PA2.
+# Agustin: Hello and welcome to PA2. Everything in this submission
+# should work in a fairly quick amount of time, and no implementation
+# is particularly interesting. My fanciest code is in Q4, and my
+# ugliest code is in Q1.
 
 def euclidean(x1, y1, x2, y2):
     return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
@@ -71,18 +74,21 @@ class ReflexAgent(Agent):
         Print out these variables to see what you're getting, then combine them
         to create a masterful evaluation function.
         """
+
+        # Agustin: This is the worst function I have written in this
+        # class. It's also the classiest. Here are the cases:
+
+        # 1. If pacman is close, run.
+        # 2. Else if nom is adjacent, munch.
+        # 3. Else move to a nom.
+        # 4. Else should not be in this case, you silly programmer. Return 0.
+        
         # Useful information you can extract from a GameState (pacman.py)
         successorGameState = currentGameState.generatePacmanSuccessor(action)
         newPos = successorGameState.getPacmanPosition()
         newFood = successorGameState.getFood()
         newGhostStates = successorGameState.getGhostStates()
         newScaredTimes = [ghostState.scaredTimer for ghostState in newGhostStates]
-
-        # Return a constant, except for when a ghost is within 3
-        # euclidean units away. When a constant is returned, the
-        # caller will move the pacman randomly. When a ghost is within
-        # 3 euclideans, return a number that moves it farthest away
-        # from the closest ghost.
 
         gpositions = successorGameState.getGhostPositions()
         curpacx, curpacy = currentGameState.getPacmanPosition()
@@ -93,13 +99,32 @@ class ReflexAgent(Agent):
         for gposition in gpositions:
             ghostx, ghosty = gposition
 
-            if euclidean(ghostx, ghosty, curpacx, curpacy) < 10:
+            if euclidean(ghostx, ghosty, curpacx, curpacy) < 3:
                 a_ghost_is_within_three_euclideans = True
-
                 
         if not a_ghost_is_within_three_euclideans:
-            print('returning 0 for move', action)
-            return 0
+            newposx, newposy = newPos
+            
+            if currentGameState.getFood()[newposx][newposy]:
+                return 1
+
+            noms = currentGameState.getFood().asList()
+            closest_nom = noms[0]
+            closest_nom_x, closest_nom_y = closest_nom
+            cur_euclidean_to_closest_nom = euclidean(curpacx, curpacy, closest_nom_x, closest_nom_y)
+            
+            for nom in noms:
+                maybeclosestnomx, maybeclosestnomy = nom
+                if euclidean(maybeclosestnomx, maybeclosestnomy, curpacx, curpacy) < cur_euclidean_to_closest_nom:
+                    closest_nom_x = maybeclosestnomx
+                    closest_nom_y = maybeclosestnomy
+                    cur_euclidean_to_closest_nom = euclidean(maybeclosestnomx, maybeclosestnomy, curpacx, curpacy)
+
+            next_euc_to_closest_nom = euclidean(newpacx, newpacy, closest_nom_x, closest_nom_y)
+
+            if next_euc_to_closest_nom < cur_euclidean_to_closest_nom:
+                return 2
+            
         else:
             closest_ghostx, closest_ghosty = gpositions[0]
 
@@ -110,10 +135,9 @@ class ReflexAgent(Agent):
                     closest_ghostx = maybe_closest_ghostx
                     closest_ghosty = maybe_closest_ghosty
 
-            print('returning', euclidean(newpacx, newpacy, closest_ghostx, closest_ghosty), 'for move', action)
             return euclidean(newpacx, newpacy, closest_ghostx, closest_ghosty)
-                    
-        return evaluationfunction
+
+        return 0
 
 def scoreEvaluationFunction(currentGameState):
     """
@@ -212,13 +236,11 @@ class MinimaxAgent(MultiAgentSearchAgent):
 
         for direction in which_directions_sir:
             value_from_min = mins_turn(current_depth, self, gameState.generateSuccessor(0, direction), current_min_layer_aka_ghost_index)
-            print('max: got', value, 'for dir', direction)
     
             if value_from_min > value:
                 value = value_from_min
                 direction_for_value = direction
 
-        print('moving', direction_for_value, 'for value', value)
         return direction_for_value        
 
 
@@ -284,7 +306,6 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
 
         for direction in which_directions_sir:
             value_from_min = mins_turn_ab(current_depth, self, gameState.generateSuccessor(0, direction), current_min_layer_aka_ghost_index, alpha, beta)
-            print('max: got', value_from_min, 'for dir', direction)
     
             if value_from_min > value:
                 value = value_from_min
@@ -292,7 +313,6 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
 
             alpha = max(alpha, value)
 
-        print('moving', direction_for_value, 'for value', value)
         return direction_for_value        
 
 
