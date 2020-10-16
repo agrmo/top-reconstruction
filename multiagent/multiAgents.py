@@ -82,7 +82,7 @@ class ReflexAgent(Agent):
         # euclidean units away. When a constant is returned, the
         # caller will move the pacman randomly. When a ghost is within
         # 3 euclideans, return a number that moves it farthest away
-        # from the closest ghost..
+        # from the closest ghost.
 
         gpositions = successorGameState.getGhostPositions()
         curpacx, curpacy = currentGameState.getPacmanPosition()
@@ -343,21 +343,21 @@ class ExpectimaxAgent(MultiAgentSearchAgent):
             return self.evaluationFunction(gameState)
     
         current_depth = 1
-        value = -9999
         which_directions_sir = gameState.getLegalActions(0)
-        direction_for_value = which_directions_sir[0]
         current_chance_layer_aka_ghost_index = 1
+        value = -9999
+        chosen_direction = which_directions_sir[0]
 
         for direction in which_directions_sir:
             value_from_chance = chances_turn(self, gameState.generateSuccessor(0, direction), current_depth, current_chance_layer_aka_ghost_index)
             print('max: got', value_from_chance, 'for dir', direction)
-    
+            
             if value_from_chance > value:
                 value = value_from_chance
-                direction_for_value = direction
+                chosen_direction = direction
 
-        print('moving', direction_for_value, 'for value', value)
-        return direction_for_value        
+        print('moving', chosen_direction, 'for value', value)
+        return chosen_direction        
 
 def betterEvaluationFunction(currentGameState):
     """
@@ -371,15 +371,14 @@ def betterEvaluationFunction(currentGameState):
     capsules = currentGameState.getCapsules()
     ghosts = currentGameState.getGhostStates()
     scaredtimes = [ghost.scaredTimer for ghost in ghosts]
-    print('st', scaredtimes)
 
     euclidean_to_ghost = euclidean(pacmanx, pacmany, ghosts[0].getPosition()[0], ghosts[0].getPosition()[1])
-    move_away_from_ghost = 0
+    eat_the_ghost = 0
     
     if scaredtimes[0] > 0:
-        move_away_from_ghost = -1 * euclidean_to_ghost
+        eat_the_ghost = scaredtimes[0]
             
-    return (-1 * (len(capsules) + 1) * len(noms)) + move_away_from_ghost
+    return -1 * (len(capsules) + 1) + -1 * len(noms)
     
 
 # Abbreviation
