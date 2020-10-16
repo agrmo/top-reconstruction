@@ -372,16 +372,25 @@ def betterEvaluationFunction(currentGameState):
     ghosts = currentGameState.getGhostStates()
     scaredtimes = [ghost.scaredTimer for ghost in ghosts]
 
-    closest_capsule_x, closest_capsule_y = noms[0]
-    euclidean_to_closest_capsule = euclidean(pacmanx, pacmany, closest_capsule_x, closest_capsule_y)
+    closest_ghost_index = 0
+    closest_ghost_x, closest_ghost_y = ghosts[0].getPosition()
+    euclidean_to_closest_ghost = euclidean(pacmanx, pacmany, closest_ghost_x, closest_ghost_y)
 
-    for capsule in capsules:
-        capsulex, capsuley = capsule
-        euclidean_to_capsule = euclidean(pacmanx, pacmany, capsulex, capsuley)
+    for index, ghost in enumerate(ghosts):
+        ghostx, ghosty = ghost.getPosition()
+        euclidean_to_ghost = euclidean(pacmanx, pacmany, ghostx, ghosty)
 
-        euclidean_to_closest_capsule = min(euclidean_to_closest_capsule, euclidean_to_capsule)
+        if euclidean_to_ghost < euclidean_to_closest_ghost:
+            euclidean_to_closest_ghost = euclidean_to_ghost
+            closest_ghost_index = index
 
-    return 1.0 / euclidean_to_closest_capsule
+    move_towards_ghost = 1
+    
+    if scaredtimes[closest_ghost_index] > 0:
+        print('moving')
+        move_towards_ghost = -1
+            
+    return (-1 * len(noms)) + (-1 * len(capsules) * len(noms)) + (move_towards_ghost * euclidean_to_closest_ghost)
     
 
 # Abbreviation
