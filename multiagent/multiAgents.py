@@ -295,6 +295,38 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
         print('moving', direction_for_value, 'for value', value)
         return direction_for_value        
 
+
+def maxs_turn_expecti(agent, gamestate, current_depth):
+    if gamestate.isWin() or gamestate.isLose() or current_depth > agent.depth:
+        return agent.evaluationFunction(gamestate)
+
+    which_directions_sir = gamestate.getLegalActions(0)
+    value = -9999
+    current_chance_layer_aka_ghost_index = 1
+
+    for direction in which_directions_sir:
+        value = max(value, chances_turn(agent, gamestate.generateSuccessor(0, direction), current_depth, current_chance_layer_aka_ghost_index))
+
+    return value
+
+
+def chances_turn(agent, gamestate, current_depth, current_chance_layer_aka_ghost_index):
+    if gamestate.isWin() or gamestate.isLose():
+        return agent.evaluationFunction(gamestate)
+
+    which_directions_sir = gamestate.getLegalActions(current_chance_layer_aka_ghost_index)
+    chance_layers = gamestate.getNumAgents() - 1
+    value_sum = 0
+
+    for direction in which_directions_sir:
+        if current_chance_layer_aka_ghost_index < chance_layers:
+            value_sum += chances_turn(agent, gamestate.generateSuccessor(current_chance_layer_aka_ghost_index, direction), current_depth, current_chance_layer_aka_ghost_index + 1)
+        else:
+            value_sum += maxs_turn_expecti(agent, gamestate.generateSuccessor(current_chance_layer_aka_ghost_index, direction), current_depth + 1)
+
+    return value_sum / len(which_directions_sir)
+
+    
 class ExpectimaxAgent(MultiAgentSearchAgent):
     """
       Your expectimax agent (question 4)
@@ -307,8 +339,25 @@ class ExpectimaxAgent(MultiAgentSearchAgent):
         All ghosts should be modeled as choosing uniformly at random from their
         legal moves.
         """
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        if gameState.isWin() or gameState.isLose():
+            return self.evaluationFunction(gameState)
+    
+        current_depth = 1
+        value = -9999
+        which_directions_sir = gameState.getLegalActions(0)
+        direction_for_value = which_directions_sir[0]
+        current_chance_layer_aka_ghost_index = 1
+
+        for direction in which_directions_sir:
+            value_from_chance = chances_turn(self, gameState.generateSuccessor(0, direction), current_depth, current_chance_layer_aka_ghost_index)
+            print('max: got', value_from_chance, 'for dir', direction)
+    
+            if value_from_chance > value:
+                value = value_from_chance
+                direction_for_value = direction
+
+        print('moving', direction_for_value, 'for value', value)
+        return direction_for_value        
 
 def betterEvaluationFunction(currentGameState):
     """
