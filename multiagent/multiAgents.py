@@ -366,8 +366,23 @@ def betterEvaluationFunction(currentGameState):
 
     DESCRIPTION: <write something here so we know what you did>
     """
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    pacmanx, pacmany = currentGameState.getPacmanPosition()
+    noms = currentGameState.getFood().asList()
+    capsules = currentGameState.getCapsules()
+    ghosts = currentGameState.getGhostStates()
+    scaredtimes = [ghost.scaredTimer for ghost in ghosts]
+
+    closest_capsule_x, closest_capsule_y = noms[0]
+    euclidean_to_closest_capsule = euclidean(pacmanx, pacmany, closest_capsule_x, closest_capsule_y)
+
+    for capsule in capsules:
+        capsulex, capsuley = capsule
+        euclidean_to_capsule = euclidean(pacmanx, pacmany, capsulex, capsuley)
+
+        euclidean_to_closest_capsule = min(euclidean_to_closest_capsule, euclidean_to_capsule)
+
+    return 1.0 / euclidean_to_closest_capsule
+    
 
 # Abbreviation
 better = betterEvaluationFunction
