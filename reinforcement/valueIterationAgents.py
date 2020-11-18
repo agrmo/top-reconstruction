@@ -124,7 +124,6 @@ class ValueIterationAgent(ValueEstimationAgent):
         """
         # Cite Sutton and Bartel page 75
         
-        print('in', state)
         q_value = 0
 
         list_of_nextstate_prob = self.mdp.getTransitionStatesAndProbs(state, action)
@@ -145,7 +144,7 @@ class ValueIterationAgent(ValueEstimationAgent):
           there are no legal actions, which is the case at the
           terminal state, you should return None.
         """
-        
+
         if self.mdp.isTerminal(state):
             return None
 
