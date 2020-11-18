@@ -59,8 +59,11 @@ class ValueIterationAgent(ValueEstimationAgent):
         self.values = util.Counter() # A Counter is a dict with default 0
         self.runValueIteration()
 
+    # Agustin: Hello and welcome to PA3.
+    # Supposedly my code is entered at computeActionFromValues.
+    # I'll use some code here in Q3.
 
-    def time_step_one_state(self, state):
+    def get_value_of_state(self, state):
         actions = self.mdp.getPossibleActions(state)
 
         # Now max over the actions.
@@ -82,7 +85,7 @@ class ValueIterationAgent(ValueEstimationAgent):
             max_candidates.append(nextstate_sum)
 
         return max(max_candidates)
-
+            
 
     def time_step_all_values(self):
         # Cite
@@ -99,7 +102,7 @@ class ValueIterationAgent(ValueEstimationAgent):
         for state in states:
 
             if not self.mdp.isTerminal(state):
-                changed_values[state] = self.time_step_one_state(state)
+                changed_values[state] = self.get_value_of_state(state)
 
         self.values = changed_values
 
@@ -197,10 +200,37 @@ class AsynchronousValueIterationAgent(ValueIterationAgent):
               mdp.getReward(state)
               mdp.isTerminal(state)
         """
+        # Woops I did Q4.
+        
+        # Identical to Q1 but update only one state at a time.
+        # Ordering of states? As given in getStates.        
+        self.states = mdp.getStates()
+        self.index_of_next_state_to_update = 0
+        self.values = util.Counter()
+        
         ValueIterationAgent.__init__(self, mdp, discount, iterations)
 
+    def time_step_one_value(self):
+        # Similar to time_step_all_values.
+        # Which value to step? The next state in getStates.
+        # End of the list? Start at beginning.
+
+        state_to_update = self.states[self.index_of_next_state_to_update]
+        
+        if not self.mdp.isTerminal(state_to_update):
+            self.values[state_to_update] = self.get_value_of_state(state_to_update)
+
+        self.index_of_next_state_to_update += 1
+
+        if self.index_of_next_state_to_update >= len(self.states):
+            self.index_of_next_state_to_update = 0
+
+
     def runValueIteration(self):
-        "*** YOUR CODE HERE ***"
+        # Can be either in-place or not in-place.
+
+        for iteration in range(self.iterations):
+            self.time_step_one_value()
 
 class PrioritizedSweepingValueIterationAgent(AsynchronousValueIterationAgent):
     """
