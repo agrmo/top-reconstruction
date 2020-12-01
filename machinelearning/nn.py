@@ -34,7 +34,7 @@ class Parameter(DataNode):
     """
     def __init__(self, *shape):
         assert len(shape) == 2, (
-            "Shape must have 2 dimensions, instead has {}".format(len(shape)))
+            "Shape  must have 2 dimensions, instead has {}".format(len(shape)))
         assert all(isinstance(dim, int) and dim > 0 for dim in shape), (
             "Shape must consist of positive integers, got {!r}".format(shape))
         limit = np.sqrt(3.0 / np.mean(shape))
