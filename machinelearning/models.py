@@ -212,11 +212,13 @@ class DigitClassificationModel(object):
             grad_wrt_m1, grad_wrt_b1, grad_wrt_m2, grad_wrt_b2 = nn.gradients(loss, [self.m1, self.b1, self.m2, self.b2])
             # .09 epoch 5 batch 5 is about .975
             # .0005 epoch 5 batch 10 is about .95
-            # DONT TOUCH
-            self.m1.update(grad_wrt_m1, -0.07)
-            self.b1.update(grad_wrt_b1, -0.07)
-            self.m2.update(grad_wrt_m2, -0.07)
-            self.b2.update(grad_wrt_b2, -0.07)
+            # 0.07 epoch 5 batch 10 depth 200 is about .971
+            # -0.05 200 5 is best so far
+            # 
+            self.m1.update(grad_wrt_m1, -0.05)
+            self.b1.update(grad_wrt_b1, -0.05)
+            self.m2.update(grad_wrt_m2, -0.05)
+            self.b2.update(grad_wrt_b2, -0.05)
 
         return loss
     
@@ -226,13 +228,11 @@ class DigitClassificationModel(object):
         Trains the model.
         """
         accuracy = 0.0
-        epochs = 0
         
-        while (epochs < 6):
+        while (accuracy < 0.98):
             accuracy = dataset.get_validation_accuracy()
             print('acc', accuracy)
             self.onepass_train(dataset)
-            epochs += 1
 
 
 class LanguageIDModel(object):
