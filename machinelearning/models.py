@@ -157,9 +157,9 @@ class DigitClassificationModel(object):
     def __init__(self):
         # Initialize your model parameters here
         self.batchsize = 5
-        self.m1 = nn.Parameter(784, 120)
-        self.b1 = nn.Parameter(1, 120)
-        self.m2 = nn.Parameter(120, 10)
+        self.m1 = nn.Parameter(784, 200)
+        self.b1 = nn.Parameter(1, 200)
+        self.m2 = nn.Parameter(200, 10)
         self.b2 = nn.Parameter(1, 10)
 
     def run(self, x):
@@ -210,10 +210,13 @@ class DigitClassificationModel(object):
         for constant_training_x, constant_training_y in dataset.iterate_once(self.batchsize):
             loss = self.get_loss(constant_training_x, constant_training_y)
             grad_wrt_m1, grad_wrt_b1, grad_wrt_m2, grad_wrt_b2 = nn.gradients(loss, [self.m1, self.b1, self.m2, self.b2])
-            self.m1.update(grad_wrt_m1, -0.004)
-            self.b1.update(grad_wrt_b1, -0.004)
-            self.m2.update(grad_wrt_m2, -0.004)
-            self.b2.update(grad_wrt_b2, -0.004)
+            # .09 epoch 5 batch 5 is about .975
+            # .0005 epoch 5 batch 10 is about .95
+            # DONT TOUCH
+            self.m1.update(grad_wrt_m1, -0.07)
+            self.b1.update(grad_wrt_b1, -0.07)
+            self.m2.update(grad_wrt_m2, -0.07)
+            self.b2.update(grad_wrt_b2, -0.07)
 
         return loss
     
@@ -222,14 +225,15 @@ class DigitClassificationModel(object):
         """
         Trains the model.
         """
-        print('hi')
-        accuracy = dataset.get_validation_accuracy()
+        accuracy = 0.0
+        epochs = 0
         
-        while (accuracy < 0.97):
+        while (epochs < 6):
+            accuracy = dataset.get_validation_accuracy()
             print('acc', accuracy)
             self.onepass_train(dataset)
+            epochs += 1
 
-        print('returnin with loss', loss)
 
 class LanguageIDModel(object):
     """
