@@ -77,7 +77,6 @@ class RegressionModel(object):
     def __init__(self):
         # Initialize your model parameters here
         self.batchsize = 5
-
         self.m1 = nn.Parameter(1, 30)
         self.b1 = nn.Parameter(1, 30)
         self.m2 = nn.Parameter(30, 1)
@@ -130,13 +129,6 @@ class RegressionModel(object):
 
         return loss
 
-    def dataset_loss(self, dataset):
-        x_constant = nn.Constant(dataset.x)
-        y_constant = nn.Constant(dataset.y)
-        loss = self.get_loss(x_constant, y_constant)
-        loss_scalar = nn.as_scalar(loss)
-        return loss_scalar
-
     def train(self, dataset):
         """
         Trains the model.
@@ -164,7 +156,11 @@ class DigitClassificationModel(object):
     """
     def __init__(self):
         # Initialize your model parameters here
-        "*** YOUR CODE HERE ***"
+        self.batchsize = 5
+        self.m1 = nn.Parameter(784, 120)
+        self.b1 = nn.Parameter(1, 120)
+        self.m2 = nn.Parameter(120, 10)
+        self.b2 = nn.Parameter(1, 10)
 
     def run(self, x):
         """
@@ -180,7 +176,16 @@ class DigitClassificationModel(object):
             A node with shape (batch_size x 10) containing predicted scores
                 (also called logits)
         """
-        "*** YOUR CODE HERE ***"
+        xm1 = nn.Linear(x, self.m1)
+        addbias1 = nn.AddBias(xm1, self.b1)
+
+        # Compute a rectified linear unit, max(x,0).
+        layer1_relu = nn.ReLU(addbias1)
+        
+        xm2 = nn.Linear(layer1_relu, self.m2)
+        addbias2 = nn.AddBias(xm2, self.b2)
+
+        return addbias2
 
     def get_loss(self, x, y):
         """
@@ -195,13 +200,36 @@ class DigitClassificationModel(object):
             y: a node with shape (batch_size x 10)
         Returns: a loss node
         """
-        "*** YOUR CODE HERE ***"
+        predicted_y = self.run(x)
+        loss = nn.SoftmaxLoss(predicted_y, y)
+        return loss
+
+
+    def onepass_train(self, dataset):
+
+        for constant_training_x, constant_training_y in dataset.iterate_once(self.batchsize):
+            loss = self.get_loss(constant_training_x, constant_training_y)
+            grad_wrt_m1, grad_wrt_b1, grad_wrt_m2, grad_wrt_b2 = nn.gradients(loss, [self.m1, self.b1, self.m2, self.b2])
+            self.m1.update(grad_wrt_m1, -0.004)
+            self.b1.update(grad_wrt_b1, -0.004)
+            self.m2.update(grad_wrt_m2, -0.004)
+            self.b2.update(grad_wrt_b2, -0.004)
+
+        return loss
+    
 
     def train(self, dataset):
         """
         Trains the model.
         """
-        "*** YOUR CODE HERE ***"
+        print('hi')
+        accuracy = dataset.get_validation_accuracy()
+        
+        while (accuracy < 0.97):
+            print('acc', accuracy)
+            self.onepass_train(dataset)
+
+        print('returnin with loss', loss)
 
 class LanguageIDModel(object):
     """
