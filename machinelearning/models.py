@@ -156,7 +156,7 @@ class DigitClassificationModel(object):
     """
     def __init__(self):
         # Initialize your model parameters here
-        self.batchsize = 5
+        self.batchsize = 50
         self.m1 = nn.Parameter(784, 200)
         self.b1 = nn.Parameter(1, 200)
         self.m2 = nn.Parameter(200, 10)
@@ -215,10 +215,10 @@ class DigitClassificationModel(object):
             # 0.07 epoch 5 batch 10 depth 200 is about .971
             # -0.05 200 5 is best so far
             # 
-            self.m1.update(grad_wrt_m1, -0.05)
-            self.b1.update(grad_wrt_b1, -0.05)
-            self.m2.update(grad_wrt_m2, -0.05)
-            self.b2.update(grad_wrt_b2, -0.05)
+            self.m1.update(grad_wrt_m1, -0.5)
+            self.b1.update(grad_wrt_b1, -0.5)
+            self.m2.update(grad_wrt_m2, -0.5)
+            self.b2.update(grad_wrt_b2, -0.5)
 
         return loss
     
