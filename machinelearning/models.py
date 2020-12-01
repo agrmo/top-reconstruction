@@ -127,7 +127,6 @@ class RegressionModel(object):
             self.b1.update(grad_wrt_b1, -0.004)
             self.m2.update(grad_wrt_m2, -0.004)
             self.b2.update(grad_wrt_b2, -0.004)
-            print('losso', nn.as_scalar(loss))
 
         return loss
 
@@ -145,10 +144,9 @@ class RegressionModel(object):
         loss = nn.as_scalar(self.onepass_train(dataset))
         
         while (loss > 0.02):
-            print('loss', loss)
             loss = nn.as_scalar(self.onepass_train(dataset))
 
-        print('returnin')
+        print('returnin with loss', loss)
         
 class DigitClassificationModel(object):
     """
