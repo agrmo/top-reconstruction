@@ -26,7 +26,13 @@ class PerceptronModel(object):
             x: a node with shape (1 x dimensions)
         Returns: a node containing a single number (the score)
         """
-        "*** YOUR CODE HERE ***"
+        return nn.DotProduct(x, self.w)
+
+    def classify(self, scalar):        
+        if scalar >= 0:
+            return 1
+        else:
+            return -1
 
     def get_prediction(self, x):
         """
@@ -34,13 +40,33 @@ class PerceptronModel(object):
 
         Returns: 1 or -1
         """
-        "*** YOUR CODE HERE ***"
+        dotproduct = self.run(x)
+        scalar = nn.as_scalar(dotproduct)
+
+        return self.classify(scalar)
+
+    def onepass_train(self, dataset):
+        at_least_one_misclassified = False
+        batch_size = 1
+        for constant_training_x, constant_training_y in dataset.iterate_once(batch_size):
+            scalar_predicted_y = self.get_prediction(constant_training_x)
+
+            if scalar_predicted_y != nn.as_scalar(constant_training_y):
+                at_least_one_misclassified = True
+                self.w.update(constant_training_x, nn.as_scalar(constant_training_y))
+
+        return at_least_one_misclassified
 
     def train(self, dataset):
         """
         Train the perceptron until convergence.
         """
-        "*** YOUR CODE HERE ***"
+        at_least_one_misclassified = self.onepass_train(dataset)
+
+        while (at_least_one_misclassified):
+            at_least_one_misclassified = self.onepass_train(dataset)
+            
+        
 
 class RegressionModel(object):
     """
