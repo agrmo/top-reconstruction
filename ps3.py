@@ -71,7 +71,7 @@ def generate_hierarchical_model():
     # Depth of 5 has 15625 nodes. 6, 78125. 7, 390625.
     # Great. That math checks out.
     
-    (a,_,_) = get_five_modules(7)
+    (a,_,_) = get_five_modules(5)
 
     return a
 
@@ -113,7 +113,7 @@ def get_list_of_rebels_by_degree(rebelgraph):
 
     return list_of_rebels_sorted
 
-def remove_nodes_and_plot(rebelgraph, list_of_rebels, howremove):
+def remove_nodes_and_plot(rebelgraph, list_of_rebels, title, howremove):
     # This algorithm doesn't know what the graph is, how it was
     # generated, how how the rebels were selected to be removed. What
     # it does know is to remove the first rebel in the list
@@ -138,36 +138,38 @@ def remove_nodes_and_plot(rebelgraph, list_of_rebels, howremove):
         y_axis.append(len(connectedcomponents_sorted[0]))
     
     axis = matplotlib.pyplot.gca()
-    axis.set_title('Configuration Model.')
+    axis.set_title(title + ' Model.')
     axis.set_xlabel('Number of rebels removed')
     axis.set_ylabel('Size of largest component')
     matplotlib.pyplot.scatter(x_axis, y_axis, label=howremove)
     axis.legend()
 
-def q1():
+def q1a():
     # rebelgraph = generate_configuration_model()
     # list_of_rebels = get_list_of_rebels_by_local_clustering(rebelgraph)
-    # remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Local clustering removal')
+    # remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Configuration', 'Local clustering removal')
 
     # rebelgraph = generate_configuration_model()
     # list_of_rebels = get_list_of_rebels_by_degree(rebelgraph)
-    # remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Degree removal')
-
-    rebelgraph = generate_hierarchical_model()
-    list_of_rebels = get_list_of_rebels_by_degree(rebelgraph)
-    remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Degree removal')
-
-    # rebelgraph = generate_hierarchical_model()
-    # list_of_rebels = get_list_of_rebels_by_degree(rebelgraph)
-    # remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Degree removal')
+    # remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Configuration', 'Degree removal')
 
     import matplotlib.pyplot
     matplotlib.pyplot.show()
+
+def q1b():
+    rebelgraph = generate_hierarchical_model()
+    list_of_rebels = get_list_of_rebels_by_local_clustering(rebelgraph)
+    remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Hierarchical', 'Local clustering removal')
     
-    print('Exiting')
+    rebelgraph = generate_hierarchical_model()
+    list_of_rebels = get_list_of_rebels_by_degree(rebelgraph)
+    remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Hierarchical', 'Degree removal')
+
+    import matplotlib.pyplot
+    matplotlib.pyplot.show()    
 
 def main():
-    q1()
+    q1b()
     
 if __name__ == '__main__':
     main()
