@@ -240,7 +240,6 @@ class DigitClassificationModel(object):
         
         while (accuracy < 0.975):
             accuracy = dataset.get_validation_accuracy()
-            print('acc', accuracy)
             self.onepass_train(dataset)
 
 
@@ -259,12 +258,6 @@ class LanguageIDModel(object):
         # You can refer to self.num_chars or len(self.languages) in your code
         self.num_chars = 47
         self.languages = ["English", "Spanish", "Finnish", "Dutch", "Polish"]
-
-        self.batchsize = 50
-        self.h_depth = 400
-        self.w = nn.Parameter(self.num_chars, self.h_depth)
-        self.h = nn.Parameter(self.h_depth, self.h_depth)
-        self.l = nn.Parameter(self.h_depth, len(self.languages))
         
 
     def run(self, xs):
@@ -296,14 +289,6 @@ class LanguageIDModel(object):
             A node with shape (batch_size x 5) containing predicted scores
                 (also called logits)
         """
-        rnn = nn.Linear(xs[0], self.w)
-
-        xs = xs[1:]
-
-        for x in xs:
-            rnn = nn.Add(nn.Linear(x, self.w), nn.Linear(rnn, self.h))
-
-        return nn.Linear(rnn, self.l)
 
     def get_loss(self, xs, y):
         """
@@ -319,30 +304,9 @@ class LanguageIDModel(object):
             y: a node with shape (batch_size x 5)
         Returns: a loss node
         """
-        predicted_y = self.run(xs)
-        loss = nn.SoftmaxLoss(predicted_y, y)
-        return loss
-
-    def onepass_train(self, dataset):
-
-        for constant_training_x, constant_training_y in dataset.iterate_once(self.batchsize):
-            loss = self.get_loss(constant_training_x, constant_training_y)
-            grad_wrt_w, grad_wrt_h, grad_wrt_l = nn.gradients(loss, [self.w, self.h, self.l])
-            self.w.update(grad_wrt_w, -0.08)
-            self.h.update(grad_wrt_h, -0.08)
-            self.l.update(grad_wrt_l, -0.08)
-
-        return loss
     
 
     def train(self, dataset):
         """
         Trains the model.
         """
-        accuracy = 0.0
-        
-        while (accuracy < 0.815):
-            accuracy = dataset.get_validation_accuracy()
-            self.onepass_train(dataset)
-
-        print('lgtm')
