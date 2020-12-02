@@ -23,7 +23,7 @@ def generate_hierarchical_model():
     import networkx
     import math
 
-    def get_module():
+    def get_base_module():
         # Make a fully connected graph of five nodes. We definitely
         # need their names to be unique, so generate that now.
         
@@ -36,8 +36,9 @@ def generate_hierarchical_model():
             return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))        
         
         complete_graph = networkx.relabel_nodes(complete_graph, get_random_name)
+        nodes = list(complete_graph.nodes)
 
-        return complete_graph, list(complete_graph.nodes)[0], list(complete_graph.nodes)[1:]
+        return complete_graph, nodes[0], nodes[1:]
 
     def connect_modules(graph, center_node, list_of_peripheral_nodes):
         for node in list_of_peripheral_nodes:
@@ -45,29 +46,36 @@ def generate_hierarchical_model():
 
         return graph
 
-    def get_five_modules():
+    def get_five_modules(n):
         # Make a graph from five modules, one being the center module,
-        # and the other four being the peripheral modules. Any module
-        # can be the center module; choose the first. Connect all
+        # and the other four being the peripheral modules. Connect all
         # nodes of the peripheral modules to the center node of the
         # center module.
-        periph_modules = [get_module() for n in range(4)]
+        
+        if n == 0:
+            return get_base_module()
+        
+        modules = [get_five_modules(n - 1) for _ in range(5)]
         periphs = list()
-        center_module, center_node, periphs_of_center = get_module()
+        center_module, center_node, periphs_of_center = modules[0]
         from networkx.algorithms.operators import union
 
-        for (module, modcenter, modperiphs) in periph_modules:
+        for (module, modcenter, modperiphs) in modules[1:]:
             periphs.extend(modperiphs)
             center_module = union(center_module, module)
         
         final_graph = connect_modules(center_module, center_node, periphs)
-        
-        import matplotlib.pyplot as plt
-        networkx.draw(final_graph)
-        plt.show()
 
-    get_five_modules()
-        
+        return final_graph, center_node, periphs
+    
+    (a,b,c) = get_five_modules(7)
+
+    print(len(a.nodes))
+    # import matplotlib.pyplot as plt
+    # networkx.draw(a)
+    # plt.show()
+
+    
 
 def get_list_of_rebels_by_local_clustering(rebelgraph):
     # Input: Graph
