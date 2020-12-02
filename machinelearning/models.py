@@ -260,7 +260,7 @@ class LanguageIDModel(object):
         self.num_chars = 47
         self.languages = ["English", "Spanish", "Finnish", "Dutch", "Polish"]
 
-        self.batchsize = 10
+        self.batchsize = 50
         self.h_depth = 400
         self.w = nn.Parameter(self.num_chars, self.h_depth)
         self.h = nn.Parameter(self.h_depth, self.h_depth)
@@ -328,9 +328,9 @@ class LanguageIDModel(object):
         for constant_training_x, constant_training_y in dataset.iterate_once(self.batchsize):
             loss = self.get_loss(constant_training_x, constant_training_y)
             grad_wrt_w, grad_wrt_h, grad_wrt_l = nn.gradients(loss, [self.w, self.h, self.l])
-            self.w.update(grad_wrt_w, -0.05)
-            self.h.update(grad_wrt_h, -0.05)
-            self.l.update(grad_wrt_l, -0.005)
+            self.w.update(grad_wrt_w, -0.08)
+            self.h.update(grad_wrt_h, -0.08)
+            self.l.update(grad_wrt_l, -0.08)
 
         return loss
     
