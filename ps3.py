@@ -46,16 +46,16 @@ def generate_hierarchical_model():
 
         return graph
 
-    def get_five_modules(n):
+    def get_five_modules(depth):
         # Make a graph from five modules, one being the center module,
         # and the other four being the peripheral modules. Connect all
         # nodes of the peripheral modules to the center node of the
         # center module.
         
-        if n == 0:
+        if depth == 0:
             return get_base_module()
         
-        modules = [get_five_modules(n - 1) for _ in range(5)]
+        modules = [get_five_modules(depth - 1) for _ in range(5)]
         periphs = list()
         center_module, center_node, periphs_of_center = modules[0]
         from networkx.algorithms.operators import union
@@ -67,15 +67,13 @@ def generate_hierarchical_model():
         final_graph = connect_modules(center_module, center_node, periphs)
 
         return final_graph, center_node, periphs
-    
-    (a,b,c) = get_five_modules(7)
 
-    print(len(a.nodes))
-    # import matplotlib.pyplot as plt
-    # networkx.draw(a)
-    # plt.show()
-
+    # Depth of 5 has 15625 nodes. 6, 78125. 7, 390625.
+    # Great. That math checks out.
     
+    (a,_,_) = get_five_modules(7)
+
+    return a
 
 def get_list_of_rebels_by_local_clustering(rebelgraph):
     # Input: Graph
@@ -156,9 +154,15 @@ def q1():
     # remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Degree removal')
 
     rebelgraph = generate_hierarchical_model()
+    list_of_rebels = get_list_of_rebels_by_degree(rebelgraph)
+    remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Degree removal')
 
-    # import matplotlib.pyplot
-    # matplotlib.pyplot.show()
+    # rebelgraph = generate_hierarchical_model()
+    # list_of_rebels = get_list_of_rebels_by_degree(rebelgraph)
+    # remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Degree removal')
+
+    import matplotlib.pyplot
+    matplotlib.pyplot.show()
     
     print('Exiting')
 
