@@ -86,9 +86,9 @@ class RegressionModel(object):
     def __init__(self):
         # Initialize your model parameters here
         self.batchsize = 5
-        self.m1 = nn.Parameter(1, 30)
-        self.b1 = nn.Parameter(1, 30)
-        self.m2 = nn.Parameter(30, 1)
+        self.m1 = nn.Parameter(1, 80)
+        self.b1 = nn.Parameter(1, 80)
+        self.m2 = nn.Parameter(80, 1)
         self.b2 = nn.Parameter(1, 1)
 
     def run(self, x):
@@ -144,10 +144,8 @@ class RegressionModel(object):
         """
         loss = nn.as_scalar(self.onepass_train(dataset))
         
-        while (loss > 0.02):
+        while (loss > 0.019):
             loss = nn.as_scalar(self.onepass_train(dataset))
-
-        print('returnin with loss', loss)
         
 class DigitClassificationModel(object):
     """
