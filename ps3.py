@@ -19,6 +19,56 @@ def generate_configuration_model():
     
     return rebelgraph
 
+def generate_hierarchical_model():
+    import networkx
+    import math
+
+    def get_module():
+        # Make a fully connected graph of five nodes. We definitely
+        # need their names to be unique, so generate that now.
+        
+        complete_graph = networkx.generators.classic.complete_graph(5)
+
+        import random
+        import string
+
+        def get_random_name(old_name):
+            return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))        
+        
+        complete_graph = networkx.relabel_nodes(complete_graph, get_random_name)
+
+        return complete_graph, list(complete_graph.nodes)[0], list(complete_graph.nodes)[1:]
+
+    def connect_modules(graph, center_node, list_of_peripheral_nodes):
+        for node in list_of_peripheral_nodes:
+            graph.add_edge(node, center_node)
+
+        return graph
+
+    def get_five_modules():
+        # Make a graph from five modules, one being the center module,
+        # and the other four being the peripheral modules. Any module
+        # can be the center module; choose the first. Connect all
+        # nodes of the peripheral modules to the center node of the
+        # center module.
+        periph_modules = [get_module() for n in range(4)]
+        periphs = list()
+        center_module, center_node, periphs_of_center = get_module()
+        from networkx.algorithms.operators import union
+
+        for (module, modcenter, modperiphs) in periph_modules:
+            periphs.extend(modperiphs)
+            center_module = union(center_module, module)
+        
+        final_graph = connect_modules(center_module, center_node, periphs)
+        
+        import matplotlib.pyplot as plt
+        networkx.draw(final_graph)
+        plt.show()
+
+    get_five_modules()
+        
+
 def get_list_of_rebels_by_local_clustering(rebelgraph):
     # Input: Graph
     # Output: List of (int, double)
@@ -89,16 +139,18 @@ def remove_nodes_and_plot(rebelgraph, list_of_rebels, howremove):
     axis.legend()
 
 def q1():
-    rebelgraph = generate_configuration_model()
-    list_of_rebels = get_list_of_rebels_by_local_clustering(rebelgraph)
-    remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Local clustering removal')
+    # rebelgraph = generate_configuration_model()
+    # list_of_rebels = get_list_of_rebels_by_local_clustering(rebelgraph)
+    # remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Local clustering removal')
 
-    rebelgraph = generate_configuration_model()
-    list_of_rebels = get_list_of_rebels_by_degree(rebelgraph)
-    remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Degree removal')
+    # rebelgraph = generate_configuration_model()
+    # list_of_rebels = get_list_of_rebels_by_degree(rebelgraph)
+    # remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Degree removal')
 
-    import matplotlib.pyplot
-    matplotlib.pyplot.show()
+    rebelgraph = generate_hierarchical_model()
+
+    # import matplotlib.pyplot
+    # matplotlib.pyplot.show()
     
     print('Exiting')
 
