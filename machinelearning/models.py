@@ -8,7 +8,12 @@ import nn
 # Q1 takes about 5 seconds
 # Q2 takes about 30 seconds
 # Q3 takes about 3 minutes
-# Q4 takes about 3 minutes
+# Q4 takes about 3 minutes (min: 26 seconds, max: 6 minutes)
+
+# Q4 is highestly dependent on the strength of the computer that runs
+# it. I'm not really sure why. Anyway, the threshold I put is really
+# high, 0.86, to ensure that there's almost no chance of getting a
+# fluke premature exit. If this doesn't terminate, no worries.
 
 class PerceptronModel(object):
     def __init__(self, dimensions):
@@ -258,7 +263,7 @@ class LanguageIDModel(object):
         self.num_chars = 47
         self.languages = ["English", "Spanish", "Finnish", "Dutch", "Polish"]
         
-        self.cutoff = 0.828
+        self.cutoff = 0.86
         self.learning = -0.11
         self.batchsize = 60
         self.h_depth = 220
