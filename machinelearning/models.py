@@ -1,13 +1,14 @@
 import nn
 
 
-# Agustin
+# Agustin Romero
 
-# Hello and welcome to PA4!
+# Hello and welcome to PA4! All questions should be complete.
 
 # Q1 takes about 5 seconds
 # Q2 takes about 30 seconds
 # Q3 takes about 3 minutes
+# Q4 takes about 3 minutes
 
 class PerceptronModel(object):
     def __init__(self, dimensions):
@@ -163,7 +164,7 @@ class DigitClassificationModel(object):
     """
     def __init__(self):
         # Initialize your model parameters here
-        self.batchsize = 30
+        self.batchsize = 50
         self.m1 = nn.Parameter(784, 200)
         self.b1 = nn.Parameter(1, 200)
         self.m2 = nn.Parameter(200, 10)
@@ -257,6 +258,20 @@ class LanguageIDModel(object):
         self.num_chars = 47
         self.languages = ["English", "Spanish", "Finnish", "Dutch", "Polish"]
         
+        self.cutoff = 0.828
+        self.learning = -0.11
+        self.batchsize = 60
+        self.h_depth = 220
+        # 0.82 -0.08 50 240 works in 6 minutes
+        # 0.82 -0.1 60 240 works in 3 minutes
+        # 0.825 -0.11 60 240 works in ... 1 minute?
+        self.wl = nn.Parameter(self.num_chars, self.h_depth)
+        self.wb = nn.Parameter(1, self.h_depth)
+        self.hl = nn.Parameter(self.h_depth, self.h_depth)
+        self.hb = nn.Parameter(1, self.h_depth)
+        self.ll = nn.Parameter(self.h_depth, len(self.languages))
+        self.lb = nn.Parameter(1, len(self.languages))
+        
 
     def run(self, xs):
         """
@@ -287,6 +302,23 @@ class LanguageIDModel(object):
             A node with shape (batch_size x 5) containing predicted scores
                 (also called logits)
         """
+        rnn = nn.Linear(xs[0], self.wl)
+        rnn = nn.AddBias(rnn, self.wb)
+        rnn = nn.ReLU(rnn)
+
+        xs = xs[1:]
+
+        for x in xs:
+            rnn = nn.Add(nn.Linear(x, self.wl), nn.Linear(rnn, self.hl))
+
+        rnn = nn.AddBias(rnn, self.hb)
+        rnn = nn.ReLU(rnn)
+
+        rnn = nn.Linear(rnn, self.ll)
+        rnn = nn.AddBias(rnn, self.lb)
+
+        return rnn
+        
 
     def get_loss(self, xs, y):
         """
@@ -302,9 +334,29 @@ class LanguageIDModel(object):
             y: a node with shape (batch_size x 5)
         Returns: a loss node
         """
-    
+        predicted_y = self.run(xs)
+        loss = nn.SoftmaxLoss(predicted_y, y)
+        return loss
+
+    def onepass_train(self, dataset):
+
+        for constant_training_x, constant_training_y in dataset.iterate_once(self.batchsize):
+            loss = self.get_loss(constant_training_x, constant_training_y)
+            layers = [self.wl, self.wb, self.hl, self.hb, self.ll, self.lb]
+            grads = nn.gradients(loss, layers)
+
+            for (layer, grad) in zip(layers, grads):
+                layer.update(grad, self.learning)
+
+        return loss    
 
     def train(self, dataset):
         """
         Trains the model.
         """
+        accuracy = 0.0
+        
+        while (accuracy < self.cutoff):
+            self.onepass_train(dataset)
+            accuracy = dataset.get_validation_accuracy()
+
