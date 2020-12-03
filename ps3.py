@@ -33,7 +33,9 @@ def generate_hierarchical_model():
         import string
 
         def get_random_name(old_name):
-            return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))        
+            up = string.ascii_uppercase
+            dig = string.digits
+            return ''.join(random.choice(up + dig) for _ in range(10))        
         
         complete_graph = networkx.relabel_nodes(complete_graph, get_random_name)
         nodes = list(complete_graph.nodes)
@@ -64,9 +66,9 @@ def generate_hierarchical_model():
             periphs.extend(modperiphs)
             center_module = union(center_module, module)
         
-        final_graph = connect_modules(center_module, center_node, periphs)
+        center_module = connect_modules(center_module, center_node, periphs)
 
-        return final_graph, center_node, periphs
+        return center_module, center_node, periphs
 
     # Depth of 5 has 15625 nodes. 6, 78125. 7, 390625.
     # Great. That math checks out.
@@ -109,7 +111,9 @@ def get_list_of_rebels_by_degree(rebelgraph):
     import networkx
 
     list_of_rebels = rebelgraph.degree()
-    list_of_rebels_sorted = sorted(list_of_rebels, key=lambda rebel: rebel[1], reverse=True)
+    list_of_rebels_sorted = sorted(list_of_rebels,
+                                   key=lambda rebel: rebel[1],
+                                   reverse=True)
 
     return list_of_rebels_sorted
 
@@ -133,9 +137,9 @@ def remove_nodes_and_plot(rebelgraph, list_of_rebels, title, howremove):
         num_rebels_removed += 1
         x_axis.append(num_rebels_removed)
 
-        connectedcomponents = networkx.connected_components(rebelgraph)
-        connectedcomponents_sorted = sorted(connectedcomponents, key=len, reverse=True)
-        y_axis.append(len(connectedcomponents_sorted[0]))
+        connected = networkx.connected_components(rebelgraph)
+        connected_sorted = sorted(connected, key=len, reverse=True)
+        y_axis.append(len(connected_sorted[0]))
     
     axis = matplotlib.pyplot.gca()
     axis.set_title(title + ' Model.')
@@ -145,13 +149,17 @@ def remove_nodes_and_plot(rebelgraph, list_of_rebels, title, howremove):
     axis.legend()
 
 def q1a():
-    # rebelgraph = generate_configuration_model()
-    # list_of_rebels = get_list_of_rebels_by_local_clustering(rebelgraph)
-    # remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Configuration', 'Local clustering removal')
+    rebelgraph = generate_configuration_model()
+    list_of_rebels = get_list_of_rebels_by_local_clustering(rebelgraph)
+    remove_nodes_and_plot(rebelgraph, list_of_rebels,
+                          'Configuration',
+                          'Local clustering removal')
 
-    # rebelgraph = generate_configuration_model()
-    # list_of_rebels = get_list_of_rebels_by_degree(rebelgraph)
-    # remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Configuration', 'Degree removal')
+    rebelgraph = generate_configuration_model()
+    list_of_rebels = get_list_of_rebels_by_degree(rebelgraph)
+    remove_nodes_and_plot(rebelgraph, list_of_rebels,
+                          'Configuration',
+                          'Degree removal')
 
     import matplotlib.pyplot
     matplotlib.pyplot.show()
@@ -159,11 +167,15 @@ def q1a():
 def q1b():
     rebelgraph = generate_hierarchical_model()
     list_of_rebels = get_list_of_rebels_by_local_clustering(rebelgraph)
-    remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Hierarchical', 'Local clustering removal')
+    remove_nodes_and_plot(rebelgraph, list_of_rebels,
+                          'Hierarchical',
+                          'Local clustering removal')
     
     rebelgraph = generate_hierarchical_model()
     list_of_rebels = get_list_of_rebels_by_degree(rebelgraph)
-    remove_nodes_and_plot(rebelgraph, list_of_rebels, 'Hierarchical', 'Degree removal')
+    remove_nodes_and_plot(rebelgraph, list_of_rebels,
+                          'Hierarchical',
+                          'Degree removal')
 
     import matplotlib.pyplot
     matplotlib.pyplot.show()    
