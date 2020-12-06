@@ -14,31 +14,21 @@ class Expression():
         
         pop = self.stack.pop()
 
-        if type(pop) is Symbol:
-            return pop.symbol
-
-        self.stack.append(pop.right)
-        self.stack.append(pop.left)
-        return pop.operation
+        if type(pop) is Expression:
+            self.stack.append(pop.right)
+            self.stack.append(pop.left)
+            return pop.operation
+        
+        return pop
 
     
-class Symbol(Expression):
-    def __init__(self, symbol):
-        self.symbol = symbol
-
-    def __iter__(self):
-        return self.symbol
-    
-    def __next__(self):
-        return self.symbol
-
 def add_operation(first_expression, second_expression):
     return Add(first_expression, second_expression)
 
 def multiply_operation(first_expression, second_expression):
     return Multiply(first_expression, second_expression)
 
-# An expression is one of symbol, add, multiply.
+# An expression is one of Expression, Symbol.
 
 def get_action(current_expression, target_expression):
     pass
@@ -53,28 +43,13 @@ def goal_test(current_expression, target_expression):
     # add(a, b) add(b, a) => False
     # add(a, b) add(a, b) => True
 
-    if type(current_expression) is type(Symbol):
-        if type(target_expression) is type(Symbol):
-            if current_expression.get_symbol() == target_expression.get_symbol():
-                return True
-            else:
-                return False
-        else:
-            return False
+    current_expansion = [e for e in current_expression]
+    target_expansion = [e for e in target_expression]
 
-    if type(current_expression) is type(target_expression):
-        cur_first, cur_second = unwrap(current_expression)
-        tar_first, tar_second = unwrap(target_expression)
-
-        first_eq = is_equal(cur_first, tar_first)
-        second_eq = is_equal(cur_second, tar_second)
-        
-        return first_eq and second_eq
-
-
-    return False
+    return current_expansion == target_expansion
 
 def read_expression():
+    return Expression('add', 'b', 'a'), Expression('add', 'a', 'b')
     pass
 
 def main():
