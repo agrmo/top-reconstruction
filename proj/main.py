@@ -1,34 +1,36 @@
-
 class Expression():
+    def __init__(self, operation, left, right):
+        self.operation = operation
+        self.left = left
+        self.right = right        
+    
     def __iter__(self):
+        self.stack = [self]
         return self
 
     def __next__(self):
-        yielf left
-        yield right
-        yield self
+        if len(self.stack) == 0:
+            raise StopIteration
+        
+        pop = self.stack.pop()
 
-class Add(Expression):
-    def __init__(self, left, right):
-        self.left = left
-        self.right = right
+        if type(pop) is Symbol:
+            return pop.symbol
 
-class Multiply(Expression):
-    def __init__(self, left, right):
-        self.left = left
-        self.right = right
+        self.stack.append(pop.right)
+        self.stack.append(pop.left)
+        return pop.operation
 
-class Subtract(Expression):
-    def __init__(self, left, right):
-        self.left = left
-        self.right = right
-
+    
 class Symbol(Expression):
     def __init__(self, symbol):
         self.symbol = symbol
 
+    def __iter__(self):
+        return self.symbol
+    
     def __next__(self):
-        yield self.symbol
+        return self.symbol
 
 def add_operation(first_expression, second_expression):
     return Add(first_expression, second_expression)
