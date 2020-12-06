@@ -39,6 +39,15 @@ def get_possible_actions(current_expression, rules):
 
             if fix_list == lhs:
                 possible_actions.append((lhs, rhs))
+
+        for sublist in zip(*[iter(current_expansion)]*len(rhs)):
+            fix_list = list()
+
+            for tuplething in sublist:
+                fix_list.append(tuplething)
+
+            if fix_list == rhs:
+                possible_actions.append((rhs, lhs))                
                 
     return possible_actions
     
@@ -58,8 +67,8 @@ def get_start_state():
 
 def get_rules():
     rules = list()
-
-    rules.append((['a'], ['b']))
+    
+    rules.append((['a'], ['a']))
 
     return rules
     
