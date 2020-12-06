@@ -14,5 +14,5 @@ RUN pip install -r requirements.txt
 COPY ./machinelearning/ .
 
 # command to run on container start
-CMD [ "python", "./autograder.py", "-q", "q3" ]
+CMD [ "python", "./autograder.py", "-q", "q4" ]
 
