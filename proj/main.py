@@ -22,40 +22,54 @@ class Expression():
         return pop
 
     
-def add_operation(first_expression, second_expression):
-    return Add(first_expression, second_expression)
+# An Expression is one of Expression, Symbol.
 
-def multiply_operation(first_expression, second_expression):
-    return Multiply(first_expression, second_expression)
+def get_possible_actions(current_expression, rules):
+    possible_actions = list()
+    
+    current_expansion = [e for e in current_expression]
 
-# An expression is one of Expression, Symbol.
+    for lhs, rhs in rules:
+        print('lhs', lhs, 'rhs', rhs)
+        for sublist in zip(*[iter(current_expansion)]*len(lhs)):
+            fix_list = list()
 
+            for tuplething in sublist:
+                fix_list.append(tuplething)
+
+            if fix_list == lhs:
+                possible_actions.append((lhs, rhs))
+                
+    return possible_actions
+    
 def get_action(current_expression, target_expression):
     pass
     
-def take_action(current_expression, first_expression, second_expression, operation):
+def take_action():
     pass
-
-def unwrap(expression):
-    return (expression.first_expression, expression.second_expression)
 
 def goal_test(current_expression, target_expression):
-    # add(a, b) add(b, a) => False
-    # add(a, b) add(a, b) => True
-
     current_expansion = [e for e in current_expression]
     target_expansion = [e for e in target_expression]
-
     return current_expansion == target_expansion
 
-def read_expression():
-    return Expression('add', 'b', 'a'), Expression('add', 'a', 'b')
-    pass
+def get_start_state():
+    return 'a', 'b'
 
-def main():
-    first_expression, second_expression = read_expression()
-    print(goal_test(first_expression, second_expression))
+def get_rules():
+    rules = list()
+
+    rules.append((['a'], ['b']))
+
+    return rules
     
+def main():
+    start_expression, target_expression = get_start_state()
+    rules = get_rules()
+
+    possible_actions = get_possible_actions(start_expression, rules)
+
+    print(possible_actions)
 
 if __name__ == '__main__':
     main()
