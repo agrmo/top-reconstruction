@@ -20,65 +20,60 @@ class Expression():
             return pop.operation
         
         return pop
-
     
 # An Expression is one of Expression, Symbol.
 
-def get_possible_actions(current_expression, rules):
-    possible_actions = list()
+class Problem:
+    def __init__(self, start_state, goal_state, rules):
+        self.current_state = start_state
+        self.goal_state = goal_state
+        self.rules = rules
     
-    current_expansion = [e for e in current_expression]
-
-    for lhs, rhs in rules:
-        print('lhs', lhs, 'rhs', rhs)
-        for sublist in zip(*[iter(current_expansion)]*len(lhs)):
-            fix_list = list()
-
-            for tuplething in sublist:
-                fix_list.append(tuplething)
-
-            if fix_list == lhs:
-                possible_actions.append((lhs, rhs))
-
-        for sublist in zip(*[iter(current_expansion)]*len(rhs)):
-            fix_list = list()
-
-            for tuplething in sublist:
-                fix_list.append(tuplething)
-
-            if fix_list == rhs:
-                possible_actions.append((rhs, lhs))                
-                
-    return possible_actions
+    def get_possible_actions(self):
+        possible_actions = list()
+        
+        current_expansion = [e for e in self.current_state]
     
-def get_action(current_expression, target_expression):
-    pass
+        for lhs, rhs in self.rules:
+            print('lhs', lhs, 'rhs', rhs)
+            for sublist in zip(*[iter(current_expansion)]*len(lhs)):
+                fix_list = list()
     
-def take_action():
-    pass
-
-def goal_test(current_expression, target_expression):
-    current_expansion = [e for e in current_expression]
-    target_expansion = [e for e in target_expression]
-    return current_expansion == target_expansion
-
-def get_start_state():
-    return 'a', 'b'
-
-def get_rules():
-    rules = list()
+                for tuplething in sublist:
+                    fix_list.append(tuplething)
     
-    rules.append((['a'], ['a']))
-
-    return rules
+                if fix_list == lhs:
+                    possible_actions.append((lhs, rhs))
     
+            for sublist in zip(*[iter(current_expansion)]*len(rhs)):
+                fix_list = list()
+    
+                for tuplething in sublist:
+                    fix_list.append(tuplething)
+    
+                if fix_list == rhs:
+                    possible_actions.append((rhs, lhs))                
+                    
+        return possible_actions
+
+    def goal_test(self, current_expression, target_expression):
+        current_expansion = [e for e in current_expression]
+        target_expansion = [e for e in target_expression]
+        return current_expansion == target_expansion
+    
+    def take_action(self, action):
+        pass
+
 def main():
-    start_expression, target_expression = get_start_state()
-    rules = get_rules()
+    start_state = 'a'
+    goal_state = 'b'
+    rules = [(['a'], ['b'])]
+    
+    problem = Problem(start_state, goal_state, rules)
 
-    possible_actions = get_possible_actions(start_expression, rules)
+    actions = problem.get_possible_actions()
 
-    print(possible_actions)
+    print(actions)
 
 if __name__ == '__main__':
     main()
