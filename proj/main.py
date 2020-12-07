@@ -52,10 +52,10 @@ class Problem:
                     
         return possible_actions
 
-    def goal_test(self, current_expression, target_expression):
-        current_expansion = [e for e in current_expression]
-        target_expansion = [e for e in target_expression]
-        return current_expansion == target_expansion
+    def goal_test(self):
+        current_expansion = [e for e in self.current_state]
+        goal_expansion = [e for e in self.goal_state]
+        return current_expansion == goal_expansion
     
     def take_action(self, action):
         pass
