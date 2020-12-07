@@ -30,14 +30,6 @@ class Problem:
         self.rules = rules
 
 
-    def tuple_to_list(self, tuple):
-        fix_list = list()
-        
-        for tuplething in tuple:
-            fix_list.append(tuplething)
-
-        return fix_list
-    
     def get_possible_actions(self):
         possible_actions = list()
         
@@ -55,8 +47,8 @@ class Problem:
                     possible_actions.append((lhs, rhs))
     
             for sublist in zip(*[iter(current_expansion)]*len(rhs)):
-                if self.tuple_to_list(sublist) == rhs:
-                    possible_actions.append((rhs, lhs))                
+                if sublist == rhs:
+                    possible_actions.append([rhs, lhs])                
                     
         return possible_actions
 
@@ -71,7 +63,7 @@ class Problem:
 def main():
     start_state = 'a'
     goal_state = 'b'
-    rules = [(['a'], ['b'])]
+    rules = [[['a'], ['b']], [['a'], ['c']]]
     
     problem = Problem(start_state, goal_state, rules)
 
