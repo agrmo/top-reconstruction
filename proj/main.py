@@ -28,6 +28,15 @@ class Problem:
         self.current_state = start_state
         self.goal_state = goal_state
         self.rules = rules
+
+
+    def tuple_to_list(self, tuple):
+        fix_list = list()
+        
+        for tuplething in tuple:
+            fix_list.append(tuplething)
+
+        return fix_list
     
     def get_possible_actions(self):
         possible_actions = list()
@@ -46,12 +55,7 @@ class Problem:
                     possible_actions.append((lhs, rhs))
     
             for sublist in zip(*[iter(current_expansion)]*len(rhs)):
-                fix_list = list()
-    
-                for tuplething in sublist:
-                    fix_list.append(tuplething)
-    
-                if fix_list == rhs:
+                if self.tuple_to_list(sublist) == rhs:
                     possible_actions.append((rhs, lhs))                
                     
         return possible_actions
