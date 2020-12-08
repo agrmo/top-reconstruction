@@ -38,3 +38,8 @@ add(mult(m,m),mult(p,p))
 mult(p,p)
 mult(sub(a,c),sub(a,c))
 
+add(mult(m,m),mult(sub(a,c),sub(a,c)))
+add(mult(d,d),mult(sub(a,c),sub(a,c)))
+m
+d
+
