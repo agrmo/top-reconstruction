@@ -208,7 +208,7 @@ def get_successors(expression, rules):
     return successors
 
 
-def breadth_first_search(start_state, goal_state, rules):
+def bfs(start_state, goal_state, rules):
     queue = list()
     queue.append((list(), start_state))
     max_depth = 7
@@ -227,18 +227,20 @@ def breadth_first_search(start_state, goal_state, rules):
 
     return (False, list())        
 
-
-def main():
+def test_bfs():
     test_set = get_test_set()
 
     for test in test_set:
         print(test.start_state)
         print(test.goal_state)
         print(test.rules)
-        search_result = breadth_first_search(test.start_state,
-                                             test.goal_state,
-                                             test.rules)
-        print(search_result)
+        search_result = bfs(test.start_state,
+                            test.goal_state,
+                            test.rules)
+        print(search_result)    
+
+def main():
+    test_bfs()
 
 if __name__ == '__main__':
     main()

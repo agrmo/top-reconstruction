@@ -18,3 +18,16 @@ d
 d
 e
 
+a
+z
+a
+add(a,b)
+b
+add(a,d)
+add(a,add(a,d))
+add(d,add(a,a))
+add(a,a)
+z
+add(d,z)
+z
+
