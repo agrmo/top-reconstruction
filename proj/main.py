@@ -192,9 +192,10 @@ def get_successors(expression, rules):
                 
     return successors
 
-def bfs(start_state, goal_state, rules, max_depth):
+def bfs(start_state, goal_state, rules):
     queue = list()
     queue.append((list(), start_state))
+    max_depth = 7
     
     while len(queue) != 0:
         (path, pop_state) = queue.pop(0)
