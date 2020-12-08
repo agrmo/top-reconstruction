@@ -146,9 +146,6 @@ def get_test_set():
 
     return test_set
 
-ts = get_test_set()
-
-print(ts)
 
 def is_equal(expression_a, expression_b):
     if type(expression_a) is Expression and type(expression_b) is Expression:
@@ -191,77 +188,56 @@ def get_successors(expression, rules):
     successors = list()
     
     for lhs, rhs in rules:
-        for (path, subexpression) in expression:
-            if is_equal(lhs, subexpression):
-                successor = replace(expression, rhs, path)
-                successors.append(successor)
+        if type(expression) is Expression:
+            for (path, subexpression) in expression:
+                if is_equal(lhs, subexpression):
+                    successor = replace(expression, rhs, path)
+                    successors.append(successor)
+    
+                if is_equal(rhs, subexpression):
+                    successor = replace(expression, lhs, path)
+                    successors.append(successor)
+        else:
+            if is_equal(lhs, expression):
+                successors.append(rhs)
 
-            if is_equal(rhs, subexpression):
-                successor = replace(expression, lhs, path)
-                successors.append(successor)
-            
+            if is_equal(rhs, expression):
+                successors.append(lhs)
+                
     return successors
 
+
+def breadth_first_search(start_state, goal_state, rules):
+    queue = list()
+    queue.append((list(), start_state))
+    max_depth = 7
     
-class Agent:
-    def __init__(self, start_state, goal_state, rules):
-        self.start_state = start_state
-        self.goal_state = goal_state
-        self.rules = rules
+    while len(queue) != 0:
+        (path, pop_state) = queue.pop(0)
 
-class BreadthFirstSearchAgent(Agent):
-    def is_equal(self):
-        queue = list()
-        queue.append((list(), self.start_state))
-        max_depth = 7
-        
-        while len(queue) != 0:
-            (path, pop_state) = queue.pop(0)
+        if is_equal(pop_state, goal_state):
+            return (True, path + [pop_state])
 
-            if is_equal(pop_state, self.goal_state):
-                return (True, path + [pop_state])
+        if len(path) < max_depth:
+            successors = get_successors(pop_state, rules)
 
-            if len(path) < max_depth:
-                successors = get_successors(pop_state, self.rules)
+            for successor in successors:
+                queue.append((path + [pop_state], successor))
 
-                for successor in successors:
-                    queue.append((path + [pop_state], successor))
-
-        return (False, list())
-    
-
-class DepthFirstSearchAgent(Agent):
-    def is_equal(self):
-        stack = list()
-        stack.append((list(), self.start_state))
-        max_depth = 7
-        
-        while len(stack) != 0:
-            (path, pop_state) = stack.pop()
-
-            if is_equal(pop_state, self.goal_state):
-                return (True, path + [pop_state])
-
-            if len(path) < max_depth:
-                successors = get_successors(pop_state, self.rules)
-
-                for successor in successors:
-                    stack.append((path + [pop_state], successor))
-
-        return (False, list())
-    
+    return (False, list())        
 
 
 def main():
-    start_state = Expression('add', 'a', Expression('add', 'a', 'b'))
-    goal_state = Expression('add', 'a', 'e')
-    
-    rules = [[Expression('add', 'a', 'b'), 'c'], ['c', Expression('add', 'a', 'b')], [Expression('add', 'a', 'b'), 'e']]
-    
-    agent = BreadthFirstSearchAgent(start_state, goal_state, rules)
-    is_equal = agent.is_equal()
-    print(is_equal)
+    test_set = get_test_set()
 
+    for test in test_set:
+        print(test.start_state)
+        print(test.goal_state)
+        print(test.rules)
+        search_result = breadth_first_search(test.start_state,
+                                             test.goal_state,
+                                             test.rules)
+        print(search_result)
 
 if __name__ == '__main__':
     main()
