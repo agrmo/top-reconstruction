@@ -4,5 +4,26 @@ a
 b
 a
 add(a,c)
+b
+d
 
-end
+a
+e
+a
+add(b,c)
+c
+add(a,b)
+add(b,add(a,b))
+e
+
+a
+e
+a
+b
+b
+c
+c
+d
+d
+e
+

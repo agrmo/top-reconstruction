@@ -121,7 +121,7 @@ def get_test_set():
     
     for line in f:
         if state_machine == 0:
-            if line == 'end':
+            if line == '\n':
                 break
             
             start_state = str_to_expression(line.rstrip('\n'))
@@ -134,6 +134,7 @@ def get_test_set():
         elif state_machine == 2:
             if line == '\n':
                 test_set.add(Test(start_state, goal_state, rules))
+                rules = list()
                 state_machine = 0
             else:
                 rule_lhs = str_to_expression(line.rstrip('\n'))
