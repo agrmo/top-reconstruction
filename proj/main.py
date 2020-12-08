@@ -12,7 +12,7 @@ class Expression:
     def __next__(self):
         if len(self.queue) == 0:
             raise StopIteration
-    
+        
         (path, pop) = self.queue.pop(0)
 
         if type(pop) is Expression:
@@ -194,7 +194,7 @@ def get_successors(expression, rules):
                 if is_equal(lhs, subexpression):
                     successor = replace(expression, rhs, path)
                     successors.append(successor)
-    
+                    
                 if is_equal(rhs, subexpression):
                     successor = replace(expression, lhs, path)
                     successors.append(successor)
