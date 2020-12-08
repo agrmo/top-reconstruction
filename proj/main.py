@@ -40,6 +40,9 @@ class Expression:
 
         return strep
 
+    def __repr__(self):
+        return self.__str__()
+
 def is_equal(expression_a, expression_b):
     if type(expression_a) is Expression and type(expression_b) is Expression:
         expression_a_operation = expression_a.operation
@@ -86,9 +89,9 @@ def get_successors(expression, rules):
                 successor = replace(expression, rhs, path)
                 successors.append(successor)
 
-            # if is_equal(rhs, subexpression):
-            #     successor = replace(expression, lhs, path)
-            #     successors.append(successor)
+            if is_equal(rhs, subexpression):
+                successor = replace(expression, lhs, path)
+                successors.append(successor)
             
     return successors
 
@@ -102,31 +105,29 @@ class Agent:
 class BreadthFirstSearchAgent(Agent):
     def is_equal(self):
         queue = list()
-        queue.append((0, self.start_state))
+        queue.append((list(), self.start_state))
         max_depth = 7
         
         while len(queue) != 0:
-            (depth, pop_state) = queue.pop()
+            (path, pop_state) = queue.pop()
 
             if is_equal(pop_state, self.goal_state):
-                return True
+                return (True, path + [pop_state])
 
-            if depth < max_depth:
-                depth += 1
-
+            if len(path) < max_depth:
                 successors = get_successors(pop_state, self.rules)
 
                 for successor in successors:
-                    queue.append((depth, successor))
+                    queue.append((path + [pop_state], successor))
 
-        return False
+        return (False, list())
 
 
 def main():
     start_state = Expression('add', 'a', Expression('add', 'a', 'b'))
-    goal_state = Expression('add', 'a', 'c')
+    goal_state = Expression('add', 'a', 'e')
     
-    rules = [[Expression('add', 'a', 'c'), 'c']]
+    rules = [[Expression('add', 'a', 'b'), 'c'], ['c', Expression('add', 'a', 'b')], [Expression('add', 'a', 'b'), 'e']]
     
     agent = BreadthFirstSearchAgent(start_state, goal_state, rules)
     is_equal = agent.is_equal()
