@@ -23,7 +23,7 @@ class Expression:
 
     def __str__(self):
         strep = self.operation + '('
-
+        
         if type(self.left) is Expression:
             strep += self.left.__str__()
         else:
@@ -84,16 +84,12 @@ class Test:
 
     def __str__(self):
         outp = 'Test('
-
         outp += self.start_state.__str__() + ','
-
         outp += self.goal_state.__str__() + ',['
-
         for (lhs, rhs) in self.rules:
             outp += '[' + lhs.__str__() + ',' + rhs.__str__() + ']'
 
         outp += ']'
-
         return outp
 
     def __repr__(self):
@@ -101,17 +97,6 @@ class Test:
 
 def get_test_set():
     f = open('test_set.txt')
-
-    # First line is start state (0)
-    # Second line is end state (1)
-    # Rest of the lines are rules, of the form.
-    #   lhs (2)
-    #   rhs (3)
-    #   lhs (2)
-    #   rhs (3)
-    #   ...
-    # Ending with a newline. 
-
     state_machine = 0
     test_set = set()
     start_state = None
@@ -207,11 +192,9 @@ def get_successors(expression, rules):
                 
     return successors
 
-
-def bfs(start_state, goal_state, rules):
+def bfs(start_state, goal_state, rules, max_depth):
     queue = list()
     queue.append((list(), start_state))
-    max_depth = 7
     
     while len(queue) != 0:
         (path, pop_state) = queue.pop(0)
@@ -225,7 +208,8 @@ def bfs(start_state, goal_state, rules):
             for successor in successors:
                 queue.append((path + [pop_state], successor))
 
-    return (False, list())        
+    return (False, list())
+
 
 def test_bfs():
     test_set = get_test_set()

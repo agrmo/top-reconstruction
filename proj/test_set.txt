@@ -31,3 +31,10 @@ z
 add(d,z)
 z
 
+start: mult(E,E)
+goal: add(mult(m,m),mult(sub(a,c),sub(a,c)))
+
+rules:
+  mult(E,E) = add(mult(m,m),mult(p,p))
+  mult(p,p) = mult(sub(a,c),sub(a,c))
+
