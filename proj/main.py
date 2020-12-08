@@ -109,7 +109,7 @@ class BreadthFirstSearchAgent(Agent):
         max_depth = 7
         
         while len(queue) != 0:
-            (path, pop_state) = queue.pop()
+            (path, pop_state) = queue.pop(0)
 
             if is_equal(pop_state, self.goal_state):
                 return (True, path + [pop_state])
