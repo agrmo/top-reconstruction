@@ -1,4 +1,48 @@
-from Expression import Expression
+class Expression:
+    def __init__(self, operation, left, right):
+        self.operation = operation
+        self.left = left
+        self.right = right
+
+    def __iter__(self):
+        self.queue = list()
+        self.queue.append((list(), self))
+        return self
+
+    def __next__(self):
+        if len(self.queue) == 0:
+            raise StopIteration
+    
+        (path, pop) = self.queue.pop(0)
+
+        if type(pop) is Expression:
+            self.queue.append((path + ['l'], pop.left))
+            self.queue.append((path + ['r'], pop.right))
+
+        return (path, pop)
+
+    def __str__(self):
+        strep = self.operation + '('
+
+        if type(self.left) is Expression:
+            strep += self.left.__str__()
+        else:
+            strep += self.left
+
+        strep += ','
+
+        if type(self.right) is Expression:
+            strep += self.right.__str__()
+        else:
+            strep += self.right
+
+        strep += ')'
+
+        return strep
+
+    def __repr__(self):
+        return self.__str__()
+
 
 def str_to_expression(inputstring):
     initial = ''
@@ -31,6 +75,80 @@ def str_to_expression(inputstring):
         return initial
     else:
         return Expression(initial, str_to_expression(left), str_to_expression(right))
+
+class Test:
+    def __init__(self, start_state, goal_state, rules):
+        self.start_state = start_state
+        self.goal_state = goal_state
+        self.rules = rules
+
+    def __str__(self):
+        outp = 'Test('
+
+        outp += self.start_state.__str__() + ','
+
+        outp += self.goal_state.__str__() + ',['
+
+        for (lhs, rhs) in self.rules:
+            outp += '[' + lhs.__str__() + ',' + rhs.__str__() + ']'
+
+        outp += ']'
+
+        return outp
+
+    def __repr__(self):
+        return self.__str__()
+
+def get_test_set():
+    f = open('test_set.txt')
+
+    # First line is start state (0)
+    # Second line is end state (1)
+    # Rest of the lines are rules, of the form.
+    #   lhs (2)
+    #   rhs (3)
+    #   lhs (2)
+    #   rhs (3)
+    #   ...
+    # Ending with a newline. 
+
+    state_machine = 0
+    test_set = set()
+    start_state = None
+    goal_state = None
+    rules = list()
+    rule_lhs = None
+    
+    for line in f:
+        if state_machine == 0:
+            if line == 'end':
+                break
+            
+            start_state = str_to_expression(line.rstrip('\n'))
+            state_machine = 1
+            
+        elif state_machine == 1:
+            goal_state = str_to_expression(line.rstrip('\n'))
+            state_machine = 2
+
+        elif state_machine == 2:
+            if line == '\n':
+                test_set.add(Test(start_state, goal_state, rules))
+                state_machine = 0
+            else:
+                rule_lhs = str_to_expression(line.rstrip('\n'))
+                state_machine = 3
+
+        elif state_machine == 3:
+            rule_rhs = str_to_expression(line.rstrip('\n'))
+            rules.append([rule_lhs, rule_rhs])
+            state_machine = 2
+
+    return test_set
+
+ts = get_test_set()
+
+print(ts)
 
 def is_equal(expression_a, expression_b):
     if type(expression_a) is Expression and type(expression_b) is Expression:
