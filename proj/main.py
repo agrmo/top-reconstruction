@@ -1,47 +1,4 @@
-class Expression:
-    def __init__(self, operation, left, right):
-        self.operation = operation
-        self.left = left
-        self.right = right
-
-    def __iter__(self):
-        self.queue = list()
-        self.queue.append((list(), self))
-        return self
-
-    def __next__(self):
-        if len(self.queue) == 0:
-            raise StopIteration
-    
-        (path, pop) = self.queue.pop(0)
-
-        if type(pop) is Expression:
-            self.queue.append((path + ['l'], pop.left))
-            self.queue.append((path + ['r'], pop.right))
-
-        return (path, pop)
-
-    def __str__(self):
-        strep = self.operation + '('
-
-        if type(self.left) is Expression:
-            strep += self.left.__str__()
-        else:
-            strep += self.left
-
-        strep += ','
-
-        if type(self.right) is Expression:
-            strep += self.right.__str__()
-        else:
-            strep += self.right
-
-        strep += ')'
-
-        return strep
-
-    def __repr__(self):
-        return self.__str__()
+from Expression import Expression
 
 def str_to_expression(inputstring):
     initial = ''
@@ -74,9 +31,6 @@ def str_to_expression(inputstring):
         return initial
     else:
         return Expression(initial, str_to_expression(left), str_to_expression(right))
-
-exp = str_to_expression('add(a,add(a,b))')
-print(exp)
 
 def is_equal(expression_a, expression_b):
     if type(expression_a) is Expression and type(expression_b) is Expression:
