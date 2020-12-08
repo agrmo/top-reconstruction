@@ -65,42 +65,47 @@ class Problem:
         
         actions = self.get_actions(state, rules)
 
-    def goal_test(self, state, goal_state):
+    def is_equal(self, state, other_state):
         expansion = [e for e in state]
-        goal_expansion = [e for e in goal_state]
+        goal_expansion = [e for e in other_state]
         return expansion == goal_expansion
 
 
 class Agent:
-    def __init__(problem, start_state, goal_state, rules):
+    def __init__(self, problem, start_state, goal_state, rules):
         self.problem = problem
         self.start_state = start_state
         self.goal_state = goal_state
         self.rules = rules
 
 class BreadthFirstSearchAgent(Agent):
-    def is_equal():
+    def is_equal(self):
         stack = list()
-        stack.append(self.start_state)
+        stack.append((0, self.start_state))
         max_depth = 7
         
         while len(stack) != 0:
-            (pop_state, depth) = stack.pop()
+            (depth, pop_state) = stack.pop()
 
-            if self.problem.goal_test(pop_state, self.goal_state):
+            pop_expansion = [e for e in pop_state]
+
+            if self.problem.is_equal(pop_state, self.goal_state):
                 return True
 
             if depth < max_depth:
                 depth += 1
 
+        return False
+
 
 def main():
-    start_state = Expression('add', Symbol('a'), Symbol('b'))
-    goal_state = Expression('add', Symbol('c'), Symbol('d'))
+    start_state = Expression('add', Symbol('a'), Symbol('a'))
+    goal_state = Expression('add', Symbol('a'), Symbol('a'))
     rules = [[Symbol('a'), Symbol('b')], [Symbol('b'), Symbol('c')]]
     problem = Problem()
-    # agent = Agent(problem, start_state, goal_state, rules)
-    print(problem.get_actions(start_state, rules))
+    agent = BreadthFirstSearchAgent(problem, start_state, goal_state, rules)
+    is_equal = agent.is_equal()
+    print(is_equal)
 
 
 if __name__ == '__main__':
