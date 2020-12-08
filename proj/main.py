@@ -29,7 +29,7 @@ class Expression:
         else:
             strep += self.left
 
-        strep += ', '
+        strep += ','
 
         if type(self.right) is Expression:
             strep += self.right.__str__()
@@ -42,6 +42,41 @@ class Expression:
 
     def __repr__(self):
         return self.__str__()
+
+def str_to_expression(inputstring):
+    initial = ''
+    searching = False
+    index_of_comma = 0
+    depth = 0
+    
+    for index, char in enumerate(inputstring):
+        if searching and char == ',':
+            if depth == 0:
+                index_of_comma = index
+                break
+
+        if searching and char == '(':
+            depth += 1
+
+        if searching and char == ')':
+            depth -= 1
+
+        if not searching and char == '(':
+            searching = True
+
+        if not searching:
+            initial += char
+
+    left = inputstring[len(initial)+1:index_of_comma]
+    right = inputstring[index_of_comma+1:-1]
+
+    if not searching:
+        return initial
+    else:
+        return Expression(initial, str_to_expression(left), str_to_expression(right))
+
+exp = str_to_expression('add(a,add(a,b))')
+print(exp)
 
 def is_equal(expression_a, expression_b):
     if type(expression_a) is Expression and type(expression_b) is Expression:
@@ -121,6 +156,28 @@ class BreadthFirstSearchAgent(Agent):
                     queue.append((path + [pop_state], successor))
 
         return (False, list())
+    
+
+class DepthFirstSearchAgent(Agent):
+    def is_equal(self):
+        stack = list()
+        stack.append((list(), self.start_state))
+        max_depth = 7
+        
+        while len(stack) != 0:
+            (path, pop_state) = stack.pop()
+
+            if is_equal(pop_state, self.goal_state):
+                return (True, path + [pop_state])
+
+            if len(path) < max_depth:
+                successors = get_successors(pop_state, self.rules)
+
+                for successor in successors:
+                    stack.append((path + [pop_state], successor))
+
+        return (False, list())
+    
 
 
 def main():
