@@ -35,6 +35,7 @@
 Collaborators:
 \beg{enumerate}{
   \item Charles Yang
+  \item Andrew Sullivan
 }
 References:
 \beg{enumerate}{
@@ -75,7 +76,7 @@ In the boosted frame, the $\vec{E}$ field is nonzero in the direction towards th
 \e{\boxed{\vec{E'}=0\hat{x}+\lorentz \fr{\sigma}{\epz}\hat{y}+0\hat{z}}}
 \e{\boxed{\vec{B'}=0\hat{x}+0\hat{y}+0\hat{z}}}
 
-\section{Question 1.d.}The boost equations a
+\section{Question 1.d.}The boost equations are
 \e{E'_{||}=E_{||}}
 \e{B'_{||}=B_{||}}
 \e{E'_\perp=\lorentz (E_\perp+c^{-1}\vec{v}\times\vec{B})}
@@ -86,7 +87,7 @@ Let $\vec{v}$ be parallel to the $\hat{x}$ axis. The component parallel to the b
 The condition is
 \e{\label{noqwid}\boxed{\vec{E}=0\hat{x}+\fr{v_x}{c}B_z\hat{y}-\fr{v_x}{c}B_y\hat{z}}}
 
-\section{Question 1.e.}The logic is identical to 1.d.. $\vec{v}\times \vec{E}$
+\section{Question 1.e.}The logic is identical to 1.d..
 \e{\vec{v}\times \vec{E}&=(v_yE_z-E_yv_z)\hat{x}-(v_xE_z-E_xv_z)\hat{y}+(v_xE_y-E_xv_y)\hat{z}\\
 &=-v_xE_z\hat{y}+v_xE_y\hat{z}}
 The condition is
@@ -98,11 +99,14 @@ The Hall experiment can be summarized as:
 \beg{enumerate}{
 \item Setup two magnets, a line of current, and a dielectric as shown in figure.
 \item Send current through the dielectric.
-\item Observe that the current is temporarily perturbed, until a potential difference V appears in the $\hat{z}$ direction, and the current returns to its unperturbed path.
+\item Observe the current is temporarily perturbed, and a voltage V appears in the $\hat{z}$ direction.
+\item Observe the current returns to its unperturbed path, and the voltage V is constant.
 }
-In this setup, $\vec{E}$ points in the $\hat{x}$ direction, $\vec{B}$ in the $\hat{y}$ direction. The Lorentz force implies that the current in the dielectric is forced in the $+\hat{z}$ direction
+First, assume the lab frame. In this setup, $\vec{E}$ points in the $\hat{x}$ direction, $\vec{B}$ in the $\hat{y}$ direction. The Lorentz force implies that the current in the dielectric is forced in the $+\hat{z}$ direction, generating a voltage V, until the force $\vec{F}=q\vec{E}$ becomes equal and opposite to the force $\vec{v}\times\vec{B}$, thereby returning the current to its unperturbed path. Because the fields are constrained along a plane, the condition that the path is unperturbed is
+\e{\label{o12n39812}E_y=v_x B_z}
+which is exactly the result found in the previous parts. Next, think deductively. The result \eref{o12n39812} was derived by claiming there should exist an inertial frame where the $\vec{E'}$ does not exist. The equation
 \e{\vec{E}\cdot\vec{B}=0}
-and so the results of 1.d. and 1.e should apply. Observe that 1.d. predicts that \eref{noqwid} must be satisfied for there to exist a frame where $\vec{E}$ is zero, and 1.e. predicts that \eref{aoduna} must be satisfied for there to exist a frame where $\vec{B}$ is zero. Observe that the Hall experiment can satisfy either of these equations, where $v_x$ is the velocity of the electrons.
+holds, and so the results of 1.d. and 1.e should apply. Observe that 1.d. predicts that \eref{noqwid} must be satisfied for there to exist a frame where $\vec{E}$ is zero, and 1.e. predicts that \eref{aoduna} must be satisfied for there to exist a frame where $\vec{B}$ is zero. Observe that the Hall experiment can satisfy either of these equations, where $v_x$ is the velocity of the electrons. The conclusion is that \fbox{all frames agree on the experimental predictions}, where in one frame the current is unaffected by the $\vec{E}$ and $\vec{B}$ fields, and in another frame the fields affect the current equally in magnitude but opposite in direction.
 
 \section{Question 2.a.}
 \e{\vec{B}=\vec{B'}-\fr{1}{c}\vec{E'}\times \vec{v}}
