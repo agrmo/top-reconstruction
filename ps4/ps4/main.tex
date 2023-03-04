@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\geometry{top=1in,bottom=1in,left=1in,right=1in,}
+\newcommand{\pic}[2]{\begin{center}\includegraphics[height=#1]{#2}\end{center}}
+\n{asdfn}{\fr{1}{2}\epsilon^{\mu \nu \alpha \beta} F_{\alpha \beta}}
+\newcommand{\tbb}[1]{\frot\epsilon^{#1 \beta \gamma \delta} \p_\beta F_{\gamma \delta}}
+\n{oof}{\fr{1}{4\pi}}
+\n{ooe}{\fr{1}{8\pi}}
+\n{oos}{\fr{1}{16\pi}}
+\n{esbs}{\ooe(E^2-B^2)}
+\n{fuab}{F^{\alpha\beta}}
+\n{flab}{F_{\alpha\beta}}
+\begin{document}
+\begin{center}
+{\Large{Problem Set 4}}\\~\\
+\begin{tabular}{l l}
+Student & Agustin Romero\\
+Instructor & Sri Raghu\\
+Assistants & Josephine Yu, Pavel Nosov\\
+Course & Classical Electrodynamics\\    
+Institution & Stanford University\\
+Due Date & 3 March 2023\\
+\end{tabular}
+\end{center}
+\section*{Question 1.a.}
+\e{\asdfn = \begin{pmatrix}0&-B_1&-B_2&-B_3\\B_1&0&E_3&-E_2\\B_2&-E_3&0&E_1\\B_3&E_2&-E_1&0\end{pmatrix}=G^{\mu \nu}}
+\e{F_{\mu \nu}=\begin{pmatrix}0&E_1&E_2&E_3\\-E_1&0&-B_3&B_2\\-E_2&B_3&0&B_1\\-E_3&-B_2&B_1&0\end{pmatrix}}
+\e{\asdfn F_{\mu \nu}&=\fr{1}{2}\Sigma_{\mu=0}^3\Sigma_{\nu=0}^3G^{\mu \nu} F_{\mu \nu}\\
+&=-4B_1 E_1 -4B_2 E_2 -4B_3E_3\\
+&=-4 \vec{B} \cdot \vec{E}}
+\section*{Question 1.b.}
+Do the calculation explicitly.
+\e{\p_\mu \tilde{F}^{\mu \nu}=\fr{1}{2} \epsilon^{\alpha \beta \gamma \delta} \p_\beta F_{\gamma \delta}}
+\e{\tbb{0}&=\fr{1}{2}(\p_1F_{23}+\p_3F_{12}+\p_2F_{31}-\p_1F_{32}-\p_2F_{13}-\p_3F_{21})\\
+&=\fr{1}{2}(\p_1B_1+\p_3B_3+\p_2B_2+\p_1B_1+\p_2B_2+\p_3B_3)\\
+&=\vec{\del}\cdot \vec{B}}
+\e{\tbb{0}&=\frot (\p_0F_{23}+\p_0F_{32}+\p_3F_{20}-\p_3F_{02}-\p_2F_{30}+\p_2F_{03})\\
+&=\frot(\p_0B_1+\p_0B_1+\p_3E_2-\p_3E_2-\p_2E_3+\p_2E_3)\\
+&=-\p_0B_1+\p_3E_2-\p_2E_3}
+\e{\tbb{2}&=-\p_0B_2-\p_1E_3+\p_3E_1}
+\e{\tbb{3}&=-\p_3B_3-\p_1E_2+\p_2E_1}
+\e{0=-\fr{1}{c}\fr{\p}{\p t}\vec{B}-\vec{\del}\times E}
+\e{\vec{\del}\times E=-\fr{1}{c}\fr{\p}{\p t}\vec{B}}
+\section*{Question 2.a.}
+$x$ and $y$ are arbitrary.
+\e{\label{1098n}\p_\rho F_{\mu \nu}+\p_\mu F_{\nu \rho}+\p_\nu F_{\rho \mu}=x}
+Replace $F_{\mu \nu}=-F_{\nu \mu}$.
+\e{-\p_\rho F_{\nu \mu}-\p_\mu F_{\rho \nu}-\p_\nu F_{\mu \rho}=y}
+This is the same form as \eref{1098n}. To make this obvious, relabel the indices without changing their positions, $\rho\rightarrow \nu$, $\mu\rightarrow \mu$, $\nu\rightarrow \rho$.
+\e{-(\p_\nu F_{\rho \mu}+\p_\mu F_{\nu \rho}+\p_\rho F_{\mu \nu})=y=-x}
+\e{-x=x\Rightarrow x=0}
+\e{\p_\rho F_{\mu \nu}+\p_\mu F_{\nu \rho}+\p_\nu F_{\rho \mu}=0}
+\section*{Question 2.b.}
+Do the calculation explicitly.
+\e{T^\mu_\nu=-\oof F^{\mu \alpha}F_{\nu \alpha} + \oos \delta^\mu_\nu F_{\alpha \beta} F^{\alpha \beta}}
+\e{\oos F^{\mu \nu}F_{\mu \nu}&=-\fr{1}{8\pi}(B^2-E^2)\\
+&= \fr{1}{8\pi}(E^2-B^2)}
+$T^\mu_\nu$ requires all values of $F^{\mu \alpha}_{\nu \alpha}$.
+\e{F^{0\mu}_{0\mu}&=F^{00}F_{00}+F^{01}F_{01}+F^{02}F_{02}+F^{03}F_{03}\\&=-E_1^2-E_2^2-E_3^2}
+\e{F^{0\mu}_{1\mu}&=F^{00}F_{10}+F^{01}F_{11}+F^{02}F_{12}+F^{03}F_{13}\\&=E_2B_3-E^3B_2}
+\e{F^{0\mu}_{2\mu}&=F^{00}F_{20}+F^{01}F_{21}+F^{02}F_{22}+F^{03}F_{23}\\&=E_3B_1-E_1B_3}
+\e{F^{0\mu}_{3\mu}&=F^{00}F_{30}+F^{01}F_{31}+F^{02}F_{32}+F^{03}F_{33}\\&=E_1B_2-E_2B_1}
+\e{F^{1\mu}_{1\mu}&=F^{10}F_{10}+F^{11}F_{11}+F^{12}F_{12}+F^{13}F_{13}\\&=-E_1^2+B_2^2+B_3^2}
+\e{F^{1\mu}_{2\mu}&=F^{10}F_{20}+F^{11}F_{21}+F^{12}F_{22}+F^{13}F_{23}\\&=-E_1E_2-B_1B_2}
+\e{F^{1\mu}_{3\mu}&=F^{10}F_{30}+F^{11}F_{31}+F^{12}F_{32}+F^{13}F_{33}\\&=-E_1E_3-B_1B_3}
+\e{F^{2\mu}_{2\mu}&=F^{20}F_{20}+F^{21}F_{21}+F^{22}F_{22}+F^{23}F_{23}\\&=-E_2^2+B_1^2+B_3^2}
+\e{F^{2\mu}_{3\mu}&=F^{20}F_{30}+F^{21}F_{31}+F^{22}F_{32}+F^{23}F_{33}\\&=-E_2E_3-B_2B_3}
+\e{F^{3\mu}_{3\mu}&=F^{30}F_{30}+F^{31}F_{31}+F^{32}F_{32}+F^{33}F_{33}\\&=-E_3^2+B_1^2+B_2^2}
+\e{T^0_0&=\oof(E_1^2+E_2^2+E_3^2)+\esbs}
+\e{T^0_1&=\oof(E_3B_2-E_2B_3)}
+\e{T^0_2&=\oof(E_1B_3-E_3B_1)}
+\e{T^0_3&=\oof(E_2B_1-E_1B_2)}
+\e{T^1_1&=\oof(-E_1^2+B_3^2+B_2^2)+\esbs}
+\e{T^1_2&=\oof(E_1E_2+B_1B_2)}
+\e{T^1_3&=\oof(E_1E_3+B_1B_3)}
+\e{T^2_2&=\oof(E_2^2-B_1^2-B_3^2)+\esbs}
+\e{T^2_3&=\oof(E_2E_3+B_2B_3)}
+\e{T^3_3&=\oof(E_3^2+B_1^2+B_2^2)+\esbs}
+And the remaining terms can be found by $T^{\mu \nu}=-T^{\nu \mu}$
+\section*{Question 2.c.}
+\e{\p_\mu T^\mu_\nu&=\asdnoi+\oos \p_\mu \delta^\mu_\nu \flab\fuab\\
+&=\p_\mu (-\oof F^{\mu\alpha}F_{\nu\alpha}+\oos\delta^\mu_\nu\flab\fuab)\\
+&=-\oof((\p_\mu F^{\mu\alpha}F_{\nu\alpha}+F^{\mu\alp}))}
+\section*{Question 3}
+\section*{Question 4.a.}
+\section*{Question 4.b.}
+\section*{Question 4.c.}
+\section*{Question 5.a.i.}
+\section*{Question 5.a.ii.}
+\section*{Question 5.a.iii.}
+\section*{Question 5.b.}
+\section*{Question 5.c.}
+\end{document}
