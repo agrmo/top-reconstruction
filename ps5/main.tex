@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\geometry{top=1in,bottom=1in,left=1in,right=1in,}
+\n{vpp}{V(\phi^*\phi)}
+\n{psp}{\phi^*\phi}
+\n{ddpp}{\fr{\p}{\p(\psp)}}
+\n{pl}{\p_\mu}
+\n{pu}{\p^\mu}
+\n{pz}{\phi_0}
+\n{dph}{\delta \phi}
+\n{ept}{e^{i\theta}}
+\n{ent}{e^{-i\theta}}
+\n{pdp}{(\pz+\dph)}
+\n{thdan}{\pl(\pz+\dph)\pu(\pz+\dph)+(\pl\theta)(\pu\theta)(\pz+\dph)^2-r(\pz+\dph)^2+\lam(\pz+\dph)^4}
+\n{ce}{\fr{c}{e}}
+\n{fmm}{\fr{1}{16\pi}F_{\mu\nu}F^{\mu \nu}}
+\n{fra}{(\fr{e}{c})^2A_\mu B^\mu}
+\n{pppa}{\fr{\p}{\p(\p_\mu B_\nu)}}
+\n{fmnfmn}{F_{\mu\nu}F^{\mu\nu}}
+\n{frs}{\fr{1}{16\pi}}
+\n{ppa}{\fr{\p}{\p B_\nu}}
+\n{gml}{g^{\mu \lam}}
+\n{pan}{\fr{\p}{\p A_\nu}}
+\n{va}{\vec{A}}
+\n{vb}{\vec{B}}
+\n{ve}{\vec{E}}
+\n{vk}{\vec{k}}
+\n{vx}{\vec{x}}
+\n{pt}{\fr{\p}{\p t}}
+\begin{document}
+\begin{center}
+{\Large{Problem Set 5}}\\~\\
+\begin{tabular}{l l}
+Student&Agustin Romero\\
+Instructor&Sri Raghu\\
+Assistants&Josephine Yu, Pavel Nosov\\
+Course&Classical Electrodynamics\\    
+Institution&Stanford University\\
+Due Date&22 March 2023\\
+\end{tabular}
+\end{center}
+\section*{Question 1.a.}
+\e{\scl=-\frs F_{\mu \nu}F^{\mu \nu}+\fr{(mc)^2}{8\pi}B_\mu B^\mu}
+\e{\pppa\fmnfmn&=\pppa(\p_\mu B_\nu-\p_\nu B_\mu)(\p^\mu B^\nu - \p^\nu B^\mu)\\
+&=\pppa(\p_\mu B_\nu \p^\mu B^\nu-\p_\mu B_\nu \p^\nu B^\mu-\p_\nu B_\mu \p^\mu B^\nu+\p_\nu B_\mu \p^\nu B^\mu)\\
+&=4(\p^\mu B^\nu-\p^\nu B^\mu)\\
+&=4F^{\mu\nu}}
+\e{\pppa \scl&=\frs \pppa F_{\mu \nu}F^{\mu \nu}\\
+&=-\fr{1}{4\pi} F^{\mu\nu}}
+\e{\fr{\p}{\p A_\nu}(A_\mu A^\mu)&=\fr{\p}{\p A_\nu} (g^{\mu \lam} A_\mu A_\lam)\\
+&=\gml A_\mu \pan A_\lam + \gml \pan A_\mu A_\lam + A_\mu A_\nu (\pan \gml)\\
+&=\gml A_\mu (\pan A_\lam)+\gml (\pan A_\mu) A_\lam\\
+&=\gml A_\mu \delta^\nu_\lam+\gml\delta^\nu_\mu A_\lam\\
+&=A^\lam \delta^\nu_\lam + A^\mu\delta^\nu_\mu\\
+&=2A^\nu}
+\e{\ppa \scl = \p_\mu (\pppa \scl)}
+\e{\fr{(mc)^2}{8\pi}2A^\nu=-\fr{4}{16\pi}\p_\mu F^{\mu \nu}}
+\e{\boxed{(mc)^2A^\nu = -\p_\mu F^{\mu \nu}}}
+These are the equations of motion.
+\section*{Question 1.b.}
+\e{\p_\mu \int e^{ik_\nu x^\nu} b^\mu d^4k&=\int((\p_\mu b^\mu)+b^\mu(\p_mu e^{i k_\nu x^\nu}))d^4k\\
+&=\int b^\mu ik_\nu e^{i k_\nu x^\nu} d^4k\\
+&=\int b^\mu ik_\nu e^{i k_\nu x^\nu}\\
+&=ik_\mu b^\mu}
+\e{(mc)^2A^\nu=\p_\mu F^{\mu \nu}}
+\e{(mc)^2 (\int d^4k (e^{ikx}b^\nu+e^{-ikx}b^{*\nu}))&=\p_\mu \p^\mu (\int d^4k (e^{ikx}b^\nu+e^{-ikx}b^{*\nu}))-\p_\mu \p^\nu (\int d^4k (e^{ikx}b^\mu+e^{-ikx}b^{*\mu}))}
+\e{\boxed{(mc)^2b^\nu-k_\mu k^\mu b^\nu + \p^\nu \p_\mu b^\mu=0}}
+After substituting $A$, evaluating the integrals, and rearranging, we get the equations of motion in Fourier space.
+\section*{Question 1.c.}
+\e{k_\mu k^\mu =(mc)^2}
+\e{(mc)^2b^\nu-k_\mu k^\mu b^\nu + \p^\nu \p_\mu b^\mu=0}
+\e{\boxed{\p^\nu \p_\mu b^\mu=0}}
+There are two independent components.
+\section*{Question 1.d.}
+\e{k_\mu b^\mu=0}
+\e{\int ik_\mu b e^{ikx}dk=0}
+\e{\p_\mu \int b e^{ik}=0}
+\e{\label{lasjdnf}\boxed{\p_\mu B^\mu=0}}
+\section*{Question 1.e.}
+\e{\p_\mu B^\mu=0}
+\e{\label{ajan}B_\mu\rightarrow B_\mu+\p_\mu \chi}
+\e{\p_\mu(B^\mu+\p^\mu\chi)=0}
+\e{\label{asjnd}\boxed{\p_\mu\p^\mu\chi=0}}
+\eref{asjnd} is not necessarily true, so \eref{lasjdnf} is not necessarily invariant under gauge transformations \eref{ajan}.
+\section*{Question 2}
+\e{U=\fr{1}{8\pi} \int (E^2+B^2)d^3x}
+\e{\vb=\del\times\va}
+\e{\ve&=-\fr{1}{c}\pt\va-\del\phi\\
+&=-\fr{1}{c}\Sigma_{\vk}(\pt \va(t,\vk))e^{i\vk \vx}}
+\e{\vb=i\Sigma_{\vk}(\vk\times\va(\vk,t))e^{i\vk\vx}}
+\e{E^2=\fr{1}{c^2}\Sigma_{\vk}\Sigma_{\vk'}(\pt \va(\vk))(\pt \va(\vk'))e^{i\vk \vx}e^{i\vk' \vx}}
+\e{\int E^2d^3x&=\fr{1}{c^2}\int d^3x \Sigma_{\vk}\Sigma_{\vk'}\dot{\va}(\vk)\dot{\va}(\vk')e^{i(\vk+\vk')\vx}\\
+&=\fr{V}{c^2}\Sigma_{\vk} \dot{\va}(\vk)}
+\e{\int B^2 d^3x&=i^2\int\Sigma_{\vk}\Sigma_{\vk'}(\vk\times\va(\vk))(\vk'\times\va(\vk'))e^{i(\vk+\vk')\vx}\\
+&=V\Sigma_{\vk}(\vk\times\va(\vk))(-\vk\times\va(-\vk))}
+\e{U&=\fr{V}{8\pi c^2}|\dot{\va}(\vk)|^2+c^2\vk^2|\va(\vk)|^2\\
+&=\fr{V}{2\pi}\Sigma_{\vk} \vk^2 a(\vk)\cdot a(\vk)^*}
+\e{\vec{P}=\fr{1}{4\pi c}\int (\ve\times\vb)dV=\Sigma_{\vk}\fr{\vk}{\omega(\vk)}k^2 a(\vk)\cdot a(\vk)^*}
+\e{\boxed{U=\fr{V}{8\pi}\Sigma_{\vk}(\fr{1}{c^2}\dot{\va}(\vk)\dot{\va}^*(\vk)+(\vk\times\va(\vk))(\vk\times\va(\vk)^*))}}
+\e{\boxed{\vec{P}=\Sigma_{\vk}\fr{\vk}{\omega(\vk)}k^2 a(\vk)\cdot a(\vk)^*}}
+\section*{Question 3.a.}
+\e{\vpp=r\psp+\lam(\psp)^2}
+\e{r>0\quad \lambda>0}
+\e{\psp=-\fr{r}{2\lambda}\leq 0}
+\e{\phi=0}
+\section*{Question 3.b.}
+\e{\psp=-\fr{r}{2\lam}\geq0}
+\e{\label{192b}\phi=(-\fr{r}{2\lambda})^{\fr{1}{2}}e^{i\theta}}
+$\vpp$ when $r>0$ is minimized at $\phi=0$, and when $r<0$ is minimized at \eref{192b}. The global U(1) symmetry is broken into the local U(1) symmetry because the field $\theta$ is position dependent.
+\section*{Question 3.c.}
+\e{\scl&=(\pl \phi^*)(\pu \phi)-r\phi^*\phi+\lam(\phi^*\phi)^2\\
+\intertext{$\phi=(\pz+\dph)\ept$}
+&=(\pl ((\pz+\dph)\ent))(\pu((\pz+\dph)\ept))-r(\pz+\dph)\ent(\pz+\dph)\ept+\lam(\pz+\dph)^4\\
+&=\thdan}
+\e{\boxed{\scl=\thdan}}
+This is $\scl$ in terms of $\pz$ and $\dph$.
+\section*{Question 3.d.}
+\section*{Question 3.e.}
+\e{\phi=0}
+\e{\phi=(-\fr{r}{2\lambda})^{\fr{1}{2}}e^{i\theta}}
+\e{\scl&=(D_\mu \phi)^*(D^\mu \phi)-\fmm-r\phi^*\phi+\lam(\phi^*\phi)^2\\
+&=\pl\pdp\pu\pdp+(\p_\mu \theta)(\p^\mu \theta)\pdp^2+\fra \pdp^2-r\pdp^2+\lam\pdp^4-\fmm}
+\e{\boxed{\scl=\pl\pdp\pu\pdp+((\pl \theta)(\pu \theta)+\fra-r)\pdp^2+\lam\pdp^4}}
+\section*{Question 3.f.}
+\e{F_{\mu\nu}&=\p_\mu(A'_\nu+\ce\p_\nu\theta)-\p_\nu(A'_\mu+\ce\p_\mu\theta)\\
+&=\p_\mu A'_\nu-\p_\nu A'_\mu+\ce\p_\mu \p_\nu\theta-\ce \p_\nu\p_\mu\theta\\
+&=\p_\mu A'_\nu-\p_\nu A'_\mu}
+\e{\scl&=(D_\mu\phi)^*(D^\mu\phi)-r\phi^*\phi-\lam(\phi^*\phi)^2\\
+&=\p_\mu\pdp\p^\mu\pdp+((\p_\mu\theta)(\p^\mu\theta)+(\fr{e}{c})^2A_\mu A^\mu-r)\pdp^2-\lam\pdp^4-\fr{1}{16\pi}F_{\mu\nu}F^{\mu\nu}\\
+&=\p_\mu\pdp\p^\mu\pdp+((\p_\mu\theta)(\p^\mu\theta)+(\fr{e}{c})^2(A'_\mu A'^\mu+(\fr{c}{e})^2(\p_\mu\theta)(\p^\mu\theta)-2\fr{c}{e}(\p_\mu\theta)A'^\mu)-r)\pdp^2-\lam\pdp^4-\fr{1}{16\pi}F_{\mu\nu}F^{\mu\nu}\\
+&=\p_\mu\pdp\p^\mu\pdp+(3(\p_\mu\theta)(\p^\mu\theta)+(\fr{e}{c})^2A'_\mu A'^\mu-2\fr{e}{c}(\p_\mu\theta)A'^\mu-r)\pdp^2\\&+\lam\pdp^4-\fr{1}{16\pi}(\p_\mu A'_\nu-\p_\nu A'_\mu)(\p^\mu A'^\nu-\p^\nu A'^\mu)}
+\e{\scl&=\p_\mu\pdp\p^\mu\pdp+(3(\p_\mu\theta)(\p^\mu\theta)+(\fr{e}{c})^2A'_\mu A'^\mu-2\fr{e}{c}(\p_\mu\theta)A'^\mu-r)\pdp^2\\&+\lam\pdp^4-\fr{1}{16\pi}(\p_\mu A'_\nu-\p_\nu A'_\mu)(\p^\mu A'^\nu-\p^\nu A'^\mu)}
+\section*{Question 4}
+\section*{Question 5.a.}
+\section*{Question 6}
+\section*{Question 7.a.}
+\section*{Question 7.b.}
+
+\end{document}

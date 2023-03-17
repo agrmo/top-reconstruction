@@ -8,92 +8,201 @@
 \setlength{\parindent}{0pt}
 \geometry{top=1in,bottom=1in,left=1in,right=1in,}
 \newcommand{\pic}[2]{\begin{center}\includegraphics[height=#1]{#2}\end{center}}
-\n{asdfn}{\fr{1}{2}\epsilon^{\mu \nu \alpha \beta} F_{\alpha \beta}}
+\n{asdfn}{\fr{1}{2}\epsilon^{\mu \nu \alp \beta} F_{\alp \beta}}
 \newcommand{\tbb}[1]{\frot\epsilon^{#1 \beta \gamma \delta} \p_\beta F_{\gamma \delta}}
 \n{oof}{\fr{1}{4\pi}}
 \n{ooe}{\fr{1}{8\pi}}
 \n{oos}{\fr{1}{16\pi}}
-\n{esbs}{\ooe(E^2-B^2)}
-\n{fuab}{F^{\alpha\beta}}
-\n{flab}{F_{\alpha\beta}}
+\n{esbs}{\ooe(B^2-E^2)}
+\n{fuab}{F^{\alp\beta}}
+\n{flab}{F_{\alp\beta}}
+\n{pxn}{\fr{\p}{\p x^\nu}}
+\n{ooc}{\fr{1}{c}}
+\n{ppp}{(\fr{\p}{\p(\p_\mu \phi)}\scl)}
+\n{pps}{(\fr{\p}{\p(\p_\mu \phi^*)}\scl)}
+\n{ppa}{(\fr{\p}{\p(\p_\mu A_\rho)}\scl)}
+\n{dmaml}{\p_\mu a^\nu(\ppp \p_\nu \phi + \pps\p_\nu\phi^*+\ppa\p_\nu A_\rho)}
+\n{ftmn}{\tilde{F}^{\mu\nu}}
+\n{fumn}{F^{\mu\nu}}
+\n{flmn}{F_{\mu\nu}}
+\n{tpr}{2\pi r}
 \begin{document}
 \begin{center}
 {\Large{Problem Set 4}}\\~\\
 \begin{tabular}{l l}
-Student & Agustin Romero\\
-Instructor & Sri Raghu\\
-Assistants & Josephine Yu, Pavel Nosov\\
-Course & Classical Electrodynamics\\    
-Institution & Stanford University\\
-Due Date & 3 March 2023\\
+Student&Agustin Romero\\
+Instructor&Sri Raghu\\
+Assistants&Josephine Yu, Pavel Nosov\\
+Course&Classical Electrodynamics\\    
+Institution&Stanford University\\
+Due Date&3 March 2023\\
 \end{tabular}
 \end{center}
+References: Peskin Schroeder p19, Landau Lifshitz II p69, Griffiths p332, Feynman ch26
 \section*{Question 1.a.}
-\e{\asdfn = \begin{pmatrix}0&-B_1&-B_2&-B_3\\B_1&0&E_3&-E_2\\B_2&-E_3&0&E_1\\B_3&E_2&-E_1&0\end{pmatrix}=G^{\mu \nu}}
 \e{F_{\mu \nu}=\begin{pmatrix}0&E_1&E_2&E_3\\-E_1&0&-B_3&B_2\\-E_2&B_3&0&B_1\\-E_3&-B_2&B_1&0\end{pmatrix}}
-\e{\asdfn F_{\mu \nu}&=\fr{1}{2}\Sigma_{\mu=0}^3\Sigma_{\nu=0}^3G^{\mu \nu} F_{\mu \nu}\\
-&=-4B_1 E_1 -4B_2 E_2 -4B_3E_3\\
-&=-4 \vec{B} \cdot \vec{E}}
+\e{\asdfn = \begin{pmatrix}0&-B_1&-B_2&-B_3\\B_1&0&E_3&-E_2\\B_2&-E_3&0&E_1\\B_3&E_2&-E_1&0\end{pmatrix}=\ftmn}
+\e{\asdfn F_{\mu \nu}&=-4B_1 E_1 -4B_2 E_2 -4B_3E_3\\&=-4 \vec{E} \cdot \vec{B}}
+\e{\boxed{\ftmn F_{\mu\nu}=-4 \vec{E} \cdot \vec{B}}}
 \section*{Question 1.b.}
-Do the calculation explicitly.
-\e{\p_\mu \tilde{F}^{\mu \nu}=\fr{1}{2} \epsilon^{\alpha \beta \gamma \delta} \p_\beta F_{\gamma \delta}}
+\e{\lab{asnd}\p_\mu \tilde{F}^{\mu \nu}=\fr{1}{2} \epsilon^{\alp \beta \gamma \delta} \p_\beta F_{\gamma \delta}}
 \e{\tbb{0}&=\fr{1}{2}(\p_1F_{23}+\p_3F_{12}+\p_2F_{31}-\p_1F_{32}-\p_2F_{13}-\p_3F_{21})\\
 &=\fr{1}{2}(\p_1B_1+\p_3B_3+\p_2B_2+\p_1B_1+\p_2B_2+\p_3B_3)\\
-&=\vec{\del}\cdot \vec{B}}
+&=\del\cdot \vec{B}}
 \e{\tbb{0}&=\frot (\p_0F_{23}+\p_0F_{32}+\p_3F_{20}-\p_3F_{02}-\p_2F_{30}+\p_2F_{03})\\
 &=\frot(\p_0B_1+\p_0B_1+\p_3E_2-\p_3E_2-\p_2E_3+\p_2E_3)\\
 &=-\p_0B_1+\p_3E_2-\p_2E_3}
 \e{\tbb{2}&=-\p_0B_2-\p_1E_3+\p_3E_1}
 \e{\tbb{3}&=-\p_3B_3-\p_1E_2+\p_2E_1}
-\e{0=-\fr{1}{c}\fr{\p}{\p t}\vec{B}-\vec{\del}\times E}
-\e{\vec{\del}\times E=-\fr{1}{c}\fr{\p}{\p t}\vec{B}}
+\e{0=-\fr{1}{c}\fr{\p}{\p t}\vec{B}-\del\times E}
+\e{\label{ybasd}\boxed{\del\cdot\vec{B}=0}}
+\e{\label{91273}\boxed{\del\times E=-\fr{1}{c}\fr{\p}{\p t}\vec{B}}}
+Starting with \eref{asnd} two of the free Maxwell equations are found. The $\mu=0$ component gives \eref{ybasd}, and the $\mu=i$ component gives \eref{91273}.
 \section*{Question 2.a.}
-$x$ and $y$ are arbitrary.
-\e{\label{1098n}\p_\rho F_{\mu \nu}+\p_\mu F_{\nu \rho}+\p_\nu F_{\rho \mu}=x}
-Replace $F_{\mu \nu}=-F_{\nu \mu}$.
-\e{-\p_\rho F_{\nu \mu}-\p_\mu F_{\rho \nu}-\p_\nu F_{\mu \rho}=y}
-This is the same form as \eref{1098n}. To make this obvious, relabel the indices without changing their positions, $\rho\rightarrow \nu$, $\mu\rightarrow \mu$, $\nu\rightarrow \rho$.
-\e{-(\p_\nu F_{\rho \mu}+\p_\mu F_{\nu \rho}+\p_\rho F_{\mu \nu})=y=-x}
-\e{-x=x\Rightarrow x=0}
-\e{\p_\rho F_{\mu \nu}+\p_\mu F_{\nu \rho}+\p_\nu F_{\rho \mu}=0}
+\e{F_{\mu\nu}=\p_\mu A_\nu - \p_\nu A_\mu}
+\e{\p_\rho F_{\mu\nu}+\p_\mu F_{\nu\rho}+\p_\nu F_{\rho \mu}&=\p_\rho(\p_\mu A_\nu-\p_\nu A_\mu)+\p_\mu(\p_\nu A_\rho-\p_\rho A_\nu)+\p_\nu(\p_\rho A_\mu-\p_\mu A_\rho)\\&=\p_\rho \p_\mu A_\nu-\p_\rho \p_\nu A_\mu + \p_\mu\p_\nu A_\rho-\p_\mu\p_\rho A_\nu+\p_\nu\p_\rho A_\mu-\p_\nu\p_\mu A_\rho\\
+  &=0}
+\e{\boxed{\p_\rho F_{\mu\nu}+\p_\mu F_{\nu\rho}+\p_\nu F_{\rho \mu}=0}}
+Using $F_{\mu\nu}$ and $\p_\mu\p_\nu=\p_\nu\p_\mu$ we verify the Bianchi identity.
 \section*{Question 2.b.}
-Do the calculation explicitly.
-\e{T^\mu_\nu=-\oof F^{\mu \alpha}F_{\nu \alpha} + \oos \delta^\mu_\nu F_{\alpha \beta} F^{\alpha \beta}}
-\e{\oos F^{\mu \nu}F_{\mu \nu}&=-\fr{1}{8\pi}(B^2-E^2)\\
-&= \fr{1}{8\pi}(E^2-B^2)}
-$T^\mu_\nu$ requires all values of $F^{\mu \alpha}_{\nu \alpha}$.
-\e{F^{0\mu}_{0\mu}&=F^{00}F_{00}+F^{01}F_{01}+F^{02}F_{02}+F^{03}F_{03}\\&=-E_1^2-E_2^2-E_3^2}
-\e{F^{0\mu}_{1\mu}&=F^{00}F_{10}+F^{01}F_{11}+F^{02}F_{12}+F^{03}F_{13}\\&=E_2B_3-E^3B_2}
-\e{F^{0\mu}_{2\mu}&=F^{00}F_{20}+F^{01}F_{21}+F^{02}F_{22}+F^{03}F_{23}\\&=E_3B_1-E_1B_3}
-\e{F^{0\mu}_{3\mu}&=F^{00}F_{30}+F^{01}F_{31}+F^{02}F_{32}+F^{03}F_{33}\\&=E_1B_2-E_2B_1}
-\e{F^{1\mu}_{1\mu}&=F^{10}F_{10}+F^{11}F_{11}+F^{12}F_{12}+F^{13}F_{13}\\&=-E_1^2+B_2^2+B_3^2}
-\e{F^{1\mu}_{2\mu}&=F^{10}F_{20}+F^{11}F_{21}+F^{12}F_{22}+F^{13}F_{23}\\&=-E_1E_2-B_1B_2}
-\e{F^{1\mu}_{3\mu}&=F^{10}F_{30}+F^{11}F_{31}+F^{12}F_{32}+F^{13}F_{33}\\&=-E_1E_3-B_1B_3}
-\e{F^{2\mu}_{2\mu}&=F^{20}F_{20}+F^{21}F_{21}+F^{22}F_{22}+F^{23}F_{23}\\&=-E_2^2+B_1^2+B_3^2}
-\e{F^{2\mu}_{3\mu}&=F^{20}F_{30}+F^{21}F_{31}+F^{22}F_{32}+F^{23}F_{33}\\&=-E_2E_3-B_2B_3}
-\e{F^{3\mu}_{3\mu}&=F^{30}F_{30}+F^{31}F_{31}+F^{32}F_{32}+F^{33}F_{33}\\&=-E_3^2+B_1^2+B_2^2}
-\e{T^0_0&=\oof(E_1^2+E_2^2+E_3^2)+\esbs}
-\e{T^0_1&=\oof(E_3B_2-E_2B_3)}
-\e{T^0_2&=\oof(E_1B_3-E_3B_1)}
-\e{T^0_3&=\oof(E_2B_1-E_1B_2)}
-\e{T^1_1&=\oof(-E_1^2+B_3^2+B_2^2)+\esbs}
-\e{T^1_2&=\oof(E_1E_2+B_1B_2)}
-\e{T^1_3&=\oof(E_1E_3+B_1B_3)}
-\e{T^2_2&=\oof(E_2^2-B_1^2-B_3^2)+\esbs}
-\e{T^2_3&=\oof(E_2E_3+B_2B_3)}
-\e{T^3_3&=\oof(E_3^2+B_1^2+B_2^2)+\esbs}
-And the remaining terms can be found by $T^{\mu \nu}=-T^{\nu \mu}$
+\e{T^\mu_\nu&=-\oof F^{\mu \alp}F_{\nu \alp} + \oos \delta^\mu_\nu F_{\alp \beta} F^{\alp \beta}
+  \intertext{$F^{\mu\nu}F_{\mu \nu}=2(B^2-E^2)$ as calculated in the lecture notes, p31.}
+&=-\oof F^{\mu\alp}F_{\nu\alp}+\ooe\delta^\mu_\nu(B^2-E^2)}
+Calculate $F^{\mu \alp}F_{\nu \alp}$.
+\e{F^{0\mu}F_{0\mu}=F^{00}F_{00}+F^{01}F_{01}+F^{02}F_{02}+F^{03}F_{03}=-E_1^2-E_2^2-E_3^2=-E^2}
+\e{F^{0\mu}F_{1\mu}=F^{00}F_{10}+F^{01}F_{11}+F^{02}F_{12}+F^{03}F_{13}=E_2B_3-E_3B_2=-F^{1\mu}F_{0\nu}}
+\e{F^{0\mu}F_{2\mu}=F^{00}F_{20}+F^{01}F_{21}+F^{02}F_{22}+F^{03}F_{23}=E_3B_1-E_1B_3=-F^{2\mu}F_{0\nu}}
+\e{F^{0\mu}F_{3\mu}=F^{00}F_{30}+F^{01}F_{31}+F^{02}F_{32}+F^{03}F_{33}=E_1B_2-E_2B_1=-F^{3\mu}F_{0\nu}}
+\e{F^{1\mu}F_{1\mu}=F^{10}F_{10}+F^{11}F_{11}+F^{12}F_{12}+F^{13}F_{13}=-E_1^2+B_2^2+B_3^2}
+\e{F^{1\mu}F_{2\mu}=F^{10}F_{20}+F^{11}F_{21}+F^{12}F_{22}+F^{13}F_{23}=-E_1E_2-B_1B_2=F^{2\mu}F_{1\mu}}
+\e{F^{1\mu}F_{3\mu}=F^{10}F_{30}+F^{11}F_{31}+F^{12}F_{32}+F^{13}F_{33}=-E_1E_3-B_1B_3=F^{3\mu}F_{1\mu}}
+\e{F^{2\mu}F_{2\mu}=F^{20}F_{20}+F^{21}F_{21}+F^{22}F_{22}+F^{23}F_{23}=-E_2^2+B_1^2+B_3^2}
+\e{F^{2\mu}F_{3\mu}=F^{20}F_{30}+F^{21}F_{31}+F^{22}F_{32}+F^{23}F_{33}=-E_2E_3-B_2B_3=F^{3\mu}F_{2\mu}}
+\e{F^{3\mu}F_{3\mu}=F^{30}F_{30}+F^{31}F_{31}+F^{32}F_{32}+F^{33}F_{33}=-E_3^2+B_1^2+B_2^2}
+Calculate $T^\mu_\nu$.
+\e{\boxed{T^0_0=\ooe(B^2+E^2)}}
+\e{\boxed{T^0_1=\oof(E_3B_2-E_2B_3)=-T^1_0}}
+\e{\boxed{T^0_2=\oof(E_1B_3-E_3B_1)=-T^2_0}}
+\e{\boxed{T^0_3=\oof(E_2B_1-E_1B_2)=-T^3_0}}
+\e{\boxed{T^1_1=\oof(E_1^2-B_2^2-B_3^2)+\esbs}}
+\e{\boxed{T^1_2=\oof(E_1E_2+B_1B_2)=T^2_1}}
+\e{\boxed{T^1_3=\oof(E_1E_3+B_1B_3)=T^3_1}}
+\e{\boxed{T^2_2=\oof(E_2^2-B_1^2-B_3^2)+\esbs}}
+\e{\boxed{T^2_3=\oof(E_2E_3+B_2B_3)=T^3_2}}
+\e{\boxed{T^3_3=\oof(E_3^2-B_1^2-B_2^2)+\esbs}}
+After calculating $\fumn \flmn$, $F^{\mu\alpha}F_{\nu\alpha}$ we find all 16 components of $T^\mu_\nu$.
 \section*{Question 2.c.}
-\e{\p_\mu T^\mu_\nu&=\asdnoi+\oos \p_\mu \delta^\mu_\nu \flab\fuab\\
-&=\p_\mu (-\oof F^{\mu\alpha}F_{\nu\alpha}+\oos\delta^\mu_\nu\flab\fuab)\\
-&=-\oof((\p_\mu F^{\mu\alpha}F_{\nu\alpha}+F^{\mu\alp}))}
+\e{\p_\mu T^\mu_\nu&=\p_\mu (-\oof F^{\mu\alp}F_{\nu\alp}+\oos\delta^\mu_\nu\flab\fuab)\\
+&=-\oof((\p_\mu F^{\mu\alp}F_{\nu\alp}+F^{\mu\alp})(\p_\mu F_{\nu\alp}))+\oos\delta^\mu_\nu((\p_\mu \flab)\fuab+\flab(\p_\mu \fuab))\\
+&=-\oof((\p_\mu F^{\mu\alp})F_{\nu\alp}+F^{\mu\alp}(\p_\mu F_{\nu\alp}))+\ooe(\fuab\p_\mu\flab)}
+\e{\lab{9128n}\fuab\p_\mu\flab&=-\p_\alp F_{\bet \nu}\fuab-\p_\bet F_{\nu \alp}\fuab
+\intertext{For the first term, $\alp\rightarrow\mu$. For the second term, $\bet\rightarrow\mu$}
+&=-\p_\mu F_{\bet \nu}F^{\mu \bet}-\p_\mu F_{\nu \alp}F^{\alp \mu}
+\intertext{For the first term, $\bet\rightarrow\alp$}
+&=-\p_\mu F_{\alp\nu}F^{\mu\alp}-\p_\mu F_{\nu\alp}F^{\alp\mu}\\
+&=\p_\mu F_{\nu\alp}F^{\mu \alp}+\p_\mu F_{\nu\alp}F^{\mu\alp}\\
+&=2\p_\mu F_{\nu\alp}F^{\mu\alp}}
+\e{\p_\mu T^\mu_\nu&=-\oof((\p_\mu F^{\mu\alp})F_{\nu\alp}+F^{\mu\alp}(\p_\mu F_{\nu\alp}))+\ooe(\fuab\p_\mu\flab)\\
+&=-\oof\p_\mu F^{\mu\alp}F_{\nu\alp}-\oof F^{\mu\alp}(\p_\mu F_{\nu\alp})+\ooe\fuab\p_\nu\flab\\
+&=-\oof\p_\mu F^{\mu\alp}F_{\nu\alp}-\oof F^{\mu\alp}(\p_\mu F_{\nu\alp})+\oof F^{\mu\alp}(\p_\mu F_{\nu\alp})\\
+&=-\oof\p_\mu F^{\mu\alp}F_{\nu\alp}}
+\e{\boxed{\p_\mu T^\mu_\nu=-\oof(\p_\mu F^{\mu\alp})F_{\nu\alp}}}
+After expanding $\p_\mu T^\mu_\nu$, using the Bianchi identity in \eref{9128n}, and relabeling some contracted indices, we find the answer.
 \section*{Question 3}
+\e{\lab{182}\pxn F^{\mu\nu}=-\ooc j^\mu}
+\e{\pxn F^{0\nu}=\del\cdot\vec{E}=-\ooc j^0=\fr{\rho}{c}}
+\e{\del\cdot\vec{E}=\fr{\rho}{c}}
+\e{\pxn F^{i\nu}=-\ooc \vec{j}=\fr{\p}{\p x^0} F^{i0}+\fr{\p}{\p x^j} F^{ij}=\fr{\p}{\p t}\vec{E}-\del\times\vec{B}}
+\e{\lab{12nu}\boxed{\ooc j^0=\del\cdot \vec{E}=\ooc \rho}}
+\e{\lab{9182n}\boxed{\ooc\vec{j}=\del\times\vec{B}-\fr{\p}{\p t}\vec{E}}}
+The $\mu=0$ component of \eref{182} is \eref{12nu}, Gauss' equation, and the $\mu=i$ component is \eref{9182n}, the Maxwell-Ampere equation.
 \section*{Question 4.a.}
+\e{\scl(\phi(x),\phi^*(x),A_\mu(x))\rightarrow \scl(\phi(x+a),\phi^*(x+a),A_\mu(x+a))}
+\e{\delta\scl&=a^\nu\p_\nu\scl=a^\nu\delta^\mu_\nu\p_\mu\scl\\
+&=\dmaml}
+\e{\dmaml&=a^\nu\delt^\mu_\nu\p_\mu\scl}
+\e{\p_\mu a^\nu(\ppp\p_\nu\phi+\pps\p_\nu \phi^*+\ppa\p_\nu A_\rho-\delt^\mu_\nu\scl)=0}
+\e{\p_\mu a^\nu T^\mu_\nu=0}
+\e{\boxed{T^\mu_\nu=\ppp\p_\nu\phi+\pps\p_\nu \phi^*+\ppa\p_\nu A_\rho-\delt^\mu_\nu\scl}}
+The spacetime translation of $\phi$, $\phi^*$, and $A_\rho$ in $\scl$ results in a quantity that could be requisitely 0. It is $T^\mu_\nu$.
 \section*{Question 4.b.}
+\e{T^\mu_\nu&=\ppp\p_\nu\phi+\pps\p_\nu\phi^*+\ppa\p_\nu A_\rho-\delt^\mu_\nu\scl
+\intertext{$\delta A=\epsilon^\mu\p_\mu A_\rho=0$, $\epsilon^\mu\neq 0$, $\p_\mu A_\nu=0$.}
+&=\ppp\p_\nu\phi+\pps\p_\nu\phi^*-\delt^\mu_\nu\scl\\
+\intertext{$F_{\mu\nu}=0$, $D_\mu=\p_\mu$, $\scl=\delta^\mu_\nu((\p_\rho \phi^*)(\p^\rho\phi)-m^2\phi^*\phi)$}
+&=\ppp\p_\nu\phi+\pps\p_\nu\phi^*-\delta^\mu_\nu((\p_\rho \phi^*)(\p^\rho \phi)-m^2 \phi^*\phi)\\
+&=\ppp\p_\nu\phi+\pps\p_\nu\phi^*-\delta^\mu_\nu((\p_\rho \phi^*)(\p^\rho \phi)-m^2 \phi^*\phi)}
+\e{\boxed{T_{\mu\nu}=\ppp\p_\nu\phi+\pps\p_\nu\phi^*-\eta_{\mu \nu}((\p_\rho \phi^*)(\p^\rho \phi)-m^2 \phi^*\phi)}}
+After keeping $\delta A=0$ to $T$ and $\scl$ we find the answer. The $\rho$ indices in $\scl$ are not contracted with the $\delta^\mu_\nu$. The $\delta$ cannot act any further on $\scl$ until the components are specified.
 \section*{Question 4.c.}
+It's ambiguous whether to use the 4.a. $T^\mu_\nu$ or the 4.b. $T^\mu_\nu$. Choose 4.b.
+\e{T^\mu_\nu=\ppp\p_\nu\phi+\pps\p_\nu\phi^*-\delta^\mu_\nu((\p_\rho\phi^*)(\p^\rho\phi)-m^2\phi^*\phi)}
+\e{\p_0 T^0_i&=\p_0(\ppp\p_i\phi)+\p_0(\pps\p_i\phi^*)-\p_0\delta^0_i((\p_\rho\phi^*)(\p^\rho\phi)-m^2\phi^*\phi)
+\intertext{$\delta^0_i=\vec{0}$}
+&=\p_0(\ppp\p_i\phi)+\p_0(\pps\p_i\phi^*)}
+\e{\fr{\p}{\p(\p_0 \phi)}\scl=\fr{\p}{\p(\p_0 \phi)}(\p_0\phi^*\p^0\phi)=\p_0\phi^*}
+\e{\fr{\p}{\p(\p_0 \phi^*)}\scl=\fr{\p}{\p(\p_0 \phi^*)}(\p_0\phi^*\p^0\phi)=\p_0\phi}
+\e{\p_0 T^0_i&=\p_0((\p^0\phi^*)\p_i\phi)+\p_0((\p^0\phi)\p_i\phi^*)\\
+&=(\p_0^2\phi^*)(\p_i\phi) + (\p_0\phi^*)(\p_0\p_i\phi)+(\p_0^2\phi^*)(\p_i\phi^*)+(\p_0\phi)(\p_0\p_i\phi^*)}
+\e{\boxed{\p_0 T^0_i=(\p_0^2\phi^*)(\p_i\phi) + (\p_0\phi^*)(\p_0\p_i\phi)+(\p_0^2\phi^*)(\p_i\phi^*)+(\p_0\phi)(\p_0\p_i\phi^*)}}
+The interpretation is that the momentum density $T^0_i$ varies in time only when 1. the field has nonzero acceleration in time and nonzero gradient, or 2. the field has nonzero velocity in time and the gradient has nonzero velocity in time.
 \section*{Question 5.a.i.}
+Let the unprimed frame have no relative velocity. It is easier to work in cylinder coordinates, $\vec{x}=(\hat{r},\hat{\theta},\hat{x})$.
+\e{\boxed{\vec{E}=\fr{\lambda}{2\pi\epz r}\hat{r}+0\hat{\theta}+0\hat{x}}}
+\e{\boxed{\vec{B}=0\hat{r}+0\hat{\theta}+0\hat{x}}}
+The electric field points radially away from the line charge, and the magnetic field is 0.
 \section*{Question 5.a.ii.}
+Let the primed frame move parallel to the line charge, $\vec{v}=v\hat{x}$. The length of the line charge is contracted, and $\lambda$ increases.
+\e{\gamma=\lorentz}
+\e{\gamma\geq 1}
+\e{\lambda'=\gamma \lambda \geq \lambda}
+\e{\vec{E}'=\gamma \vec{E}}
+The magnetic field is boosted from $B=0$ to nonzero $B'$. It must point perpendicular to the direction of the boost, $\hat{x}$, and perpendicular to the $\vec{E}$ direction, $\hat{r}$, so the only direction must be $\hat{\theta}$. Check the answer.
+\e{\vec{B}'&=\gamma(B-\fr{1}{c^2}\vec{v}\times\vec{E})\\
+&=-\fr{1}{c^2}\vec{v}\times\vec{E}\\
+&=-\fr{1}{c^2}v_x E_r \hat{\theta}}
+\e{\boxed{\vec{E}'=\gamma \fr{\lambda}{2\pi\epz r}\hat{r}+0\hat{\theta}+0\hat{x}}}
+\e{\boxed{\vec{B}'=0\hat{r}-\fr{1}{c^2}v_x E_r \hat{\theta}+0\hat{x}}}
 \section*{Question 5.a.iii.}
-\section*{Question 5.b.}
-\section*{Question 5.c.}
+Let the primed frame move perpendicular to the line charge, $\vec{v}=v_r\hat{r}$. The line charge is moving with velocity $v_r$ in the $\hat{r}$ direction. The electric field is parallel to the boost, $\hat{r}$, and cannot be contracted. The magnetic field is boosted from $\vec{B}=0$ to nonzero $\vec{B}'$. It must point perpendicular to the direction of the boost, $\hat{r}$, and perpendicular to the direction of $\vec{E}$, $\vec{r}$, which is not possible. Check the cross product is zero
+\e{\vec{B}'&=\gamma (B-\fr{1}{c^2}\vec{v}\times\vec{E})\\
+&=-\gamma \fr{1}{c^2}\vec{v}\times\vec{E}\\
+&=0\hat{r}+0\hat{\theta}+0\hat{x}}
+because there are no $E_r v_r$ terms in the cross product.
+\e{\boxed{\vec{E}'=\fr{\lambda}{2\pi\epz r}\hat{r}+0\hat{\theta}+0\hat{x}}}
+\e{\boxed{\vec{B}'=0\hat{r}+0\hat{\theta}+0\hat{x}}}
+\section*{Question 5.b.i.}
+Let the unprimed frame have no relative velocity to the magnet, oriented with S pole at large $x$ and N pole at large $-x$. There is no electric field, and the magnetic field lines point from N to S, so $+\hat{x}$.
+\e{\boxed{\vec{E}=0\hat{r}+0\hat{\theta}+0\hat{x}}}
+\e{\boxed{\vec{B}=0\hat{r}+0\hat{\theta}+\fr{\muz \lambda}{\tpr}\hat{x}}}
+\section*{Question 5.b.ii.}
+Let the primed frame frame move parallel to the magnet, $\vec{v}=v\hat{x}$. Under a general Lorentz transform,
+\e{B'_{||}=B_{||}}
+so the $B$ field remains unchanged. The electric field is nonzero, and points perpendicular to the direction of $\vec{B}$, $\hat{x}$, and perpendicular to the direction of the boost, $\hat{x}$, which is not possible. Check the cross product is zero.
+\e{E'_{\perp}&=\gamma (E_\perp+\vec{v}\times\vec{B})\\
+&=\gamma(0 + 0)}
+because there are no $B_x v_x$ terms in the cross product.
+\e{\boxed{\vec{E}'=0\hat{r}+0\hat{\theta}+0\hat{x}}}
+\e{\boxed{\vec{B}'=0\hat{r}+0\hat{\theta}+\fr{\muz \lambda}{\tpr}\hat{x}}}
+\section*{Question 5.b.iii.}
+Let the primed frame move perpendicular to the magnet, $\vec{v}=v_r\hat{r}$. The magnetic field is perpendicular to the boost, and is contracted. The electric field points perpendicular to the direction of the boost, $\hat{r}$ and perpendicular to the direction of the magnetic field, $\hat{x}$, therefore it points in the ``radial'' direction, $\hat{y}$. Check with the Lorentz transformation.
+\e{\vec{E}'_{\perp}&=\gamma (\vec{E}+\vec{v}\times\vec{B})\\
+&=\gamma (v_r B_x \hat{y})}
+\e{\boxed{\vec{E}'=0\hat{x}+\gamma (v_r B_x \hat{y})+0\hat{x}}}
+\e{\boxed{\vec{B}'=0\hat{r}+0\hat{\theta}+\gamma \fr{\muz \lambda}{\tpr}\hat{x}}}
+\section*{Question 5.c.i.}
+Let the unprimed frame have no relative velocity to the point charge. It is most convenient to work in spherical coordinates $\vec{x}=\hat{r}+\hat{\theta}+\hat{\phi}$. The electric field is radial and there is no magnetic field.
+\e{\boxed{\vec{E}=\fr{q}{4\pi \epz r^2}\hat{r}+0\hat{\theta}+0\hat{\phi}}}
+\e{\boxed{\vec{B}=0\hat{r}+0\hat{\theta}+0\hat{\phi}}}
+\section*{Question 5.c.ii.}
+Let the primed frame move parallel to the point charge. It is convenient to switch to Cartesian, $\vec{x}=\hat{x}+\hat{y}+\hat{z}$. The velocity is $\vec{v}=v_x\hat{x}$. Let the $\hat{y}$ axis be oriented radially through the particle. The electric field is boosted.
+\e{\vec{E}'_\perp&=\gamma(\vec{E}+\vec{v}\times\vec{B})=\gamma E_y=\gamma \fr{q}{4\pi\epz r^2} \hat{y}}
+The magnetic field $\vec{B}'$ must be perpendicular to the direction of the boost, $\hat{x}$, and perpendicular to the direction of the electric field, $\hat{y}$, therefore $\hat{z}$. Check with the Lorentz transformation
+\e{\vec{B}'_\perp=\gamma (\vec{B}_\perp-\fr{1}{c^2}v\times\vec{E})=-\gamma \fr{1}{c^2} v_x E_y}
+\e{\boxed{\vec{E}'=0\hat{x}+\gamma \fr{q}{4\pi\epz r^2}\hat{y}+0\hat{z}}}
+\e{\boxed{\vec{B}'=0\hat{x}+0\hat{y}-\gamma \fr{1}{c^2} v_x E_y\hat{z}}}
+\section*{Question 5.c.iii.}
+Let the frame move perpendicular to the point charge, that is, in the axis through the charge, $\vec{v}=v_x\hat{x}$. The results is identical to the frame in 5.c.iii., with the difference that $\hat{x}$ is now perpendicular to the axis through the charge, instead of parallel. $\hat{y}$ is again radial in both frames.
+\e{\boxed{\vec{E}'=0\hat{x}+\gamma \fr{q}{4\pi\epz r^2}\hat{y}+0\hat{z}}}
+\e{\boxed{\vec{B}'=0\hat{x}+0\hat{y}-\gamma\fr{1}{c^2}v_x E_y\hat{z}}}
 \end{document}
