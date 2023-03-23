@@ -14,10 +14,10 @@
 \n{pu}{\p^\mu}
 \n{pz}{\phi_0}
 \n{dph}{\delta \phi}
-\n{ept}{e^{i\theta}}
-\n{ent}{e^{-i\theta}}
+\n{ept}{e^{i\theta(x)}}
+\n{ent}{e^{-i\theta(x)}}
 \n{pdp}{(\pz+\dph)}
-\n{thdan}{\pl(\pz+\dph)\pu(\pz+\dph)+(\pl\theta)(\pu\theta)(\pz+\dph)^2-r(\pz+\dph)^2+\lam(\pz+\dph)^4}
+\n{thdan}{\pl(\pz+\dph)\pu(\pz+\dph)+(\pl\theta(x))(\pu\theta(x))(\pz+\dph)^2-r(\pz+\dph)^2-\lam(\pz+\dph)^4}
 \n{ce}{\fr{c}{e}}
 \n{fmm}{\fr{1}{16\pi}F_{\mu\nu}F^{\mu \nu}}
 \n{fra}{(\fr{e}{c})^2A_\mu B^\mu}
@@ -31,8 +31,15 @@
 \n{vb}{\vec{B}}
 \n{ve}{\vec{E}}
 \n{vk}{\vec{k}}
+\n{vp}{\vec{p}}
 \n{vx}{\vec{x}}
+\n{vv}{\vec{v}}
+\n{vaa}{\vec{a}}
+\n{vbb}{\vec{\beta}}
 \n{pt}{\fr{\p}{\p t}}
+\n{prel}{P_\textrm{rel}}
+\n{ddtau}{\fr{d}{d\tau}}
+\n{epx}{e^{ipx}}
 \begin{document}
 \begin{center}
 {\Large{Problem Set 5}}\\~\\
@@ -45,6 +52,7 @@ Institution&Stanford University\\
 Due Date&22 March 2023\\
 \end{tabular}
 \end{center}
+To the graders, thank you very much for a great course. It was an excellent opportunity to deeply understand classical field theory and its applications to electrodynamics. Best of luck in your research, and future courses you teach. Here I do questions 1, 2, 3, 5, 6, 7.
 \section*{Question 1.a.}
 \e{\scl=-\frs F_{\mu \nu}F^{\mu \nu}+\fr{(mc)^2}{8\pi}B_\mu B^\mu}
 \e{\pppa\fmnfmn&=\pppa(\p_\mu B_\nu-\p_\nu B_\mu)(\p^\mu B^\nu - \p^\nu B^\mu)\\
@@ -105,28 +113,34 @@ There are two independent components.
 \e{\boxed{U=\fr{V}{8\pi}\Sigma_{\vk}(\fr{1}{c^2}\dot{\va}(\vk)\dot{\va}^*(\vk)+(\vk\times\va(\vk))(\vk\times\va(\vk)^*))}}
 \e{\boxed{\vec{P}=\Sigma_{\vk}\fr{\vk}{\omega(\vk)}k^2 a(\vk)\cdot a(\vk)^*}}
 \section*{Question 3.a.}
+\e{\lab{1asjdn}\scl=(\pl \phi^*)(\pu \phi)-r\phi^*\phi-\lam(\phi^*\phi)^2}
 \e{\vpp=r\psp+\lam(\psp)^2}
 \e{r>0\quad \lambda>0}
-\e{\psp=-\fr{r}{2\lambda}\leq 0}
-\e{\phi=0}
+\e{\fr{\p}{\p(\phi^*\phi)}V=r+2\lam(\phi^*\phi)=0}
+\e{\min V\Rightarrow\phi=0}
+\e{\boxed{\phi=0}}
+$\vpp$ when $r>0$ is minimized at $\phi=0$
 \section*{Question 3.b.}
-\e{\psp=-\fr{r}{2\lam}\geq0}
+\e{r<0\quad \lambda>0}
+\e{\fr{\p}{\p(\phi^*\phi)}V=r+2\lam(\phi^*\phi)=0}
+\e{\psp=-\fr{r}{2\lam}\geq 0}
 \e{\label{192b}\phi=(-\fr{r}{2\lambda})^{\fr{1}{2}}e^{i\theta}}
-$\vpp$ when $r>0$ is minimized at $\phi=0$, and when $r<0$ is minimized at \eref{192b}. The global U(1) symmetry is broken into the local U(1) symmetry because the field $\theta$ is position dependent.
+$\vpp$ when $r<0$ is minimized at \eref{192b}. The global U(1) symmetry for \eref{1asjdn} is ``broken'' into the local U(1) symmetry because the field $\theta$ can be a function of spacetime.
 \section*{Question 3.c.}
-\e{\scl&=(\pl \phi^*)(\pu \phi)-r\phi^*\phi+\lam(\phi^*\phi)^2\\
-\intertext{$\phi=(\pz+\dph)\ept$}
-&=(\pl ((\pz+\dph)\ent))(\pu((\pz+\dph)\ept))-r(\pz+\dph)\ent(\pz+\dph)\ept+\lam(\pz+\dph)^4\\
+\e{\phi=(\pz+\dph)\ept}
+\e{\scl&=(\pl \phi^*)(\pu \phi)-r\phi^*\phi-\lam(\phi^*\phi)^2\\
+&=(\pl ((\pz+\dph)\ent))(\pu((\pz+\dph)\ept))-r(\pz+\dph)\ent(\pz+\dph)\ept-\lam(\pz+\dph)^4\\
 &=\thdan}
 \e{\boxed{\scl=\thdan}}
 This is $\scl$ in terms of $\pz$ and $\dph$.
 \section*{Question 3.d.}
+Nothing to answer.
 \section*{Question 3.e.}
 \e{\phi=0}
 \e{\phi=(-\fr{r}{2\lambda})^{\fr{1}{2}}e^{i\theta}}
-\e{\scl&=(D_\mu \phi)^*(D^\mu \phi)-\fmm-r\phi^*\phi+\lam(\phi^*\phi)^2\\
-&=\pl\pdp\pu\pdp+(\p_\mu \theta)(\p^\mu \theta)\pdp^2+\fra \pdp^2-r\pdp^2+\lam\pdp^4-\fmm}
-\e{\boxed{\scl=\pl\pdp\pu\pdp+((\pl \theta)(\pu \theta)+\fra-r)\pdp^2+\lam\pdp^4}}
+\e{\scl&=(D_\mu \phi)^*(D^\mu \phi)-\fmm-r\phi^*\phi-\lam(\phi^*\phi)^2\\
+&=\pl\pdp\pu\pdp+(\p_\mu \theta)(\p^\mu \theta)\pdp^2+\fra \pdp^2-r\pdp^2-\lam\pdp^4-\fmm}
+\e{\boxed{\scl=\pl\pdp\pu\pdp+((\pl \theta)(\pu \theta)+\fra-r)\pdp^2-\lam\pdp^4}}
 \section*{Question 3.f.}
 \e{F_{\mu\nu}&=\p_\mu(A'_\nu+\ce\p_\nu\theta)-\p_\nu(A'_\mu+\ce\p_\mu\theta)\\
 &=\p_\mu A'_\nu-\p_\nu A'_\mu+\ce\p_\mu \p_\nu\theta-\ce \p_\nu\p_\mu\theta\\
@@ -138,8 +152,92 @@ This is $\scl$ in terms of $\pz$ and $\dph$.
 \e{\scl&=\p_\mu\pdp\p^\mu\pdp+(3(\p_\mu\theta)(\p^\mu\theta)+(\fr{e}{c})^2A'_\mu A'^\mu-2\fr{e}{c}(\p_\mu\theta)A'^\mu-r)\pdp^2\\&+\lam\pdp^4-\fr{1}{16\pi}(\p_\mu A'_\nu-\p_\nu A'_\mu)(\p^\mu A'^\nu-\p^\nu A'^\mu)}
 \section*{Question 4}
 \section*{Question 5.a.}
+From Homework 2, we know $F^{\mu\nu}$ in 2+1 dimensions. Let the indices be $\mu\in\{0,1,2\}$. First find the Maxwell equations, then find TE equation of motion.
+\e{F^{\mu\nu}=\begin{pmatrix}0&-E_1&-E_2\\E_1&0&-B&\\E_2&B&0\end{pmatrix}}
+\e{F_{\mu\nu}=\begin{pmatrix}0&E_1&E_2\\-E_1&0&-B&\\-E_2&B&0\end{pmatrix}}
+\e{\p_\mu F^{\mu\nu}=0}
+\e{\p_\mu F^{\mu 0}=-\p_1 E_1-\p_2 E_2=0}
+\e{\del\cdot\vec{E}=0}
+\e{\p_\mu F^{\mu 1}=\p_0 E_1-\p_2 B=0}
+\e{\p_\mu F^{\mu 2}=\p_0 E_2-\p_1 B=0}
+\e{\p_0 \vec{E}=\p_1 B \hat{x}-\p_2 B\hat{y}}
+\e{\epsilon^{\mu\nu\rho}\p_\mu F^{\mu\nu}=0}
+\e{\p_\mu F_{\nu\rho}+\p_\nu F_{\rho\mu}+\p_\rho F_{\mu\nu}=0}
+\e{\p_0 B=\p_2E_1-\p_1E_2}
+Find the wave equation for $B$.
+\e{\p_2^2B=\p_0\p_2E_1}
+\e{\p_1^2B=-\p_0\p_1E_2}
+\e{\del^2B=\p_0(\p_2E_1-\p_1E_2)=\p_0^2B}
+\e{(\p_0^2-\del^2)B=0}
+Find the wave equation for $E_1$.
+\e{\p_0^2E_1=\p_2\p_0B=\p_2(\p_2E_1-\p_1E_2)=\p_2(\p_2E_1-\p_1E_2)+\p_1(\p_1E_1+\p_2E_2)=\p_1^2E_1+\p_2^2E_1}
+\e{(\p_0^2-\del^2)E_1=0}
+Find the wave equation for $E_2$.
+\e{\p_0^2E_2=-\p_1\p_0B=-\p_1(\p_2E_1-\p_1E_2)=-\p_1(\p_2E_1-\p_1E_2)+\p_2(\p_1E_1+\p_2E_2)=\p_1^2E_2+\p_2^2E_2}
+\e{(\p_0^2-\del^2)E_2=0}
+The equations of motion for the TE modes are
+\e{\boxed{\p_0 \vec{E}=\p_1 B \hat{x}-\p_2 B\hat{y}}}
+\e{\boxed{\p_0 B = \p_2E_1-\p_1E_2}}
+\e{\boxed{\del\cdot\vec{E}=0}}
+The wave equations for the TE modes are
+\e{\boxed{(\p_0^2-\del^2)B=0}}
+\e{\boxed{(\p_0^2-\del^2)E_1=0}}
+\e{\boxed{(\p_0^2-\del^2)E_2=0}}
+By writing $F^{\mu\nu}$ and applying the equations of motion, we find the TE modes of the equations of motion. By applying the Bianchi identity, then applying a $\p_0$ derivative, we find the Maxwell equations. Using the Maxwell equations we find the TE wave equations for $E_1$, $E_2$, and $B$.
+\section*{Question 5.b.}
+We have already shown that the first term $F_{\mu\nu}F^{\mu\nu}$ is invariant under $A_\mu\rightarrow A_\mu + \p_\mu \chi$. For the other term,
+\e{\delta\scl=\fr{\lam}{2\pi}\epsilon^{\mu\nu\rho}(\p_\mu A_\nu)\p_\rho\chi=\p_\rho(\fr{\lam}{2\pi}\epsilon^{\mu\nu\rho}\chi\p_\mu A_\nu)}
+This is a divergence. By the divergence theorem, $\delta S=\int \delta \scl d^nx$ is a constant. The full action is gauge invariant. Next find the equations of motion for the TE modes.
+\e{\p_\nu \fr{\p}{\p(\p_\nu A_\mu)}\scl=\fr{\p}{\p A_\mu}\scl}
+\e{-\fr{1}{4\pi}\p_\mu F^{\mu\nu}+\fr{\lam}{2\pi}\epsilon^{\mu\nu\rho}\p_\mu A_\rho=\fr{\lam}{4\pi}\ep^{\mu\rho\nu}F_{\mu\rho}}
+\e{\p_\mu F^{\mu \nu}=\lam\ep^{\mu \nu \rho}F_{\mu \rho}}
+\e{\epsilon^{\mu\nu\rho}\epsilon_{\mu\alpha\beta}=\delta^{\nu}_{\alpha} \delta^{\rho}_{\beta}- \delta^{\nu}_{\beta} \delta^{\rho}_{\alpha}}
+\e{\ep_{\nu\alpha\beta}\p_\mu F^{\mu\nu}=4\lam F_{\beta \alpha}}
+\e{\ep_{\nu\alpha\beta}\p^{\beta}\p_{\mu} F^{\mu\nu}=4\lam^2\ep_{\mu\alpha\nu}F^{\mu\nu}}
+\e{\p^{\delta}\p_{\mu}F^{\mu\sigma}-\p^\sigma\p_\mu F^{\mu\delta}=4\lam^2 F^{\sigma\delta}}
+\e{\p^2\p_\mu F^{\mu\sigma}=4\lam^2\p_\delta F^{\sigma\delta}}
+\e{0=(\p^2+4\lam^2)(\p_\mu F^{\mu\nu})=(\p^2+4\lambda^2)(\lam \ep^{\mu\nu\rho}F_{\mu\rho})}
+\e{(\p^2+4\lam^2)F^{\mu\nu}=0}
+\e{a_\mu(k)=e^{ikx}}
+\e{F_{\mu\nu}&=\p_\mu A_\nu-\p_\nu A_\mu=(\p_\mu \epsilon_\nu \epx)-\p_\nu(\epsilon_\mu \epx)\\
+&=k_\mu \epsilon_\nu \epx -k_\nu \epsilon_\mu \epx\\
+&=(k_\mu \epsilon_\nu-k_\nu \epsilon_\mu)\epx}
+\e{(\p_\mu \p^\mu=4\lambda^2)((k_\mu \epsilon_\nu-k_\nu \epsilon_\mu)\epx)=0}
+\e{k^2+4\lambda^2=0}
+\e{\fr{1}{c^2}\omega^2-\vk^2+4\lambda^2=0}
+\e{\omega=\pm c(4\lambda^2+\vk^2)}
+\e{\boxed{S=S|_{A_\mu\rightarrow A_\mu+\p_\mu \chi}}}
+\e{\boxed{\p_\mu F^{\mu\nu}=\lam\ep^{\mu\nu\rho}F_{\mu\rho}}}
+\e{\boxed{(\p^2+4\lam^2)E_x=0}}
+\e{\boxed{(\p^2+4\lam^2)E_y=0}}
+\e{\boxed{(\p^2+4\lam^2)B_z=0}}
+\e{\boxed{\omega=\pm c(4\lambda^2+\vk^2)}}
+We showed the Action is invariant under $A_\mu\rightarrow A_\mu+\p_\mu\chi$. Then we found the equations of motion, then manipulted them until we found ``wave equations'' for $E_x$, $E_y$, and $B_z$. By using the solution $A_\mu=\epsilon_\mu \epx$ we find the dispersion relation between $\vk$ and $\omega$.
 \section*{Question 6}
+\e{\label{1923n}a^\mu&=\gamma^2(\gamma^2\vaa\fr{\vv}{c},\vaa+\fr{\vaa\vv}{c^2}\vv\gamma^2)\\
+&=\gamma^2(\gamma^2\vaa\vbb,\vaa+(\vaa\vbb)\vbb\gamma^2)}
+\e{a_\mu a^\mu&=\gamma^4(\gamma^4(\vaa\vbb)^2-(\vaa+(\vaa\vbb)\vbb\gamma^2)^2)\\
+&=\gamma^4(\gamma^4(\vaa\vbb)^2-\vaa^2-((\vaa\vbb)\vbb)^2\gamma^4-2(\vaa\vbb)^2\gamma^2)\\
+&=\gamma^4(\gamma^4(\vaa\vbb)^2-\gamma^2(1-\vbb^2)\vaa^2-((\vaa\vbb)\vbb)^2\gamma^4-2(\vaa\vbb)^2\gamma^2)\\
+&=\gamma^4(\gamma^4(1-\vbb^2)(\vaa\vbb)^2-2(\vaa\vbb)^2\gamma^2-\vaa^2)\\
+&=\gamma^4(-1(\vaa\vbb)^2\gamma^2-\gamma^2(1-\vbb^2)\vaa^2)\\
+&=\gamma^6(-\vaa^2+\vaa^2\vbb^2-(\vaa\vbb)^2)\\
+&=\gamma^6(-\vaa^2+(\vaa\times\vbb)^2)}
+\e{\prel&=\fr{2e^2}{3m^2c^3}(\fr{d}{d\tau}\p_\mu\fr{d}{d\tau}p^\mu)\\
+&=\fr{2e^2}{3c^3}(a_\mu a^\mu)\\
+&=\fr{2e^2\gamma^6}{3c^3}(a^2-((\vbb\times\vaa)^2))}
+\e{\label{12un3}\boxed{\prel=\fr{2e^2\gamma^6}{3c^3}(a^2-((\vbb\times\vaa)^2))}}
 \section*{Question 7.a.}
+\e{|\ddtau\vp|&=|\ddtau t||\ddt m\vp|=\gamma m|vaa|\\
+&=\gamma m|\ddt \vpp|=\gamma m \omega^2 R = \gamma \omega m |\vv|=\gamma\omega|\vp|}
+\e{\boxed{|\ddtau\vp|=\gamma\omega|\vp|}}
 \section*{Question 7.b.}
-
+\e{\prel&=\fr{2e^2}{3m^2c^3}(\ddtau p_\mu \ddtau p^\mu)\\
+&=\fr{2e^2}{3c^3}(a_\mu a^\mu)\\
+&=\fr{2e^2}{3c^3}\gamma^4 (\gamma^4(\alpha \beta)^2-(\vaa+(\vaa \vbb)\vbb \gamma^2)^2)\\
+&=\fr{2e^2}{3c^3}\gamma^4 |\vaa|^2\\
+&=\fr{2e^2}{3c^3}\gamma^4\omega^2v^2\\
+&=\fr{2e^2c\gamma^4\beta^4}{R^2}}
+\e{\boxed{\prel=\fr{2e^2c\gamma^4\beta^4}{R^2}}}
+Starting with the form of $a^\mu$ in \eref{1923n} and applying the approximation we find the answer.
 \end{document}
