@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\geometry{top=1in,bottom=1in,left=1in,right=1in}
+\n{tr}{\rom{Tr}}
+\n{ltt}{\bar{c}(-\p^2)c+\bar{\psi}(i\gamma^\mu D_\mu-m)\psi}
+\begin{document}
+\begin{center}
+{\Large{Problem Set 1}}\\~\\
+\begin{tabular}{l l}
+Student&Agustin Romero\\
+Instructor&Eva Silverstein\\
+Assistant&Sungyeon Yang\\
+Course&Quantum Field Theory III\\    
+Institution&Stanford University\\
+Date&\today\\
+\end{tabular}
+\end{center}
+Will probably resubmit.
+\section*{Problem 1}
+\e{S&=\int \tr(F_{\mu\nu}F^{\mu\nu}) dx\\
+&=\int \tr(U F_{\mu\nu}U^\dagger U F^{\mu\nu} U^\dagger) dx\\
+&=\int \tr(F_{\mu\nu}F^{\mu\nu}) dx}
+\section*{Problem 2.a.}
+\e{S&=\int dx \oof F_{\mu\nu}F^{\mu\nu}+B\p_\mu A^\nu + \oot \xi B^2+\ltt\\
+&=\int dx \oof A_\mu(\p^2 g^{\mu\nu}-\p^\mu \p^\nu)A_\nu+B\p_\mu A^\nu + \oot \xi B^2+\ltt\\
+&=\int dx \oof A_\mu(\p^2 g^{\mu\nu}-(1-\fr{1}{\xi})\p^\mu \p^\nu)A_\nu+\ltt}
+\section*{Problem 2.b.}
+\e{\scl=\oof(\p_\mu A_\nu - \p_\nu A_\mu)(\p^\mu A^\nu - \p^\nu A^\mu)+B\p_\mu A^\mu + \oot \xi B^2 + \bar{c}(-\p^2)c+\bar{\psi}(i\gamma^\mu D_\mu - m)\psi}
+The BRST transformation is $\scl'$. Calculate each term above.
+\e{\scl'=\scl+\delta\scl}
+\e{\delta\scl_1&=-\oof (\p_\mu \epsilon \p_\nu c - \p_\nu \epsilon \p_\mu c)(\p^\mu \epsilon \p^\nu c - \p^\nu \epsilon \p^\nu c)\\
+&=-\oof (\epsilon c)^2 (\p_\mu \p^\mu \p_\nu \p^\mu - \p_\mu \p^\nu \p_\nu \p^\mu - \p_\nu \p^\mu \p_\mu \p^\nu + \p_\nu \p^\nu \p_\mu \p^\mu)
+&=0}
+\e{\delta\scl_2 = \delta B (\p_\mu \delta A^\mu) = 0}
+\e{\delta\scl_3 = \oot \xi (\delta B)^2 = 0}
+\e{\delta\scl_4 = \delta \bar{c} (-\p^2)\delta c = 0}
+\e{\delta\scl_5 &= \delta \bar{\psi} ( i\gamma^\mu (\p_\mu - i e \delta A_\mu) - m)\delta\psi\\
+&=(i e \epsilon c \bar{\psi})(i\gamma^\mu(\p_\mu-ie\delta A_\mu)-m)(-ie\epsilon c \psi)\\
+&=0}
+All perturbations in the Lagrangian density are either 0 by definition or 0 by $\epsilon^2=0$.
+\section*{Problem 2.c.}
+\e{(\delta A_\mu)^2=\epsilon^2 \p_\mu c \p_\mu c = 0}
+\e{(\delta \psi)^2 = \epsilon^2 (-iec\psi)^2=0}
+\e{(\delta c)^2=0}
+\e{(\delta \bar{c})^2=\epsilon^2 B^2 = 0}
+\e{(\delta B)^2=0}
+Each BRST transformation is nilpotent.
+\end{document}

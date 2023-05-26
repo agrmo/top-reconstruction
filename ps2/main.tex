@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\geometry{top=1in,bottom=1in,left=1in,right=1in}
+\begin{document}
+\begin{center}
+{\Large{Problem Set 2}}\\~\\
+\begin{tabular}{l l}
+Student&Agustin Romero\\
+Instructor&Eva Silverstein\\
+Assistant&Sungyeon Yang\\
+Course&Quantum Field Theory III\\    
+Institution&Stanford University\\
+Date&\today\\
+\end{tabular}
+\end{center}
+\section*{15.1.a.}
+The dimension of any Lie Group $G$ is $N^2-1$, equal to the number of generators of the group. For the group $SU(N)$, there are \fbox{$N^2-1=8$ generators}.
+\section*{15.1.b.}
+$C(r)$ is PS Eq. 15.78,
+\e{\tr (t_r^a t_r^b) = C(r)\delta(a,b)}
+Plug in any $t^a$ to find that $C(r)=1$. Next, $f^{abc}$ is PS Eq. 15.79,
+\e{\label{ajsdn}f^{abc}=\fr{-i}{C(r)}\tr ([t_r^a,t_r^b]t_r^c)=-i\tr ([t_r^a,t_r^b]t_r^c)}
+Because
+\e{[\lambda_a, \lambda_a]=0}
+Then
+\e{[t_r^a,t_r^a]=0}
+Then
+\e{f^{aab}=-f^{aba}=f^{baa}=0\quad a,b=1,...,8}
+without summation. Next calculate the following structure constants explicitly using \eref{ajsdn}.
+\e{\label{asjdn}f^{123}=\fr{1}{2}}
+\e{f^{147}=\fr{1}{4}}
+\e{f^{156}=-\fr{1}{4}}
+\e{f^{246}=\fr{1}{4}}
+\e{f^{257}=\fr{1}{4}}
+\e{f^{345}=\fr{1}{4}}
+\e{f^{367}=-\fr{1}{4}}
+\e{f^{458}=\fr{3^{1/2}}{4}}
+\e{\label{asdjn}f^{678}=\fr{3^{1/2}}{4}}
+Assume we may use \eref{ajsdn} as definition. \eref{asjdn} through \eref{asdjn} calculate several other structure constants by antisymmetry. Finally, the remaining structure constants not related by antisymmetry can be explicitly evaluated to be 0. This covers the full space of indices $a,b,c=1,...,8$.
+\section*{15.1.c.}
+By explciitly evaluating 
+\e{\tr (t_r^a t_r^b)}
+for $a,b=1,...,8$ the result is
+\e{\tr (t_r^a t_r^b)=\fr{1}{2}\delta(a,b)}
+which implies \fbox{$C(r)=\fr{1}{2}$}, and 
+\e{\boxed{\tr (t_r^a t_r^b) = C(r)\delta(a,b)}}
+is satisfied.
+\section*{15.1.d.}
+The quadratic Casimir $C_2(r)$ is Eq. 15.92, which can be evaluated explicitly.
+\e{\Sigma t_r^a t_r^a = C_2(r)\mathbb{I} = \fr{4}{3}\mathbb{I}}
+Then
+\e{\boxed{C_2(r)=\fr{4}{3}}}
+The relationship between $C(r)$ and $C_2(r)$ is Eq. 15.94,
+\e{\label{asjn147}\boxed{d(r)C_2(r)=d(G)C(r)}}
+$d(r)=3$ is the dimension of the representation, which for representations of Lie algebras is equal to the size of the representation matrices. $C_2(r)=\fr{4}{3}$ is the quadratic Casimir, already calculated. $d(G)=8$ is the dimension of the Lie group, equal to the number of generators of the Lie group. Finally, the invariant $C(r)=\fr{1}{2}$ was calculated previously. \eref{asjn147} is satisfied.
+By computing the $C_2(r)$ directly we find the answer, and the relation between $C_2(r)$ and $C(r)$.
+\section*{15.3.a.}
+\e{U_P(z,z)=\eexp{-ie \oint_P A_\mu(x) dx^\mu}}
+\e{S=\int (-\fr{1}{4} F_{\mu\nu}F^{\mu\nu} - \fr{1}{2\xi}(d^\mu A_\mu)^2)d^4x}
+\e{\langle U_P{z,z} \rangle = \int \eexp{iS-ie\oint_P A_\mu (x)dx^\mu} DA_\mu}
+\e{\langle U_P(z,z) \rangle = \eexp{-\fr{1}{2}((-ie \oint_P dx^\mu )(-ie \oint_P dy^\nu) \int \fr{-ig_{\mu\nu}}{k^2+i\epsilon} \eexp{-ik(x-y)} \fr{d^4k}{(2\pi)^4})}}
+The integral is performed as
+\e{\int \fr{\eexp{-ik(x-y)}}{k^2+i\epsilon} \fr{d^4k}{(2\pi)^4}&=i\int \fr{\eexp{k_E (x-y)}}{-k_E^2} \fr{d^4k_E}{(2\pi)^4}\\
+&= \fr{i}{(2\pi)^4}\int_0^{2\pi} d\psi \int_0^\pi d\phi d\sin(\phi) \int_0^\pi d\theta \sin^2(\theta) dk_E \fr{k_E^3}{-k_E^2} e^{ik_E |x-y| \cos(\theta)}\\
+&=-\fr{i}{4\pi^3} \int_0^\infty k_E dk_e \int_0\pi \sin^2(\theta) \eexp{ik_e |x-y| \cos(\theta)} d\theta\\
+&=-\fr{i}{4\pi^2} \int_0^\infty k_E \fr{J_1(k_E |x-y|)}{k_E |x-y|} k_E\\
+&=-\fr{i}{4\pi^2(x-y)^2}}
+resulting in
+\e{\boxed{\langle U_P(z,z) \rangle = \eexp{-\fr{e^2}{8\pi} \oint_P dx^\mu \oint_P dy^\nu \fr{g_{\mu\nu}}{(x-y)^2}}}}
+\section*{15.3.b.}
+The expectation of the Wilson loop is
+\e{\langle U_P(z,z) \rangle &= \eexp{-\fr{e^2}{8\pi} \oint_P dx^\mu \oint_P dy^\nu \fr{g_{\mu\nu}}{(x-y)^2}}
+\intertext{When $T\gg R$ the two closed integrals can be approximated as two integrals for time, leaving the spatial portion of the Wilson loop fixed a length $R$. $(x-y)^2=(x^0-y^0)^2-R^2$.}
+&= \eexp{\fr{e^2}{8\pi^2} \oint_0^T dx^0 \oint_T^0 dy^0 \fr{g_{00}}{(x^0-y^0)^2-R^2}}}
+\section*{15.3.c.}
+\end{document}
