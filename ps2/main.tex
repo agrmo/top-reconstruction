@@ -1,10 +1,19 @@
 \documentclass{article}
 \usepackage{/home/user1/code/tex/sty}
 \usepackage{amsfonts}
+\usepackage{floatrow}
 \usepackage{amsmath}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\newcommand{\figpic}[3]{
+\begin{figure}[H]
+\begin{center}
+\includegraphics[height=#1]{#2}
+\caption{#3}
+\label{#2}
+\end{center}
+\end{figure}}
 \setlength{\parindent}{0pt}
 \geometry{top=1in,bottom=1in,left=1in,right=1in}
 \begin{document}
@@ -19,9 +28,9 @@ Institution&Stanford University\\
 Date&\today\\
 \end{tabular}
 \end{center}
-\section*{15.1.a.}
+\section*{Question 15.1.a.}
 The dimension of any Lie Group $G$ is $N^2-1$, equal to the number of generators of the group. For the group $SU(N)$, there are \fbox{$N^2-1=8$ generators}.
-\section*{15.1.b.}
+\section*{Question 15.1.b.}
 $C(r)$ is PS Eq. 15.78,
 \e{\tr (t_r^a t_r^b) = C(r)\delta(a,b)}
 Plug in any $t^a$ to find that $C(r)=1$. Next, $f^{abc}$ is PS Eq. 15.79,
@@ -43,7 +52,7 @@ without summation. Next calculate the following structure constants explicitly u
 \e{f^{458}=\fr{3^{1/2}}{4}}
 \e{\label{asdjn}f^{678}=\fr{3^{1/2}}{4}}
 Assume we may use \eref{ajsdn} as definition. \eref{asjdn} through \eref{asdjn} calculate several other structure constants by antisymmetry. Finally, the remaining structure constants not related by antisymmetry can be explicitly evaluated to be 0. This covers the full space of indices $a,b,c=1,...,8$.
-\section*{15.1.c.}
+\section*{Question 15.1.c.}
 By explciitly evaluating 
 \e{\tr (t_r^a t_r^b)}
 for $a,b=1,...,8$ the result is
@@ -51,32 +60,131 @@ for $a,b=1,...,8$ the result is
 which implies \fbox{$C(r)=\fr{1}{2}$}, and 
 \e{\boxed{\tr (t_r^a t_r^b) = C(r)\delta(a,b)}}
 is satisfied.
-\section*{15.1.d.}
+\section*{Question 15.1.d.}
 The quadratic Casimir $C_2(r)$ is Eq. 15.92, which can be evaluated explicitly.
-\e{\Sigma t_r^a t_r^a = C_2(r)\mathbb{I} = \fr{4}{3}\mathbb{I}}
+\e{\label{12bnzn} \Sigma t_r^a t_r^a = C_2(r)\mathbb{I} = \fr{4}{3}\mathbb{I}}
 Then
 \e{\boxed{C_2(r)=\fr{4}{3}}}
 The relationship between $C(r)$ and $C_2(r)$ is Eq. 15.94,
 \e{\label{asjn147}\boxed{d(r)C_2(r)=d(G)C(r)}}
 $d(r)=3$ is the dimension of the representation, which for representations of Lie algebras is equal to the size of the representation matrices. $C_2(r)=\fr{4}{3}$ is the quadratic Casimir, already calculated. $d(G)=8$ is the dimension of the Lie group, equal to the number of generators of the Lie group. Finally, the invariant $C(r)=\fr{1}{2}$ was calculated previously. \eref{asjn147} is satisfied.
 By computing the $C_2(r)$ directly we find the answer, and the relation between $C_2(r)$ and $C(r)$.
-\section*{15.3.a.}
-\e{U_P(z,z)=\eexp{-ie \oint_P A_\mu(x) dx^\mu}}
-\e{S=\int (-\fr{1}{4} F_{\mu\nu}F^{\mu\nu} - \fr{1}{2\xi}(d^\mu A_\mu)^2)d^4x}
-\e{\langle U_P{z,z} \rangle = \int \eexp{iS-ie\oint_P A_\mu (x)dx^\mu} DA_\mu}
-\e{\langle U_P(z,z) \rangle = \eexp{-\fr{1}{2}((-ie \oint_P dx^\mu )(-ie \oint_P dy^\nu) \int \fr{-ig_{\mu\nu}}{k^2+i\epsilon} \eexp{-ik(x-y)} \fr{d^4k}{(2\pi)^4})}}
+\section*{Question 15.3.a.}
+\e{U_P(z,z)=exp^{-ie \oint_P A_\mu(x) dx^\mu}}
+\e{S=\int (-\fr{1}{4} F_{\mu\nu}F^{\mu\nu})d^4x}
+\e{\langle U_P(z,z) \rangle = \int exp^{iS-ie\oint_P A_\mu (x)dx^\mu} DA_\mu}
+\e{\langle U_P(z,z) \rangle = exp^{-\fr{1}{2}((-ie \oint_P dx^\mu )(-ie \oint_P dy^\nu) \int \fr{-ig_{\mu\nu}}{k^2+i\epsilon} exp^{-ik(x-y)} \fr{d^4k}{(2\pi)^4})}}
 The integral is performed as
-\e{\int \fr{\eexp{-ik(x-y)}}{k^2+i\epsilon} \fr{d^4k}{(2\pi)^4}&=i\int \fr{\eexp{k_E (x-y)}}{-k_E^2} \fr{d^4k_E}{(2\pi)^4}\\
+\e{\int \fr{exp^{-ik(x-y)}}{k^2+i\epsilon} \fr{d^4k}{(2\pi)^4}&=i\int \fr{exp^{k_E (x-y)}}{-k_E^2} \fr{d^4k_E}{(2\pi)^4}\\
 &= \fr{i}{(2\pi)^4}\int_0^{2\pi} d\psi \int_0^\pi d\phi d\sin(\phi) \int_0^\pi d\theta \sin^2(\theta) dk_E \fr{k_E^3}{-k_E^2} e^{ik_E |x-y| \cos(\theta)}\\
-&=-\fr{i}{4\pi^3} \int_0^\infty k_E dk_e \int_0\pi \sin^2(\theta) \eexp{ik_e |x-y| \cos(\theta)} d\theta\\
+&=-\fr{i}{4\pi^3} \int_0^\infty k_E dk_e \int_0\pi \sin^2(\theta) exp^{ik_e |x-y| \cos(\theta)} d\theta\\
 &=-\fr{i}{4\pi^2} \int_0^\infty k_E \fr{J_1(k_E |x-y|)}{k_E |x-y|} k_E\\
 &=-\fr{i}{4\pi^2(x-y)^2}}
 resulting in
-\e{\boxed{\langle U_P(z,z) \rangle = \eexp{-\fr{e^2}{8\pi} \oint_P dx^\mu \oint_P dy^\nu \fr{g_{\mu\nu}}{(x-y)^2}}}}
-\section*{15.3.b.}
+\e{\boxed{\langle U_P(z,z) \rangle = exp^{-\fr{e^2}{8\pi} \oint_P dx^\mu \oint_P dy^\nu \fr{g_{\mu\nu}}{(x-y)^2}}}}
+\section*{Question 15.3.b.}
 The expectation of the Wilson loop is
-\e{\langle U_P(z,z) \rangle &= \eexp{-\fr{e^2}{8\pi} \oint_P dx^\mu \oint_P dy^\nu \fr{g_{\mu\nu}}{(x-y)^2}}
-\intertext{When $T\gg R$ the two closed integrals can be approximated as two integrals for time, leaving the spatial portion of the Wilson loop fixed a length $R$. $(x-y)^2=(x^0-y^0)^2-R^2$.}
-&= \eexp{\fr{e^2}{8\pi^2} \oint_0^T dx^0 \oint_T^0 dy^0 \fr{g_{00}}{(x^0-y^0)^2-R^2}}}
-\section*{15.3.c.}
+\e{\langle U_P(z,z) \rangle &= exp^{-\fr{e^2}{8\pi} \oint_P dx^\mu \oint_P dy^\nu \fr{g_{\mu\nu}}{(x-y)^2}}}
+This is the product of two countour integrals. Each contour integral has four segments that resemble a rectangle. These segments can be separated as a sum, 2 over time and 2 over space, $P=T_1+T_2+X_1+X_2$ where $T$ are over time and $X$ space. Unfortunately the product of these two contours $\int_{P_1} \int_{P_2}$means there are 16 pairs of contours we must consider. First, parameterize the paths.
+\e{\label{as8bub}T_1=(T,0,0,0)\tau\rom{ from }(0,0,0,0)\rom{ to }(T,0,0,0)}
+\e{X_1=(T,0,0,0)+(0,X,0,0)\tau\rom{ from }(T,0,0,0)\rom{ to }(T,X,0,0)}
+\e{T_2=(T,X,0,0)-(T,0,0,0)\tau\rom{ from }(T,X,0,0)\rom{ to }(0,X,0,0)}
+\e{X_2-(0,X,0,0)-(0,X,0,0)\tau\rom{ from }(0,X,0,0)\rom{ to }(0,0,0,0)}
+Next parameterize the paths using $\tau$, $\sigma$, and $\lambda$ from 0 to 1.
+\e{\label{x8n12}\int_T dx^\mu = \int_0^1 \fr{d}{d\tau} x^\mu d\tau = \int_0^1 (\tau,0,0,0) d\tau}
+\e{\label{9128n}\int_X dx^\mu = \int_0^1 \fr{d}{d\tau} x^\mu d\tau = \int_0^1 (0,X,0,0) d\tau}
+\e{\fr{d}{d\lambda} x^\mu |_{T_1}=(T,0,0,0)}
+\e{x^\mu|_{T_1}=(T,0,0,0)\lambda}
+\e{y^\mu|_{T_1}=(T,0,0,0)\sigma}
+Because of translational symmetry, we can equate some of the segment integrals.
+\e{\int_{X_1}\int_{X_2} (...) = \int_{X_2}\int_{X_1} (...)}
+\e{\int_{T_1}\int_{T_2} (...) = \int_{T_2}\int_{T_1} (...)}
+\e{\int_{T_1}\int_{T_1} (...) = \int_{T_2}\int_{T_2} (...)}
+\e{\int_{X_1}\int_{X_1} (...) = \int_{X_2}\int_{X_2} (...)}
+Because the path parameter \eref{x8n12} has zero dot product with \eref{9128n}, the contour products that mix time and space are zero.
+\e{\int_{X_1}\int_{T_1} (...) = \int_{T_2}\int_{X_2} (...) = \int_{X_1}\int_{T_2} (...) = \int_{T_2}\int_{X_1} (...) = \int_{X_2}\int_{T_1} (...) = \int_{T_1}\int_{X_2} (...) = 0}
+For the \eref{19283n} integral,
+\e{\int_{X_1}\int_{X_1} (...)&=\int_0^1 d\sigma \int_0^1 d\lambda \fr{\fr{d}{d\lambda} x^\mu \fr{d}{d\sigma} y^\nu g_{\mu\nu}}{(x-y)^2}\\
+&= \int_0^1 d\sigma \int_0^1 d\lambda \fr{T^2}{(T\lambda - T\sigma)^2}\\
+&= \int_0^1 d\sigma \int_0^1 d\lambda \fr{1}{(\lambda-\sigma)^2}\\
+&= -\int_0^1 d\sigma \fr{1}{\lambda-\sigma}|_0^1
+\intertext{This has a pole. Insert an $\epsilon$ then take the limit to 0 in the next step.}
+&= -\int_{0+\epsilon}^{1+\epsilon} d\sigma \fr{1}{1-\sigma}+\fr{1}{\sigma}\\
+&= (-\ln(1-\sigma)-\ln(\sigma))|_{0+\epsilon}^{1-\epsilon}\\
+&= -\ln((1-\sigma)\sigma)|_{0+\epsilon}^{1-\epsilon}\\
+&= -\ln(\fr{\epsilon (1-\epsilon)}{\epsilon (1-\epsilon)})=-\ln(1)=0}
+Similarly
+\e{\int_{T_1}\int_{T_1}=0}
+This reduces the number of integrals we actually need to compute down to
+\e{\label{19283n}\int_{X_1}\int_{X_2}(...)}
+and
+\e{\label{ajsdn}\int_{T_1}\int_{T_2}(...)}
+Next
+\e{\int_{X_1}\int_{X_2}&=\int_0^1 d\lambda \int_0^1 d\sigma \fr{-X^2}{T^2-R^2(1\lambda-\sigma)}\\
+&=0}
+Next
+\e{\int_{T_1}\int_{T_2}&=\int_0^1 d\lambda \int_0^1 d\sigma J \fr{-T^2}{(T(1-\lambda-\sigma))^2-R^2}}
+The Jacobian $J$ is necessary, which turns out to be,
+\e{\fr{\p(s,\lambda)}{\p(\sigma,\lambda)}=\begin{pmatrix}-1&1\\-1&0\end{pmatrix}}
+\e{\begin{pmatrix}-1&1\\-1&0\end{pmatrix}^{-1}=\begin{pmatrix}0&-1\\1&0\end{pmatrix}}
+\e{J=\det \begin{pmatrix}0&-1\\1&0\end{pmatrix} = 1}
+\e{\label{asn8}\int_{T_1}\int_{T_2}&=\int_0^1 d\lambda \int_0^1 d\sigma \fr{-T^2}{(T(1-\lambda-\sigma))^2-R^2}\\
+&= \int_0^1 d\lambda \int_{1-\lambda}^{-\lambda} \fr{-T^2}{(Ts)^2-R^2} ds\\
+&= \fr{2T}{R} \tanh^{-1} (\fr{T}{R})}
+In the limit $T\gg R$,
+\e{\lim_{T\gg R} \tanh^{-1}(\fr{T}{R}) = -\fr{1}{2} \pi i}
+Thus the $T_1 T_2$ contribution is
+\e{\int_{T_1}\int_{T_2}(...)&=-\fr{1}{2} \pi i= \int_{T_2}\int_{T_1}(...)}
+Thus the product of all of these path integrals becomes,
+\e{\int_{T_1}\int_{T_2}&= exp^{\fr{-e^2}{8\pi^2} \fr{T}{R} 2 (-\pi i)}\\
+&=exp^{\fr{i e^2}{4\pi} \fr{T}{R}}\\
+&=\boxed{exp^{-T(\fr{-e^2}{4\pi R})}}}
+Resulting in
+\e{\label{a98snd}\boxed{E(R)=\fr{-e^2}{4\pi R}}}
+By calculating the Wilson loop over a rectangle in spacetime, then taking the limit as the temporal portion of the loop is much greater than the spatial portion of the loop, we find the Wilson loop is the exponent of a Coulomb potential.
+\section*{Question 15.3.c.}
+The propagator for the field $A$ is
+\e{\langle A_\mu^a(x) A^b_\mu(y) \rangle = \int \fr{-ig_{\mu \nu} \delta^{ab}}{p^2} e^{-ip(x-y) \fr{d^4p}{(2\pi)^4}}}
+The Wilson loop is
+\e{U_P(z,z)&=\tr ( Pe^{-ig \oint_P A_\mu^a(x) t_r^a dx^\mu})
+\intertext{Expand the exponent.}
+&=\tr(1)-g^2 \oint_P dx^\mu \oint_P dy^\nu A_\mu^a(x) A_\nu^b(y) \tr(t_r^a t_r^b) + O(g^3)
+\intertext{Simplify and use \eref{12bnzn}.}
+&=\tr(1)(1-g^2C_2(r) \oint_P dx^\mu \oint_P dy^\nu A_\mu^a(x) A_\nu^b(y) + O(g^3))}
+The expectation of the Wilson loop is
+\e{\langle U_P(z,z) \rangle &= exp^{-\fr{g^2 C_2(r)}{8\pi} \oint_P dx^\mu \oint_P dy^\nu \fr{g_{\mu\nu}}{(x-y)^2}}}
+By the same calculation beginning with \eref{as8bub} and ending with \eref{a98snd} we find the Coulomb potential for the non-Abelian gauge theory is
+\e{\boxed{E(R)=\fr{-g^2 C_2(r)}{4\pi R}}}
+The calculation can be repeated because we can break up the $\oint \oint$ path integrals in the non-Abelian gauge theory.
+\section*{Question 16.2.a}
+The Abelian scalar QED Lagrangian is
+\e{\scl=-\fr{1}{4}F_{\mu\nu}F^{\mu\nu} + (D_\mu \phi)^*(D^\mu \phi)}
+\e{D_\mu=\p_\mu + ieA_\mu}
+which can be modified to a non-Abelian Lagrangian as
+\e{\scl=-\fr{1}{4}F_{\mu\nu a}F^{\mu\nu a} + (D_\mu \phi)^\dagger(D^\mu \phi)}
+The derivative $D_\mu$ is Eq. 15.45,
+\e{D_\mu=\p_\mu + ieA_\mu^a t_r^a}
+The propagator for the $\phi$ field is
+\e{\langle \phi(x) \phi(y) \rangle = \fr{i}{p^2-m^2+i\epsilon}}
+The propagator for the gauge field $A_\mu^a$ is
+\e{\langle A_\mu^a(x) A_\nu^b (y) \rangle = \int (-\fr{ig_{\mu\nu}}{k^2}) \delta^{ab} e^{ik(x-y)} \fr{d^4k}{(2\pi)^4}}
+The $AAA$ interaction is
+\e{gf^{abc}(g^{\mu \nu} (k-p)^\rho + g^{\nu \rho} (p-q)^\mu) +g^{\rho \mu}}
+illustrated by \fref{1.jpg}.
+\figpic{5cm}{1.jpg}{The $AAA$ interaction.}
+The $AAAA$ interaction is
+\e{-ig^2(f^{abe} f^{cde} (g^{\mu \rho}g^{\nu \sigma} - g^{\mu \sigma} g^{\nu \rho}) + f^{ace} f^{bde} (g^{\mu \nu} g^{\rho\sigma}))}
+illustrated by \fref{2.jpg}.
+\figpic{5cm}{2.jpg}{The $AAAA$ interaction.}
+The $A\phi\phi$ interaction is
+\e{-igt_r^a(p_1-p_2)^\mu}
+illustrated by \fref{5.png}.
+\figpic{5cm}{5.png}{The $A\phi\phi$ interaction.}
+The $AA\phi\phi$ interaction is
+\e{ig^2(t_r^a t_r^b + t_r^b t_r^a)}
+illustrated by \fref{4.png}.
+\figpic{5cm}{4.png}{The $AA\phi\phi$ interaction.}
+By expanding the Lagrangian we find the interaction rules are similar to that of Scalar QED.
+\section*{Question 16.2.b}
+
 \end{document}
