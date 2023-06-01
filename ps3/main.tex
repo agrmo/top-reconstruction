@@ -27,16 +27,21 @@ Start with the $SU(2)\times U(1)$ interaction, insert a potential, then derive t
 &=\fr{1}{8} |\begin{pmatrix} gW_\mu^3+g' B_\mu & g(W_\mu^1 -iW_\mu^2) \\ g(W_\mu^1 + iW_\mu^2) & -gW_\mu^3+g'B_\mu \end{pmatrix} \begin{pmatrix} v \\ v \end{pmatrix}|^2\\
 &= \fr{1}{8}(gv)^2((W_\mu^1)^2+(W_\mu^2)^2)+\fr{1}{8}v^2\begin{pmatrix} W_\mu^3 & B_\mu \end{pmatrix}\begin{pmatrix} g^2 & -gg' \\ gg' & g'^2 \end{pmatrix} \begin{pmatrix} W^{3\mu} \\ B^\mu \end{pmatrix}}
 \e{m_W=\oot v g}
-\e{m_z=\oot v(g+g'^2)^{1/2}}
-\e{\boxed{\fr{m_W}{m_Z}=g(g^2+g'^2)^{-1/2}=\cos(\theta_w)}}
+\e{m_Z=\oot v(g^2+g'^2)^{1/2}}
+\e{\label{87f8er}\boxed{\fr{m_W}{m_Z}=g(g^2+g'^2)^{-1/2}=\cos(\theta_w)}}
 By expanding electroweak interaction terms in the Lagrangian we can derive the tree-level masses of $m_W$ and $m_Z$, and $\cos(\theta_w)$.
 \section*{Problem 1.b.}
 Add the new operator and expand.
-\e{\fr{1}{\Lambda_T^2}(h^\dagger D_\mu h)(D^\mu h^\dagger h)&=\fr{1}{8 \Lambda^2_T}h^\dagger|\begin{pmatrix} gW_\mu^3+g' B_\mu & g(W_\mu^1 -iW_\mu^2) \\ g(W_\mu^1 + iW_\mu^2) & -gW_\mu^3+g'B_\mu \end{pmatrix} \begin{pmatrix} v \\ v \end{pmatrix}|^2 h\\
-&= \boxed{\fr{g^2 v^4}{8 \Lambda_T^2}((W_\mu^1)^2+(W_\mu^2)^2)+\fr{v^4}{8 \Lambda_T^2}v^2\begin{pmatrix} W_\mu^3 & B_\mu \end{pmatrix}\begin{pmatrix} g^2 & -gg' \\ gg' & g'^2 \end{pmatrix} \begin{pmatrix} W^{3\mu} \\ B^\mu \end{pmatrix}}}
-By expanding the new interaction term at the minimum of the Higgs potential the term is essentially the $O(v^4)$ electroweak interaction terms for W and Z with some coupling strength $1/\Lambda^2_T$.
+\e{\label{192nz}\fr{1}{\Lambda_T^2}(h^\dagger D_\mu h)(D^\mu h^\dagger h)&=\fr{1}{8 \Lambda^2_T}h^\dagger|\begin{pmatrix} gW_\mu^3+g' B_\mu & g(W_\mu^1 -iW_\mu^2) \\ g(W_\mu^1 + iW_\mu^2) & -gW_\mu^3+g'B_\mu \end{pmatrix} \begin{pmatrix} v \\ v \end{pmatrix}|^2 h\\
+&= \fr{g^2 v^4}{8 \Lambda_T^2}((W_\mu^1)^2+(W_\mu^2)^2)+\fr{v^4}{8 \Lambda_T^2}\begin{pmatrix} W_\mu^3 & B_\mu \end{pmatrix}\begin{pmatrix} g^2 & -gg' \\ gg' & g'^2 \end{pmatrix} \begin{pmatrix} W^{3\mu} \\ B^\mu \end{pmatrix}}
+By expanding the new interaction term at the minimum of the Higgs potential the term is essentially the $O(v^4)$ electroweak interaction terms for W and Z with some coupling strength $1/\Lambda^2_T$. Adding the original mass term \eref{aodsf9} and the new term together, the masses of $W$ and $Z$ are now,
+\e{m_W^2=\oof v^2 g^2(1 + \fr{g^2 v^2}{\Lambda_T^2})}
+\e{m_Z^2=(\oof v^2 g^2 + g'^2)(1+\fr{g^2 v^2}{\Lambda_T^2})}
+By taking the ratio of the two masses, the mass correction cancels,
+\e{\boxed{\fr{m_W}{m_Z}=\cos(\theta_w)}}
+By adding the extra term \eref{192nz} into the Standard Model lagrangian and expanding, we find a correction to the Z and W tree level masses, and this \fbox{correction is cancelled in the ratio} of the two masses.
 \section*{Problem 1.c.}
-Start with the Z current $j_Z$ in terms of hypercharge current $j_Y$ and weak neutral current $j_3$, then manipulate the current until it is in terms of $j_3$ and $j_{em}$. We should expect $j_3$ to couple only left handed particles, and $j_{em}$ ot couple left and right handed particles identically.
+Refer to \cite{thom} p422. Start with the Z current $j_Z$ in terms of hypercharge current $j_Y$ and weak neutral current $j_3$, then manipulate the current until it is in terms of the $SU(2)_L$ curernt $j_{L3}$ and electromagnetic current $j_{em}$. Let $Y$ be the weak hypercharge, $Q_f$ the electromagnetic charge, and $g_W$ the $W$ boson coupling, $g_Z$ the Z boson coupling.
 \e{\label{81n2}g_Z=\fr{g_W}{\cos(\theta_W)}}
 \e{j_Z^\mu&=-j^\mu_Y\sin(\theta_w)+j_3^\mu \cos(\theta_w)\\
 &=-\oot g' \sin(\theta_w)(Y_{f_L}\bar{u}_L \gamma^\mu u_L + Y_{f_R} \bar{u}_R \gamma^\mu u_R)+I_W^{(3)} g_W \cos(\theta_w) \bar{u}_L \gamma^\mu u_L\\
@@ -48,31 +53,33 @@ Start with the Z current $j_Z$ in terms of hypercharge current $j_Y$ and weak ne
 \intertext{Rearrange.}
 &=g_Z I_W^{(3)} \bar{u}_L \gamma^\mu u_L - g_ZQ_f \sin^2(\theta_W) (\bar{u}_L \gamma^\mu u_L \bar{u}_R \gamma^\mu u_R)
 \intertext{The first term is the $SU(2)_L$ current, and the is the electromagnetic current.}
-&=\boxed{\fr{g_W}{\cos(\theta_W)} j_L^\mu - \sin^2(\theta_W) j_{em}^\mu}}
+&=\boxed{\fr{g_W}{\cos(\theta_W)} j_{L3}^\mu - \sin^2(\theta_W) j_{em}^\mu}}
+By manipulating the $j^\mu_Z$ current we find it can be written in terms of a left handed current $j^\mu_{L3}$ and electromagnetic current $j^\mu_{em}$. In this form, the handedness is more clear, where $j_3$ interacts with left handed particles, and $j_{em}$ with left and right particles equally. 
 \section*{Problem 2.a.}
-Start with the QED Lagrangian, compute the conserved current $j$, then the conserved charge $Q$, then show the charge is invariant under interactions. The Lagrangian for QED is
+The Lagrangian for QED is
 \e{D_\mu=\p_\mu+ieA_\mu(x)}
 \e{\scl&=\bar{\psi} (i\cancel{\p}-m)\psi-\oof F_{\mu\nu}F^{\mu\nu}-e\bar{\psi}\gamma^\mu \psi A_\mu\\
 &=\bar{\psi}(i\cancel{D}-m)\psi-\oof F_{\mu\nu} F^{\mu\nu}}
 Its Noether current is
 \e{ej^\nu=e\bar{\psi}\gamma^\nu \psi=\p_\mu F^{\mu\nu}}
 Its Noether charge is
-\e{Q=\int j^0 d^3x = \int \bar{\psi}(x) \psi(x) d^3x}
+\e{Q=\int j^0 d^3x = \int \bar{\psi}(x) \gamma^0 \psi(x) d^3x = \int \bar{\psi}(x) \psi(x) d^3x}
 Under a local phase transofmration $\theta(x)$, $Q$ is invariant.
 \e{\boxed{Q(\psi)\rightarrow Q(e^{i\theta(x) }\psi)=\int \bar{\psi}(x) e^{i\theta(x)} e^{-i\theta(x)} \psi(x) d^3x = Q}}
+By writing the QED Lagrangian, computing the conserved current $j$, then the conserved charge $Q$, we show the electric charge is invariant.
 \section*{Problem 2.b.a.}
 The QED $U(1)$ phase transformation is
 \e{\boxed{\psi(x) \rightarrow e^{-i\theta(x)}\psi}}
 The conserved $U(1)$ current is
 \e{j^\mu(x)=\bar{\psi}(x)\gamma^\mu \psi(x)}
-The symmetry is \fbox{not broken}.
+The symmetry is \fbox{not broken}. 
 \section*{Problem 2.b.b.}
-Refer to Donoghue p77. The $SU(2)_\rom{isospin}$ group transforms the $u$ and $d$ fields in this way,
+Refer to Donoghue p77. The $SU(2)_\rom{isospin}$ group transforms the $u$ and $d$ fields,
 \e{\boxed{\begin{pmatrix}u'\\d'\end{pmatrix}=U\begin{pmatrix}u\\d\end{pmatrix}=e^{i\vec{\theta} \vec{\tau}} \begin{pmatrix}u\\d\end{pmatrix}}}
 where $\vec{\theta}$ is the transformation parameter and $\vec{\tau}=\fr{1}{2}\vec{\sigma}$. There are 3 Noether currents, 
 \e{\boxed{j_\mu^i=\bar{\psi}\gamma_\mu \oot \sigma^i \psi}}
 where $\mu$ is a Dirac spinor index, and $i$ is an isospin index.
-The $u$ and $d$ fields are associated with different electromagnetic charges and masses. $SU(2)_\rom{isospin}$ transformations do not conserve these charges or masses, so the \fbox{$SU(2)_\rom{isospin}$ is not conserved nor spontaneously broken}. There are combinations of fields that do conserve isospin charge, for example
+The $u$ and $d$ fields are associated with different electromagnetic charges and masses. $SU(2)_\rom{isospin}$ transformations do not conserve these charges or masses, so the \fbox{$SU(2)_\rom{isospin}$ symmetry is broken} in Standard Model interactions. There are combinations of fields that do conserve isospin charge, for example
 \e{2^{-1/2}(ud-du)}
 which is a singlet under $SU(2)$ with isospin charge 0.
 \section*{Problem 2.b.c.}
@@ -80,38 +87,42 @@ Refer to Donoghue p103. The transformation for $B$ charge is
 \e{\boxed{q\rightarrow e^{i\phi_B} q}}
 The Noether current is
 \e{\boxed{j^\mu = \oot (\bar{u}\gamma^\mu u+\bar{d}\gamma^\mu d+...)}}
-B charge is \fbox{not conserved} due to triangle diagrams involving vector-vector-axial vertices.
+B symmetry is \fbox{broken} in Standard Model interactions due to triangle diagrams involving vector-vector-axial vertices.
 \section*{Problem 2.b.d.}
 Refer to Donoghue p103. The transformation for $L$ charge is
 \e{\boxed{l\rightarrow e^{i\phi_L} l}}
 The Noether current is
 \e{\boxed{j^\mu = \bar{e}\gamma^\mu e + \bar{\nu}_{eL} \gamma^\mu \nu_{eL} + ...}}
-L charge is \fbox{not conserved} due to triangle diagrams involving vector-vector-axial vertices.
+L symmetry is \fbox{broken} in Standard Model interactions due to triangle diagrams involving vector-vector-axial vertices.
 \section*{Problem 2.b.e.}
-$B-L$ is the combination of the above $B$ and $L$ transformations, thus applicable to lepton-quark interactions. The currents show that
+$B-L$ is the combination of the above $B$ and $L$ transformations. The symmetry transformation is 
+\e{\boxed{\psi\rightarrow e^{i(\phi_B - \phi_L)} \psi}}
+Noether current is
+\e{\boxed{j^\mu = \oot (\bar{u}\gamma^\mu u+\bar{d}\gamma^\mu d+...) -(\bar{e}\gamma^\mu e + \bar{\nu}_{eL} \gamma^\mu \nu_{eL} + ... )}}
+By taking the divergence
 \e{\p_\mu (j^\mu_B-j^\mu_L)=0}
-Therefore $B-L$ charge is \fbox{conserved}.
+the current is divergenceless. $B-L$ symmetry is \fbox{not broken} in Standard Model interactions.
 \section*{Problem 3.a.}
 Starting with the Higgs kinetic term,
 \e{\fr{1}{8} |\begin{pmatrix} gW_\mu^3+g' B_\mu & g(W_\mu^1 -iW_\mu^2) \\ g(W_\mu^1 + iW_\mu^2) & -gW_\mu^3+g'B_\mu \end{pmatrix} \phi|^2}
-the number of Higgs doublets in $\phi$ can be arbitrary, and so
+the number of Higgs doublets in $\phi$ can be arbitrary, and so by the same procedure from \eref{aodsf9} to \eref{87f8er},
 \e{\boxed{m_Z^2=\fr{m_W^2}{\cos(\theta_w)}}}
 holds for any number of Higgs doublets \cite{LANGACKER1981185}.
 \section*{Problem 3.b.}
-Let $n$ be the number of scalar fields, $N$ the number of generators of a Lie Group $G$, $M$ the number of generators that leave the vacuum $|0\rangle$ invariant, and $N-M$ the number of generators that do not. Then there are $p=N-M$ number of spontaneously broken symmetries, and $p$ number of massive Goldstone Bosons. The arbitrary number of Higgs fields $\phi$ is
+Refer to \cite{LANGACKER1981185}. Let $n$ be the number of scalar fields, $N$ the number of generators of a Lie Group $G$, $M$ the number of generators that leave the vacuum $|0\rangle$ invariant, and $N-M$ the number of generators that do not. Then there are $p=N-M$ number of spontaneously broken symmetries, and $p$ number of massive Goldstone Bosons. The arbitrary number of Higgs fields $\phi$ is
 \e{\phi\rightarrow U\phi = v+\eta+=\begin{pmatrix} v_1 + \eta_1 \\ \vdots \\ v_p + \eta_p \\ 0 \\ \vdots \\ 0\end{pmatrix}}
 Then expand the kinetic term for these Higgs fields, similar to \eref{aodsf9},
-\e{\oot D^\mu \phi D_\mu \phi &= (v+\eta)^T(p^\mu + ig\vec{A}^\mu\cdot \vec{L})(\p_\mu - ig \vec{A}_\mu \cdot \vec{L})(v+\eta)\\
+\e{\oot (D^\mu \phi)^\dagger (D_\mu \phi) &= (v+\eta)^T(p^\mu + ig\vec{A}^\mu\cdot \vec{L})(\p_\mu - ig \vec{A}_\mu \cdot \vec{L})(v+\eta)\\
 &=\oot v^T L^i L^j v A^{i\mu} A^j_\mu + \rom{interaction terms}\\
 &=\oot M_{ij}^2 A^{i\mu} A^j_\mu}
 where there is now the mass matrix $M_{ij}$,
 \e{M_{ij}^2=M_{ji}^2=g^2 v^T L^iL^j v = g^2 \langle v | L^i L^j v \rangle = g^2 \langle L^i v | L^j v \rangle}
-The masses of the W and Zs are therefore
-\e{M_Z^2=(g^2+g'^2)\Sigma_N (t_n^3)^2 v_n^2}
-\e{M_W^2=\oot g^2 (t_n(t_n+1)-(t_n^3)^2)v_n^2}
-Take the ratio of $M_W$ and $M_Z \cos(\theta_w)$,
-\e{\label{9128n}\rho=\fr{M_W^2}{\cos(\theta_W)M_Z^2}=\fr{\Sigma (t_n(t_n+1)-(t_n^3)^2)v_n^2}{2\Sigma_n (t_n^3)^2 v_n^2}}
-where $T$ is the isospin charge, $Y$ is the hypercharge, and $v$ is the vacuum expectation value of the $i$-th Higgs field.
+The masses of the Ws and Zs are therefore
+\e{M_Z^2=(g^2+g'^2)\Sigma_N Y^2 |V_{T,Y}|^2}
+\e{M_W^2=\oot g^2 (T(T+1)-Y^2)|V_{T,Y}|^2}
+Let $T$ be the isospin charge of the $n$-th field, $Y$ the hypercharge of the $n$-th field, and $|V_{T,Y}|^2$ the vacuum expectation value of the $n$-th field. The sum $\Sigma_{T,Y}$ is over all Higgs fields. Take the ratio of $M_W$ and $M_Z \cos(\theta_w)$.
+\e{\boxed{\label{9128n}\rho=\fr{M_W^2}{\cos(\theta_W)M_Z^2}=\fr{\Sigma_{T,Y} (T(T+1)-Y^2)|V_{T,Y}|^2 c_{T,Y}}{2\Sigma_n Y^2 |V_{T,Y}|^2}}}
+By expanding the kinetic term $|D_\mu \phi|^2$ for any number of Higgs fields with $SU(2)_T \times U(1)_Y$ symmetry, we find the $\rho$ parameter.
 \section*{Problem 3.c.}
 The constraint for $\rho=1$ on \eref{9128n} implies
 \e{4T(T+1)-Y^2=2Y^2}
