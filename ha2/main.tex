@@ -16,7 +16,7 @@ Email&ar1@stanford.edu\\
 Instructor&Lernik Asserain\\
 Course&MATH 131P\\
 Institution&Stanford University\\
-Date&\today\\
+Date&January 24, 2024\\
 \end{tabular}
 \end{center}
 \n{sturm}{(p(x)y')'+(q(x)+\lambda w(x)) y &= 0\quad a<x<b}
@@ -24,6 +24,7 @@ Date&\today\\
 \n{mlamt}{(-\lambda)^{1/2}}
 \n{sso}{\sin(s_0)}
 \n{cso}{\cos(s_0)}
+\section*{Problem 1}
 For reference, the Sturm-Liouville form is
 \e{a,b\in \mathbb{R}}
 \e{\sturm}
@@ -34,9 +35,8 @@ For reference, the Sturm-Liouville form is
 The regularity conditions are
 \e{\label{reg1} p(x),p'(x),q(x),w(x)\textrm{ continuous and } a\leq x \leq b}
 \e{\label{reg2} p(x)> 0\quad w(x)> 0 \textrm{ and } a\leq x \leq b}
-\section*{Problem 1}
-Find $p(x)$, $q(x)$, $w(x)$, $a$, $b$.
-\e{\label{12983n}p(x)=x\quad q(x)=0 \quad w(x)=1 \quad a=0 \quad b=1}
+Now for this question, find $p(x)$, $q(x)$, $w(x)$, $a$, $b$.
+\e{\label{12983n}\boxed{p(x)=x\quad q(x)=0 \quad w(x)=1 \quad a=0 \quad b=1}}
 \e{\sturm\\
 (x y')'+(q(x)+\lambda w(x))y&=0\\
 xy''+y'+\lambda y&=0}
@@ -47,13 +47,13 @@ Check boundary conditions.
 \e{x=1\quad \sturm\\
 y''+(0+\lambda)y&=0\\
 0=0}
-The problem satisfies boundary conditions. The problem is in \slou form with parameters \eref{12983n}. Check if regular.
+The problem satisfies boundary conditions. The problem is in \slou form with parameters \eref{12983n}. Check if it is regular.
 \e{x=0\Rightarrow p(x)=0}
 Condition \eref{reg2} is not satisfied. The problem \fbox{is in Sturm-Liouville form and singular}.
 \section*{Problem 2}
 Find $p(x)$, $q(x)$, $w(x)$, $a$, $b$.
 \e{x^2 y'' + 2y' x + \lambda x y = 0}
-\e{\label{128n3xnclq} p(x)=x^2 \quad q(x)=0 \quad w(x)=x \quad a=1 \quad b=2}
+\e{\label{128n3xnclq}\boxed{p(x)=x^2 \quad q(x)=0 \quad w(x)=x \quad a=1 \quad b=2}}
 \e{(x^2 y')' + (0 + \lambda x)y&=0\\
 x^2 y'' + 2xy' + \lambda x y&=0\\
 xy'' + 2y' + \lambda y&= 0}
@@ -64,13 +64,13 @@ Check boundary conditions.
 0=0}
 \e{x=2\quad xy''+2y'+\lambda y&=0\\
 \lambda y = 0}
-The problem satisfies boundary conditions. The problem is in \slou form with parameters \eref{128n3xnclq}. Check if regular. \eref{reg1} and \eref{reg2} are satisfied. The problem \fbox{is in Sturm-Liouville form and is regular}.
+The problem satisfies boundary conditions. The problem is in \slou form with parameters \eref{128n3xnclq}. Check if it is regular. \eref{reg1} and \eref{reg2} are satisfied. The problem \fbox{is in Sturm-Liouville form and is regular}.
 \section*{Problem 3}
 \e{\label{9128n3} xy''-y'+\lambda x y = 0}
 Find $p(x)$, $q(x)$, $w(x)$, $a$, $b$.
 \e{x^{-1}y'' - x^{-2} y' + \lambda x^{-1} y = 0}
 By inspection,
-\e{\label{9128n312n} p(x)=x^{-1} \quad q(x)=0 \quad w(x)=x^{-1} \quad a=0 \quad b=1}
+\e{\label{9128n312n} \boxed{p(x)=x^{-1} \quad q(x)=0 \quad w(x)=x^{-1} \quad a=0 \quad b=1}}
 Check it recovers the original problem \eref{9128n3}.
 \e{(x^{-1}y')'+(0+\lambda x^{-1})y&=0\\
 x^{-1}y'' - x^{-2}y' + \lambda x^{-1} y&=0\\
@@ -86,18 +86,18 @@ The problem satisfies boundary conditions. The problem is in \slou form with par
 \e{y(-1)=y(1)=0}
 Find $p(x)$, $q(x)$, $w(x)$, $a$, $b$.
 \e{((1-x^2)y')'+(1+\lambda x)y=0}
-\e{\label{9123b9n} p(x)=1-x^2 \quad q(x)=1 \quad w(x)=1 \quad a=-1 \quad b=1}
+\e{\label{9123b9n} \boxed{p(x)=1-x^2 \quad q(x)=1 \quad w(x)=1 \quad a=-1 \quad b=1}}
 Check boundary conditions.
 \e{x=-1 \Rightarrow ((1-1)y')'+(1-\lambda)y&=0\\
 0&=0}
 \e{x=-1 \Rightarrow ((1-1)y')'+(1+\lambda)y&=0\\
 0&=0}
-The problem satisfies boundary conditions. The problem is in \slou form with parameters \eref{9123b9n}. Check if regular.
+The problem satisfies boundary conditions. The problem is in \slou form with parameters \eref{9123b9n}. Check if it is regular.
 \e{x=1\Rightarrow p(x)=0}
 The regularity condition $p(x)>0\quad a\leq x \leq b$ is not satisfied. The problem \fbox{is in Sturm-Liouville form and singular}.
 \section*{Problem 5}
 Find $p(x)$, $q(x)$, $w(x)$, $a$, $b$.
-\e{\label{91823nxzc} p(x)=1 \quad q(x)=0 \quad w(x)=1 \quad a=0 \quad b=\pi}
+\e{\label{91823nxzc} \boxed{p(x)=1 \quad q(x)=0 \quad w(x)=1 \quad a=0 \quad b=\pi}}
 Check boundary conditions.
 \e{x=0\Rightarrow 0=0}
 \e{x=\pi \Rightarrow 0=0}
@@ -107,7 +107,7 @@ c_2\neq 0}
 \e{d_1 y(b) + d_2 y'(b)&=0\\
 d_1 y(\pi)&=0\\
 d_1\neq 0}
-The problem satisfies boundary conditions. The problem is in \slou form with parameters \eref{9123b9n}. Check if regular. \eref{reg1} and \eref{reg2} are satisfied. The problem is \fbox{in Sturm-Liouville form and regular}. Find eigenfunctions and eigenvalues. Let $r$ be the characteristic polynomial.
+The problem satisfies boundary conditions. The problem is in \slou form with parameters \eref{9123b9n}. Check if it is regular. \eref{reg1} and \eref{reg2} are satisfied. The problem is \fbox{in Sturm-Liouville form and regular}. Find eigenfunctions and eigenvalues. Let $r$ be the characteristic polynomial.
 \e{y''+\lambda y=0 \quad r^2+\lambda=0}
 \e{r^2=-\lambda \quad r=\pm(-\lambda)^{1/2}}
 Case $\lambda<0$.
@@ -142,7 +142,7 @@ Case $\lambda>0$.
 \e{\boxed{y(x)=c_2\sin(nx)}}
 The eigenvalues $\lambda$ and eigenfunctions $y(x)$ have been found.
 \section*{Problem 6}
-\e{y''+\lambda y}
+\e{y''+\lambda y=0}
 Find the characteristic polynomial and its roots.
 \e{r^2+\lambda=0}
 \e{r^2=-\lambda}
@@ -242,7 +242,11 @@ Find $\langle f_n, y_n \rangle$.
 &=\fr{\pi}{n}\cos(\pi n)\\
 &=\fr{\pi}{n} (-1)^{n+1}}
 Find $\langle y_n, y_n \rangle$.
-\e{\int_0^{\pi} \sin^2(nx)dx = \fr{\pi}{2}-\fr{1}{4\pi}(sin(2\pi n))=\fr{\pi}{2}}
+\e{\int \sin^2(nx) dx&=\sin(nx)d\fr{-\cos(nx)}{n}\\
+&=\fr{\sin(nx)\cos(nx)}{n}+\int \cos^2(nx)dx\\
+&=\fr{\sin{nx}\cos{nx}}{n}+\int(1-\sin^2{nx})dx\\
+&=\fr{x}{2}+\fr{\sin(nx)\cos(nx)}{2n}+C}
+\e{\int_0^{\pi} \sin^2(nx)dx = \fr{\pi}{2}-\fr{1}{4\pi}(\sin(2\pi n))_{0}^{\pi}=\fr{\pi}{2}}
 Find $c_n$.
 \e{c_n = (\fr{\pi}{2})^{-1}\fr{\pi}{n}(-1)^{n+1}=\fr{2}{n} (-1)^{n+1}}
 Find the eigenfunction expansion.
