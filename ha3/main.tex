@@ -30,49 +30,51 @@ Institution&Stanford University\\
 Date&January 30, 2024\\
 \end{tabular}
 \end{center}
-\n{even}{\textrm{ even}}
-\n{odd}{\textrm{ odd}}
+\n{even}{\textrm{ even }}
+\n{odd}{\textrm{ odd }}
 \n{azero}{\fr{1}{L} \int_0^L f(x) dx}
 \n{indicial}{r^2+(a-1)r+b}
 \n{ddx}{\fr{d}{dx}}
 \n{ddxt}{\fr{d^2}{dx^2}}
-%% \n{ddt}{\fr{d}{dt}}
 \n{ddtt}{\fr{d^2}{dt^2}}
+\n{pkx}{\pi k x}
+\n{spkx}{\sin(\pi k x)}
+\n{cpkx}{\cos(\pi k x)}
 \section*{Problem 1}
 For reference,
 \e{f(x)\odd \times g(x)\odd=\even}
 \e{f(x)\odd \times g(x)\even=\odd}
 \e{f(x)\even \times g(x)\even=\even}
-Next,
-\e{a_0=\fr{2}{p} \int_{-p}^{p} f(x) dx = \fr{2}{p} \int_{-p}^{p} \odd dx = 0}
+Find $a_0$, $a_k$, $b_k$.
 \e{L=2p\quad \omega=\fr{2\pi}{L}=\fr{\pi}{p}}
-\e{a_k=\fr{2}{p} \int_{-p}^{p} f(x) \cos(k\omega x) dx = \int\odd = 0}
-\e{b_k=\fr{2}{p} \int_{-p}^{p} f(x) \sin(k\omega x) dx &= \fr{2}{p} (\int_{-p}^{0} (-1)\sin(\pi k p^{-1} ) dx + \int_{0}^{p} \sin(\pi k p^{-1}) dx)\\
-&=2p^{-1}p (\pi k)^{-1} (\cos(0)-\cos(\pi k)-\cos(\pi k)+\cos(0))\\
-&= \fr{4}{\pi k}(1-\cos(\pi k))=\fr{4}{\pi k}(1-(-1)^k)=\begin{cases}0&\textrm{k even}\\ \fr{8}{\pi k}&\textrm{k odd}\end{cases}\\
-&=\begin{cases}0&\textrm{k even}\\ 2(2m+1)&\textrm{k odd}\end{cases}}
-\e{\boxed{f(x)=\sum_{k=1}^{\infty} \fr{4}{\pi(2k+1)} \sin(\fr{(2k+1)}{p}x)}}
+\e{a_0=\fr{1}{2p} \int_{-p}^{p} f(x) dx = \fr{1}{2p} \int_{-p}^{p} \odd dx = \boxed{0}}
+\e{a_k=\fr{1}{p} \int_{-p}^{p} f(x) \cos(k\omega x) dx = \int\odd\even = \int\odd = \boxed{0}}
+\e{b_k=\fr{1}{p} \int_{-p}^{p} f(x) \sin(k\omega x) dx &= \fr{2}{p} \int_{0}^{p} \sin(\pi k p^{-1}) dx\\
+&=\fr{2p^{-1}p}{\pi k} (\cos(0)-\cos(\pi k))\\
+&=\fr{2}{\pi k}(1-\cos(\pi k))=\fr{2}{\pi k}(1-(-1)^k)\\
+&=\boxed{\begin{cases}0&\textrm{k even}\\ \fr{4}{\pi k}&\textrm{k odd}\end{cases}}}
+\e{\boxed{f(x)=\sum_{k=0}^{\infty} \fr{4}{\pi(2k+1)} \sin(\fr{(2k+1)}{p}x)}}
 \section*{Problem 2}
-\e{a_0=\azero=\fr{2}{2\pi}\int_0^\pi xdx=\fr{\pi}{2}}
-\e{f(x)\even\Rightarrow b_k=0}
+Find $a_0$, $a_k$, $b_k$.
+\e{L=2\pi\quad \omega=\fr{2\pi}{L}=1}
+\e{a_0=\azero=\fr{2}{2\pi}\int_0^\pi xdx=\boxed{\fr{\pi}{2}}}
 \e{a_k=\fr{2}{\pi} \int_0^\pi f(x) \cos(kx) dx=\fr{2}{\pi} \int_0^\pi x\cos(kx)dx&=\fr{2}{\pi}(\fr{\cos(kx)}{k^2}-\fr{\cos(0){k^2}})\\
-&=\fr{2}{\pi} (\fr{(-1)^k}{k^2}-\fr{1}{k^2})=\fr{2}{\pi}(\fr{-1}{(2m+1)^2}-\fr{1}{(2m+1)^2})\\
-&=-\fr{4}{\pi(2m+1)^2}}
-\e{f(x)=a_0+0+\sum_{k=1}^\infty a_k\cos(kx)}
-By change of variables, $k$ with $m$, we get the answer.
-\e{\boxed{f(x)=\fr{\pi}{2}-\fr{4}{\pi(2k+1)^2}\cos((2k+1)x)}}
+&=\fr{2}{\pi} (\fr{(-1)^k}{k^2}-\fr{1}{k^2})\\
+&=\boxed{\begin{cases}0 &\textrm{k even}\\ -\fr{4}{\pi k^2}&\textrm{k odd}\end{cases}}}
+\e{f(x)\even\Rightarrow b_k=\boxed{0}}
+\e{f(x)&=a_0+\sum_{k=0}^\infty a_k\cos(kx)+0\\
+&=\boxed{\fr{\pi}{2}-\sum_{k=0}^\infty \fr{4}{\pi(2k+1)^2}\cos((2k+1)x)}}
 \section*{Problem 3}
 Find $a_0$, $a_k$, $b_k$.
-\e{a_0=\azero=0+\int_{-\fr{pi}{2}}^{0}(-1)dx+\int_0^{\fr{\pi}{2}(1)dx+0}=0}
-\e{f(x)\odd \Rightarrow a_0=0}
-\e{f(x) odd \Rightarrow a_k=0}
 \e{L=2\pi\quad \omega=\fr{2\pi}{L}=1}
-\e{b_k=\fr{2}{\fr{L}{2}} \int_0^{\fr{L}{2}} f(x) \sin(k\omega x) dx\\
+\e{a_0=\azero=0+\int_{-\fr{\pi}{2}}^{0}(-1)dx+\int_0^{\fr{\pi}{2}}(1)dx+0=\boxed{0}}
+\e{f(x)\odd \Rightarrow a_0=\boxed{0}\textrm{ and }a_k=\boxed{0}}
+\e{b_k&=\fr{2}{\fr{L}{2}} \int_0^{\fr{L}{2}} f(x) \sin(k\omega x) dx\\
 &= \fr{2}\pi \int_{0}^{\fr{\pi}{2}} \sin(kx) dx = \fr{2}{\pi k}(1-\cos(\fr{1}{2} k \pi))}
 \e{f(x)&=a_0+\sum_{k=1}^\infty a_k \cos(k\omega x)+\sum_{k=1}^\infty b_k \sin(k\omega x)\\
-&=\boxed{\sum_{k=1}^\infty \fr{2}{k\pi} (1-\cos(\fr{1}{2}\pi k))\sin(kx)}}
+&=\boxed{\sum_{k=1}^\infty \fr{2}{k\pi} (1-\cos(k\pi/2))\sin(kx)}}
 \section*{Problem 4}
-Find $a_0$, $a_k$, $b_k$.
+$f(x)$ is already in the form of the Fourier series, so $a_0$, $a_k$, $b_k$ can be read directly. Derive them anyway.
 \e{a_0=\fr{1}{\pi}\int_{-\pi}^{\pi} (1-\sin(x)+3\cos(2x))dx&=\fr{1}{2\pi}(x+\cos(x)+\fr{3}{2} \sin(2x))_{-\pi}^{\pi}\\
 &=\fr{1}{2\pi}(\pi-1)+\fr{1}{2\pi}(-\pi-1)=\boxed{1}}
 \e{a_k&=\fr{1}{\pi}\int_{-\pi}^{\pi}(1-\sin(x)+3\cos(2x))\cos(kx)dx\\
@@ -83,38 +85,39 @@ Find $a_0$, $a_k$, $b_k$.
 &=\boxed{1}}
 \e{\boxed{f(x)=1-\sin(x)+3\cos(2x)}}
 \section*{Problem 5}
-Modify the function by extending $f(x)$ from $0$ to $-1$. Reflect $f(x)$ along $0$ to the domain $[-1,0]$, resulting in an odd function with period \fbox{$L=2$, $\omega=\fr{2\pi}{L}=\pi$}.
+Modify the function by extending $f(x)$ for the domain $[-1,1]$, resulting in an odd function with period \fbox{$L=2$, $\omega=\fr{2\pi}{L}=\pi$}.
 \e{f(x)=\begin{cases}2(-1-x) &-1\leq x \leq \fr{1}{2}\\
 2x &-\fr{1}{2} < x < \fr{1}{2}\\
 2(1-x) &\fr{1}{2} < x \leq 1\end{cases}}
 \fig{6cm}{1.png}{The modified $f(x)$ which is now L-periodic and odd.}
-Because $f(x)$ is odd, $a_0=0$, $a_k=0$. Because the sign of $f(x)$ and $\cos()$ $b_k$. The $x>0$ portion of . 
-\e{b_k=\fr{2}{L} \int_0^L f(x) \sin(k \omega x) dx &= \fr{2}{L}(\int_0^{\fr{1}{2}}2x\sin(k\pi x)dx + \int_{\fr{1}{2}}^1 2(1-x)\sin(k\pi x)dx)\\
-&=\fr{4}{L}((\fr{\sin(k\pi x)}{(k\pi)^2} - \fr{x\cos(k\pi x)}{k\pi})_0^{\fr{1}{2}}+(-\fr{1}{k\pi}\cos(k\pi x))_{\fr{1}{2}}^{1}-(\fr{\sin(k\pi x)}{(k\pi)^2} - \fr{x\cos(k\pi x)}{k\pi})_{1/2}^{1})
-\intertext{Expand all of these definite integrals to find $b_k$.}
-&=4(\fr{\sin(\fr{1}{2}k\pi)}{(k\pi)^2}-\fr{\fr{1}{2}\cos(\fr{1}{2}k\pi)}{k\pi}-0+0-\fr{1}{k\pi}\cos(k\pi)+\fr{1}{k\pi}\cos(\fr{1}{2}k\pi)\\&-\fr{\sin(k\pi)}{(k\pi)^2}+\fr{1}{2}\fr{\cos(k\pi)}{k\pi}+\fr{\sin(\fr{1}{2}k\pi)}{(k\pi)^2}-\fr{\fr{1}{2}\cos(\fr{1}{2} k\pi)}{k\pi})\\
-&=\boxed{\fr{8}{(\pi k)^2\sin(\fr{1}{2}k\pi)}}}
-The sine series is
-\e{\boxed{f(x)=\sum_{k=1}^\infty\sin(\fr{1}{2}\pi k)\sin(\pi k x)}}
-Crucially, the factor of $\omega=\pi$ and the boundaries $[0,\fr{1}{2}]$ and $[\fr{1}{2},1]$ contribute to obtain the correct result.
+Because $f(x)$ is odd, \fbox{$a_0=0$, $a_k=0$}. Find $b_k$ over the domain $[-1,1]$. 
+\e{b_k&=\fr{2}{L} \int_0^L f(x) \sin(k \omega x)dx\\
+&= \fr{2}{L} (\int_{-1}^{-1/2} 2(-1-x)\spkx dx + \int_{-1/2}^{1/2} 2x\spkx dx + \int_{1/2}^{1}2(1-x)\spkx dx)
+\intertext{These integrate over the three linear parts of $f(x)$. Expand.}
+&=\fr{4}{L}(-\int_{-1}^{-1/2} \spkx dx - \int_{-1}^{-1/2} x\spkx dx + \int_{-1/2}^{1/2} x \spkx dx + \int_{1/2}^{1}\spkx dx - \int_{1/2}^{1}x\spkx dx)
+\intertext{Do the integrals and simplify. Because several definite integrals for $\int x\sin(ax) dx$ have already been shown, the tedious work is omitted.}
+&=\fr{8}{(\pi k)^2}\sin(\fr{1}{2}k\pi)}
+The Fourier sine series on $f(x)$ extended to $[-1,1]$ is
+\e{\boxed{f(x)=\sum_{k=1}^\infty \fr{8}{\pi^2 k^2} \sin(k \pi /2)\sin(k\pi x)}}
 \section*{Problem 6.a.}
-\e{a=4\quad b=2}
+\e{\boxed{a=4\quad b=2}}
 \e{\indicial&=0\\r^2+3r+2&=0\\(r+1)(r+2)&=0}
-\e{r_1=-1\quad r_2=-2}
+\e{\boxed{r_1=-1\quad r_2=-2}}
 The roots are real and nonequal.
 \e{\boxed{y(x)=c_1 x^{-1}+c_2 x^{-2}}}
 \section*{Problem 6.b.}
-\e{a=2\quad b=\fr{1}{4}}
+\e{x^2y'' + 2xy + \fr{1}{4}y=0}
+\e{\boxed{a=2\quad b=\fr{1}{4}}}
 \e{\indicial&=0\\r^2+r+\fr{1}{4}=0}
 \e{(1-2)^2-4b=1-1=0}
 The roots are repeated.
-\e{r_1=r_2=\fr{1-2\pm((1-2)^2-4(\fr{1}{4})^{1/2})}{2}=-\fr{1}{2}}
+\e{r_1=r_2=\fr{1-2\pm((1-2)^2-4(\fr{1}{4})^{1/2})}{2}=\boxed{-\fr{1}{2}}}
 \e{\boxed{y(x)=c_1 x^{-\fr{1}{2}}+c_2 x^{-\fr{1}{2}}\ln(x)}}
-\section*{Problem 6.b.}
-\e{a=7\quad b=13}
+\section*{Problem 6.c.}
+\e{\boxed{a=7\quad b=13}}
 \e{(1-a)^2-4b=-16}
-The discriminant is negative, therefore the roots are imaginary and nonequal.
-\e{r=\fr{1-a}{2}\pm \fr{(4b-(1-a)^2)^{1/2}}{2}i=\boxed{3\pm 2i=r_0\pm s_0 i}}
+The discriminant is negative, therefore the roots are imaginary.
+\e{r=\fr{1-a}{2}\pm \fr{(4b-(1-a)^2)^{1/2}}{2}i=\boxed{-3\pm 2i=r_0\pm s_0 i}}
 There are two linearly independent real solutions.
 \e{\boxed{y(x)=c_1 x^{-3} \cos(2\ln(x)) + c_2 x^{-3} \sin(2\ln(x))}}
 \section*{Problem 7}
@@ -136,31 +139,36 @@ Finally,
 \e{r(r-1)x^r+arx^r + bx^r=0}
 \e{x^r(r(r-1)+ar+b)=0}
 \e{r(r-1)+ar+b=0}
-\e{\boxed{y=x^r\textrm{ solution}}}
 \e{r^2+(a-1)r+b=0}
-\e{r=\fr{1}{2}(1-a\pm((1-a)^2-4b))^{1/2}}
+The roots of the Euler equation are of the form
+\e{\boxed{r=\fr{1}{2}(1-a\pm((1-a)^2-4b))^{1/2}}}
+The solutions can be found in cases.
 \subsection*{Case $(a-1)^2-4b>0.$}
-Two roots $r_1\neq r_2$ and $r_1,r_2\in \mathbb{R}$.
+Use the case for 2nd order ODEs with constant coefficients where the discriminant is positive. Two roots $r_1\neq r_2$ and $r_1,r_2\in \mathbb{R}$.
 \e{r_1=\fr{1}{2}(1-a+((1-a)^2-4b)^{1/2})}
 \e{r_2=\fr{1}{2}(1-a-((1-a)^2-4b)^{1/2})}
-\e{x^{r_1},x^{r_2}\textrm{ linearly independent}}
-\e{x^{r_1},x^{r_2}\textrm{ solutions}}
-\e{\boxed{y(x)=c_1 x^{r_1}+c_2 x^{r_2}=c_1 |x|^{r_1}+c_2|x|^{r_2}}}
+The general solution is
+\e{y(x)&=c_1 e^{r_1 t}+c_2 e^{r_2 t}\\
+&=c_1 e^{r_1 \ln x}+c_2 e^{r_2 \ln x}\\
+&=c_1 e^{\ln x^{r_1}}+c_2 e^{\ln x^{r_2}}\\
+&=\boxed{c_1 x^{r_1}+c_2 x^{r_2}}}
+We derived that the solutions are in the form
+\e{\boxed{y=x^r}}
+and linearly independent. Use this solution for the rest of the cases.
 \subsection*{Case $(a-1)^2-4b=0.$}
-Two roots.
-\e{r=r_0\pm s_0 i = \fr{1}{2}(1-a)\pm \fr{1}{2}(4b-(1-a)^2)^{1/2}i}
-\e{x^r &= x^{r_0 \pm s_0 i}=x^{r_0}x^{s_0 i}=x^{r_0}e^{\ln (x)s_0 i}\\
-&= x^{r_0}(\cos(s_0 \ln(x))+i\sin(s_0 \ln(x)))}
-The real part is a solution, and the imaginary part is a solution, and they are linearly independent. The solution $y$ is a linear combination of these solutions.
-\e{\Aboxed{y(x)&=c_1 x^{r_0}\cos(s_0 \ln(x)) + c_2 x^{r_0} \sin(s_0 \ln(x))}\\
-&=c_1|x|^{r_0}\cos(s_0\ln|x|)+c_2 |x|^{r_0}\sin(s_0 \ln|x|)}
-\subsection*{Case $(a-1)^2-4b<0.$}
-The root is repeated. The root is
+Use the case for 2nd order ODEs with constant coefficients where the discriminant is 0. The root is repeated.
 \e{r=\fr{1}{2}(1-a)}
 We need two linearly independent solutions for any second order ODE. The other solution can be derived by viewing the characteristic equation and referring to the second order ODE solution for $y(t)$ in this case.
 \e{y''+ay'+by=0}
-\e{\lambda^2+a\lambda+b\0}
+\e{\lambda^2+a\lambda+b=0}
 \e{y(t)=c_1 e^{\lambda t} + c_2te^{\lambda t}}
-Then the solution $y$ is 
-\e{\Aboxed{y(x)&=c_1 x^r+c_2 x^r \ln(x)}\\ &=c_1|x|^r + c_2|x|^r \ln|x|}
+Then the general solution $y$ is 
+\e{\Aboxed{y(x)&=c_1 x^r+c_2 x^r \ln(x)}}
+\subsection*{Case $(a-1)^2-4b<0.$}
+Use the case for 2nd order ODEs with constant coefficients where the discriminant is negative.
+\e{r=r_0\pm s_0 i = \fr{1}{2}(1-a)\pm \fr{1}{2}(4b-(1-a)^2)^{1/2}i}
+\e{x^r &= x^{r_0 \pm s_0 i}=x^{r_0}x^{s_0 i}=x^{r_0}e^{\ln (x)s_0 i}\\
+&= x^{r_0}(\cos(s_0 \ln(x))+i\sin(s_0 \ln(x)))}
+The real part is a solution, and the imaginary part is a solution, and they are linearly independent. The general solution $y$ is a linear combination of these solutions.
+\e{\Aboxed{y(x)&=c_1 x^{r_0}\cos(s_0 \ln(x)) + c_2 x^{r_0} \sin(s_0 \ln(x))}}
 \end{document}
