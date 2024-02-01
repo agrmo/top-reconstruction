@@ -2,9 +2,20 @@
 \usepackage{/home/user1/code/tex/sty}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{floatrow}
+\newcommand{\fig}[3]{
+\begin{figure}[H]
+\begin{center}
+\includegraphics[height=#1]{#2}
+\caption{#3}
+\label{#2}
+\end{center}
+\end{figure}}
+
 \setlength{\parindent}{0pt}
 \geometry{top=1in,bottom=1in,left=1in,right=1in}
 \begin{document}
@@ -22,6 +33,11 @@ Date&January 30, 2024\\
 \n{even}{\textrm{ even}}
 \n{odd}{\textrm{ odd}}
 \n{azero}{\fr{1}{L} \int_0^L f(x) dx}
+\n{indicial}{r^2+(a-1)r+b}
+\n{ddx}{\fr{d}{dx}}
+\n{ddxt}{\fr{d^2}{dx^2}}
+%% \n{ddt}{\fr{d}{dt}}
+\n{ddtt}{\fr{d^2}{dt^2}}
 \section*{Problem 1}
 For reference,
 \e{f(x)\odd \times g(x)\odd=\even}
@@ -67,11 +83,84 @@ Find $a_0$, $a_k$, $b_k$.
 &=\boxed{1}}
 \e{\boxed{f(x)=1-\sin(x)+3\cos(2x)}}
 \section*{Problem 5}
-We are only calculating the sine series $b_k$ as requested by the question.
-\e{L=2\Rightarrow \omega=2}
-\e{}
-\section*{Problem 6}
+Modify the function by extending $f(x)$ from $0$ to $-1$. Reflect $f(x)$ along $0$ to the domain $[-1,0]$, resulting in an odd function with period \fbox{$L=2$, $\omega=\fr{2\pi}{L}=\pi$}.
+\e{f(x)=\begin{cases}2(-1-x) &-1\leq x \leq \fr{1}{2}\\
+2x &-\fr{1}{2} < x < \fr{1}{2}\\
+2(1-x) &\fr{1}{2} < x \leq 1\end{cases}}
+\fig{6cm}{1.png}{The modified $f(x)$ which is now L-periodic and odd.}
+Because $f(x)$ is odd, $a_0=0$, $a_k=0$. Because the sign of $f(x)$ and $\cos()$ $b_k$. The $x>0$ portion of . 
+\e{b_k=\fr{2}{L} \int_0^L f(x) \sin(k \omega x) dx &= \fr{2}{L}(\int_0^{\fr{1}{2}}2x\sin(k\pi x)dx + \int_{\fr{1}{2}}^1 2(1-x)\sin(k\pi x)dx)\\
+&=\fr{4}{L}((\fr{\sin(k\pi x)}{(k\pi)^2} - \fr{x\cos(k\pi x)}{k\pi})_0^{\fr{1}{2}}+(-\fr{1}{k\pi}\cos(k\pi x))_{\fr{1}{2}}^{1}-(\fr{\sin(k\pi x)}{(k\pi)^2} - \fr{x\cos(k\pi x)}{k\pi})_{1/2}^{1})
+\intertext{Expand all of these definite integrals to find $b_k$.}
+&=4(\fr{\sin(\fr{1}{2}k\pi)}{(k\pi)^2}-\fr{\fr{1}{2}\cos(\fr{1}{2}k\pi)}{k\pi}-0+0-\fr{1}{k\pi}\cos(k\pi)+\fr{1}{k\pi}\cos(\fr{1}{2}k\pi)\\&-\fr{\sin(k\pi)}{(k\pi)^2}+\fr{1}{2}\fr{\cos(k\pi)}{k\pi}+\fr{\sin(\fr{1}{2}k\pi)}{(k\pi)^2}-\fr{\fr{1}{2}\cos(\fr{1}{2} k\pi)}{k\pi})\\
+&=\boxed{\fr{8}{(\pi k)^2\sin(\fr{1}{2}k\pi)}}}
+The sine series is
+\e{\boxed{f(x)=\sum_{k=1}^\infty\sin(\fr{1}{2}\pi k)\sin(\pi k x)}}
+Crucially, the factor of $\omega=\pi$ and the boundaries $[0,\fr{1}{2}]$ and $[\fr{1}{2},1]$ contribute to obtain the correct result.
+\section*{Problem 6.a.}
+\e{a=4\quad b=2}
+\e{\indicial&=0\\r^2+3r+2&=0\\(r+1)(r+2)&=0}
+\e{r_1=-1\quad r_2=-2}
+The roots are real and nonequal.
+\e{\boxed{y(x)=c_1 x^{-1}+c_2 x^{-2}}}
+\section*{Problem 6.b.}
+\e{a=2\quad b=\fr{1}{4}}
+\e{\indicial&=0\\r^2+r+\fr{1}{4}=0}
+\e{(1-2)^2-4b=1-1=0}
+The roots are repeated.
+\e{r_1=r_2=\fr{1-2\pm((1-2)^2-4(\fr{1}{4})^{1/2})}{2}=-\fr{1}{2}}
+\e{\boxed{y(x)=c_1 x^{-\fr{1}{2}}+c_2 x^{-\fr{1}{2}}\ln(x)}}
+\section*{Problem 6.b.}
+\e{a=7\quad b=13}
+\e{(1-a)^2-4b=-16}
+The discriminant is negative, therefore the roots are imaginary and nonequal.
+\e{r=\fr{1-a}{2}\pm \fr{(4b-(1-a)^2)^{1/2}}{2}i=\boxed{3\pm 2i=r_0\pm s_0 i}}
+There are two linearly independent real solutions.
+\e{\boxed{y(x)=c_1 x^{-3} \cos(2\ln(x)) + c_2 x^{-3} \sin(2\ln(x))}}
 \section*{Problem 7}
+\e{x=e^t}
+\e{\ddx Y=y'(e^t) \quad \ddxt Y = y'(e^{2t})}
+\e{\ddt Y=\ddx y \ddt x = y'(e^t)e^t}
+\e{\ddtt Y = \ddt (y'(e^t) e^t)=y(e^t) e^t + (y''(e^t)e^t)e^t=y'(e^t)e^t+y''(e^t)e^{2t}}
+These are all the terms necessary to perform the change of variables. Next, apply the variables to Euler's equation.
+\e{x^2 y''=\ddtt Y - \ddt Y}
+\e{by=bY}
+\e{axy' = a\ddt Y}
+Finally,
+\e{x^2y'' + axy' + by &= 0\\ \ddtt Y - \ddt Y + a\ddt Y + bY &= 0 \\ \Aboxed{\ddtt Y + (a-1)\ddt Y + bY&=0}}
 \section*{Problem 8}
-
+\e{r\in \mathbb{R}}
+\e{y=x^r}
+\e{x^2y''\textrm{ and }xy'=\textrm{ scalar multiple of }y}
+\e{x^2y''+axy' + by =0}
+\e{r(r-1)x^r+arx^r + bx^r=0}
+\e{x^r(r(r-1)+ar+b)=0}
+\e{r(r-1)+ar+b=0}
+\e{\boxed{y=x^r\textrm{ solution}}}
+\e{r^2+(a-1)r+b=0}
+\e{r=\fr{1}{2}(1-a\pm((1-a)^2-4b))^{1/2}}
+\subsection*{Case $(a-1)^2-4b>0.$}
+Two roots $r_1\neq r_2$ and $r_1,r_2\in \mathbb{R}$.
+\e{r_1=\fr{1}{2}(1-a+((1-a)^2-4b)^{1/2})}
+\e{r_2=\fr{1}{2}(1-a-((1-a)^2-4b)^{1/2})}
+\e{x^{r_1},x^{r_2}\textrm{ linearly independent}}
+\e{x^{r_1},x^{r_2}\textrm{ solutions}}
+\e{\boxed{y(x)=c_1 x^{r_1}+c_2 x^{r_2}=c_1 |x|^{r_1}+c_2|x|^{r_2}}}
+\subsection*{Case $(a-1)^2-4b=0.$}
+Two roots.
+\e{r=r_0\pm s_0 i = \fr{1}{2}(1-a)\pm \fr{1}{2}(4b-(1-a)^2)^{1/2}i}
+\e{x^r &= x^{r_0 \pm s_0 i}=x^{r_0}x^{s_0 i}=x^{r_0}e^{\ln (x)s_0 i}\\
+&= x^{r_0}(\cos(s_0 \ln(x))+i\sin(s_0 \ln(x)))}
+The real part is a solution, and the imaginary part is a solution, and they are linearly independent. The solution $y$ is a linear combination of these solutions.
+\e{\Aboxed{y(x)&=c_1 x^{r_0}\cos(s_0 \ln(x)) + c_2 x^{r_0} \sin(s_0 \ln(x))}\\
+&=c_1|x|^{r_0}\cos(s_0\ln|x|)+c_2 |x|^{r_0}\sin(s_0 \ln|x|)}
+\subsection*{Case $(a-1)^2-4b<0.$}
+The root is repeated. The root is
+\e{r=\fr{1}{2}(1-a)}
+We need two linearly independent solutions for any second order ODE. The other solution can be derived by viewing the characteristic equation and referring to the second order ODE solution for $y(t)$ in this case.
+\e{y''+ay'+by=0}
+\e{\lambda^2+a\lambda+b\0}
+\e{y(t)=c_1 e^{\lambda t} + c_2te^{\lambda t}}
+Then the solution $y$ is 
+\e{\Aboxed{y(x)&=c_1 x^r+c_2 x^r \ln(x)}\\ &=c_1|x|^r + c_2|x|^r \ln|x|}
 \end{document}
