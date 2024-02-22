@@ -1,0 +1,150 @@
+\documentclass{article}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{floatrow}
+\newcommand{\fig}[3]{
+\begin{figure}[H]
+\begin{center}
+\includegraphics[height=#1]{#2}
+\caption{#3}
+\label{#2}
+\end{center}
+\end{figure}}
+\setlength{\parindent}{0pt}
+\geometry{top=1in,bottom=1in,left=1in,right=1in}
+\begin{document}
+\begin{center}
+\textbf{\Large{Problem Set 6}}\\~\\
+\begin{tabular}{l l}
+Student&Agustin Romero\\
+Email&ar1@stanford.edu\\
+Instructor&Lernik Asserain\\
+Course&MATH 131P\\
+Institution&Stanford University\\
+Date&February 21, 2024\\
+\end{tabular}
+\end{center}
+\n{pnl}{\fr{\pi n}{l}}
+\n{pt}{\fr{\partial}{\partial t}}
+\n{px}{\fr{\partial}{\partial x}}
+\n{ppx}{\fr{\partial^2}{\partial^2 x}}
+\n{lamm}{|\lambda_m|^{\fr{1}{2}}}
+\n{lamn}{|\lambda_n|^{\fr{1}{2}}}
+\section*{Problem 1}
+The problem is a vanishing Dirichlet problem with $l=1$, $\omega=\pi$.
+\e{B_n&=\fr{2}{l}\int_0^l f(x) \sin(\pnl x)dx
+\\ &= 2\int_0^1 x\sin(n\pi x)dx=-\fr{2}{n\pi}(-1)^{n}=\fr{2}{n\pi}(-1)^{n+1}}
+The solution is
+\e{u(t,x)&=\sum_{n=1}^\infty B_n e^{-(\pnl)^2 t} \sin(\pnl x)\\
+&=\boxed{\sum_{n=1}^\infty \fr{2}{\pi n} (-1)^{n+1}e^{-(n\pi)^2 t} \sin(n\pi x)}}
+\section*{Problem 2}
+This problem is a vanishing Dirichlet problem with $l=\pi$, $\omega=1$.
+\e{B_n&=\fr{2}{l}\int_0^l f(x)\sin(\pnl x)dx\\
+&=\fr{2}{l}(\int_0^{\fr{\pi}{2}} x\sin(n x)dx+\int_{\fr{\pi}{2}}^{\pi} (\pi-x)\sin(n x)dx)\\
+&= \fr{4}{\pi n^2}\sin(\fr{1}{2}\pi n)}
+The solution is
+\e{\boxed{u(t,x)=\sum_{n=1}^\infty \fr{4}{\pi n^2}\sin(\fr{1}{2}n\pi)e^{-(n\pi)^2 t}\sin(n\pi x)}}
+\section*{Problem 3.a.}
+The time independent solution of $u(t,x)$ is $u_0(x)$.
+\e{l=1\quad T_1=0 \quad T_2=100}
+\e{u_0(x)&=T_1+(T_2-T_1)\fr{x}{l}\\
+&=\boxed{100x}}
+\section*{Problem 3.b.}
+The time independent solution of $u(t,x)$ is $u_0(x)$.
+\e{\boxed{u_0(x)=T_1+(T_2-T_1)\fr{x}{l}=100+(0)\fr{x}{l}=100}}
+\section*{Problem 4.a.}
+Verify the solution in the same method from class. Break $u$ into functions $s$, $w$, plug them into the PDE, and finally check boundary conditions.
+\e{s(t,x)=T_1+(T_2-T_1)\fr{x}{l}}
+\e{w(t,x)=\sum_{n=1}^\infty B_n e^{-(\pnl)^2t}\sin(\pnl x)}
+\e{g(x)=f(x)-(T_1+(T_2-T_1)\fr{x}{l})}
+\e{B_n=\fr{2}{l}\int_0^l g(x) \sin(\pnl x)dx}
+\e{u(t,x)=s(t,x)+w(t,x)}
+Plug into the PDE.
+\e{\pt u &= \ppx u\\
+\pt s + \pt w &= \ppx s + \ppx w\\
+\pt w &= \ppx w}
+\e{\pt w = -(\pnl)^2 \sum_{n=1}^\infty B_n e^{-(\pnl)^2t}\sin(\pnl x)}
+\e{\ppx w = -(\pnl)^2 \sum_{n=1}^\infty B_n e^{-(\pnl)^2t}\sin(\pnl x)}
+The PDE is satisfied. Check the boundary conditions.
+\e{u(t,0)&=s(t,0)+w(t,0)=T_1+(T_2-T_1)\fr{0}{l} + 0 = \boxed{T_1}}
+\e{u(t,l)=s(t,l)+w(t,l)=T_1+(T_2-T_1)\fr{1}{1} + 0=\boxed{T_2}}
+The boundary conditions are satisfied. \fbox{The PDE and the boundary conditions are satisfied.}
+\section*{Problem 4.b.}
+Evaluate $B_n$ explicitly.
+\e{B_n&=\fr{2}{l}\int_0^l g(x) \sin(\pnl x)dx\\
+&=\fr{2}{l}( \int_0^l f(x) \sin(\pnl x) dx - \int_0^l T_1 \sin(\pnl x)dx - (T_2-T_1)\fr{1}{l}\int_0^l x\sin(\pnl x)dx)
+\intertext{Do the integrals, simplify. Because $f(x)$ is not defined the first term must remain.}
+&=\fr{2}{l}\int_0^l f(x) \sin(\pnl x) dx + \fr{2}{\pi n}T_1(\cos(\pi n)-1)+(T_2-T_1)(\fr{2}{\pi n}\cos(\pi n)-(\fr{l}{\pi n})^2\sin(\pi n)+(\fr{l}{\pi n})^2\sin(0))
+\intertext{The sine terms are 0, and the cosine term is $(-1)^n$.}
+&=\fr{2}{l}\int_0^l f(x) \sin(\pnl x) dx + \fr{2}{\pi n}T_1((-1)^n-1)+(T_2-T_1)\fr{2}{\pi n}(-1)^n\\
+&=\fr{2}{l}\int_0^l f(x) \sin(\pnl x) dx + \fr{2}{\pi n}(T_2 (-1)^n - T_1)\\
+&=\boxed{\fr{2}{l}\int_0^l f(x) \sin(\fr{n \pi}{l} x) dx - \fr{2}{n \pi} (T_1-(-1)^nT_2)}}
+\section*{Problem 5}
+This is a Dirichlet problem with general boundaries. Solve for $B_n$ and plug into $u(t,x)$. Because we solved a Dirichlet problem with the same $f(x)$ previously some work is repeated.
+\e{T_1=100 \quad T_2=50 \quad l=4}
+\e{B_n&=\fr{2}{l}\int_0^l g(x) \sin(\pnl x)dx\\
+&=\fr{4}{\pi n^2} \sin(\fr{1}{2}n\pi)-\fr{2}{n\pi}(100-50(-1)^n)}
+\e{u(t,x)&=T_1+(T_2+T_1)\fr{x}{l}+\sum_{n=1}^\infty B_n e^{-(\pnl)^2 t} \sin(\pnl x)\\
+&= 100+(50-100)\fr{x}{\pi}+\sum_{n=1}^\infty B_n e^{-n^2 t} \sin(n x)\\
+&=\boxed{100-50\fr{x}{\pi}+\sum_{n=1}^\infty (\fr{4}{\pi n^2} \sin(\fr{1}{2} n\pi)-\fr{2}{n\pi}(100-50(-1)^n)) e^{-n^2 t} \sin(n x)}}
+\section*{Problem 6}
+This problem is a heat equation with vanishing Neumann boundary conditions. Find $A_0$, $A_n$, and $u(t,x)$.
+\e{l=1}
+\e{u'(0)=0 \quad u'(l)=u'(1)=0}
+\e{A_0=\fr{1}{l}\int_0^l f(x) dx = 100 \int_0^{\fr{1}{2}} dx = 50}
+\e{A_n &= \fr{2}{l} \int_0^l f(x)\cos(\pnl x)dx \quad n\geq 1\\
+&= 2\int_0^{\fr{1}{2}} 100 \cos(n\pi x) dx \\
+&= \fr{200}{n\pi} \sin(\fr{1}{2} n \pi)}
+\e{u(t,x)&=\sum_{n=0}^\infty A_n e^{-(\pnl)^2 t} \cos(\pnl x)\\
+&= \boxed{50+\sum_{n=1}^\infty \fr{200}{n\pi} \sin(\fr{1}{2} n\pi) \cos(n\pi x) e^{-(n\pi)^2 t}}}
+\section*{Problem 7.a.}
+In class we found that the heat equation with Robin boundary conditions has the only nonzero solution $B_n\sin(|\lambda|^{1/2}x)$ when
+\e{\tan(|\lambda_n|^{\fr{1}{2}})=-\fr{|\lambda_n|^{\fr{1}{2}}}{k}}
+Apply this equation to the expression.
+\e{&\lamm \sin(\lamn l)\cos(\lamm l)-\lamn \cos(\lamn l)\sin(\lamm l)\\
+&=\fr{\lamm \sin(\lamn l)}{\cos(\lamn l)}-\fr{\lamn \sin(\lamm l)}{\cos(\lamm l)}\\
+&=\lamm (-\fr{\lamn}{k})-\lamn (-\fr{\lamm}{k})\\
+&=\boxed{0}}
+Simplifying the two terms using the solution to the heat equation with Robin boundary conditions, we find the equation is zero.
+\section*{Problem 7.b.}
+Simplify the expression until we arrive at the same result from 7.a., which we know is 0.
+\e{\int_0^l \sin(x\lamm)\sin(x\lamn)dx &= \int_0^l \sin(ax)\sin(bx)dx\\
+&= \fr{1}{2\int_0^l \cos((a-b)x)-\cos((a+b)x)dx}\\
+&=\fr{1}{2}(\fr{\sin((a-b)x)}{a-b}-\fr{\sin((a+b)x)}{a+b})_0^l\\
+&=\fr{1}{2}(\fr{1}{a-b}(\sin(ax)\cos(bx)-\cos(ax)\sin(bx)-\fr{1}{a+b}(\sin(ax)\cos(bx)+\cos(ax)\sin(bx)))_0^l)
+\intertext{Apply the definite integral boundaries, cancelling some terms.}
+&=\fr{1}{2}(\fr{1}{a-b}(\sin(al)\cos(bl)-\cos(al)\sin(bl)-\fr{1}{a+b}(\sin(al)\cos(bl)+\cos(al)\sin(bl))))
+\intertext{Get a common denominator for both terms.}
+&=\fr{1}{2}(\fr{1}{a^2-b^2} ( (a+b)(\sin(al)\cos(bl)-\cos(al)\sin(bl))-(a-b)(\sin(al)\cos(bl)+\cos(al)\sin(bl))))\\
+&=\fr{1}{a^2-b^2}(b\sin(al)\cos(bl)-a\cos(al)\sin(bl))\\
+&=\fr{1}{a^2-b^2}(\lamn \sin(\lamm l)\cos(\lamn l) - \lamm \cos(\lamm l)\sin(\lamn l))
+\intertext{We have shown this expression is equal to 0.}
+&=\fr{1}{a^2-b^2}(0)\\
+&=\boxed{0}}
+\section*{Problem 8}
+We'll take this problem step by step like in the notes. Find $h_n(t)$, then $T_n(0)$, then $T_n(t)$, then the general $U(t,x)$.
+\e{\pt u=\ppx u}
+\e{X_n(x)=\sin(\pnl x)\quad n=1,2,...}
+\e{h(t,x)=\sin(3\pi x)=\sum_{n=1}^\infty h_n(t)\sin(\pnl x)=\sum_{n=1}^\infty h_n(t)\sin(n\pi x)}
+\e{h_n(t)&=\fr{2}{l} \int_0^l h(t,x)\sin(\pnl)\\
+&=2\int_0^1 \sin(3\pi x)\sin(n\pi x)dx\\
+&=\begin{cases}1\quad &n=3 \\ 0 \quad &n\neq 0\end{cases}}
+Next find $T_n(0)$.
+\e{T'_n(t)+(\pnl)^2T_n(t)=h_n(t)}
+\e{T_n(0)&=\fr{2}{l}\int_0^l f(x) \sin(\pnl x)dx\\
+&= 2\int_0^1 \sin(\pi x)\sin(n\pi x)dx\\
+&= \begin{cases} 0 \quad &n\neq 1 \\ 1 \quad &n=1\end{cases}}
+Next, find $T_n(t)$. It will only be nonzero when $n=1$ or $n=3$. Use cases.
+\e{T_n(t)&=e^{-(n\pi)^2 t}(T_n(0)+\int_0^1 e^{(n\pi)^2 s} h_n(s) ds)\\
+&= \begin{cases} e^{-\pi^2 t} \quad &n=1 \\ e^{-(3\pi)^2 t} \int_0^1 e^{(3\pi)^2 s} ds \quad &n=3 \\ 0 \quad &\textrm{otherwise }\end{cases}\\
+&= \begin{cases} e^{-\pi^2 t} \quad &n=1 \\ \fr{1}{(3\pi)^2} (1-e^{-(3\pi)^2} t)\quad &n=3 \\ 0\quad &\textrm{otherwise}\end{cases}}
+After solving for $T_n(t)$ we can find the solution $U$. The solution $U$ will sum over $n$, and so will have two contributions: one term when $n=1$ and one term when $n=3$.
+\e{U(t,x)&=\sum_{n=1}^\infty T_n(t) \sin(\pnl x)\\
+&= T_1(t) \sin(\pi x)+T_3(t)\sin(3\pi x)\\
+&= \boxed{e^{-\pi^2 t}\sin(\pi x)+\fr{1}{(3\pi)^2}(1-e^{-(3\pi)^2} t)\sin(3\pi x)}}
+\end{document}
