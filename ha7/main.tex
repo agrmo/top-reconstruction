@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{floatrow}
+\newcommand{\fig}[3]{
+\begin{figure}[H]
+\begin{center}
+\includegraphics[height=#1]{#2}
+\caption{#3}
+\label{#2}
+\end{center}
+\end{figure}}
+\setlength{\parindent}{0pt}
+\geometry{top=1in,bottom=1in,left=1in,right=1in}
+\begin{document}
+\begin{center}
+\textbf{\Large{Problem Set 7}}\\~\\
+\begin{tabular}{l l}
+Student&Agustin Romero\\
+Email&ar1@stanford.edu\\
+Instructor&Lernik Asserain\\
+Course&MATH 131P\\
+Institution&Stanford University\\
+Date&February 28, 2024\\
+\end{tabular}
+\end{center}
+\n{ewegan}{\fr{2}{l}\int_0^l f(x)\sin(l^{-1}n\pi x)dx}
+\n{ewegbn}{\fr{2}{n\pi c}\int_0^l g(x) \sin(l^{-1}n\pi x)dx}
+\n{ewegu}{\sum_{n=1}^\infty (A_n \cos(l^{-1} n\pi ct)+B_n \sin(l^{-1}n\pi c t))\sin(l^{-1}n\pi x)}
+\section*{Problem 1}
+\e{A_n&=\ewegan= \fr{2}{l} \int_0^l 0 dx = 0}
+\e{B_n&=\ewegbn=\fr{2}{2\pi c}\int_0^l x\cos(x)\sin(l^{-1} n \pi x)dx\\
+&=\fr{2}{n\pi c}\int_0^{\pi/2}x\cos(x)\sin(2nx)dx\\
+&=\fr{1}{n\pi c}\int_0^{\pi/2}x(\sin((1+2n)x)-\sin((1-2n)x))dx\\
+&=\fr{1}{n\pi c}((0 + \fr{1}{(1+2n)^2}\sin((1+2n)\fr{\pi}{2})+0+0)-(0+\fr{1}{(1-2n)^2}\sin((1-2n)\fr{\pi}{2}+0+0)))\\
+&=\fr{1}{n\pi c}(\fr{1}{(1+2n)^2}(-1)^n+\fr{1}{(1-2n)^2}(-1)^n)\\
+&= \fr{(-1)^n}{n\pi c} (\fr{1}{(1+2n)^2}+\fr{1}{(1-2n)^2})}
+The solution is
+\e{u(t,x)&=ewegu\\
+&= \sum_{n=0}^\infty \fr{(-1)^n}{n\pi}(\fr{1}{(1-2n)^2}+\fr{1}{(1+2n)^2})\sin(2nx)}
+\section*{Problem 2}
+\e{A_n&=\ewegan\\
+&=0.1\int_0^1\sin(\pi x)\sin(n\pi x)dx\\
+&=\begin{cases}
+0 &\quad n\neq 1\\
+0.05 &\quad n=1
+\end{cases}}
+\e{B_n=0}
+The solution is
+\e{u&=\ewegu\\
+&= 0.05\cos(t)\sin(\pi x)}
+\section*{Problem 3}
+\e{A_n&=\ewegan\\
+\fr{2}{l}\int_0^l (\sin(\pi x)+3\sin(2\pi x)-\sin(5\pi x))\sin(n \pi x)dx\\
+&= 2 \begin{cases}
+\fr{1}{2}&\quad n=1\\
+\fr{3}{2}&\quad n=2\\
+-\fr{1}{2}&\quad n=5
+\end{cases}}
+\e{B_n&=\ewegbn=0}
+The solution is
+\e{u(t,x)&=\ewegu\\
+&=\cos(\pi t)\sin(\pi x)+3\cos(2\pi t)\sin(2\pi x)-\cos(5\pi t)\sin(5\pi x)}
+\section*{Problem 4}
+\e{A_n&=\ewegan\\
+&= 2\int_0^1 (\sin(\pi x)+\fr{1}{2}\sin(3\pi x)+3\sin(7\pi x))\sin(n\pi x)dx\\
+&=2\begin{cases}
+\fr{1}{2}&\quad n=1\\
+\fr{1}{4}&\quad n=3\\
+\fr{3}{2}&\quad n=7
+\end{cases}\\
+&= \begin{cases}
+1 &\quad n=1\\
+\fr{1}{2} &\quad n=3\\
+3&\quad n=7
+\end{cases}}
+\e{B_n&=\fr{2}{n\pi c}\int_0^1 \sin(2\pi x)\sin(n\pi x)dx\\
+&= \begin{cases}
+\fr{1}{2\pi}&\quad n=2\\
+0&\quad n\neq 2
+\end{cases}}
+The solution is
+\e{u(t,x)&=\ewegu\\
+&=\boxed{\cos(\pi t)\sin(\pi x)+\fr{1}{2}\cos(3\pi t)\sin(3\pi x)+3\cos(7\pi t)\sin(7\pi x)+\fr{1}{2\pi}\sin(2\pi t)\sin(2\pi x)}}
+\section*{Problem 5}
+\e{A_n&=\ewegan\\
+&=2(\int_0^{1/2} 2x\sin(n\pi x)dx + \int_{1/2}^1 2(1-x)\sin(n\pi x)dx)
+\intertext{This is the equation from P5 HW3.}
+&=\fr{8}{(\pi n)^2}\sin(\fr{1}{2}\pi n)}
+\e{g(x)=0\Rightarrow B_n=\ewegbn=0}
+The solution is
+\e{u(t,x)&=\sum_{n=1}^\infty \fr{8}{(\pi n)^2}\sin(\fr{1}{2}\pi n) \cos(4\pi n t)\sin(n\pi x)\\
+&=\boxed{\sum_{n=1}^\infty \fr{8(-1)^{n+1}}{(\pi n)^2}\cos(4\pi n t)\sin(n\pi x)}}
+\section*{Problem 6}
+This is a 1 dimensional wave equation. Find $A_n$, $B_n$, $u(x,t)$.
+\e{A_n&=2\int_0^1 x(1-x)\sin(n\pi x)dx\\
+&=2(-\fr{2}{(n\pi)^3}\cos(n\pi x)-\fr{x}{n\pi}\cos(n\pi x)+\fr{1}{\pi n}x^2\cos(n\pi x)+\fr{1}{(n\pi)^2}\sin(\pi n x)-\fr{2}{(\pi n)^2}x\sin(\pi n x))_0^1\\
+&= 2((-\fr{2}{(\pi n)^3}(-1)^n-\fr{1}{\pi n}(-1)^n+\fr{1}{\pi n}(-1)^n + 0 + 0)-(-\fr{2}{(\pi n)^3}+0+0+0+0))\\
+&= 2(-\fr{2}{(\pi n)^3(-1)^n+\fr{2}{(\pi n)^3}})\\
+&= \fr{4}{(\pi n)^3}(1-(-1)^n)\\
+&= \falls{\fr{8}{(\pi n)^3} &\quad\textrm{n odd}\\
+0&\quad\textrm{n even}}}
+\e{B_n&=\fr{2}{\pi c n}\int_0^1 \sin(\pi x)\sin(\pi n x)dx\\
+&=\falls{\fr{1}{\pi}&\quad n=1\\
+0&\quad n\neq 1}}
+The solution is
+\e{u(t,x)&=\boxed{\fr{1}{\pi}\sin(\pi t)\sin(\pi x)+\sum_{k=0}^\infty \fr{8}{((2k+1)\pi)^3}\cos((2k+1)\pi t)\sin((2k+1)\pi x)}}
+\section*{Problem 7}
+This is a 1-dimensional damped wave equation. Find $A_n$, $B_n$, and $u(t,x)$.
+\e{\omega =((\fr{\pi n c}{\pi})-(\fr{1}{2}k)^2)^{1/2}=(n^2-\fr{1}{4})^{1/2}}
+\e{A_n&=\fr{2}{\pi}\int_0^\pi \sin(x)\sin(nx)dx\\
+&=\falls{1&\quad n=1\\ 0&\quad n\neq 1}}
+\e{B_n&=\int 0 dx + \fr{k}{\omega_n \pi}\int_0^\pi \sin(x)\sin(n x)dx\\
+&=\falls{\fr{1}{\omega_1} &\quad n=1\\0 &\quad 0 \neq 1 \\ \fr{1}{2}(\fr{3}{4})^{-1/2} &\quad n=1 \\ 0 &\quad n \neq 1}}
+\e{u(t,x)&= e^{\fr{1}{2}kt}\sum_{n=1}^\infty (A_n \cos(\omega_n t)+B_n\sin(\omega_n t))\sin(l^{-1}n\pi x)\\
+&= \boxed{e^{-\fr{1}{2}t} (\cos((\fr{3}{4})^{1/2}t)+\fr{1}{2}(\fr{3}{4})^{-1/2}\sin((\fr{3}{4})^{1/2}t))\sin(x)}}
+The solution is
+\section*{Problem 8}
+This is a two dimension heat equation with Dirichlet boundary conditions. Find $B(n_1,n_2)$ and the solution $u(t,x,y)$.
+\e{B(n_1,n_2)&=\fr{4}{l_1l_2}\int_0^{l_2} \int_0^{l_1} x(1-x)y(1-y)\sin(l_1^{-1}n_1 \pi x)\sin(l_2^{-1}n_2 \pi y)dx dy\\
+&= 2\int_0^1 x(1-x) \sin(l_1^{-1}n_1 \pi x) dx \int_0^1 y(1-y)\sin(l_2^{-1}n_2 \pi y) dy
+\intertext{Deja vu!}
+&= \falls{\fr{8}{(n_1\pi)^3}\fr{8}{(n_2 \pi)^3} &\quad \textrm{$n_1$ and $n_2$ odd}\\
+0&\quad \textrm{$n_1$ or $n_2$ even}}}
+The solution is
+\e{u(t,x,y)&=\sum_{n_1=1}^\infty \sum_{n_2=1}^\infty B(n_1,n_2)e^{-((\fr{n_1}{l_1})^2+(\fr{n_2}{l_2})^2)\pi^2 \alpha t}\sin(l_1^{-1}n_1 \pi x)\sin(l_2^{-1}n_2 \pi y)\\
+&= \boxed{\sum_{k_1=1}^\infty \sum_{k_2=1}^\infty \fr{64}{\pi^6 (2k_1+1)^2 (2k_2+1)^2}e^{-((2k_1+1)^2+(2k_2+1)^2)\pi^2 t}\sin((2k_1+1)\pi x)\sin((2k_2+1) \pi y)}}
+\end{document}

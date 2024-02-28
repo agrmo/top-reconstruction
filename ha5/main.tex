@@ -30,25 +30,26 @@ Date&February 14, 2024\\
 \end{tabular}
 \end{center}
 \section*{Problem 1}
-\e{P_0(x)=\sum_{m=0}^M \fr{(-1)^m(-2m)!}{m!(-m)!(-2m)!}x^{-2m}}
-\e{P_1(x)=\fr{1}{2} \sum_{m=0}^M \fr{(-1)^m(2-2m)!}{m!(1-m)!(1-2m)!}x^{1-2m}}
-\e{P_2(x)=\fr{1}{4} \sum_{m=0}^M \fr{(-1)^m(4-2m)!}{m!(2-m)!(2-2m)!}x^{2-2m}}
-\e{P_2(x)=\fr{1}{8} \sum_{m=0}^M \fr{(-1)^m(6-2m)!}{m!(3-m)!(3-2m)!}x^{3-2m}}
+\e{\boxed{P_0(x)=\sum_{m=0}^M \fr{(-1)^m(-2m)!}{m!(-m)!(-2m)!}x^{-2m}}}
+\e{\boxed{P_1(x)=\fr{1}{2} \sum_{m=0}^M \fr{(-1)^m(2-2m)!}{m!(1-m)!(1-2m)!}x^{1-2m}}}
+\e{\boxed{P_2(x)=\fr{1}{4} \sum_{m=0}^M \fr{(-1)^m(4-2m)!}{m!(2-m)!(2-2m)!}x^{2-2m}}}
+\e{\boxed{P_2(x)=\fr{1}{8} \sum_{m=0}^M \fr{(-1)^m(6-2m)!}{m!(3-m)!(3-2m)!}x^{3-2m}}}
 \section*{Problem 2}
-Find one solution, which will be the finite Legendre series $P_n(x)$. The other series has infinitely many terms, so calculate only the first three. Then write the general solution.
+Find one solution, which will be the finite Legendre series $P_n(x)$. The other solution has infinitely many terms, so calculate only the first three. Then write the general solution.
 \e{\mu=30=5(5+1)\quad n=5 \quad M=\fr{4}{2}=2}
 \e{P_5(x)=\fr{1}{8}(15x-70x^3+63x^5)}
 These are the first three terms of one solution $P_5(x)$. There is also the linearly independent solution $Q_5(x)$. We also need to write the first three terms of $Q_5(x)$.
 \e{Q_n(x)&=1-\fr{n(n+1)}{2!}x^2+\fr{(n-2)n(n+1)(n+3)}{4!}x^4+...\\
-&= 1-15x^2+30x^4}
+&= 1-15x^2+30x^4+...}
 The general solution is the linear combination of these two solutions.
-\e{\boxed{y=c_1(15x-70x^3+63x^5)+c_2(1-15x^2+30x^4)}}
+\e{\boxed{y=c_1(15x-70x^3+63x^5)+c_2(1-15x^2+30x^4+...)}}
 \section*{Problem 3}
+The differential equation is a Legendre equation. Assume it has a general solution $y$.
 \e{\mu=6=2(2+1)\quad \mu=2}
 \e{P_2(x)=\fr{1}{2} (-1+3x^2)}
 The Legendre function must be $P_2(x)$ and is part of the general solution
 \e{y=c_1P_2(x)+c_2 Q_2(x)=c_1(-1+3x^2)+c_2Q_2(x)}
-Try to satisfy the boundary conditions using $y$,
+Try to satisfy the boundary conditions,
 \e{y'(0)=6c_1(0)+c_2Q'_2(0)=c_2Q_2'(0)=1}
 The boundary condition must be satisfied by $c_2Q_2'(0)$ so $Q_2(x)$ must be part of the general solution. $Q_2(x)$ is unbounded. \fbox{The solution is not bounded.}
 \section*{Problem 4}
@@ -64,41 +65,45 @@ P_4(x)&=\fr{1}{4}(7xP_3(x)-3P_2(x))\\
 &=\boxed{\fr{3}{8}-\fr{30}{8}x^2+\fr{35}{8}x^4}}
 Using the recurrence equation we find $P_2$, $P_3$, $P_4$.
 \section*{Problem 5.a.}
+Explicitly,
 \e{\int_{-1}^{1}P_3(x)&=\fr{1}{2}\int_{-1}^{1}(5x^3-3x)dx\\
 &=(\fr{5}{2}\fr{1}{4}x^4-\fr{3}{2}\fr{1}{2}x^2)_{-1}^1\\&=\boxed{0}}
 \section*{Problem 5.b.}
+$n\neq 0$, so $P_0(x)$ and $P_n(x)$ are orthogonal, so
 \e{\int_{-1}^{1}P_n(x)dx=\int_{-1}^{1}P_0(x)P_n(x)dx=\boxed{0}}
 \section*{Problem 5.c.}
-\e{\int_{-1}^{1}xP_7(x)=\int{-1}^{1}P_1(x)P_7(x)dx=\boxed{0}}
+$P_1(x)$ and $P_7(x)$ are orthogonal, so
+\e{\int_{-1}^{1}xP_7(x)=\int_{-1}^{1}P_1(x)P_7(x)dx=\boxed{0}}
 \section*{Problem 5.d.}
 \e{n\rom{ odd}\Rightarrow P_7(x)\rom{ odd}}
-\e{n\rom {even}}
+\e{x^2\rom{ even}}
 \e{\int_{-1}^{1}x^2 P_7(x)dx=\int_{-1}^1 \rom{ odd} = \boxed{0}}
 \section*{Problem 6.a.}
 \e{P_{n+1}'(x)=P_{n-1}'+(2n+1)P_n(x)\quad n=1,2,...}
 \e{(2n+1)P_n(x)=P_{n+1}(x)'-P_{n-1}'(x)}
 \e{\int_{x}^{1}P_n(x)dx&=\fr{1}{2n+1}((P_{n+1}(x))_x^1-(P_{n-1}(x))_x^1)\\
 &= \fr{1}{2n+1}(P_{n+1}(1)-P_{n-1}(1)-P_{n+1}(x)+P_{n-1}(x))\\
-&=\boxed{\fr{1}{2n+1}(P_{n-1}(x)-P_{n+1}(x))}}
+&=\boxed{\fr{1}{2n+1}(P_{n-1}(x)-P_{n+1}(x))\quad n=1,2,...}}
 \section*{Problem 6.b.}
 \e{x=0}
 \e{\int_x^1 P_{2n}(x)dx&=\fr{1}{4n+1}(P_{2n-1}(x)-P_{2n+1}(x))\\
 &=\fr{1}{4n+1}(P_{2n-1}(0)-P_{2n+1}(0))\\
 &=\fr{1}{4n+1}(0-0)\\
-&=\boxed{0}}
+&=\boxed{0\quad n=1,2,...}}
 Because $P_{2n+1}$ and $P_{2n-1}$ are odd Legendre functions, they are 0 at $x=0$.
 \section*{Problem 7.a.}
 \e{x=0}
 \e{P_{2n}(x)&=\fr{1}{2^{2n}} \sum_{m=0}^M \fr{(-1)^m (4n-2m)!}{m! (2n-m)!(2n-2m)!} x^{2n-2m}
 \intertext{This is zero except when $n=m\Rightarrow 0^0=1$.}
 &=\fr{1}{2^{2n}} \fr{(-1)^n (4n-2n)!}{n! (2n-n)!(0)!}\\
-&=\boxed{\fr{(-1)^n (2n)!}{2^{2n} (n!)^2 }\quad n=0,1,2,...}}
+&=\boxed{\fr{(-1)^n (2n)!}{2^{2n} (n!)^2 }\quad n=0,1,...}}
 \section*{Problem 7.b.}
-\e{P_{2n}(0)-P_{2(n+1)}(0)&=\fr{(-1)^n (2n)!}{2^{2n} (n!)^2 }-\fr{(-1)^{n+1} (2(n+1))!}{2^{2(n+1)} ((n+1)!)^2 }\\
+\e{P_{2n}(0)-P_{2n+2}(0)&=P_{2n}(0)-P_{2(n+1)}(0)\\
+&=\fr{(-1)^n (2n)!}{2^{2n} (n!)^2 }-\fr{(-1)^{n+1} (2(n+1))!}{2^{2(n+1)} ((n+1)!)^2 }\\
 &=\fr{2(-1)^n (2n)!}{2^{2n+1} (n!)^2 }+\fr{(-1)^n (2n+2)(2n+1)(2n)!}{2^{2n+2} (n!(n+1))^2}\\
 &=\fr{(-1)^n (2n)!}{2^{2n+1} (n!)^2 }(2-\fr{(n+1)(2n+1)}{(n+1)^2})\\
 &= \fr{(-1)^n (2n)!}{2^{2n+1} (n!)^2 }(\fr{2(n+1)}{n+1}+\fr{2n+1}{n+1})\\
-&=\boxed{\fr{(-1)^n (2n)! (4n+3)}{2^{2n+1} (n!)^2 (n+1)}}}
+&=\boxed{\fr{(-1)^n (2n)! (4n+3)}{2^{2n+1} (n!)^2 (n+1)}\quad n=0,1,...}}
 Using 7.a. and some algebra we find the answer.
 \section*{Problem 8.a.}
 \e{\int_0^1 P_{2n+1}dt=\fr{(-1)^n (2n)!}{2^{2n+1} (n!)^2 (n+1)}\quad n=0,1,...}
@@ -109,19 +114,19 @@ Using 7.a. and some algebra we find the answer.
 \section*{Problem 8.b.}
 The function in question is
 \e{f(x)=\begin{cases}0 \quad &-1\leq x < 0\\ 1 \quad &0\leq x \leq 1\end{cases}}
-Write down the Legendre expansion of $f(x)$ with coefficients $B_j$, and simplify using the results from problems 6, 7.
+Write down the Legendre expansion of $f(x)$ with coefficients $B_j$, and simplify using Problem 6, 7.
 \e{B_j=\fr{2j+1}{2}\int_{-1}^1 f(x)P_j(x) dx=\fr{2j+1}{2}\int_0^1 P_j(x) dx \quad j=1,2,...}
-From 6.b. we see that $B_j=0$ $j=2,4,...$ so simplify $B_j$ which will be very convenient in the next step.
+From 6.b. we see that $B_j=0$ for $j=2,4,...$, so simplify $B_j$, then apply Problem 8.a.
 \e{B_j \quad j=1,2,...\rightarrow B_{2n+1} \quad n=0,1,...}
 \e{B_{2n+1}&=\fr{2(2n+1)+1}{2}\int_0^1 P_{2n+1}(x)dx\quad n=0,1,2,...\\
 &=\fr{4n+3}{2}\int_0^1 P_{2n+1}(x)dx\\
 &= \boxed{\fr{(4n+3)(-1)^n (2n)!}{2^{2n+2} (n!)^2 (n+1)}\quad n=0,1,2,...}}
-Now plug into the Legendre expansion of $f(x)$.
+Plug into the Legendre expansion of $f(x)$.
 \e{f(x)&=\sum_{j=0}^\infty B_j P_j(x)=B_0 P_0 + \sum_{j=1}^\infty B_j P_j(x)
-\intertext{From the notes we have $B_0=\fr{1}{2}$. We need to adjust the series from $j=1$ to $\infty$ to $n=0$ to $\infty$, like before.}
+\intertext{From the notes $B_0=\fr{1}{2}$. Simplify the series from $j=1$ to $\infty$ to $n=0$ to $\infty$, like before.}
 &= \fr{1}{2} + \sum_{n=0}^\infty B_{2n+1}P_{2n+1}(x)\\
 &= \fr{1}{2}+\sum_{n=0}^\infty \fr{(4n+3)(-1)^n (2n)!}{2^{2n+2} (n!)^2 (n+1)}
 \intertext{Distribute the $2^2$.}
-&= \boxed{\sum_{n=0}^\infty \fr{4n+3}{4n+4} \fr{(-1)^n (2n)!}{2^{2n} (n!)^2}}}
-By writing $f(x)$ as a Legendre series and simplifying using Problems 6, 7, we get the desired result.
+&= \boxed{\fr{1}{2}+\sum_{n=0}^\infty \fr{4n+3}{4n+4} \fr{(-1)^n (2n)!}{2^{2n} (n!)^2}}}
+By writing $f(x)$ as a Legendre series and simplifying using Problems 6, 7, 8.a., we get the desired result.
 \end{document}
