@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{floatrow}
+\newcommand{\fig}[3]{
+\begin{figure}[H]
+\begin{center}
+\includegraphics[height=#1]{#2}
+\caption{#3}
+\label{#2}
+\end{center}
+\end{figure}}
+\setlength{\parindent}{0pt}
+\geometry{top=1in,bottom=1in,left=1in,right=1in}
+\begin{document}
+\begin{center}
+\textbf{\Large{Problem Set 8}}\\~\\
+\begin{tabular}{l l}
+Student&Agustin Romero\\
+Email&ar1@stanford.edu\\
+Instructor&Lernik Asserain\\
+Course&MATH 131P\\
+Institution&Stanford University\\
+Date&\today\\
+\end{tabular}
+\end{center}
+\section*{Problem 1}
+\e{\lambda=-(n_1^2+n_2^2)\pi^2}
+\e{A=4\int_0^1 \int_0^1 (0) dx dy = 0}
+\e{B&=4\pi|\lambda|^{-1/2}\int_0^1 \int_0^1 \sin(\pi n_1 x)\sin(\pi n_2 y) dxdy\\
+&=\fr{4|\lambda|^{-1/2}}{4n_1 n_2}((-1)^{n_1}-1)((-1)^{n_2}-1)\\
+&=\boxed{\falls{\fr{16}{\pi^2 n_1 n_2 (n_1^2+n_2^2)^{1/2}} &\quad \textrm{$n_1$ odd and $n_2$ odd}\\
+0 &\quad \textrm{$n_1$ even or $n_2$ even}}}}
+\e{u(t,x,y)&=\sum_{n_1=1}^\infty \sum_{n_2=1}^\infty B(n_1,n_2)\sin(|\lambda|ct)\sin(\pi n_1 x) \sin(\pi n_2 y)\\
+&= \sum_{k_1=0}^\infty \sum_{k_2=1}^\infty \fr{16}{\pi^2 (2k_1+1)(2k_2+1)((2k_1+1)^2+(2k_2+1)^2)^{1/2}} \\ &\sin(\pi((2k_1+1)^2+(2k_2+1)^2)t)\sin(\pi(2k_1+1)x)\sin(\pi(2k_2+1)y)}
+\section*{Problem 2}
+\e{\lambda=-(n_1^2+n_2^2)\pi^2}
+\e{A&=4\int_0^1\int_0^1 x(1-x)y(1-y)\sin(\pi n_1 x)\sin(\pi n_2 y)dx dy\\
+&= \boxed{\falls{\fr{64}{\pi^6 n_1^3 n_2^3} &\quad \textrm{$n_1$ odd and $n_2$ odd}\\
+0 &\quad \textrm{$n_1$ even or $n_2$ even}}}}
+\e{B&=4\pi|\lambda|^{-1/2}\int_0^1 \int_0^1 2\sin(\pi x)\sin(2\pi y)\sin(\pi n_1 x)\sin(\pi n_2 y)dx dy\\
+&= \falls{8\pi|\lambda|^{-1/2}(1/4) &\quad \textrm{$n_1=1$ and $n_2=2$}\\
+0 &\quad \textrm{$n_1\neq 1$ or $n_2\neq 2$}}\\
+&= \boxed{\falls{\fr{2}{\sqrt{5}} &\quad  \textrm{$n_1=1$ and $n_2=2$}\\
+0 &\quad \textrm{$n_1\neq 1$ or $n_2\neq 2$}}}}
+\e{u&=\sum_{n_1=1}^\infty \sum_{n_2=1}^\infty (A(n_1,n_2)\cos(|\lambda|\pi^{-1} t) + B(n_1,n_2)\sin(|\lambda| \pi^{-1} t))\sin(\pi n_1 x)\sin(\pi n_2 y)\\
+&= \fr{2}{\sqrt{5}}\sin(5^{1/2} \pi t)\sin(\pi x_1)\sin(2\pi x_2)\\
+&\quad + \sum_{k_1=0}^\infty \sum_{k_2=0}^\infty \fr{64}{\pi^6 (2k_1+1)^3 (2k_2+1)^3} \cos(\pi ((2k_1+1)^2+(2k_2+1)^2)^{1/2} t)\sin(\pi (2k_1+1)x)\sin(\pi (2k_2+1) y)}
+\section*{Problem 3}
+\e{u(x,y)=\sum_{n=1}^\infty (A_n \cosh(\pi l_1^{-1} ny)+B_n \sinh (\pi l_1^{-1} n y)) \sin(\pi l_1^{-1} n x)}
+\e{u(x,0)=0\Rightarrow u(x,0)=\sum_{n=1}^\infty A_n \sin(\pi l_1^{-1} x) \Rightarrow \boxed{A_n = 0}}
+\e{\boxed{u(x,y)=\sum_{n=1}^\infty B_n \sinh (\pi l_1^{-1} n y) \sin(\pi l_1^{-1} n x)}}
+\e{\fr{\p}{\p y} u(x,l_2) = \sum_{n=1}^\infty B_n \pi l_1^{-1} n \cosh(\pi l_1^{-1} n l_2) \sin(\pi l_1^{-1} n x)=f(x)}
+\e{\boxed{B_n = \fr{2}{\pi n \cosh(\pi l_1^{-1} l_2 n)} \int_0^{l_1} f(x) \sin(\pi l_1^{-1} n x)dx}}
+\section*{Problem 4}
+This is an application of question 3.
+\e{u(x,y)=\sum_{n=1}^\infty B_n \sinh (\pi l_1^{-1} n y) \sin(\pi l_1^{-1} n x)}
+\e{B_n &= \fr{2}{\pi n \cosh(\pi l_1^{-1} l_2 n)} \int_0^{l_1} f(x) \sin(\pi l_1^{-1} n x)dx\\
+&= \fr{2}{\pi n \cosh(\pi n)} \int_0^{l_1} f(x) \sin(\pi l_1^{-1} n x) dx\\
+&= \falls{\fr{1}{2 \cosh(2 \pi)} &\quad n=2\\
+0 &\quad n\neq 2}}
+\e{\boxed{u(x,y)=\fr{1}{2 \cosh(2 \pi)} \sin(2x)\sin(2y)}}
+\section*{Problem 5}
+Solve the general problem first, then apply it to this specific problem. The general solution is
+\e{u(x,y)=\sum_{n=1}^\infty (A_n \cosh(\pi l_1^{-1} n (\beta - y)) + B_n \sinh (\pi l_1^{-1} (\beta-y)))\sin(\pi l_1^{-1} n x_1)}
+Solve for $B_n$.
+\e{\fr{\p}{\p y} u(x,l_2)=\sum_{n=1}^\infty \pi l_1^{-1} n B_n \sin(\pi l_1^{-1}n x)=0}
+\e{\boxed{B_n=0}}
+The solution is 
+\e{u(x,y)=\sum_{n=1}^\infty A_n \cosh(\pi l_1^{-1} n (\beta - y)) \sin(\pi l_1^{-1} n x)}
+Solve for $A_n$.
+\e{A_n = \fr{2}{l_1 \cosh(\pi l_1^{-1} l_2 n)} \int_0^{l_1} g(x) \sin(\pi l_1^{-1} n x)dx}
+For this problem,
+\e{A_n&=\fr{2}{\pi \cosh(n)}\int_0^\pi 100 \sin(nx)dx\\
+&= \fr{-200}{\pi n \cosh(n)} ((-1)^n - 1)\\
+&= \boxed{\falls{ \fr{400}{\pi n \cosh(n)} &\quad \textrm{$n$ odd}\\
+0 &\quad \textrm{$n$ even}}}}
+The solution is
+\e{u(x,y)&=\sum_{n=1}^\infty A_n \cosh(\pi l_1^{-1} n (\beta - y)) \sin(\pi l_1^{-1} n x)\\
+&= \boxed{\sum_{k=0}^\infty \fr{400}{\pi (2k+1)\cosh(2k+1)} \cosh((2k+1)(1-y))\sin((2k+1)x)}}
+\section*{Problem 6}
+\section*{Problem 7}
+\section*{Problem 8}
+\end{document}
