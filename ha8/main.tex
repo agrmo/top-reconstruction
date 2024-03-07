@@ -84,6 +84,38 @@ The solution is
 \e{u(x,y)&=\sum_{n=1}^\infty A_n \cosh(\pi l_1^{-1} n (\beta - y)) \sin(\pi l_1^{-1} n x)\\
 &= \boxed{\sum_{k=0}^\infty \fr{400}{\pi (2k+1)\cosh(2k+1)} \cosh((2k+1)(1-y))\sin((2k+1)x)}}
 \section*{Problem 6}
+\e{u(x,y)=\sum_{n=1}^\infty (A_n \cosh(\pi l_1^{-1} n y) + B_n \sinh (\pi l_1^{-1}n y))\sin(\pi l_1^{-1} n y)}
+\e{\fr{\p}{\p y} u(x,y)=\sum_{n=1}^\infty \pi l_1^{-1} n (A_n \sinh(\pi l_1^{-1} n y) + B_n \cosh (\pi l_1^{-1}y))\sin(\pi l_1^{-1} n y)}
+\e{\fr{\p}{\p y} u(x,0)+2 u(x,0)=\sum_{n=1}^\infty (B_n \pi l_1^{-1} n + 2A_n) \sin(\pi l_1^{-1} n y)=0}
+\e{B_n=-2 l_1(\pi n)^{-1} A_n}
+The solution is
+\e{\boxed{u(x,y)=\sum_{n=1}^\infty (A_n \cosh(\pi l_1^{-1} n y) - 2 l_1 (\pi n)^{-1} \sinh (\pi l_1^{-1}n y))\sin(\pi l_1^{-1} n y)}}
+Solve for $A_n$.
+\e{\fr{\p}{\p x_2} u(x,l_2)=\sum_{n=1}^\infty A_n \pi l_1^{-1} n (\sinh(\pi l_1^{-1} l_2 n)- 2l_1 (\pi n)^{-1} \cosh(\pi l_1^{-1} l_2 n))=f(x)}
+\e{\boxed{A_n=\fr{2}{\pi n \sinh(\pi l_1^{-1} l_2 n)- 2l_1 \cosh(\pi l_1^{-1} l_2 n)} \int_0^{l_1} f(x) \sin(\pi l_1^{-1} n x)dx}}
 \section*{Problem 7}
+Take this by cases. Case $f=0$. The solution for this case is $u_1$.
+\e{\boxed{u_1(x,y)=\sum_{n=1}^\infty A_n \cosh(\pi l_1^{-1} n(l_2 - x_2)) \sin(\pi l_1^{-1} n x)}}
+\e{\boxed{A_n=\fr{2}{l_1 \cosh(\pi l_1^{-1} l_2 n)} \int_0^{l_1} g(x) \sin(\pi l_1^{-1} n x)dx}}
+The next case is $g=0$. The solution for this case is $u_2$.
+\e{\boxed{u_2(x,y)=\sum_{n=1}^\infty B_n \sinh(\pi l_1^{-1} n x_2) \sin(\pi l_1^{-1} n x)}}
+\e{\boxed{B_n=\fr{2}{l_1 \cosh(\pi l_1^{-1} l_2 n)} \int_0^{l_1} f(x) \sin(\pi l_1^{-1} n x)dx}}
+The solution to the problem is $u$.
+\e{\boxed{u=u_1+u_2}}
 \section*{Problem 8}
+Solve this by cases. Case $f=0$. The solution for this case is $u_1$ with coefficients $\tilde{A_n}$, $\tilde{B_n}$. Solve for $\tilde{B_n}$.
+\e{u_1(x,y)=\sum_{n=1}^\infty (\tilde{A_n}\cosh(\pi l_1^{-1} n (l_2-y)) +\tilde{B_n} \sinh(\pi l_1^{-1} n(l_2-y))\sin(\pi l_1^{-1} n x))}
+\e{\fr{\p}{\p y} u(x,l_2) = -\sum_{n=1}\infty \pi l_1^{-1}n \tilde{B_n} \sin{\pi l_1^{-1} n x}=f(x)=0}
+\e{\tilde{B_n}=0}
+Solve for $\tilde{A_n}$.
+\e{u(x,0)+2\fr{\p}{\p y}u(x,0)=\sum_{n=1}\infty \tilde{A_n}(\cosh(\pi l_1^{-1} l_2 n) -2\pi l_1^{-1} n \sinh(\pi l_1^{-1} l_2 n))\sin(\pi l_1^{-1} n x)=g(x)}
+This is the Fourier sine series of $g(x)$. The coefficient is
+\e{\boxed{\tilde{A_n}=\fr{2}{l_1 \cosh(\pi l_1^{-1}l_2 n)-2\pi n \sinh(\pi l_1^{-1} l_2 n)} \int_0^{l_1}g(x)\sin(\pi l_1^{-1} n x)dx}}
+The second case is $g(x)=0$. The solution for this case is $u_2$.
+\e{u_2(x,y)=\sum_{n=1}^\infty A_n(\cosh(\pi l_1^{-1} n y) - 2l_1 (\pi n)^{-1} \sinh (\pi l_1^{-1} n x_2))\sin(\pi l_1^{-1} n y)}
+\e{\boxed{A_n=\fr{2}{\pi n  \sinh(\pi l_1^{-1} l_2 n)-2l_1 \cosh(\pi l_1^{-1} l_2 n)}\int_0^{l_1} f(x) \sin(\pi l_1^{-1} n x)dx}}
+The solution to the problem is
+\e{u(x,y)&=u_1+u_2\\
+&= \sum_{n=1}^\infty A_n(\cosh(\pi l_1^{-1} n y) - 2l_1 (\pi n)^{-1} \sinh (\pi l_1^{-1} n x_2))\sin(\pi l_1^{-1} n y)\\
+&\quad + \sum_{n=1}^\infty \tilde{A_n}\cosh(\pi l_1^{-1} n (l_2-y))\sin(\pi l_1^{-1} n x)}
 \end{document}
