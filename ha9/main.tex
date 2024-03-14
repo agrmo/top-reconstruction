@@ -89,14 +89,111 @@ This is a one dimensional wave equation with vanishing Dirichlet boundary condit
 \e{u(t,r)&=\eindimensionu\\
 &=\boxed{\fr{1}{\alpha_3} \sin(\alpha_3t )J_0(\alpha_3 r)}}
 \section*{Problem 4}
-This is a two dimensional wave equation. Find $A_j$, $B_j$, and $u(t,\theta)$.
+This is a two dimensional wave equation. Find $A_j$, $B_j$, and $u(t,r)$.
 \e{\fr{\p}{\p \theta} u=0 \quad c=10 \quad a=1 \quad f=1-r^2 \quad g=1}
-\e{A_j&=\eindimensionaj=\fr{2}{J_1(\aj)^2}}\int_0^1 (1-r^2)J_0(\aj r)r dr\\
-&= \fr{2}{J_1(\aj)^2}
+\e{A_j&=\eindimensionaj\\
+&=\fr{2}{J_1(\aj)^2}\int_0^1 (1-r^2)J_0(\aj r)r dr
+\intertext{Expand $1-r^2$ as suggested, making sure to use a different index $k$.}
+&= \fr{2}{J_1(\aj)^2} \sum_{k=1}^\infty (\fr{8}{\alpha_k^3 J_1(\alpha_j)} \int_0^a J_0(\fr{\alpha_k}{a}r)J_0(\fr{\alpha_j}{a}r)r dr)
+\intertext{Use the orthogonality of $J$ to find $j=k$, and then integrate $J^2$.}
+&= \fr{16}{\aj^3 J_1(\aj)^3} \fr{a^2}{2}J_1(\aj)^2\\
+&= \boxed{\fr{8}{\aj^3 J_1(\aj)}}}
+Find $B_j$.
+\e{B_j&=\eindimensionbj\\
+&= \fr{2}{c\aj J_1(\aj)^2} \int_0^1 J_0(\aj r)r dr\\
+&= \fr{1}{5 \aj^3 J_1(\aj)^2} \int_0^{\aj} J_0(u)u du\\
+&= \fr{1}{5 \aj^3 J_1(\aj)^2} (J_1(u)u)_0^{\aj}\\
+&= \boxed{\fr{1}{5 \aj^2 J_1(\aj)}}}
+Find $u(t,r)$.
+\e{u(t,r)&=\eindimensionu\\
+&=\boxed{\sum_{j=1}^\infty (\fr{8}{\aj^3 J_1(\aj)} \cos(10\aj t)+\fr{1}{5\aj^2 J_1(\aj)} \sin(10\aj t)) J_0(\aj r)}}
 \section*{Problem 5}
+This is a two dimensional Laplace equation in polar coordinates. Find $A_0$, $A_n$, $B_n$, and $u(r,\theta)$.
+\n{lapanull}{\fr{1}{2\pi}\int_0^{2\pi} f(\theta)d\theta}
+\n{lapan}{\fr{1}{\pi}\int_0^{2\pi}f(\theta)\cos(n\theta)d\theta}
+\n{lapbn}{\fr{1}{\pi}\int_0^{2\pi}f(\theta)\sin(n\theta)d\theta}
+\n{lapu}{A_0+\sum_{n=1}^\infty (\fr{r}{a})^2(A_n \cos(n\theta) +B_n\sin(n\theta))}
+\e{A_0&= \lapanull\\
+&= \fr{1}{2\pi}(\pi \int_0^\pi d\theta - \int_0^\pi \theta d\theta)\\
+&= \fr{1}{2\pi}(\pi^2 - \fr{1}{2}\pi^2)\\
+&= \boxed{\fr{\pi}{4}}}
+Find $A_n$.
+\e{A_n&=\lapan\\
+&= \fr{1}{\pi}\int_0^\pi (\pi-\theta)\cos(n\theta)d\theta\\
+&= \fr{1}{\pi}((\pi-\theta)\sin(n\theta)-\fr{1}{n^2}\cos(n\theta))_0^\pi\\
+&= \fr{1}{\pi}(-\fr{1}{n^2}\cos(n\theta)+\fr{1}{n^2})\\
+&= \fr{1}{\pi n^2}(1-(-1)^n)\\
+&= \boxed{\falls{0&\quad \textrm{n odd}\\
+\fr{2}{\pi n^2} &\quad \textrm{n even}}}}
+Find $B_n$.
+\e{B_n&=\lapbn\\
+&= \fr{1}{\pi}\int_0^\pi (\pi-\theta)\sin(n\theta)d\theta\\
+&= \fr{1}{\pi}(-\fr{1}{n}(\pi - \theta)\cos(n\theta)-\fr{1}{n^2}\sin(n\theta))_0^\pi\\
+&= \fr{1}{\pi}(\fr{1}{n}\pi)\\
+&= \boxed{\fr{1}{n}}}
+Find $u(r,\theta)$.
+\e{u(r,\theta)&=\lapu\\
+&=\boxed{\fr{\pi}{4}+\sum_{k=0}^\infty \fr{2r^{2k+1}}{\pi(2k+1)^2}\cos((2k+1)\theta)+\sum_{n=1}^\infty \fr{r^n}{n}\sin(n\theta)}}
 \section*{Problem 6.a.}
+Write the two dimensional Laplace equation in polar coordinates, simplify.
+\e{\fr{\p}{\p r}u(r,\theta)=0}
+\e{\nabla^2 u &= 0\\
+\laplace &= 0\\
+\fr{1}{r^2}\fr{\p^2}{\p \theta^2} u &= 0\\
+\fr{\p^2}{\p \theta^2} &= 0}
+This is a second order ODE. Solve using the characteristic polynomial.
+\e{\rho^2+c_1\rho+c_2&=0\\
+\rho^2&= 0\\
+\rho&=0}
+Repeated roots. The solution is
+\e{u(r,\theta)&=u(\theta)\\
+&= a \theta e^{\rho \theta} + b e^{\rho \theta}\\
+&= \boxed{a \theta + b}}
 \section*{Problem 6.b.}
+Apply boundary conditions.
+\e{u(r,0)=T_1 \Rightarrow \boxed{b = T_1}}
+\e{u(r,\theta_0)=T_1+a\theta_0 = T_2 \Rightarrow \boxed{a = \fr{1}{\theta_0}(T_2-T_1)}}
+The solution is 
+\e{\boxed{u(\theta)=T_1+\fr{1}{\theta_0}(T_2-T_1)}}
 \section*{Problem 7.a.}
+Write the two dimensional Laplace equation in polar coordinates, simplify.
+\e{\fr{\p}{\p \theta}u(r,\theta)=0}
+\e{\nabla^2 u &= 0\\
+\laplace &= 0\\
+(\fr{\p^2}{\p r^2}+\fr{1}{r}\fr{\p}{\p r})u=0}
+This is a Cauchy-Euler equation. Solve using the Indicial equation.
+\e{r^2 u'' + ru' &= 0\\
+r^2 u'' + au' + b&=0 \Rightarrow a=1 \quad b=0}
+\e{\textrm{Indicial}\Rightarrow \rho^2 + (a-1)\rho +b &=0\\
+\rho^2 &= 0\\
+\rho &= 0}
+The solution is
+\e{u(r)&=a r^\rho \ln(r) + b r^\rho\\
+&= \boxed{a \ln (r) + b}}
 \section*{Problem 7.b.}
+Apply boundary conditions.
+\e{u(1)=a\ln(1)+b=\boxed{b=2}}
+\e{u(\fr{1}{2})&=2+a\ln(\fr{1}{2})=1\\
+a\ln(\fr{1}{2})&=-1\\
+a&=-\fr{1}{\ln(\fr{1}{2})}=\boxed{\fr{1}{\ln(2)}}}
 \section*{Problem 8}
+This is a two dimensional Laplace equation in polar coordinates with Robin boundary conditions. Find $B_n$, and the time-independent solution $u(r,\theta)$.
+\e{r(r,\theta)&=\sum_{n=1}^\infty B_n r^{n \pi \theta_0^{-1}} \sin(n \pi \theta_0^{-1} \theta)\\
+&= \sum_{n=1}^\infty B_n r^{4n} \sin(4n\pi)}
+Differentiate and apply boundary conditions.
+\e{\fr{\p}{\p r}u(r,\theta)=\sum_{n=1}^\infty B_n 4n r^{4n-1} \sin(4n\theta)}
+\e{\fr{\p}{\p r}u(1,\theta)=\sum_{n=1}^\infty B_n 4n r^{4n-1} \sin(4n\theta)=\sin(\theta)}
+This is Fourier series for $\sin(\theta)$. Expand the Fourier series, and solve for $B_n$.
+\e{4nB_n &= \fr{2}{\theta_0} \int_0^{\theta_0} \sin(\theta) \sin(4n\theta)d\theta\\
+&= \fr{8}{\pi}\int_0^{\fr{\pi}{4}} \fr{1}{2} (\cos((1-4n)\theta) - \cos((1+4n)\theta)) d\theta\\
+&= \fr{4}{\pi} ((\fr{\sin((1-4n)\theta)}{1-4n})_0^{\fr{\pi}{4}}-(\fr{\sin((1+4n)\theta)}{1+4n})_0^{\fr{\pi}{4}})\\
+&= \fr{4}{\pi} (\fr{(1+4n)\sin(\fr{\pi}{4}-n\pi)-(1-4n)\sin(\fr{\pi}{4}+n\pi)}{(1-4n)(1+4n)})\\
+&= \fr{4}{\pi (1-16n^2)}((1+4n)\sin(\fr{\pi}{4})\cos(n\pi) - \cos(\fr{\pi}{4})\sin(n\pi))-(1-4n)(\sin(\fr{\pi}{4})\cos(n\pi) +\cos(\fr{\pi}{4})\sin(n\pi))\\
+&= \fr{4}{\pi (1-16n^2)} ((1+4n)2^{-1/2} (-1)^n - (1-4n)2^{-1/2}(-1)^n)\\
+&= \fr{4(-1)^n}{\pi(1-16n^2)2^{1/2}}(8n)\\
+&= \fr{32(-1)^n n}{\pi(1-16n^2)2^{1/2}}}
+Divide by $4n$ to get $B_n$.
+\e{\boxed{B_n=\fr{8(-1)^n}{4\pi(1-16n^2)2^{1/2}}}}
+Apply $B_n$ to the solution for $u(r,\theta)$.
+\e{\boxed{u(r,\theta)=\sum_{n=1}^\infty \fr{8(-1)^n}{4\pi(1-16n^2)2^{1/2}} r^{4n} \sin(4n\theta)}}
 \end{document}
