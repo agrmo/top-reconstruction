@@ -1,0 +1,6 @@
+Seit der großer Forschungen des Kernphysik durch dem zweiten Weltkrieg und der Kaltenkrieg, haben uns bestimmten Methoden, um Kernspaltungreaktionen zu kontrollieren. Der Betrieb des Kernkraftwerkes sind einer an dem wigtigsten Möglichkeiten, um weltweit Energie zu brauchen. Vielen Methoden war versucht worden, und einigen Methoden war geschüttet worden. Wir wollen versuchen, wie gut Kernkraftenergie ist von unseren heutigen Technologie.
+
+Der Ziel dieses Aufsatz ist, wie können ein Staat brauchen Kernkraftwerke, während sicher der Atommüll schüttern. Dieses Text wird nicht wählen, ob Kernkraftwerken sollen gebaut oder nicht. Wir werden als Annahme, dass einigen Kernkraftwerken in einen Staat brauchen werden, deshalb müssen wir wählen zwei Zwecke: 1) welche Art von Kernkraftwerken den höchsten Energie haben, und 2) welche Art von Kernkraftwerken den minestens Gefahr von Atommüll haben. Dieses ist deshalb naturlich ein methamatische Optimizierung. Wir wollen unterscheiden verschienen Art von Kernkraftwerke und mitteilen nicht nur was ihrer Energiefolge ist, sondern auch was ihrer Atommüllfolge ist. Dann können wir optimizieren welche gibt an dem besten Gleichgewicht für unseren Problem.
+
+
+Die Meßeinheit ist das Joule J.
