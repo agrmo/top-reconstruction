@@ -32,19 +32,38 @@ Date&\today\\
 \begin{abstract}
 \end{abstract}
 The Navier Stokes equations with radial symmetry are derived and solution found as a Bessel-Fourier series.
-\subsection*{Navier Stokes Equations in Rectangular Coordinates}
-Newton's second law is
-\e{\vec{F}&=\dd{t}\vec{P}\\
-&= dm \fr{D}{Dt}\vec{V}\\
+\section{Navier Stokes Equations in Rectangular Coordinates}
+Consider the three dimensional box enclosing a fluid. The position of and particle in the fluid is given by the solution $u(t,x,y,z)$, whose velocity field is $\vec{V}(x,y,z)$.
+\fig{5cm}{1.png}{Three dimensional box with all stresses in the x direction shown to first order.}
+Assume there are only two forces on the fluid: 1) the force of gravity, 2) the force from the fluid along the boundaries. The force on the fluid by gravity along the $a$ axis is
+\e{\rho g_a}
+where $\rho$ is the mass density of the volume element. The force on the fluid from the fluid is quantified by the shear stress $\tau_{ab}$: the rate of change in position of the fluid in the $b$ axis, given a force acting in the $y$ axis. Suppose that, for each face of the box, the shear stress $\tau$ is approximated by a Taylor expansion to linear order, so that the shear stress is at most linearly dependent on position. The total force on the fluid along the $a$ axis $dF_a$ the sum of these two contributions. 
+\e{dF_x=(\rho g_x + \pa{x}\tau_{xx}+\pa{y}\tau_{yx}+\pa{z}\tau_{zx})dxdydz}
+\e{dF_y=(\rho g_y + \pa{x}\tau_{xy}+\pa{y}\tau_{yy}+\pa{z}\tau_{zy})dxdydz}
+\e{dF_z=(\rho g_z + \pa{x}\tau_{xz}+\pa{y}\tau_{yz}+\pa{z}\tau_{zz})dxdydz}
+This expresses the net force on the particle in all directions. We are now in a position to apply Newton's force equation $\vec{F}=m\vec{a}$. Newton's second law is
+\e{\vec{F}&=m\vec{a}\\
+&=\dd{t}\vec{P}\\
 &= dm (u\pa{x} \vec{V} + v\pa{y} \vec{V} + w\pa{z} \vec{V} + \pa{t}\vec{V})}
 where $\vec{P}$ is the linear momentum of the system.
 \e{\vec{P}=\int_M \vec{V} dm}
 where $dm$ is the infinitesimal fluid particle of mass $dm$, and $V$ is the particle velcoity in the fluid.
 \e{d\vec{F}=dm \dd{t}\vec{V}}
+We need a way to quantify the acceleration field $\vec{a}$. Use the time derivative on $\vec{V}$ and apply the chain rule.
+\e{\vec{a}&=\dd{t}\vec{V}=\pa{t}\vec{V}+\pa{x}\vec{V}\dd{t}x+\pa{y}\vec{V}\dd{t}y+\pa{z}\vec{V}\dd{t}z\\
+&=\pa{t}\vec{V}+u\pa{x}\vec{V}+v\pa{y}\vec{V}+w\pa{z}\vec{V}\\
+&=\pa{t}\vec{V}+(u\pa{x}+v\pa{y}+w\pa{z})\vec{V}}
+This is intuitively explained by two types of contributions: 1) the change in the velocity field $\vec{V}$ per unit time; 2) the change in position of the velocity field $\vec{V}$ by deformation. Now apply $\vec{F}=m\vec{a}$ infinitesimally.
+\e{d\vec{F}&=\rho d\vec{a}\\
+\rho g_x + \pa{x}\tau_{xx}+\pa{y}\tau_{yx}+\pa{z}\tau_{zx}&=\rho(\pa{t}u+u\pa{x}u+v\pa{y}u+w\pa{z}u)\\
+\rho g_y + \pa{x}\tau_{xy}+\pa{y}\tau_{yy}+\pa{z}\tau_{zy}&=\rho(\pa{t}v+u\pa{x}v+v\pa{y}v+w\pa{z}v)\\
+\rho g_z + \pa{x}\tau_{xz}+\pa{y}\tau_{yz}+\pa{z}\tau_{zz}&=\rho(\pa{t}w+u\pa{x}w+v\pa{y}w+w\pa{z}w)}
+
+This is the differential momentum equation.
 \e{\rho \fr{D}{Dt}u = \rho g_x - \pa{x} p + \pa{x}(\mu (2\pa{x} u - \fr{2}{3}\nabla \cdot \vec{V})) + \pa{y}(\mu (\pa{y} u + \pa{x} v)) + \pa{z}(\mu (\pa{x} w + \pa{z} u))}
 \e{\rho \fr{D}{Dt}v = \rho g_y - \pa{y} p + \pa{x}(\mu (\pa{y} u + \pa{x} v)) + \pa{y}(\mu (2\pa{y} v - \fr{2}{3}\nabla \cdot \vec{V})) + \pa{z}(\mu (\pa{z} v + \pa{y} w))}
 \e{\rho \fr{D}{Dt}w = \rho g_z - \pa{z} p + \pa{x}(\mu (\pa{x} w + \pa{z} u)) + \pa{y}(\mu (\pa{z}w+\pa{y}w)) + \pa{z}(\mu (2\pa{z} w - \fr{2}{3}\nabla \cdot \vec{V}))}
-For incompressible flow,
+These are the Navier Stokes equations. They assume the fluid is influced by linear shear stresses, linear deformations, and gravity, coupled by Newton's force equation $\vec{F}=m\vec{a}$. For incompressible flow,
 \e{\nabla \cdot \vec{V}=0}
 For non-convective flow,
 \e{\fr{D}{Dt}\vec{V}=(\vec{V}\cdot \nabla)\vec{V}+\pa{t}\vec{V}=\pa{t}\vec{V}}
@@ -54,50 +73,11 @@ Assuming incompressible and non-convective flow, the Navier-Stokes equations are
 \e{\rho(\pa{t}w + u\pa{x}w + w\pa{y}w + w\pa{z}w)=\rho g_z - \pa{z}p + \mu(\ppa{x}{2}w + \ppa{y}{2}w + \ppa{z}{2}w)}
 For frictionless flow,
 \e{\mu=0}
-Assuming incompressible, non-convective, and frictionless flow, the Navier-Stokes equations are
+Assuming incompressible, constant-viscosity, non-convective, and frictionless flow, Navier-Stokes equations are
 \e{\rho(\pa{t}u + u\pa{x}u + v\pa{y}u + w\pa{z}u)=\rho g_x - \pa{x}p}
 \e{\rho(\pa{t}v + u\pa{x}v + v\pa{y}v + w\pa{z}v)=\rho g_y - \pa{y}p}
 \e{\rho(\pa{t}w + u\pa{x}w + w\pa{y}w + w\pa{z}w)=\rho g_z - \pa{z}p}
-which can be written in vector form, $\vec{V}=(u,v,w)$, $\vec{g}=(g_x,g_y,g_z)$
-\e{\rho(\pa{t}w + u\pa{x}\vec{V} + w\pa{y}\vec{V} + w\pa{z}\vec{V})=\rho \vec{g}-\nabla p}
-This is the Euler equation.
-\subsection{Navier Stokes Equations in Radial Coordinates}
-Assume some fluid exists. Let $v(r,t)$ be the velocity field of the fluid, $M$ be the total mass of the fluid, $V$ the volume, $d \tau$ the infinitestimal volume element. Let $\delta v$ infinitesimal change in velocity per infinitesimal change in time $\delta t$, $dF$ the infinitesimal change in force per infinitesimal change in time $\delta t$. The Newtonian postulate is
-\e{dm \delta v=dF \delta t}
-\e{M=\int_V \mu d\tau}
-The conservation of mass is
-\e{\pa{t}\mu + \pa{r} (\mu v)=0}
-where $t$ is time, $\mu$ is mass density, and $v$ is the velocity of the fluid. Let $P$ be the stress tensor of the fluid,
-\e{P&=-\mathcal{I}p=-\delta{i,k}p\\
-&= -Ip(\mu) + \hat{P}(v)\\
-&= -Ip(\mu) + (\eta' - 2\eta)I Sp \epsilon}
-where $\epsilon$ is the deformation tensor of the fluid,
-Differentiate $P$,
-\e{\pa{r}P=-\pa{r}Ip=-I\pa{r}p=-\pa{r}p}
-This needs to be simplified. Use the ideal gas equation,
-\e{pV&=NrT\\
-p&=\mu r T\\
-dp=d\mu r T}
-which gives a relationship between pressure and mass density.
-The equations of motion of the fluid is
-\e{\mu(\pa{t}+v\pa{r})v&=f+\pa{r}P\\
-&= -\mu \pa{r}U-\pa{r}p-\eta \pa{r}\times (\pa{r}\times v)+\eta' \fr{\p^2}{\p r^2}v}
-\e{\pa{r}\hat{P}=-\eta \pa{r}\times (\pa{r}\times v)+\eta' \pa{r} \cdot \pa{r}v = -2\eta \pa{r}\times \vec{\omega} + \eta' \pa{r} \xi}
-where $\vec{\omega}$ is the rotational friction, and $\xi$ the compression friction,  $\eta$ and $\eta'$ are the coefficients of internal rotational friction and $\eta'$ is the internal compression friction of the fluid. Dividing through by $\mu$ and using 
-\e{v\times(\pa{r}\times v)&= \pa{r}\cdot \fr{1}{2}v^2-v\pa{r}\cdot v}
-gives the Navier-Stokes equations,
-\e{\pa{t}v=-\pa{r}(\fr{1}{2}v^2 + U + \int_V \fr{1}{\mu(p)}dp) + (v-\fr{\eta}{\mu}\pa{r})\times(\pa{r}\times v)+\fr{\eta'}{\mu}\pa{r}\cdot \pa{r}v}
-\subsection{Incompressible Fluid with Vanishing Dirichlet Boundary Conditions}
-\e{\pa{t}u+u+\nabla u &=-\nabla p + v \Delta u \\
-\nabla \cdot u &= 0\\
-u(x,0)&=a \\
-u(x,t)&= 0}
-The zero viscosity limit is
-\e{\pa{v} u = 0}
-which reduces the Navier-Stokes equations to
-\e{\pa{t} \nabla \times u + u \cdot \nabla (\nabla \times u) &= v \Delta (\nabla \times u)
-\intertext{using $\omega=\nabla\times u$,}
-\pa{t}+u\cdot \nabla \omega &= v\Delta \omega}
-resulting in the 
+
+\section{Navier Stokes Equations in Radial Coordinates}
 \subsection{Bibliography}
 \end{document}
