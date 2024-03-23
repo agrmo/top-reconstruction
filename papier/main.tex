@@ -7,6 +7,8 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{floatrow}
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{bib.bib}
 \newcommand{\fig}[3]{
 \begin{figure}[H]
 \begin{center}
@@ -31,11 +33,11 @@ Date&\today\\
 \end{center}
 \begin{abstract}
 \end{abstract}
-The Navier Stokes equations with radial symmetry are derived and solution found as a Bessel-Fourier series.
+The Navier Stokes equations with radial symmetry are derived, and for a special case a solution is found as a Bessel-Fourier series.
 \section{Navier Stokes Equations in Rectangular Coordinates}
-Consider the three dimensional box enclosing a fluid. The position of and particle in the fluid is given by the solution $u(t,x,y,z)$, whose velocity field is $\vec{V}(x,y,z)$.
-\fig{5cm}{1.png}{Three dimensional box with all stresses in the x direction shown to first order.}
-Assume there are only two forces on the fluid: 1) the force of gravity, 2) the force from the fluid along the boundaries. The force on the fluid by gravity along the $a$ axis is
+Consider a three dimensional box enclosing a fluid. The position of the particle in the fluid is given by the solution $u(t,x,y,z)$, whose velocity field is $\vec{V}(x,y,z)$.
+\fig{7cm}{1.png}{Three dimensional box with all stresses in the $x$ direction shown as a Taylor expansion.}
+Assume there are two types of forces on the fluid: 1) the force of gravity; 2) the force from the fluid along the boundaries. The force on the fluid by gravity along the $a$ axis is
 \e{\rho g_a}
 where $\rho$ is the mass density of the volume element. The force on the fluid from the fluid is quantified by the shear stress $\tau_{ab}$: the rate of change in position of the fluid in the $b$ axis, given a force acting in the $y$ axis. Suppose that, for each face of the box, the shear stress $\tau$ is approximated by a Taylor expansion to linear order, so that the shear stress is at most linearly dependent on position. The total force on the fluid along the $a$ axis $dF_a$ the sum of these two contributions. 
 \e{dF_x=(\rho g_x + \pa{x}\tau_{xx}+\pa{y}\tau_{yx}+\pa{z}\tau_{zx})dxdydz}
@@ -55,29 +57,28 @@ We need a way to quantify the acceleration field $\vec{a}$. Use the time derivat
 &=\pa{t}\vec{V}+(u\pa{x}+v\pa{y}+w\pa{z})\vec{V}}
 This is intuitively explained by two types of contributions: 1) the change in the velocity field $\vec{V}$ per unit time; 2) the change in position of the velocity field $\vec{V}$ by deformation. Now apply $\vec{F}=m\vec{a}$ infinitesimally.
 \e{d\vec{F}&=\rho d\vec{a}\\
-\rho g_x + \pa{x}\tau_{xx}+\pa{y}\tau_{yx}+\pa{z}\tau_{zx}&=\rho(\pa{t}u+u\pa{x}u+v\pa{y}u+w\pa{z}u)\\
-\rho g_y + \pa{x}\tau_{xy}+\pa{y}\tau_{yy}+\pa{z}\tau_{zy}&=\rho(\pa{t}v+u\pa{x}v+v\pa{y}v+w\pa{z}v)\\
-\rho g_z + \pa{x}\tau_{xz}+\pa{y}\tau_{yz}+\pa{z}\tau_{zz}&=\rho(\pa{t}w+u\pa{x}w+v\pa{y}w+w\pa{z}w)}
-
-This is the differential momentum equation.
-\e{\rho \fr{D}{Dt}u = \rho g_x - \pa{x} p + \pa{x}(\mu (2\pa{x} u - \fr{2}{3}\nabla \cdot \vec{V})) + \pa{y}(\mu (\pa{y} u + \pa{x} v)) + \pa{z}(\mu (\pa{x} w + \pa{z} u))}
-\e{\rho \fr{D}{Dt}v = \rho g_y - \pa{y} p + \pa{x}(\mu (\pa{y} u + \pa{x} v)) + \pa{y}(\mu (2\pa{y} v - \fr{2}{3}\nabla \cdot \vec{V})) + \pa{z}(\mu (\pa{z} v + \pa{y} w))}
-\e{\rho \fr{D}{Dt}w = \rho g_z - \pa{z} p + \pa{x}(\mu (\pa{x} w + \pa{z} u)) + \pa{y}(\mu (\pa{z}w+\pa{y}w)) + \pa{z}(\mu (2\pa{z} w - \fr{2}{3}\nabla \cdot \vec{V}))}
-These are the Navier Stokes equations. They assume the fluid is influced by linear shear stresses, linear deformations, and gravity, coupled by Newton's force equation $\vec{F}=m\vec{a}$. For incompressible flow,
+\lab{infa} \rho g_x + \pa{x}\tau_{xx}+\pa{y}\tau_{yx}+\pa{z}\tau_{zx}&=\rho(\pa{t}u+u\pa{x}u+v\pa{y}u+w\pa{z}u)\\
+\lab{infb}\rho g_y + \pa{x}\tau_{xy}+\pa{y}\tau_{yy}+\pa{z}\tau_{zy}&=\rho(\pa{t}v+u\pa{x}v+v\pa{y}v+w\pa{z}v)\\
+\lab{infc}\rho g_z + \pa{x}\tau_{xz}+\pa{y}\tau_{yz}+\pa{z}\tau_{zz}&=\rho(\pa{t}w+u\pa{x}w+v\pa{y}w+w\pa{z}w)}
+These are the Navier-Stokes equations. They express Newton's force equation $\vec{F}=m\vec{a}$ as a relationship between 1) shear forces by fluid on the boundary; 2) deformation forces by the fluid on the boundary; 3) gravity on the fluid. We need an expression for $\tau$. Not shown here, $\tau$ can be derived from thermodynamic equations for an ideal gas.
+\e{\tau_{xy}=\tau_{yx}=\mu(\pa{x}v+\pa{y}u)}
+\e{\tau_{yz}=\tau_{zy}=\mu(\pa{y}w+\pa{z}v)}
+\e{\tau_{zx}=\tau_{xz}=\mu(\pa{z}u+\pa{x}w)}
+\e{\tau_{xx}=-p-\fr{2}{3}\mu \nabla\cdot\vec{V}+2\mu\pa{x}u}
+\e{\tau_{yy}=-p-\fr{2}{3}\mu \nabla\cdot\vec{V}+2\mu\pa{y}v}
+\e{\tau_{zz}=-p-\fr{2}{3}\mu \nabla\cdot\vec{V}+2\mu\pa{z}w}
+Substitute into the Navier-Stokes equations \eref{infa}, \eref{infb}, \eref{infc},
+\e{\rho g_x - \pa{x} p + \pa{x}(\mu (2\pa{x} u - \fr{2}{3}\nabla \cdot \vec{V})) + \pa{y}(\mu (\pa{y} u + \pa{x} v)) + \pa{z}(\mu (\pa{x} w + \pa{z} u)) &= \rho(\pa{t}u+u\pa{x}u+v\pa{y}u+w\pa{z}u)\\
+\rho g_y - \pa{y} p + \pa{x}(\mu (\pa{y} u + \pa{x} v)) + \pa{y}(\mu (2\pa{y} v - \fr{2}{3}\nabla \cdot \vec{V})) + \pa{z}(\mu (\pa{z} v + \pa{y} w)) &= \rho(\pa{t}v+u\pa{x}v+v\pa{y}v+w\pa{z}v)\\
+\rho g_z - \pa{z} p + \pa{x}(\mu (\pa{x} w + \pa{z} u)) + \pa{y}(\mu (\pa{z}w+\pa{y}w)) + \pa{z}(\mu (2\pa{z} w - \fr{2}{3}\nabla \cdot \vec{V})) &= \rho(\pa{t}w+u\pa{x}w+v\pa{y}w+w\pa{z}w)}
+These are the Navier Stokes equations, assuming the fluid is influced by linear shear stresses, linear deformations, gravity, with internal compressions for an ideas gas. We will consider special cases for solutions of the Navier-Stokes equations. For incompressible flow,
 \e{\nabla \cdot \vec{V}=0}
 For non-convective flow,
-\e{\fr{D}{Dt}\vec{V}=(\vec{V}\cdot \nabla)\vec{V}+\pa{t}\vec{V}=\pa{t}\vec{V}}
-Assuming incompressible and non-convective flow, the Navier-Stokes equations are,
-\e{\rho(\pa{t}u + u\pa{x}u + v\pa{y}u + w\pa{z}u)=\rho g_x - \pa{x}p + \mu(\ppa{x}{2}u + \ppa{y}{2}u + \ppa{z}{2}u)}
-\e{\rho(\pa{t}v + u\pa{x}v + v\pa{y}v + w\pa{z}v)=\rho g_y - \pa{y}p + \mu(\ppa{x}{2}v + \ppa{y}{2}v + \ppa{z}{2}v)}
-\e{\rho(\pa{t}w + u\pa{x}w + w\pa{y}w + w\pa{z}w)=\rho g_z - \pa{z}p + \mu(\ppa{x}{2}w + \ppa{y}{2}w + \ppa{z}{2}w)}
+\e{\fr{d}{dt}\vec{V}=\pa{t}\vec{V}}
 For frictionless flow,
 \e{\mu=0}
-Assuming incompressible, constant-viscosity, non-convective, and frictionless flow, Navier-Stokes equations are
-\e{\rho(\pa{t}u + u\pa{x}u + v\pa{y}u + w\pa{z}u)=\rho g_x - \pa{x}p}
-\e{\rho(\pa{t}v + u\pa{x}v + v\pa{y}v + w\pa{z}v)=\rho g_y - \pa{y}p}
-\e{\rho(\pa{t}w + u\pa{x}w + w\pa{y}w + w\pa{z}w)=\rho g_z - \pa{z}p}
-
+For gravitationless flow,
+\e{g_x=g_y=g_z=0}
 \section{Navier Stokes Equations in Radial Coordinates}
 \subsection{Bibliography}
 \end{document}
