@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{floatrow}
+\newcommand{\fig}[3]{
+\begin{figure}[H]
+\begin{center}
+\includegraphics[height=#1]{#2}
+\caption{#3}
+\label{#2}
+\end{center}
+\end{figure}}
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{bib.bib}
+\setlength{\parindent}{0pt}
+\geometry{top=1in,bottom=1in,left=1in,right=1in}
+\begin{document}
+\begin{center}
+\textbf{\Large{Problem Set 1}}\\~\\
+\begin{tabular}{l l}
+Student&Agustin Romero\\
+Email&ar1@stanford.edu\\
+Instructor&Caterina Vernieri\\
+Course&Physics 252\\
+Institution&Stanford University\\
+Date&\today\\
+\end{tabular}
+\end{center}
+\section*{Problem 1.a.}
+Multiply by $\hbar$. The lifetime in natural units is
+\e{\tau=0.5\un{GeV}^{-1} \times \hbar  = \boxed{3.29\tun{-25}{s}}}
+\section*{Problem 1.b.}
+Multiply by $(\hbar c)^2$.
+1 barn in natural units is
+\e{1\un{b}\times \hbar^2c^2=1\tun{-28}{m$^2$} \times \hbar^2 c^2 = 2.591\tun{-15}{eV$^{-2}$}}
+$\sigma_H$ in natural units is
+\e{\sigma_H = 50\un{pb}=50\un{pb}=(50\ten{-12})(2.591\tun{-15}{eV$^{-2}$})=\boxed{1.295\tun{-25}{eV$^{-2}$}}}
+\section*{Problem 1.c.}
+Write the masses in MeV and kg.
+\e{m_e=\boxed{0.511\un{MeV}}=\boxed{9.109\tun{-31}{kg}}}
+\e{m_\mu=\boxed{105.7\un{MeV}}=\boxed{1.8843\tun{-28}{kg}}}
+\e{m_\tau=\boxed{1776\un{MeV}}=\boxed{3.166\tun{-27}{kg}}}
+\section*{Problem 2.a.}
+The highest energy particles are \fbox{cosmic rays}. They are usually measured by large arrays of water Cherenkov detectors. The highest energy events are deduced by reconstructing showers. For high energy events, the reconstructed particle is usually a muon.
+\section*{Problem 2.b.}
+The highest energy cosmic ray observed was by the HiRes detector in 1991 at 320 EeV \cite{c}. The defintion of ``ultra-high-energy cosmic rays'' is particles at
+\e{E=1.18\tun{18}{eV}=1\un{EeV}=\boxed{0.1891\un{J}}}
+or higher. We will use that energy threshold. Using classical kinematics,
+\e{E=\fr{1}{2}mv^2 \quad v=(\fr{2E}{m})^{1/2}}
+For example, an average human weigs 60 kg, which at this kinetic energy corresponds to the velocity
+\e{m=60\un{kg}\quad \boxed{v=0.073\un{m s$^{-1}$}}}
+For example, a liter of water at this kinetic energy corresponds to the velocity
+\e{m=1\un{kg}\quad \boxed{v=0.566\un{m s$^{-1}$}}}
+Classical kinematics is justified because these velocities are well below $c$.
+\section*{Problem 2.c.}
+The de Broglie wavelength at this energy is
+\e{E&=\fr{hc}{\lambda}}
+\e{\lambda = \fr{hc}{E}=\fr{hc}{1\tun{18}{eV}}=\boxed{1.24\tun{-24}{m}}}
+\section*{Problem 3.a.}
+The process $e^- e^- \rightarrow e^- e^-$ has the t-channel diagram
+\fig{4cm}{3.jpg}{The t-channel diagram.}
+and the u-channel diagram
+\fig{4cm}{1.jpg}{The u-channel diagram.}
+\section*{Problem 3.b.}
+A diagram for $e^- e^- \rightarrow \mu^- \mu^-$ is not possible, because it requires a flavor changing neutral current. There are no such currents in the Standard Model. This is possible via neutrino oscillations, but which cannot be expressed as a well defined diagram. See Thomson p. 329. It is possible with the emission of neutrinos in the final state, such as
+\fig{5cm}{5.jpg}{A possible process for $e^- e^- \rightarrow \mu^- \mu^- X$.}
+In other words, in the Standard Model, once the lepton fermion line is drawn, it will remain in that flavor of leptons.
+\section*{Problem 3.c.}
+The process $e^+ e^- \rightarrow e^+ e^-$ has the t-channel diagram
+\fig{3.5cm}{4.jpg}{The t-channel diagram.}
+and the s-channel diagram
+\fig{4cm}{2.jpg}{The s-channel diagram.}
+\section*{Problem 4.a.}
+The power loss for a synchrotron is
+\e{\lab{9128n3}\boxed{P=\fr{e^2}{6\pi \epsilon_0} c (\fr{E}{mc^2})^4 \fr{1}{\rho^2}}}
+as derived in section.
+\section*{Problem 4.b.}
+The energy loss per revolution is the power loss $P$ per time period of revolution $T$.
+\e{T=\fr{2\pi \rho}{c}}
+\e{\Delta E = P T = \fr{e^2}{6\pi \epsilon_0} c (\fr{E}{mc^2})^4 \fr{1}{\rho^2} \fr{2\pi\rho}{c}=\boxed{\fr{e^2}{3\epsilon_0}(\fr{E}{mc^2})^3 \fr{1}{\rho}}}
+\section*{Problem 4.c.}
+``Energy per unit length of acceleration'' is ambiguous. Assuming it means energy radiated per unit length of energy gain, the power loss is
+\e{P=\fr{e^2}{6\pi\epsilon_0} \fr{1}{m^2c^3}(\fr{d}{dt} p)^2 = \fr{e^2}{6\pi\epsilon_0} (\fr{d}{dx}E)^2}
+In comparison, the synchrotron energy loss depends on the radius $\rho$ while the linear accelerator has no analogue. The linear accelerator radiation depends on the acceleration gradient $\fr{d}{dx}E$, while the synchrotron radiation loss does not. Alternatively, assuming the statement means energy gain per unit length, for a linear accelerator that is simply $\fr{d}{dx}E$, which is determined by the accelerator parameters.
+\section*{Problem 4.d.}
+Using
+\e{E=\gamma mc^2}
+and plugging into \eref{9128n3}, the the power loss in the synchrotron as a function of $\gamma$ is
+\e{P=\boxed{\fr{e^2}{6\pi \epsilon_0} c (\fr{\gamma mc^2}{mc^2})^4 \fr{1}{\rho^2}}}
+\section*{Problem 5.a.}
+The \fbox{SPS synchrotron} and the UA1 and UA2 detectors were used to discover the W, announced in 1983. The SPS ran as a $p\bar{p}$ collider from 1981 to 1990 \cite{a}. The center of mass energy of collision events for the discovery was
+\e{\boxed{\sqrt{s}=540\un{GeV}}}
+\section*{Problem 5.b.}
+The SPS accelerated protons to 26 GeV/c, then collided them at a copper target, producting antiprotons, which were then cooled by the Antiproton Accumulator ring, and then injected into the SPS.
+\e{p + N \rightarrow p + \bar{p} + N}
+\section*{Problem 5.c.}
+For the W discovery in 1983 at UA1, the $\sqrt{s}$ was 540 GeV, and the beams were collided head on and at equal energies \cite{a}, and each beam energy was 270 GeV \cite{b}. The energy loss per rotation was calculated earlier, and can be plugged in here. The SPS diameter was 2.2 km, and thus
+\e{\rho=2\pi(2.2\un{km})=13.82\un{km}}
+Plug $\rho$ and $E$ to $\Delta E$,
+\e{\Delta E = PT = \fr{e^2}{3\epsilon_0} (\fr{E}{mc^2})^4 \fr{1}{\rho}= 0.002997\un{eV}}
+\section*{Problem 5.d.}
+The most probable interaction for
+\e{p+\bar{p}\rightarrow W+X}
+is the interaction with one W vertex. The W can then decays to $l \bar{\nu}$ with BR 0.1 for each flavor of lepton. The spectator quarks rearrange to produce $\pi^0 \pi^-$. 
+\e{p\bar{p}\rightarrow W^- \pi^0 \pi^+}
+and similarly for producting $W^+$.
+\section*{Problem 6.a.}
+Plugging into $L$,
+\e{L=\fr{N^2 n_b f}{4\pi \sigma_x^* \sigma_y^*}=\boxed{7.6\tun{-37}{m$^{2}$ s$^{-1}$}}}
+\section*{Problem 6.b.}
+Convert to fb$^{-1}$ s$^{-1}$.
+\e{7.6\tun{-37}{m$^{2}$ s$^{-1}$}&=\boxed{7.6\tun{-6}{fb$^{-1}$ s$^{-1}$}}
+\intertext{Convert to fb$^{-1}$ yr$^{-1}$.}
+&=\boxed{76\un{fb$^{-1}$ yr$^{-1}$}}}
+The proposed luminosity is 76 inverse femtobarns per year.
+\section*{Problem 6.c.}
+Plugging in,
+\e{\lambda=0.2469}
+Calculate $\sigma$, then convert to GeV$^{-2}$.
+\e{\sigma=2.064\tun{10}{J$^{-2}$}=\boxed{5.298\tun{-10}{GeV$^{-2}$}}}
+\section*{Problem 6.d.}
+Convert to barns, then femtobarns.
+\e{\sigma=2.045\tun{-41}{m$^2$}=\boxed{204.5\un{fb}}}
+\section*{Problem 6.e.}
+To find the expected number of events, integrate the luminosity and cross section over 10 years.
+\e{\int L \sigma dt &= \int_0^{10\un{yr}} (76\un{fb}^{-1} \un{yr}^{-1})(204.5\un{fb}) dt\\
+&= \int_0^{10\un{yr}} 2.6907 \un{yr}^{-1} dt\\
+&= \boxed{26.907}}
+The expected number of events for this interaction is 26.907 over 10 years.
+\section*{Problem 6.f.}
+To find the number of background events, integrate the luminosity over the background cross section.
+\e{\int L \sigma dt &= \int_0^{10\un{yr}} (76\un{fb}^{-1} \un{yr}^{-1})(2\ten{3}\un{fb}) dt\\
+&= \int_0^{10\un{yr}} 26.31 \un{yr}^{-1} dt\\
+&= 263.1}
+The number of background events for this process is 263.1. The signal to background ratio is
+\e{\fr{S}{\sqrt{B}}=\fr{26.907}{\sqrt{263.1}}=\boxed{1.412}}
+The signal to background ratio is 1.412.
+\printbibliography
+\end{document}
