@@ -31,19 +31,82 @@ Date&\today\\
 \end{tabular}
 \end{center}
 \section*{Problem 1.a.}
-
+Let $\ket{\psi(\vec{p})}$ be the quantum mechanical wavefunction of some particle $\psi$ with momentum $\vec{p}$, and consider the operation of parity $\hat{P}$ and charge $\hat{C}$ on the wavefunction. The proton has parity $+1$ by convention.
+\e{\hat{P}\ket{p(\vec{p})}=\ket{p(-\vec{p})}}
+\e{\hat{C}\ket{p(\vec{p})}=\ket{\bar{p}(\vec{p})}}
 \section*{Problem 1.b.}
+Mesons have parity
+\e{P=(-1)^{L+1}}
+For $B^+$, $J^{PC}=0^-$, so $B^+$ has odd parity.
+\e{\hat{P}\ket{B^+(\vec{p})}=\ket{B^+(-\vec{p})}}
+\e{\hat{C}\ket{B^+(\vec{p})}=\ket{B^-(\vec{p})}}
 \section*{Problem 1.c.}
+\e{\hat{P}\ket{\gamma(\vec{p})}=\ket{\gamma(-\vec{p})}}
+The photon couples to both the electron and positron. The $\gamma e^- e^-$ amplitude is proportional to $-e$, and the $\gamma e^+ e^+$ amplitude is propostional to $+e$, so the $\gamma$ wavefunction must change sign under $\hat{C}$.
+\e{\hat{C}\ket{\gamma(\vec{p})}=-\ket{\gamma(\vec{p})}}
 \section*{Problem 1.d.}
-\section*{Problem 1.3.}
+The $e^-$, $\mu^-$, $\tau^-$ have even P with eigenvalue +1, so their antiparticles have odd P with eigenvalue -1.
+\e{\hat{P}\ket{\tau^+(\vec{p})}=-\ket{\tau^+(-\vec{p})}}
+\e{\hat{C}\ket{\tau^+(\vec{p})}=\ket{\tau^-(\vec{p})}}
+\section*{Problem 1.e.}
+The $\nu_{e}$, $\nu_\mu$, $\nu_\tau$ have even P with eigenvalue +1.
+\e{\hat{P}\ket{\nu_\mu(\vec{p})}=\ket{\nu_\mu(-\vec{p})}}
+\e{\hat{C}\ket{\nu_\mu(\vec{p})}=\ket{\bar{\nu}_\mu(\vec{p})}}
 \section*{Problem 2.a.}
+For two hadrons $A$, $B$, the only charge of $A$ and $B$ where they have equal charge is if \fbox{both are charge neutral}. The process must preserve baryon number, so \fbox{no baryons} are permitted to interconvert, therefore $\fbox{mesons}$ are the only candidates for interconversion. 
 \section*{Problem 2.b.}
+The possible choices are
+\begin{enumerate}
+\item $q_i\bar{q_i}$ mixing of the same quark type. $u\bar{u}$, $d\bar{d}$, $c\bar{c}$, $s\bar{s}$, $b\bar{b}$. $t\bar{t}$ is not a candidate stable meson, because the $t$ quark decays before it hadronizes.
+\item $q_i\bar{q_j}$ mixing of different quark types. Mesons with $t$ quarks are not candidate mesons, because the $t$ quark decays before it hadronizes.
+\begin{enumerate}
+\item $d\bar{s} \longleftrightarrow s\bar{d}$. This is $K^0 \longleftrightarrow \bar{K}^0$ mixing.
+\item $d\bar{b} \longleftrightarrow b\bar{d}$. This is $B^0 \longleftrightarrow \bar{B}^0$ mixing.
+\item $s\bar{b} \longleftrightarrow b\bar{s}$. This is $B^0_s \longleftrightarrow \bar{B}_s^0$ mixing.
+\item $u\bar{c} \longleftrightarrow c\bar{u}$. This is $D^0 \longleftrightarrow \bar{D}^0$ mixing.
+\end{enumerate}
+\end{enumerate}
 \section*{Problem 2.c.}
+The neutron does not mix with the antineutron because the process \fbox{violates baryon number conservation.}
 \section*{Problem 2.d.}
+Vector mesons to not mix with their antiparticles because the process \fbox{violates angular momentum conservation}.
 \section*{Problem 3.}
+For the $\bar{B}^0\rightarrow \pi^+ \pi^-$ decay, there is a penguin diagram, and a tree level diagram. The penguin diagram is
+\fig{5cm}{2.png}{The penguin diagram for $\bar{B}^0\rightarrow \pi^+ \pi^-$.}
+and the tree diagram, with no gluons, is
+\fig{5cm}{1.png}{The tree diagram for $\bar{B}^0\rightarrow \pi^+ \pi^-$ with no gluons.}
 \section*{Problem 4.a.}
+Strong and electromagnetic interactions preserve CP and P numbers for particle interactions. The pseudoscalar $\eta$ has $J^{PC}=0^{-+}$. The $\pi^0\pi^0$ state has the quantum numbers
+\e{I=0\quad J=0\quad P=(-1)^2=+1\quad C=+1}
+so the \fbox{$\pi^0\pi^0$ state is forbidden by P number conservation}. The $\pi^+ \pi^-$ state has the quantum numbers
+\e{I=0\quad J=0\quad P=(-1)^2=+1\quad C=+1}
+so the \fbox{$\pi^+\pi^-$ state is forbidden by P number conservation}.
 \section*{Problem 4.b.}
+The photon has $J^{PC}=1^{--}$. The electromagnetic decay $\eta\rightarrow \gamma\gamma$ conserves parity. The overall parity of the initial and final state wavefunctions are
+\e{P_i&=P_f\\
+P(\eta)&=P(\gamma)P(\gamma)(-1)^l\\
+-1&=(-1)(-1)(-1)^l\\
+-1&=(-1)^l}
+where $l$ is the orbital angular momentum. Then
+\e{\boxed{l=2n+1=1,3,...\quad n=0,1,...}}
+By using parity conservation the orbital angular momentum numbers are found.
 \section*{Problem 4.c.}
+The $\eta$ pseudoscalar meson has the spin angular momentum of $J=0$ and zero orbital angular momentum $l=0$. So the total angular momentum of the meson is 0. The two photon spins are oriented to \fbox{have zero orbital angular momentum}. This preserves the conservation of total angular momentum.
 \section*{Problem 5.a.}
+The charged semileptonic weak interaction term in the Standard Model Lagrangian $\scl_{SM}$ is
+\e{\scl=\fr{4}{\sqrt{2}}G_F V_{km} \bar{u}_L^k \gamma_\mu d_L^m \bar{l}_L \gamma^\mu \nu_L + h.c.}
+This interaction can be used to measure the CKM term $V_{km}$, such as in the decay of the $K^0$ meson. More specifically \fbox{$V_{us}$} has the associated diagram.
+\fig{5cm}{3.png}{The decay $K^0\rightarrow \pi^+ \bar{e} \nu_e$ demonstrates the CKM matrix term $V_{us}$ in the charged weak interaction between quarks and leptons.}
+The same interaction can be used to measure the CKM term \fbox{$V_{ub}$} via the decay of $B^0$.
+\fig{5cm}{4.png}{The decay $B^0\rightarrow \pi^- \bar{e} \nu_e$ demonstrates the CKM matrix term $V_{ub}$ in the charged weak interaction between quarks and leptons.}
+Finally for the third CKM element consider \fbox{$V_{ud}$}, which can be measured by $\beta$ decay processes.
+\fig{5cm}{5.png}{$\beta$ decay demonstrates the CKM matrix term $V_{ud}$ in the charged weak interaction between quarks and leptons.}
 \section*{Problem 5.b.}
+The Standard Model Lagrangian $\scl_{SM}$ requires the $V_{CKM}$ be unitary.
+\e{\sum_k V_{ik}V_{kj}^\dagger=\sum_k V_{ik}^\dagger V_jk = 0}
+There are six ways to choose $i$ and $j$, resulting in six different triangles in the complex plane. The magnitude of $V_{ik}$ corresponds to the length of the side of a triangle. In the parameterization
+\e{V_{CKM}=\begin{pmatrix}1&0&0\\0&c_{23}&s_{23}\\ 0&-s_{23}&c_{23}\end{pmatrix}
+\begin{pmatrix}c_{13}&0&s_{13}e^{-i\delta'}\\0&1&0\\-se^{i\delta'}&0&c_{13}\end{pmatrix}
+\begin{pmatrix}c_{12}&s_{12}&0\\-s_{12}&c_{12}&0\\0&0&1\end{pmatrix}}
+where $s_{ij}=\sin(\phi_{ij})$, $c_{ij}=\cos(\phi_{ij})$, and $\delta'$ is the CP violating phase. In the limit that $\delta'$ approaches 0, the area of the six triangles approaches 0. The analysis of the three diagrams in 5.a. demonstrate interactions to measure $V_{ud}$, $V_{us}$, and $V_{ub}$. By \fbox{constructing the unitarity triangle} based on these three CKM elements, and therefore the area of the triangle, the CP violating phase $\delta'$ can be measured experimentally. 
 \end{document}
