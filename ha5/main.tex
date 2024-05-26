@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{floatrow}
+\newcommand{\fig}[3]{
+\begin{figure}[H]
+\begin{center}
+\includegraphics[height=#1]{#2}
+\caption{#3}
+\label{#2}
+\end{center}
+\end{figure}}
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{bib.bib}
+\setlength{\parindent}{0pt}
+\geometry{top=1in,bottom=1in,left=1in,right=1in}
+\n{thcab}{\theta_{CAB}}
+\n{thabc}{\theta_{ABC}}
+\begin{document}
+\begin{center}
+\textbf{\Large{Problem Set 5}}\\~\\
+\begin{tabular}{l l}
+Student&Agustin Romero\\
+Email&ar1@stanford.edu\\
+Instructor&Caterina Vernieri\\
+Course&Physics 252\\
+Institution&Stanford University\\
+Date&\today\\
+\end{tabular}
+\end{center}
+\section*{Problem 1.a.} 
+Compare the before state and the after state. The before state has 3 separate quark eigenstates each $s=\fr{1}{2}$ with with two choices of $m_s$.
+\e{s=\fr{1}{2}\quad m_s=-\fr{1}{2},\fr{1}{2}}
+So the before state has \fbox{6 possible spin configurations}. From the 2 quark state can the 3 quark state be created. The two quark state has spin $s=1$ or $s=0$. The third quark can be added in parallel or antiparallel configuration, so $s=1+\fr{1}{2}=\fr{3}{2}$, $s=1-\fr{1}{2}=\fr{1}{2}$, and $s=0+\fr{1}{2}=\fr{1}{2}$ are the possible spin configurations. The $z$ component of $s$, $m_s$, can range from $-s$ to $s$. The $s=\fr{1}{2}$ state has two possible $m_s$ configurations: $m_s=-\fr{1}{2},\fr{1}{2}$. The $s=\fr{3}{2}$ state has four possible configurations: $m_s=-\fr{3}{2},-\fr{1}{2},\fr{1}{2},\fr{3}{2}$. So the after state has \fbox{6 possible spin configurations.} 
+\section*{Problem 1.b.}
+We want to combine the angular momentum 2, 1 and $\fr{1}{2}$. The before state has the $m_s$ for each spin $s$:
+\e{2: -2,-1,0,1,2 &\rightarrow 5\rom{ states}\\
+1: -1,0,1 &\rightarrow 3\rom{ states}\\
+\fr{1}{2}: -\fr{1}{2},\fr{1}{2} &\rightarrow 2\rom{ states}}
+The number of possible states for the three independent quarks are all the possible permutations of these $m_s$ states, so $5\times 3\times 2=\boxed{30}$.
+The after state will combine the spins. Combine the 2 and 1 spin first, then the $\fr{1}{2}$ spin.
+\e{|2-1|=1 \quad (2+1)=3 \Rightarrow 1,2,3}
+The possible spins of $s$ for the 2-spin state is 1, 2, and 3. Then add the third spin. Each 3-spin state has $n=2(s+1)$ possible $m_s$ states. Add the $n$.
+\e{1+\fr{1}{2}=\fr{3}{2} &\quad n=4\\
+1-\fr{1}{2}=\fr{1}{2} &\quad n=2\\
+2+\fr{1}{2}=\fr{5}{2} &\quad n=6\\
+2-\fr{1}{2}=\fr{3}{2} &\quad n=4\\
+3+\fr{1}{2}=\fr{7}{2} &\quad n=8\\
+3-\fr{1}{2}=\fr{5}{2} &\quad n=6}
+The sum of the possible spin states in the final combined 3-spin state is \fbox{30}.
+\section*{Problem 2}
+The process $n\rightarrow p+e$ has two spin $\einh$ particles. The total spin $s$ of the final state is
+\e{\einh+\einh=1}
+or
+\e{\einh-\einh=0}
+Which represents bosonic states, which \fbox{violates the conservation of angular momentum}. To correct this, \fbox{assign spin $\einh,\fr{3}{2},\fr{5}{2},...$ to the neutrino}. 
+\section*{Problem 3}
+The $\Delta^{++}$ has spin $s=\fr{3}{2}$, the proton has $s=\einh$, and the $\pi^{+}$ $s=0$. One unit of $l=1$ can produce the final state spins
+\e{s=\fr{1}{2} + l=1 = |\fr{1}{2}-1|, \fr{1}{2}+1 = \fr{1}{2}, \fr{3}{2}}
+Two units of orbital angular momentum, $l=2$, can produce the final state spins
+\e{j=\fr{1}{2} + l=1 = |\fr{1}{2}-1|, \fr{1}{2}+1 = \fr{1}{2}, \fr{3}{2}}
+\e{j=\fr{3}{2} + l=2 = \fr{3}{2}, \fr{5}{2}}
+To conserve angular momentum, the final state \fbox{must be $l=1$ or $l=2$}.
+\section*{Problem 4.a.}
+List the isospin states of the deuteron, proton, and $\pi^{+}$, then combine them, and check for conservation.
+\e{d &\quad \ket{I,I_3}=\ket{0,0}\\
+p &\quad \ket{I,I_3}=\ket{\einh,\einh}\\
+\pi^{+} &\quad \ket{I,I_3}=\ket{1,1}}
+\e{p+p &\rightarrow d + \pi^{+} = \ket{1,1} \rightarrow \ket{0,0} + \ket{1,1} = \boxed{\ket{1,1}\rightarrow \ket{1,1}}}
+\fbox{Both $I$ and $I_3$ are conserved} in the process $p+p \rightarrow d + \pi^{+}$.
+\section*{Problem 4.b.}
+Combine the isospin states and check for conservation.
+\e{n &\quad \ket{I,I_3}=\ket{\fr{1}{2},-\einh}\\
+\pi^{0} &\quad \ket{I,I_3}=\ket{1,0}}
+\e{n+p &\rightarrow d + \pi^{0} = \ket{\fr{1}{2},-\fr{1}{2}} + \ket{\fr{1}{2},\fr{1}{2}} \rightarrow \ket{0,0} + \ket{1,0} = \boxed{\ket{1,0}\rightarrow \ket{1,0}}}
+\fbox{Both $I$ and $I_3$ are conserved} in the process $n+p \rightarrow d + \pi^{0}$.
+\section*{Problem 4.c.}
+The $\alpha$ state can be represented as a $ppnn$ isospin state.
+\e{ppnn \quad \ket{I,I_3}=\ket{\einh,\einh}+\ket{\einh,\einh}+\ket{\einh,-\einh}+\ket{\einh,-\einh}=\ket{2,0}}
+The process $d + d\rightarrow \alpha + \pi^{0}$ is
+\e{d + d\rightarrow \alpha + \pi^{0} = \ket{0,0}+\ket{0,0}\rightarrow \ket{2,0}+\ket{1,0} = \ket{0,0} \rightarrow \ket{3,0}}
+The process \fbox{violates isospin conservation}.
+\end{document}
