@@ -38,10 +38,30 @@ Inelasticity is defined as
 \e{y=\fr{p_2 q}{p_2 p_1}}
 which results in
 \e{\lab{8nas}y=\fr{m_p(E_1-E_3)}{m_p E_1}=\boxed{1-\fr{E_3}{E_1}}}
-Using \eref{8nas} and some algebra,
-\e{Q^2=2m_p (E_1-E_3)=2m_p E_1 \fr{m_p(E_1-E_3)}{m_p E_1}=\boxed{2m_p E_1 y}}
-Both require $m_e^2=0$.
+Expand $Q^2$,
+\e{\lab{1283nz}Q^2=-q^2 = -(p_1-p_3)^2=-p_1^2-p_3^2+2p_1p_3=-m_e^2-m_e^2+2E_1E_3(1-\cos(\theta))=\boxed{4E_1E_3 \sin^2(\fr{1}{2}\theta)}}
+Next, search for $Q^2=2m_p E_1 y$. Start with
+\e{qp_2 = (p_1-p_3)p_2 = m_p(E_1-E_3)}
+\e{q=p_4-p_2}
+\e{p_4^2=(q+p_2)^2=q^2+p_2^2+2qp_2}
+\e{p_2^2=p_4^2}
+\e{qp_2=-\fr{1}{2}q^2}
+\e{\lab{n1823}E_1-E_3=\fr{qp_2}{m_p}=-\fr{q^2}{2m_p}=\fr{Q^2}{2m_p}}
+Use \eref{n1823},
+\e{\lab{n19283n}Q^2=2m_p (E_1-E_3)=2m_p E_1 \fr{m_p(E_1-E_3)}{m_p E_1}=\boxed{2m_p E_1 y}}
 \section*{Problem 1.b.}
+Find the first equation. Use \eref{1283nz} and multiply it by $\fr{y}{y}$,
+\e{\lab{m1238n}\sin^2(\fr{1}{2}\theta)=\fr{2m_p E_1 y}{4 E_1 E_3}=\fr{2m_p E_1}{4E_1 E_3}\fr{y^2}{Q^2}2m_p E_1 = \boxed{\fr{E_1}{E_3}\fr{m_p^2}{Q^2}y^2}}
+Next find the second equation. Use \eref{m1238n},
+\e{\fr{E_3}{E_1}\sin^2(\fr{1}{2}\theta)&=\fr{m_p^2}{Q^2}y^2\\
+-\fr{E_3}{E_1}\sin^2(\fr{1}{2}\theta)&=-\fr{m_p^2}{Q^2}y^2\\
+\fr{E_3}{E_1}-\fr{E_3}{E_1}\sin^2(\fr{1}{2}\theta)&=\fr{E_3}{E_1}-1+1-\fr{m_p^2}{Q^2}y^2\\
+\fr{E_3}{E_1}\cos^2(\fr{1}{2}\theta)=1-y-\fr{m_p^2}{Q^2}y^2
+}
+\[ \! \begin{aligned} a\\
+\boxed{b}
+\end{aligned}
+\]
 
 \section*{Problem 1.c.}
 \section*{Problem 1.d.}
