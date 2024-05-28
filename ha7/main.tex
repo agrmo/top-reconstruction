@@ -59,7 +59,25 @@ Next find the second equation. Use \eref{m1238n},
 \fr{E_3}{E_1}-\fr{E_3}{E_1}\sin^2(\fr{1}{2}\theta)&=\fr{E_3}{E_1}-1+1-\fr{m_p^2}{Q^2}y^2\\
 \Aboxed{\fr{E_3}{E_1}\cos^2(\fr{1}{2}\theta)&=1-y-\fr{m_p^2}{Q^2}y^2}}
 \section*{Problem 1.c.}
+Solve for the first equation using \eref{1283nz} and \eref{n19283n},
+\e{Q^2&=2E_1E_3(1-\cos(\theta))=2m_p(E_1-E_3)\\
+2E_1E_3(1-\cos(\theta)) &= 2m_pE_1 - 2m_pE_3\\
+2E_1E_3 (1-\cos(\theta)) + 2m_pE_3 &= 2m_pE_1\\
+E_3(E_1(1-\cos(\theta)) + m_p) &= E_1m_p\\
+\Aboxed{E_3&=\lab{n81273n231u239ba}\fr{E_1 m_p}{m_p+E_1(1-\cos(\theta))}}}
+Solve for the second equation using \eref{1283nz} and \eref{n81273n231u239ba},
+\e{Q^2&=2E_1E_3(1-\cos(\theta))=\fr{2E_1(1-\cos(\theta))E_1m_p}{m_p+E_1(1-\cos(\theta))}\\
+&=\boxed{\fr{2m_pE_1^2(1-\cos(\theta))}{m_p+E_1(1-\cos(\theta))}}}
 \section*{Problem 1.d.}
+The solution follows Thomson p. 77 closely. Start with $\fr{d\sigma}{d\Omega}$, solve for the relevant differentials, and then solve for $\fr{d\sigma}{dQ^2}$. Using Azimuthal symmetry, $\fr{dQ^2}{d\Omega}$ is a function of only $\cos(\theta)$, not also $\phi$.
+\e{\fr{d\sigma}{d\Omega}=\fr{d\sigma}{dQ^2}|\fr{dQ^2}{d\Omega}|=\fr{1}{2\pi}\fr{dQ^2}{d(\cos(\theta))}\fr{d\sigma}{dQ^2}}
+Solve for the relevant differentials.
+\e{\fr{dQ^2}{d(\cos(\theta))}=2m_p \fr{d E_3}{d(\cos(\theta))}}
+\e{\fr{d}{d(\cos(\theta))}E_3=\fr{E_1^2 m_p}{m_p + E_1(1-\cos(\theta))}=\fr{E_3^2}{m_p}}
+\e{\fr{d}{d\cos(\theta)}Q^2=2E_3^2}
+\e{\fr{d}{d\Omega}\sigma=\fr{1}{2\pi}2E_3^2 \fr{d\sigma}{dQ^2}=\fr{E_3^2}{\pi}\fr{d\sigma}{dQ^2}}
+Finally
+\e{\boxed{\fr{d\sigma}{dQ^2}=\fr{\pi}{E_3^2} \fr{d\sigma}{d\Omega}}}
 \section*{Problem 1.e.}
 \section*{Problem 2.a.}
 \section*{Problem 2.b.}
