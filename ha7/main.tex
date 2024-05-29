@@ -5,7 +5,7 @@
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage{floatrow}
+%% \usepackage{floatrow}
 \usepackage{mathtools}
 \newcommand{\fig}[3]{
 \begin{figure}[H]
@@ -15,8 +15,8 @@
 \label{#2}
 \end{center}
 \end{figure}}
-\usepackage[backend=bibtex]{biblatex}
-\addbibresource{bib.bib}
+%% \usepackage[backend=bibtex]{biblatex}
+%% \addbibresource{bib.bib}
 \setlength{\parindent}{0pt}
 \geometry{top=1in,bottom=1in,left=1in,right=1in}
 \begin{document}
@@ -69,7 +69,7 @@ Solve for the second equation using \eref{1283nz} and \eref{n81273n231u239ba},
 \e{Q^2&=2E_1E_3(1-\cos(\theta))=\fr{2E_1(1-\cos(\theta))E_1m_p}{m_p+E_1(1-\cos(\theta))}\\
 &=\boxed{\fr{2m_pE_1^2(1-\cos(\theta))}{m_p+E_1(1-\cos(\theta))}}}
 \section*{Problem 1.d.}
-The solution follows Thomson p. 77 closely. Start with $\fr{d\sigma}{d\Omega}$, solve for the relevant differentials, and then solve for $\fr{d\sigma}{dQ^2}$. Using Azimuthal symmetry, $\fr{dQ^2}{d\Omega}$ is a function of only $\cos(\theta)$, not also $\phi$.
+The solution follows Thomson p. 77 closely. Start with $\fr{d\sigma}{d\Omega}$, solve for the relevant differentials, and then solve for $\fr{d\sigma}{dQ^2}$. Using azimuthal symmetry, $\fr{dQ^2}{d\Omega}$ is a function of only $\cos(\theta)$, not also $\phi$.
 \e{\fr{d\sigma}{d\Omega}=\fr{d\sigma}{dQ^2}|\fr{dQ^2}{d\Omega}|=\fr{1}{2\pi}\fr{dQ^2}{d(\cos(\theta))}\fr{d\sigma}{dQ^2}}
 Solve for the relevant differentials.
 \e{\fr{dQ^2}{d(\cos(\theta))}=2m_p \fr{d E_3}{d(\cos(\theta))}}
@@ -97,11 +97,33 @@ which is the desired form for the $C$ term. Simplify the $A$ term.
 &= \fr{\alpha^2}{E_1^2 (1-\cos(\theta))^2}\\
 &= \fr{4\alpha^2 E_3^2}{Q^4}}
 which is the desired form for the $A$ term. Finally use \eref{n1283n} to rewrite the cross section differential in $Q^2$ instead of $\Omega$, which simply introduces a factor of $\fr{\pi}{E_3^2}$.
-\e{\fr{d}{dQ^2}\sigma = \fr{\pi}{E_3^2} \fr{4\alpha^2 E_3^2}{Q^4} (\fr{G_E^2+\tau G_M^2}{1+\tau}(1-y-\fr{m_p^2}{Q^2}y^2) + \fr{1}{2}y^2 G_M^2)\\
-&=\boxed{\fr{\pi}{E_3^2} \fr{4 \pi \alpha^2}{Q^4} (\fr{G_E^2+\tau G_M^2}{1+\tau}(1-y-\fr{m_p^2 y^2}{Q^2}) + \fr{1}{2}y^2 G_M^2)}}
+\e{\fr{d}{dQ^2}\sigma &= \fr{\pi}{E_3^2} \fr{4\alpha^2 E_3^2}{Q^4} (\fr{G_E^2+\tau G_M^2}{1+\tau}(1-y-\fr{m_p^2}{Q^2}y^2) + \fr{1}{2}y^2 G_M^2)\\
+&=\boxed{\fr{4 \pi \alpha^2}{Q^4} (\fr{G_E^2+\tau G_M^2}{1+\tau}(1-y-\fr{m_p^2 y^2}{Q^2}) + \fr{1}{2}y^2 G_M^2)}}
+This is the Lorentz-invariant form of the Rosenbluth formula.
 \section*{Problem 2.a.}
+Solve for the first equation.
+\e{\fr{d\sigma}{dQ^2} = \fr{d \sigma}{d\Omega} \abs{\fr{d\Omega}{dQ^2}}=\fr{d\sigma}{d\Omega}\fr{2\pi \sin(\theta)d\theta}{2E_1E_3 \sin(\theta)d\theta}=\fr{\pi}{E_1E_3}\fr{d\sigma}{d\Omega}}
+\e{\fr{d}{dE_3}\fr{d}{d\Omega}\sigma&=\fr{E_1E_3}{\pi}\fr{d}{dE_3}\fr{d}{dQ^2}\sigma
+\intertext{Next, solve for the second equation.}\\
+&=\lab{n1823bdfpz}\fr{E_1E_3}{\pi}\fr{d x}{dE_3}\fr{d}{dx}\fr{d}{dQ^2}\sigma}
+The derivative $\fr{d}{dE_3}x$ is needed.
+\e{\fr{d}{dE_3}x&=\fr{d}{d E_3}\fr{Q^2}{2m_p(E_1-E_3)}=\fr{Q^2}{2m_p(E_1-E_3)^2}=\fr{2m_p Q^4}{Q^2 4m_p^2 (E_1-E_3)^2}=\fr{2m_p x^2}{Q^2}}
+which can be plugged back into \eref{n1823bdfpz}. The final result is
+\e{\boxed{\fr{d}{dE_3}\fr{d}{d\Omega}\sigma=\fr{E_1E_3}{\pi}\fr{d}{dE_3}\fr{d}{dQ^2}\sigma=\fr{E_1E_3}{\pi} \fr{2m_p x^2}{Q^2} \fr{d}{dx}\fr{d}{dQ^2}\sigma}}
 \section*{Problem 2.b.}
+Solve for the first equation using \eref{8nas},
+\e{\fr{2m_p x^2}{Q^2}\fr{y^2}{2}&=\fr{m_p}{Q^2}y^2 x^2 = \fr{m_p}{Q^2}y^2 \fr{Q^4}{4m_p^2(E_1-E_3)^2}\\
+&= \fr{Q^2}{4 m_p (E_1-E_3)^2}y^2 = \fr{Q^2}{4 m_p (E_1-E_3)^2} \fr{(E_1-E_3)^2}{E_1^2} = \fr{Q^2}{4m_p E_1^2}\\
+&=\lab{n1hr83n} \fr{1}{4m_p E_1^2} 4E_1 E_3 \sin^2(\fr{1}{2}\theta) = \boxed{\fr{1}{m_p} \fr{E_3}{E_1} \sin^2(\fr{1}{2}\theta)}}
+Solve for the second equation using \eref{n1hr83n} and \eref{8nas},
+\e{\fr{m_p^2 x^2}{y^2}&=\fr{E_3}{E_1}\sin^2(\fr{1}{2}\theta)\\
+\fr{m_p^2 x^2}{y^2}&=\fr{E_3}{E_1}(1-\cos^2(\fr{1}{2}\theta))\\
+&= 1-1+\fr{E_3}{E_1}-\fr{E_3}{E_1}\cos^2(\fr{1}{2}\theta)\\
+&= 1-y-\fr{E_3}{E_1}\cos^2(\fr{1}{2}\theta)\\
+\Aboxed{1-y-\fr{m_p^2 x^2}{y^2}&=\fr{E_3}{E_1}\cos^2(\fr{1}{2}\theta)}}
 \section*{Problem 2.c.}
+Start with the cross section differential in $E_3$ and $\Omega$, write it as a differential $x$ and $Q^2$, then use our previous results to find the answer. Take care not to assume that $x=1$ which is true for elastic scattering.
+\e{\fr{d}{d E_3}\fr{d}{d\Omega}}
 \section*{Problem 2.d.}
 \section*{Problem 3.}
 \section*{Problem 4.}
