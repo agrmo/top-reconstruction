@@ -109,7 +109,7 @@ Solve for the first equation.
 The derivative $\fr{d}{dE_3}x$ is needed.
 \e{\fr{d}{dE_3}x&=\fr{d}{d E_3}\fr{Q^2}{2m_p(E_1-E_3)}=\fr{Q^2}{2m_p(E_1-E_3)^2}=\fr{2m_p Q^4}{Q^2 4m_p^2 (E_1-E_3)^2}=\fr{2m_p x^2}{Q^2}}
 which can be plugged back into \eref{n1823bdfpz}. The final result is
-\e{\boxed{\fr{d}{dE_3}\fr{d}{d\Omega}\sigma=\fr{E_1E_3}{\pi}\fr{d}{dE_3}\fr{d}{dQ^2}\sigma=\fr{E_1E_3}{\pi} \fr{2m_p x^2}{Q^2} \fr{d}{dx}\fr{d}{dQ^2}\sigma}}
+\e{\lab{n1827bask}\boxed{\fr{d}{dE_3}\fr{d}{d\Omega}\sigma=\fr{E_1E_3}{\pi}\fr{d}{dE_3}\fr{d}{dQ^2}\sigma=\fr{E_1E_3}{\pi} \fr{2m_p x^2}{Q^2} \fr{d}{dx}\fr{d}{dQ^2}\sigma}}
 \section*{Problem 2.b.}
 Solve for the first equation using \eref{8nas},
 \e{\fr{2m_p x^2}{Q^2}\fr{y^2}{2}&=\fr{m_p}{Q^2}y^2 x^2 = \fr{m_p}{Q^2}y^2 \fr{Q^4}{4m_p^2(E_1-E_3)^2}\\
@@ -122,8 +122,27 @@ Solve for the second equation using \eref{n1hr83n} and \eref{8nas},
 &= 1-y-\fr{E_3}{E_1}\cos^2(\fr{1}{2}\theta)\\
 \Aboxed{1-y-\fr{m_p^2 x^2}{y^2}&=\fr{E_3}{E_1}\cos^2(\fr{1}{2}\theta)}}
 \section*{Problem 2.c.}
-Start with the cross section differential in $E_3$ and $\Omega$, write it as a differential $x$ and $Q^2$, then use our previous results to find the answer. Take care not to assume that $x=1$ which is true for elastic scattering.
-\e{\fr{d}{d E_3}\fr{d}{d\Omega}}
+Bjorken $x$ is
+\e{\lab{xn1283n}x=\fr{Q^2}{2m_p(E_1-E_3)}}
+Start with the cross section differential in $E_3$ and $\Omega$, write it as a differential $x$ and $Q^2$, then use our previous results to find the answer. Take care not to assume that $x=1$ which is only true for elastic scattering. Start with \eref{n1827bask}
+\e{\fr{d}{d E_3}\fr{d}{d\Omega}\sigma &= \fr{E_1 E_3}{\pi}\fr{2m_p x^2}{Q^2}\fr{d}{dx}\fr{d}{dQ^2}\sigma
+\intertext{Plug in $\fr{d}{dx}\fr{d}{dQ^2}\sigma$ which is given in the assignment and also Thomson Eq. 8.11.}
+&= \fr{E_1 E_3 2 m_p x^2}{\pi Q^2}\fr{4\pi \alpha^2}{Q^4}((1-y-\fr{m_p^2 y^2}{Q^2})\fr{F_2}{x}+y^2 F_1)
+\intertext{Simplify, distribute $x^2$, and use \eref{n182x3}.}
+&=\fr{E_1 E_3 8 m_p \alpha^2}{Q^6}(\fr{E_3 x}{E_1}\cos^2(\fr{1}{2}\theta)F_2+x^2 y^2 F_1)
+\intertext{Distribute $m_p$, $Q^2$.}
+&= \fr{8 E_1 E_3 \alpha^2}{Q^4}(\fr{E_3 x m_p}{E_1 Q^2}\cos^2(\fr{1}{2}\theta)F_2+\fr{x^2y^2m_p}{Q^2}F_1)
+\intertext{Use \eref{n1hr83n}.}
+&= \fr{8 E_1 E_3 \alpha^2}{Q^4}(\fr{E_3 x m_p}{E_1 Q^2}\cos^2(\fr{1}{2}\theta)F_2+\fr{E_3}{E_1 m_p}\sin^2(\fr{1}{2}\theta)F_1)
+\intertext{Simplify, distribute 2.}
+&=\lab{jn1273b} \fr{4 E_3^2 \alpha^2}{Q^4}(\fr{2 x m_p}{Q^2}\cos^2(\fr{1}{2}\theta)F_2+\fr{2}{m_p}\sin^2(\fr{1}{2}\theta)F_1)}
+\eref{jn1273b} is in the form $A(B+C)$ and $C$ is already in the desired form. Use \eref{1283nz} on $A$.
+\e{\lab{n1823nx}\fr{4E_3^2 \alpha^2}{Q^4}=\fr{4 E_3^2 \alpha^2}{4^2 E_1^2 E_3^2 \sin^4(\fr{1}{2}\theta)} = \fr{\alpha^2}{4 E_1^2 \sin^2(\fr{1}{2}\theta)}}
+Use \eref{xn1283n} on $B$.
+\e{\lab{n127ba}\fr{2xm_p}{Q^2}=\fr{1}{E_1-E_3}=\fr{1}{\nu}}
+Plug \eref{n1823nx} and \eref{n127ba} into \eref{jn1273b}.
+\e{\boxed{\fr{d}{d E_3}\fr{d}{d\Omega}\sigma = \fr{\alpha^2}{4 E_1^2 \sin^2(\fr{1}{2}\theta)}(\fr{F_2}{\nu}\cos^2(\fr{1}{2}\theta)F_2+\fr{2}{m_p}\sin^2(\fr{1}{2}\theta)F_1)}}
+Using the kinematic variables for inelastic $e^{-}p\rightarrow e^{-}X$ scattering and the differential cross section $\fr{d}{dx}\fr{d}{dQ^2}\sigma$, we find the differential cross section $\fr{d}{dE_3}\fr{d}{d\Omega}\sigma$ in terms of $E_1$, $\theta$, and the structure functions $F_1$, $F_2$.
 \section*{Problem 2.d.}
 \section*{Problem 3.}
 \section*{Problem 4.}
