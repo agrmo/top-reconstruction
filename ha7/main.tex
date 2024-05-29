@@ -40,7 +40,7 @@ Inelasticity is defined as
 which results in
 \e{\lab{8nas}y=\fr{m_p(E_1-E_3)}{m_p E_1}=\boxed{1-\fr{E_3}{E_1}}}
 Expand $Q^2$,
-\e{\lab{1283nz}Q^2=-q^2 = -(p_1-p_3)^2=-p_1^2-p_3^2+2p_1p_3=-m_e^2-m_e^2+2E_1E_3(1-\cos(\theta))=\boxed{4E_1E_3 \sin^2(\fr{1}{2}\theta)}}
+\e{\lab{1283nz}Q^2=-q^2 = -(p_1-p_3)^2=-p_1^2-p_3^2+2p_1p_3=-m_e^2-m_e^2+2E_1E_3(1-\cos(\theta))=\boxed{4E_1E_3\sin^2(\fr{1}{2}\theta)}}
 Next, search for $Q^2=2m_pE_1y$. Start with
 \e{qp_2 = (p_1-p_3)p_2 = m_p(E_1-E_3)}
 \e{q=p_4-p_2}
@@ -144,6 +144,19 @@ Plug \eref{n1823nx} and \eref{n127ba} into \eref{jn1273b}.
 \e{\boxed{\fr{d}{d E_3}\fr{d}{d\Omega}\sigma = \fr{\alpha^2}{4 E_1^2 \sin^2(\fr{1}{2}\theta)}(\fr{F_2}{\nu}\cos^2(\fr{1}{2}\theta)F_2+\fr{2}{m_p}\sin^2(\fr{1}{2}\theta)F_1)}}
 Using the kinematic variables for inelastic $e^{-}p\rightarrow e^{-}X$ scattering and the differential cross section $\fr{d}{dx}\fr{d}{dQ^2}\sigma$, we find the differential cross section $\fr{d}{dE_3}\fr{d}{d\Omega}\sigma$ in terms of $E_1$, $\theta$, and the structure functions $F_1$, $F_2$.
 \section*{Problem 2.d.}
+The two essential equations are \eref{1283nz} and \eref{xn1283n}. We are given
+\e{x=0.2\quad Q^2=2\un{GeV}^2 \quad E_3<E_1 \quad E_1<20\un{GeV}}
+and asked to find the possible values of $\theta$.
+\e{E_1-E_3=\fr{2\un{GeV}^2}{2(0.2)m_p}=5.33\un{GeV}}
+The difference between $E_1$ and $E_3$ is constant. The electron necessarily loses 5.33 GeV. Next,
+\e{\fr{2\un{GeV}^2}{4E_1E_3}&=\sin^2(\fr{1}{2}\theta)=\fr{1}{2}(1-\cos(\theta))=\fr{1}{2}-\fr{1}{2}\cos(\theta)\\
+\cos(\theta)&=1-\fr{4\un{GeV}^2}{4E_1E_3}\\
+\theta&=\arccos(1-\fr{1\un{GeV}^2}{E_1E_3})}
+This is the scattering angle $\theta$ given the kinematic constraints on $E_1$, $E_3$. $\arccos(x)$ is maximized as $x\rightarrow -1$, and minimized as $x\rightarrow 1$. $\arccos(1-x)$ is maximized as $x\rightarrow -2$, and minimized as $x\rightarrow 0$. $\arccos(1-\fr{1}{x})$ is maximized as $x\rightarrow0$, and minimized as $x\rightarrow \infty$. Then $\theta$ is maximized as $E_1E_3 \rightarrow 0$, and minimized as $E_1E_3\rightarrow \infty$. The lowest value for the product $E_1E_3$ is simply \fbox{$E_3=2\un{GeV}$} and then necessarily \fbox{$E_1=2+5.33\un{GeV}=7.33\un{GeV}$}. This results in the angle
+\e{\boxed{\theta_\rom{max}=\arccos(1-\fr{1\un{GeV}^2}{(2\un{GeV})(7.33\un{GeV})})=21.3^\circ}}
+The maximum value for the product $E_1E_3$ is $E_1=20\un{GeV}$ and then necessarily $E_3=20\un{GeV}-5.33\un{GeV}=14.67\un{GeV}$.
+\e{\boxed{\theta_\rom{min}=\arccos(1-\fr{1\un{GeV}^2}{(29\un{GeV})(14.67\un{GeV})})=4.73^\circ}}
+Using the kinematics of deep inelastic $e^{-}p$ scattering and the given constraints, we find the possible values of the electron scattering angle $\theta$.
 \section*{Problem 3.}
 \section*{Problem 4.}
 \section*{Problem 5.}
