@@ -180,7 +180,24 @@ By comparison, we find that
 and 
 \e{K_1=-q^2 G_M^2 = -q^2 \Rightarrow \boxed{G_M^2=1}}
 \e{K_2=(2m_p c)^2 \fr{G_E^2-\fr{q^2}{(2m_p c)^2}G_M^2}{1-\fr{q^2}{(2m_p c)^2}}\Rightarrow \boxed{G_E^2=1}}
-\section*{Problem 4.}
+\section*{Problem 4.a.}
+The electromagnetic coupling is given in Griffiths 8.92,
+\e{\lab{vnuqbr}\alpha(\abs{q^2})=\fr{\alpha(0)}{1-\fr{\alpha(0)}{4\pi}\ln(\fr{\abs{q^2}{(mc)^2}})}}
+$\alpha$ diverges at 
+\e{\ln(\fr{\abs{q^2}{(mc)^2}})&=\fr{3\pi}{\alpha(0)}=411\pi\\
+\abs{q^2}&=(mc)^2 e^{411\pi}\\
+(\abs{q^2}c^2)^{\fr{1}{2}}&=(m^2 c^4 e^{411 \pi})^{\fr{1}{2}}\\
+&= \boxed{1.2\tun{280}{MeV}}}
+In agreement with Griffiths' calculation.
+\section*{Problem 4.b.}
+Use \eref{vnuqbr}, and solve for the momentum transfer $\abs{q^2}$ required for a 1\% deviation in $\alpha$.
+\e{\alpha(\abs{q^2})&= \fr{\alpha(0)}{1-\fr{\alpha(0)}{4\pi}\ln(\fr{\abs{q^2}}{(mc)^2})} =1.01\alpha(0)\\
+1.01(1-\fr{\alpha(0)}{4\pi}\ln(\fr{\abs{q^2}}{(mc)^2}))&= 1\\
+1.01-1&= \fr{1.01\alpha(0)}{3\pi}\ln(\fr{\abs{q^2}}{(mc)^2})\\
+\fr{3\pi(1.01-1)}{1.01\alpha(0)}&= \ln(\fr{\abs{q^2}}{(mc)^2})\\
+\abs{q^2}&=e^{\fr{3\pi(1.01-1)}{1.01\alpha(0)}} (mc)^2\\
+(\abs{q^2}c^2)^{\fr{1}{2}}&= (e^{\fr{3\pi(1.01-1)}{1.01\alpha(0)}} (0.511\un{MeV})^2)^{\fr{1}{2}} = \boxed{305\un{MeV}}}
+In QED, the momentum transfer required to cause a 1\% deviation in the electromagnetic coupling $\alpha$ is 305 MeV. This is easily possible.
 \section*{Problem 5.}
 \section*{Problem 6.}
 \section*{Problem 7.}
