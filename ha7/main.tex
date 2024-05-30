@@ -40,9 +40,9 @@ Inelasticity is defined as
 \e{y=\fr{p_2 q}{p_2 p_1}}
 which results in
 \e{\lab{8nas}y=\fr{m_p(E_1-E_3)}{m_p E_1}=\boxed{1-\fr{E_3}{E_1}}}
-Expand $Q^2$,
+Next, find the four-momentum transfer $Q^2$.
 \e{\lab{1283nz}Q^2=-q^2 = -(p_1-p_3)^2=-p_1^2-p_3^2+2p_1p_3=-m_e^2-m_e^2+2E_1E_3(1-\cos(\theta))=\boxed{4E_1E_3\sin^2(\fr{1}{2}\theta)}}
-Next, search for $Q^2=2m_pE_1y$. Start with
+Next,
 \e{qp_2 = (p_1-p_3)p_2 = m_p(E_1-E_3)}
 \e{q=p_4-p_2}
 \e{p_4^2=(q+p_2)^2=q^2+p_2^2+2qp_2}
@@ -51,6 +51,7 @@ Next, search for $Q^2=2m_pE_1y$. Start with
 \e{\lab{n1823}E_1-E_3=\fr{qp_2}{m_p}=-\fr{q^2}{2m_p}=\fr{Q^2}{2m_p}}
 Use \eref{n1823},
 \e{\lab{n19283n}Q^2=2m_p (E_1-E_3)=2m_p E_1 \fr{m_p(E_1-E_3)}{m_p E_1}=\boxed{2m_pE_1y}}
+Using the kinematics of elastic $e^{-}p$ scattering we find the answers.
 \section*{Problem 1.b.}
 Find the first equation. Use \eref{1283nz} and multiply it by $\fr{y}{y}$,
 \e{\lab{m1238n}\sin^2(\fr{1}{2}\theta)=\fr{2m_p E_1 y}{4 E_1 E_3}=\fr{2m_p E_1}{4E_1 E_3}\fr{y^2}{Q^2}2m_p E_1 = \boxed{\fr{E_1}{E_3}\fr{m_p^2}{Q^2}y^2}}
@@ -197,7 +198,7 @@ Use \eref{vnuqbr}, and solve for the momentum transfer $\abs{q^2}$ required for 
 \fr{3\pi(1.01-1)}{1.01\alpha(0)}&= \ln(\fr{\abs{q^2}}{(mc)^2})\\
 \abs{q^2}&=e^{\fr{3\pi(1.01-1)}{1.01\alpha(0)}} (mc)^2\\
 (\abs{q^2}c^2)^{\fr{1}{2}}&= (e^{\fr{3\pi(1.01-1)}{1.01\alpha(0)}} (0.511\un{MeV})^2)^{\fr{1}{2}} = \boxed{305\un{MeV}}}
-In QED, the momentum transfer required to cause a 1\% deviation in the electromagnetic coupling $\alpha$ is 305 MeV. This is easily possible.
+In QED, the momentum transfer required to cause a 1\% deviation in the electromagnetic coupling $\alpha$ is 305 MeV. This is \fbox{easily possible in experiment}.
 \section*{Problem 5.}
 The strong interaction coupling constant $\alpha$ is given by Griffiths 8.93,
 \e{\lab{n1283b}\alpha(\abs{q^2})=\fr{\alpha(\mu^2)}{1+\fr{\alpha(\mu^2)}{12\pi}(11n-4f)\ln(\fr{\abs{q^2}}{\mu^2})}}
@@ -223,7 +224,32 @@ The strong coupling constant $\alpha(\abs{q^2})$ is \eref{n1283b} and its invers
 \e{\fr{1}{\alpha(\abs{q^2})}&=\fr{1}{\alpha(\mu^2)}+\fr{11n-2f}{12\pi}\ln(\fr{\abs{q^2}}{\mu^2})\\
 &=\lab{1823b123}\fr{11n-2f}{12\pi}\ln(\fr{\mu^2}{\Lambda^2})+\fr{11n-2f}{12\pi}\ln({\abs{q^2}}{\mu^2})}
 Invert \eref{1823b123}.
-\e{\boxed{\alpha(\abs{q^2})=\fr{12\pi}{11n-2f}\fr{1}{\ln(\fr{\abs{q^2}}{\Lambda^2})}}}
+\e{\lab{nashbdzkgq}\boxed{\alpha(\abs{q^2})=\fr{12\pi}{11n-2f}\fr{1}{\ln(\fr{\abs{q^2}}{\Lambda^2})}}}
 By using the new definition $\ln(\Lambda^2)$ and plugging it into the strong coupling constant $\alpha(\abs{q^2})$, we find the strong coupling constant is now a function of $\abs{q^2}$ and $\Lambda^2$ only.
 \section*{Problem 7.}
+The strong coupling constant is
+\e{\lab{n128al}\alpha_s(q^2)=\fr{\alpha_s(\mu^2)}{1+\fr{11N_c-2N_f}{12\pi}\alpha_s(\mu^2)\ln(\fr{q^2}{\mu^2})}}
+There are a couple ways to answer this question: 1) assuming a scale $\mu^2$, 2) ignoring the scale $\mu^2$, and 3) using the other scale $\Lambda$. This answer will show all three answers and discuss them. For answer \#1, \eref{n128al} clearly diverges at
+\e{1&=-\fr{11N_c-2N_f}{12\pi}\alpha_s(\mu^2)\ln(\fr{q^2}{\mu^2})\\
+&=\fr{2N_f-11N_c}{12\pi}\alpha_s(\mu^2)\ln(\fr{q^2}{\mu^2})\\
+\fr{12\pi}{(2N_f-11N_c)\alpha_s(\mu^2)}&=\ln(\fr{q^2}{\mu^2})}
+\e{\boxed{q^2=\mu^2 e^{\fr{12\pi}{(2N_f-11N_c)\alpha_s(\mu^2)}}}}
+In this answer, $\alpha_s(q^2)$ diverges at this value of $q^2$, which depends on $\alpha_s(\mu^2)$, $\mu^2$, and $N_c$. We can estimate a value of $q$ by using data at the $Z$ peak, where $N_f=3$, $N_c=6$, $\mu^2=m_Z^2$, and $\alpha_s(\mu^2)=0.1184\pm 0.0007$ as given in Thomson. Then
+\e{q=((91.18\un{GeV})^2 e^{\fr{12\pi}{(6-33)0.1184}})^{\fr{1}{2}}=\boxed{250\un{MeV}}}
+Answer \#2 does not assume a scale $\mu^2$. Invert \eref{n128al}.
+\e{\fr{1}{\alpha_s(q^2)}=\fr{1}{\alpha_s(\mu^2)}+\fr{11N_c-2N_f}{12\pi}\ln(\fr{q^2}{\mu^2})}
+$\alpha_s(\mu^2)$ is the measured value of the coupling at some scale $\mu^2$, and is constant, so $\fr{1}{\alpha_s(\mu^2)}$ is also a constant. We are interested in the divergences of $\alpha_s(q^2)$ so drop this term.
+\e{\fr{1}{\alpha_s(q^2)}&=-\fr{11N_c-2N_f}{12\pi}\ln(\fr{q^2}{\mu^2})}
+Invert.
+\e{\lab{1n283nz}\alpha_s(q^2)&=-\fr{12\pi}{11N_c-2N_f}\fr{1}{\ln(\fr{q^2}{\mu^2})}}
+\eref{1n283nz} diverges when
+\e{\lim_{q^2\rightarrow \mu^2} \fr{1}{\ln(\fr{q^2}{\mu^2})}=\infty}
+\e{\boxed{\lim_{q^2\rightarrow \mu^2} \alpha_s(q^2)=\infty}}
+As $q^2$ approaches the scale $\mu^2$, the coupling $\alpha_s(q^2)$ diverges. This is one possible answer to the question, where $\alpha_s(\mu^2)$ is dropped. Finally for answer \#3, use \eref{nashbdzkgq} which parameterizes $\alpha_s$ in terms of $\Lambda$. 
+\e{\alpha(\abs{q^2})=\fr{12\pi}{11n-2f}\fr{1}{\ln(\fr{\abs{q^2}}{\Lambda^2})}}
+In this case, the divergence is more clear.
+\e{\ln(\fr{|q^2|}{\Lambda^2})=0}
+\e{\fr{|q^2|}{\Lambda^2}=1}
+\e{\boxed{|q^2|=\Lambda^2}}
+The divergence of $\alpha_s$ happens at the scale $|q|=\Lambda$. Griffiths cites that $100\un{MeV}< \Lambda <500\un{MeV}$. Then \fbox{$\alpha_s$ diverges as $100\un{MeV}<|q|<500 \un{MeV}$}.
 \end{document}
