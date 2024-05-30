@@ -199,6 +199,20 @@ Use \eref{vnuqbr}, and solve for the momentum transfer $\abs{q^2}$ required for 
 (\abs{q^2}c^2)^{\fr{1}{2}}&= (e^{\fr{3\pi(1.01-1)}{1.01\alpha(0)}} (0.511\un{MeV})^2)^{\fr{1}{2}} = \boxed{305\un{MeV}}}
 In QED, the momentum transfer required to cause a 1\% deviation in the electromagnetic coupling $\alpha$ is 305 MeV. This is easily possible.
 \section*{Problem 5.}
+The strong interaction coupling is given by Griffiths 8.93,
+\e{\alpha(\abs{q^2})=\fr{\alpha(\mu^2)}{1+\fr{\alpha(\mu^2)}{12\pi}(11n-4f)\ln(\fr{\abs{q^2}}{\mu^2})}}
+\e{\lab{nc71z}\fr{1}{\alpha(\abs{q^2})}=\fr{1}{\alpha(\mu^2)}+\fr{11n-2f}{12\pi}\ln(\fr{\abs{q^2}}{\mu^2})}
+Assume that a solution exists for \eref{nc71z} at some $\mu=\mu_a$,
+\e{\lab{n1283zor}\fr{1}{\alpha(\abs{q^2})}=\fr{1}{\alpha(\mu_a^2)}+\fr{11n-2f}{12\pi}\ln(\fr{\abs{q^2}}{\mu_a^2})}
+Plug in $\abs{q^2}=\mu_b$ into \eref{n1283zor},
+\e{\lab{lckan}\fr{1}{\alpha(\mu_b^2)}=\fr{1}{\alpha(\mu_a^2)}+\fr{11n-2f}{12\pi}\ln(\fr{\mu_b^2}{\mu_a^2})}
+Solve \eref{lckan} for $\fr{1}{\alpha(\mu_a^2)}$.
+\e{\lab{n168ztn}\fr{1}{\alpha(\mu_a^2)}=\fr{1}{\alpha(\mu_b^2)}-\fr{11n-2f}{12\pi}\ln(\fr{\mu_b^2}{\mu_a^2})}
+Plug \eref{n168ztn} into \eref{n1283zor},
+\e{\fr{1}{\alpha(\abs{q^2})}&=\fr{1}{\alpha(\mu_b^2)}-\fr{11n-2f}{12\pi}\ln(\fr{\mu_b^2}{\mu_a^2})+\fr{11n-2f}{12\pi}\ln(\fr{\abs{q^2}}{\mu_a^2})\\
+&= \fr{1}{\alpha(\mu_b^2)} + \fr{11n-2f}{12\pi} \ln(\fr{\abs{q^2}}{\mu_a^2} \fr{\mu_a^2}{\mu_b^2})\\
+&=\lab{n12vbfh} \boxed{\fr{1}{\alpha(\mu_b^2)} + \fr{11n-2f}{12\pi} \ln(\fr{\abs{q^2}}{\mu_b^2})}}
+\eref{n12vbfh} is equal to \eref{n1283zor} except at some new scale $\mu=\mu_b$. This means one solution for $\mu=\mu_a$ is equivalent to a solution at another scale $\mu=\mu_b$. \fbox{$\mu$ is arbitrary.}
 \section*{Problem 6.}
 \section*{Problem 7.}
 \end{document}
