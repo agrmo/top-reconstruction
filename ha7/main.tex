@@ -3,6 +3,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{geometry}
+\usepackage{cancel}
 \usepackage{graphicx}
 \usepackage{hyperref}
 %% \usepackage{floatrow}
@@ -158,6 +159,27 @@ The maximum value for the product $E_1E_3$ is $E_1=20\un{GeV}$ and then necessar
 \e{\boxed{\theta_\rom{min}=\arccos(1-\fr{1\un{GeV}^2}{(29\un{GeV})(14.67\un{GeV})})=4.73^\circ}}
 Using the kinematics of deep inelastic $e^{-}p$ scattering and the given constraints, we find the possible values of the electron scattering angle $\theta$.
 \section*{Problem 3.}
+This is elastic $e^{-}p$ scattering. The proton propagates from $p_2$ to $p_4$, and the electron propagates from $p_1$ to $p_3$, and the photon travels from the electron to proton with $q$. 
+\e{p_4=q+p_2\quad p_2q==\fr{1}{2}q^2 \quad p_2^2=(m_p c)^2}
+The spin averaged amplitude is
+\e{\langle \abs{M}^2 \rangle = \fr{g_e^4}{q^4}L_e^{\mu\nu}L_{\mu\nu p}}
+where
+\e{L_e^{\mu\nu}=2(p_1^\mu p_3^\nu+p_1^\nu p_3^\mu+g^{\mu\nu}((m_p c^2)^2-(p_1p_3)))}
+and by assuming the proton is point-like,
+\e{L^{\mu\nu}_p&=\tr(\gamma^\mu (\bcancel{p}_3+m_p c)\gamma^\nu(\bcancel{p}_4+m_pc))\\
+&=4(p^\mu_2p_4^\nu+p_4^\mu p_2^\nu+g^{\mu\nu}((m_pc)^2-(p_2p_4)))\\
+&= 2(p_2^\mu(q^\mu-p^\nu)+p_2^\nu(q^\mu+p^\mu)+g^{\mu\nu}((m_p c)^2-p_2(qp_2)))\\
+&= 2(p_2^\mu q^\nu + p_2^\nu q^\mu +2p_2^\mu q^\nu + g^{\mu\nu}((m_p c)^2+\fr{1}{2}q^2 - (m_p c)^2))\\
+&=\lab{nzlur1a} 2(p_2^\mu q^\nu+p_2^\nu) + 4p_2^\mu p_2^\nu + g^{\mu\nu}q^2}
+\eref{nzlur1a} is derived from the spin averaged amplitude and assuming the proton is point-like. If the proton is not assumed to be point-like, the spin averaged amplitude is
+\e{\langle \abs{M}^2 \rangle = \fr{g_e^4}{q^4}L_e^{\mu\nu}K_{\mu\nu p}}
+where $K^{\mu \nu}$ is an unknown quantity. By Griffith's line of arguments, we arrive this form of $K^{\mu\nu}$ in (8.18),
+\e{K^{\mu\nu}=K_1(-g^{\mu\nu}+\fr{q^\mu q^\nu}{q^2})+\fr{K_2}{(m_p c)^2}(p_2^\mu + \fr{1}{2}q^\mu)(p_2^\nu + \fr{1}{2}q^\nu)}
+By comparison, we find that
+\e{\boxed{K_1=-q^2 \quad K_2=4(m_p c)^2}}
+and 
+\e{K_1=-q^2 G_M^2 = -q^2 \Rightarrow \boxed{G_M^2=1}}
+\e{K_2=(2m_p c)^2 \fr{G_E^2-\fr{q^2}{(2m_p c)^2}G_M^2}{1-\fr{q^2}{(2m_p c)^2}}\Rightarrow \boxed{G_E^2=1}}
 \section*{Problem 4.}
 \section*{Problem 5.}
 \section*{Problem 6.}
