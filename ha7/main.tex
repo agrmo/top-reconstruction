@@ -41,7 +41,7 @@ Inelasticity is defined as
 which results in
 \e{\lab{8nas}y=\fr{m_p(E_1-E_3)}{m_p E_1}=\boxed{1-\fr{E_3}{E_1}}}
 Next, find the four-momentum transfer $Q^2$.
-\e{\lab{1283nz}Q^2=-q^2 = -(p_1-p_3)^2=-p_1^2-p_3^2+2p_1p_3=-m_e^2-m_e^2+2E_1E_3(1-\cos(\theta))=\boxed{4E_1E_3\sin^2(\fr{1}{2}\theta)}}
+\e{\lab{1283nz}Q^2=-q^2 = -(p_1-p_3)^2=-p_1^2-p_3^2+2p_1p_3=-m_e^2-m_e^2+2E_1E_3(1-\cos(\theta))=\boxed{4E_1E_3\sin^2(\fr{\theta}{2})}}
 Next,
 \e{qp_2 = (p_1-p_3)p_2 = m_p(E_1-E_3)}
 \e{q=p_4-p_2}
@@ -54,12 +54,12 @@ Use \eref{n1823},
 Using the kinematics of elastic $e^{-}p$ scattering we find the answers.
 \section*{Problem 1.b.}
 Find the first equation. Use \eref{1283nz} and multiply it by $\fr{y}{y}$,
-\e{\lab{m1238n}\sin^2(\fr{1}{2}\theta)=\fr{2m_p E_1 y}{4 E_1 E_3}=\fr{2m_p E_1}{4E_1 E_3}\fr{y^2}{Q^2}2m_p E_1 = \boxed{\fr{E_1}{E_3}\fr{m_p^2}{Q^2}y^2}}
+\e{\lab{m1238n}\sin^2(\fr{\theta}{2})=\fr{2m_p E_1 y}{4 E_1 E_3}=\fr{2m_p E_1}{4E_1 E_3}\fr{y^2}{Q^2}2m_p E_1 = \boxed{\fr{E_1}{E_3}\fr{m_p^2}{Q^2}y^2}}
 Next find the second equation. Use \eref{m1238n},
-\e{\fr{E_3}{E_1}\sin^2(\fr{1}{2}\theta)&=\fr{m_p^2}{Q^2}y^2\\
--\fr{E_3}{E_1}\sin^2(\fr{1}{2}\theta)&=-\fr{m_p^2}{Q^2}y^2\\
-\fr{E_3}{E_1}-\fr{E_3}{E_1}\sin^2(\fr{1}{2}\theta)&=\fr{E_3}{E_1}-1+1-\fr{m_p^2}{Q^2}y^2\\
-\lab{n182x3}\Aboxed{\fr{E_3}{E_1}\cos^2(\fr{1}{2}\theta)&=1-y-\fr{m_p^2}{Q^2}y^2}}
+\e{\fr{E_3}{E_1}\sin^2(\fr{\theta}{2})&=\fr{m_p^2}{Q^2}y^2\\
+-\fr{E_3}{E_1}\sin^2(\fr{\theta}{2})&=-\fr{m_p^2}{Q^2}y^2\\
+\fr{E_3}{E_1}-\fr{E_3}{E_1}\sin^2(\fr{\theta}{2})&=\fr{E_3}{E_1}-1+1-\fr{m_p^2}{Q^2}y^2\\
+\lab{n182x3}\Aboxed{\fr{E_3}{E_1}\cos^2(\fr{\theta}{2})&=1-y-\fr{m_p^2}{Q^2}y^2}}
 \section*{Problem 1.c.}
 Solve for the first equation using \eref{1283nz} and \eref{n19283n},
 \e{Q^2&=2E_1E_3(1-\cos(\theta))=2m_p(E_1-E_3)\\
@@ -82,20 +82,20 @@ Finally
 \e{\lab{n1283n}\boxed{\fr{d\sigma}{dQ^2}=\fr{\pi}{E_3^2} \fr{d\sigma}{d\Omega}}}
 \section*{Problem 1.e.}
 The Rosenbluth formula is
-\e{\fr{d}{d\Omega}\sigma &= \fr{\alpha^2}{4E_1^2\sin^4(\fr{1}{2}\theta)}\fr{E_3}{E_1}(\fr{G_E^2+\tau G_M^2}{1+\tau}\cos^2(\fr{1}{2}\theta)+2\tau G_M^2 \sin^2(\fr{1}{2}\theta))\\
-&= \fr{\alpha^2}{4E_1^2\sin^4(\fr{1}{2}\theta)}( \fr{E_3}{E_1} \fr{G_E^2+\tau G_M^2}{1+\tau}\cos^2(\fr{1}{2}\theta)+ \fr{E_3}{E_1} 2\tau G_M^2 \sin^2(\fr{1}{2}\theta))\\
+\e{\fr{d}{d\Omega}\sigma &= \fr{\alpha^2}{4E_1^2\sin^4(\fr{\theta}{2})}\fr{E_3}{E_1}(\fr{G_E^2+\tau G_M^2}{1+\tau}\cos^2(\fr{\theta}{2})+2\tau G_M^2 \sin^2(\fr{\theta}{2}))\\
+&= \fr{\alpha^2}{4E_1^2\sin^4(\fr{\theta}{2})}( \fr{E_3}{E_1} \fr{G_E^2+\tau G_M^2}{1+\tau}\cos^2(\fr{\theta}{2})+ \fr{E_3}{E_1} 2\tau G_M^2 \sin^2(\fr{\theta}{2}))\\
 &= A(B+C)}
 Thankfully, this equation can be manipulated in terms of $A(B+C)$. Simplify the $B$ term using \eref{n182x3}
-\e{B&=\fr{E_3}{E_1}\fr{G_E^2+\tau G_M^2}{1+\tau}\cos^2(\fr{1}{2}\theta)\\
+\e{B&=\fr{E_3}{E_1}\fr{G_E^2+\tau G_M^2}{1+\tau}\cos^2(\fr{\theta}{2})\\
 &=\fr{G_E^2+\tau G_M^2}{1+\tau}(1-y-\fr{m_p^2}{Q^2}y^2)}
 which is the desired form for the $B$ term. Simplify the $C$ term using \eref{n1283n}, \eref{n19283n}, and \eref{1283nz}.
-\e{C&=2\tau G_M^2 \sin^2(\fr{1}{2}\theta)\\
-&= \fr{E_3}{E_1}\fr{2Q^2}{4m_p^2}G_M^2 \sin^2(\fr{1}{2}\theta)\\
-&= \fr{E_3}{m_p}y G_M^2 \sin^2(\fr{1}{2}\theta) \\
+\e{C&=2\tau G_M^2 \sin^2(\fr{\theta}{2})\\
+&= \fr{E_3}{E_1}\fr{2Q^2}{4m_p^2}G_M^2 \sin^2(\fr{\theta}{2})\\
+&= \fr{E_3}{m_p}y G_M^2 \sin^2(\fr{\theta}{2}) \\
 &= \fr{E_3 y G_M^2}{2 m_p}(1-\cos(\theta))\\
 &= \fr{1}{2}y^2 G_M^2}
 which is the desired form for the $C$ term. Simplify the $A$ term.
-\e{A&=\fr{\alpha^2}{4E_1^2\sin^4(\fr{1}{2}\theta)}\\
+\e{A&=\fr{\alpha^2}{4E_1^2\sin^4(\fr{\theta}{2})}\\
 &= \fr{\alpha^2}{E_1^2 (1-\cos(\theta))^2}\\
 &= \fr{4\alpha^2 E_3^2}{Q^4}}
 which is the desired form for the $A$ term. Finally use \eref{n1283n} to rewrite the cross section differential in $Q^2$ instead of $\Omega$, which simply introduces a factor of $\fr{\pi}{E_3^2}$.
@@ -105,24 +105,24 @@ This is the Lorentz-invariant form of the Rosenbluth formula.
 \section*{Problem 2.a.}
 Solve for the first equation.
 \e{\fr{d\sigma}{dQ^2} = \fr{d \sigma}{d\Omega} \abs{\fr{d\Omega}{dQ^2}}=\fr{d\sigma}{d\Omega}\fr{2\pi \sin(\theta)d\theta}{2E_1E_3 \sin(\theta)d\theta}=\fr{\pi}{E_1E_3}\fr{d\sigma}{d\Omega}}
-\e{\fr{d}{dE_3}\fr{d}{d\Omega}\sigma&=\fr{E_1E_3}{\pi}\fr{d}{dE_3}\fr{d}{dQ^2}\sigma
+\e{\fr{d}{dE_3}\fr{d}{d\Omega}\sigma&=\boxed{\fr{E_1E_3}{\pi}\fr{d}{dE_3}\fr{d}{dQ^2}\sigma}
 \intertext{Next, solve for the second equation.}\\
 &=\lab{n1823bdfpz}\fr{E_1E_3}{\pi}\fr{d x}{dE_3}\fr{d}{dx}\fr{d}{dQ^2}\sigma}
 The derivative $\fr{d}{dE_3}x$ is needed.
-\e{\fr{d}{dE_3}x&=\fr{d}{d E_3}\fr{Q^2}{2m_p(E_1-E_3)}=\fr{Q^2}{2m_p(E_1-E_3)^2}=\fr{2m_p Q^4}{Q^2 4m_p^2 (E_1-E_3)^2}=\fr{2m_p x^2}{Q^2}}
-which can be plugged back into \eref{n1823bdfpz}. The final result is
-\e{\lab{n1827bask}\boxed{\fr{d}{dE_3}\fr{d}{d\Omega}\sigma=\fr{E_1E_3}{\pi}\fr{d}{dE_3}\fr{d}{dQ^2}\sigma=\fr{E_1E_3}{\pi} \fr{2m_p x^2}{Q^2} \fr{d}{dx}\fr{d}{dQ^2}\sigma}}
+\e{\lab{n1823bzba}\fr{d}{dE_3}x&=\fr{d}{d E_3}\fr{Q^2}{2m_p(E_1-E_3)}=\fr{Q^2}{2m_p(E_1-E_3)^2}=\fr{2m_p Q^4}{Q^2 4m_p^2 (E_1-E_3)^2}=\fr{2m_p x^2}{Q^2}}
+Plug \eref{n1823bzba} back into \eref{n1823bdfpz}.
+\e{\lab{n1827bask}\boxed{\fr{d}{dE_3}\fr{d}{d\Omega}\sigma=\fr{E_1E_3}{\pi} \fr{2m_p x^2}{Q^2} \fr{d}{dx}\fr{d}{dQ^2}\sigma}}
 \section*{Problem 2.b.}
 Solve for the first equation using \eref{8nas},
 \e{\fr{2m_p x^2}{Q^2}\fr{y^2}{2}&=\fr{m_p}{Q^2}y^2 x^2 = \fr{m_p}{Q^2}y^2 \fr{Q^4}{4m_p^2(E_1-E_3)^2}\\
 &= \fr{Q^2}{4 m_p (E_1-E_3)^2}y^2 = \fr{Q^2}{4 m_p (E_1-E_3)^2} \fr{(E_1-E_3)^2}{E_1^2} = \fr{Q^2}{4m_p E_1^2}\\
-&=\lab{n1hr83n} \fr{1}{4m_p E_1^2} 4E_1 E_3 \sin^2(\fr{1}{2}\theta) = \boxed{\fr{1}{m_p} \fr{E_3}{E_1} \sin^2(\fr{1}{2}\theta)}}
+&=\lab{n1hr83n} \fr{1}{4m_p E_1^2} 4E_1 E_3 \sin^2(\fr{\theta}{2}) = \boxed{\fr{1}{m_p} \fr{E_3}{E_1} \sin^2(\fr{\theta}{2})}}
 Solve for the second equation using \eref{n1hr83n} and \eref{8nas},
-\e{\fr{m_p^2 x^2}{y^2}&=\fr{E_3}{E_1}\sin^2(\fr{1}{2}\theta)\\
-\fr{m_p^2 x^2}{y^2}&=\fr{E_3}{E_1}(1-\cos^2(\fr{1}{2}\theta))\\
-&= 1-1+\fr{E_3}{E_1}-\fr{E_3}{E_1}\cos^2(\fr{1}{2}\theta)\\
-&= 1-y-\fr{E_3}{E_1}\cos^2(\fr{1}{2}\theta)\\
-\Aboxed{1-y-\fr{m_p^2 x^2}{y^2}&=\fr{E_3}{E_1}\cos^2(\fr{1}{2}\theta)}}
+\e{\fr{m_p^2 x^2}{Q^2}y^2&=\fr{E_3}{E_1}\sin^2(\fr{\theta}{2})\\
+&=\fr{E_3}{E_1}(1-\cos^2(\fr{\theta}{2}))\\
+&= 1-1+\fr{E_3}{E_1}-\fr{E_3}{E_1}\cos^2(\fr{\theta}{2})\\
+&= 1-y-\fr{E_3}{E_1}\cos^2(\fr{\theta}{2})\\
+\Aboxed{1-y-\fr{m_p^2 x^2 y^2}{Q^2}&=\fr{E_3}{E_1}\cos^2(\fr{\theta}{2})}}
 \section*{Problem 2.c.}
 Bjorken $x$ is
 \e{\lab{xn1283n}x=\fr{Q^2}{2m_p(E_1-E_3)}}
@@ -131,34 +131,34 @@ Start with the cross section differential in $E_3$ and $\Omega$, write it as a d
 \intertext{Plug in $\fr{d}{dx}\fr{d}{dQ^2}\sigma$ which is given in the assignment and also Thomson Eq. 8.11.}
 &= \fr{E_1 E_3 2 m_p x^2}{\pi Q^2}\fr{4\pi \alpha^2}{Q^4}((1-y-\fr{m_p^2 y^2}{Q^2})\fr{F_2}{x}+y^2 F_1)
 \intertext{Simplify, distribute $x^2$, and use \eref{n182x3}.}
-&=\fr{E_1 E_3 8 m_p \alpha^2}{Q^6}(\fr{E_3 x}{E_1}\cos^2(\fr{1}{2}\theta)F_2+x^2 y^2 F_1)
+&=\fr{E_1 E_3 8 m_p \alpha^2}{Q^6}(\fr{E_3 x}{E_1}\cos^2(\fr{\theta}{2})F_2+x^2 y^2 F_1)
 \intertext{Distribute $m_p$, $Q^2$.}
-&= \fr{8 E_1 E_3 \alpha^2}{Q^4}(\fr{E_3 x m_p}{E_1 Q^2}\cos^2(\fr{1}{2}\theta)F_2+\fr{x^2y^2m_p}{Q^2}F_1)
+&= \fr{8 E_1 E_3 \alpha^2}{Q^4}(\fr{E_3 x m_p}{E_1 Q^2}\cos^2(\fr{\theta}{2})F_2+\fr{x^2y^2m_p}{Q^2}F_1)
 \intertext{Use \eref{n1hr83n}.}
-&= \fr{8 E_1 E_3 \alpha^2}{Q^4}(\fr{E_3 x m_p}{E_1 Q^2}\cos^2(\fr{1}{2}\theta)F_2+\fr{E_3}{E_1 m_p}\sin^2(\fr{1}{2}\theta)F_1)
+&= \fr{8 E_1 E_3 \alpha^2}{Q^4}(\fr{E_3 x m_p}{E_1 Q^2}\cos^2(\fr{\theta}{2})F_2+\fr{E_3}{E_1 m_p}\sin^2(\fr{\theta}{2})F_1)
 \intertext{Simplify, distribute 2.}
-&=\lab{jn1273b} \fr{4 E_3^2 \alpha^2}{Q^4}(\fr{2 x m_p}{Q^2}\cos^2(\fr{1}{2}\theta)F_2+\fr{2}{m_p}\sin^2(\fr{1}{2}\theta)F_1)}
-\eref{jn1273b} is in the form $A(B+C)$ and $C$ is already in the desired form. Use \eref{1283nz} on $A$.
-\e{\lab{n1823nx}\fr{4E_3^2 \alpha^2}{Q^4}=\fr{4 E_3^2 \alpha^2}{4^2 E_1^2 E_3^2 \sin^4(\fr{1}{2}\theta)} = \fr{\alpha^2}{4 E_1^2 \sin^2(\fr{1}{2}\theta)}}
-Use \eref{xn1283n} on $B$.
+&=\lab{jn1273b} \fr{4 E_3^2 \alpha^2}{Q^4}(\fr{2 x m_p}{Q^2}\cos^2(\fr{\theta}{2})F_2+\fr{2}{m_p}\sin^2(\fr{\theta}{2})F_1)}
+\eref{jn1273b} is in the form $A(B+C)$ and $C$ is already in the desired form. Use \eref{1283nz} on $A$ which is indeed valid for both elastic and inelastic scattering.
+\e{\lab{n1823nx}\fr{4E_3^2 \alpha^2}{Q^4}=\fr{4 E_3^2 \alpha^2}{4^2 E_1^2 E_3^2 \sin^4(\fr{\theta}{2})} = \fr{\alpha^2}{4 E_1^2 \sin^4(\fr{\theta}{2})}}
+This is the desired form of the $A$ term. Use \eref{xn1283n} on $B$.
 \e{\lab{n127ba}\fr{2xm_p}{Q^2}=\fr{1}{E_1-E_3}=\fr{1}{\nu}}
-Plug \eref{n1823nx} and \eref{n127ba} into \eref{jn1273b}.
-\e{\boxed{\fr{d}{d E_3}\fr{d}{d\Omega}\sigma = \fr{\alpha^2}{4 E_1^2 \sin^2(\fr{1}{2}\theta)}(\fr{F_2}{\nu}\cos^2(\fr{1}{2}\theta)F_2+\fr{2}{m_p}\sin^2(\fr{1}{2}\theta)F_1)}}
-Using the kinematic variables for inelastic $e^{-}p\rightarrow e^{-}X$ scattering and the differential cross section $\fr{d}{dx}\fr{d}{dQ^2}\sigma$, we find the differential cross section $\fr{d}{dE_3}\fr{d}{d\Omega}\sigma$ in terms of $E_1$, $\theta$, and the structure functions $F_1$, $F_2$.
+This is the desired form of the $B$ term. Plug \eref{n1823nx} and \eref{n127ba} into \eref{jn1273b}.
+\e{\boxed{\fr{d}{d E_3}\fr{d}{d\Omega}\sigma = \fr{\alpha^2}{4 E_1^2 \sin^4(\fr{\theta}{2})}(\fr{F_2}{\nu}\cos^2(\fr{\theta}{2})+\fr{2F_1}{m_p}\sin^2(\fr{\theta}{2}))}}
+Using the kinematic variables for inelastic $e^{-}p\rightarrow e^{-}X$ scattering and the differential cross section $\fr{d}{dx}\fr{d}{dQ^2}\sigma$ give in Thomson, we find the differential cross section $\fr{d}{dE_3}\fr{d}{d\Omega}\sigma$ in terms of $E_1$, $\theta$, and the structure functions $F_1$, $F_2$.
 \section*{Problem 2.d.}
 The two essential equations are \eref{1283nz} and \eref{xn1283n}. We are given
 \e{x=0.2\quad Q^2=2\un{GeV}^2 \quad E_3<E_1 \quad E_1<20\un{GeV}}
 and asked to find the possible values of $\theta$.
 \e{E_1-E_3=\fr{2\un{GeV}^2}{2(0.2)m_p}=5.33\un{GeV}}
 The difference between $E_1$ and $E_3$ is constant. The electron necessarily loses 5.33 GeV. Next,
-\e{\fr{2\un{GeV}^2}{4E_1E_3}&=\sin^2(\fr{1}{2}\theta)=\fr{1}{2}(1-\cos(\theta))=\fr{1}{2}-\fr{1}{2}\cos(\theta)\\
+\e{\fr{2\un{GeV}^2}{4E_1E_3}&=\sin^2(\fr{\theta}{2})=\fr{1}{2}(1-\cos(\theta))=\fr{1}{2}-\fr{1}{2}\cos(\theta)\\
 \cos(\theta)&=1-\fr{4\un{GeV}^2}{4E_1E_3}\\
 \theta&=\arccos(1-\fr{1\un{GeV}^2}{E_1E_3})}
-This is the scattering angle $\theta$ given the kinematic constraints on $E_1$, $E_3$. $\arccos(x)$ is maximized as $x\rightarrow -1$, and minimized as $x\rightarrow 1$. $\arccos(1-x)$ is maximized as $x\rightarrow -2$, and minimized as $x\rightarrow 0$. $\arccos(1-\fr{1}{x})$ is maximized as $x\rightarrow0$, and minimized as $x\rightarrow \infty$. Then $\theta$ is maximized as $E_1E_3 \rightarrow 0$, and minimized as $E_1E_3\rightarrow \infty$. The lowest value for the product $E_1E_3$ is simply \fbox{$E_3=2\un{GeV}$} and then necessarily \fbox{$E_1=2+5.33\un{GeV}=7.33\un{GeV}$}. This results in the angle
-\e{\boxed{\theta_\rom{max}=\arccos(1-\fr{1\un{GeV}^2}{(2\un{GeV})(7.33\un{GeV})})=21.3^\circ}}
+This is the scattering angle $\theta$. We could plot this given the kinematic constraints on $E_1$, $E_3$ but the intuition is adequate: $\arccos(x)$ is maximized as $x\rightarrow -1$, and minimized as $x\rightarrow 1$. $\arccos(1-x)$ is maximized as $x\rightarrow 2$, and minimized as $x\rightarrow 0$. $\arccos(1-\fr{1}{x})$ is maximized as $x\rightarrow0$, and minimized as $x\rightarrow \infty$. Then $\theta$ is maximized as $E_1E_3 \rightarrow 0$, and minimized as $E_1E_3\rightarrow \infty$. The lowest value for the product $E_1E_3$ is simply \fbox{$E_3=2\un{GeV}$} and then necessarily \fbox{$E_1=2+5.33\un{GeV}=7.33\un{GeV}$}. This results in the angle
+\e{\boxed{\theta_\rom{max}=\arccos(1-\fr{1\un{GeV}^2}{(7.33\un{GeV})(2\un{GeV})})=21.3^\circ}}
 The maximum value for the product $E_1E_3$ is $E_1=20\un{GeV}$ and then necessarily $E_3=20\un{GeV}-5.33\un{GeV}=14.67\un{GeV}$.
-\e{\boxed{\theta_\rom{min}=\arccos(1-\fr{1\un{GeV}^2}{(29\un{GeV})(14.67\un{GeV})})=4.73^\circ}}
-Using the kinematics of deep inelastic $e^{-}p$ scattering and the given constraints, we find the possible values of the electron scattering angle $\theta$.
+\e{\boxed{\theta_\rom{min}=\arccos(1-\fr{1\un{GeV}^2}{(20\un{GeV})(14.67\un{GeV})})=4.73^\circ}}
+Using the kinematics of deep inelastic $e^{-}p$ scattering and the given constraints, we find the possible range of the electron scattering angle $\theta$.
 \section*{Problem 3.}
 This is elastic $e^{-}p$ scattering. The proton propagates from $p_2$ to $p_4$, and the electron propagates from $p_1$ to $p_3$, and the photon travels from the electron to proton with $q$. 
 \e{p_4=q+p_2\quad p_2q==\fr{1}{2}q^2 \quad p_2^2=(m_p c)^2}
@@ -174,7 +174,7 @@ and by assuming the proton is point-like,
 &=\lab{nzlur1a} 2(p_2^\mu q^\nu+p_2^\nu) + 4p_2^\mu p_2^\nu + g^{\mu\nu}q^2}
 \eref{nzlur1a} is derived from the spin averaged amplitude and assuming the proton is point-like. If the proton is not assumed to be point-like, the spin averaged amplitude is
 \e{\langle \abs{M}^2 \rangle = \fr{g_e^4}{q^4}L_e^{\mu\nu}K_{\mu\nu p}}
-where $K^{\mu \nu}$ is an unknown quantity. By Griffith's line of arguments, we arrive this form of $K^{\mu\nu}$ in (8.18),
+where $K^{\mu \nu}$ is an unknown quantity. By Griffiths' line of arguments, we arrive this form of $K^{\mu\nu}$ in (8.18),
 \e{K^{\mu\nu}=K_1(-g^{\mu\nu}+\fr{q^\mu q^\nu}{q^2})+\fr{K_2}{(m_p c)^2}(p_2^\mu + \fr{1}{2}q^\mu)(p_2^\nu + \fr{1}{2}q^\nu)}
 By comparison, we find that
 \e{\boxed{K_1=-q^2 \quad K_2=4(m_p c)^2}}
@@ -183,9 +183,9 @@ and
 \e{K_2=(2m_p c)^2 \fr{G_E^2-\fr{q^2}{(2m_p c)^2}G_M^2}{1-\fr{q^2}{(2m_p c)^2}}\Rightarrow \boxed{G_E^2=1}}
 \section*{Problem 4.a.}
 The electromagnetic coupling is given in Griffiths 8.92,
-\e{\lab{vnuqbr}\alpha(\abs{q^2})=\fr{\alpha(0)}{1-\fr{\alpha(0)}{4\pi}\ln(\fr{\abs{q^2}{(mc)^2}})}}
+\e{\lab{vnuqbr}\alpha(\abs{q^2})=\fr{\alpha(0)}{1-\fr{\alpha(0)}{4\pi}\ln(\fr{\abs{q^2}}{(mc)^2})}}
 $\alpha$ diverges at 
-\e{\ln(\fr{\abs{q^2}{(mc)^2}})&=\fr{3\pi}{\alpha(0)}=411\pi\\
+\e{\ln(\fr{\abs{q^2}}{(mc)^2})&=\fr{3\pi}{\alpha(0)}=411\pi\\
 \abs{q^2}&=(mc)^2 e^{411\pi}\\
 (\abs{q^2}c^2)^{\fr{1}{2}}&=(m^2 c^4 e^{411 \pi})^{\fr{1}{2}}\\
 &= \boxed{1.2\tun{280}{MeV}}}
@@ -200,43 +200,43 @@ Use \eref{vnuqbr}, and solve for the momentum transfer $\abs{q^2}$ required for 
 (\abs{q^2}c^2)^{\fr{1}{2}}&= (e^{\fr{3\pi(1.01-1)}{1.01\alpha(0)}} (0.511\un{MeV})^2)^{\fr{1}{2}} = \boxed{305\un{MeV}}}
 In QED, the momentum transfer required to cause a 1\% deviation in the electromagnetic coupling $\alpha$ is 305 MeV. This is \fbox{easily possible in experiment}.
 \section*{Problem 5.}
-The strong interaction coupling constant $\alpha$ is given by Griffiths 8.93,
-\e{\lab{n1283b}\alpha(\abs{q^2})=\fr{\alpha(\mu^2)}{1+\fr{\alpha(\mu^2)}{12\pi}(11n-4f)\ln(\fr{\abs{q^2}}{\mu^2})}}
-\e{\lab{nc71z}\fr{1}{\alpha(\abs{q^2})}=\fr{1}{\alpha(\mu^2)}+\fr{11n-2f}{12\pi}\ln(\fr{\abs{q^2}}{\mu^2})}
+The strong interaction coupling constant $\alpha_s$ is given by Griffiths 8.93,
+\e{\lab{n1283b}\alpha_s(\abs{q^2})=\fr{\alpha_s(\mu^2)}{1+\fr{\alpha_s(\mu^2)}{12\pi}(11n-2f)\ln(\fr{\abs{q^2}}{\mu^2})}}
+\e{\lab{nc71z}\fr{1}{\alpha_s(\abs{q^2})}=\fr{1}{\alpha_s(\mu^2)}+\fr{11n-2f}{12\pi}\ln(\fr{\abs{q^2}}{\mu^2})}
 Assume that a solution exists for \eref{nc71z} at some $\mu=\mu_a$,
-\e{\lab{n1283zor}\fr{1}{\alpha(\abs{q^2})}=\fr{1}{\alpha(\mu_a^2)}+\fr{11n-2f}{12\pi}\ln(\fr{\abs{q^2}}{\mu_a^2})}
+\e{\lab{n1283zor}\fr{1}{\alpha_s(\abs{q^2})}=\fr{1}{\alpha_s(\mu_a^2)}+\fr{11n-2f}{12\pi}\ln(\fr{\abs{q^2}}{\mu_a^2})}
 Plug in $\abs{q^2}=\mu_b$ into \eref{n1283zor},
-\e{\lab{lckan}\fr{1}{\alpha(\mu_b^2)}=\fr{1}{\alpha(\mu_a^2)}+\fr{11n-2f}{12\pi}\ln(\fr{\mu_b^2}{\mu_a^2})}
-Solve \eref{lckan} for $\fr{1}{\alpha(\mu_a^2)}$.
-\e{\lab{n168ztn}\fr{1}{\alpha(\mu_a^2)}=\fr{1}{\alpha(\mu_b^2)}-\fr{11n-2f}{12\pi}\ln(\fr{\mu_b^2}{\mu_a^2})}
+\e{\lab{lckan}\fr{1}{\alpha_s(\mu_b^2)}=\fr{1}{\alpha_s(\mu_a^2)}+\fr{11n-2f}{12\pi}\ln(\fr{\mu_b^2}{\mu_a^2})}
+Solve \eref{lckan} for $\fr{1}{\alpha_s(\mu_a^2)}$.
+\e{\lab{n168ztn}\fr{1}{\alpha_s(\mu_a^2)}=\fr{1}{\alpha_s(\mu_b^2)}-\fr{11n-2f}{12\pi}\ln(\fr{\mu_b^2}{\mu_a^2})}
 Plug \eref{n168ztn} into \eref{n1283zor},
-\e{\fr{1}{\alpha(\abs{q^2})}&=\fr{1}{\alpha(\mu_b^2)}-\fr{11n-2f}{12\pi}\ln(\fr{\mu_b^2}{\mu_a^2})+\fr{11n-2f}{12\pi}\ln(\fr{\abs{q^2}}{\mu_a^2})\\
-&= \fr{1}{\alpha(\mu_b^2)} + \fr{11n-2f}{12\pi} \ln(\fr{\abs{q^2}}{\mu_a^2} \fr{\mu_a^2}{\mu_b^2})\\
-&=\lab{n12vbfh} \boxed{\fr{1}{\alpha(\mu_b^2)} + \fr{11n-2f}{12\pi} \ln(\fr{\abs{q^2}}{\mu_b^2})}}
+\e{\fr{1}{\alpha_s(\abs{q^2})}&=\fr{1}{\alpha_s(\mu_b^2)}-\fr{11n-2f}{12\pi}\ln(\fr{\mu_b^2}{\mu_a^2})+\fr{11n-2f}{12\pi}\ln(\fr{\abs{q^2}}{\mu_a^2})\\
+&= \fr{1}{\alpha_s(\mu_b^2)} + \fr{11n-2f}{12\pi} \ln(\fr{\abs{q^2}}{\mu_a^2} \fr{\mu_a^2}{\mu_b^2})\\
+&=\lab{n12vbfh} \boxed{\fr{1}{\alpha_s(\mu_b^2)} + \fr{11n-2f}{12\pi} \ln(\fr{\abs{q^2}}{\mu_b^2})}}
 \eref{n12vbfh} is equal to \eref{n1283zor} except at some new scale $\mu=\mu_b$. This means one solution for $\mu=\mu_a$ is equivalent to a solution at another scale $\mu=\mu_b$. \fbox{$\mu$ is arbitrary.}
 \section*{Problem 6.}
 $\ln(\Lambda^2)$ is given in Griffiths (8.94),
-\e{\lab{bn1823b}\ln(\Lambda^2)=\ln(\mu^2)-\fr{12\pi}{\alpha(\mu^2) (11n-2f)}}
-Use \eref{bn1823b} and solve for $\alpha(\mu^2)$.
-\e{\ln(\fr{\mu^2}{\Lambda^2})&=\fr{12\pi}{\alpha(\mu^2)(11n-2f)}\\
-\lab{n1h283n}\alpha(\mu^2)&=\fr{12\pi}{11n-2f}\fr{1}{\ln(\fr{\mu^2}{\Lambda^2})}}
-The strong coupling constant $\alpha(\abs{q^2})$ is \eref{n1283b} and its inverse $\fr{1}{\alpha(\abs{q^2})}$ is \eref{nc71z}. Plug in \eref{n1h283n} into \eref{nc71z}.
-\e{\fr{1}{\alpha(\abs{q^2})}&=\fr{1}{\alpha(\mu^2)}+\fr{11n-2f}{12\pi}\ln(\fr{\abs{q^2}}{\mu^2})\\
+\e{\lab{bn1823b}\ln(\Lambda^2)=\ln(\mu^2)-\fr{12\pi}{\alpha_s(\mu^2) (11n-2f)}}
+Use \eref{bn1823b} and solve for $\alpha_s(\mu^2)$.
+\e{\ln(\fr{\mu^2}{\Lambda^2})&=\fr{12\pi}{\alpha_s(\mu^2)(11n-2f)}\\
+\lab{n1h283n}\alpha_s(\mu^2)&=\fr{12\pi}{11n-2f}\fr{1}{\ln(\fr{\mu^2}{\Lambda^2})}}
+The strong coupling constant $\alpha_s(\abs{q^2})$ is \eref{n1283b} and its inverse $\fr{1}{\alpha_s(\abs{q^2})}$ is \eref{nc71z}. Plug in \eref{n1h283n} into \eref{nc71z}.
+\e{\fr{1}{\alpha_s(\abs{q^2})}&=\fr{1}{\alpha_s(\mu^2)}+\fr{11n-2f}{12\pi}\ln(\fr{\abs{q^2}}{\mu^2})\\
 &=\lab{1823b123}\fr{11n-2f}{12\pi}\ln(\fr{\mu^2}{\Lambda^2})+\fr{11n-2f}{12\pi}\ln({\abs{q^2}}{\mu^2})}
 Invert \eref{1823b123}.
-\e{\lab{nashbdzkgq}\boxed{\alpha(\abs{q^2})=\fr{12\pi}{11n-2f}\fr{1}{\ln(\fr{\abs{q^2}}{\Lambda^2})}}}
-By using the new definition $\ln(\Lambda^2)$ and plugging it into the strong coupling constant $\alpha(\abs{q^2})$, we find the strong coupling constant is now a function of $\abs{q^2}$ and $\Lambda^2$ only.
+\e{\lab{nashbdzkgq}\boxed{\alpha_s(\abs{q^2})=\fr{12\pi}{11n-2f}\fr{1}{\ln(\fr{\abs{q^2}}{\Lambda^2})}}}
+By using the new definition $\ln(\Lambda^2)$ and plugging it into the strong coupling constant $\alpha_s(\abs{q^2})$, we find the strong coupling constant is now a function of $\abs{q^2}$ and $\Lambda^2$ only.
 \section*{Problem 7.}
 The strong coupling constant is
 \e{\lab{n128al}\alpha_s(q^2)=\fr{\alpha_s(\mu^2)}{1+\fr{11N_c-2N_f}{12\pi}\alpha_s(\mu^2)\ln(\fr{q^2}{\mu^2})}}
-There are a couple ways to answer this question: 1) assuming a scale $\mu^2$, 2) ignoring the scale $\mu^2$, and 3) using the other scale $\Lambda$. This answer will show all three answers and discuss them. For answer \#1, \eref{n128al} clearly diverges at
+There are a couple ways to answer this question: 1) assuming a scale $\mu^2$, 2) ignoring the scale $\mu^2$, and 3) using the scale $\Lambda$. This answer will show all three answers and discuss them. For answer \#1, \eref{n128al} clearly diverges at
 \e{1&=-\fr{11N_c-2N_f}{12\pi}\alpha_s(\mu^2)\ln(\fr{q^2}{\mu^2})\\
 &=\fr{2N_f-11N_c}{12\pi}\alpha_s(\mu^2)\ln(\fr{q^2}{\mu^2})\\
 \fr{12\pi}{(2N_f-11N_c)\alpha_s(\mu^2)}&=\ln(\fr{q^2}{\mu^2})}
 \e{\boxed{q^2=\mu^2 e^{\fr{12\pi}{(2N_f-11N_c)\alpha_s(\mu^2)}}}}
-In this answer, $\alpha_s(q^2)$ diverges at this value of $q^2$, which depends on $\alpha_s(\mu^2)$, $\mu^2$, and $N_c$. We can estimate a value of $q$ by using data at the $Z$ peak, where $N_f=3$, $N_c=6$, $\mu^2=m_Z^2$, and $\alpha_s(\mu^2)=0.1184\pm 0.0007$ as given in Thomson. Then
+In this answer, $\alpha_s(q^2)$ diverges at this value of $q^2$, which depends on $\alpha_s(\mu^2)$, $\mu^2$, $N_f$, and $N_c$. We can estimate a value of $q$ by using data at the $Z$ peak, where $N_f=3$, $N_c=6$, $\mu^2=m_Z^2$, and $\alpha_s(\mu^2)=0.1184\pm 0.0007$ as given in Thomson. Then
 \e{q=((91.18\un{GeV})^2 e^{\fr{12\pi}{(6-33)0.1184}})^{\fr{1}{2}}=\boxed{250\un{MeV}}}
-Answer \#2 does not assume a scale $\mu^2$. Invert \eref{n128al}.
+This is indeed within the range of experimental values for $\Lambda$. Answer \#2 does not assume a scale $\mu^2$. Invert \eref{n128al}.
 \e{\fr{1}{\alpha_s(q^2)}=\fr{1}{\alpha_s(\mu^2)}+\fr{11N_c-2N_f}{12\pi}\ln(\fr{q^2}{\mu^2})}
 $\alpha_s(\mu^2)$ is the measured value of the coupling at some scale $\mu^2$, and is constant, so $\fr{1}{\alpha_s(\mu^2)}$ is also a constant. We are interested in the divergences of $\alpha_s(q^2)$ so drop this term.
 \e{\fr{1}{\alpha_s(q^2)}&=-\fr{11N_c-2N_f}{12\pi}\ln(\fr{q^2}{\mu^2})}
@@ -246,7 +246,7 @@ Invert.
 \e{\lim_{q^2\rightarrow \mu^2} \fr{1}{\ln(\fr{q^2}{\mu^2})}=\infty}
 \e{\boxed{\lim_{q^2\rightarrow \mu^2} \alpha_s(q^2)=\infty}}
 As $q^2$ approaches the scale $\mu^2$, the coupling $\alpha_s(q^2)$ diverges. This is one possible answer to the question, where $\alpha_s(\mu^2)$ is dropped. Finally for answer \#3, use \eref{nashbdzkgq} which parameterizes $\alpha_s$ in terms of $\Lambda$. 
-\e{\alpha(\abs{q^2})=\fr{12\pi}{11n-2f}\fr{1}{\ln(\fr{\abs{q^2}}{\Lambda^2})}}
+\e{\alpha_s(\abs{q^2})=\fr{12\pi}{11n-2f}\fr{1}{\ln(\fr{\abs{q^2}}{\Lambda^2})}}
 In this case, the divergence is more clear.
 \e{\ln(\fr{|q^2|}{\Lambda^2})=0}
 \e{\fr{|q^2|}{\Lambda^2}=1}
