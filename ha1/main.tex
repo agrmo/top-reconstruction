@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{times}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\geometry{top=1in,bottom=1in,left=1in,right=1in}
+
+\usepackage{graphicx}
+\usepackage{floatrow}
+\newcommand{\fig}[3]{
+\begin{figure}[H]
+\begin{center}
+\includegraphics[height=#1]{#2}
+\caption{#3}
+\label{#2}
+\end{center}
+\end{figure}}
+
+\begin{document}
+\begin{center}
+\textbf{\Large{Problem Set 1}}\\~\\
+\begin{tabular}{l l}
+Student&Agustin Romero\\
+Email&ar1@stanford.edu\\
+Instructor&Roger Blandford\\
+Assistant&Andrew Sullivan\\
+Course&PHYSICS 262\\
+Institution&Stanford University\\
+Date&\today\\
+\end{tabular}
+\end{center}
+\section*{Problem 1.}
+Time dilation is the concept that 1) clocks travelling at relative speeds tick at different rates, and 2) clocks in different gravitational potentials tick at different rates. For example, imagine the situation where two clocks are initially at $t=0$ and together in space and conduct two identical experiments, say, a chemical reaction. The two clocks start their process at $t=0$, and suppose the clock labeled ``2'' travels with its experiment at speed $v$ away from the clock labeled ``1''. An observer standing at clock 1 will measure their process occur in a time $t_1$, while observing the process travelling farther away will finish its process at time $t_2$,
+\g{t_2=\gamma t_1}
+where
+\g{\gamma=\br{1}{\qw{1-(\br{v}{c})^2}} \quad c=299792458\ein{m/s}}
+In other words, an observer at ``1'' will observe the moving process finish later. An observer watching the moving process will see that process take a longer amount of time. This is the concept of time dilation due to velocity. Clocks can also tick differently in different gravitational potentials. Neither Riemann nor Schwarzschild are born yet to derive these equations, however you do know about the gravitational constant $G$, so you may understand the following equation.
+\g{t_2=t_1\qw{1-\br{2Gm}{c r^2}}}
+where $m$ is the mass of a point-like object and $r$ is the distance from the point mass. Let $t_1$ be the time interval for a process in no gravitational potential. Similar to the previous situation, an observer in no gravitational potential will see a chemical process in a gravitatioanl potential take a longer amount of time $t_2$. This is the concept of gravitational time dilation.\\~\\
+Finally let me introduce the twin paradox. In the first situation we postulated that the object travelling at nonzero velocity will undergo a process which takes a longer amount of time. However, we now should recognize that the situation is symmetrical under replacement of ``1'' and ``2.'' Under replacement of labels we end up with the prediction that both durations will be longer than the other, and this is a paradox. This situation is more serious in the ``twin paradox'' situation: two people ``1'' and ``2'' stand next to eachother, and set their clocks to $t=0$. At $t=0$ person ``2'' travels at speed $v$ to an object a distance $d$ away and back again. Similar to the first situation, it could be claimed that both ``1'' and ``2'' expect eachother to have aged more than the other. The resolution is the following: this situation is in fact not symmetric under replacement of labels, because one person decelerates in order to return to the other. In this way only one person, the one who decelerates, must have aged less than the other.
+\section*{Problem 2.a.}
+\fig{5cm}{1.png}{Diagram.}
+\section*{Problem 2.b.}
+We can approach this problem considering a general, time dependent velocity around a circle of radius $r$.
+\g{\zeich{nz8cbz}v_\theta = r\omega(t)}
+The time dependence is expressed through $\omega(t)$
+\g{\omega(t)=\dd{t}\theta(t)}
+The typical unit vectors in the $\theta$ and $r$ direction are
+\g{\hat{\theta}(t)=-\sin\theta(t)\hat{i}+\cos\theta(t)\hat{j}}
+\g{\hat{r}(t)=\cos\theta(t)\hat{i}+\sin\theta(t)\hat{j}}
+The general time dependent velocity around a circle is then
+\g{\vec{v}(t)=v_\theta \hat{\theta}(t)=r\omega(t)\hat{\theta}(t)}
+We're looking for an answer in terms of acceleration $\vec{a}$, so take the total derivative of $\vec{v}(t)$ and apply the chain rule.
+\g{\vec{a}(t)&=\dd{t}\vec{v}(t)=r\dd{t}\omega(t)\hat{\theta}(t)+r\omega(t)\dd{t}\hat{\theta}(t)
+\intertext{Substitute $\hat{\theta}(t)$.}
+&= r\dd{t}\omega(t)\hat{\theta}(t)+r\omega(t)(-\cos\theta(t)\dd{t}\theta(t)\hat{i}-\sin\theta(t)\dd{t}\theta(t)\hat{j}
+\intertext{The term in parenthesis is just $\omega(t) \hat{r}$.}
+&= r\dd{t}\omega(t)\hat{\theta}(t)+r\omega(t)^2\hat{r}(t)}
+Now we can assume uniform speed as given in the prompt, $\dd{t}\omega(t)=0$, so the first term drops.
+\g{\vec{a}(t)=-r\omega(t)^2\hat{r}(t)=-\vec{r}(t)\omega(t)^2}
+The vector that points in the radial direction, of length $r$, from the particle to the origin is exactly
+\g{-\vec{r}(t)=\br{1}{\omega^2}\vec{a}(t)}
+Now an expression for $\omega^2$ is desired. 
+\g{a=r\omega^2=\br{v^2}{r}}
+\g{\br{1}{\omega^2}=\br{r}{a}=\br{v^2}{a^2}}
+and so finally 
+\g{\kiste{-\vec{r}=(\br{v}{a})^2\vec{a}}}
+\section*{Problem 3.a.}
+\section*{Problem 3.b.}
+\section*{Problem 3.c.}
+\section*{Problem 3.d.}
+\section*{Problem 4.}
+\end{document}
