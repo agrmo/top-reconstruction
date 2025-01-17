@@ -69,8 +69,31 @@ Now an expression for $\omega^2$ is desired.
 and so finally 
 \g{\kiste{-\vec{r}=(\br{v}{a})^2\vec{a}}}
 \section*{Problem 3.a.}
+This is the typical proof that timelike intervals are invariant under boosts. Take a timelike interval $ds^2$, boost it, and compare the intervals. It is important that interval is assumed to be timelike, because spacelike intervals can flip sign under general Lorentz transformations. The general boost to a constant speed $v$ is represented by the transformation $\Lambda^\mu_\nu$.
+\g{a'^\mu = \Lambda^{\mu'}_\nu a^\nu}
+\g{b'^\mu = \Lambda^{\mu'}_\nu b^\nu}
+The contraction $ab$ is
+\g{a^\mu b_\mu &= \eta_{\mu\nu} a^\mu b^\nu\\
+&= -a^0 b^0 + a^1 + b^1 + a^2 b^2 + a^3 b^3}
+The contraction $a'b'$ is
+\g{(a')_\mu(b')^\mu&=\eta_{\mu\nu}a'^\mu b'^\nu\\
+&= \eta_{\mu\nu}\Lambda^\mu_\alpha a^\alpha \Lambda^\nu_\beta b^\beta \\
+&= (\Lambda^\mu_\alpha \eta_{\mu\nu} \Lambda^\nu_\beta) a^\alpha b^\beta\\
+\intertext{The term in parenthesis is equal to the metric.}
+&= \eta_{\alpha \beta} a^\alpha b^\beta\\
+&= -a^0 b^0 + a^1 + b^1 + a^2 b^2 + a^3 b^3}
+And so using $a=dx^\mu$ and $b=dx^\mu$ the interval $ab=dx^\mu dx_\mu = ds^2$ is invariant under boosts. 
+\g{\kiste{ds^2=dx^\mu dx_\mu = dx'^\mu dx'_\mu}}
 \section*{Problem 3.b.}
+\fig{6cm}{2.png}{Diagram.}
+For this diagram, $P_1$ is situated at the origin, and $P_2$ is a point outside the light cone. The spacetime interval from $P_1$ to $P_2$ is spacelike, and through a boost of angle $\theta$ the events $P_1$ and $P_2$ occur the same time $t'=0$.
 \section*{Problem 3.c.}
+\fig{6cm}{3.png}{Diagram.}
+For this diagram, $P_1$ is located at the origin, and $P_2$ is a point on the $t$ axis. The system is then boosted at an angle $\theta$. The point $P_2$ is translated along an invariant hyperbola to $P_2'$. The time from $P_1'$ to $P_2'$ is longer than the time from $P_1$ to $P_2$, so this demonstrates time dilation.
 \section*{Problem 3.d.}
+\fig{6cm}{5.png}{Diagram.}
+Suppose a rod of length $l$ is travelling in one dimension. In a diagram, this will be represented by the two points $P_1$ and $P_2$, and as time $t$ increases, the points $P_1$ and $P_2$ move to the right of the diagram. In the illustration, the points $P_1$ and $P_2$ are shown when one end of the rod is located at $t=0$. The arrows indicate the direction of motion of the rod. Now boost the system to velocity $v$ such that the rod is now stationary.
+\fig{6cm}{4.png}{Diagram.}
+The point $P_2$ is translated along an invariant hyperbola to $P_2'$. In the primed frame, the rod is longer. This demonstrates the concept of length contraction. Objects at nonzero velocity $v$ are predicted to have a measured length shorter than in their rest frame.
 \section*{Problem 4.}
 \end{document}
