@@ -69,7 +69,17 @@ Now an expression for $\omega^2$ is desired.
 and so finally 
 \g{\kiste{-\vec{r}=(\br{v}{a})^2\vec{a}}}
 \section*{Problem 3.a.}
-This is the typical proof that timelike intervals are invariant under boosts. Take a timelike interval $ds^2$, boost it, and compare the intervals. It is important that interval is assumed to be timelike, because spacelike intervals can flip sign under general Lorentz transformations. The general boost to a constant speed $v$ is represented by the transformation $\Lambda^\mu_\nu$.
+\fig{6cm}{6.png}{Diagram.}
+Ref. MCP Chapter 2. In a 3+1 coordinate system, consider a boost from an unprimed to a primed coordinate system in the $x$ direction. Place a mirror at height $y=h$ in the $x-z$ plane. Send a photon from the origin $P$ to the mirror, reflect off the mirror, and travel the the point $Q$ at height $y=\Delta y$. The total distance without the mirror in the unprimed frame is $c\Delta t$. By analysis in the unprimed frame the total spacetime interval is
+\g{(\Delta s)^2=-(\Delta t)^2+(\Delta x)^2+(\Delta y)^2 = -(2h-\Delta y)^2+(\Delta y)^2}
+and in the primed frame the interval is
+\g{(\Delta s')^2=-(\Delta t')^2+(\Delta x')^2+(\Delta y')^2 = -(2h'-\Delta y')^2+(\Delta y')^2}
+The goal is to show that $h'=h$ and $\Delta y'=\Delta y$. Note that the distances $h$ and $\Delta y$ lie solely in the $y$ direction, and the boost is in the $x$ direction. Looking at the equation for length contraction in 3+1 dimensions in the $\hat{x}$ direction,
+\g{t'&= \gamma(t-\br{vx}{c^2})\\
+x'&=\gamma (x-vt)\\
+y'&=y\\
+x'&=z}
+it is clear that \fbox{the boost will not affect distances in the $\hat{y}$ direction.} For completeness we can also give the proof algebraically that timelike intervals are invariant under boosts. Take a timelike interval $ds^2$, boost it, and compare the intervals. It is important that interval is assumed to be timelike, because spacelike intervals can flip sign under general Lorentz transformations. The general boost to a constant speed $v$ is represented by the transformation $\Lambda^\mu_\nu$.
 \g{a'^\mu = \Lambda^{\mu'}_\nu a^\nu}
 \g{b'^\mu = \Lambda^{\mu'}_\nu b^\nu}
 The contraction $ab$ is
@@ -96,4 +106,10 @@ Suppose a rod of length $l$ is travelling in one dimension. In a diagram, this w
 \fig{6cm}{4.png}{Diagram.}
 The point $P_2$ is translated along an invariant hyperbola to $P_2'$. In the primed frame, the rod is longer. This demonstrates the concept of length contraction. Objects at nonzero velocity $v$ are predicted to have a measured length shorter than in their rest frame.
 \section*{Problem 4.}
+%The published definitions of $\lambda$ seem to also include a factor of $c$ (\url{https://doi.org/10.3847/1538-4357/abe461}), which I agree with more.
+\g{\lambda=ln(\br{2pm}{p})=ln(\br{2m}{p})=ln(\br{2}{v})}
+and so
+\g{\boxed{v = sech ln(\br{2}{v})}}
+To find the derivative $d/d\lambda T$,
+\g{\dd{\lambda} T= \dd{\ln(p/T)} \br{p^2}{2m} = \boxed{-\br{p^2}{m}}}
 \end{document}
