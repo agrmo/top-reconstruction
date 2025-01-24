@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{times}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\geometry{top=1in,bottom=1in,left=1in,right=1in}
+
+\usepackage{graphicx}
+\usepackage{floatrow}
+\newcommand{\fig}[3]{
+\begin{figure}[H]
+\begin{center}
+\includegraphics[height=#1]{#2}
+\caption{#3}
+\label{#2}
+\end{center}
+\end{figure}}
+%\fig{5cm}{1.png}{Diagram.}
+
+\begin{document}
+\begin{center}
+\textbf{\Large{Problem Set 2}}\\~\\
+\begin{tabular}{l l}
+Student&Agustin Romero\\
+Email&ar1@stanford.edu\\
+Instructor&Roger Blandford\\
+Assistant&Andrew Sullivan\\
+Course&PHYSICS 262\\
+Institution&Stanford University\\
+Date&\today\\
+\end{tabular}
+\end{center}
+\section*{Problem 1.}
+The Newtonian force equation $F=ma$ is applicable to bodies that have coordinates that are continuous in time. 
+Newtonian forces alone cannot describe interactions whose kinetic energy is conserved. This is true for certain systems that have very, very high elasticity. For example consider two rubber balls bouncing against eachother. The more elasticity the balls have, the more conserved the quantity of kinetic energy is before and after the collision. This is a crucial departure from methods that only consider net force on an object.\\~\\
+In thermal systems it is often only the case that the total internal energy of the system is known, which is capable of being expressed as an averagekinetic energy of each particle in the system. This is a significant departure from force methods, which would only be able to describe individual forces that act on each particle. Conservation is total kinetic energy is not always the case for collisions, but in these cases, they are much more powerful problem solving tools thax using conservation of momentum or simply force vectors.\\~\\
+There are interactions which have discontinuous changes in position. These are called quantized processes, where the energy of the particles in the interaction are quantized. Using force alone is incapable of predicting these processes. There are relations between total energy of a system, $E$, and the duration of time $t$ within which processes typically occur. This required a description of kinetic energy as a contribution to $E$.\\~\\
+There are interactions which destroy energy in the system, and in turn mass appears. These are called annihilation and creation processes. Using force alone is incapable of providing predictions of this behavior. The more amount of kinetic energy an object has, the more capable that object is at destroying its kinetic energy, to produce other particles with different masses.
+\section*{Problem 2.}
+Ref MCP p. 1174, p. 75, Landau Lifshitz 2 p. 20, Lecture Notes 3. We want to construct a 3d volume element in flat spacetime, and evaluate its components in the covariant basis, and also the contravariant basis.
+\end{document}
