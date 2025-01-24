@@ -43,7 +43,7 @@ There are interactions which destroy energy in the system, and in turn mass appe
 Ref MCP p. 1174, p. 75, Landau Lifshitz 2 p. 20, Lecture Notes 3. We want to construct a 3d volume element in flat spacetime, and evaluate its components in the covariant basis, and also the contravariant basis.
 \section*{Problem 2.b.}
 \section*{Problem 2.c.}
-Let the number density field be $n$, and the velocity field of the particles $\vec{v}$. Then the particle flux is 
+Ref MTW p. 559. Let the number density field be $n$, and the velocity field of the particles $\vec{v}$. Then the particle flux is 
 \g{\vec{F}=n\vec{u}}
 The 3d surface vector $d\vec{\Sigma}$ contracted with the particle flux field $\vec{F}$ is the scalar amount of particle flux flowing out of the surface per unit time.
 \section*{Problem 2.d.}
@@ -55,4 +55,70 @@ where $d\Sigma_\mu$ is the hypersurface measure, not the volume measure. This gi
 \g{\int_{V_4} (\nabla \cdot \vec{A})d\Sigma = \int_{\partial V_4} \vec{A} \cdot d\vec{\Sigma}}
 Let $F^0=n$ be the number density of the system, and $F_i \Sigma_i$ be the flux through the 4-volume $\Sigma$, and $\partial V$ be a closed three surface. Then for a system which conserves particle number, an integral of flux about an infinitesimal 3-surface will conserve particle number,
 \g{\kiste{\int_{\partial V} F^i d\Sigma_i = 0 }}
+\section*{Problem 2.e.}
+Ref MCP p. 84. The previous question was related to particle flux through a 4d surface $F^i d\Sigma_i$ with the resulting conservation law of particle number. The situation can be generalized to any rank 1 tensor via Gauss' law in flat spacetime. Now Gauss' law can be generalized for any rank 2 tensor $T^{\mu \nu}$,
+\g{\int_{\partial V} T^{\mu \nu} d\Sigma_\nu=0}
+We can simplify the process of deriving the stress energy tensor by stating the components explicitly,
+\begin{enumerate}
+\item $T^{00}$: Energy density
+\item $T^{i0}$: 3-Momentum
+\item $T_{\mu i}$: 4-momentum through the surface of constant $i$
+\item $T^{0\mu}$: Energy flux through surface perpendicular to $\mu$
+\item $T^{i\mu}$: Momentum flux through surface perpendicular to $\mu$
+\end{enumerate}
+ Conservation laws can be extracted in analogy to the rank 1 case. Apply Gauss' law to the generalized flux equation,
+\g{\int_V T^{\mu \nu}_{;\nu} d\Sigma = \int_{\partial V}T^{\mu \nu} d\sigma_\nu}
+Then momentum conservation is the law that the integrand vanishes,
+\g{\boxed{T^{\mu\nu}_{;\nu}=0}}
+This is the generalized discussion of the rank 1-tensor for the rank-2 stress energy tensor $T^{\mu\nu}$.
+\section*{Problem 3.a.}
+Ref MTW p . 656, MCP p. 57, Carroll p. 449. The projection operator is
+\g{P_{\mu\nu}=g_{\mu\nu}-(n^2)n_\mu n_\nu}
+First, show that the projection operator acting on a general 4-vector $V^\mu$ projected in the $n^\nu$ is zero.
+\g{(P_{\mu\nu} V^\mu)n^\nu&=g_{\mu\nu}V^\mu n^\nu - (n^2)n_\mu n_\nu V^\mu n^\nu\\
+&= V^\mu n_\mu - (n^2)^2 V^\mu n_\mu\\
+&= 0}
+The expression is zero. This means that none of $P_{\mu\nu} V^\nu$ lies in the $n^\mu$ direction, in other words, orthogonal. Next, show that the projection operator turns into exactly like the metric when acting on general 4-vectors $V$, $W$, that are orthogonal to $n^\mu$. Using both
+\g{W^\mu n_\mu = 0 \qquad V^\mu n_\mu = 0}
+then the projection of them is
+\g{P_{\mu \nu} V^\mu W^\nu &= g_{\mu \nu} V^\mu W^\nu - (n^2) n_\mu n_\nu V^\mu W^\nu\\
+&= g_{\mu \nu} V^\mu W^\nu }
+By contracting the projection operator $P_{\mu \nu}$ into the $U^\mu$ direction and in the direction orthogonal to $U^\mu$, we find that only the terms in the $U^\mu$ direction are nonzero and behave exactly like the Euclidean metric. This means that $P_{\mu \nu}$ is the Euclidean metric in the observer's 3-space.
+\section*{Problem 3.b.}
+The projection of $P$ onto itself is expected to be, once again, $P$. This makes complete sense from a Euclidean 3-dimensional perspective, because projecting a vector onto itself twice accomplishes nothing more. In flat spacetime, the projection operator $P$ projects $A$ onto the 3-surface orthogonal to $A$. Let $n^\mu$ be orthogonal to the field $A$ and velocity $U$. Then
+\g{P_{\mu \nu}A^\nu = g_{\mu \nu}A^\nu - U_\mu U_\nu A^\nu = A_\mu - U_\nu A^\nu U_\mu}
+\g{P_{\mu \nu}A^\nu n^\mu = A_\mu n^\nu - U_\nu A^\nu U_\mu n^\mu = \boxed{0}}
+The \fbox{projection onto the direction orthogonal to $U$ is 0.}
+\section*{Problem 3.c.}
+This is the energy momentum tensor for a perfect fluid,
+\g{T^{\mu \nu} = Pg^{\mu \nu} + (P+\rho)U^\mu U^\nu}
+In matrix form this is
+\g{T^{\mu \nu}=\begin{pmatrix}\rho & 0 & 0 & 0\\
+0 & p & 0 &0\\
+0&0&p&0\\
+0&0&0&p
+\end{pmatrix}}
+Ref. Carroll p. 35. $T^{00}$ can be interpreted as a pressure. $T^{ii}$ can be interpreted as an energy density. The ratio of $P/\rho$ is often called the equation of state parameter. The ratio of $P/\rho$ will resemble different kinds of fluids: when $P/\rho=0$ the fluid resembles dust, and when $P/\rho=1/3$ the fluid resembles photons. There are many more examples of ratios relevant for fluids in spacetime. The diagonal terms $T^{ii}$ represent pressure forces being exerted upon in the $i$ direction, as such $P$ is the relevant term for the $ii$ indices. The $\rho U^\mu U^\nu$ term describes a dust system which is simply $\rho$ in the rest frame, but can change in density depending on the frame.
+\section*{Problem 3.d.}
+$T^{\mu\nu}$ is a conserved quantity. Take the divergence of $T^{\mu\nu}$, simplify it, and project it along $U$.
+\g{T^{\mu\nu}=Pg^{\mu\nu}+(P+\rho)U^\mu U^\nu}
+\g{\partial_\mu T^{\mu \nu}=0}
+\g{\partial_\mu T^{\mu \nu}=\partial_\mu w U^\mu U^\nu + w(U^\nu \partial_\mu U^\mu + U^\mu \partial_\mu U^\nu+\partial^\nu P}
+Using $U_\nu \partial_\mu U^\nu = \br{1}{2} \partial_\mu (U_\mu U^\nu) = 0$ and $U_\mu U^\mu=-1$ this simplifies to
+\g{\partial_\mu T^{\mu \nu}=\partial_\mu w U^\mu U^\nu + wU^\nu \partial_\mu U^\mu}
+Now project along $U$. Also assume that $U^i$ is small, so that the first term becomes only $\pa{\tau}$.
+\g{\boxed{U_\nu \partial_\mu T^{\mu \nu}=\pa{\tau}\rho + (\rho+P)\nabla \cdot \vec{v}=0}}
+This is the continuity equation for energy density.
+\section*{Problem 3.e.}
+Now project perpendicular to $U$ using $P$, and simplify the terms proportioanl to $v$.
+\g{\tilde{P}=P^\mu_\nu=\delta^{\mu}_{\nu}+U^\mu_\nu}
+\g{P^\rho_\nu \partial_\mu T^{\mu\nu} = wU^\mu \partial_\mu U^\rho + \partial^\rho P + U^\rho U^\mu \partial_\mu P}
+\g{w(\pa{\tau}\vec{v} + (\vec{v}\cdot \vec{\nabla})\vec{v})+\nabla P + \vec{v}(\pa{t}P+\vec{v}+\vec{v}\cdot\nabla P)=0}
+\g{w\pa{t}\vec{v}+U^\rho U^\mu \partial_\mu P + \Delta P = 0}
+\g{\boxed{w\vec{a}+\tilde{P}\cdot \Delta P =0}}
+\section*{Problem 4.a.}
+\section*{Problem 4.b.}
+\section*{Problem 4.c.}
+\section*{Problem 4.d.}
+\section*{Problem 4.e.}
 \end{document}
