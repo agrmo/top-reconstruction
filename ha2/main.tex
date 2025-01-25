@@ -180,9 +180,13 @@ The contraction is then
 &= F^{00}F_{00} + F^{01}F_{01} + ...\\
 &= -E_1^2 - E_2^2 - E_3^2 - E_1^2 - E_2^2 - E_3^2 + B_3^2 + B_3^2 + B_2^2 + B_2^2 + ...\\
 &= \boxed{2(\vec{B^2}+\vec{E}^2)}}
+Next calculate the contraction of $F$ with $\tilde{F}$.
+\n{asdfn}{\epsilon^{\mu \nu \alpha \beta} F_{\alpha \beta}}
+\n{ftmn}{\tilde{F}^{\mu\nu}}
+\g{\asdfn = \begin{pmatrix}0&-B_1&-B_2&-B_3\\B_1&0&E_3&-E_2\\B_2&-E_3&0&E_1\\B_3&E_2&-E_1&0\end{pmatrix}=\ftmn}
+\g{\asdfn F_{\mu \nu}&=-4B_1 E_1 -4B_2 E_2 -4B_3E_3\\&=-4 \vec{E} \cdot \vec{B}}
+\g{\boxed{\ftmn F_{\mu\nu}=-8 \vec{E} \cdot \vec{B}}}
+In discussion, this is similar to the Hodge dual of $F$ except for a factor of 2. $\tilde{F}$ is still antisymmetric, but now a pseudotensor. $\tilde{F}$ is clearly obtainable from $F$ by the replacement $B\rightarrow E$ and $E\rightarrow -B$. A lagrangian of this sort would include interactions between $E$ and $B$ that is different from the typical kinetic energy term $E^2+B^2$. However, including this term in the lagrangian would now affect the form of Maxwell's equations.
 \section*{Problem 4.e.}
-\e{F_{\mu \nu}=\begin{pmatrix}0&E_1&E_2&E_3\\-E_1&0&-B_3&B_2\\-E_2&B_3&0&B_1\\-E_3&-B_2&B_1&0\end{pmatrix}}
-\e{\asdfn = \begin{pmatrix}0&-B_1&-B_2&-B_3\\B_1&0&E_3&-E_2\\B_2&-E_3&0&E_1\\B_3&E_2&-E_1&0\end{pmatrix}=\ftmn}
-\e{\asdfn F_{\mu \nu}&=-4B_1 E_1 -4B_2 E_2 -4B_3E_3\\&=-4 \vec{E} \cdot \vec{B}}
-\e{\boxed{\ftmn F_{\mu\nu}=-4 \vec{E} \cdot \vec{B}}}
+
 \end{document}
