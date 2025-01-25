@@ -33,6 +33,15 @@ Institution&Stanford University\\
 Date&\today\\
 \end{tabular}
 \end{center}
+\section*{Preamble}
+The notation for the submission is slightly different than the textbooks and notes, so
+\begin{itemize}
+\item $\vec{v}$ is a spatial three component vector in Euclidean metric.
+\item $x^\mu$ is a four component spacetime vector, also applicable for $\nu$, $\rho$, $\sigma$.
+\item $x^i$ denotes only the spactial components of a four component spacetime vector, also applicable for $j$, $k$, $l$.
+\item $x^2$ denotes the contraction $x_\mu x^\nu$.
+\item $\eta^{\mu\nu}$ is the Minkowski metric, $g^{\mu\nu}$ is a generic metric.
+\end{itemize}
 \section*{Problem 1.}
 The Newtonian force equation $F=ma$ is applicable to bodies that have coordinates that are continuous in time. 
 Newtonian forces alone cannot describe interactions whose kinetic energy is conserved. This is true for certain systems that have very, very high elasticity. For example consider two rubber balls bouncing against eachother. The more elasticity the balls have, the more conserved the quantity of kinetic energy is before and after the collision. This is a crucial departure from methods that only consider net force on an object.\\~\\
@@ -162,7 +171,18 @@ Using very similar calculations and appling the Lorentz transformations $L$ we c
 \g{(B')^1=(F')^{32}=L^3_\sigma L^2_\tau F^{\sigma \tau} =0}
 \g{(B')^2=(F')^{13}=L^1_\sigma L^3_\tau F^{\sigma \tau} = \boxed{-E_3 v(1-v^2)^{-1/2}}}
 \g{(B')^3=(F')^{21}=L^2_\sigma L^1_\tau F^{\sigma \tau} = \boxed{-E_2 v(1-v^2)^{-1/2}}}
-
 \section*{Problem 4.d.}
+In 4.a. we calculated each individual component of $F^{\mu\nu}$ and so all that is needed is to lower the indices and contract $F^{\mu\nu}$ with $F_{\mu\nu}$.
+\g{F_{\mu\nu}=\matr{0&E_1&E_2&E_3\\ -E_1 & 0 & -B_3 & B_2 \\ -E_2 & B_3 & 0 & -B_1 \\ -E_3 & -B_2 & B_1 & 0}}
+\g{F^{\mu\nu}=\matr{0&E_1&E_2&E_3\\ E_1 & 0 & -B_3 & B_2 \\ E_2 & B_3 & 0 & -B_1 \\ E_3 & -B_2 & B_1 & 0}}
+The contraction is then
+\g{F^{\mu\nu}F_{\mu\nu} &= F^{0\nu}F_{0\nu} + F^{1\nu}F_{1\nu} + ... \\
+&= F^{00}F_{00} + F^{01}F_{01} + ...\\
+&= -E_1^2 - E_2^2 - E_3^2 - E_1^2 - E_2^2 - E_3^2 + B_3^2 + B_3^2 + B_2^2 + B_2^2 + ...\\
+&= \boxed{2(\vec{B^2}+\vec{E}^2)}}
 \section*{Problem 4.e.}
+\e{F_{\mu \nu}=\begin{pmatrix}0&E_1&E_2&E_3\\-E_1&0&-B_3&B_2\\-E_2&B_3&0&B_1\\-E_3&-B_2&B_1&0\end{pmatrix}}
+\e{\asdfn = \begin{pmatrix}0&-B_1&-B_2&-B_3\\B_1&0&E_3&-E_2\\B_2&-E_3&0&E_1\\B_3&E_2&-E_1&0\end{pmatrix}=\ftmn}
+\e{\asdfn F_{\mu \nu}&=-4B_1 E_1 -4B_2 E_2 -4B_3E_3\\&=-4 \vec{E} \cdot \vec{B}}
+\e{\boxed{\ftmn F_{\mu\nu}=-4 \vec{E} \cdot \vec{B}}}
 \end{document}
