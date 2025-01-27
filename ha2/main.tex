@@ -39,7 +39,6 @@ The notation for the submission is slightly different than the textbooks and not
 \item $\vec{v}$ is a spatial three component vector in Euclidean metric.
 \item $x^\mu$ is a four component spacetime vector, also applicable for $\nu$, $\rho$, $\sigma$.
 \item $x^i$ denotes only the spactial components of a four component spacetime vector, also applicable for $j$, $k$, $l$.
-\item $x^2$ denotes the contraction $x_\mu x^\nu$.
 \item $\eta^{\mu\nu}$ is the Minkowski metric, $g^{\mu\nu}$ is a generic metric.
 \end{itemize}
 \section*{Problem 1.}
@@ -50,6 +49,14 @@ There are interactions which have discontinuous changes in position. These are c
 There are interactions which destroy energy in the system, and in turn mass appears. These are called annihilation and creation processes. Using force alone is incapable of providing predictions of this behavior. The more amount of kinetic energy an object has, the more capable that object is at destroying its kinetic energy, to produce other particles with different masses.
 \section*{Problem 2.a.}
 Ref MCP p. 1174, p. 75, Landau Lifshitz 2 p. 20, Lecture Notes 3. We want to construct a 3d volume element in flat spacetime, and evaluate its components in the covariant basis, and also the contravariant basis.
+\g{da=e_x \quad db=e_y \quad dc=e_z}
+\g{d\Sigma_\mu &= \epsilon_{\mu\nu\rho\sigma}de_x^\nu de_y^\rho dz_z^\sigma\\
+\intertext{Assuming the Minkowski metric, evaluate the Levi-Civita symbol. The unit vectors correspond to explicit numbers in the Levi-Civita symbol.}
+&= \boxed{\epsilon_{\mu 1 2 3}dxdydz}}
+\fbox{The components are $d\Sigma_i=0$ and $d\Sigma_0=dxdydz$}. When $da$ is replaced with $e_t$ instead, we get
+\g{d\Sigma_\mu&=\epsilon_{\mu\nu\rho\sigma}de_t^\nu de_y^\rho dz_z^\sigma\\
+&= \boxed{\epsilon_{\mu 0123}de_t^0 de_y^2 de_z^3}}
+The components are \fbox{$d\Sigma_1=\epsilon_{1023}cdt dy dz$ and $d\Sigma_0=d\Sigma_2=d\Sigma_3=0$}
 \section*{Problem 2.b.}
 \section*{Problem 2.c.}
 Ref MTW p. 559. Let the number density field be $n$, and the velocity field of the particles $\vec{v}$. Then the particle flux is 
@@ -188,5 +195,28 @@ Next calculate the contraction of $F$ with $\tilde{F}$.
 \g{\boxed{\ftmn F_{\mu\nu}=-8 \vec{E} \cdot \vec{B}}}
 In discussion, this is similar to the Hodge dual of $F$ except for a factor of 2. $\tilde{F}$ is still antisymmetric, but now a pseudotensor. $\tilde{F}$ is clearly obtainable from $F$ by the replacement $B\rightarrow E$ and $E\rightarrow -B$. A lagrangian of this sort would include interactions between $E$ and $B$ that is different from the typical kinetic energy term $E^2+B^2$. However, including this term in the lagrangian would now affect the form of Maxwell's equations.
 \section*{Problem 4.e.}
-
+Ref Carroll p. 33, MCP p. 83. First give a short description of the components of $T^{\mu\nu}$ and then calculate them.
+\g{T^{\mu}_\nu&=-F^{\mu\alpha}F_{\nu\alpha} + \br{1}{4}\delta^\mu_\nu F^{\alpha\beta}F_{\alpha\beta}\\
+&= -F^{\mu\alpha}F_{\nu\alpha} + \delta^\mu_\nu 2(\vec{B}^2-\vec{E}^2)}
+It's easier to use the tensor $T^\mu_\nu$ instead of $T^{\mu\nu}$ because we have already calculated the terms of $F^{\mu\nu}F_{\mu\nu}$, and so that will simplify one term entirely and include a simple delta function $\delta^\mu_\nu$ for all answers.
+\listepunkt{
+\item The \fbox{energy density is $T^{00}=\rho$.} In general terms it's the flux of $p^0$, energy in the $x^0$ time direction. Calculate $T^{00}$,
+\g{T^0_0 &= -F^{0\alpha}F_{0\alpha} - \delta^0_0 F^{\alpha\beta}F_{\alpha\beta}
+\intertext{$F^{0\alpha}F_{0\alpha}=-\vec{E}^2$.}
+&= \vec{E}^2+\br{1}{2}(\vec{B}^2-\vec{E}^2)
+&= \boxed{\br{1}{2}(\vec{B}^2+\vec{E}^2)}}
+\item The \fbox{energy flux is $T^{0i}$}, where $i=1,2,3$. Calculate the components
+\g{T^0_1 = \br{1}{\mu_0} (E_3 B_2 - E_2 B_3) }
+\g{T^0_2 = \br{1}{\mu_0} (E_1 B_3 - E_3 B_1) }
+\g{T^0_3 = \br{1}{\mu_0} (E_1 B_1 - E_1 B_2) }
+The energy flux of $T^{\mu\nu}$ are terms of the cross product $\br{1}{\mu_0} \vec{E}\times \vec{B}$. 
+\item The \fbox{momentum density is $T^{i0}$}, where $i=1,2,3$. Because the stress energy tensor is symmetric, $T^{\mu\nu}=T^{\nu\mu}$, the momentum density is equal to energy flux.
+\item The \fbox{momentum flux is $T^{ij}$}, where $i,j=1,2,3$. It's the forces between neighboring elements in the fluid.
+\g{T^1_1 = -(B_3-E_1E_2-B_2)+\br{1}{2}(\vec{B}^2-\vec{E}^2)}
+\g{T^1_2 = E_1E_2+B_1B_2}
+\g{T^1_3 = E_1E_3 + B_1B_3}
+\g{T^2_2 = (E_2^2-B_1^2-B_3^2)+\br{1}{2}(\vec{B}^2-\vec{E}^2)}
+\g{T^2_3 = E_2E_3+B_2B_3}
+\g{T^3_3 = (E_3^2-B_1^2-B_2^2)+\br{1}{2}(\vec{B}^2-\vec{E}^2)}
+}
 \end{document}
