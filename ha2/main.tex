@@ -33,12 +33,13 @@ Institution&Stanford University\\
 Date&\today\\
 \end{tabular}
 \end{center}
+I would like to submit slightly late because I think understanding the fundamentals of spacetime geometry is the most crucial aspect of my reason for taking the course, so I wanted to put some more thought into this over the weekend.
 \section*{Preamble}
-The notation for the submission is slightly different than the textbooks and notes, so
+The notation for the submission is slightly different than the textbooks and notes,
 \begin{itemize}
-\item $\vec{v}$ is a spatial three component vector in Euclidean metric.
+\item $\vec{v}$ is a spatial three component vector in Euclidean space, e.g. $\vec{E}$, $\vec{B}$.
 \item $x^\mu$ is a four component spacetime vector, also applicable for $\nu$, $\rho$, $\sigma$.
-\item $x^i$ denotes only the spactial components of a four component spacetime vector, also applicable for $j$, $k$, $l$.
+\item $x^i$ denotes only $i=1,2,3$ of a four component spacetime vector, also applicable for $j$, $k$, $l$.
 \item $\eta^{\mu\nu}$ is the Minkowski metric, $g^{\mu\nu}$ is a generic metric.
 \end{itemize}
 \section*{Problem 1.}
@@ -53,11 +54,15 @@ Ref MCP p. 1174, p. 75, Landau Lifshitz 2 p. 20, Lecture Notes 3. We want to con
 \g{d\Sigma_\mu &= \epsilon_{\mu\nu\rho\sigma}de_x^\nu de_y^\rho dz_z^\sigma\\
 \intertext{Assuming the Minkowski metric, evaluate the Levi-Civita symbol. The unit vectors correspond to explicit numbers in the Levi-Civita symbol.}
 &= \boxed{\epsilon_{\mu 1 2 3}dxdydz}}
-\fbox{The components are $d\Sigma_i=0$ and $d\Sigma_0=dxdydz$}. When $da$ is replaced with $e_t$ instead, we get
+\fbox{The components are $d\Sigma_i=0$ and $d\Sigma_0=dxdydz$}. Finally redo all calculations in the contravariant basis. This simply raises the index on $d\Sigma_\mu$ which will only affect the 0th component in the $-+++$ metric. Using $da=e_x$, $db=e_y$, $dc=e_z$,
+\g{\boxed{d\Sigma^1=d\Sigma^2=d\Sigma^3=0 \qquad d\Sigma^0=dxdydz}}
+\section*{Problem 2.b.}
+This part asks us to redo 2.a. Using $da=e_t$, $db=e_y$, $dc=e_z$, the covariant vector $d\Sigma_\mu$ is
 \g{d\Sigma_\mu&=\epsilon_{\mu\nu\rho\sigma}de_t^\nu de_y^\rho dz_z^\sigma\\
 &= \boxed{\epsilon_{\mu 0123}de_t^0 de_y^2 de_z^3}}
-The components are \fbox{$d\Sigma_1=\epsilon_{1023}cdt dy dz$ and $d\Sigma_0=d\Sigma_2=d\Sigma_3=0$}
-\section*{Problem 2.b.}
+The components are \fbox{$d\Sigma_1=\epsilon_{1023}cdt dy dz=-cdtdydz$ and $d\Sigma_0=d\Sigma_2=d\Sigma_3=0$}. 
+Similarly the contravariant vector $d\Sigma^\mu$ is
+\g{\boxed{d\Sigma^0=d\Sigma_2=d\Sigma_3=0 \qquad d\Sigma^1=-cdtdydz}}
 \section*{Problem 2.c.}
 Ref MTW p. 559. Let the number density field be $n$, and the velocity field of the particles $\vec{v}$. Then the particle flux is 
 \g{\vec{F}=n\vec{u}}
@@ -200,11 +205,10 @@ Ref Carroll p. 33, MCP p. 83. First give a short description of the components o
 &= -F^{\mu\alpha}F_{\nu\alpha} + \delta^\mu_\nu 2(\vec{B}^2-\vec{E}^2)}
 It's easier to use the tensor $T^\mu_\nu$ instead of $T^{\mu\nu}$ because we have already calculated the terms of $F^{\mu\nu}F_{\mu\nu}$, and so that will simplify one term entirely and include a simple delta function $\delta^\mu_\nu$ for all answers.
 \listepunkt{
-\item The \fbox{energy density is $T^{00}=\rho$.} In general terms it's the flux of $p^0$, energy in the $x^0$ time direction. Calculate $T^{00}$,
+\item The \fbox{energy density is $T^{00}=\rho$.} In general terms it's the flux of $p^0$, energy in the $x^0$ time direction. 
 \g{T^0_0 &= -F^{0\alpha}F_{0\alpha} - \delta^0_0 F^{\alpha\beta}F_{\alpha\beta}
-\intertext{$F^{0\alpha}F_{0\alpha}=-\vec{E}^2$.}
-&= \vec{E}^2+\br{1}{2}(\vec{B}^2-\vec{E}^2)
-&= \boxed{\br{1}{2}(\vec{B}^2+\vec{E}^2)}}
+\intertext{Use $F^{0\alpha}F_{0\alpha}=-\vec{E}^2$.}
+&= \vec{E}^2+\br{1}{2}(\vec{B}^2-\vec{E}^2)= \boxed{\br{1}{2}(\vec{B}^2+\vec{E}^2)}}
 \item The \fbox{energy flux is $T^{0i}$}, where $i=1,2,3$. Calculate the components
 \g{T^0_1 = \br{1}{\mu_0} (E_3 B_2 - E_2 B_3) }
 \g{T^0_2 = \br{1}{\mu_0} (E_1 B_3 - E_3 B_1) }
