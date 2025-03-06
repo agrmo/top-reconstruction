@@ -34,23 +34,27 @@ Date&\today\\
 \end{tabular}
 \end{center}
 \section*{Problem 1}
-A symmetry is any transformation of a variable which leaves a function unchanged. There are many examples of symmetries in physics. When a symmetry exists for a function, there exists a vector field whose divergence is zero. These vector fields are called Noether currents. The spatial integral of a Noether currents is called a Noether charge. These conserved quantities are the consequence of the zero divergence of a vector field. The simplest example from physics is the electric field, and the electric charge. The electric field has a zero divergence, and is therefore associated with some conserved quantity, which is called electric charge. 
+A symmetry is any transformation of a variable which leaves a function unchanged. There are many examples of symmetries in physics. For example, the angular momentum of a system $L$ is invariant under a translation of all coordinates $x\rightarrow x+a$. Another example is from electromagnetism, where Maxwell's equations are invariant under a transformation $A^\mu \rightarrow A^\mu + \nabla \chi$ for some scalar field $\chi$. In general relativity the symmetry is a coordinate transformation $x^\mu \rightarrow x^\mu + a^\mu$. There are important physical consequences to this mathematical invariance when the function in question is a lagrangian $\mathcal{L}$.\\~\\
+When a symmetry exists for a lagrangian $\mathcal{L}\rightarrow \mathcal{L}$, there exists a vector field whose divergence is zero, $\p_\mu j^\mu=0$. These vector fields are called Noether currents. The spatial integral of the charge density in the Noether current $j^\mu$ is called a Noether charge $Q$. These conserved quantities are the consequence of the zero divergence of a vector field. The simplest example from physics is the electric field, and the electric charge. The Noether current has a zero divergence, and is therefore associated with some conserved quantity, which is called electric charge. In general relativity and other types of particle interactions we can formulate invariant quantities by searching for groups of transformations that leave the lagrangian in question invariant.
 \section*{Problem 2.a.}
-Starting with the homogenous equation, transform all partial derivatives to covariant derivatives and get back the original equation. The covariant derivative of a vector field $V^\mu$ is
-\g{\nabla_\mu V^\nu = \p_\mu V^\nu + \Gamma^\nu_{\mu\lambda} V^\lambda}
-Apply this to the electromagnetic tensor $F^{\mu\nu}$,
-\g{\nabla_\mu V_\nu - \nabla_\nu V_\mu = \p_\mu V_\nu - \p_\nu V_\mu + {\Gamma^\rho}_{\mu\nu}V_\rho - {\Gamma^\rho}_{\mu\nu}V_\rho=\p_\mu V_\nu - \p_\nu V_\mu}
-The homogenous equations are
+Starting with the homogenous equation, transform all partial derivatives to covariant derivatives and get back the original equation. The homogenous equations are
 \g{\p_\gamma F_{\alpha\beta}+\p_\alpha F_{\beta\gamma} + \p_\beta F_{\gamma \alpha} &= 0}
-
+Now replace the partial derivatives with covariant derivatives as requested.
 \g{\nabla_\gamma F_{\alpha\beta}+\nabla_\alpha F_{\beta\gamma} + \nabla_\beta F_{\gamma \alpha} &= 0}
+The covariant derivative of $F_{\alpha\beta}$ is
+\g{\nabla_\gamma F_{\alpha\beta} = \p_\gamma F_{\alpha\beta} - \Gamma^\delta_{\alpha \gamma}F_{\delta\beta}-\Gamma^\delta_{\beta\gamma}F_{\alpha\delta}}
 Expand the covariant derivatives.
-
+\g{\p_\gamma F_{\alpha\beta} & +\p_\alpha F_{\beta\gamma} + \p_\beta F_{\gamma \alpha} \\
+\qquad &-{\Gamma^\delta}_{\alpha \gamma} F_{\delta \beta} - {\Gamma^\delta}_{\beta \gamma}F_{\alpha\delta}\\
+\qquad &-{\Gamma^\delta}_{\beta \alpha} F_{\delta\gamma} - {\Gamma^\delta}_{\gamma \alpha}F_{\beta\delta}\\
+\qquad &-{\Gamma^\delta}_{\gamma \beta} F_{\delta\alpha}- {\Gamma^\delta}_{\alpha \beta}F_{\gamma\delta}=0}
+There are six terms proportional to $\Gamma$. The three on the left column are equal to the three on the right, except for the flipped indices on $F_{\mu\nu}$ and the flipped indices on $\Gamma^\delta_{\alpha \beta}$. Due to the asymmetry $F_{\mu\nu}=-F_{\nu\mu}$ and the symmetry $\Gamma^\delta_{\alpha \beta}=\Gamma^\delta_{\beta \alpha}$, the indices can easily be aligned, resulting in a total cancellation of the $\Gamma$ terms. This results in the homogenous equation using covariant derivatives,
+\g{\boxed{\nabla_\gamma F_{\alpha\beta}+\nabla_\alpha F_{\beta\gamma} + \nabla_\beta F_{\gamma \alpha} = 0}}
 \section*{Problem 2.b.}
 For the coordinate basis,
 \g{e_\mu=\pa{x^\mu}P \qquad e^\mu = \nabla x^\mu}
 \g{e^\mu e_\nu = e_\nu \nabla x^\mu = \nabla e_\nu x^\mu = \nabla_{\pa{x^\nu}} x^\mu = \pa{x^\nu}x^\mu = \delta^\mu_\nu}
-So, in a coordinate basis we expect that partial derivatives and covariant derivatives are equal.
+So, in a coordinate basis we expect that \fbox{partial derivatives and covariant derivatives are equal.}
 \section*{Problem 2.c.}
 Show that $F_{\mu\nu}$ is invariant under $A_\mu \rightarrow A_\mu+\p_\mu \psi$.
 \g{F_{\mu\nu}\vert_{A_\mu \rightarrow A_\mu+\p_\mu \psi}&= \p_\mu(A_\nu+\p_\nu \psi)-\p_\nu(A_\mu + \p_\mu \psi)\\
