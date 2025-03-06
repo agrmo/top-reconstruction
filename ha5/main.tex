@@ -22,7 +22,7 @@
 
 \begin{document}
 \begin{center}
-\textbf{\Large{Problem Set 3}}\\~\\
+\textbf{\Large{Problem Set 5}}\\~\\
 \begin{tabular}{l l}
 Student&Agustin Romero\\
 Email&ar1@stanford.edu\\
@@ -34,14 +34,110 @@ Date&\today\\
 \end{tabular}
 \end{center}
 \section*{Problem 1}
+A symmetry is any transformation of a variable which leaves a function unchanged. There are many examples of symmetries in physics. When a symmetry exists for a function, there exists a vector field whose divergence is zero. These vector fields are called Noether currents. The spatial integral of a Noether currents is called a Noether charge. These conserved quantities are the consequence of the zero divergence of a vector field. The simplest example from physics is the electric field, and the electric charge. The electric field has a zero divergence, and is therefore associated with some conserved quantity, which is called electric charge. 
 \section*{Problem 2.a.}
+Starting with the homogenous equation, transform all partial derivatives to covariant derivatives and get back the original equation. The covariant derivative of a vector field $V^\mu$ is
+\g{\nabla_\mu V^\nu = \p_\mu V^\nu + \Gamma^\nu_{\mu\lambda} V^\lambda}
+Apply this to the electromagnetic tensor $F^{\mu\nu}$,
+\g{\nabla_\mu V_\nu - \nabla_\nu V_\mu = \p_\mu V_\nu - \p_\nu V_\mu + {\Gamma^\rho}_{\mu\nu}V_\rho - {\Gamma^\rho}_{\mu\nu}V_\rho=\p_\mu V_\nu - \p_\nu V_\mu}
+The homogenous equations are
+\g{\p_\gamma F_{\alpha\beta}+\p_\alpha F_{\beta\gamma} + \p_\beta F_{\gamma \alpha} &= 0}
+
+\g{\nabla_\gamma F_{\alpha\beta}+\nabla_\alpha F_{\beta\gamma} + \nabla_\beta F_{\gamma \alpha} &= 0}
+Expand the covariant derivatives.
+
 \section*{Problem 2.b.}
+For the coordinate basis,
+\g{e_\mu=\pa{x^\mu}P \qquad e^\mu = \nabla x^\mu}
+\g{e^\mu e_\nu = e_\nu \nabla x^\mu = \nabla e_\nu x^\mu = \nabla_{\pa{x^\nu}} x^\mu = \pa{x^\nu}x^\mu = \delta^\mu_\nu}
+So, in a coordinate basis we expect that partial derivatives and covariant derivatives are equal.
 \section*{Problem 2.c.}
+Show that $F_{\mu\nu}$ is invariant under $A_\mu \rightarrow A_\mu+\p_\mu \psi$.
+\g{F_{\mu\nu}\vert_{A_\mu \rightarrow A_\mu+\p_\mu \psi}&= \p_\mu(A_\nu+\p_\nu \psi)-\p_\nu(A_\mu + \p_\mu \psi)\\
+&= \p_\mu A_\nu - \p_\nu A_\mu + \p_\mu \p_\nu \psi - \p_\nu \p_\mu \psi = \boxed{F_{\mu\nu}}}
+Using the commutivity of the partial derivative $\p_\mu \p_\nu$ we can show that $F_{\mu\nu}$ is invariant under addition of the gradiant of a scalar.
 \section*{Problem 2.d.}
+Ref MTW p.569, Blandford Thorne p. 1519. Starting with Maxwell's equation
+\g{\nabla_\nu F^{\mu\nu} = 4\pi J^\mu}
+The prompt requests to use no sources so $J^\mu=0$,
+\g{\nabla_\nu F^{\mu\nu} &= 0
+\intertext{Expand $F^{\mu\nu}$ in using covariant derivatives.}
+\nabla_\nu (\nabla^\mu A^\nu - \nabla^\nu A^\mu) &= 0
+\intertext{Use the commutation equation for covariant derivatives, $\nabla_\mu \nabla^\alpha T^\mu = \nabla^\alpha \nabla_\mu T^\mu + R^\alpha_\mu T^\mu$}
+\nabla^\mu \nabla_\nu A^\nu + R^\mu_\nu A^\nu - \nabla_\nu \nabla^\nu A^\mu &= 0
+\intertext{Here in order to get the requested result we have the freedom to choose the Lorentz gauge, $\nabla_\mu A^\mu = 0$.}
+\nabla^\nu \nabla_\nu A^\mu &= R^{\mu\nu}A_\nu}
+Using the commutation relations for covariant derivatives, Maxwell's equations, and the Lorentz gauge, we have
+\g{\boxed{\nabla^\beta \nabla_\beta A^\alpha = R^{\alpha \beta} A_\beta}}
 \section*{Problem 3.a.}
+The sun has the mass
+\g{m_\odot = 1.988\zehnein{30}{kg}}
+Using the conversion
+\g{1\ein{g}=5.609\zehnein{32}{eV c$^{-2}$ g$^{-1}$}}
+The energy scale is
+\g{1.988\zehnein{33}{g}\times 5.6\zehnein{32}{eV c$^{-2}$ g$^{-1}$} =\boxed{1.11\zehnein{66}{eV c$^{-2}$}}}
+Using the conversion
+\g{l=\br{\hbar c}{E}=\br{197.3\zehn{MeV fm}}{E}}
+The length scale is
+\g{l=\br{\hbar c}{E}=\br{197.3\zehn{MeV fm}}{1.11\zehnein{66}{eV}}=\boxed{1.77\zehnein{-58}{fm}}}
+Using the factor of $c$ the time scale is
+\g{\br{l}{c}=\br{1.77\zehnein{-58}{fm}}{c}=\boxed{5.90\zehn{-82}{s}}}
+Logically a large amount of mass implies a large energy scale, small length scale, and small time scale.
 \section*{Problem 3.b.}
+The question asks to express the angular momentum of a spinning ball in natural units with specifically length squared, or $m^2$, as dimensions. The moment of inertia of a ball is
+\g{I=\br{2}{5}mr^2}
+The angular velocity, orbital velocity, and period of a spinning ball is
+\g{\omega=\br{2\pi}{T} \qquad v=r\omega=\br{2\pi r}{T} \qquad T=\br{2\pi r}{v}}
+The angular momentum of a spinning ball in terms of $T$ or $v$ is then
+\g{L=I\omega = \br{4\pi}{5T}r^2=\br{2}{5}mvr }
+For a ball of mass $m_\odot$, radius $700\zehnein{6}{m}$ and period $T=27\ein{d}$, the angular momentum is
+\g{L=\br{4\pi}{5T}mr^2=2.599\zehnein{32}{J s}}
+in SI units. In natural units this is
+\g{\br{L}{\hbar}=2.45\zehn{66}}
+To express this as a length squared we will need to include factors of eV.
+\g{1\ein{GeV$^{-2}$}=0.389\zehnein{-31}{m$^2$}}
+\g{1=0.389\zehnein{-31}{m$^2$ GeV$^2$}}
+\g{L=2.45\zehn{66}=2.46\zehn{66} \cdot 0.389 \zehnein{-31}{m$^2$ GeV$^2$}=\boxed{9.56\zehnein{34}{m$^2$ GeV$^2$}}}
+For a ball of mass $m_\odot$, radius $700\zehnein{6}{m}$ and rotational speed $c$, the angular momentum is
+\g{L=\br{2}{5}mvr=2.722\zehnein{42}{J s}}
+in SI units. Calculating similarly this is
+\g{\br{L}{\hbar}=2.56\zehn{76}}
+in natural units and 
+\g{\boxed{L=9.99\zehnein{44}{m$^2$ GeV$^2$}}}
+in natural units with length squared.
 \section*{Problem 3.c.}
+Power is expressed in in Joules s$^{-1}$ in SI units.
+\g{P=\br{E}{t}}
+One Watt in natural units is then
+\g{1\ein{W}=1\br{\ein{J}}{\ein{s}}=25.8\zehnein{3}{eV$^2$}}
+$1\ein{eV$^{2}$}$ is equivalent to 
+\g{1\ein{eV$^{2}$ = 0.243\ein{mW}}}
+This is \fbox{independent of mass}. Although in natural units the units are of mass squared, we do not expect physical quantities of power to be dependent on mass.
 \section*{Problem 3.d.}
+Using natural units with $\hbar=c=G$ there is only one combination of $\hbar$, $c$, and $G$ that has units of length. Schematically,
+\g{\ein{m}=\hbar^a \ein{[kg m$^2$ s$^{-1}$]} \times c^b \ein{[m s$^{-1}$]} \times G^c \ein{[m$^3$ kg$^{-1}$ s$^{-2}$]}}
+$\hbar G$ has units of m$^5$ s$^{-3}$, so $c$ needs to be introduced. $\br{\hbar G}{c^3}$ has units of $m^2$, so the entire expression needs to be square-rooted. The resultant expression for the Planck length is
+\g{\boxed{l_P=\sqrt{\br{\hbar G}{c^3}}=1.61\zehnein{-35}{m}}}
+Similarly the Planck time can be calculated by observing that $\hbar G$ has units of m$^5$ s$^{-3}$, $\br{\hbar G}{c^5}$ has units of s$^2$, and so the Planck time is
+\g{\boxed{\sqrt{\br{\hbar G}{c^5}} = 5.37\zehnein{-44}{s}}}
+Similarly the Planck mass can be calculated by observing that $\br{\hbar}{G}$ has units of kg$^2$ m$^{-1}$ s, and then $\br{\hbar c}{G}$ has units of kg$^2$, and so the Planck mass is expressed as
+\g{\boxed{\sqrt{\br{\hbar c}{g}}=21.72\ein{$\mu$g}}}
+Similarly the Planck energy can be calculated by observing that $\br{\hbar}{G}$ has units of kg$^2$ m$^{-1}$ s, and then $\br{\hbar c^5}{G}$ has units of kg$^2$ m$^4$ s$^{-4}$, and so the Planck energy is
+\g{\boxed{\sqrt{\br{\hbar c^5}{G}}=1.9\zehnein{9}{J}=1.18\zehnein{28}{eV}}}
 \section*{Problem 4.a.}
+The prompt asks to derive gravitational redshift on Earth using the path of a photon as it travels down and back up a mineshaft. We can calculate this explicitly using the equivalence principle and the fact that $g$ is approximately constant for the duration of the mineshaft,
+\g{\br{\Delta \lambda}{\lambda}&=\br{1}{c}\int \nabla \Phi dt\\
+&= \br{1}{c^2}\int \dd{x} \Phi dx\\
+&= \boxed{\br{1}{c^2} \Delta \Phi}}
 \section*{Problem 4.b.}
+In comparison to 4.a. there is not a constant force of acceleration $g$ available for the duration of the photon path integral, and so we will need to choose an appropriate metric and analyse the problem from there. Choose the Schwarzschild metric,
+\g{ds^2=-(1-\br{2GM}{r})dt^2+(1-\br{2Gm}{r})^{-1}dr^2+r^2(d\theta^2+\sin^2d\phi)^2}
+We can read off the transformation between proper time $\tau$ and coordinate time $t$,
+\g{\Delta \tau = (1-\br{2Gm}{r})^{1/2} \Delta t}
+For an object emitted at position $r_1$, travelling away from the mass to position $r_2$, the shift in wavelength is
+\g{\br{\lambda_2}{\lambda_1}=\br{\Delta \tau_2}{\Delta \tau_1}=(\br{1-\br{2Gm}{r_2}}{1-\br{2Gm}{r_1}})^{1/2}}
+and so using $\br{a}{b}-1=\br{a-b}{b}$ we can calculate $\br{\Delta \lambda}{\lambda}$,
+\g{\boxed{\br{\Delta \lambda}{\lambda}=(\br{1-\br{2Gm}{r_2}}{1-\br{2Gm}{r_1}})^{1/2}-1}}
+For the sun, $m=1.988\zehnein{31}{kg}$, and starting from the surface of the Sun, $r_1=6.957\zehnein{8}{m}$, and travelling to the Earth, $r_2=1.484\zehnein{11}{m}$,
+\g{\boxed{\br{\Delta \lambda}{\lambda}=0.0000211}}
 \end{document}
