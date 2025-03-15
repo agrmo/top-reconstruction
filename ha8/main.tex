@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{times}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\setlength{\parindent}{0pt}
+\geometry{top=1in,bottom=1in,left=1in,right=1in}
+
+\usepackage{graphicx}
+\usepackage{floatrow}
+\newcommand{\fig}[3]{
+\begin{figure}[H]
+\begin{center}
+\includegraphics[height=#1]{#2}
+\caption{#3}
+\label{#2}
+\end{center}
+\end{figure}}
+%\fig{5cm}{1.png}{Diagram.}
+
+\begin{document}
+\begin{center}
+\textbf{\Large{Problem Set 8}}\\~\\
+\begin{tabular}{l l}
+Student&Agustin Romero\\
+Email&ar1@stanford.edu\\
+Instructor&Roger Blandford\\
+Assistant&Andrew Sullivan\\
+Course&PHYSICS 262\\
+Institution&Stanford University\\
+Date&\today\\
+\end{tabular}
+\end{center}
+\section*{Problem 1}
+
+\section*{Problem 2.a.}
+We would like to solve for $\theta(t)$ for the star-black-hole system. Let $m$ be the mass of the star, and $M$ the mass of the black hole. The angular momentum of the star orbiting the black hole is
+\g{L=mvr}
+The total energy of the star in a stable circular orbit is
+\g{E=\br{1}{2}mv^2-\br{GMm}{r}=0}
+Solve for the velocity of the star
+\g{v=(\br{2GM}{r})^{1/2}}
+Plug into angular momentum,
+\g{L=r(\br{2GM}{r})^{1/2}m=(GMp)^{1/2}m}
+The angular momentum of the system is conserved. Use it to solve for the angle $\theta(t)$
+\g{I=mr^2}
+\g{L=I\omega=mr^2\dot{\theta}}
+\g{r^2\dot{\theta}^2=(GMp)^{1/2}}
+The circular orbit has eccentricity
+\g{e=1}
+and $r(\theta)$,
+\g{\zeich{n8cn}r(\theta)=\br{p}{1+\cos(\theta)}}
+Solve for $\dot{\theta}$ and simplify
+\g{\dot{\theta}&=(GMp)^{1/2}\br{1}{r^2}\\
+&= (\br{GM}{p^3})^{1/2} (1+\cos(\theta))^2}
+Separate into a first order differential equation and solve.
+\g{\zeich{ansd8n}\int_0^\theta \br{d\theta}{(1+\cos(\theta))^2}=\int_0^t (\br{GM}{p^3})^{1/2} dt}
+The $\theta$ integral has analytical solution
+\g{\int_0^\theta \br{d\theta}{(1+\cos(\theta))^2}=\br{1}{6}\tan(\br{\theta}{2})^3+\br{1}{2}\tan(\br{\theta}{2})}
+\gz{ansd8n} has the form of a polynomial where $x=\tan(\br{\theta}{2})$
+\g{\br{1}{6}x^3+\br{1}{2}x+c=0}
+Solve the polynomial, and substitute $x$. This solves for the polar angle $\theta$ as a function of $t$.
+\g{\boxed{\theta=2\arctan \br{((9c^2+1)^{1/2}-3c)^{2/3}-1}{((9c^2+1)^{1/2}-3c)^{1/3}} \qquad c=-(\br{GM}{p^3})^{1/2}t}}
+\section*{Problem 2.b.}
+The calculation of the traceless quadrupole moment $Q_{ij}$ proceeds as 
+\begin{enumerate}
+\item Write the system's Newtonain potential as
+\g{\Phi=\int \br{\rho(x')}{|x-x'|}dx'^2}
+\item Expand the potential
+\g{\br{1}{|x-x'|}=\br{1}{r}+\br{x^jx^{j'}}{r^3}}
+\item Integrate the potential to order $x^2$ to obtain the quadrupole moment $I_{ij}$
+\g{\Phi(x')=-\br{M}{r}-\br{3 I_{jk} x^j x^k}{2r^5}+...}
+\g{M=\int \rho dV_x}
+\item Calculate the quadrupole moment
+\g{I_{ij}=\int d^3 x \rho (r_i r_j - \br{1}{3}r^3 \delta_{ij}}
+\item Using the quadrupole moment calculate the trace free quadrupole moment
+\g{P_{ij}=n_i m_j - \delta_{ij}}
+\g{Q_{ij}=P^{il} I_{lm} p^{im}}
+\end{enumerate}
+\section*{Problem 2.c.}
+Implement the steps from 2.b. 
+\g{I_{jk} &= \int \rho (x^j x^k - \br{1}{3}r^2 \delta_{jk})dV_x
+\intertext{The star can be treated as a point mass, $\int \rho dV_x = m$. Substitute $r$ from \gz{n8cn}}
+&= m x^j x^k -\br{1}{3} r^2 \delta_{jk}
+\intertext{Using the coordinates $\vec{x}=(r\cos(\theta),r\sin(\theta),0)$ the matrix can be read off easily.}
+&= mr^2 \matr{\sin(\theta)^2 - \br{1}{3} & \sin(\theta)\cos(\theta) & 0 \\
+\sin(\theta)\cos(\theta) & \cos(\theta)^2 -\br{1}{3} & 0 \\
+0 & 0 & -\br{1}{3}}\\
+&= m(\br{p}{1+\cos(\theta)})^2 \matr{\sin(\theta)^2 - \br{1}{3} & \sin(\theta)\cos(\theta) & 0 \\
+\sin(\theta)\cos(\theta) & \cos(\theta)^2 -\br{1}{3} & 0 \\
+0 & 0 & -\br{1}{3}}}
+This is the quadrupole moment. Now calculate the third derivative by substitution, taking the trace, and differentiating 
+\g{\dot{Q}=(\dot{\theta})\dd{\theta}q}
+\g{\ddot{Q}=(\dot{\theta})\dd{\theta}(\dot{\theta}\dd{\theta}Q)}
+\g{\dddot{Q}=(\dot{\theta})\dd{\theta}(\dot{\theta} \dd{\theta}(\dot{\theta} \dd{\theta}Q))}
+This is calculated in Mathematica in the next page.
+\section*{Problem 2.d.}
+This is also calculated in Mathematica in the next page. The result is
+\g{\Delta E &= \br{1}{5} \int_{-\pi}^{\pi} \dot{\theta}^{-1} \tr \dddot{Q_{ij}} \dddot{Q}^{ij} d\theta \\
+&= \boxed{170 \pi m^2 M^{5/2} {3 p^{7/2}} }}
+\section*{Problem 3.a.}
+\section*{Problem 3.b.}
+\section*{Problem 3.c.}
+\section*{Problem 4.a.}
+\section*{Problem 4.b.}
+\section*{Problem 4.c.}
+\section*{Problem 4.d.}
+\section*{Problem 4.e.}
+\end{document}
