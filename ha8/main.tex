@@ -99,14 +99,83 @@ This is the quadrupole moment. Now calculate the third derivative by substitutio
 This is calculated in Mathematica in the next page.
 \section*{Problem 2.d.}
 This is also calculated in Mathematica in the next page. The result is
-\g{\Delta E &= \br{1}{5} \int_{-\pi}^{\pi} \dot{\theta}^{-1} \tr \dddot{Q_{ij}} \dddot{Q}^{ij} d\theta \\
-&= \boxed{170 \pi m^2 M^{5/2} {3 p^{7/2}} }}
+\g{\Delta E &= \br{1}{5} \int_{-\pi}^{\pi} \dot{\theta}^{-1} \tr (\dddot{Q_{ij}} \dddot{Q}^{ij}) d\theta \\
+&= \boxed{170 \pi \br{m^2 M^{5/2}}{3 p^{7/2}} }}
+
+\includepdf[pages=1]{right2.pdf}
+
 \section*{Problem 3.a.}
+For GW150914 we can use the constants
+\g{h=1\zehn{-21} \qquad f_{GW}=200\ein{Hz} \qquad r=1.4\ein{bly}}
+Calculate the flux of the gravitational wave in units of $W/m^2$,
+\g{F_{GW}&=\br{1}{16\pi}(\dot{h_\times}^2+\dot{h_+}^2=\br{1}{16\pi}((\br{h}{\Delta t})^2+(\br{h}{\Delta t})^2)=\br{1}{8\pi}(hf)^2\\
+&= \br{c^3}{8\pi G}(hf_{GW})^2\\
+&= \boxed{6.42\zehnein{-}{W/m$^2$}}}
+This is the flux as measured on Earth. 
 \section*{Problem 3.b.}
+Using the flux as measured on Earth, calculate the total power lost by integrating over the sphere, where the radius is the distance to GW150914.
+\g{L_{GW}=\int r^2 F_{GW} d\Omega = 4\pi r^2 F_{GW} = \boxed{1.41\zehnein{48}{W}}}
+This is fairly close to the quoted value 3.6$\zehnein{49}{W}$.
 \section*{Problem 3.c.}
+This is a binary merger with two approximately equal masses $m_1$ and $m_2$, circular orbit, and semimajor axis $r$. Kepler's third law in this case is
+\g{T=(\br{4\pi^2}{G M}{r^3})^{1/2}}
+where $M$ is the combined mass of the black holes and $r$ is the semimajor axis, in other words radius about the center of mass. For the final seconds of the merger binary merger, the orbit is approximately circular,
+\g{L_{GW}=\br{32c^5}{5G}(\br{\mu}{M})^2(\br{\pi G M f}{c^3})^{10/3}}
+where $f=f_{GW}$, $\mu$ is the reduced mass and $M$ is the sum of the individual black hole masses. We need one more piece of information which is the relationship between the semimajor axis and the time duration of the merger,
+\g{r=bt^{1/4}}
+where $b$ is some constant of proportionality in units of $ms^{-1/4}$. Solve for $F_{GW}$ in terms of $t$,
+\g{L_{GW}&=\br{32c^5}{5G}(\br{\mu}{M})^2(\br{\pi G M f}{c^3})^{10/3}(\br{4\pi}{GM}b^3 t^{3/4})^{-1/2\cdot 10/3}\\
+&=\zeich{n8xnc}\boxed{\br{32c^5}{5G}(\br{\mu}{M})^2(\br{\pi G M f}{c^3})^{10/3}(\br{4\pi}{GM})^{-5/3}b^3 t^{-5/4}}}
+So \fbox{$L_{GW}$ is proportional to $t^{-5/4}$.} Finally the question asks to compare $L_{GW}$ from 3.b. with the quoted amount of energy loss $E$,
+\g{E=3m_\odot = 5.36\zehnein{47}{J}}
+There are a few ways to calculate $E$. The simplest way is assuming $L_{GW}$ is constant over the duration of the merger, $\Delta t=150\ein{ms}$.
+\g{E_{GW}=L_{GW} \Delta t = 2.12\zehnein{47}{J}}
+Which is already fairly agreeable. Another way is to use \gz{n8xnc} and assume some constant of proportionality $b$. We would need some solution which relates the semimajor axis $r$ of the decaying orbit and the time elapsed of the merger, $r(t)=b t^{-1/4}$ which we will decide to not solve for. Another way to solve this is assuming that $L_{GW}=L_{GW0}$ is a constant of proportionality in the function $L_{GW}=L_{GW0} t^{-5/4}$, and integrating over $t$. This diverges as $t$ goes to 0, so we need to decide on when it is physically appropriate to cut off the integral. A simple choice is when the Schwarzschild radii are overlapping. We can conject that the radiation is maximal when the radi are touching, and so we should integrate from the start of the merger until the maximum. By looking at the chirp,
+\fig{8cm}{1.png}{Chirp.}
+we can see that the peak is about 10 milliseconds separated from the end of the merger. Assuming the constant of proportionality $b$ is indeed 1, the $t$ integral will contribute a factor of
+\g{\int_10^200 t^{-5/4}=1.18}
+to $L_{GW}$, and so this calculation brings $E$ to
+\g{E=2.50\zehnein{47}J}
+slightly closer to the quoted value.
 \section*{Problem 4.a.}
+This is an analysis of gravitational waves on a Michelson interferometer in the TT gauge. Assume that the planar gravitational wave is orthogonal to the plane of the detectors. This maximizes the effect of the gravitational wave on the beam path. Then it is acceptable to consider this calculation as an upper bound. The gravitational wave does not perturb the path lengths in the TT coordinate system $x$, but it does perturb the path lengths in the proper reference frame $\hat{x}$. The change in lengths are
+\g{L_x=l_x(1+\br{1}{2}h(t))}
+\g{L_y=l_y(1+\br{1}{2}h(t))}
+Using $h=1\zehn{-21}$ and $l_x=l_y=4$ km, the lengths $L_x$ and $L_y$ are essentially just barely above and below 4 kilometers.
+\g{L_x= 4.000000000000000000002\ein{km} \qquad L_y=3.999999999999999999998 \ein{km}}
+which give the displacements
+\[ \! \boxed{\begin{aligned}
+\delta_x &= 0.000000000000000000002\ein{km} = 2\zehnein{-18}{m}\\
+\delta_y &= -0.000000000000000000002\ein{km} = -2\zehnein{-18}{m}
+\end{aligned}} \]
 \section*{Problem 4.b.}
+The period of the gravitational wave is about $T=\br{1}{f}=\br{1}{200}$ seconds. For a photon travelling at the speed of light, it travels the distance
+\g{d=vt=ct=cT=1.499\zehnein{6}{m}}
+meters in one period of the gravitational wave. For a baseline wavelength of 4 km, the photon in the $y$ beamline makes
+\g{\boxed{\br{d}{4.00 ... 2\ein{km}}=374.74057249 ... 8}}
+number of round trips and the photon in the $x$ beamline makes
+\g{\boxed{\br{d}{3.99 ... 8\ein{km}}=374.74057250 ... 2}}
+number of round trips. The precision on the number of round trips will be necessary later.
 \section*{Problem 4.c.}
+To calculate the force on the mirror we know the total displacement of the mirror $\delta_x$ and the period the gravitational pulse $T$. Given these variables it is appropriate to assume some constant force displaces the mirrors during this time
+\g{x=\br{1}{2}at^2}
+We conjecture in this prompt that instead of a displacement due to spacetime geometry, the force of photons is what causes the displacement. Solve for the acceleration.
+\g{a=\br{2x}{t^2}=1.6\zehnein{-13} m/s}
+For 40 kg masses this implies a constant force
+\g{\boxed{F=ma=6.4\zehnein{-12}N}}
+during the period of the gravitational wave $T$.
 \section*{Problem 4.d.}
-\section*{Problem 4.e.}
+For this part we desire to calculate the number of photons that could have produced that force. The photons are at wavelength 1000 nm, about that of Nd:YAG lasers employed at LIGO. The amount of momentum transfer for such a force over that amount of time is
+\g{p=Ft=FT=3.2\zehnein{-14}{kg m/s}}
+Some number of photons must produce that value of momentum transfer $p$. A single photon has momentum 
+\g{p=\br{h}{\lambda}}
+which can impact on the mirror, be absorbed, and then reemitted, producing another amount of momentum transfer
+\g{p=\br{h}{\lambda}}
+And so one collision-emission event produces momentum transfer
+\g{p_1 = \br{2h}{\lambda} = 1.325\zehnein{-27}{kg m/s}}
+The number of total collision-emission events to produce the total momentum transfer $p$ must then be
+\g{\br{p}{p_1}=2.415\zehn{13}}
+About \fbox{20 trillion photons} at wavelength 1000 nm must collide with the mirror during the period $T$ of the gravitational wave in order to produce the experimentally measured displacement $\delta_x$ of the LIGO mirrors. However the cavity reflects photons back to the mirrors repeatedly, so
+\g{\br{p}{\Delta p} \br{1}{\rom{round trips}}=6.44 \zehn{10}}
+About \fbox{60 billion photons} at wavelength 1000 nm must be in the cavity during the period $T$ of the gravitational wave in order to produce the experimentally measured displacement $\delta_x$ of the LIGO mirrors.
 \end{document}
