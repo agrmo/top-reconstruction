@@ -35,9 +35,67 @@ Date&\today\\
 \end{tabular}
 \end{center}
 \subsection*{Problem 1.a.}
+The general concept of a tangent space can be thought of as the space of vectors that are tangent to a point on a curved surface. For example for a circle, draw a point,
+\fig{4cm}{1.jpg}{Concept of tangent space.}
+and the set of possible vectors tangent to that point can be called the ``tangent space'' to that point. Note it requires two important definitions: some initial object, or manifold, and a point on the manifold. Next, the general concept of a manifold is a space with four coordinates,
+\g{\vec{x}=(t,x,y,z)}
+Now a four dimensional Pseudo-Riemannian manifold is a manifold with these coordinates, with the function $g_{\mu\nu}$ that is defined everywhere, which takes two vectors of a tangent space and converts them into a single number.
+\g{g_{\mu\nu}=T_xM \times T_x M \rightarrow \mathcal{R}}
+This $g_{\mu\nu}$ is in particular symmetric, in the sense that when when written as a matrix, it is symmetric. Finally, we can summarize the definition of a Pseudo-Riemannian manifold,
+\begin{enumerate}
+\item Let $M$ be a manifold.
+\item Let $x\in M$.
+\item Let $T_x M$ be the tangent space for the point $x$ on $M$.
+\item Let $f=T_x M \times T_x M \rightarrow \mathcal{R}$ be a function, and a symmetric bilinear form.
+\item Then the tuple $(M,f)$ is a Pseudo-Riemann Manifold.
+\end{enumerate}
 \subsection*{Problem 1.b.}
+We want to explain the relationship between vectors, directional derivatives, and vectors in a tangent space. Going back to \fz{1.jpg}, imagine two different kinds of vectors: one on the sphere itself, and one on the tangent space.
+\fig{4cm}{2.png}{Concept of tangent vectors.}
+Two vectors points in the same direction. One vector lies on the circle, and the other in the tangent space. As the circle vector's length increases significantly, we recognize that this vector is curved, bound to the sphericality of the circle. On the other hand the tangent vector is not curved as it gets longer, it's not bound to the curvature of the sphere any more. But as these two vectors decrease in magnitude, they coincide more, and agree as to what their tails and heads are. Now consider the actual definition of a tangent space,
+\begin{enumerate}
+\item Let $U \in \mathcal{R}^d$.
+\item Let $x\in U$.
+\item Let $T=\{x\}\times \rom{span} \{\pa{x^1},\pa{x^2},...\}$.
+\item Let $T$ be a vector space.
+\item Then $T$ is a ``tangent space.''
+\end{enumerate}
+We can see that the tangent space is rigorously \textit{defined} as the space spanned by the direction derivatives that originated on the manifold. There we can see the simple relationship between describing a vector as \fbox{both a directional derivative} \fbox{and a displacement in tangent space.}
 \subsection*{Problem 1.c.}
+Working a coordinate basis we can consider a function $f=\mathcal{R}^d\rightarrow \mathcal{R}$, which maps a coordinate to a value. We expect the partial derivative of that function to be $\nabla f$,
+\g{(\nabla f)_i = \pa{x^i}f}
+where the is one index: $i$ for the direction of the derivative. Next for a vector function $v(x^i)^j$ we have two indices when we compute the partial derivative,
+\g{\nabla_\alpha v^\beta = \pa{x^\alpha} v^\beta}
+where there are two indices: $\alpha$ for the direction of the derivative and $\beta$ for the direction of the vector. Let's suppose we want to compare two vectors at different points. We already know that in order to measure the angle between two vectors, we must move those two vectors towards eachother so that their tails coincide. This applies universally, all the way to basic geometry and mechanics courses. But we also know that transporting vectors depends on the curvature of space. The classic example is that of transporting a vector around about a sphere. 
+\fig{4cm}{4.png}{Concept of parallel transport: moving a vector $v$ via three transformations: $t_1$, $t_2$, and $t_3$.}
+We \textit{need one more index}: to describe the direction in which we transport the vector.
+\fig{5cm}{3.png}{Concept of parallel transport.}
+After transporting along the direction $\vec{t}$, we need a general expression that tells us the impact of that transport. $\vec{t}$ is just the direction of transport. It must be associated with a new variable that tells us how much the vector $\vec{v}$ changed. Call it $\Gamma$. Then the new vector is the original vector's directional derivative, plus the contribution from $\Gamma$.
+\g{\boxed{\nabla_\beta v^\alpha = \pa{x^\beta}v^\alpha+{\Gamma^\alpha}_{\beta\gamma}v^\gamma}}
+\fbox{These $\Gamma$ are called \textit{connections}.} This is the directional derivative of a first rank tensor, a vector. Note this is valid only in the coordinate basis.
 \subsection*{Problem 1.d.}
+We would like to derive the form of $\nabla({T^\alpha}_\beta)$, the covariant derivative of a mixed rank 2 tensor, using the basic definitions of the connection. Starting from basic principles, the covariant derivative on a contravariant vector is
+\g{\nabla_\mu V^\nu = \pa{x^\mu} V^\nu + {\Gamma^\nu}_{\mu\rho} V^\rho = \p_\mu V^\nu + {\Gamma^\nu}_{\mu\rho} V^\rho}
+The covariant derivative on covariant vectors is needed, $\nabla_\gamma v_\alpha$. To do this, use the product rule on two arbitrary contracted vectors,
+\g{\nabla_\gamma(v_\alpha w^\alpha)&=(\nabla_\gamma v^\alpha)w^\alpha + v_\alpha(\nabla_\gamma w^\alpha)\\
+&= (\nabla_\gamma v_\alpha)w^\alpha + v_\alpha(\p_\gamma w^\alpha + \Gamma^\alpha_{\gamma \delta}w^\delta)}
+Move the $v_\alpha$ term over,
+\g{(\nabla_\gamma v_\alpha) w^\alpha &= \nabla_\gamma (v_\alpha w^\alpha) - v_\alpha \p_\gamma w^\alpha - \Gamma^\alpha_{\gamma \delta} v_\alpha w^\delta
+\intertext{By moving the $v_\alpha$ term over, the $\Gamma$ term now has a minus sign. There are other terms that look daunting. Note however that $\nabla_\gamma(v_\alpha w^\alpha)$ can be treated as a partial derivative with the product rule. This will simplify the result.}
+&= (\p_\gamma v_\alpha) w^\alpha + v_\alpha (\p_\gamma w^\alpha) - v_\alpha \p_\gamma w^\alpha - \Gamma^\alpha_{\gamma \delta} v_\alpha w^\delta
+\intertext{The two partial derivatives on $w$ cancel.}
+&= (\p_\gamma v_\alpha) w^\alpha -\Gamma^\alpha_{\gamma \delta} v_\alpha w^\delta
+\intertext{Now cleverly, because both $\delta$ and $\alpha$ are contracted on $\Gamma$, they can be swapped.}
+&= (\p_\gamma v_\alpha) w^\alpha -{\Gamma^\delta}_{\gamma \alpha} v_\delta w^\alpha}
+The $w$ is arbitary, so it can be factored out and divided out, leaving us with
+\g{\nabla_\gamma v_\alpha = \p_\gamma v_\alpha - {\Gamma^\delta}_{\gamma \alpha} v_\delta}
+This is the covariant derivative on a covariant vector. Now to answer the question, apply the product rule on a mixed rank 2 tensor and apply the covariant derivative we just derived,
+\g{\nabla_\gamma({T^\alpha}_\beta)&=\nabla_\gamma(v^\alpha w_\beta)\\
+&=(\nabla_\gamma v^\alpha)w_\beta + v^\alpha (\nabla_\gamma w_\beta)\\
+&= (\p_\gamma v^\alpha + {\Gamma^\alpha}_{\gamma \delta} v^\delta)w_\beta + v^\alpha (\p_\gamma w_\beta - {\Gamma^\delta}_{\gamma \beta} w_\delta)
+\intertext{At this point just simplify. No indices need to be relabled}
+&= \boxed{\p_\gamma {T^\alpha}_\beta + {\Gamma^\alpha}_{\gamma \delta} {T^\delta}_\beta - {\Gamma^\delta}_{\gamma \beta} {T^\alpha}_\delta}}
+By using the basic definition of a covariant derivative and working onwards, we find the covariant derivative of the mixed rank 2 tensor.
 \subsection*{Problem 1.e.}
 \subsection*{Problem 2.a.}
 \subsection*{Problem 2.b.}
