@@ -174,11 +174,49 @@ does not have correct units. Now the ``amount of energy that can be extracted'' 
 And so the fractional amount of energy that can be extracted from a spinning black hole is \fbox{$1-\br{1}{2^{1/2}}$}. 
 \section*{Problem 3.a.}
 The linear pertubations to the Einstein field equations is outlined like so,
+\begin{enumerate}
+\item Expand the metric as the flat part plus pertubation
+\g{g_{\mu\nu}=\eta_{\mu\nu}+h_{\mu\nu}}
+\item Define the field $\overline{h}$ as a function of $\eta$ and $h$.
+\g{\overline{h}=h-\br{1}{2}|h|\eta}
+\item Assume the Lorenz Gauge
+\g{\nabla \cdot \overline{h}^i = 0}
+\item Using the fact that we are in a vacuum, $T=0$, and therefore 
+\g{\p_\mu p^\mu \overline{h} = 0}
+\item Then \fbox{$\overline{h}=\overline{h}(t-z)$ describes a single plane wave along $z$.} However the number of degrees of freedom of the plane wave are not yet restricted, so in the TT gauge use
+\g{\pa{t}\overline{h}_\alpha+\pa{z}\overline{h}_\alpha=0}
+which reduces the number of independent components of the metric from 10 to 6. 2 are needed for plane wave that has 2 amplitudes of two independent polarizations. 
+\item Assuem $|h|=0$ which implies $\overline{h}=h$. This finally leaves us with two components, which are $h_{xx}$ and $h_{xy}$.
+\g{h_{xx}=-h_{yy}=h_+ \rom{called ``h plus''}}
+\g{h_{xy}=-h_{yx}=h_\times \rom{called ``h cross''}}
+This is the outline to calculate \fbox{transverse plane gravitational waves with two polarizations.}
+\end{enumerate}
 \section*{Problem 3.b.}
+From the notes we understand the $+$ and $\times$ polarizations look like, respectively,
+\fig{5cm}{7.jpg}{$+$ polarization (top), and $\times$ polariztion (bottom).}
+A monochromatic gravitational wave perpendicular to an equilateral triangle will make these force patterns depending on the polarization. For the + polarization, three points on the equilateral triangle will move in the cycle,
+\fig{5cm}{6.png}{$+$ polarization.}
+And for the $\times$ polarization,
+\fig{5cm}{5.png}{$\times$ polarization.}
 \section*{Problem 3.c.}
+A back of the envelope calculation of strain $h$ is given by
+\g{\boxed{h=(\br{G(m_1+m_2)}{rc^2})(\br{fa}{c})^2=(\br{G(m_1+m_2)}{rc^2})(\br{2a}{Pc})^2}}
+where $m_1$ and $m_2$ are the two black hole masses, $a$ is the orbital radius, $f=\br{2}{P}$ is the wave frequency, and $r$ is the distance to the source. To explain the fact that $f=\br{2}{P}$, it is sufficient to use the wave analogy for gravitational waves: for each period of orbit around the barycenter, two masses generate a gravitational perturbation: $m_1$ and $m_2$, so the frequency of gravitational waves $f_{GW}$ must be \fbox{twice the orbital frequency} $f_{\rom{orbit}}$.
 \section*{Problem 3.d.}
+A single monochromatic plane wave is modeled by
+\g{\vec{h}=\vec{h_0} \cos(2\pi f(t+\vec{x}\cdot \hat{r}))}
+where $\hat{r}$ is the unit vector to the source. The path is a null geodesic, so $ds^2=0$. Then the time delay $R(t)$ is the integral of the null goedesic from the telescope to the pulsar,
+\g{R(t)&=\br{1}{2}g_{\alpha \beta} (\dd{\zeta}x^\alpha)(\dd{\zeta}x^\beta)d\zeta\\
+&=-\br{1}{2}\int_0^z dz' \hat{z} \cdot \vec{h_0} \cdot \hat{z} \cos(2\pi f(t-z'(1-\hat{z}\cdot{r})))\\
+&=\br{\hat{z} \cdot \vec{h_0} \cdot \hat{z} (\sin(2\pi f(t-z(1-\hat{z}\cdot \hat{r}))-\sin(2\pi ft)))}{4\pi f(1-\hat{z}\cdot \hat{r})}}
 \section*{Problem 3.e.}
+Different pulsars will contribute different factors to the null geodesic. In particular, each pulsar has a different polarization projection,
+\g{\hat{z} \cdot \vec{h_0} \cdot \hat{z}}
+For two pulsars, even in the midst of an isotropic background, the angle between them can be resolved from $R(t)$. This is because the isotropic background will \fbox{randomly overlap in frequency} over a wide range of frequencies, so that the power spectrum is likely to still be able to resolve individual pulsars.
 \section*{Problem 4.a.}
+Perhaps the most important piece of experimental data that neutron stars provide is their mass. By calculating their predicted mass from
+\g{m=4\pi \int_0^r dr' r^2 \rho(r')}
+we can compare our theoretical model of the neutron star density and what we measure from the stars directly.
 \section*{Problem 4.b.}
 \section*{Problem 4.c.}
 \section*{Problem 4.d.}
