@@ -34,7 +34,7 @@ Institution&Stanford University\\
 Date&\today\\
 \end{tabular}
 \end{center}
-\subsection*{Problem 1.a.}
+\section*{Problem 1.a.}
 The general concept of a tangent space can be thought of as the space of vectors that are tangent to a point on a curved surface. For example for a circle, draw a point,
 \fig{4cm}{1.jpg}{Concept of tangent space.}
 and the set of possible vectors tangent to that point can be called the ``tangent space'' to that point. Note it requires two important definitions: some initial object, or manifold, and a point on the manifold. Next, the general concept of a manifold is a space with four coordinates,
@@ -49,7 +49,7 @@ This $g_{\mu\nu}$ is in particular symmetric, in the sense that when when writte
 \item Let $f=T_x M \times T_x M \rightarrow \mathcal{R}$ be a function, and a symmetric bilinear form.
 \item Then the tuple $(M,f)$ is a Pseudo-Riemann Manifold.
 \end{enumerate}
-\subsection*{Problem 1.b.}
+\section*{Problem 1.b.}
 We want to explain the relationship between vectors, directional derivatives, and vectors in a tangent space. Going back to \fz{1.jpg}, imagine two different kinds of vectors: one on the sphere itself, and one on the tangent space.
 \fig{4cm}{2.png}{Concept of tangent vectors.}
 Two vectors points in the same direction. One vector lies on the circle, and the other in the tangent space. As the circle vector's length increases significantly, we recognize that this vector is curved, bound to the sphericality of the circle. On the other hand the tangent vector is not curved as it gets longer, it's not bound to the curvature of the sphere any more. But as these two vectors decrease in magnitude, they coincide more, and agree as to what their tails and heads are. Now consider the actual definition of a tangent space,
@@ -61,7 +61,7 @@ Two vectors points in the same direction. One vector lies on the circle, and the
 \item Then $T$ is a ``tangent space.''
 \end{enumerate}
 We can see that the tangent space is rigorously \textit{defined} as the space spanned by the direction derivatives that originated on the manifold. There we can see the simple relationship between describing a vector as \fbox{both a directional derivative} \fbox{and a displacement in tangent space.}
-\subsection*{Problem 1.c.}
+\section*{Problem 1.c.}
 Working a coordinate basis we can consider a function $f=\mathcal{R}^d\rightarrow \mathcal{R}$, which maps a coordinate to a value. We expect the partial derivative of that function to be $\nabla f$,
 \g{(\nabla f)_i = \pa{x^i}f}
 where the is one index: $i$ for the direction of the derivative. Next for a vector function $v(x^i)^j$ we have two indices when we compute the partial derivative,
@@ -73,7 +73,7 @@ We \textit{need one more index}: to describe the direction in which we transport
 After transporting along the direction $\vec{t}$, we need a general expression that tells us the impact of that transport. $\vec{t}$ is just the direction of transport. It must be associated with a new variable that tells us how much the vector $\vec{v}$ changed. Call it $\Gamma$. Then the new vector is the original vector's directional derivative, plus the contribution from $\Gamma$.
 \g{\boxed{\nabla_\beta v^\alpha = \pa{x^\beta}v^\alpha+{\Gamma^\alpha}_{\beta\gamma}v^\gamma}}
 \fbox{These $\Gamma$ are called \textit{connections}.} This is the directional derivative of a first rank tensor, a vector. Note this is valid only in the coordinate basis.
-\subsection*{Problem 1.d.}
+\section*{Problem 1.d.}
 We would like to derive the form of $\nabla({T^\alpha}_\beta)$, the covariant derivative of a mixed rank 2 tensor, using the basic definitions of the connection. Starting from basic principles, the covariant derivative on a contravariant vector is
 \g{\nabla_\mu V^\nu = \pa{x^\mu} V^\nu + {\Gamma^\nu}_{\mu\rho} V^\rho = \p_\mu V^\nu + {\Gamma^\nu}_{\mu\rho} V^\rho}
 The covariant derivative on covariant vectors is needed, $\nabla_\gamma v_\alpha$. To do this, use the product rule on two arbitrary contracted vectors,
@@ -96,20 +96,78 @@ This is the covariant derivative on a covariant vector. Now to answer the questi
 \intertext{At this point just simplify. No indices need to be relabled}
 &= \boxed{\p_\gamma {T^\alpha}_\beta + {\Gamma^\alpha}_{\gamma \delta} {T^\delta}_\beta - {\Gamma^\delta}_{\gamma \beta} {T^\alpha}_\delta}}
 By using the basic definition of a covariant derivative and working onwards, we find the covariant derivative of the mixed rank 2 tensor.
-\subsection*{Problem 1.e.}
-\subsection*{Problem 2.a.}
-\subsection*{Problem 2.b.}
-\subsection*{Problem 2.c.}
-\subsection*{Problem 2.d.}
-\subsection*{Problem 2.e.}
-\subsection*{Problem 3.a.}
-\subsection*{Problem 3.b.}
-\subsection*{Problem 3.c.}
-\subsection*{Problem 3.d.}
-\subsection*{Problem 3.e.}
-\subsection*{Problem 4.a.}
-\subsection*{Problem 4.b.}
-\subsection*{Problem 4.c.}
-\subsection*{Problem 4.d.}
-\subsection*{Problem 4.e.}
+\section*{Problem 1.e.}
+The flat FLRW metric is described by the coordinates $t$, $\chi$, $\theta$, $\phi$. At each slice of time $t=\rom{const}$ the metric is described by the \fbox{3-sphere of radius $a(t)$} with metric
+\g{ds^2=a(t)^2(d\chi^2 +\sin(\theta)^2d\phi^2}
+where the 3-sphere's radius grows or shrinks proportional to the scale factor $a(t)$.
+\begin{itemize}
+\item $t$ is the passage of time
+\item $\chi$ is the coordinate of the 3-sphere pointing in the radial direction
+\item $\theta$ is the coordinate of the 3-sphere pointing in the rotational direction, $0\leq \theta \leq \pi$.
+\item $\phi$ is the coordinate of the 3-sphere pointing in the axial direction, $0\leq \phi \leq 2\pi$.
+\end{itemize}
+\section*{Problem 2.a.}
+The statement ``a black hole has radius $r=\br{2GM}{c^2}$'' is commonly derived from the Schwarzschild metric,
+\g{ds^2=-(1-\br{2GM}{r})dt^2+(1-\br{2GM}{r})^{-1}dr^2+r^2(d\theta^2+\sin(\theta)^2 d\phi^2)}
+However it is not accurate to read off the metric to state that there is a singularity at $r=2GM$, and therefore the line element $ds^2$ diverges, and no particle can traverse further. The reason this is inappropriate is because the singularity at $2=2GM$ can be removed through a change of coordinates. A popular choice are the Eddington-Finkelstein coordinates,
+\g{t=v-r-2M\log|\br{r}{2GM}-1|}
+whose metric is
+\g{ds^2=-(1-\br{2M}{r})dv^2+2dvdr+r^2(d\theta^2+\sin^2 d\phi^2)}
+This is again the Schwarzschild metric, but a change of variables. As we can see there are no singularities in the metric anymore at $r=2GM$. Then we need to look for another explanation as to why black holes have a radius $r=2GM$. Solve the geodesic equation for a ray of light $ds^2=0$. The first solution is
+\g{-(1-br{2M}{r})dv^2+2dvdr=0}
+\g{v=\rom{const}}
+which tells us a light ray travels at constant radius over time. Another solution is
+\g{-(1-\br{2M}{r})dv+2dr=0}
+\g{dv=\br{2}{1-\br{2M}{r}}dr}
+\g{v=4M\log|r-2M|+2r+\rom{const}}
+\g{t-r-M\log|2M(r-2M)|=\rom{const}}
+This describes a constraint equation on the paths of light $r(t)$. Plot the solution for $t$ as a function of $r$.
+\fig{5cm}{1.pdf}{$t$ is time, $r$ is position, and $M=1$.}
+These are paths of light rays in Eddington Finkelstein coordinates for the Schwarzschild metric. We can see that beyond $r=2M$, the paths of light travel outwards, and when $r<2M$, the paths of light travel inwards towards the center of the black hole. We can conclude \fbox{light rays to not escape beyond $r=2GM$} for the Schwarzschild metric. This is a more apt explanation as to why black holes appear to have a ``radius'' of $r=2GM$ and mass $M$.
+\section*{Problem 2.b.}
+The parameter $a$ is described by
+\g{Ma=J_H}
+where $J_H$ is the \fbox{magnitude of spin angular momentum} of the black hole. The event horizon radius of a Kerr black hole is a function of its angular momentum, as studied previously in the course.
+\g{r_H=M\pm\sqrt{M^2-a^2}}
+when $|a|^2>1$ then the horizon radius \fbox{would be imaginary, which we deem as unphysical.}
+\section*{Problem 2.c.}
+We know from previous calculations that also in the Kerr metric the coordinate singularity is equal to the horizon radius. So we need to look for coordinate singularities in the metric. This can be read from the term
+\g{\br{dr^2}{\Delta}}
+in the metric. So when $\Delta\rightarrow 0$ there will be a coordinate singularity. Keep $M$ for illustrative purposes.
+\g{\Delta=0=r^2-2Mr-a^2}
+Quadratic formula.
+\g{r=\br{2M\pm(4M^2-4a^2)^{1/2}}{2}=\boxed{M\pm(M^2-a^2)^{1/2}}}
+This is the horizon radius for the Kerr metric. Equivalently in terms of only $a$ using mass normalized units the horizon radius $r_H$ is
+\g{\boxed{r_H=1+(1-a^2)^{1/2}}}
+\section*{Problem 2.d.}
+We would like to calculate the area of the black hole starting with the Kerr metric
+\g{ds^2=-\alpha^2 dt^2 + \rho^2(\br{dr^2}{\Delta}+d\theta^2)+\overline{\omega}^2(d\phi-\omega dt)^2}
+Where the constant are given in the prompt. In this case $r=r_H=1+(1-a^2)^{1/2}$ as previously calculated and $\Delta=0$, and $dt=0$ because we are considering an infinitesimal slice of time within which to calculate the area. The resulting metric is then
+\g{ds^2=\rho^2 d\theta^2 + \overline{\omega}^2d\phi^2}
+The $\overline{\omega}^2$ term needs to be simplified significantly,
+\g{\overline{\omega}^2=\br{\Sigma^2 \sin(\theta)^2}{\rho^2}=\br{((1+(1-a^2)^{1/2})^2+a^2)^2\sin(\theta)^2}{\rho^2}=(\br{2r\sin(\theta)}{\rho})^2}
+and so the metric is then
+\g{ds^2=\rho^2 d\theta^2+(\br{2r}{\rho})^2\sin(\theta)^2 d\phi^2}
+This is a \fbox{two dimensional surface element.} We can integrate this two dimensional surface element easily resulting in 
+\g{\boxed{A=\int \int ds^@ = 8\pi r_H}}
+in agreement with the notes.
+\section*{Problem 2.e.}
+Reintroduce mass $m$ of the Kerr black hole. As previously calculated we know the relationship between the horizon radius of a Kerr black hole and its angular momentum per mass $a$,
+\g{r_H=\br{Gm}{c^2}(1+(1-a^2)^{1/2})}
+As we have already seen, there is a clear inverse relationship between the $a$ and $r_H$. Now we would like to calculate the maximum amount of mass that can be extracted from a Kerr black hole. Find $M^2$.
+\g{A=4\pi Mr_H = 8\pi M(M+(M^2-a^2)^{1/2})}
+Introduce irreducible mass $M_i$ and find $M$ in terms of $M_i$ and $J$.
+\g{M_i=(\br{A}{16\pi})^{1/2}=(\br{M(M+(M^2-a^2)^{1/2})}{2})^{1/2} }
+Then $M_i$ is
+\g{M_i^2=\br{1}{2}
+\section*{Problem 3.a.}
+\section*{Problem 3.b.}
+\section*{Problem 3.c.}
+\section*{Problem 3.d.}
+\section*{Problem 3.e.}
+\section*{Problem 4.a.}
+\section*{Problem 4.b.}
+\section*{Problem 4.c.}
+\section*{Problem 4.d.}
+\section*{Problem 4.e.}
 \end{document}
