@@ -159,8 +159,21 @@ As we have already seen, there is a clear inverse relationship between the $a$ a
 Introduce irreducible mass $M_i$ and find $M$ in terms of $M_i$ and $J$.
 \g{M_i=(\br{A}{16\pi})^{1/2}=(\br{M(M+(M^2-a^2)^{1/2})}{2})^{1/2} }
 Then $M_i$ is
-\g{M_i^2=\br{1}{2}
+\g{M_i^2=\br{1}{2}(M(M+(M^2-a^2)^{1/2}))}
+\g{2M_i^2&=M^2+(M^4-M^2a^2)^{1/2}
+\intertext{Use $J=Ma$}
+&=M^2+(M^4-J^2)^{1/2}}
+Solve for $M^2$.
+\g{\boxed{M^2=M_i^2+\br{J^2}{4M_i^2}=M_i^2+\br{M^2a^2}{4M_i^2}}}
+I believe this is the correct result instead of what is on the final. What is written on the final
+\g{\br{a^2 M^4}{M_i^2}}
+does not have correct units. Now the ``amount of energy that can be extracted'' is the difference between the mass $M$ and the irreducible mass $M_i$ when $a=M$. Calculate the difference $M-M_i$ explicitly.
+\g{\rom{Extracted Energy}&=M-M_i=M-(\br{1}{2}(M^2+M(M^2-a^2)^{1/2}))^{1/2}\\
+&=M-(\br{1}{2}M^2)^{1/2}\\
+&= \boxed{M(1-\br{1}{2^{1/2}})}}
+And so the fractional amount of energy that can be extracted from a spinning black hole is \fbox{$1-\br{1}{2^{1/2}}$}. 
 \section*{Problem 3.a.}
+The linear pertubations to the Einstein field equations is outlined like so,
 \section*{Problem 3.b.}
 \section*{Problem 3.c.}
 \section*{Problem 3.d.}
