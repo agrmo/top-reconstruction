@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{times}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\geometry{top=1in,bottom=1in,left=1in,right=1in}
+
+\usepackage{graphicx}
+\usepackage{floatrow}
+\newcommand{\fig}[3]{
+\begin{figure}[H]
+\begin{center}
+\includegraphics[height=#1]{#2}
+\caption{#3}
+\label{#2}
+\end{center}
+\end{figure}}
+%\fig{5cm}{1.png}{Diagram.}
+
+\begin{document}
+\begin{center}
+\textbf{\Large{Problem Set 6}}\\~\\
+\begin{tabular}{l l}
+Student&Agustin Romero\\
+Email&ar1@stanford.edu\\
+Instructor&Roger Blandford\\
+Assistant&Andrew Sullivan\\
+Course&PHYSICS 262\\
+Institution&Stanford University\\
+Date&\today\\
+\end{tabular}
+\end{center}
+\section*{Problem 1}
+For the collapse of a black hole itself, there is no necessity of any black hole to collapse, or disappear, and further no necessity for these black holes to have a collapse that lasts for a large time scale, perhaps billions of years. So the lack of any particular mechanism for the destruction of a black hole does not preclude their existence.\~\\
+
+It just so happens that we do have a known mechanism for the loss of mass of a black hole, Hawking radiation, and it does proceed on a very large time scale, much larger than we are able to measure. Hawking radiation works based on the Unruh effect, so we should explain that first. The Unruh effect is the effect that accelerating observers see a thermal bath of photons being emitted from the horizon of the black hole. This thermal bath of photons continues to exist for observers far away from the black hole. This emission of radiation will eventually reduce the mass of the black hole, and eventually cause the black hole to collapse. It is true, however, that it takes a very long time for a black hole to evaporate due to Hawking radiation, about $2\zehnein{100}{years}$.
+\section*{Problem 2.a.}
+The Schwarzschild metric is
+\g{ds^2=-(1-\br{2M}{r})dt^2+(1-\br{2M}{r})^{-1}dr^2+r^2(d\theta^2+\sin^2 d\phi)^2}
+Using $\theta=\br{1}{2}\pi$ and $r^6$ the metric is
+\g{ds^2=-(1-\br{2}{r})^{-1}dt+r^2 d\phi^2}
+Using the connection we can calculate $\dd{t}\phi$,
+\g{\dd{t}\phi=\br{\dd{\tau}\phi}{\dd{\tau}t}=(-\br{\Gamma^r_{tt}}{\Gamma^r_{\phi\phi}})^{1/2}=(\br{1}{r^2}\br{1}{r})^{1/2}=r^{-2/3}}
+Let the spin axis $\vec{s}=(s_0,s_r,0,s_\phi)$ in the orbital plane. Because it is purely spatial, the metric is now
+\g{ds^2=-s_0^2(1-\br{2}{r})+r^2 s_\phi^2}
+Boost the spin coordinate to the rest frame where $s_0=0$,
+\g{s_0=\gamma(s_0'+v_\phi s_\phi)=0}
+\g{\boxed{s_0=-v_\phi s_\phi = -\Omega s_\phi}}
+By boosting the $s_0$ coordinate we write the spin coordinate $s_0$ in terms of the angular velocity $\Omega$.
+\section*{Problem 2.b.}
+In the rest frame the spin projected in the direction of motion is zero,
+\g{s^\mu u_\mu&=0
+\intertext{Take a covariant derivative.}
+\nabla(s^\mu u_\mu)&=0\\
+u^\nu \nabla_\nu s^\mu + s^\mu \nabla_\mu u^\nu &= 0
+\intertext{Use the Fermi Walker transport equation $\nabla_{\vec{U}} \vec{S}=\vec{U}(\vec{a}\cdot \vec{S})$}
+u^\nu \nabla_\nu s^\mu + \vec{U}(\vec{a}\cdot \vec{S})&=0
+\intertext{In the rest frame there is no acceleration $a$.}
+\boxed{u^\nu \nabla_\nu s^\mu=0}}
+By starting with $s^\mu u_\mu = 0$ we can derive at the spin parallel transport equation. Now to find the desired expression for $\ppa{2}{\tau} s_\mu$ start with the parallel transport equation for spin 
+\g{u^\nu \nabla_\nu s^\mu = 0}
+Expand the covariant derivative.
+\g{u^\nu \p_\nu s_\mu + {\Gamma^\rho}_{\mu \nu} s_\rho u^\mu &= 0
+\intertext{Apply \pa{\tau}=u^\mu \pa{x^\mu}$ to the first term and move over the second term.}
+\pa{\tau} s_\mu &= {\Gamma^\rho}_{\mu \nu} s_\rho u^\mu
+\intertext{Apply the derivative $\pa{\tau}=u^\mu \pa{x^\mu}$ to the left and right hand side}
+\ppa{2}{\tau} s_\mu &= - u^\sigma \p_\sigma (\Gamma^\rho_{\mu \nu} s_\rho u^\nu)
+\intertext{Change the partial to a covariant derivative.}
+&= -u^\sigma(\nabla_\sigma ({\Gamma^\rho}_{\mu\nu}s_\rho u^\nu)-{\Gamma^\gamma}_{\sigma \mu}({\Gamma^\rho}_{\nu\gamma}s_\rho u^\nu)
+\intertext{Now the covariant derivative applies to all three terms, but each is zero: $u^\sigma \nabla_\sigma {\Gamma^\rho}_{\mu\nu} = 0$, $u^\sigma \nabla_\sigma s_\rho = 0$, and $u^\sigma \nabla_\sigma u^\nu=0$. The only remaining term is}
+&= {\Gamma^\gamma}_{\sigma \mu} {\Gamma^\rho}_{\nu \gamma} u^\sigma u^\nu s_\rho
+\intertext{Which upon rearrangement of indices is the answer.}
+&= \boxed{{\Gamma^\delta}_{\alpha \gamma} {\Gamma^\beta}_{\epsilon \delta} u^\gamma u^\epsilon s_\beta}}
+\section*{Problem 2.c.}
+
+\section*{Problem 2.d.}
+\section*{Problem 3.a.}
+\section*{Problem 3.b.}
+\section*{Problem 3.c.}
+\section*{Problem 4.a.}
+\section*{Problem 4.b.}
+\section*{Problem 4.c.}
+\section*{Problem 4.d.}
+\section*{Problem 4.e.}
+\end{document}
