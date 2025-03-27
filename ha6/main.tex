@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{geometry}
 \usepackage{hyperref}
+\usepackage{pdfpages}
 \setlength{\parindent}{0pt}
 \geometry{top=1in,bottom=1in,left=1in,right=1in}
 
@@ -61,23 +62,44 @@ u^\nu \nabla_\nu s^\mu + \vec{U}(\vec{a}\cdot \vec{S})&=0
 \intertext{In the rest frame there is no acceleration $a$.}
 \boxed{u^\nu \nabla_\nu s^\mu=0}}
 By starting with $s^\mu u_\mu = 0$ we can derive at the spin parallel transport equation. Now to find the desired expression for $\ppa{2}{\tau} s_\mu$ start with the parallel transport equation for spin 
-\g{u^\nu \nabla_\nu s^\mu = 0}
-Expand the covariant derivative.
-\g{u^\nu \p_\nu s_\mu + {\Gamma^\rho}_{\mu \nu} s_\rho u^\mu &= 0
-\intertext{Apply \pa{\tau}=u^\mu \pa{x^\mu}$ to the first term and move over the second term.}
+\g{u^\nu \nabla_\nu s^\mu &= 0
+\intertext{Expand the covariant derivative.}
+u^\nu \p_\nu s_\mu + {\Gamma^\rho}_{\mu \nu} s_\rho u^\mu &= 0
+\intertext{Apply $\pa{\tau}=u^\mu \pa{x^\mu}$ to the first term and move over the second term.}
 \pa{\tau} s_\mu &= {\Gamma^\rho}_{\mu \nu} s_\rho u^\mu
 \intertext{Apply the derivative $\pa{\tau}=u^\mu \pa{x^\mu}$ to the left and right hand side}
 \ppa{2}{\tau} s_\mu &= - u^\sigma \p_\sigma (\Gamma^\rho_{\mu \nu} s_\rho u^\nu)
 \intertext{Change the partial to a covariant derivative.}
 &= -u^\sigma(\nabla_\sigma ({\Gamma^\rho}_{\mu\nu}s_\rho u^\nu)-{\Gamma^\gamma}_{\sigma \mu}({\Gamma^\rho}_{\nu\gamma}s_\rho u^\nu)
 \intertext{Now the covariant derivative applies to all three terms, but each is zero: $u^\sigma \nabla_\sigma {\Gamma^\rho}_{\mu\nu} = 0$, $u^\sigma \nabla_\sigma s_\rho = 0$, and $u^\sigma \nabla_\sigma u^\nu=0$. The only remaining term is}
-&= {\Gamma^\gamma}_{\sigma \mu} {\Gamma^\rho}_{\nu \gamma} u^\sigma u^\nu s_\rho
-\intertext{Which upon rearrangement of indices is the answer.}
-&= \boxed{{\Gamma^\delta}_{\alpha \gamma} {\Gamma^\beta}_{\epsilon \delta} u^\gamma u^\epsilon s_\beta}}
+&= {\Gamma^\gamma}_{\sigma \mu} {\Gamma^\rho}_{\nu \gamma} u^\sigma u^\nu s_\rho}
+Which upon rearrangement of indices is the answer.
+\g{\zeich{nzx8cn}\ppa{2}{\tau}s_\alpha &= \boxed{{\Gamma^\delta}_{\alpha \gamma} {\Gamma^\beta}_{\epsilon \delta} u^\gamma u^\epsilon s_\beta}}
 \section*{Problem 2.c.}
-
+For this part we consider a particle in a planar, circular orbit around a neutron star in the Schwarzschild metric in the coordinate basis. We calculate the precession of the particle spin $\dda{2}{\tau}s^i$ for the $r$ and $\phi$ components. The Mathematica calculation is included in the next pages. The steps are
+\begin{enumerate}
+\item Define the coordinate system $x^\mu=(t,r,\theta,\phi)$.
+\item Define the spin vector $s^\mu=(s_t,s_r,0,s_\phi)$.
+\item Define the four velocity vector $u^\mu=(u_t,0,0,u_\phi)$. Calculate the components which are in mass-normalized units,
+\g{u^t=((1-\br{2}{r})^{-1}\br{1}{r^2})^{1/2}}
+\g{u^\phi=(r(1-\br{1}{r})^{1/2})^{-1}}
+\item Calculate \gz{nzx8cn} to find the form of the spatal indices when $\alpha=r,\phi$.
+\item Take the large $r$ limit, so drop terms smaller than $1/r^3$. The results are 
+\g{\boxed{\dda{2}{\tau}s_r=-\br{s_r}{r^3}}}
+\g{\boxed{\dda{2}{\tau}s_\phi=-\br{s_\phi}{r^3}}}
+\end{enumerate}
+\includepdf[pages=-]{1.pdf}
 \section*{Problem 2.d.}
+The intuition of this calculation is that \fbox{spin vectors precess less further away from the mass}. This statement would claim that Mercury has an axial precession that is larger than planets further out. Although in reality, Mercury's axis of rotation is only two degrees away from perpendicular to the plane of its orbit, so the effect is not large to begin with.
 \section*{Problem 3.a.}
+We have $u=t-r$ and $v=t+r$. A line of constant $u$ looks like
+\fig{4cm}{1.png}{Constant $u$.}
+or
+\g{du=dt-dr=0 \quad dt=dr}
+A line of constant $u$ is a particle travelling \fbox{away} from the observer at the speed of light. Similarly a line of constant $v$ looks like
+\fig{4cm}{2.png}{Constant $v$.}
+\g{dv=dt+dr=0 \quad dt=-dr}
+A line of constant $u$ is a particle travelling \fbox{toward} the observer at the speed of light.
 \section*{Problem 3.b.}
 \section*{Problem 3.c.}
 \section*{Problem 4.a.}
