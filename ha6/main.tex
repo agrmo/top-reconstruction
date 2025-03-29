@@ -99,12 +99,86 @@ or
 A line of constant $u$ is a particle travelling \fbox{away} from the observer at the speed of light. Similarly a line of constant $v$ looks like
 \fig{4cm}{2.png}{Constant $v$.}
 \g{dv=dt+dr=0 \quad dt=-dr}
-A line of constant $u$ is a particle travelling \fbox{toward} the observer at the speed of light.
+A line of constant $u$ is a particle travelling \fbox{toward} the observer at the speed of light. The interval is
+\g{dt=\br{1}{2}(du+dv)}
+\g{dr=\br{1}{2}(dv-du)}
+\g{-dt^2+dr^2=-dudv}
+\g{ds^2&=-dt^2+dx^2+dy^2+dz^2\\
+&=-dt^2 + dr^2 +r^2(d\theta^2 + \sin(\theta)^2d\phi^2)\\
+&=\boxed{-dudv+\br{1}{4}(v-u)^2(d\theta^2+\sin(\theta)^2 d\phi^2)}}
 \section*{Problem 3.b.}
+Here we would like to derive the conformal Penrose diagram. First find the axes. When $t=0$,
+\g{u=-r \quad v=r \\
+T-R=\tan^{-1}(-r) \quad T+R=\tan^{-1}(r)\\
+2T=\tan^{-1}(r)+\tan^{-1}(r)=0\\
+R=\tan^{-1}(r)}
+So the $R$ axis represents $T=0$. Similarly when $r=0$,
+\g{u=t \quad v=t \\
+T-R=\tan^{-1}(t) \quad T+R=\tan^{-1}(t)\\
+2R=0 \quad T=\tan^{-1}(t)}
+So the $T$ axis represents $R=0$. Now the infinities are
+\g{\lim_{T\rightarrow \pm \infty} R = \pm \br{\pi}{2} \quad \lim_{T\rightarrow \pm \infty} T = \pm \br{\pi}{2}}
+So the Penrose diagram extends to only $\br{\pi}{2}$.
+\fig{5.5cm}{3.png}{Penrose diagram of a flat metric in conformal coordinates.}
 \section*{Problem 3.c.}
+The future and past null infinities are
+\begin{itemize}
+\item $i^0$ Spatial infinity
+\item $i^+$ Future timelike infinity
+\item $i^-$ Past timelike infinity
+\item $I^+$ Future Null infinity where $T=\br{\pi}{2}-R$ and $0<R<\br{\pi}{2}$.
+\item $I^-$ Past Null infinity where $T=-\br{\pi}{2}+R$ and $0<R<\br{\pi}{2}$.
+\end{itemize}
 \section*{Problem 4.a.}
+Write the Schwarzschild metric $ds^2$ in terms of the Eddington-Finkelstein coordinates.
+\g{t=v-r-2\log|\br{r}{2}-1|}
+\g{dv=dt+dr+2\br{1}{\br{r}{2}-1}\br{1}{2}dr=dt-\br{1}{1-\br{2}{r}dr}}
+\g{dt=dv-\br{1}{1-\br{2}{r}}dr}
+\g{dt^2=dv^2+(\br{1}{1-\br{2}{r}})^2dr^2+\br{2}{1-\br{2}{r}}dvdr}
+\g{ds^2&=-(1-\br{2}{r})dt^2+(1-\br{2}{r})^{-1}dr^2\\
+&=\zeich{znxc8b}\boxed{-(1-\br{2}{r})dv^2+2dvdr}}
 \section*{Problem 4.b.}
+Referencing \gz{znxc8b} the first solution is simply a radial light ray with 
+\g{\boxed{dv=0 \quad dr=(1-\br{2}{r})dt}}
+The second solution required the solution of
+\g{-(1-\br{2}{r})dv+2dr=0}
+which can be solved like
+\g{dv=\br{2}{1-\br{2}{r}}dr}
+\g{v=4\log (r-2)+2r+c}
+which is more intuitive if mass is reinserted,
+\g{\boxed{v=4M\log (r-2M)+2r+c}}
+This can be plotted as $v$, a simple function of $r$,
+\fig{5cm}{2.pdf}{The solution of a geodesic $v(r)$.}
+or as $t$ as a function of $r$,
+\fig{5cm}{3.pdf}{The solution of a geodesic $r(t)$.}
+This plot looks confusing, as it plots time $t$ as a function of $r$, however the diagram can be read from bottom to top as two separate paths: A particle which starts below $r=2$ will travel to $r=0$, that is, to the center of the coordinate system. This is an \fbox{infalling} particle. On the other side above $r=2$ a particle will travel out away from the origin. This is an \fbox{outgoing} particle.
 \section*{Problem 4.c.}
+We would like to write the Schwarzschild metric
+\g{ds^2=-(1-\br{2}{r})dt^2+(1-\br{2}{r})^{-1}dr^2}
+in terms of the Kruskal-Szekeres coordinates, ignoring the $\theta$ and $\phi$ coordinates. Starting with $r<2$,
+\g{u=(\br{r}{2}-1)^{1/2}e^{r/4}\cosh(\br{t}{4})}
+\g{v=(\br{r}{2}-1)^{1/2}e^{r/4}\sinh(\br{t}{4})}
+Find the infinitesimals $du$ and $dv$
+\g{du=(\br{r}{2}-1)^{1/2}e^{r/4}\br{1}{4}\sinh(\br{t}{4})dt+(\br{r}{2}-1)^{1/2}e^{r/4}\br{1}{4}dr\cosh(\br{t}{4}+\br{1}{4}(\br{r}{2}-1)^{-1/2}dr e^{r/4}\cosh(\br{t}{4})}
+The infinitesimal has three terms, but two of them can be combined noting that,
+\g{(\br{r}{2}-1)^{1/2}+(\br{r}{2}-1)^{-1/2}=\br{(\br{r}{2}-1)^{1/2}}{1-\br{2}{r}}}
+So $du$ is
+\g{du=(\br{r}{2}-1)^{1/2}e^{r/4}\br{1}{4}\sinh(\br{t}{4})dt+\br{1}{1-\br{2}{r}}\cosh(\br{t}{4})dr}
+$dv$ swaps the hyperbolic sine functions.
+\g{dv=(\br{r}{2}-1)^{1/2}e^{r/4}\br{1}{4}\cosh(\br{t}{4})dt+\br{1}{1-\br{2}{r}}\sinh(\br{t}{4})dr}
+We would like to find $ds^2_{\textrm{Schwarzschild}}$ using $du$ and $dv$. The most obvious way to simplify is to take the difference of the squares, $dv^2-du^2$, applying the identity
+\g{\cosh^2-\sinh^2=1}
+So square $du$ and square $dv$, and take their difference. The result is
+\g{dv^2-du^2=(\br{r}{2}-1)e^{r/2}\br{1}{16}(dt^2-(1-\br{2}{r})^{-2}dr^2)}
+The parenthesis is almost the Schwarzschild metric. We would like the terms in the parenthesis to be exactly equal to the Schwarzschild metric. So multiply by the necessary factor
+\g{\br{(1-\br{2}{r})}{(1-\br{2}{r})}}
+which it perfectly aligns the $dt^2$ term and cancels the extra power in the $dr^2$ term, so the $dr^2$ term is also in the form of the Schwarzschild metric.
+\g{dv^2-du^2&=\br{(\br{r}{2}-1)}{(1-\br{2}{r})}e^{r/2}\br{1}{16}((1-\br{2}{r})dt^2-(1-\br{2}{r})^{-1}dr^2)
+\intertext{The factor on front is $\br{r}{2}$}
+&= e^{r/2}\br{2}{32}((1-\br{2}{r})dt^2-(1-\br{2}{r})^{-1}dr^2)}
+And so the Schwarzschild interval in Kruskal-Szekeres coordinates is
+\g{\boxed{ds^2_{\textrm{Schwarzschild}}=\br{32}{r}e^{-r/2}(du^2-dv^2)}}
+The result is identical for $r<2$ and $r>2$.
 \section*{Problem 4.d.}
 \section*{Problem 4.e.}
 \end{document}
