@@ -156,8 +156,8 @@ This plot looks confusing, as it plots time $t$ as a function of $r$, however th
 We would like to write the Schwarzschild metric
 \g{ds^2=-(1-\br{2}{r})dt^2+(1-\br{2}{r})^{-1}dr^2}
 in terms of the Kruskal-Szekeres coordinates, ignoring the $\theta$ and $\phi$ coordinates. Starting with $r<2$,
-\g{u=(\br{r}{2}-1)^{1/2}e^{r/4}\cosh(\br{t}{4})}
-\g{v=(\br{r}{2}-1)^{1/2}e^{r/4}\sinh(\br{t}{4})}
+\g{\zeich{nzxc9n}u=(\br{r}{2}-1)^{1/2}e^{r/4}\cosh(\br{t}{4})}
+\g{\zeich{znx8cnzb}v=(\br{r}{2}-1)^{1/2}e^{r/4}\sinh(\br{t}{4})}
 Find the infinitesimals $du$ and $dv$
 \g{du=(\br{r}{2}-1)^{1/2}e^{r/4}\br{1}{4}\sinh(\br{t}{4})dt+(\br{r}{2}-1)^{1/2}e^{r/4}\br{1}{4}dr\cosh(\br{t}{4}+\br{1}{4}(\br{r}{2}-1)^{-1/2}dr e^{r/4}\cosh(\br{t}{4})}
 The infinitesimal has three terms, but two of them can be combined noting that,
@@ -183,9 +183,12 @@ The result is identical for $r<2$ and $r>2$. Next, the $u-v$ plane is
 The two straight lines are when $r=2$, derived via
 \g{u^2-v^2=(\br{r}{2}-1)e^{r/2}=0}
 \g{u=\pm v}
-The two solid curves represent curves of constant $r$ where $t$ is varied from a negative $t$ to positive $t$. The region on the right hand side is the region where $r>2$, and the region on the upper side is when $r<2$. Thus, one can imagine an infalling particle as beginning on the right hand side, travelling past the horizon, and then travelling upwards towards the solid black region. The solid black region is the limit when $r=0$, derived vua
+The two solid curves represent curves of constant $r$ where $t$ is varied from a negative $t$ to positive $t$. The region on the right hand side is the region where $r>2$, and the region on the upper side is when $r<2$. Thus, one can imagine an infalling particle as beginning on the right hand side, travelling past the horizon, and then travelling upwards towards the solid black region. The solid black region is the limit when $r=0$, the singularity, derived via
 \g{u^1-v^2=-1}
 \g{v^2=u^2+1}
+Finally solve for the curves $t(r)$ using the definitions \gz{nzxc9n} and \gz{znx8cnzb}. Then we may plot $t(r)$ for constant $u$ and $v$.
+\fig{5cm}{5.pdf}{Plot of Kruskal-Szekeres coordinates $t$ as a function of $r$. Four curves are illustrated on the left-hand region within the horizon, $r<2$, when $u>0$, $u<0$, $v>0$, and $v<0$ as constants, and similarly so on the right-hand region beyond $r>2$, beyond the horizon. }
 \section*{Problem 4.d.}
+In the previous $u-v$ diagram we can see that an infalling particle will begin on the right hand side, travelling ``leftwards'' approaching the straight line curve, representing the horizon. Once the particle crosses the horizon, the particle then travels ``upwards'' and reaches the singularity at the black region above.
 \section*{Problem 4.e.}
 \end{document}
