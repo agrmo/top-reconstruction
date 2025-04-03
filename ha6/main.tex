@@ -35,16 +35,15 @@ Date&\today\\
 \end{tabular}
 \end{center}
 \section*{Problem 1}
-For the collapse of a black hole itself, there is no necessity of any black hole to collapse, or disappear, and further no necessity for these black holes to have a collapse that lasts for a large time scale, perhaps billions of years. So the lack of any particular mechanism for the destruction of a black hole does not preclude their existence.\~\\
-
-It just so happens that we do have a known mechanism for the loss of mass of a black hole, Hawking radiation, and it does proceed on a very large time scale, much larger than we are able to measure. Hawking radiation works based on the Unruh effect, so we should explain that first. The Unruh effect is the effect that accelerating observers see a thermal bath of photons being emitted from the horizon of the black hole. This thermal bath of photons continues to exist for observers far away from the black hole. This emission of radiation will eventually reduce the mass of the black hole, and eventually cause the black hole to collapse. It is true, however, that it takes a very long time for a black hole to evaporate due to Hawking radiation, about $2\zehnein{100}{years}$.
+While a skeptical student may claim that nothing should last forever, we must admit that the geometry of black holes do not assume any mechanism for mass acquisition or emission, and further no necessity for these black holes to have a collapse that lasts for a large time scale, perhaps billions of years. So the lack of any \textit{known} mechanism for the destruction of a black hole does not preclude their existence. It is once we start considering the formation of these black holes, in the time scale of galactic structure formation, that we find more answers.\\~\\
+Thanks to many early authors on black holes, including Penrose, Hawking, and Kerr, we do have a known mechanism for the loss of mass of a black hole, Hawking radiation, and it does proceed on a very large time scale, much larger than we are able to measure. Hawking radiation is based on the Unruh effect: accelerating observers see a thermal bath of photons emitted from the horizon of a black hole. This thermal bath of photons is boosted and redshifted for observers far away from the black hole, resulting in a low frequency bath of photons that are not measurable using today's telescope precision. This emission of radiation will eventually dilute away the mass of the black hole. It is true, however, that it takes a very long time for a black hole to evaporate due to Hawking radiation, about $2\zehnein{100}{years}$.
 \section*{Problem 2.a.}
 The Schwarzschild metric is
 \g{ds^2=-(1-\br{2M}{r})dt^2+(1-\br{2M}{r})^{-1}dr^2+r^2(d\theta^2+\sin^2 d\phi)^2}
-Using $\theta=\br{1}{2}\pi$ and $r^6$ the metric is
+Using $\theta=\br{1}{2}\pi$ and $r>6$ the metric is
 \g{ds^2=-(1-\br{2}{r})^{-1}dt+r^2 d\phi^2}
 Using the connection we can calculate $\dd{t}\phi$,
-\g{\dd{t}\phi=\br{\dd{\tau}\phi}{\dd{\tau}t}=(-\br{\Gamma^r_{tt}}{\Gamma^r_{\phi\phi}})^{1/2}=(\br{1}{r^2}\br{1}{r})^{1/2}=r^{-2/3}}
+\g{\dd{t}\phi=\br{\dd{\tau}\phi}{\dd{\tau}t}=(-\br{\Gamma^r_{tt}}{\Gamma^r_{\phi\phi}})^{1/2}=(\br{1}{r^2}\br{1}{r})^{1/2}=\boxed{r^{-3/2}=\Omega}}
 Let the spin axis $\vec{s}=(s_0,s_r,0,s_\phi)$ in the orbital plane. Because it is purely spatial, the metric is now
 \g{ds^2=-s_0^2(1-\br{2}{r})+r^2 s_\phi^2}
 Boost the spin coordinate to the rest frame where $s_0=0$,
@@ -74,9 +73,9 @@ u^\nu \p_\nu s_\mu + {\Gamma^\rho}_{\mu \nu} s_\rho u^\mu &= 0
 \intertext{Now the covariant derivative applies to all three terms, but each is zero: $u^\sigma \nabla_\sigma {\Gamma^\rho}_{\mu\nu} = 0$, $u^\sigma \nabla_\sigma s_\rho = 0$, and $u^\sigma \nabla_\sigma u^\nu=0$. The only remaining term is}
 &= {\Gamma^\gamma}_{\sigma \mu} {\Gamma^\rho}_{\nu \gamma} u^\sigma u^\nu s_\rho}
 Which upon rearrangement of indices is the answer.
-\g{\zeich{nzx8cn}\ppa{2}{\tau}s_\alpha &= \boxed{{\Gamma^\delta}_{\alpha \gamma} {\Gamma^\beta}_{\epsilon \delta} u^\gamma u^\epsilon s_\beta}}
+\g{\boxed{\zeich{nzx8cn}\ppa{2}{\tau}s_\alpha ={\Gamma^\delta}_{\alpha \gamma} {\Gamma^\beta}_{\epsilon \delta} u^\gamma u^\epsilon s_\beta}}
 \section*{Problem 2.c.}
-For this part we consider a particle in a planar, circular orbit around a neutron star in the Schwarzschild metric in the coordinate basis. We calculate the precession of the particle spin $\dda{2}{\tau}s^i$ for the $r$ and $\phi$ components. The Mathematica calculation is included in the next pages. The steps are
+For this part we consider a particle in a planar, circular orbit around a neutron star in the Schwarzschild metric in the coordinate basis. The particle has a spin axis $s^\mu$ pointed through the plane. We calculate the precession of the particle spin $\dda{2}{\tau}s^i$ for the $r$ and $\phi$ components. The Mathematica calculation is included in the next pages. The steps are
 \begin{enumerate}
 \item Define the coordinate system $x^\mu=(t,r,\theta,\phi)$.
 \item Define the spin vector $s^\mu=(s_t,s_r,0,s_\phi)$.
