@@ -175,20 +175,33 @@ The parenthesis is almost the Schwarzschild metric. We would like the terms in t
 which it perfectly aligns the $dt^2$ term and cancels the extra power in the $dr^2$ term, so the $dr^2$ term is also in the form of the Schwarzschild metric.
 \g{dv^2-du^2&=\br{(\br{r}{2}-1)}{(1-\br{2}{r})}e^{r/2}\br{1}{16}((1-\br{2}{r})dt^2-(1-\br{2}{r})^{-1}dr^2)
 \intertext{The factor on front is $\br{r}{2}$}
-&= e^{r/2}\br{2}{32}((1-\br{2}{r})dt^2-(1-\br{2}{r})^{-1}dr^2)}
+&= e^{r/2}\br{r}{32}((1-\br{2}{r})dt^2-(1-\br{2}{r})^{-1}dr^2)}
 And so the Schwarzschild interval in Kruskal-Szekeres coordinates is
 \g{\boxed{ds^2_{\textrm{Schwarzschild}}=\br{32}{r}e^{-r/2}(du^2-dv^2)}}
 The result is identical for $r<2$ and $r>2$. Next, the $u-v$ plane is
 \fig{6cm}{4.pdf}{The $u-v$ plane.}
-The two straight lines are when $r=2$, derived via
+The two straight lines are when $r=2$, the horizon, derived via
 \g{u^2-v^2=(\br{r}{2}-1)e^{r/2}=0}
 \g{u=\pm v}
-The two solid curves represent curves of constant $r$ where $t$ is varied from a negative $t$ to positive $t$. The region on the right hand side is the region where $r>2$, and the region on the upper side is when $r<2$. Thus, one can imagine an infalling particle as beginning on the right hand side, travelling past the horizon, and then travelling upwards towards the solid black region. The solid black region is the limit when $r=0$, the singularity, derived via
-\g{u^1-v^2=-1}
-\g{v^2=u^2+1}
+The curves of constant $t$ are also straight lines, like the the horizon curves, derived via taking the ratio of $u$ and $v$,
+\g{\br{v}{u}=\tanh(\br{t}{4})}
+\g{v=\tanh(\br{t}{4})u}
+In other words curves of constant $t$ are linear through the origin. Curves of constant $r$ are nonlinear and multivalued, where $t$ is varied from a negative $t$ to positive $t$. The region on the right hand side is the region where $r>2$, and the region on the upper side is when $r<2$. Thus, one can imagine an infalling particle as beginning on the right hand side, travelling past the horizon, and then travelling upwards towards the solid black region. The solid black region is the limit when $r=0$, the singularity, derived via
+\g{v^2-u^2=1 \qquad v = \pm(u^2+1)^{1/2} }
 Finally solve for the curves $t(r)$ using the definitions \gz{nzxc9n} and \gz{znx8cnzb}. Then we may plot $t(r)$ for constant $u$ and $v$.
 \fig{5cm}{5.pdf}{Plot of Kruskal-Szekeres coordinates $t$ as a function of $r$. Four curves are illustrated on the left-hand region within the horizon, $r<2$, when $u>0$, $u<0$, $v>0$, and $v<0$ as constants, and similarly so on the right-hand region beyond $r>2$, beyond the horizon. }
 \section*{Problem 4.d.}
-In the previous $u-v$ diagram we can see that an infalling particle will begin on the right hand side, travelling ``leftwards'' approaching the straight line curve, representing the horizon. Once the particle crosses the horizon, the particle then travels ``upwards'' and reaches the singularity at the black region above.
+ In the previous answer we found that there are two solutions for $u^2-v^2$ when $r=0$,
+\g{v = \pm(u^2+1)^{1/2} }
+and so there is another region of the singularity, which is on the lower portion of the $u-v$ plane,
+\fig{5cm}{6.pdf}{Two singularities in the $u-v$ plane.}
+This second singularity is accessible only when $v$ is negative. Particle paths begin at $r=0$ and proceed outwards. This is also visible in the $t-r$ plane, for particle paths that have a negative $u<0$ or $v<0$: for those paths, particles travel away from $r=0$. There are no curves of constant $r$ that can traverse the other two regions as a function of real $t$, $u$, $v$. We must analytically continue the functions $\cosh$ and $\sinh$ as a function of imaginary $t$, which introduces an overall minus sign onto the $u$ and $v$ coordinates. This results in the ``extended'' Schwarzschild geometry,
+\fig{5cm}{8.pdf}{The extended Schwarzschild geometry by considering imaginary values of $t$.}
 \section*{Problem 4.e.}
+Starting with the original Kruskal-Szekeres coordinates $u$ and $v$ as defined in the prompt, start with a conformal transformation as demonstrated in 3.a.
+\g{\boxed{u'=\arctan(u+v)-\arctan(v-u)}}
+\g{\boxed{v'=\arctan(u+v)+\arctan(v-u)}}
+Then plug in values \fbox{$r=0$} to find the curves describing the singularity, and similarly plug in \fbox{$r=2$} to find the curves describing the horizon. We can do a bit of that work now for illustrative purposes. For the case $r=0$, the $u$ and $v$ terms are
+\g{u=\sinh(\br{t}{4}) \qquad v=\cosh(\br{t}{4}) }
+And plug into $v'$ to find that \fbox{$v'=\br{\pi}{2}$}. This means that $v'$ has its singularity at $v'=\br{\pi}{2}$ in the $u'-v'$ curve. And furthermore when we plug in $r=0$ to solve for $u'$, there are multiple solutions, and so the singularity is a \fbox{straight line} parallel to the $u'$ axis for the Penrose diagram. A similar procedure can be used to find the horizon curves and past and future infinities.
 \end{document}
