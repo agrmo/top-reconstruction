@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[includefoot]{geometry}
+\usepackage{/home/user1/code/tex/sty}
+\usepackage{amsmath}
+\usepackage{floatrow}
+\usepackage{hyperref}
+\geometry{top=0.75in, bottom=1in, left=0.75in, right=0.75in}
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{bib.bib}
+\floatsetup[figure]{objectset=centering}
+\floatsetup[subfigure]{objectset=centering}
+\hypersetup{colorlinks=true,citecolor=black,linkcolor=black}
+\setlength{\parindent}{0pt}
+\title{Paper}
+\author{Agustin Romero\thanks{ar1@stanford.edu}}
+\newcommand{\figpic}[3]{
+\begin{figure}[H]
+\begin{center}
+\pic{#1}{#2}
+\caption{#3}
+\end{center}
+\end{figure}}
+\newcommand{\figtab}[3]{
+\begin{table}[H]
+\begin{tabular}{#1}
+#2
+\end{tabular}
+\caption{#3}
+\end{table}}
+\begin{document}
+\maketitle
+This paper studies the renormalization group flow of Fermi Liquid Theory. The Hamiltonian for the fermi liquid will be described as
+\g{H=V\int d^3\vec{k} (\epsilon_k - \mu) \psi^\dagger_k \psi_k + \br{1}{2}V\int f(k_1,k_2,q) \psi^\dagger_{k_1+q} \psi_{k_2-q} \psi_{k_2} \psi_{k_1}  d^3k_1 d^3 k_2 d^3 q}
+
+The interaction potential is
+\g{H_p = \int d^3 \vec{k} d^3\vec{k'} f_{kk'} n_k n_{k'} + \int d^3{k}d^3{k'} g_{kk'} \psi^\dagger_{-k'} \psi_{k'} \psi_k \psi_{-k}}
+We would like to study the $\beta$ function flow of $f$ and $g$.
+\end{document}
