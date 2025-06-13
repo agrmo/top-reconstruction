@@ -4,22 +4,26 @@
 \usepackage{amsmath}
 \usepackage{floatrow}
 \usepackage{hyperref}
-\geometry{top=0.75in, bottom=1in, left=0.75in, right=0.75in}
+\usepackage{graphicx}
+\geometry{top=1in, bottom=1in, left=1in, right=1in}
 \usepackage[backend=bibtex]{biblatex}
 \addbibresource{bib.bib}
 \floatsetup[figure]{objectset=centering}
 \floatsetup[subfigure]{objectset=centering}
 \hypersetup{colorlinks=true,citecolor=black,linkcolor=black}
 \setlength{\parindent}{0pt}
-\title{Paper}
+\title{Renormalization Group Flows of Fermi Liquid Theory}
 \author{Agustin Romero\thanks{ar1@stanford.edu}}
+
 \newcommand{\figpic}[3]{
 \begin{figure}[H]
 \begin{center}
-\pic{#1}{#2}
+\includegraphics[height=#1]{#2}
 \caption{#3}
+\label{#2}
 \end{center}
 \end{figure}}
+
 \newcommand{\figtab}[3]{
 \begin{table}[H]
 \begin{tabular}{#1}
@@ -29,11 +33,12 @@
 \end{table}}
 \begin{document}
 \maketitle
-This paper studies the renormalization group flow of Fermi Liquid Theory. The Hamiltonian for the fermi liquid will be described as
+\section{Introduction}
+Landau's Fermi Liquid theory is a powerful tool for studying the interactions of electrons in the weak interaction and zero temperature limit. By studying the renormalization group flow of the interactions \ref{RevModPhys.66.129}, we can better understand which interactions become stronger or weaker at difference scales. This paper studies the renormalization group flow of Fermi Liquid Theory. We will work in one dimension and assuming only one band exists. The Hamiltonian for the fermi liquid will be described as
 \g{H=V\int d^3\vec{k} (\epsilon_k - \mu) \psi^\dagger_k \psi_k + \br{1}{2}V\int f(k_1,k_2,q) \psi^\dagger_{k_1+q} \psi_{k_2-q} \psi_{k_2} \psi_{k_1}  d^3k_1 d^3 k_2 d^3 q}
 The Fermi surface is identifiable at 
 \g{E(\vec{k})=\mu}
-and the existence of only one band is assumed. The procedure for analyzing the Fermi liquid Hamiltonian will be as follows. Define a partition function $Z$ in the limit $T=0$. Then we will define the renormalization group transformations for the coupling and fields such that the free interaction term is invariant, obtaining a free field fixed point in the RG flow. Then we will enumerate the terms around the fixed point, beginning with tree level interactions and then loop-level interactions. If an interaction is relevant, then the excitations will have a gap. Conversely, if no relevant operators appear, then the excitations will be gapless from the Fermi surface.\\~\\
+The procedure for analyzing the Fermi liquid Hamiltonian will be as follows. Define a partition function $Z$ in the limit $T=0$. Then we will define the renormalization group transformations for the coupling and fields such that the free interaction term is invariant, obtaining a free field fixed point in the RG flow. Then we will enumerate the terms around the fixed point, beginning with tree level interactions and then loop-level interactions. If an interaction is relevant, then the excitations will have a gap. Conversely, if no relevant operators appear, then the excitations will be gapless from the Fermi surface.\\~\\
 We consider a weak scattering process $k_1 + k_2 \rightarrow k_3 + k_4$ between energy states that are close to the Fermi surface. There are three primary ways of considering the momenta. 
 \begin{enumerate}
 \item Each of $k_1$, $k_2$, $k_3$ and $k_4$ must lie exactly on the Fermi sphere. This is not typically the assumption made, however it does illustrate that the direction of $\vec{q}$ is highly restricted: $\vec{q}$ must point tangential the Fermi sphere.
@@ -43,6 +48,8 @@ We consider a weak scattering process $k_1 + k_2 \rightarrow k_3 + k_4$ between 
 The interaction potential $f(k_1,k_2,q)$ can be split up into multiple cases, in particular, one for the forward scattering case and one for the Cooper channel case.
 \g{H_p = \int d^3 \vec{k} d^3\vec{k'} f_{kk'} n_k n_{k'} + \int d^3{k}d^3{k'} g_{kk'} \psi^\dagger_{-k'} \psi_{k'} \psi_k \psi_{-k}}
 We would like to study the $\beta$ function flow of $f$ and $g$. We will find that the different cases of momenta correspond to different $\beta$ flows.
+\subsection{Fixed Point Action}
+We start by introducing the action and enforcing that the RG flow is a fixed point for the free action. Later we will try to learn if interactions move us away from the fixed point.
 \g{||\vec{k_i}-k_F|\leq \Lambda}
 By introducing the cutoff $\Lambda$, the loop momentum must be within a shell $d\Lambda$. Next the action is
 \g{S_0=\sum_i \int_{-\Lambda}^{\Lambda} \int_{-\infty}^{\infty} \br{d\omega}{2\pi} \overline{\psi_i}(\omega k) (-i\omega -k)\psi_i(\omega k)}
@@ -89,12 +96,32 @@ resulting in either an overall phase factor, or 0,
 \g{\sum_i\epsilon_i=0,\pm 4 \qquad \sum_i K_f\epsilon_i = 0,\pm 4\pi K_F}
 The overall phase factor is permissible, because the $\delta$ function is periodic in $4\pi$. So ultimately we are safe to conclude that the $\delta$ over momenutum is independent of $K_F$, and the scaling is simply
 \g{\delta(k)\rightarrow \delta(\br{k'}{s})}
-and therefore the variable definition is simply
+and therefore the variable redefinition is simply
 \g{\delta(\br{k'}{s})=s\delta'(k')}
 The $\delta$ over $K$ gives a factor of $s$ as well. In total, the variable redefinitions give an overall factor, schematically,
-\g{\prod \br{dk'}{s} \prod \br{d\omega'}{s} s \delta(k') s\delta(\omega')}
+\g{\prod_4 \br{dk'}{s} \prod_4 \br{d\omega'}{s} s \delta(k') s\delta(\omega')}
 of $s^{-6}$. Now, we must rescale the fields according to
 \g{\psi'=s^{3/2}{\psi}}
 as done previously in the quadratic case. This provides exactly a factor of $s^6$. This reveals that the scaling of $u$ is of order $s^0$.
 \g{u_{i_4i_3i_2i_1}(\br{\omega'}{s},\br{k_i'}{s})=u'_{i_4i_3i_2i_1}(\omega'_i,k'_i)}
-\end{document}
+In other words the quartic contribution to the action is marginal at tree level. We should push on to the loop level to see the quadratic contribution to the action.
+\subsection{One loop corrections: $\mu$}
+The one loop corrections will renormalize the chemical potential $\mu$ and the quartic interaction term $u_0$. Different diagrams apply to $\mu$ and $u_0$. Because $\mu$ appears in the two-point interaction, the only one-loop diagram that renormalizes it is the tadpole diagram,
+\figpic{2cm}{1.png}{Tadpole.}
+The tadpole diagram has one unknown momentum that must be integrated over. The loop momentum is restricted to the region $\Lambda/s \leq |k| \leq \Lambda$. The $\omega$ must also be integrated over, which can be done using the Green's function for the loop, which is
+\g{\br{1}{i\omega-k}}
+The propagator has a pole at $i\omega$ and so the contour must be deformed, say, by the factor $e^{i\omega 0^+}$. Putting it together, the contribution of the tadpole diagram to $\mu$, after rescaling by $s$, is
+\g{\mu'&=s(\mu - u_0\int_{-\infty}^\infty \br{d\omega}{2\pi} \int_{\br{\Lambda}{s}< |k| < \Lambda} \br{dk}{2\pi} \br{i\omega-k} e^{i\omega 0^+} )\\
+&= s(\mu - u_0  \int_{\br{\Lambda}{s}< |k| < \Lambda} \br{dk}{2\pi} \theta(-k))\\
+&= s(\mu-\br{u_0}{2\pi}(\Lambda-\br{\Lambda}{s}))\\
+&= s(\mu-\br{u_0 \Lambda}{2\pi})+\br{u_0\Lambda}{2\pi}}
+There is a value of $\mu$ which does not flow. It's the fixed point, and can be read off directly,
+\g{\mu^*=\br{u_0\Lambda}{2\pi}}
+We may also calculate the $\beta$ of $\mu$. Define $s=1+t$ for an infinitesimal $t$, then,
+\g{\mu'&=(1+t)(\mu-\br{u_0\Lambda}{2\pi}(1-\br{1}{1+t})\\
+&= \mu+t(\mu-\br{u_0\Lambda}{2\pi})}
+And the $\beta$ flow of $\mu$ is the $t$ derivative,
+\g{\dd{t}\mu=\mu-\br{u_0\Lambda}{2\pi}}
+This concludes the analysis of $\mu$ at one loop.
+\section{Conclusion}
+The RG flow of Fermi Liquid Theory was studied for the chemical potential $\mu$ and the four-point coupling $u$. The procedure we followed was to first define an RG flow such that the free field theory was a Gaussian fixed point. Then we evaluated the 2-point interaction and 4-point interaction, rescaled the coupling parameters, and then rescaled the fields, to study the RG flow of the couplings $\mu$ and $u$. We first studied the quartic 4-point interaction and found it is marginal. We then studied the quadratic interaction at tree level to find it is relevant and must be renormalized at loop level, and at one loop, there is indeed a fixed point.\end{document}
