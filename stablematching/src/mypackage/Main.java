@@ -17,6 +17,7 @@ public class Main {
 	// 0 liebt vor: 2,1,0
 	// 1 liebt vor: 1,2,0
 	// 2 liebt vor: 1,2,0
+	// Eine stabile Verlobung ist [[1, 0], [2, 2], [0, 1]]
 	
 	Map<Integer,List<Integer>> mannVorliebe = new HashMap<Integer,List<Integer>>();
 	mannVorliebe.put(0,Arrays.asList(0,2,1));

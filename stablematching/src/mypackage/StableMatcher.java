@@ -36,29 +36,36 @@ public class StableMatcher {
     }
 
     // Für jede Mann, nehme den Mann.
+    // Ist er frei? Falls ja, geh weiter.
     // Laufen durch jede mögliche Frau.
     // Gibt es eine Frau, die er nicht ein Paar vorgeschlagen hat?
     private boolean nichtAlleVorgeschlagen() {
 	
 	for (int mann : mannVorliebe.keySet()) {
-	    // Frauen, die er vorliebt.
-	    List<Integer> frauen = mannVorliebe.get(mann);
+	    // Ist er frei?
+	    if (istFreiMann(mann)) {
+		
+		// Er ist frei. Geh weiter.
+		// Frauen, die er vorliebt.
+		List<Integer> frauen = mannVorliebe.get(mann);
 
-	    if (vorschlaege.keySet().contains(mann)) {
-		// Der Mann hat mindestens eine Frau schon
-		// vorgeschlagen.  Frauen, die er vorgeschlagen hat.
-		Set<Integer> mannVorschlaege = vorschlaege.get(mann);
+		if (vorschlaege.keySet().contains(mann)) {
+		    // Der Mann hat mindestens eine Frau schon
+		    // vorgeschlagen.  Frauen, die er vorgeschlagen hat.
+		    Set<Integer> mannVorschlaege = vorschlaege.get(mann);
 
-		for (int frau : frauen) {
-		    // Hat er nicht schon die Frau vorgeschlagen?
-		    if (!mannVorschlaege.contains(frau)) {
-			return true;
+		    for (int frau : frauen) {
+			// Hat er nicht schon die Frau vorgeschlagen?
+			if (!mannVorschlaege.contains(frau)) {
+			    return true;
+			}
 		    }
+		} else {
+		    // Der Mann hat bereits keine Frau vorgeschlagen.
+		    vorschlaege.put(mann, new HashSet<Integer>());
+		    return true;
 		}
-	    } else {
-		// Der Mann hat bereits keine Frau vorgeschlagen.
-		vorschlaege.put(mann, new HashSet<Integer>());
-		return true;
+
 	    }
  	}
 	
@@ -69,15 +76,19 @@ public class StableMatcher {
     private int mannNichtAlleVorgeschlagen() {
 	
 	for (int mann : mannVorliebe.keySet()) {
-	    // Frauen, die er vorliebt.
-	    List<Integer> frauen = mannVorliebe.get(mann);
-	    // Frauen, die er vorgeschlagen hat.
-	    Set<Integer> mannVorschlaege = vorschlaege.get(mann);
+	    // Ist er frei?
+	    if (istFreiMann(mann)) {
+		// Er ist frei. Geh weiter.		
+		// Frauen, die er vorliebt.
+		List<Integer> frauen = mannVorliebe.get(mann);
+		// Frauen, die er vorgeschlagen hat.
+		Set<Integer> mannVorschlaege = vorschlaege.get(mann);
 	    
-	    for (int frau : frauen) {
-		// Hat er nicht schon die Frau vorgeschlagen?
-		if (!mannVorschlaege.contains(frau)) {
-		    return mann;
+		for (int frau : frauen) {
+		    // Hat er nicht schon die Frau vorgeschlagen?
+		    if (!mannVorschlaege.contains(frau)) {
+			return mann;
+		    }
 		}
 	    }
 	}
@@ -107,8 +118,21 @@ public class StableMatcher {
 	return 0;
     }
 
+    // Ist der Mann frei?
+    private boolean istFreiMann(int mann) {
+	for (List<Integer> paar : verlobung) {
+	    if (paar.get(0) == mann) {
+		// Der Mann ist schon in einem Paar.
+		return false;
+	    }
+	}
+
+	// Der Mann ist frei.
+	return true;
+    }
+
     // Ist die Frau frei?
-    private boolean istFrei(int frau) {
+    private boolean istFreiFrau(int frau) {
 	for (List<Integer> paar : verlobung) {
 	    if (paar.get(1) == frau) {
 		// Die Frau ist schon in einem Paar.
@@ -164,7 +188,7 @@ public class StableMatcher {
 	    int frau = nehmeBeliebteste(mann);
 	    System.out.println("Vorschlagen Mann " + mann + " und Frau " + frau);
 
-	    if (istFrei(frau)) {
+	    if (istFreiFrau(frau)) {
 		// Die Frau ist frei. Mache ein Paar.
 		System.out.println("Die Frau " + frau + " ist frei.");
 		verlobung.add(Arrays.asList(mann,frau));
