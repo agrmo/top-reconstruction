@@ -1,0 +1,1 @@
+javac src/mypackage/*.java -d classes && java -cp classes mypackage.Main

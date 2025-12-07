@@ -1,7 +1,7 @@
 package mypackage;
 
 // Eine ungeordnete Nachbarschaftsmatrix
-public class Nachbarschaftsmatrix {
+public class Nachbarschaftsmatrix implements Graph {
     private boolean[][] n;
 
     // paare: Liste von Liste von Integer
@@ -28,6 +28,11 @@ public class Nachbarschaftsmatrix {
 	    n[paar[0]][paar[1]] = true;
 	    n[paar[1]][paar[0]] = true;
 	}
+    }
+
+    // Ist die Kante von v bis b (oder umgekehrt) im Graph?
+    public boolean hatKante(int v, int b) {
+	return n[v][b] || n[b][v];
     }
 
     public String drucken() {
