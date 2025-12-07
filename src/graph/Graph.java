@@ -1,4 +1,4 @@
-package mypackage;
+package graph;
 
 public interface Graph {
 

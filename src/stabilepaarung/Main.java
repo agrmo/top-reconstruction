@@ -29,7 +29,7 @@ public class Main {
 	frauVorliebe.put(1,Arrays.asList(1,2,0));
 	frauVorliebe.put(2,Arrays.asList(1,2,0));
 
-	StableMatcher sm = new StableMatcher(mannVorliebe, frauVorliebe);
+	StabilePaarung sm = new StabilePaarung(mannVorliebe, frauVorliebe);
 	
 	List<List<Integer>> verlobung = sm.match();
 	System.out.println(verlobung);

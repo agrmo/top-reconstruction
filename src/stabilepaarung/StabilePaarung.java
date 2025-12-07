@@ -23,13 +23,13 @@ import java.util.HashSet;
 
  */
 
-public class StableMatcher {
+public class StabilePaarung {
     private Map<Integer,List<Integer>> mannVorliebe;
     private Map<Integer,List<Integer>> frauVorliebe;
     private Map<Integer,Set<Integer>> vorschlaege;
     private List<List<Integer>> verlobung;
     
-    public StableMatcher(Map<Integer,List<Integer>> m,
+    public StabilePaarung(Map<Integer,List<Integer>> m,
 			 Map<Integer,List<Integer>> f) {
 	mannVorliebe = m;
 	frauVorliebe = f;

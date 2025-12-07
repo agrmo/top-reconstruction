@@ -1,2 +1,0 @@
-javac src/stablematching/*.java -d classes
-java -cp classes stablematching.StableMatching Hello World

@@ -1,4 +1,4 @@
-package mypackage;
+package graph;
 
 // Eine ungeordnete Nachbarschaftsmatrix
 public class Nachbarschaftsmatrix implements Graph {
