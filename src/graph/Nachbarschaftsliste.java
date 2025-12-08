@@ -5,17 +5,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /*
-  Eine Knote ist eine ganze Zahl.
+  Ein Knoten ist eine ganze Zahl.
   Eine Kantenliste ist eine Liste von Knoten.
-  Eine Graph ist eine Liste von Kantenliste.
+  Ein Graph ist eine Liste von Kantenliste.
  */
 
-// Eine ungeordnete Nachbarschaftsliste.  Nehmen wir an, daß jede
+// Eine ungerichtete Nachbarschaftsliste.  Nehmen wir an, daß jede
 // Kante ist nur einmal im Graph angegeben, also nicht zweimal. Also
-// wir müssen zweimal prüfen, einmal auf einer Knote und einmal auf
-// der anderen, ob eine Kante im Graph gibt.
+// wir müssen zweimal prüfen - einmal auf einem Knoten und einmal auf
+// dem anderen - ob eine Kante im Graph gibt.
 public class Nachbarschaftsliste implements Graph {
-    private ArrayList<ArrayList<Integer>> n;
+    public ArrayList<ArrayList<Integer>> n;
 
     // paare: Liste von Liste von Integer
     // List von Paare, die die Knoten einer Kante zeigen.
@@ -51,16 +51,5 @@ public class Nachbarschaftsliste implements Graph {
     // Ist die Kante von v bis b (oder umgekehrt) im Graph?
     public boolean hatKante(int v, int b) {
 	return n.get(v).contains(b) || n.get(b).contains(v);
-    }
-
-    public String drucken() {
-	StringBuilder ns = new StringBuilder();
-	for (int i = 0; i < n.size(); i++) {
-	    ns.append(i);
-	    ns.append(": ");
-	    ns.append(n.get(i));
-	    ns.append("\n");
-	}
-	return ns.toString();
     }
 }

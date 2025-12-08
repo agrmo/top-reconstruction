@@ -1,4 +1,4 @@
-package zahlen;
+package zahl;
 
 public class Counter {
     private int count;

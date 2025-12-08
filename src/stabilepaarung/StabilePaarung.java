@@ -1,4 +1,4 @@
-package mypackage;
+package stabilepaarung;
 
 import java.util.Map;
 import java.util.HashMap;

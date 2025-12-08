@@ -2,7 +2,7 @@ package graph;
 
 // Eine ungeordnete Nachbarschaftsmatrix
 public class Nachbarschaftsmatrix implements Graph {
-    private boolean[][] n;
+    public boolean[][] n;
 
     // paare: Liste von Liste von Integer
     // groese: Gröse der Matrix
@@ -33,21 +33,5 @@ public class Nachbarschaftsmatrix implements Graph {
     // Ist die Kante von v bis b (oder umgekehrt) im Graph?
     public boolean hatKante(int v, int b) {
 	return n[v][b] || n[b][v];
-    }
-
-    public String drucken() {
-	StringBuilder ns = new StringBuilder();
-	for (int i = 0; i < n.length; i++) {
-	    for (int j = 0; j < n.length; j++) {
-		if (n[i][j] == true) {
-		    ns.append("1");
-		} else {
-		    ns.append("0");
-		}
-		ns.append(" ");
-	    }
-	    ns.append("\n");
-	}
-	return ns.toString();
     }
 }

@@ -1,4 +1,4 @@
-package zahlen;
+package zahl;
 
 import java.util.HashMap;
 import java.util.Map;

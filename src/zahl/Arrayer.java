@@ -1,4 +1,4 @@
-package zahlen;
+package zahl;
 
 public class Arrayer {
     private int[] a;
