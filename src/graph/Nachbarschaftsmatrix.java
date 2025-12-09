@@ -1,8 +1,8 @@
 package graph;
 
 // Eine ungeordnete Nachbarschaftsmatrix.  Dieser Aufbau einer
-// Nachbarschaftsmatrix macht ja Verdopplungen. Es gibt zweimal eine
-// einzelne Kante in der Matrix.
+// Nachbarschaftsmatrix macht keine Verdopplungen. Es gibt nur einmal
+// eine einzelne Kante in der Matrix.
 public class Nachbarschaftsmatrix implements Graph {
     public boolean[][] n;
 
@@ -28,7 +28,6 @@ public class Nachbarschaftsmatrix implements Graph {
 
 	    // Pflege die Kanten in der Matrix ein.
 	    n[paar[0]][paar[1]] = true;
-	    n[paar[1]][paar[0]] = true;
 	}
     }
 }

@@ -12,8 +12,29 @@ public class GraphCSV {
 
     // Mache eine CSV-Datei des Graphen, gegeben eine
     // Nachbarschaftsliste.
-    public String macheGepheiCSV(Nachbarschaftsliste n) {
-	return "";
+    public String macheGepheiCSV(Nachbarschaftsliste nl) {
+	StringBuilder sb = new StringBuilder();
+
+	// Am Anfang gibt es immer die Zeile
+	sb.append("Source,Target\n");
+
+	// Wir brauchen nicht zu prüfen, ob es eine Kante gibt.
+	// Jede echte Kante ist genau in der Liste gegeben.
+	for (int i = 0; i < nl.n.size(); i++) {
+	    StringBuilder sbKnoten = new StringBuilder();
+	    for (int j = 0; j < nl.n.get(i).size(); j++) {
+		sbKnoten.append(i);
+		sbKnoten.append(",");
+		sbKnoten.append(nl.n.get(i).get(j));
+		sbKnoten.append("\n");
+	    }
+
+	    if (sbKnoten.length() > 0) {
+		sb.append(sbKnoten.toString());
+	    }
+	}
+
+	return sb.toString();
     }
 
     // Mache eine CSV-Datei des Graphen, gegeben eine

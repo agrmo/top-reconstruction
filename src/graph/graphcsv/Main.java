@@ -14,7 +14,8 @@ public class Main {
 	int groese = 3;
 	Nachbarschaftsmatrix nm = new Nachbarschaftsmatrix(paare, groese);
 	System.out.println(gc.macheGepheiCSV(nm));
-	
-	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
+
+	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, groese);
+	System.out.println(gc.macheGepheiCSV(nl));
     }
 }
