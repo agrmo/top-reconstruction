@@ -66,5 +66,16 @@ public class Main {
 
 	// Zufallsvariabeln
 	System.out.println(Math.random());
+
+        // N.b.!
+        System.out.println((1/2)*5*(5-1));
+        System.out.println((1/2)*4*(4-1));
+        System.out.println((0.5)*5.0*(5.0-1));
+        System.out.println((0.5)*4.0*(4.0-1));
+
+	// drucken eine Liste von Liste...
+	ArrayList<int[]> paare = new ArrayList<int[]>();
+	paare.add(new int[] {1,2});
+	System.out.println(Arrays.toString(paare.get(0)));
     }
 }
