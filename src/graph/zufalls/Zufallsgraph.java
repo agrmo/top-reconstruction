@@ -3,13 +3,16 @@ package graph.zufalls;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
+import liste.Liste;
+import graph.Nachbarschaftsliste;
 
 // Ein Zuafallsgraph ist eine Art Graph mit n Knoten, bei denen die
 // Kanten zufällig erzeugt werden. Gegeben die Anzahl von Knoten und
 // die Wahrscheinlichkeit p, jedes Paar von Knoten eine Kante zu
 // tragen.
 public class Zufallsgraph {
-
+    public Nachbarschaftsliste nachbarschaftsliste;    
+    
     // n: Anzahl von Knoten
     // Nehme alle Paare von Knoten.  Ein ungerichteter Graph besitzt
     // am höchstens (1/2)n(n-1)-mal Kante, die zwei Knoten verbinden
@@ -32,7 +35,7 @@ public class Zufallsgraph {
 		    // Würfe eine "Münze," die Wahrscheinlichkeit p hat.
 		    // Falls "ja," setzen eine neue Kante {i,j} ein.
 		    // Falls "nein," tu nichts.
-		    if (r > p) {
+		    if (r < p) {
 			paare.add(new int[] {i,j});
 		    }    
 		}
@@ -50,5 +53,15 @@ public class Zufallsgraph {
     // auf.
     public Zufallsgraph(int n, double p) {
 	ArrayList<int[]> paare = nehmePaare(n, p);
+
+	Liste l = new Liste();
+	int[][] paareArray = l.nehmeArrayListArray(paare);
+
+	// Überprüfen, daß wir wahre Arrays genommen haben...
+	// for (int[] zeile : aArray) {
+	//     System.out.println(Arrays.toString(zeile));
+	// }
+
+	nachbarschaftsliste = new Nachbarschaftsliste(paareArray, 10);
     }
 }
