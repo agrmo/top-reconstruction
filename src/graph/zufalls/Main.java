@@ -8,7 +8,7 @@ import graph.graphcsv.GraphCSV;
 public class Main {
     public static void main(String[] args) {
 
-	Zufallsgraph z = new Zufallsgraph(15, 0.2);
+	Zufallsgraph z = new Zufallsgraph(15, 0.5);
 	Graphdrucker gd = new Graphdrucker();
 	System.out.println(gd.drucke(z.nachbarschaftsliste));
 	GraphCSV gcsv = new GraphCSV();

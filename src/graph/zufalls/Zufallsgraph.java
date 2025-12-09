@@ -62,6 +62,6 @@ public class Zufallsgraph {
 	//     System.out.println(Arrays.toString(zeile));
 	// }
 
-	nachbarschaftsliste = new Nachbarschaftsliste(paareArray, 10);
+	nachbarschaftsliste = new Nachbarschaftsliste(paareArray, n);
     }
 }
