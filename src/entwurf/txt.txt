@@ -1,0 +1,2 @@
+javac src/entwurf/*.java -d classes && java -cp classes entwurf.Main
+
