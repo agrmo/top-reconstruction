@@ -1,6 +1,8 @@
 package graph;
 
-// Eine ungeordnete Nachbarschaftsmatrix
+// Eine ungeordnete Nachbarschaftsmatrix.  Dieser Aufbau einer
+// Nachbarschaftsmatrix macht ja Verdopplungen. Es gibt zweimal eine
+// einzelne Kante in der Matrix.
 public class Nachbarschaftsmatrix implements Graph {
     public boolean[][] n;
 
@@ -28,10 +30,5 @@ public class Nachbarschaftsmatrix implements Graph {
 	    n[paar[0]][paar[1]] = true;
 	    n[paar[1]][paar[0]] = true;
 	}
-    }
-
-    // Ist die Kante von v bis b (oder umgekehrt) im Graph?
-    public boolean hatKante(int v, int b) {
-	return n[v][b] || n[b][v];
     }
 }

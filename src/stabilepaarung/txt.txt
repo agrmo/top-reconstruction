@@ -1,0 +1,6 @@
+
+
+Stabile Paarung Problem
+javac src/stabilepaarung/*.java -d classes && java -cp classes stabilepaarung.Main
+
+javac -d classes $(find src -name '*.java'*) && java -cp classes graph.graphcsv.Main

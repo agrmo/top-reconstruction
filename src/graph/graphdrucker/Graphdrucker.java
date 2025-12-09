@@ -1,4 +1,7 @@
-package graph;
+package graph.graphdrucker;
+
+import graph.Nachbarschaftsliste;
+import graph.Nachbarschaftsmatrix;
 
 // Ein Objekt, das einen Graph darstellen können. Die Art von
 // Darstellung wird nur schriftlich aus Text angegeben.

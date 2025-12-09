@@ -8,7 +8,7 @@ public class Tiefensuche {
 
     // ziel: ganze Zahl
     // Suche nach dem Knoten, und gib die 
-    public int[] suche(int ziel) {
+    // public int[] suche(int ziel) {
 	
-    }
+    // }
 }

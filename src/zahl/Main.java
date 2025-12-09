@@ -46,10 +46,10 @@ public class Main {
 	    System.out.println(Arrays.toString(arraya));   
 	}
 
-	ArrayList ma = new ArrayList<Integer>(Arrays.asList(3,4));
-	ma.add(2);
-	ma.add(5);
-	System.out.println(ma);
+	// ArrayList ma = new ArrayList<Integer>(Arrays.asList(3,4));
+	// ma.add(2);
+	// ma.add(5);
+	// System.out.println(ma);
 
 	// Map<Integer,List<Integer>> intToListInt = new HashMap<Integer,List<Integer>>();
 	// intToListInt.put(1,Arrays.asList(3,4));
@@ -63,5 +63,8 @@ public class Main {
 	funfarray[0] = 1;
 	System.out.println(Arrays.toString(funfarray));
 	System.out.println(funfarray.length);
+
+	// Zufallsvariabeln
+	System.out.println(Math.random());
     }
 }

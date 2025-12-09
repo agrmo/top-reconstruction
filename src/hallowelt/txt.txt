@@ -1,0 +1,4 @@
+Hallo Welt
+javac src/helloworld/*.java -d classes && java -cp classes helloworld.Main
+
+

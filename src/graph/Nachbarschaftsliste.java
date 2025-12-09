@@ -47,9 +47,4 @@ public class Nachbarschaftsliste implements Graph {
 	    n.get(paar[0]).add(paar[1]);
 	}
     }
-
-    // Ist die Kante von v bis b (oder umgekehrt) im Graph?
-    public boolean hatKante(int v, int b) {
-	return n.get(v).contains(b) || n.get(b).contains(v);
-    }
 }
