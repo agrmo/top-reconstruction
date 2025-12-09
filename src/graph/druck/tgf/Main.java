@@ -1,21 +1,19 @@
-package graph.graphcsv;
+package graph.druck.tgf;
 
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
-import graph.graphdrucker.Graphdrucker;
-import graph.graphcsv.GraphCSV;
 
 public class Main {
     public static void main(String[] args) {
 
-	GraphCSV gc = new GraphCSV();
+	GraphTGF gtgf = new GraphTGF();
 	
 	int[][] paare = {{1,2},{2,0}};
 	int groese = 3;
 	Nachbarschaftsmatrix nm = new Nachbarschaftsmatrix(paare, groese);
-	System.out.println(gc.macheGepheiCSV(nm));
+	System.out.println(gtgf.macheGepheiTGF(nm));
 
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, groese);
-	System.out.println(gc.macheGepheiCSV(nl));
+	System.out.println(gtgf.macheGepheiTGF(nl));
     }
 }

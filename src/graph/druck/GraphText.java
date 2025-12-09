@@ -1,11 +1,11 @@
-package graph.graphdrucker;
+package graph.druck;
 
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
 
 // Ein Objekt, das einen Graph darstellen können. Die Art von
 // Darstellung wird nur schriftlich aus Text angegeben.
-public class Graphdrucker {
+public class GraphText {
 
     // Drucke eine Nachbarschaftsliste.
     public String drucke(Nachbarschaftsliste n) {
