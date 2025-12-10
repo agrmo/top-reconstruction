@@ -45,7 +45,7 @@ public class Graphrechner {
 
 	int anzahlVonKnoten = nl.betrag;
 
-	double durchschnitt = gewichteteSumme / (2.0 * anzahlVonKnoten);
+	double durchschnitt = gewichteteSumme / (anzahlVonKnoten);
 	
 	return durchschnitt;
     }
