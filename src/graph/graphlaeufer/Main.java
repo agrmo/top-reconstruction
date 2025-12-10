@@ -2,6 +2,7 @@ package graph.graphlaeufer;
 
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
+import liste.Liste;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,5 +18,10 @@ public class Main {
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
 	System.out.println(gl.hatKante(nl,1,2));
 	System.out.println(gl.hatKante(nl,2,1));
+
+	int[][] verteilung = gl.kanteVerteilung(nl);
+	Liste l = new Liste();
+	String verteilungString = l.nehmeStringVonArrayArray(verteilung);
+	System.out.println(verteilungString);
     }
 }

@@ -2,6 +2,7 @@ package graph.graphlaeufer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
 import liste.Liste;
@@ -56,12 +57,45 @@ public class Graphlaeufer {
 
 	nl.verdoppeln();
 
-	// Eine Liste der Abzählung der Kante.
-	ArrayList<int[]> kanteVerteilung = new ArrayList<int[]>();
+	// Eine Map der Abzählung der Kante.
+	// z.B.
+	// 0: 1
+	// 2: 5
+	// Es gibt 5 Knoten mit 2 Kanten. Fänden wir einen neuen Knoten
+	// mit 2 Kanten, dann erhöhen das Zeichen von 2.
+	// 0: 1
+	// 2: 6
+	// Es gibt 6 Knoten mit 2 Kanten.
+	HashMap<Integer,Integer> kanteVerteilung = new HashMap<Integer,Integer>();
+
+	// Jeder Knoten in der Nachbarschaftsliste hat schon alle
+	// seine Kante gerade gezeigt. Also wir müssen nur den Betrag
+	// der Liste aufzählen.
+
+	for (int i = 0; i < nl.n.size(); i++) {
+	    ArrayList<Integer> knoten = nl.n.get(i);
+	    int betrag = knoten.size();
+
+	    if (kanteVerteilung.containsKey(betrag)) {
+		// Es gibt einen anderen Knoten mit die gleiche Anzahl
+		// von Kante. Erhöhen die Zahl.
+		int anzahl = kanteVerteilung.get(betrag);
+		anzahl++;
+		kanteVerteilung.put(betrag, anzahl);		
+	    } else {
+		// Dieser Knoten ist der erste Knoten mit betrag-Zahl
+		// von Kanten.
+		kanteVerteilung.put(betrag, 1);
+	    }
+	}
+
+	// Schon fertig, aber wir wollen eine int[][] zeigen, nicht
+	// eine Abbildung von int bis int.
 
 	Liste l = new Liste();
-	
-	return l.nehmeArrayListArrayInteger(kanteVerteilung);
+	int[][] intKanteVerteilung = l.nehmeArrayArrayVonAbbildung(kanteVerteilung);
+
+	return intKanteVerteilung;
     }
 
     // Mache einen Kurve, der die Wahrscheinlichkeitsverteilung der
