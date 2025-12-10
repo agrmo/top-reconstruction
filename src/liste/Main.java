@@ -2,6 +2,7 @@ package liste;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Main {
 
@@ -50,12 +51,25 @@ public class Main {
 	    System.out.println(Arrays.toString(zeile));
 	}	
     }
+
+    public static void arrayArrayAbbildung() {
+	// Benutzen die Funktion nehmeArrayArrayVonAbbildung
+
+	HashMap<Integer,Integer> m = new HashMap<Integer,Integer>();
+	m.put(1,6);
+	m.put(5,2);
+
+	Liste l = new Liste();
+	int[][] arrayarray = l.nehmeArrayArrayVonAbbildung(m);
+	String arrayarrayString = l.nehmeStringVonArrayArray(arrayarray);
+	System.out.println(arrayarrayString);
+    }
     
     public static void main(String[] args) {
-	listeInteger();
-	
-	// und noch mal für Double
-	
+	listeInteger();	
+	// und noch mal für Double	
 	listeDouble();
+
+	arrayArrayAbbildung();
     }
 }

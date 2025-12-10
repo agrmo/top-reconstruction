@@ -1,6 +1,8 @@
 package liste;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 
 // Funktionen an Listen.
 public class Liste {
@@ -70,5 +72,41 @@ public class Liste {
 	}
 
 	return arrayarray;	
-    }    
+    }
+
+    // Gegeben ein Array von Array von Integer, mache ein einfaches
+    // String dafür. Weiß ich nicht, warum Java diese Funktion nicht
+    // schon besitzt.
+    public String nehmeStringVonArrayArray(int[][] arrayarray) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append("[");
+	for (int i = 0; i < arrayarray.length; i++) {
+	    if (i != 0) {
+		sb.append(",");
+	    }
+	    sb.append(Arrays.toString(arrayarray[i]));
+	}
+	sb.append("]");
+
+	return sb.toString();
+    }
+
+    // Gegeben eine Map<Integer,Integer>, geben eine int[][] ab.
+    // z.B.: ein:
+    // 0: 5
+    // 1: 2
+    // aus:
+    // [[0,5],[1,2]]
+    public int[][] nehmeArrayArrayVonAbbildung(HashMap<Integer,Integer> m) {
+	int[][] arrayarray = new int[m.size()][];
+
+	int i = 0;
+	for (Integer schluessel : m.keySet()) {
+	    arrayarray[i] = new int[] {schluessel, m.get(schluessel)};
+	    i++;
+	}
+
+	return arrayarray;
+    }
 }
