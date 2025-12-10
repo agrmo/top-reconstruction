@@ -10,11 +10,8 @@ import java.util.Arrays;
   Ein Graph ist eine Liste von Kantenliste.
  */
 
-// Eine ungerichtete Nachbarschaftsliste.  Nehmen wir an, daß jede
-// Kante ist nur einmal im Graph angegeben, also nicht zweimal. Also
-// wir müssen zweimal prüfen - einmal auf einem Knoten und einmal auf
-// dem anderen - ob eine Kante im Graph gibt.
-public class Nachbarschaftsliste implements Graph {
+// Eine ungerichtete Nachbarschaftsliste.
+public class Nachbarschaftsliste {
     public ArrayList<ArrayList<Integer>> n;
 
     // paare: Liste von Liste von Integer
@@ -25,6 +22,11 @@ public class Nachbarschaftsliste implements Graph {
 
     // Nehmen wir an, daß jede Kante is nur einmal in paare gegeben,
     // z.B. nur [1,2] und nicht beide [1,2] und [2,1].
+
+    // "paare" konnte trotzdem Verdopplungen besitzen. Daß wäre ein
+    // Fehler des Benutzers. (Ich sollte um diesen Fall kümmern. Wie
+    // konnte ich bestätigen, daß der Graph keine Verdopplung trägt,
+    // ohne Zweifel?)
     
     // groese: ganze Zahl
     // Die Anzahl der Knoten in diesem Graph.
@@ -45,6 +47,36 @@ public class Nachbarschaftsliste implements Graph {
 	    // Kante von Knoten bis Knoten
 	    int[] paar = paare[i];
 	    n.get(paar[0]).add(paar[1]);
+	}
+    }
+
+    // Am Anfang ist jede Nachbarschaftsliste nicht verdoppelt. z.B.,
+    // 0: [1]
+    // 1: []
+    // Dieser Graph besitzt eine Kante, und diese Kante ist nur einmal
+    // in der Liste bezeichnet. Doch hat der Knoten 1 eine Kante. Manchmal
+    // wollen wir alle die Kante unmittelbar in der Liste gezeigt zu sein.
+    // z.B. ein:
+    // 0: [1]
+    // 1: []
+    // aus:
+    // 0: [1]
+    // 1: [0]
+    // Tun wir das.
+    public void verdoppeln() {
+	for (int i = 0; i < n.size(); i++) {
+	    ArrayList<Integer> knoten = n.get(i);
+
+	    // Für keden Knoten, setzen seine Kanten in den anderen
+	    // Knoten ein. 
+	    for (int j = 0; j < knoten.size(); j++) {
+		// Wir kennen nicht, ob diese Kante die ursprüngliche
+		// Kante ist, also prüfe ob die Kante schon im Knoten
+		// steht.
+		if (!n.get(knoten.get(j)).contains(i)) {
+		    n.get(knoten.get(j)).add(i);
+		}
+	    }
 	}
     }
 }

@@ -3,7 +3,7 @@ package graph;
 // Eine ungeordnete Nachbarschaftsmatrix.  Dieser Aufbau einer
 // Nachbarschaftsmatrix macht keine Verdopplungen. Es gibt nur einmal
 // eine einzelne Kante in der Matrix.
-public class Nachbarschaftsmatrix implements Graph {
+public class Nachbarschaftsmatrix {
     public boolean[][] n;
 
     // paare: Liste von Liste von Integer

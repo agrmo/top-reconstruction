@@ -55,7 +55,7 @@ public class Zufallsgraph {
 	ArrayList<int[]> paare = nehmePaare(n, p);
 
 	Liste l = new Liste();
-	int[][] paareArray = l.nehmeArrayListArray(paare);
+	int[][] paareArray = l.nehmeArrayListArrayInteger(paare);
 
 	// Überprüfen, daß wir wahre Arrays genommen haben...
 	// for (int[] zeile : aArray) {
