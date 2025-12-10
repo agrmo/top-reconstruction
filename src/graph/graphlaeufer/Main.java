@@ -10,12 +10,12 @@ public class Main {
 	Graphlaeufer gl = new Graphlaeufer();
 	
 	int[][] paare = {{1,2},{2,0}};
-	int groese = 3;
-	Nachbarschaftsmatrix nm = new Nachbarschaftsmatrix(paare, groese);
+	int betrag = 3;
+	Nachbarschaftsmatrix nm = new Nachbarschaftsmatrix(paare, betrag);
 	System.out.println(gl.hatKante(nm,1,2));
 	System.out.println(gl.hatKante(nm,2,1));
 	
-	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
+	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
 	System.out.println(gl.hatKante(nl,1,2));
 	System.out.println(gl.hatKante(nl,2,1));
 
