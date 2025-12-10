@@ -6,6 +6,7 @@ import java.util.Arrays;
 import liste.Liste;
 import graph.Nachbarschaftsliste;
 
+
 // Ein Zuafallsgraph ist eine Art Graph mit n Knoten, bei denen die
 // Kanten zufällig erzeugt werden. Gegeben die Anzahl von Knoten und
 // die Wahrscheinlichkeit p, jedes Paar von Knoten eine Kante zu

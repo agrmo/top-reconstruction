@@ -13,6 +13,7 @@ import java.util.Arrays;
 // Eine ungerichtete Nachbarschaftsliste.
 public class Nachbarschaftsliste {
     public ArrayList<ArrayList<Integer>> n;
+    public int betrag;
 
     // paare: Liste von Liste von Integer
     // List von Paare, die die Knoten einer Kante zeigen.
@@ -28,17 +29,18 @@ public class Nachbarschaftsliste {
     // konnte ich bestätigen, daß der Graph keine Verdopplung trägt,
     // ohne Zweifel?)
     
-    // groese: ganze Zahl
+    // inBetrag: ganze Zahl
     // Die Anzahl der Knoten in diesem Graph.
-    public Nachbarschaftsliste(int[][] paare, int groese) {
+    public Nachbarschaftsliste(int[][] paare, int inBetrag) {
+	betrag = inBetrag;
 	
 	// Am Anfang gibt es keine Kante.  Erzeugen die
-	// Nachbarschaftsliste mit Größe "groese" und erzeugen eine
+	// Nachbarschaftsliste mit Größe "inBetrag" und erzeugen eine
 	// leere Liste dahin.
 	n = new ArrayList<ArrayList<Integer>>();
 
 	// Für jede Knote, mach eine leere Liste für die Kanten.
-	for (int i = 0; i < groese; i++) {
+	for (int i = 0; i < inBetrag; i++) {
 	    n.add(new ArrayList<Integer>());
 	}
 	

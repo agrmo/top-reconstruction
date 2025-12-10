@@ -10,7 +10,7 @@ import liste.Liste;
 
 public class Main {
     public static void main(String[] args) {
-	Zufallsgraph z = new Zufallsgraph(20, 0.1);
+	Zufallsgraph z = new Zufallsgraph(500, 0.0001);
 
 	GraphCSV gcsv = new GraphCSV();
 	System.out.println(gcsv.macheGepheiCSV(z.nachbarschaftsliste));
