@@ -71,8 +71,6 @@ public class Teile {
 
 	// Ein Tiefensuche-Verfahren nimmt an, daß die
 	// Nachbarschaftsliste verdoppelt ist.
-	    
-	nl.verdoppeln();
 
 	while (nichtGesehen.size() > 0) {
 	    // Nehme nur einen neuen Knoten, der nicht gesehen ist.
@@ -141,5 +139,23 @@ public class Teile {
 	int[][] teileArrayArray = l.nehmeArrayArrayVonAbbildung(teile);
 	
 	return teileArrayArray;
+    }
+
+    // Eine einfache Funktion, nur den höchsten Teil von der
+    // Teileverteilung zu nehmen. Also das antwortet die Frage: wie
+    // groß ist der größte Teil gieses Graphen? Nicht sehr
+    // aufwandfrei, aber hilfreich.
+    int groessterTeil(Nachbarschaftsliste nl) {
+	int[][] t = teile(nl);
+
+	int groesste = 0;
+	
+	for (int[] tAufzaehlung : t) {
+	    if (tAufzaehlung[0] > groesste) {
+		groesste = tAufzaehlung[0];
+	    }
+	}
+
+	return groesste;
     }
 }
