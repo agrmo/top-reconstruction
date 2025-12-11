@@ -3,6 +3,7 @@ package liste;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Main {
 
@@ -64,13 +65,27 @@ public class Main {
 	String arrayarrayString = l.nehmeStringVonArrayArray(arrayarray);
 	System.out.println(arrayarrayString);
     }
+
+    public static void beispielEins() {
+	HashSet<Integer> s = new HashSet<Integer>();
+	s.add(1);
+	s.add(2);
+	s.add(5);
+	s.add(6);
+
+	Liste l = new Liste();
+	int[] a = l.nehmeArrayVonMenge(s);
+	System.out.println(Arrays.toString(a));
+    }
     
     public static void main(String[] args) {
 
-	listeInteger();	
+	// listeInteger();	
 	// und noch mal für Double	
-	listeDouble();
+	// listeDouble();
 	
-	arrayArrayAbbildung();
+	// arrayArrayAbbildung();
+
+	beispielEins();
     }
 }

@@ -3,6 +3,7 @@ package liste;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 
 // Funktionen an Listen.
 public class Liste {
@@ -108,5 +109,22 @@ public class Liste {
 	}
 
 	return arrayarray;
+    }
+
+    // Gegeben eine Menge von ganzen Zahlen, gib eine int[] Liste ab.
+    // z.B.: ein:
+    // {0,1,2,5,6}
+    // aus:
+    // [0,1,2,5,6]
+    public int[] nehmeArrayVonMenge(HashSet<Integer> s) {
+	int[] array = new int[s.size()];
+
+	int i = 0;
+	for (Integer intInS : s) {
+	    array[i] = intInS;
+	    i++;
+	}
+
+	return array;
     }
 }
