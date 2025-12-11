@@ -64,6 +64,9 @@
 \item Number of types of nodes, number of types of edges.
 \item For each type, number of nodes and number of edges.
 \item Average number of edges: $\langle k \rangle$
+\item Number of components.
+\item Size of the largest component.
+\item Connected: only one component.
 \end{enumerate}
 \end{frame}
 
@@ -75,7 +78,6 @@
 \item Start with $N$ nodes and no edges.
 \item For each pair of nodes, connect them with probability $p$.
 \end{enumerate}
-\item Properties
 \end{itemize}
 \end{frame}
 
@@ -91,14 +93,11 @@
 
 \begin{frame}
 \frametitle{Random Network}
-\begin{columns}
-\column{0.5\textwidth}
-\figpic{7cm}{3.pdf}{$N=500$, $p=0.01$}
-\column{0.5\textwidth}
-\figpic{4cm}{4.png}{}
-$\langle k \rangle = 5.15$
-\end{columns}
+\begin{center}
+Construct several networks with equal $N$ but increasing $p$.
+\end{center}
 \end{frame}
+
 
 \begin{frame}
 \frametitle{Random Network}
@@ -110,7 +109,36 @@ $\langle k \rangle = 5.15$
 $N=500$, $p=0.0001$, $\langle k \rangle = 0.03$
 \column{0.5\textwidth}
 % beispiel-12 
+\pic{4cm}{8.png}
 \pic{3cm}{7.pdf}
+$N=500$, $p=0.001$, $\langle k \rangle = 0.524$
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Random Network}
+\begin{columns}
+\column{0.5\textwidth}
+% beispiel-13
+\pic{4cm}{10.png}
+\pic{3cm}{9.pdf}
+$N=500$, $p=0.003$, $\langle k \rangle = 1.5$
+\column{0.5\textwidth}
+% beispiel-14
+\pic{4cm}{12.png}
+\pic{3cm}{11.pdf}
+$N=500$, $p=0.01$, $\langle k \rangle = 5.1$
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Random Network}
+\begin{columns}
+\column{0.5\textwidth}
+\figpic{7cm}{3.pdf}{$N=500$, $p=0.01$, $\langle k \rangle = 5.15$}
+\column{0.5\textwidth}
+\figpic{4cm}{4.png}{}
+
 \end{columns}
 \end{frame}
 
