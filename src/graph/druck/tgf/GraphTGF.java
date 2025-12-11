@@ -31,7 +31,7 @@ public class GraphTGF {
 	    sb.append("\n");
 	}
 
- 	// Zunächst drucken wir die Grenze zwischen Knoten und Kanten.
+ 	// Eine TGF-Datei hat eine Grenze zwischen Knoten und Kanten.
 	sb.append("#\n");
 
 	// Zunächst drucken wir alle die Kanten.

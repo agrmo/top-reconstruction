@@ -5,7 +5,7 @@ import graph.Nachbarschaftsmatrix;
 import graph.druck.GraphText;
 import graph.druck.csv.GraphCSV;
 import graph.druck.tgf.GraphTGF;
-import graph.graphrechner.Graphrechner;
+import graph.rechnen.kanteverteilung.Kanteverteilung;
 import liste.Liste;
 
 public class Main {
@@ -15,8 +15,8 @@ public class Main {
 	GraphCSV gcsv = new GraphCSV();
 	System.out.println(gcsv.macheGepheiCSV(z.nachbarschaftsliste));
 
-	Graphrechner gr = new Graphrechner();
-	int[][] verteilung = gr.kanteVerteilung(z.nachbarschaftsliste);
+	Kanteverteilung kv = new Kanteverteilung();
+	int[][] verteilung = kv.kanteVerteilung(z.nachbarschaftsliste);
 	Liste l = new Liste();
 	String verteilungString = l.nehmeStringVonArrayArray(verteilung);
 	System.out.println(verteilungString);	

@@ -1,30 +1,12 @@
-package graph.graphrechner;
+package graph.rechnen.kanteverteilung;
 
+import liste.Liste;
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import liste.Liste;
+import java.util.ArrayList;
 
-// Berechne verschiedene Eigenschaften des Graphen.
-// Bearbeiten den Graph nicht.
-public class Graphrechner {
-
-    public Graphrechner() {
-	
-    }
-
-    // Ist die Kante von v bis b (oder umgekehrt) im Graph?
-    public boolean hatKante(Nachbarschaftsliste n, int v, int b) {
-	return n.n.get(v).contains(b) || n.n.get(b).contains(v);
-    }
-
-    // Ist die Kante von v bis b (oder umgekehrt) im Graph?
-    public boolean hatKante(Nachbarschaftsmatrix n, int v, int b) {
-	return n.n[v][b] || n.n[b][v];
-    }
-
+public class Kanteverteilung {
     // Mache einen Kurve, der die Anzahlverteilung der Kanten
     // im Graphen zeigt.
     // ein: Nachbarschaftsliste
@@ -98,43 +80,5 @@ public class Graphrechner {
 	int[][] intkv = l.nehmeArrayArrayVonAbbildung(kv);
 
 	return intkv;
-    }
-
-    // Mache einen Kurve, der die Wahrscheinlichkeitsverteilung der
-    // Kanten im Graphen zeigt.
-    // public int[][] kanteVerteilung(Nachbarschaftsmatrix nl) {	
-    //    }        
-
-    // Berechne die durchschnittliche Anzahl der Kanten eines Knoten
-    // dieses Graphen.
-    // z.B. die Verteilung
-    // [[1, 1],[2, 1],[3, 4],[4, 2],[5, 1],[6, 1]]
-    // ergibt die Kantedurchschnitt
-    // (1*1+2*1+3*4+4*2+5*1+6*1)/(1+1+4+2+1+1) = 3.4
-    public double berechneKantedurchschnitt(Nachbarschaftsliste nl) {
-	// Gedanke:
-	// 1. Gegeben schon eine Kanteverteilung.
-	// 2. Berechne die gewichtete Summe aller Kanten.
-	// 3. Berechne 2 * die Anzahl von Knoten.
-	// 4. Teilen sie durch.
-
-	// Nehme die Kanteverteilung.
-	int[][] kv = kanteVerteilung(nl);
-
-	// Wir haben alle die Daten, den Durschnitt zu rechnen.
-	// Nennen wir den Zähler "gewichteteSumme." Der Nenner ist die
-	// gesamte Anzahl von Knoten, einschließlich die Knoten, die
-	// keine Kante besitzen!
-	
-	double gewichteteSumme = 0;
-	for (int i = 0; i < kv.length; i++) {
-	    gewichteteSumme += (kv[i][0] * kv[i][1]);
-	}
-
-	int anzahlVonKnoten = nl.betrag;
-
-	double durchschnitt = gewichteteSumme / (anzahlVonKnoten);
-	
-	return durchschnitt;
     }
 }
