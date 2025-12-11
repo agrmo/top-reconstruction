@@ -141,7 +141,7 @@ $N=500$, $p=0.01$, $\langle k \rangle = 5.1$
 \end{columns}
 \end{frame}
 
-\n{bk}{\langle k \rangle}
+\n{kDurch}{\langle k \rangle}
 \begin{frame}
 \frametitle{Random Network}
 \begin{columns}
@@ -154,9 +154,9 @@ $N=500$, $p=0.01$, $\langle k \rangle = 5.1$
 
 \begin{frame}
 \g{\sigma_k = \sqrt{\langle k \rangle}}
-\g{k = \bk \pm \sqrt{\bk}}
+\g{k = \kDurch \pm \sqrt{\kDurch}}
 \begin{center}
-Nodes never deviate significantly from $\bk$.\\~\\
+Nodes never deviate significantly from $\kDurch$.\\~\\
 \textit{``scale''}
 \end{center}
 \end{frame}
@@ -182,7 +182,7 @@ Nodes never deviate significantly from $\bk$.\\~\\
 \end{frame}
 
 \n{kneighbor}{k_{\textrm{Neighbor}}}
-
+\n{kND}{\langle \kneighbor \rangle}
 
 \n{kmin}{k_{\textrm{min}}}
 \n{kmax}{k_{\textrm{max}}}
@@ -215,7 +215,7 @@ Normalization of a power law network.
 \begin{itemize}
 \item Randomly select a node
 \begin{itemize}
-\item How many links do you have? $\bk$
+\item How many links do you have? $\kDurch$
 \end{itemize}
 \begin{center}\textit{or}\end{center}
 \item Randomly select a link 
@@ -231,17 +231,33 @@ Normalization of a power law network.
 \begin{frame}
 \begin{center}
 \textit{Use $kp_k$ as a probability distribution.}\\~\\
-It is most likely to connect to a node which already has $\bk$ links.\\~\\
+It is most likely to connect to a node which already has $\kDurch$ links.\\~\\
 It is $k$ times more likely to connect to a node with $k$ links than a node with 1 link (assuming equal number of $k$-nodes and 1-nodes).
 \end{center}
 \g{\int_0^{\infty} kp_k \propto \textrm{Average number of links of neighbor.}}
 \end{frame}
 
 \begin{frame}
-\g{q(k)=Akp_k}
-\g{\int_0^\infty Akp_k dk = 1}
-\g{q(k)=Akp_k=AkCk^{-\gamma}}
+\g{q_k=Akp_k=AkCk^{-\gamma}= \br{\emg }{\kme} Ak^{\emg} }
+Plug into normalization.
+\g{\int q_k dk = 1}
+Solve for $A$.
+\g{\boxed{A=\br{\zmg}{\emg} \br{\kme}{\kmz}}}
 \end{frame}
 
+\begin{frame}
+\g{\kND &= \int kq_k dk = AC \int k^{\zmg} dk = AC(\br{k^{\dmg}}{\dmg})_{\kmin}^{\kmax}\\
+&= AC \br{\kmd}{\dmg} \\
+&= \boxed{\br{\zmg}{\dmg} \br{\kmd}{\kmz} }}
+The expected degree of a neighbor in a Power Law Network.
+\end{frame}
+
+\begin{frame}
+\g{\kDurch = \br{\emg}{\zmg} \br{\kmz}{\kme} \quad \kND = \br{\zmg}{\dmg} \br{\kmd}{\kmz} }
+\begin{center}
+\includegraphics[height=5cm]{13.pdf}\\
+\textit{``Friendship Paradox''}
+\end{center}
+\end{frame}
 
 \end{document}
