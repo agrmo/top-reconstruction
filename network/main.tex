@@ -146,6 +146,7 @@ $N=500$, $p=0.01$, $\kDurch = 5.1$
 \textit{What is the probability distribution of having a randomly selected node having $k$ links? $p_k$}
 \g{p_k={N-1 \choose k}p^k (1-p)^{N-1-k}}
 \g{p_k=e^{-\kDurch} \br{\kDurch^k}{k!}}
+\g{\kDurch=p(N-1)}
 \pic{3.5cm}{14.pdf}
 \end{center}
 \end{frame}
@@ -203,7 +204,7 @@ $N=500$, $p=0.01$, $N_G=494$
 \g{\sigma_k = \sqrt{\kDurch}}
 \g{k = \kDurch \pm \sqrt{\kDurch}}
 \begin{center}
-Nodes never deviate significantly from $\kDurch$.\\~\\
+All nodes are connected within a small range of $\kDurch$.\\~\\
 \textit{``scale''}
 \end{center}
 \end{frame}
@@ -215,24 +216,11 @@ Nodes never deviate significantly from $\kDurch$.\\~\\
 \end{itemize}
 \end{frame}
 
-\n{kneighbor}{k_{\textrm{Neighbor}}}
-\n{kND}{\langle \kneighbor \rangle}
 \begin{frame}
-\frametitle{Power Law Network}
-\begin{itemize}
-\item Randomly select a node
-\begin{itemize}
-\item How many links do you have? $\kDurch$
-\end{itemize}
-\begin{center}\textit{or}\end{center}
-\item Randomly select a link 
-\begin{itemize}
-\item Go to one of its nodes
-\item How many links does your neighbor have? $\langle \kneighbor \rangle$
-\end{itemize}
-\end{itemize}
-\g{\kDurch \neq \langle \kneighbor \rangle}
-\begin{center}\textit{``Friendship Paradox''}\end{center}
+\begin{center}
+\g{p_k \propto k^{-\gamma}}
+\textit{Power Law Network}
+\end{center}
 \end{frame}
 
 \begin{frame}
@@ -248,13 +236,6 @@ Nodes never deviate significantly from $\kDurch$.\\~\\
 \item It is \textit{more likely} to connect to \textit{highly connected} nodes.
 \end{itemize}
 \end{itemize}
-\end{frame}
-
-\begin{frame}
-\begin{center}
-\g{p_k \propto k^{-\gamma}}
-\textit{Power Law Network}
-\end{center}
 \end{frame}
 
 \n{kmin}{k_{\textrm{min}}}
@@ -280,6 +261,30 @@ Normalization of a power law network.
 \begin{center}
 \textit{$p_k$ and $\kDurch$ are independent of the size a power law network.}
 \end{center}
+\end{frame}
+
+\begin{frame}
+
+\end{frame}
+
+\n{kneighbor}{k_{\textrm{Neighbor}}}
+\n{kND}{\langle \kneighbor \rangle}
+\begin{frame}
+\frametitle{Power Law Network}
+\begin{itemize}
+\item Randomly select a node
+\begin{itemize}
+\item How many links do you have? $\kDurch$
+\end{itemize}
+\begin{center}\textit{or}\end{center}
+\item Randomly select a link 
+\begin{itemize}
+\item Go to one of its nodes
+\item How many links does your neighbor have? $\langle \kneighbor \rangle$
+\end{itemize}
+\end{itemize}
+\g{\kDurch \neq \langle \kneighbor \rangle}
+\begin{center}\textit{``Friendship Paradox''}\end{center}
 \end{frame}
 
 \begin{frame}
