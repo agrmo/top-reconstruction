@@ -1,8 +1,6 @@
 \documentclass{beamer}
 
 \usepackage{floatrow}
-%\usepackage{amsfonts}
-%\usepackage{amsmath}
 \usepackage{/home/user1/code/tex/sty}
 \setbeamercolor{frametitle}{fg=black}
 \setbeamertemplate{navigation symbols}{}
@@ -30,7 +28,13 @@
 \begin{enumerate}
 \item Graphs
 \item Networks
-\item Paths
+\begin{itemize}
+\item Random network
+\item Power-law network
+\begin{itemize}
+\item Friendship Paradox
+\end{itemize}
+\end{itemize}
 \end{enumerate}
 \end{frame}
 
@@ -64,9 +68,15 @@
 \item Number of types of nodes, number of types of edges.
 \item For each type, number of nodes and number of edges.
 \item Average number of edges: $\langle k \rangle$
-\item Number of components.
+\item Components
+\begin{itemize}
 \item Size of the largest component.
 \item Connected: only one component.
+\end{itemize}
+\item Probability that a random selected node has $k$ edges: $p(k)$
+\begin{itemize}
+\item $\int_{k_{\textrm{min}}}^{k_{\textrm{max}}} p(k) = 1$
+\end{itemize}
 \end{enumerate}
 \end{frame}
 
@@ -131,6 +141,7 @@ $N=500$, $p=0.01$, $\langle k \rangle = 5.1$
 \end{columns}
 \end{frame}
 
+\n{bk}{\langle k \rangle}
 \begin{frame}
 \frametitle{Random Network}
 \begin{columns}
@@ -138,8 +149,99 @@ $N=500$, $p=0.01$, $\langle k \rangle = 5.1$
 \figpic{7cm}{3.pdf}{$N=500$, $p=0.01$, $\langle k \rangle = 5.15$}
 \column{0.5\textwidth}
 \figpic{4cm}{4.png}{}
-
 \end{columns}
 \end{frame}
+
+\begin{frame}
+\g{\sigma_k = \sqrt{\langle k \rangle}}
+\g{k = \bk \pm \sqrt{\bk}}
+\begin{center}
+Nodes never deviate significantly from $\bk$.\\~\\
+\textit{``scale''}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Types of Networks}
+\begin{itemize}
+\item Random Network
+\item Configuration Network
+\begin{itemize}
+\item Each node has a fixed number of edges.
+\item Each edge is randomly placed.
+\end{itemize}
+\item Power Law Network
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\g{p_k \propto k^{-\gamma}}
+\textit{Power Law Network}
+\end{center}
+\end{frame}
+
+\n{kneighbor}{k_{\textrm{Neighbor}}}
+
+
+\n{kmin}{k_{\textrm{min}}}
+\n{kmax}{k_{\textrm{max}}}
+\n{emg}{1-\gamma}
+\n{zmg}{2-\gamma}
+\n{dmg}{3-\gamma}
+\n{kme}{\kmax^{\emg}-\kmin^{\emg}}
+\n{kmz}{\kmax^{\zmg}-\kmin^{\zmg}}
+\n{kmd}{\kmax^{\dmg}-\kmin^{\dmg}}
+\begin{frame}
+\g{\int p_k dk = 1}
+\g{\int_k Ck^{-\gamma} = 1}
+\g{C(\br{k^{1-\gamma}}{1-\gamma})_k=1}
+\g{\boxed{C=\br{1-\gamma}{\kme}}}
+Normalization of a power law network.
+\end{frame}
+
+\n{kD}{\langle k \rangle}
+\begin{frame}
+\g{\kD &= \int k C k^{-\gamma} = C\int k^\emg = C(\br{k^{\zmg}}{\zmg})_{\kmin}^{\kmax}\\
+&= \br{\emg}{\kme} \br{\kmz}{\zmg}\\
+&= \boxed{\br{\emg}{\zmg} \br{\kmz}{\kme}}}
+\begin{center}
+\textit{$p_k$ and $\kD$ are independent of the size a power law network.}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Power Law Network}
+\begin{itemize}
+\item Randomly select a node
+\begin{itemize}
+\item How many links do you have? $\bk$
+\end{itemize}
+\begin{center}\textit{or}\end{center}
+\item Randomly select a link 
+\begin{itemize}
+\item Go to one of its nodes
+\item How many links does that node have? $\langle \kneighbor \rangle$
+\end{itemize}
+\end{itemize}
+\g{\langle k \rangle \neq \langle \kneighbor \rangle}
+\begin{center}\textit{``Friendship Paradox''}\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\textit{Use $kp_k$ as a probability distribution.}\\~\\
+It is most likely to connect to a node which already has $\bk$ links.\\~\\
+It is $k$ times more likely to connect to a node with $k$ links than a node with 1 link (assuming equal number of $k$-nodes and 1-nodes).
+\end{center}
+\g{\int_0^{\infty} kp_k \propto \textrm{Average number of links of neighbor.}}
+\end{frame}
+
+\begin{frame}
+\g{q(k)=Akp_k}
+\g{\int_0^\infty Akp_k dk = 1}
+\g{q(k)=Akp_k=AkCk^{-\gamma}}
+\end{frame}
+
 
 \end{document}
