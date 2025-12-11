@@ -20,14 +20,6 @@
 \usepackage{caption}
 \captionsetup[figure]{labelformat=empty}
 
-\newcommand{\figpic}[3]{
-\begin{figure}[H]
-\begin{center}
-\includegraphics[height=#1]{#2}
-\caption{#3}
-\end{center}
-\end{figure}}
-
 \newcommand{\pic}[2]{
 \begin{center}
 \includegraphics[height=#1]{#2}
@@ -42,7 +34,7 @@
 \item Networks
 \begin{itemize}
 \item Random network
-\item Power-law network
+\item Power Law network
 \begin{itemize}
 \item Friendship Paradox
 \end{itemize}
@@ -54,23 +46,6 @@
 \frametitle{Examples of real networks}
 \begin{enumerate}
 \item Social Networks: Nodes are people, edges are connections.
-\end{enumerate}
-\end{frame}
-
-\begin{frame}
-\frametitle{Types of networks}
-\begin{enumerate}
-\item Probability Distribution
-\begin{enumerate}
-\item Exponential Network
-\item Random Network
-\item Poisson Network
-\end{enumerate}
-\item Algorithm
-\begin{enumerate}
-\item BA Network
-\item BA Fitness
-\end{enumerate}
 \end{enumerate}
 \end{frame}
 
@@ -93,11 +68,23 @@
 \end{frame}
 
 \begin{frame}
+\begin{center}
+Network Model: decide on a \textit{generative algorithm} and \textit{properties}.
+\end{center}
+\end{frame}
+
+\begin{frame}
 \frametitle{Random Network}
 \begin{itemize}
-\item Construction
+\item ``Erdős-Rényi'' Network
 \begin{enumerate}
 \item Start with $N$ nodes and no edges.
+\item Insert exactly $L$ links randomly.
+\end{enumerate}
+\item ``Gilbert'' Network
+\begin{enumerate}
+\item Start with $N$ nodes and no edges.
+\item List all $\br{1}{2}N(N-1)$ possible pairs of nodes.
 \item For each pair of nodes, connect them with probability $p$.
 \end{enumerate}
 \end{itemize}
@@ -107,9 +94,9 @@
 \frametitle{Random Network}
 \begin{columns}
 \column{0.5\textwidth}
-\figpic{7cm}{1.pdf}{}
+\pic{7cm}{1.pdf}
 \column{0.5\textwidth}
-\figpic{7cm}{2.pdf}{}
+\pic{7cm}{2.pdf}
 \end{columns}
 \end{frame}
 
@@ -120,7 +107,7 @@ Construct several networks with equal $N$ but increasing $p$.
 \end{center}
 \end{frame}
 
-
+\n{kDurch}{\langle k \rangle}
 \begin{frame}
 \frametitle{Random Network}
 \begin{columns}
@@ -128,12 +115,12 @@ Construct several networks with equal $N$ but increasing $p$.
 % beispiel-11
 \pic{4cm}{5.png}
 \pic{3cm}{6.pdf}
-$N=500$, $p=0.0001$, $\langle k \rangle = 0.03$
+$N=500$, $p=0.0001$, $\kDurch = 0.03$
 \column{0.5\textwidth}
 % beispiel-12 
 \pic{4cm}{8.png}
 \pic{3cm}{7.pdf}
-$N=500$, $p=0.001$, $\langle k \rangle = 0.524$
+$N=500$, $p=0.001$, $\kDurch = 0.524$
 \end{columns}
 \end{frame}
 
@@ -144,19 +131,30 @@ $N=500$, $p=0.001$, $\langle k \rangle = 0.524$
 % beispiel-13
 \pic{4cm}{10.png}
 \pic{3cm}{9.pdf}
-$N=500$, $p=0.003$, $\langle k \rangle = 1.5$
+$N=500$, $p=0.003$, $\kDurch = 1.5$
 \column{0.5\textwidth}
 % beispiel-14
 \pic{4cm}{12.png}
 \pic{3cm}{11.pdf}
-$N=500$, $p=0.01$, $\langle k \rangle = 5.1$
+$N=500$, $p=0.01$, $\kDurch = 5.1$
 \end{columns}
 \end{frame}
 
 \begin{frame}
+\frametitle{Random Network}
+\begin{center}
+\textit{What is the probability distribution of having a randomly selected node having $k$ links? $p_k$}
+\g{p_k={N-1 \choose k}p^k (1-p)^{N-1-k}}
+\g{p_k=e^{-\kDurch} \br{\kDurch^k}{k!}}
+\pic{3.5cm}{14.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Random Network}
 \begin{center}
 \textit{Component: connected set of nodes}\\~\\
-What is the largest component of a random graph?\\~\\
+How big is the largest component? $N_G$\\~\\
 When does a graph become fully connected?\\~\\
 How does it scale with $p$?
 \end{center}
@@ -190,11 +188,10 @@ $N=500$, $p=0.01$, $N_G=494$
 \end{columns}
 \end{frame}
 
-\n{kDurch}{\langle k \rangle}
 \begin{frame}
 \frametitle{Random Network}
 \begin{center}
-\pic{4cm}{phaseverschiebung.pdf}
+\pic{4cm}{15.pdf}
 \g{\br{1}{N}=\br{1}{500}=0.002}
 \g{p_k = \br{1}{N} \Rightarrow \kDurch = 1}
 \textit{Phase transition to a single giant component.}
@@ -202,7 +199,8 @@ $N=500$, $p=0.01$, $N_G=494$
 \end{frame}
 
 \begin{frame}
-\g{\sigma_k = \sqrt{\langle k \rangle}}
+\frametitle{Random Network}
+\g{\sigma_k = \sqrt{\kDurch}}
 \g{k = \kDurch \pm \sqrt{\kDurch}}
 \begin{center}
 Nodes never deviate significantly from $\kDurch$.\\~\\
@@ -211,10 +209,44 @@ Nodes never deviate significantly from $\kDurch$.\\~\\
 \end{frame}
 
 \begin{frame}
-\frametitle{Types of Networks}
 \begin{itemize}
 \item Random Network
 \item Power Law Network
+\end{itemize}
+\end{frame}
+
+\n{kneighbor}{k_{\textrm{Neighbor}}}
+\n{kND}{\langle \kneighbor \rangle}
+\begin{frame}
+\frametitle{Power Law Network}
+\begin{itemize}
+\item Randomly select a node
+\begin{itemize}
+\item How many links do you have? $\kDurch$
+\end{itemize}
+\begin{center}\textit{or}\end{center}
+\item Randomly select a link 
+\begin{itemize}
+\item Go to one of its nodes
+\item How many links does your neighbor have? $\langle \kneighbor \rangle$
+\end{itemize}
+\end{itemize}
+\g{\kDurch \neq \langle \kneighbor \rangle}
+\begin{center}\textit{``Friendship Paradox''}\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item Random Network
+\begin{itemize}
+\item It is most likely to connect to a node which has $\kDurch$ links.
+\item But you yourself will have $\kDurch$ links.
+\item \textit{No preferential attachment}.
+\end{itemize}
+\item Power Law Network
+\begin{itemize}
+\item It is \textit{more likely} to connect to \textit{highly connected} nodes.
+\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -224,9 +256,6 @@ Nodes never deviate significantly from $\kDurch$.\\~\\
 \textit{Power Law Network}
 \end{center}
 \end{frame}
-
-\n{kneighbor}{k_{\textrm{Neighbor}}}
-\n{kND}{\langle \kneighbor \rangle}
 
 \n{kmin}{k_{\textrm{min}}}
 \n{kmax}{k_{\textrm{max}}}
@@ -239,46 +268,32 @@ Nodes never deviate significantly from $\kDurch$.\\~\\
 \begin{frame}
 \g{\int p_k dk = 1}
 \g{\int_k Ck^{-\gamma} = 1}
-\g{C(\br{k^{1-\gamma}}{1-\gamma})_k=1}
+\g{C(\br{k^{1-\gamma}}{1-\gamma})_{\kmin}^{\kmax}=1}
 \g{\boxed{C=\br{1-\gamma}{\kme}}}
 Normalization of a power law network.
 \end{frame}
 
-\n{kD}{\langle k \rangle}
 \begin{frame}
-\g{\kD &= \int k C k^{-\gamma} = C\int k^\emg = C(\br{k^{\zmg}}{\zmg})_{\kmin}^{\kmax}\\
+\g{\kDurch &= \int k C k^{-\gamma} = C\int k^\emg = C(\br{k^{\zmg}}{\zmg})_{\kmin}^{\kmax}\\
 &= \br{\emg}{\kme} \br{\kmz}{\zmg}\\
 &= \boxed{\br{\emg}{\zmg} \br{\kmz}{\kme}}}
 \begin{center}
-\textit{$p_k$ and $\kD$ are independent of the size a power law network.}
+\textit{$p_k$ and $\kDurch$ are independent of the size a power law network.}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Power Law Network}
-\begin{itemize}
-\item Randomly select a node
-\begin{itemize}
-\item How many links do you have? $\kDurch$
-\end{itemize}
-\begin{center}\textit{or}\end{center}
-\item Randomly select a link 
-\begin{itemize}
-\item Go to one of its nodes
-\item How many links does that node have? $\langle \kneighbor \rangle$
-\end{itemize}
-\end{itemize}
-\g{\langle k \rangle \neq \langle \kneighbor \rangle}
-\begin{center}\textit{``Friendship Paradox''}\end{center}
-\end{frame}
-
-\begin{frame}
 \begin{center}
-\textit{Use $kp_k$ as a probability distribution.}\\~\\
-It is most likely to connect to a node which already has $\kDurch$ links.\\~\\
+\begin{tabular}{l l}
+$p_k$ & Probability, node has $k$ edges.\\
+$q_k$ & Probability, neighbor has $k$ edges.\\
+$k q_k$ & Expectation value, how many edges a neighbor has.\\
+\end{tabular}
+~\\~\\~\\How to relate $p_k$ and $q_k$?\\~\\
 It is $k$ times more likely to connect to a node with $k$ links than a node with 1 link (assuming equal number of $k$-nodes and 1-nodes).
 \end{center}
-\g{\int_0^{\infty} kp_k \propto \textrm{Average number of links of neighbor.}}
+\g{q_k \propto kp_k}
 \end{frame}
 
 \begin{frame}
