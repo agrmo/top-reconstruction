@@ -25,6 +25,8 @@
 \includegraphics[height=#1]{#2}
 \end{center}}
 
+\newcommand{\gstar}[1]{\begin{align*}\displaystyle #1\end{align*}}
+
 \begin{document}
 
 \begin{frame}
@@ -42,12 +44,12 @@
 \end{enumerate}
 \end{frame}
 
-\begin{frame}
-\frametitle{Examples of real networks}
-\begin{enumerate}
-\item Social Networks: Nodes are people, edges are connections.
-\end{enumerate}
-\end{frame}
+%\begin{frame}
+%\frametitle{Examples of real networks}
+%\begin{enumerate}
+%\item Social Networks: Nodes are people, edges are connections.
+%\end{enumerate}
+%\end{frame}
 
 \begin{frame}
 \frametitle{Properties of a network}
@@ -144,9 +146,9 @@ $N=500$, $p=0.01$, $\kDurch = 5.1$
 \frametitle{Random Network}
 \begin{center}
 \textit{What is the probability distribution of having a randomly selected node having $k$ links? $p_k$}
-\g{p_k={N-1 \choose k}p^k (1-p)^{N-1-k}}
-\g{p_k=e^{-\kDurch} \br{\kDurch^k}{k!}}
-\g{\kDurch=p(N-1)}
+\gstar{p_k={N-1 \choose k}p^k (1-p)^{N-1-k}}
+\gstar{p_k=e^{-\kDurch} \br{\kDurch^k}{k!}}
+\gstar{\kDurch=p(N-1)}
 \pic{3.5cm}{14.pdf}
 \end{center}
 \end{frame}
@@ -193,16 +195,16 @@ $N=500$, $p=0.01$, $N_G=494$
 \frametitle{Random Network}
 \begin{center}
 \pic{4cm}{15.pdf}
-\g{\br{1}{N}=\br{1}{500}=0.002}
-\g{p_k = \br{1}{N} \Rightarrow \kDurch = 1}
+\gstar{\br{1}{N}=\br{1}{500}=0.002}
+\gstar{p_k = \br{1}{N} \Rightarrow \kDurch = 1}
 \textit{Phase transition to a single giant component.}
 \end{center}
 \end{frame}
 
 \begin{frame}
 \frametitle{Random Network}
-\g{\sigma_k = \sqrt{\kDurch}}
-\g{k = \kDurch \pm \sqrt{\kDurch}}
+\gstar{\sigma_k = \sqrt{\kDurch}}
+\gstar{k = \kDurch \pm \sqrt{\kDurch}}
 \begin{center}
 All nodes are connected within a small range of $\kDurch$.\\~\\
 \textit{``scale''}
@@ -218,24 +220,9 @@ All nodes are connected within a small range of $\kDurch$.\\~\\
 
 \begin{frame}
 \begin{center}
-\g{p_k \propto k^{-\gamma}}
+\gstar{p_k \propto k^{-\gamma}}
 \textit{Power Law Network}
 \end{center}
-\end{frame}
-
-\begin{frame}
-\begin{itemize}
-\item Random Network
-\begin{itemize}
-\item It is most likely to connect to a node which has $\kDurch$ links.
-\item But you yourself will have $\kDurch$ links.
-\item \textit{No preferential attachment}.
-\end{itemize}
-\item Power Law Network
-\begin{itemize}
-\item It is \textit{more likely} to connect to \textit{highly connected} nodes.
-\end{itemize}
-\end{itemize}
 \end{frame}
 
 \n{kmin}{k_{\textrm{min}}}
@@ -247,15 +234,16 @@ All nodes are connected within a small range of $\kDurch$.\\~\\
 \n{kmz}{\kmax^{\zmg}-\kmin^{\zmg}}
 \n{kmd}{\kmax^{\dmg}-\kmin^{\dmg}}
 \begin{frame}
-\g{\int p_k dk = 1}
-\g{\int_k Ck^{-\gamma} = 1}
-\g{C(\br{k^{1-\gamma}}{1-\gamma})_{\kmin}^{\kmax}=1}
-\g{\boxed{C=\br{1-\gamma}{\kme}}}
-Normalization of a power law network.
+What are the statistics of this new $p_k$?
+\gstar{\int p_k dk = 1}
+\gstar{\int_k Ck^{-\gamma} = 1}
+\gstar{C(\br{k^{1-\gamma}}{1-\gamma})_{\kmin}^{\kmax}=1}
+\gstar{\boxed{C=\br{1-\gamma}{\kme}}}
 \end{frame}
 
+
 \begin{frame}
-\g{\kDurch &= \int k C k^{-\gamma} = C\int k^\emg = C(\br{k^{\zmg}}{\zmg})_{\kmin}^{\kmax}\\
+\gstar{\kDurch &= \int k C k^{-\gamma} = C\int k^\emg = C(\br{k^{\zmg}}{\zmg})_{\kmin}^{\kmax}\\
 &= \br{\emg}{\kme} \br{\kmz}{\zmg}\\
 &= \boxed{\br{\emg}{\zmg} \br{\kmz}{\kme}}}
 \begin{center}
@@ -286,7 +274,7 @@ Calculate two networks with the same $\kDurch = 11$. How does the random network
 \item How many links does your neighbor have? $\langle \kneighbor \rangle$
 \end{itemize}
 \end{itemize}
-\g{\kDurch \neq \langle \kneighbor \rangle}
+\gstar{\kDurch \neq \langle \kneighbor \rangle}
 \begin{center}\textit{``Friendship Paradox''}\end{center}
 \end{frame}
 
@@ -299,32 +287,47 @@ $q_k$ & Probability, neighbor has $k$ edges.\\
 $k q_k$ & Expectation value, how many edges a neighbor has.\\
 \end{tabular}
 ~\\~\\~\\How to relate $p_k$ and $q_k$?\\~\\
-It is $k$ times more likely to connect to a node with $k$ links than a node with 1 link (assuming equal number of $k$-nodes and 1-nodes).
 \end{center}
-\g{q_k \propto kp_k}
+\gstar{q_k \propto kp_k}
 \end{frame}
 
 \begin{frame}
-\g{q_k=Akp_k=AkCk^{-\gamma}= \br{\emg }{\kme} Ak^{\emg} }
+\gstar{q_k=Akp_k=AkCk^{-\gamma}= \br{\emg }{\kme} Ak^{\emg} }
 Plug into normalization.
-\g{\int q_k dk = 1}
+\gstar{\int q_k dk = 1}
 Solve for $A$.
-\g{\boxed{A=\br{\zmg}{\emg} \br{\kme}{\kmz}}}
+\gstar{\boxed{A=\br{\zmg}{\emg} \br{\kme}{\kmz}}}
 \end{frame}
 
 \begin{frame}
-\g{\kND &= \int kq_k dk = AC \int k^{\zmg} dk = AC(\br{k^{\dmg}}{\dmg})_{\kmin}^{\kmax}\\
+\gstar{\kND &= \int kq_k dk = AC \int k^{\zmg} dk = AC(\br{k^{\dmg}}{\dmg})_{\kmin}^{\kmax}\\
 &= AC \br{\kmd}{\dmg} \\
 &= \boxed{\br{\zmg}{\dmg} \br{\kmd}{\kmz} }}
 The expected degree of a neighbor in a Power Law Network.
 \end{frame}
 
 \begin{frame}
-\g{\kDurch = \br{\emg}{\zmg} \br{\kmz}{\kme} \quad \kND = \br{\zmg}{\dmg} \br{\kmd}{\kmz} }
+\gstar{\kDurch = \br{\emg}{\zmg} \br{\kmz}{\kme} \quad \kND = \br{\zmg}{\dmg} \br{\kmd}{\kmz} }
 \begin{center}
 \includegraphics[height=5cm]{13.pdf}\\
 \textit{``Friendship Paradox''}
 \end{center}
 \end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item Random Network
+\begin{itemize}
+\item It is most likely to connect to a node which has $\kDurch$ links.
+\item But you yourself will have $\kDurch$ links.
+\item \textit{No preferential attachment}.
+\end{itemize}
+\item Power Law Network
+\begin{itemize}
+\item It is \textit{more likely} to connect to \textit{highly connected} nodes.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
 
 \end{document}
