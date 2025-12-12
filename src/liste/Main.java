@@ -77,6 +77,15 @@ public class Main {
 	int[] a = l.nehmeArrayVonMenge(s);
 	System.out.println(Arrays.toString(a));
     }
+
+    public static void beispielZwei() {
+	Liste l = new Liste();
+	double[][] doubleArrayArray = new double[2][];
+	doubleArrayArray[0] = new double[] {0.01,0.25};
+	doubleArrayArray[1] = new double[] {0.6,0.9};
+	String doubleArrayArrayString = l.nehmeStringVonArrayArrayDouble(doubleArrayArray);
+	System.out.println(doubleArrayArrayString);	
+    }
     
     public static void main(String[] args) {
 
@@ -86,6 +95,6 @@ public class Main {
 	
 	// arrayArrayAbbildung();
 
-	beispielEins();
+	beispielZwei();
     }
 }

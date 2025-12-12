@@ -93,6 +93,23 @@ public class Liste {
 	return sb.toString();
     }
 
+    // und noch mal für Double
+
+    public String nehmeStringVonArrayArrayDouble(double[][] arrayarray) {
+	StringBuilder sb = new StringBuilder();
+
+	sb.append("[");
+	for (int i = 0; i < arrayarray.length; i++) {
+	    if (i != 0) {
+		sb.append(",");
+	    }
+	    sb.append(Arrays.toString(arrayarray[i]));
+	}
+	sb.append("]");
+
+	return sb.toString();	
+    }
+
     // Gegeben eine Map<Integer,Integer>, geben eine int[][] ab.
     // z.B.: ein:
     // 0: 5
