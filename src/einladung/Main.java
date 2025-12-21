@@ -1,4 +1,4 @@
-package mypackage;
+package einladung;
 
 public class Main {
     public static void main(String[] args) {

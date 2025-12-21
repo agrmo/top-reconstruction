@@ -6,9 +6,7 @@ import java.util.HashSet;
 import liste.Liste;
 
 public class Tiefensuche  {
-    public Tiefensuche() {
-	
-    }
+    public Tiefensuche() {}
 
     // Die Nachbarschaftsliste muss verdoppelt sein.
     public int[] tiefensuche(Nachbarschaftsliste nl, int anfangsKnoten) {

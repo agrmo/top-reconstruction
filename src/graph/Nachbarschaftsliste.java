@@ -10,7 +10,9 @@ import java.util.Arrays;
   Ein Graph ist eine Liste von Kantenliste.
  */
 
-// Eine ungerichtete Nachbarschaftsliste.
+/*
+  Eine ungerichtete Nachbarschaftsliste.
+*/
 public class Nachbarschaftsliste {
     public ArrayList<ArrayList<Integer>> n;
     public int betrag;
@@ -21,7 +23,7 @@ public class Nachbarschaftsliste {
     // Die Knoten sind genau die Kennzeichen der Listen.
     // z.B. [[1,2],[0,1],[2,0]] eine Schleife.
 
-    // Nehmen wir an, daß jede Kante is nur einmal in paare gegeben,
+    // Nehmen wir an, daß jede Kante is nur einmal in Paare gegeben,
     // z.B. nur [1,2] und nicht beide [1,2] und [2,1].
 
     // "paare" konnte trotzdem Verdopplungen besitzen. Daß wäre ein
