@@ -14,6 +14,8 @@ import graph.Nachbarschaftsliste;
   nicht. Die Kanten sind geradlinige. Die Kanten überliegen so wenig
   andere Kanten wie möglich. Und so weiter. Diese Grundlagen muss man
   rechnerich beitragen.
+
+  Eine Graphwelt ist eine Welt des Graphen.
  */
 public class Graphwelt {
     public int[][] orten;

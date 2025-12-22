@@ -1,12 +1,16 @@
 package welt.graph.verorten.gitter;
 
 import graph.Nachbarschaftsliste;
-import welt.graph.verorten.Verorten;
 
 /*
   Diese Art von Verortung baut eine Gitter von Knoten auf.
 */
-public class Gitter implements Verorten {
+/*
+  Wie können wir die Orten eines Graphen bestimmen, wenn am Anfang es
+  keine Orten gibt? Nehmen wir eine Menge von Grundlagen an, mit denen
+  wir die Orten berechnen werden.
+*/  
+public class Gitter {
     // Die Anzahl von Kanten einer Zeile.
     public int zeileBetrag;
 

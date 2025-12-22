@@ -1,4 +1,4 @@
-package sicht;
+package sicht.graph;
 
 import javax.swing.JFrame;
 import javax.swing.JComponent;
@@ -82,5 +82,4 @@ public class Graphsicht extends JComponent {
     // 	graphics.setPaint(color);
     // 	graphics.fill(new Rectangle(0,0,100,10));	
     // }
-    
 }

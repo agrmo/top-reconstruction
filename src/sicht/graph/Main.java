@@ -1,4 +1,4 @@
-package sicht;
+package sicht.graph;
 
 import javax.swing.JFrame;
 import welt.graph.Graphwelt;

@@ -1,3 +1,2 @@
 javac -d classes $(find src -name '*.java') \
-&& java -cp classes sicht.Main
-
+&& java -cp classes sicht.graph.Main
