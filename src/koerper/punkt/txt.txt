@@ -1,0 +1,1 @@
+javac -d classes src/punkt/*.java && java -cp classes punkt.Main

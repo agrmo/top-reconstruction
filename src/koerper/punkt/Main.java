@@ -18,8 +18,7 @@ public class Main {
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(300, 300);
-
-	frame.getContentPane().add(new ShapeDrawing ());
+	frame.getContentPane().add(new ShapeDrawing());
 	frame.setVisible(true);	
     }
 }

@@ -1,2 +1,0 @@
-javac -d classes $(find src -name '*.java') && java -cp classes swing.Main
-

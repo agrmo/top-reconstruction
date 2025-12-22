@@ -14,6 +14,16 @@ import java.util.Arrays;
   Eine ungerichtete Nachbarschaftsliste.
 */
 public class Nachbarschaftsliste {
+
+    /*
+      Die Daten der Nachbarschaftsliste.  z.B. Ein Graph mit 3 Knoten,
+      die eine Schleife bildet ist [[1],[2],[0]]. Es gibt zwei Arten
+      von dieser Nachbarschaftsliste: eine ohne Verdopplungen und eine
+      mit Verdopplungen. Der gleiche Graph mit Verdopplungen ist
+      [[1,2],[0,2],[0,1]]. Die Ordnung der Kanten ist ganz
+      unwichtig. Die Ordnung der Knoten in der Liste ist wichtig, weil
+      nur das Kennzeichen zeigt, welcher von der Knoten er ist.
+    */
     public ArrayList<ArrayList<Integer>> n;
     public int betrag;
 

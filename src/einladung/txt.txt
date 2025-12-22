@@ -1,3 +1,0 @@
-javac src/hallowelt/*.java -d classes && java -cp classes hallowelt.Main
-
-

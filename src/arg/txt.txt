@@ -1,3 +1,2 @@
-Take arguments from Main
 javac src/arg/*.java -d classes && java -cp classes arg.Main Hello World
 
