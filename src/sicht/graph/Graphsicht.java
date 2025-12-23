@@ -7,21 +7,17 @@ import java.awt.Graphics;
 
 import welt.graph.Graphwelt;
 
-// import java.awt.Stroke;
-// import java.awt.BasicStroke;
-// import java.awt.Paint;
-// import java.awt.Rectangle;
-// import java.awt.Graphics2D;
-// import java.awt.image.BufferedImage;
-// import java.awt.Container;
-
 /*
-  Ein Zweibild ist eine zweidimensionale Darstellung von etwas.
+  Ein Bild ist eine zweidimensionale Darstellung von etwas.
   Wir können es unmittelbar zu Java eintragen, um zu darstellen.
 */
 
 /*
   Unser Sicht stellt uns einen Graph dar.
+*/
+
+/*
+  Ihre Beobachtung der Welt erfolgt unabhängig vom Zeitverlauf derer.
 */
 public class Graphsicht extends JComponent {
     public Graphwelt gw;
@@ -64,22 +60,4 @@ public class Graphsicht extends JComponent {
 	}
     }
 
-    // g.setColor(Color.BLACK);
-    // g.fillOval(90, 20, 50, 50);
-
-    // public void darstelle() {
-    // 	JFrame frame = new JFrame();
-    // 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    // 	frame.setSize(300, 300);
-    // 	frame.setVisible(true);
-    // }
-
-    // public void darstelleZwei() {
-    // 	BufferedImage img = new BufferedImage(100, 10, BufferedImage.TYPE_INT_ARGB);
-    // 	Graphics2D graphics = img.createGraphics();
-    // 	Color color = new Color(50,50,50);
-    // 	Stroke stroke = new BasicStroke(1f);
-    // 	graphics.setPaint(color);
-    // 	graphics.fill(new Rectangle(0,0,100,10));	
-    // }
 }

@@ -9,5 +9,11 @@ public class Main {
 	System.out.println(va.x);
 	System.out.println(va.y);
 	System.out.println(va.z);
+
+	vb.punkt(new Dreivektor(0,1,0));
+	
+	System.out.println(vb.x);
+	System.out.println(vb.y);
+	System.out.println(vb.z);
     }
 }

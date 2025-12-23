@@ -50,11 +50,18 @@ public class Dreivektor {
     }
 
     // v: Vektor
-    // Multipliziere den gegebenen Vektor zu diesem.  
+    // Multipliziere ganz den gegebenen Vektor zu diesem.  
     public void multipliziere(Dreivektor v) {
 	this.x = this.x * v.x;
 	this.y = this.y * v.y;
 	this.z = this.z * v.z;
     }
-
+    
+    // v: Vektor
+    // Multipliziere teilweise den gegebenen Vektor zu diesem.  
+    public void punkt(Dreivektor v) {
+	this.x = this.x * v.x;
+	this.y = this.y * v.y;
+	this.z = this.z * v.z;
+    }
 }

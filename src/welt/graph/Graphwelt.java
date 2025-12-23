@@ -3,6 +3,14 @@ package welt.graph;
 import graph.Nachbarschaftsliste;
 
 /*
+  Ein Koerper ist eine ganze Zahl.
+  
+  Ein Ort ist:
+  - Verbindung von Koerper bis Paare von ganzen Zahlen
+  
+  Eine Graphwelt hat:
+  - Liste von Orten
+  
   Am Anfang ist ein Graph nicht darstellbar. Er besitzt viele Kanten
   und Knoten, die keinen bestimmten Ort besitzen.
 
