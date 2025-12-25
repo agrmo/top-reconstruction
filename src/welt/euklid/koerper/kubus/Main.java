@@ -15,7 +15,7 @@ public class Main {
 
 	Kubus k = new Kubus(50);
 
-	Vektor ort = new Vektor(new int[] {1,1,1});
+	Vektor ort = new Vektor(1,1,1);
 
 	Euklidkubus ek = new Euklidkubus(k, ort);
     }    

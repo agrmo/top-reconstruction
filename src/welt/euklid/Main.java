@@ -20,7 +20,7 @@ public class Main {
 	// Kubus k = new Kubus(50);
 
 	// // Der Ort dieses Kubus ist ein Vektor.
-	// Vektor ort = new Vektor(new int[] {1,1,1});
+	// Vektor ort = new Vektor(1,1,1);
 	
 	// Euklidkubus ek = new Euklidkubus()
 
@@ -29,10 +29,10 @@ public class Main {
 	// kl.add(k);
 
 	
-	// Vektor ov = new Vektor(new int[] {10,10,10});
+	// Vektor ov = new Vektor(10,10,10);
 
 	// // Die Ausrichtung dieses Kubus ist ein Vektor.
-	// Vektor av = new Vektor(new int[] {0,0,0});
+	// Vektor av = new Vektor(0,0,0);
 
 	// // Baue die Stelle des Kubus auf.
 	// Koerperstelle ks = new Koerperstelle(ov, av);
