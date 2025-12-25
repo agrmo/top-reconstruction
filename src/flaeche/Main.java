@@ -13,10 +13,10 @@ public class Main {
 	ArrayList<Punkt> pl = new ArrayList<Punkt>();
 
 	// Ein Quadrat als Fläche.
-	pl.add(new Punkt(new int[] {0,0,0}));
-	pl.add(new Punkt(new int[] {1,0,0}));
-	pl.add(new Punkt(new int[] {1,0,1}));
-	pl.add(new Punkt(new int[] {0,0,1}));
+	pl.add(new Punkt(0,0,0));
+	pl.add(new Punkt(1,0,0));
+	pl.add(new Punkt(1,0,1));
+	pl.add(new Punkt(0,0,1));
 	Flaeche f = new Flaeche(pl);
 
 	System.out.println(f.drucken());

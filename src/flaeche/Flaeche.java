@@ -22,8 +22,10 @@ public class Flaeche {
 	sb.append("[");
 	
 	for (int i = 0; i < this.punktliste.size(); i++) {
-	    sb.append(Arrays.toString(this.punktliste.get(i).teile));
-	    sb.append(",");
+	    if (i != 0) {
+		sb.append(",");
+	    }
+	    sb.append(this.punktliste.get(i).drucken());
 	}
 	
 	sb.append("]");

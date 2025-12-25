@@ -21,9 +21,9 @@ public class Kante {
     public String drucken() {
 	StringBuilder sb = new StringBuilder();
 	sb.append("Von ");
-	sb.append(Arrays.toString(this.von.teile));
+	sb.append(this.von.drucken());
 	sb.append(" bis ");
-	sb.append(Arrays.toString(this.bis.teile));
+	sb.append(this.bis.drucken());
 
 	return sb.toString();
     }

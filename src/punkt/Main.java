@@ -8,8 +8,8 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-	Punkt p = new Punkt(new int[] {1,2,3});
+	Punkt p = new Punkt(1,2,3);
 
-	System.out.println(Arrays.toString(p.teile));
+	System.out.println(p.drucken());
     }
 }

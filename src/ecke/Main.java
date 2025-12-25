@@ -12,11 +12,11 @@ import vektor.Vektor;
 
 public class Main {
     public static void main(String[] args) {
-	Punkt p = new Punkt(new int[] {1,1,1});
+	Punkt p = new Punkt(1,1,1);
 
-	Vektor va = new Vektor(new int[] {0,1,0});
-	Vektor vb = new Vektor(new int[] {1,0,0});
-	Vektor vc = new Vektor(new int[] {0,0,1});
+	Vektor va = new Vektor(0,1,0);
+	Vektor vb = new Vektor(1,0,0);
+	Vektor vc = new Vektor(0,0,1);
 
 	ArrayList<Vektor> vl = new ArrayList<Vektor>();
 	vl.add(va);
@@ -25,6 +25,6 @@ public class Main {
 
 	Ecke e = new Ecke(p, vl);
 
-	System.out.println(Arrays.toString(vl.get(0).teile));
+	System.out.println(e.kanten.get(0).drucken());
     }
 }
