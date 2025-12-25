@@ -6,6 +6,10 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+  javac -d classes $(find src -name '*.java') && java -cp classes zahl.Main
+*/
+
 public class Main {
     public static void main(String[] args) {
 	boolean flag = true;
@@ -22,12 +26,6 @@ public class Main {
 	System.out.println(b);
 	System.out.println(s);
 	System.out.println(pi);
-
-	Counter c = new Counter();
-	System.out.println("Count: " + c.getCount());
-	c.increment();
-	c.increment(5);
-	System.out.println("Count: " + c.getCount());
 
 	Map<String,Integer> m = new HashMap<String,Integer>();
 	m.put("a", 1);

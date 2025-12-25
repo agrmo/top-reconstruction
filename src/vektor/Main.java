@@ -2,6 +2,10 @@ package vektor;
 
 import java.util.Arrays;
 
+/*
+  javac -d classes $(find src -name '*.java') && java -cp classes vektor.Main
+*/
+
 public class Main {
     public static void main(String[] args) {
 	Vektor va = new Vektor(new int[] {1,2,3});

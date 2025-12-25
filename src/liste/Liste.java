@@ -12,6 +12,11 @@ public class Liste {
 	
     }
 
+    // ein:
+    // Arraylist<int[]>
+    // aus:
+    // int[][]
+    //
     // Gegeben eine ArrayList<int[]>, geben ein int[][] ab.
     public int[][] nehmeArrayListArrayInteger(ArrayList<int[]> l) {
 	int[][] arrayarray = new int[l.size()][];
@@ -24,6 +29,11 @@ public class Liste {
 	return arrayarray;
     }
 
+    // ein:
+    // ArrayList<ArrayList<Integer>>
+    // aus:
+    // int[][]
+    //
     // Gegeben eine ArrayList<ArrayList<Integer>>, geben eine int[][] ab.
     public int[][] nehmeArrayListArrayListInteger(ArrayList<ArrayList<Integer>> l) {
 	int[][] arrayarray = new int[l.size()][];
@@ -45,6 +55,11 @@ public class Liste {
 
     // und noch mal für double
 
+    // ein:
+    // ArrayList<double[]>
+    // aus:
+    // double[][]
+    //
     // Gegeben eine ArrayList<double[]>, geben ein double[][] ab.
     public double[][] nehmeArrayListArrayDouble(ArrayList<double[]> l) {
 	double[][] arrayarray = new double[l.size()][];

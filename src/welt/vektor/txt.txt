@@ -1,1 +1,0 @@
-javac -d classes $(find src -name '*.java') && java -cp classes welt.vektor.Main

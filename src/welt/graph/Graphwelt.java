@@ -5,10 +5,10 @@ import graph.Nachbarschaftsliste;
 /*
   Ein Koerper ist eine ganze Zahl.
   
-  Ein Ort ist:
-  - Verbindung von Koerper bis Paare von ganzen Zahlen
+  Ein Ort ist ein Paar von ganzen Zahlen.
   
-  Eine Graphwelt hat:
+  Eine Graphwelt ist ein Paar von:
+  - Graph
   - Liste von Orten
   
   Am Anfang ist ein Graph nicht darstellbar. Er besitzt viele Kanten

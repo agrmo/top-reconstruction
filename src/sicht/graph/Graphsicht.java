@@ -4,7 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.JComponent;
 import java.awt.Color;
 import java.awt.Graphics;
-
 import welt.graph.Graphwelt;
 
 /*

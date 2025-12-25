@@ -4,6 +4,11 @@ import welt.graph.Graphwelt;
 import graph.Nachbarschaftsliste;
 import welt.graph.verorten.gitter.Gitter;
 
+/*
+  javac -d classes $(find src -name '*.java')		\
+  && java -cp classes welt.graph.verorten.gitter.Main
+*/
+
 public class Main {
     public static void main(String[] args) {
 
