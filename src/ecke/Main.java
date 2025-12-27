@@ -1,9 +1,8 @@
 package ecke;
 
-import java.util.Arrays;
 import java.util.ArrayList;
 import punkt.Punkt;
-import vektor.Vektor;
+import vektor.Dreivektor;
 
 /*
   javac -d classes $(find src -name '*.java')	\
@@ -14,16 +13,16 @@ public class Main {
     public static void main(String[] args) {
 	Punkt p = new Punkt(1,1,1);
 
-	Vektor va = new Vektor(0,1,0);
-	Vektor vb = new Vektor(1,0,0);
-	Vektor vc = new Vektor(0,0,1);
+	Dreivektor va = new Dreivektor(0,1,0);
+	Dreivektor vb = new Dreivektor(1,0,0);
+	Dreivektor vc = new Dreivektor(0,0,1);
 
-	ArrayList<Vektor> vl = new ArrayList<Vektor>();
+	ArrayList<Dreivektor> vl = new ArrayList<Dreivektor>();
 	vl.add(va);
 	vl.add(vb);
 	vl.add(vc);
 
-	Ecke e = new Ecke(p, vl);
+	Dreiecke e = new Dreiecke(p, vl);
 
 	System.out.println(e.kanten.get(0).drucken());
     }
