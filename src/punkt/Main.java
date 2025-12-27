@@ -19,8 +19,16 @@ public class Main {
 	pa.addieren(pb);
 	System.out.println(pa.drucken());	
     }
+
+    static void beispielDrei() {
+	Zweipunkt pa = new Zweipunkt(1,2);
+	Zweipunkt pb = new Zweipunkt(1,1);
+	pa.addieren(pb);
+	System.out.println(pa.drucken());
+	System.out.println(pb.drucken());
+    }
     
     public static void main(String[] args) {
-	beispielZwei();
+	beispielDrei();
     }
 }

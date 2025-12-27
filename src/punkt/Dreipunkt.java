@@ -2,7 +2,7 @@ package punkt;
 
 // Der Dreipunkt.
 //
-// Ein Dreipunkt ist eine Liste von ganzen Zahlen.
+// Ein Dreipunkt ist eine Liste von drei ganzen Zahlen.
 public class Dreipunkt {
 
     // Die Orten dieses Dreipunktes.
