@@ -1,6 +1,6 @@
 package sicht.parallel;
 
-// import welt.euklid.Euklidwelt;
+// import welt.euklid.Punktkoerperwelt;
 import java.util.ArrayList;
 // import vektor.Vektor;
 import javax.swing.JComponent;
@@ -19,7 +19,7 @@ public class Parallelsicht extends JComponent {
 
     // public Vektor d;
     // public int mu;
-    // public Euklidwelt vw;
+    // public Punktkoerperwelt vw;
 
     // Ein:
     // d, Vektor, Eine Sichtvektor
@@ -30,7 +30,7 @@ public class Parallelsicht extends JComponent {
     // 
     // Wir nehmen an, daß die Sichtfläche genau auf der z=0 Fläche
     // stehen. Ich konnte dei Fläche bestimmbar machen.
-    // public Parallelsicht(Vektor d, int mu, Euklidwelt vw) {
+    // public Parallelsicht(Vektor d, int mu, Punktkoerperwelt vw) {
 	
     // }
 

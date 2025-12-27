@@ -1,4 +1,4 @@
-package welt.euklid;
+package welt.punktkoerper;
 
 import vektor.Vektor;
 import koerper.kubus.Kubus;
@@ -42,6 +42,6 @@ public class Main {
 	// ksl.add(ks);
 
 	// // Mache die Welt.
-	// Euklidwelt vw = new Euklidwelt(kl, ksl);
+	// Punktkoerperwelt vw = new Punktkoerperwelt(kl, ksl);
     }
 }

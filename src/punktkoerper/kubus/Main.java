@@ -16,7 +16,7 @@ public class Main {
 
 	Kubus k = new Kubus(50);
 
-	Punkt p = new Punkt(1,1,1);
+	Punkt p = new Punkt(100,100,100);
 
 	Punktkubus pk = new Punktkubus(k, p);
 
