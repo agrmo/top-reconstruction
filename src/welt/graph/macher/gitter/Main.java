@@ -1,12 +1,12 @@
-package welt.graph.verorten.gitter;
+package welt.graph.macher.gitter;
 
 import welt.graph.Graphwelt;
 import graph.Nachbarschaftsliste;
-import welt.graph.verorten.gitter.Gitter;
+import welt.graph.macher.gitter.Gitter;
 
 /*
   javac -d classes $(find src -name '*.java')		\
-  && java -cp classes welt.graph.verorten.gitter.Main
+  && java -cp classes welt.graph.macher.gitter.Main
 */
 
 public class Main {
@@ -18,7 +18,7 @@ public class Main {
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
 
 	Gitter gitter = new Gitter(2, 10);
-	int[][] orten = gitter.verorten(nl);
+	int[][] orten = gitter.machen(nl);
 
 	Graphwelt gw = new Graphwelt(nl, orten);
     }    

@@ -1,47 +1,33 @@
 package welt.punktkoerper;
 
-import vektor.Vektor;
+import punkt.Punkt;
 import koerper.kubus.Kubus;
+import punktkoerper.kubus.Punktkubus;
+import punktkoerper.Punktkoerper;
 import java.util.ArrayList;
-import koerper.Koerper;
 
 /*
-  javac -d classes $(find src -name '*.java') && java -cp classes welt.vektor.Main
+  javac -d classes $(find src -name '*.java') && java -cp classes welt.punktkoerper.Main
 */
 
 public class Main {
     public static void main(String[] args) {
 
-	// // Insgesamt was wir tun ist nur, einen Ort einem Kubus zu
-	// // zeigen. Solches Beispiel ist nicht so einwandfrei. Wir
-	// // kennen unsere Raum und Zeit, ohne nachzudenken, wie sie so
-	// // klar geschehen werden.
+	// Insgesamt was wir tun ist nur, den Ort eines Kubus zu
+	// zeigen. Solches Beispiel ist nicht so einwandfrei. Wir
+	// kennen unseren Raum und unsere Zeit, ohne nachzudenken,
+	// warum sie so klar beleuchtet werden.
 	
-	// Kubus k = new Kubus(50);
+	// Ein Kubus und dessen Ort.
+	Kubus k = new Kubus(50);
+	Punkt p = new Punkt(100,100,100);
+	Punktkubus pk = new Punktkubus(k, p);
 
-	// // Der Ort dieses Kubus ist ein Vektor.
-	// Vektor ort = new Vektor(1,1,1);
+	// Liste von Koerpern.
+	ArrayList<Punktkoerper> pkl = new ArrayList<Punktkoerper>();
+	pkl.add(pk);
 	
-	// Punktkubus ek = new Punktkubus()
-
-	// // Liste von Koerpern.
-	// ArrayList<Koerper> kl = new ArrayList<Koerper>();
-	// kl.add(k);
-
-	
-	// Vektor ov = new Vektor(10,10,10);
-
-	// // Die Ausrichtung dieses Kubus ist ein Vektor.
-	// Vektor av = new Vektor(0,0,0);
-
-	// // Baue die Stelle des Kubus auf.
-	// Koerperstelle ks = new Koerperstelle(ov, av);
-
-	// // Liste von Körperstellen.
-	// ArrayList<Koerperstelle> ksl = new ArrayList<Koerperstelle>();
-	// ksl.add(ks);
-
-	// // Mache die Welt.
-	// Punktkoerperwelt vw = new Punktkoerperwelt(kl, ksl);
+	// Mache die Welt.
+	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
     }
 }

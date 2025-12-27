@@ -14,6 +14,7 @@ javac -d classes $(find src -name '*.java') \
 public class Main {
     public static void main(String[] args) {
 
+	// Ein Kubus und dessen Ort.
 	Kubus k = new Kubus(50);
 
 	Punkt p = new Punkt(100,100,100);

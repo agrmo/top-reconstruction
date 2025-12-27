@@ -1,4 +1,4 @@
-package sicht.parallel;
+package sicht.schief;
 
 import java.util.ArrayList;
 import javax.swing.JComponent;
@@ -7,12 +7,13 @@ import java.awt.Graphics;
 import welt.punktkoerper.Punktkoerperwelt;
 import vektor.Vektor;
 import kante.Kante;
+import punkt.Punkt;
 
-// Schon ist die Parallelsicht eine Welt gegeben. Die gegebene Welt
-// enthält alle Körper und ihre befindenden Stellen. Die Parallelsicht
+// Schon ist die Schiefsicht eine Welt gegeben. Die gegebene Welt
+// enthält alle Körper und ihre befindenden Stellen. Die Schiefsicht
 // darf nur ausrechnen, wie die Körper aussehen. Dafür muss sie die
 // Kanten eines Kubus gut berechnen, und so weiter.
-public class Parallelsicht extends JComponent {
+public class Schiefsicht extends JComponent {
 
     public Vektor d;
     public int mu;
@@ -27,10 +28,19 @@ public class Parallelsicht extends JComponent {
     // 
     // Wir nehmen an, daß die Sichtfläche genau auf der z=0 Fläche
     // stehen. Ich konnte dei Fläche bestimmbar machen.
-    public Parallelsicht(Vektor d, int mu, Punktkoerperwelt pkw) {
+    public Schiefsicht(Vektor d, int mu, Punktkoerperwelt pkw) {
 	this.d = d;
 	this.mu = mu;
 	this.pkw = pkw;
+    }
+
+    // Verlegen den gegeben Punkt auf dieser Sichtfläche.
+    public int[] verlegen(Punkt p) {
+	int ausX = p.eins - ((this.d.eins / this.d.drei) * p.drei);
+	int ausY = p.zwei - ((this.d.zwei / this.d.drei) * p.drei);
+	int[] aus = new int[] {ausX, ausY};
+	
+	return aus;
     }
 
     // Wir müssen entscheiden, wer diese Körper darstellen wird.
@@ -43,9 +53,12 @@ public class Parallelsicht extends JComponent {
 	g.setColor(Color.BLACK);
 	
 	for (int i = 0; i < wk.size(); i++) {
-	    System.out.println(wk.get(i).drucken());
-	    g.drawLine(wk.get(i).von.eins, wk.get(i).von.zwei,
-		       wk.get(i).bis.eins, wk.get(i).bis.zwei);
+	    
+	    int[] verlegterPunktVon = this.verlegen(wk.get(i).von);
+	    int[] verlegterPunktBis = this.verlegen(wk.get(i).bis);
+	    
+	    g.drawLine(verlegterPunktVon[0], verlegterPunktVon[1],
+		       verlegterPunktBis[0], verlegterPunktBis[1]);
 	}
     }
 }

@@ -1,9 +1,9 @@
 package sicht.graph;
 
 import javax.swing.JFrame;
-import welt.graph.Graphwelt;
 import graph.Nachbarschaftsliste;
-import welt.graph.verorten.gitter.Gitter;
+import welt.graph.Graphwelt;
+import welt.graph.macher.gitter.Gitter;
 
 /*
   javac -d classes $(find src -name '*.java') \
@@ -27,7 +27,7 @@ public class Main {
 	Gitter gitter = new Gitter(2, 100);
 
 	// Bauen wir die Gitter auf.
-	int[][] orten = gitter.verorten(nl);
+	int[][] orten = gitter.machen(nl);
 
 	// Sammeln wir die Orten und den Graphen zusammen.
 	Graphwelt gw = new Graphwelt(nl, orten);

@@ -5,7 +5,4 @@ package sicht;
 //
 public class Sicht {
 
-    public Sicht() {
-	
-    }
 }

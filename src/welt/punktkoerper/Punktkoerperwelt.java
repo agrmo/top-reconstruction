@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import koerper.Koerper;
 import koerper.kubus.Kubus;
 import punktkoerper.Punktkoerper;
+import kante.Kante;
 
 /*
   Eine Punktkoerperwelt ist eine Liste von Punktkörper.
@@ -30,13 +31,34 @@ import punktkoerper.Punktkoerper;
   Die Punktkoerperwelt zeigt uns nicht, wie sie aussieht!
 */
 public class Punktkoerperwelt {
-    ArrayList<Punktkoerper> euklidkoerperliste;
+    ArrayList<Punktkoerper> punktkoerperliste;
 
     // Wir sind mit eine Reihe von Körpern gegeben. Ein Körper kennt
     // nur seine Eigenschaften. Die Punktkoerperwelt versteht nicht nur
-    // seine Eigenschaften, sondern auch wo er steht und in welche
-    // Ausrichtung er zeigt.
-    public Punktkoerperwelt(ArrayList<Punktkoerper> ekl) {
-	this.punktkoerperliste = ekl;
+    // seine Eigenschaften, sondern auch wo er steht.
+    //
+    // Aber, diese Durchführung kennt die Ausrichtung der Körper
+    // nicht. 
+    public Punktkoerperwelt(ArrayList<Punktkoerper> pkl) {
+	this.punktkoerperliste = pkl;
+    }
+
+    // ein:
+    // aus: Liste von Kante
+    // Nehme alle Kanten der Körper dieser Welt.
+    public ArrayList<Kante> nehmeKanten() {
+
+	ArrayList<Kante> wk = new ArrayList<Kante>();
+
+	for (int i = 0; i < this.punktkoerperliste.size(); i++) {
+	    Punktkoerper k = this.punktkoerperliste.get(i);
+	    Kante[] kl = k.nehmeKanten();
+
+	    for (int j = 0; j < kl.length; j++) {
+		wk.add(kl[j]);
+	    }
+	}
+
+	return wk;
     }
 }

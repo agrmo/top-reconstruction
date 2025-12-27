@@ -1,23 +1,17 @@
 package sicht.graph;
 
-import javax.swing.JFrame;
-import javax.swing.JComponent;
 import java.awt.Color;
 import java.awt.Graphics;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
 import welt.graph.Graphwelt;
 
-/*
-  Ein Bild ist eine zweidimensionale Darstellung von etwas.
-  Wir können es unmittelbar zu Java eintragen, um zu darstellen.
-*/
+// Ein Bild ist eine zweidimensionale Darstellung von etwas.
+// Wir können es unmittelbar zu Java eintragen, um zu darstellen.
 
-/*
-  Unser Sicht stellt uns einen Graph dar.
-*/
-
-/*
-  Ihre Beobachtung der Welt erfolgt unabhängig vom Zeitverlauf derer.
-*/
+// Unser Sicht stellt uns einen Graph dar.
+  
+// Ihre Beobachtung der Welt erfolgt unabhängig vom Zeitverlauf derer.
 public class Graphsicht extends JComponent {
     public Graphwelt gw;
 

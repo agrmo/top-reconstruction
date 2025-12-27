@@ -1,11 +1,10 @@
-package welt.graph.verorten.gitter;
+package welt.graph.macher.gitter;
 
 import graph.Nachbarschaftsliste;
 
 /*
   Diese Art von Verortung baut eine Gitter von Knoten auf.
-*/
-/*
+  
   Wie können wir die Orten eines Graphen bestimmen, wenn am Anfang es
   keine Orten gibt? Nehmen wir eine Menge von Grundlagen an, mit denen
   wir die Orten berechnen werden.
@@ -22,7 +21,7 @@ public class Gitter {
 	weg = w;
     }
 
-    public int[][] verorten(Nachbarschaftsliste nl) {
+    public int[][] machen(Nachbarschaftsliste nl) {
 
 	// Jeder Knoten wird mit einem Ort verbunden.  Die Kanten
 	// werden nicht genau bestimmt, sondern berechnet (wo?).
