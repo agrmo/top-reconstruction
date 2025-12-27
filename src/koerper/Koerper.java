@@ -17,8 +17,4 @@ package koerper;
 //
 public abstract class Koerper {
     
-    public Koerper() {
-	
-    }
-    
 }

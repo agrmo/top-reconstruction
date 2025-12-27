@@ -22,7 +22,7 @@ public class Main {
 	// // Der Ort dieses Kubus ist ein Vektor.
 	// Vektor ort = new Vektor(1,1,1);
 	
-	// Euklidkubus ek = new Euklidkubus()
+	// Punktkubus ek = new Punktkubus()
 
 	// // Liste von Koerpern.
 	// ArrayList<Koerper> kl = new ArrayList<Koerper>();

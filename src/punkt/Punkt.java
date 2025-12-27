@@ -27,4 +27,11 @@ public class Punkt {
 	sb.append("]");
 	return sb.toString();
     }
+
+    // Addiere die Zahlen zu diesem Punkt p.
+    public void addieren(Punkt p) {
+	this.eins += p.eins;
+	this.zwei += p.zwei;
+	this.drei += p.drei;
+    }
 }

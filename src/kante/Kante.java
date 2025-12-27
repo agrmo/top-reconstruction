@@ -1,7 +1,6 @@
 package kante;
 
 import punkt.Punkt;
-import java.util.Arrays;
 
 // Eine Kante ist ein Paar von zwei Punkten.
 //
@@ -26,5 +25,10 @@ public class Kante {
 	sb.append(this.bis.drucken());
 
 	return sb.toString();
+    }
+
+    public void addieren(Punkt p) {
+	this.von.addieren(p);
+	this.bis.addieren(p);
     }
 }

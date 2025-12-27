@@ -4,10 +4,10 @@ import vektor.Vektor;
 import java.util.ArrayList;
 import koerper.Koerper;
 import koerper.kubus.Kubus;
-import welt.euklid.koerper.Euklidkoerper;
+import punktkoerper.Punktkoerper;
 
 /*
-  Eine Euklidwelt ist eine Liste von Euklidkörper.
+  Eine Euklidwelt ist eine Liste von Punktkörper.
   
   Die Euklidwelt zeigt uns die Stellen verschiedener Körper.
 
@@ -35,13 +35,13 @@ import welt.euklid.koerper.Euklidkoerper;
   Die Euklidwelt zeigt uns nicht, wie sie aussieht!
 */
 public class Euklidwelt {
-    ArrayList<Euklidkoerper> euklidkoerperliste;
+    ArrayList<Punktkoerper> euklidkoerperliste;
 
     // Wir sind mit eine Reihe von Körpern gegeben. Ein Körper kennt
     // nur seine Eigenschaften. Die Euklidwelt versteht nicht nur
     // seine Eigenschaften, sondern auch wo er steht und in welche
     // Ausrichtung er zeigt.
-    public Euklidwelt(ArrayList<Euklidkoerper> ekl) {
+    public Euklidwelt(ArrayList<Punktkoerper> ekl) {
 	this.euklidkoerperliste = ekl;
     }
 }

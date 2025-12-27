@@ -6,7 +6,8 @@ import java.util.Arrays;
 import kante.Kante;
 
 /*
-  javac -d classes $(find src -name '*.java') && java -cp classes koerper.kubus.Main
+  javac -d classes $(find src -name '*.java') \
+  && java -cp classes koerper.kubus.Main
 */
 
 public class Main {
@@ -24,6 +25,7 @@ public class Main {
 	Kante[] kanten = k.nehmeKanten();
 	for (int i = 0; i < kanten.length; i++) {
 	    System.out.println(kanten[i].drucken());
-	}	
+	}
+	
     }
 }

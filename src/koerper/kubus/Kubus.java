@@ -41,7 +41,8 @@ public class Kubus extends Koerper {
     // ein:
     // aus: Liste von Kanten
     //
-    // Nehme die die die Kanten dieses Körpers beleuchten.
+    // Nehme die die die Kanten dieses Körpers beleuchten. Wir
+    // speichern die Werte der Kanten gar nicht! 
     public Kante[] nehmeKanten() {
 	Kante[] kanten = new Kante[12];
 
