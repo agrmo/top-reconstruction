@@ -1,20 +1,16 @@
 package sicht.parallel;
 
+import java.util.ArrayList;
 import javax.swing.JFrame;
-import graph.Nachbarschaftsliste;
-import welt.graph.Graphwelt;
-import welt.graph.macher.gitter.Gitter;
-import vektor.Dreivektor;
-import welt.punktkoerper.Punktkoerperwelt;
-import punktkoerper.Punktkoerper;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
-import java.util.ArrayList;
+import punktkoerper.Punktkoerper;
 import punktkoerper.kubus.Punktkubus;
+import welt.punktkoerper.Punktkoerperwelt;
 
 /*
-  javac -d classes $(find src -name '*.java')
-  java -cp classes sicht.parallel.Main
+  javac -d classes $(find src -name '*.java') \
+  && java -cp classes sicht.parallel.Main
 */
 
 public class Main {
@@ -23,9 +19,6 @@ public class Main {
  	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
-
-	Dreivektor d = new Dreivektor(0,0,-1);
-	int mu = 1;
 
 	// Mache eine Punktkörperwelt.
 	Kubus k = new Kubus(50);
@@ -36,7 +29,7 @@ public class Main {
 	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
 	
 	// Mache eine Parallelsicht.
-	Parallelsicht ps = new Parallelsicht(d, mu, pkw);
+	Parallelsicht ps = new Parallelsicht(pkw);
 
 	// Geben wir die Sicht zu Java, um darzustellen.
 	frame.add(ps);

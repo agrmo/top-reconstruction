@@ -1,21 +1,17 @@
 package sicht.parallel;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JComponent;
-import java.awt.Color;
-import java.awt.Graphics;
-import welt.punktkoerper.Punktkoerperwelt;
-import vektor.Dreivektor;
 import kante.Dreikante;
+import vektor.Dreivektor;
+import welt.punktkoerper.Punktkoerperwelt;
 
-// Schon ist die Parallelsicht eine Welt gegeben. Die gegebene Welt
-// enthält alle Körper und ihre befindenden Stellen. Die Parallelsicht
-// darf nur ausrechnen, wie die Körper aussehen. Dafür muss sie die
-// Dreikanten eines Kubus gut berechnen, und so weiter.
+// Die Parallelsicht zeigt insbesondere nur die erste und zweite Teile
+// der Körper. Sie ist einer der einfachsten Methoden, einen Körper
+// darzustellen.
 public class Parallelsicht extends JComponent {
 
-    public Dreivektor d;
-    public int mu;
     public Punktkoerperwelt pkw;
 
     // ein: Dreivektor, ganze Zahl
@@ -25,9 +21,7 @@ public class Parallelsicht extends JComponent {
     // 
     // Wir nehmen an, daß die Sichtfläche genau auf der z=0 Fläche
     // stehen. Ich konnte dei Fläche bestimmbar machen.
-    public Parallelsicht(Dreivektor d, int mu, Punktkoerperwelt pkw) {
-	this.d = d;
-	this.mu = mu;
+    public Parallelsicht(Punktkoerperwelt pkw) {
 	this.pkw = pkw;
     }
 
@@ -38,10 +32,7 @@ public class Parallelsicht extends JComponent {
 	// Nehme die Dreikanten dieser Welt.
 	ArrayList<Dreikante> wk = this.pkw.nehmeKanten();
 
-	g.setColor(Color.BLACK);
-	
 	for (int i = 0; i < wk.size(); i++) {
-	    System.out.println(wk.get(i).drucken());
 	    g.drawLine(wk.get(i).von.eins, wk.get(i).von.zwei,
 		       wk.get(i).bis.eins, wk.get(i).bis.zwei);
 	}

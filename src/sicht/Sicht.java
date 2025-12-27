@@ -12,6 +12,12 @@ package sicht;
 // Die Sicht stellt die Körper einer Welt dar, sodaß wir uns den
 // Körpern auf einem Bildschirm anschauen können.
 //
+// Die gegebene Welt enthält alle Körper und ihre befindenden
+// Stellen. Die Sicht darf nur ausrechnen, wie die Körper
+// aussehen. Dafür muss sie die Dreikanten eines Kubus gut ausrechnen,
+// und so weiter.
+//
+//
 public class Sicht {
 
 }
