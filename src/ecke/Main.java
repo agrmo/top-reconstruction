@@ -2,7 +2,9 @@ package ecke;
 
 import java.util.ArrayList;
 import punkt.Dreipunkt;
+import punkt.Zweipunkt;
 import vektor.Dreivektor;
+import vektor.Zweivektor;
 
 /*
   javac -d classes $(find src -name '*.java')	\
@@ -10,7 +12,23 @@ import vektor.Dreivektor;
 */
 
 public class Main {
-    public static void main(String[] args) {
+    static void beispielEins() {
+	Zweipunkt p = new Zweipunkt(1,1);
+
+	Zweivektor va = new Zweivektor(0,1);
+	Zweivektor vb = new Zweivektor(1,0);
+	Zweivektor vc = new Zweivektor(0,0);
+
+	ArrayList<Zweivektor> vl = new ArrayList<Zweivektor>();
+	vl.add(va);
+	vl.add(vb);
+
+	Zweiecke e = new Zweiecke(p, vl);
+
+	System.out.println(e.kanten.get(0).drucken());
+    }
+
+    static void beispielZwei() {
 	Dreipunkt p = new Dreipunkt(1,1,1);
 
 	Dreivektor va = new Dreivektor(0,1,0);
@@ -24,6 +42,10 @@ public class Main {
 
 	Dreiecke e = new Dreiecke(p, vl);
 
-	System.out.println(e.kanten.get(0).drucken());
+	System.out.println(e.kanten.get(0).drucken());	
+    }
+    
+    public static void main(String[] args) {
+	beispielZwei();
     }
 }
