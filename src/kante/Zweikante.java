@@ -1,20 +1,20 @@
 package kante;
 
-import punkt.Dreipunkt;
+import punkt.Zweipunkt;
 
-// Eine Dreikante ist ein Paar von zwei Dreipunkten.
+// Eine Zweikante ist ein Paar von zwei Zweipunkten.
 //
-// Eine Dreikante ist eine dreidimensionale Kante.
+// Eine Zweikante ist eine zweidimensionale Kante.
 //
-// Die Idee ist, daß wir eine Dreikante eines Körpers beschreiben
+// Die Idee ist, daß wir eine Zweikante eines Körpers beschreiben
 // wollen. Obwohl die Daten dahin ganz einfach sind, ist es schwierig,
 // die Datenstrukuren über einen Körper zu zeigen. Wir müssen ganz
 // klar sein, daß ein Paar von Orten Teil eines Körpers ist.
-public class Dreikante {
-    public Dreipunkt von;
-    public Dreipunkt bis;
+public class Zweikante {
+    public Zweipunkt von;
+    public Zweipunkt bis;
     
-    public Dreikante(Dreipunkt v, Dreipunkt b) {
+    public Zweikante(Zweipunkt v, Zweipunkt b) {
 	this.von = v;
 	this.bis = b;
     }
@@ -29,7 +29,7 @@ public class Dreikante {
 	return sb.toString();
     }
 
-    public void addieren(Dreipunkt p) {
+    public void addieren(Zweipunkt p) {
 	this.von.addieren(p);
 	this.bis.addieren(p);
     }

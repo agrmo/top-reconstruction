@@ -1,6 +1,7 @@
 package kante;
 
 import punkt.Dreipunkt;
+import punkt.Zweipunkt;
 
 /*
   javac -d classes $(find src -name '*.java')	\
@@ -28,8 +29,17 @@ public class Main {
 
 	System.out.println(ka.drucken());    
     }
+    
+    static void beispielDrei() {
+	Zweipunkt pa = new Zweipunkt(1,1);
+	Zweipunkt pb = new Zweipunkt(2,2);
+	Zweikante ka = new Zweikante(pa, pb);
+	System.out.println(ka.drucken());
+	ka.addieren(new Zweipunkt(5,5));
+	System.out.println(ka.drucken());
+    }
 
     public static void main(String[] args) {
-	beispielZwei();
+	beispielDrei();
     }
 }
