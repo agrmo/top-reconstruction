@@ -64,12 +64,15 @@ public class Nachbarschaftsliste {
 	}
     }
 
-    // Am Anfang ist jede Nachbarschaftsliste nicht verdoppelt. z.B.,
+    // Am Anfang ist jede Kante nicht verdoppelt. z.B.,
     // 0: [1]
     // 1: []
+    //
     // Dieser Graph besitzt eine Kante, und diese Kante ist nur einmal
-    // in der Liste bezeichnet. Doch hat der Knoten 1 eine Kante. Manchmal
-    // wollen wir alle die Kante unmittelbar in der Liste gezeigt zu sein.
+    // in der Liste bezeichnet. Doch besitzt der Knoten 1 eine
+    // Kante. Manchmal wollen wir alle Kanten unmittelbar in ihrer
+    // Liste gezeigt zu sein.
+    //
     // z.B. ein:
     // 0: [1]
     // 1: []
