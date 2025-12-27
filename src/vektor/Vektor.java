@@ -12,10 +12,7 @@ public class Vektor {
     public int zwei;
     public int drei;
 
-    // ein:
-    // eins: ganze Zahl
-    // zwei: ganze Zahl
-    // drei: ganze Zahl
+    // ein: ganze Zahl, ganze Zahl, ganze Zahl
     public Vektor(int eins, int zwei, int drei) {
 	this.eins = eins;
 	this.zwei = zwei;
@@ -31,8 +28,7 @@ public class Vektor {
 	this.drei += v.drei;
     }
 
-    // ein:
-    // v: Vektor
+    // ein: Vektor
     // Subtrahiere den gegebenen Vektor zu diesem.  
     public void subtrahiere(Vektor v) {
 	this.eins -= v.eins;
@@ -40,8 +36,7 @@ public class Vektor {
 	this.drei -= v.drei;
     }
 
-    // ein:
-    // v: Vektor
+    // ein: Vektor
     // Dividiere den gegebenen Vektor zu diesem.  
     public void dividiere(Vektor v) {
 	this.eins = this.eins / v.eins;
@@ -49,7 +44,7 @@ public class Vektor {
 	this.drei = this.drei / v.drei;
     }
 
-    // v: Vektor
+    // ein: Vektor
     // Multipliziere ganz den gegebenen Vektor zu diesem.  
     public void multipliziere(Vektor v) {
 	this.eins = this.eins * v.eins;
@@ -57,7 +52,7 @@ public class Vektor {
 	this.drei = this.drei * v.drei;
     }
     
-    // v: Vektor
+    // ein: Vektor
     // Multipliziere teilweise den gegebenen Vektor zu diesem.  
     public void punkt(Vektor v) {
 	this.eins = this.eins * v.eins;
