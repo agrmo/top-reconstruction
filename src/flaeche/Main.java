@@ -1,6 +1,5 @@
 package flaeche;
 
-import java.util.Arrays;
 import java.util.ArrayList;
 import punkt.Punkt;
 
@@ -17,7 +16,7 @@ public class Main {
 	pl.add(new Punkt(1,0,0));
 	pl.add(new Punkt(1,0,1));
 	pl.add(new Punkt(0,0,1));
-	Flaeche f = new Flaeche(pl);
+	Dreiflaeche f = new Dreiflaeche(pl);
 
 	System.out.println(f.drucken());
     }
