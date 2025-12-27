@@ -1,7 +1,7 @@
 package ecke;
 
 import java.util.ArrayList;
-import punkt.Punkt;
+import punkt.Dreipunkt;
 import vektor.Dreivektor;
 
 /*
@@ -11,7 +11,7 @@ import vektor.Dreivektor;
 
 public class Main {
     public static void main(String[] args) {
-	Punkt p = new Punkt(1,1,1);
+	Dreipunkt p = new Dreipunkt(1,1,1);
 
 	Dreivektor va = new Dreivektor(0,1,0);
 	Dreivektor vb = new Dreivektor(1,0,0);

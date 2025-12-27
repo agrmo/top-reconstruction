@@ -8,14 +8,14 @@ import java.util.Arrays;
 
 public class Main {
     static void beispielEins() {
-	Punkt p = new Punkt(1,2,3);
+	Dreipunkt p = new Dreipunkt(1,2,3);
 	System.out.println(p.drucken());
     }
 
     static void beispielZwei() {
-	Punkt pa = new Punkt(1,2,3);
+	Dreipunkt pa = new Dreipunkt(1,2,3);
 	System.out.println(pa.drucken());
-	Punkt pb = new Punkt(5,5,5);
+	Dreipunkt pb = new Dreipunkt(5,5,5);
 	pa.addieren(pb);
 	System.out.println(pa.drucken());	
     }

@@ -1,11 +1,10 @@
 package welt.punktkoerper;
     
-import vektor.Vektor;
 import java.util.ArrayList;
 import koerper.Koerper;
 import koerper.kubus.Kubus;
 import punktkoerper.Punktkoerper;
-import kante.Kante;
+import kante.Dreikante;
 
 /*
   Eine Punktkoerperwelt ist eine Liste von Punktkörper.
@@ -21,12 +20,6 @@ import kante.Kante;
   Man soll nur die Ecken und Verbindungen zwischen den Ecken
   darstellen, sodaß er den ganzen Körper gut kennen können, unabhängig
   von ihre Farbe oder Beschaffenheit.
-
-  Ein gutes Gerät zur Sammlung von Ecken und Kanten sind
-  Vektoren. Bestimmen wir den Ort eines Vektors, und der Vektor zeigt
-  die Richtung und Ausbreitung einer Kanten. Es gibt keinen „Körper"
-  dieser Welt. Eine Punktkoerperwelt besitzt nur eine Reihe von Vektoren,
-  die sie darstellen können.
 
   Die Punktkoerperwelt zeigt uns nicht, wie sie aussieht!
 */
@@ -44,15 +37,15 @@ public class Punktkoerperwelt {
     }
 
     // ein:
-    // aus: Liste von Kante
-    // Nehme alle Kanten der Körper dieser Welt.
-    public ArrayList<Kante> nehmeKanten() {
+    // aus: Liste von Dreikante
+    // Nehme alle Dreikanten der Körper dieser Welt.
+    public ArrayList<Dreikante> nehmeKanten() {
 
-	ArrayList<Kante> wk = new ArrayList<Kante>();
+	ArrayList<Dreikante> wk = new ArrayList<Dreikante>();
 
 	for (int i = 0; i < this.punktkoerperliste.size(); i++) {
 	    Punktkoerper k = this.punktkoerperliste.get(i);
-	    Kante[] kl = k.nehmeKanten();
+	    Dreikante[] kl = k.nehmeKanten();
 
 	    for (int j = 0; j < kl.length; j++) {
 		wk.add(kl[j]);

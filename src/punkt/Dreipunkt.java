@@ -1,16 +1,16 @@
 package punkt;
 
-// Der Punkt.
+// Der Dreipunkt.
 //
-// Ein Punkt ist eine Liste von ganzen Zahlen.
-public class Punkt {
+// Ein Dreipunkt ist eine Liste von ganzen Zahlen.
+public class Dreipunkt {
 
-    // Die Orten dieses Punktes.
+    // Die Orten dieses Dreipunktes.
     public int eins;
     public int zwei;
     public int drei;
 
-    public Punkt(int e, int z, int d) {
+    public Dreipunkt(int e, int z, int d) {
 	this.eins = e;
 	this.zwei = z;
 	this.drei = d;
@@ -28,8 +28,8 @@ public class Punkt {
 	return sb.toString();
     }
 
-    // Addiere die Zahlen zu diesem Punkt p.
-    public void addieren(Punkt p) {
+    // Addiere die Zahlen zu diesem Dreipunkt p.
+    public void addieren(Dreipunkt p) {
 	this.eins += p.eins;
 	this.zwei += p.zwei;
 	this.drei += p.drei;

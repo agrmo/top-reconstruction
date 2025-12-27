@@ -1,13 +1,14 @@
 package welt.punktkoerper;
 
-import punkt.Punkt;
+import punkt.Dreipunkt;
 import koerper.kubus.Kubus;
 import punktkoerper.kubus.Punktkubus;
 import punktkoerper.Punktkoerper;
 import java.util.ArrayList;
 
 /*
-  javac -d classes $(find src -name '*.java') && java -cp classes welt.punktkoerper.Main
+  javac -d classes $(find src -name '*.java')
+  java -cp classes welt.punktkoerper.Main
 */
 
 public class Main {
@@ -20,7 +21,7 @@ public class Main {
 	
 	// Ein Kubus und dessen Ort.
 	Kubus k = new Kubus(50);
-	Punkt p = new Punkt(100,100,100);
+	Dreipunkt p = new Dreipunkt(100,100,100);
 	Punktkubus pk = new Punktkubus(k, p);
 
 	// Liste von Koerpern.

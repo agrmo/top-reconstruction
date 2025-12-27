@@ -1,4 +1,4 @@
-package koerper.quadrat;
+package figur.quadrat;
 
 // Ein Quadrat;
 public class Quadrat {

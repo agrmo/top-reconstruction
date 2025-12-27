@@ -1,4 +1,4 @@
-package koerper.kries;
+package figur.kries;
 
 public class Kreis {
     int radius;

@@ -1,20 +1,20 @@
 package flaeche;
 
 import java.util.ArrayList;
-import punkt.Punkt;
+import punkt.Dreipunkt;
 
-// Eine Dreifläche ist eine Liste von Punkten.
+// Eine Dreifläche ist eine Liste von Dreipunkten.
 //
 // Die Dreifläche zeigt eine Fläche eines Körpers.
 public class Dreiflaeche {
 
-    // Eine geordnete Reihe von Punkten, die eine Fläche bildet.  Die
-    // Ordung der Punkten ist hier sehr wichtig, sodaß wir die Punkten
+    // Eine geordnete Reihe von Dreipunkten, die eine Fläche bildet.  Die
+    // Ordung der Dreipunkten ist hier sehr wichtig, sodaß wir die Dreipunkten
     // durchlaufen können, um die Fläche aufzubauen.
-    ArrayList<Punkt> punktliste;
+    ArrayList<Dreipunkt> punktliste;
 
-    // ein: Liste von Punkten
-    public Dreiflaeche(ArrayList<Punkt> pl) {
+    // ein: Liste von Dreipunkten
+    public Dreiflaeche(ArrayList<Dreipunkt> pl) {
 	this.punktliste = pl;
     }
 

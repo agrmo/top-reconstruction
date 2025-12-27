@@ -3,8 +3,8 @@ package punktkoerper.kubus;
 import punktkoerper.Punktkoerper;
 import koerper.Koerper;
 import koerper.kubus.Kubus;
-import punkt.Punkt;
-import kante.Kante;
+import punkt.Dreipunkt;
+import kante.Dreikante;
 
 // Ein Punktkubus ist ein Kubus, der die Orten seine Kanten und Ecken
 // berechnen kann. Er kennt seinen Ort.
@@ -14,16 +14,16 @@ public class Punktkubus extends Punktkoerper {
     public Kubus kubus;
 
     // Der Ort dieses Körpers
-    public Punkt punkt;
+    public Dreipunkt punkt;
     
-    public Punktkubus(Kubus k, Punkt p) {
+    public Punktkubus(Kubus k, Dreipunkt p) {
 	this.kubus = k;
 	this.punkt = p;
     }
 
-    public Kante[] nehmeKanten() {
+    public Dreikante[] nehmeKanten() {
 
-	Kante[] kl = this.kubus.nehmeKanten();
+	Dreikante[] kl = this.kubus.nehmeKanten();
 
 	for (int i = 0; i < kl.length; i++) {
 	    kl[i].addieren(this.punkt);

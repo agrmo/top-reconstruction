@@ -2,12 +2,12 @@ package ecke;
 
 import java.util.ArrayList;
 import vektor.Dreivektor;
-import punkt.Punkt;
+import punkt.Dreipunkt;
 
 // Die Ecke. Sie ist ein Begriff im Bereich der euklidschen Welt.
 // 
 // Eine Ecke ist eine Menge von:
-// - Punkt
+// - Dreipunkt
 // - Liste von Dreivektor
 //
 // Die Ecke kennt seine Stelle im Euklidraum. Eine Ecke konnte
@@ -24,11 +24,11 @@ import punkt.Punkt;
 // den Ursprung ist schon einfach bestimmt.
 public class Dreiecke {
 
-    public Punkt punkt;
+    public Dreipunkt punkt;
 
     public ArrayList<Dreivektor> kanten;
 
-    public Dreiecke(Punkt p, ArrayList<Dreivektor> k) {
+    public Dreiecke(Dreipunkt p, ArrayList<Dreivektor> k) {
 	this.punkt = p;
 	this.kanten = k;
     }

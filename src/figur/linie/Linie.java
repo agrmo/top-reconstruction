@@ -1,4 +1,4 @@
-package koerper.linie;
+package figur.linie;
 
 public class Linie {
     public int[] von;

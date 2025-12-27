@@ -1,4 +1,4 @@
-package koerper.weg;
+package figur.weg;
 
 // Der Weg.
 public class Weg {

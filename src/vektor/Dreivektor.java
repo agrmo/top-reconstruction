@@ -1,60 +1,60 @@
 package vektor;
 
 /*
-  Ein Vektor ist eine Liste von drei ganzen Zahlen.
+  Ein Dreivektor ist eine Liste von drei ganzen Zahlen.
   
-  Ein Vektor im Euklidraum.
+  Ein Dreivektor im Euklidraum.
 
-  (Wie berechne ich Vektoren im Minkowskiraum?)
+  (Wie berechne ich Dreivektoren im Minkowskiraum?)
  */
-public class Vektor {
+public class Dreivektor {
     public int eins;
     public int zwei;
     public int drei;
 
     // ein: ganze Zahl, ganze Zahl, ganze Zahl
-    public Vektor(int eins, int zwei, int drei) {
+    public Dreivektor(int eins, int zwei, int drei) {
 	this.eins = eins;
 	this.zwei = zwei;
 	this.drei = drei;
     }
 
     // ein:
-    // v: Vektor
-    // Addiere den gegebenen Vektor zu diesem.  
-    public void addiere(Vektor v) {
+    // v: Dreivektor
+    // Addiere den gegebenen Dreivektor zu diesem.  
+    public void addiere(Dreivektor v) {
 	this.eins += v.eins;
 	this.zwei += v.zwei;
 	this.drei += v.drei;
     }
 
-    // ein: Vektor
-    // Subtrahiere den gegebenen Vektor zu diesem.  
-    public void subtrahiere(Vektor v) {
+    // ein: Dreivektor
+    // Subtrahiere den gegebenen Dreivektor zu diesem.  
+    public void subtrahiere(Dreivektor v) {
 	this.eins -= v.eins;
 	this.zwei -= v.zwei;
 	this.drei -= v.drei;
     }
 
-    // ein: Vektor
-    // Dividiere den gegebenen Vektor zu diesem.  
-    public void dividiere(Vektor v) {
+    // ein: Dreivektor
+    // Dividiere den gegebenen Dreivektor zu diesem.  
+    public void dividiere(Dreivektor v) {
 	this.eins = this.eins / v.eins;
 	this.zwei = this.zwei / v.zwei;
 	this.drei = this.drei / v.drei;
     }
 
-    // ein: Vektor
-    // Multipliziere ganz den gegebenen Vektor zu diesem.  
-    public void multipliziere(Vektor v) {
+    // ein: Dreivektor
+    // Multipliziere ganz den gegebenen Dreivektor zu diesem.  
+    public void multipliziere(Dreivektor v) {
 	this.eins = this.eins * v.eins;
 	this.zwei = this.zwei * v.zwei;
 	this.drei = this.drei * v.drei;
     }
     
-    // ein: Vektor
-    // Multipliziere teilweise den gegebenen Vektor zu diesem.  
-    public void punkt(Vektor v) {
+    // ein: Dreivektor
+    // Multipliziere teilweise den gegebenen Dreivektor zu diesem.  
+    public void punkt(Dreivektor v) {
 	this.eins = this.eins * v.eins;
 	this.zwei = this.zwei * v.zwei;
 	this.drei = this.drei * v.drei;

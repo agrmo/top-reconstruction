@@ -1,4 +1,4 @@
-package koerper.dreieck;
+package figur.dreieck;
 
 // Das Dreieck.
 public class Dreieck {

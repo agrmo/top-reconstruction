@@ -1,9 +1,9 @@
 package koerper.kubus;
 
 import koerper.Koerper;
-import vektor.Vektor;
-import punkt.Punkt;
-import kante.Kante;
+import vektor.Dreivektor;
+import punkt.Dreipunkt;
+import kante.Dreikante;
 
 // Der Kubus. Wir müssen nicht bestimmen, woran dieser Kubus
 // liegt. Wir brauchen auch nicht zu bestimmen, was die
@@ -19,47 +19,47 @@ public class Kubus extends Koerper {
     }
 
     // ein:
-    // aus: Liste von Punkten.
+    // aus: Liste von Dreipunkten.
     // 
-    // Nehme die Punkten, die die Ecken dieses Körpers beleuchten.
-    public Punkt[] nehmeEcken() {
-	Punkt[] punkten = new Punkt[8];
+    // Nehme die Dreipunkten, die die Ecken dieses Körpers beleuchten.
+    public Dreipunkt[] nehmeEcken() {
+	Dreipunkt[] punkten = new Dreipunkt[8];
 	int l = this.laenge;
 
-	punkten[0] = new Punkt(0,0,0);
-	punkten[1] = new Punkt(l,0,0);
-	punkten[2] = new Punkt(l,0,l);
-	punkten[3] = new Punkt(0,0,l);
-	punkten[4] = new Punkt(0,l,0);
-	punkten[5] = new Punkt(l,l,0);
-	punkten[6] = new Punkt(l,l,l);
-	punkten[7] = new Punkt(0,l,l);
+	punkten[0] = new Dreipunkt(0,0,0);
+	punkten[1] = new Dreipunkt(l,0,0);
+	punkten[2] = new Dreipunkt(l,0,l);
+	punkten[3] = new Dreipunkt(0,0,l);
+	punkten[4] = new Dreipunkt(0,l,0);
+	punkten[5] = new Dreipunkt(l,l,0);
+	punkten[6] = new Dreipunkt(l,l,l);
+	punkten[7] = new Dreipunkt(0,l,l);
 
 	return punkten;
     }
 
     // ein:
-    // aus: Liste von Kanten
+    // aus: Liste von Dreikanten
     //
-    // Nehme die die die Kanten dieses Körpers beleuchten. Wir
-    // speichern die Werte der Kanten gar nicht! 
-    public Kante[] nehmeKanten() {
-	Kante[] kanten = new Kante[12];
+    // Nehme die die die Dreikanten dieses Körpers beleuchten. Wir
+    // speichern die Werte der Dreikanten gar nicht! 
+    public Dreikante[] nehmeKanten() {
+	Dreikante[] kanten = new Dreikante[12];
 
-	Punkt[] punkten = this.nehmeEcken();
+	Dreipunkt[] punkten = this.nehmeEcken();
 
-	kanten[0] = new Kante(punkten[0], punkten[1]);
-	kanten[1] = new Kante(punkten[1], punkten[2]);
-	kanten[2] = new Kante(punkten[2], punkten[3]);
-	kanten[3] = new Kante(punkten[3], punkten[0]);
-	kanten[4] = new Kante(punkten[4], punkten[5]);
-	kanten[5] = new Kante(punkten[5], punkten[6]);
-	kanten[6] = new Kante(punkten[6], punkten[7]);
-	kanten[7] = new Kante(punkten[7], punkten[4]);
-	kanten[8] = new Kante(punkten[0], punkten[4]);
-	kanten[9] = new Kante(punkten[1], punkten[5]);
-	kanten[10] = new Kante(punkten[2], punkten[6]);
-	kanten[11] = new Kante(punkten[3], punkten[7]);
+	kanten[0] = new Dreikante(punkten[0], punkten[1]);
+	kanten[1] = new Dreikante(punkten[1], punkten[2]);
+	kanten[2] = new Dreikante(punkten[2], punkten[3]);
+	kanten[3] = new Dreikante(punkten[3], punkten[0]);
+	kanten[4] = new Dreikante(punkten[4], punkten[5]);
+	kanten[5] = new Dreikante(punkten[5], punkten[6]);
+	kanten[6] = new Dreikante(punkten[6], punkten[7]);
+	kanten[7] = new Dreikante(punkten[7], punkten[4]);
+	kanten[8] = new Dreikante(punkten[0], punkten[4]);
+	kanten[9] = new Dreikante(punkten[1], punkten[5]);
+	kanten[10] = new Dreikante(punkten[2], punkten[6]);
+	kanten[11] = new Dreikante(punkten[3], punkten[7]);
 	
 	return kanten;
     }

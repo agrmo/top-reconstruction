@@ -1,18 +1,18 @@
 package kante;
 
-import punkt.Punkt;
+import punkt.Dreipunkt;
 
-// Eine Kante ist ein Paar von zwei Punkten.
+// Eine Dreikante ist ein Paar von zwei Dreipunkten.
 //
-// Die Idee ist, daß wir eine Kante eines Körpers beschreiben
+// Die Idee ist, daß wir eine Dreikante eines Körpers beschreiben
 // wollen. Obwohl die Daten dahin ganz einfach sind, ist es schwierig,
 // die Datenstrukuren über einen Körper zu zeigen. Wir müssen ganz
 // klar sein, daß ein Paar von Orten Teil eines Körpers ist.
-public class Kante {
-    public Punkt von;
-    public Punkt bis;
+public class Dreikante {
+    public Dreipunkt von;
+    public Dreipunkt bis;
     
-    public Kante(Punkt v, Punkt b) {
+    public Dreikante(Dreipunkt v, Dreipunkt b) {
 	this.von = v;
 	this.bis = b;
     }
@@ -27,7 +27,7 @@ public class Kante {
 	return sb.toString();
     }
 
-    public void addieren(Punkt p) {
+    public void addieren(Dreipunkt p) {
 	this.von.addieren(p);
 	this.bis.addieren(p);
     }
