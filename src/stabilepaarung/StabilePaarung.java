@@ -10,18 +10,19 @@ import java.util.HashSet;
 
 /*
   Ein Mann ist eine ganze Zahl
+  
   Eine Frau ist eine ganze Zahl
 
   Eine Mann-Vorliebe ist eine Abbildung von
   Mann zu einer Liste von Frauen
 
   Eine Frau-Vorliebe ist eine Abbildung von
-  Frau zu einer Liste von Männer
+  Frau zu einer Liste von Männern.
 
-  Ein Paar ist ein Tupel von (Mann, Frau)
+  Ein Paar ist ein Paar von (Mann, Frau)
+  
   Eine Verlobung ist eine Liste von Paare
-
- */
+*/
 
 public class StabilePaarung {
     private Map<Integer,List<Integer>> mannVorliebe;
@@ -158,7 +159,7 @@ public class StabilePaarung {
 	return 0;
     }
 
-    // Liebt die Frau den mann m1 mehr als m2 vor?
+    // Liebt die Frau den Mann m1 mehr als m2 vor?
     public boolean stehtHoeher(int frau, int m1, int m2) {
 	// Die Stelle, an der der Mann m1 steht.
 	int m1Stelle = frauVorliebe.get(frau).indexOf(m1);

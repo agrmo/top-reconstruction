@@ -9,9 +9,12 @@ import java.util.Arrays;
 // Eine Fläche ist eine Liste von Punkten.
 public class Flaeche {
 
-    // Eine geordnete Reihe von Punkten, die eine Fläche bildet.
+    // Eine geordnete Reihe von Punkten, die eine Fläche bildet.  Die
+    // Ordung der Punkten ist hier sehr wichtig, sodaß wir die Punkten
+    // durchlaufen können, um die Fläche aufzubauen.
     ArrayList<Punkt> punktliste;
 
+    // ein: Liste von Punkten
     public Flaeche(ArrayList<Punkt> pl) {
 	this.punktliste = pl;
     }

@@ -6,6 +6,11 @@ import java.util.HashMap;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+  javac src/stabilepaarung/*.java -d classes \
+  && java -cp classes stabilepaarung.Main
+*/
+
 public class Main {
     public static void main(String[] args) {
 
