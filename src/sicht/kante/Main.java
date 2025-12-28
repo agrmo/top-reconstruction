@@ -39,10 +39,10 @@ public class Main {
 	Zweikantewelt zkw = sv.verlegenWelt();
 	
 	// Mache eine Kantesicht.
-	Kantesicht ss = new Kantesicht(zkw);
+	Kantesicht ks = new Kantesicht(zkw);
 
 	// Geben wir die Sicht zu Java, um darzustellen.
-	frame.add(ss);
+	frame.add(ks);
 	frame.setVisible(true);
     }
 }
