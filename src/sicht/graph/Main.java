@@ -6,8 +6,8 @@ import welt.graph.Graphwelt;
 import welt.graph.macher.gitter.Gitter;
 
 /*
-  javac -d classes $(find src -name '*.java')
-  java -cp classes sicht.graph.Main
+  javac -d classes $(find src -name '*.java') \
+  && java -cp classes sicht.graph.Main
 */
 
 public class Main {

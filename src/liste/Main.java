@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
+/*
+javac -d classes $(find src -name '*.java') && java -cp classes liste.Main
+*/
+
 public class Main {
 
     public static void listeInteger() {

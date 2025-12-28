@@ -4,6 +4,11 @@ import graph.Nachbarschaftsliste;
 import liste.Liste;
 import java.util.Arrays;
 
+/*
+  javac -d classes $(find src -name '*.java') \
+  && java -cp classes graph.rechnen.tiefensuche.Main
+*/
+
 public class Main {
 
     public static void beispielEins() {

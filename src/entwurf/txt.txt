@@ -1,5 +1,0 @@
-javac src/entwurf/*.java -d classes && java -cp classes entwurf.Main
-
-javac -d classes $(find src -name '*.java') && java -cp classes entwurf.Main
-
-

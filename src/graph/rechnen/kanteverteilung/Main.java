@@ -5,6 +5,11 @@ import graph.druck.tgf.GraphTGF;
 import graph.zufalls.Zufallsgraph;
 import liste.Liste;
 
+/*
+  javac -d classes $(find src -name '*.java') \
+  && java -cp classes graph.rechnen.kanteverteilung.Main
+*/
+
 public class Main {
 
     // Kanteverteilung eines bestimmten Graphen

@@ -2,37 +2,35 @@ package handlung;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseMotionAdapter;
 
-public class MouseHandlung extends Handlung implements MouseListener {
+// Nur zu drucken.
+public class DruckMouseHandlung extends Handlung implements MouseListener {
 
     public void mousePressed(MouseEvent e) {
-	drucken("Mouse pressed; # of clicks: "
+	drucken("Mouse gedruckt; # von Berührungen: "
 		     + e.getClickCount(), e);
     }
 
     public void mouseReleased(MouseEvent e) {
-	drucken("Mouse released; # of clicks: "
+	drucken("Mouse gelöst; # von Berührungen: "
 		     + e.getClickCount(), e);
     }
 
     public void mouseEntered(MouseEvent e) {
-	drucken("Mouse entered", e);
+	drucken("Mouse eingegangen", e);
     }
 
     public void mouseExited(MouseEvent e) {
-	drucken("Mouse exited", e);
+	drucken("Mouse ausgegangen", e);
     }
 
     public void mouseClicked(MouseEvent e) {
-	drucken("Mouse clicked (# of clicks: "
+	drucken("Mouse getastet (# von Berührungen: "
 		     + e.getClickCount() + ")", e);
     }
 
     void drucken(String eventDescription, MouseEvent e) {
-        System.out.println(eventDescription + " detected on "
+        System.out.println(eventDescription + " von "
 			   + e.getComponent().getClass().getName()
 			   + "." + "\n");
     }

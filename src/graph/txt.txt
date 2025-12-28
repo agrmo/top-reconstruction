@@ -1,2 +1,0 @@
-javac src/graph/*.java -d classes && java -cp classes graph.Main
-

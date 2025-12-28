@@ -1,7 +1,5 @@
 package punkt;
 
-import java.util.Arrays;
-
 /*
   javac -d classes $(find src -name '*.java') && java -cp classes punkt.Main
 */

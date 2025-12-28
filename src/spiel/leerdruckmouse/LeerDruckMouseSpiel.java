@@ -1,14 +1,14 @@
-package spiel.leermouse;
+package spiel.leerdruckmouse;
 
 import javax.swing.JFrame;
-import handlung.MouseHandlung;
+import handlung.DruckMouseHandlung;
 import handlung.Handlung;
 
 // Ein Spiel mit der Mouse ohne Darstellungen.
-public class LeerMouseSpiel {
-    MouseHandlung handlung;
+public class LeerDruckMouseSpiel {
+    DruckMouseHandlung handlung;
 
-    public LeerMouseSpiel(MouseHandlung h) {
+    public LeerDruckMouseSpiel(DruckMouseHandlung h) {
 	this.handlung = h;
     }
 

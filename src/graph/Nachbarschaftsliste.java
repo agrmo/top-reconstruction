@@ -2,7 +2,6 @@ package graph;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /*
   Ein Knoten ist eine ganze Zahl.

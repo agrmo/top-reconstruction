@@ -3,6 +3,10 @@ package graph.druck;
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
 
+/*
+  javac -d classes $(find src -name '*.java') && java -cp classes graph.druck.Main
+*/
+
 public class Main {
     public static void main(String[] args) {
 

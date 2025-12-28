@@ -1,6 +1,5 @@
 package punktkoerper;
 
-import punkt.Dreipunkt;
 import koerper.Koerper;
 import kante.Dreikante;
 

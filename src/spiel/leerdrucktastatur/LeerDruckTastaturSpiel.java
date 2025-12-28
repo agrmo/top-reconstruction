@@ -1,13 +1,13 @@
-package spiel.leertastatur;
+package spiel.leerdrucktastatur;
 
 import javax.swing.JFrame;
-import handlung.TastaturHandlung;
+import handlung.DruckTastaturHandlung;
 
 // Ein Spiel mit der Tastatur ohne Darstellungen.
-public class LeerTastaturSpiel {
-    TastaturHandlung handlung;
+public class LeerDruckTastaturSpiel {
+    DruckTastaturHandlung handlung;
 
-    public LeerTastaturSpiel(TastaturHandlung h) {
+    public LeerDruckTastaturSpiel(DruckTastaturHandlung h) {
 	this.handlung = h;
     }
 

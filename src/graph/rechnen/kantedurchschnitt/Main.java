@@ -7,6 +7,11 @@ import graph.zufalls.Zufallsgraph;
 import graph.rechnen.kanteverteilung.Kanteverteilung;
 import liste.Liste;
 
+/*
+  javac -d classes $(find src -name '*.java') \
+  && java -cp classes graph.rechnen.kantedurchschnitt.Main
+*/
+
 public class Main {
     public static void beispielEins() {
 	GraphTGF gtgf = new GraphTGF();

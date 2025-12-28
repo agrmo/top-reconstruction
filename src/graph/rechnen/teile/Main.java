@@ -6,6 +6,11 @@ import graph.zufalls.Zufallsgraph;
 import graph.druck.tgf.GraphTGF;
 import liste.Liste;
 
+/*
+  javac -d classes $(find src -name '*.java') \
+  && java -cp classes graph.rechnen.teile.Main
+*/
+
 public class Main {
 
     public static void beispielEins() {

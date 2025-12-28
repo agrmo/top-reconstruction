@@ -3,6 +3,10 @@ package graph.rechnen.hatkante;
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
 
+/*
+  javac -d classes $(find src -name '*.java') && java -cp classes graph.rechnen.hatkante.Main
+ */
+
 public class Main {
 
     public static void beispielEins() {

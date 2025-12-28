@@ -1,6 +1,6 @@
 package welt;
 
-// Die Welt. Sie stellt die Orten verschiedener Sachen.
+// Die Welt. Eint Welt enthält die Orten verschiedener Dingen.
 //
 // Die Welt zeigt uns, wo verschiedene Sachen stehen.
 // 

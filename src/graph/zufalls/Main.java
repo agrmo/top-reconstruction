@@ -8,6 +8,10 @@ import graph.druck.tgf.GraphTGF;
 import graph.rechnen.kanteverteilung.Kanteverteilung;
 import liste.Liste;
 
+/*
+  javac -d classes $(find src -name '*.java') && java -cp classes graph.zufalls.Main
+*/
+
 public class Main {
     public static void main(String[] args) {
 	Zufallsgraph z = new Zufallsgraph(10, 0.1);

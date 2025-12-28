@@ -11,12 +11,12 @@ public class Main {
     public static void main(String[] args) {
 	ArrayList<Dreipunkt> pl = new ArrayList<Dreipunkt>();
 
-	// Ein Quadrat als Fläche.
+	// Ein Quadrat auf der Ebene y=0.
 	pl.add(new Dreipunkt(0,0,0));
 	pl.add(new Dreipunkt(1,0,0));
 	pl.add(new Dreipunkt(1,0,1));
 	pl.add(new Dreipunkt(0,0,1));
-	Dreiflaeche f = new Dreiflaeche(pl);
+	Flaeche f = new Flaeche(pl);
 
 	System.out.println(f.drucken());
     }
