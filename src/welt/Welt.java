@@ -6,6 +6,6 @@ package welt;
 // 
 // Sie ist eine Sammlung verschiedener, nicht ganz gewohnten Sachen,
 // aber Sachen, die wir sofort verorten können. Mit unseren Augen.
-public class Welt {
+public abstract class Welt {
     
 }

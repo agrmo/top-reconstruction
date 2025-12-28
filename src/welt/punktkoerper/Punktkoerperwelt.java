@@ -5,6 +5,7 @@ import koerper.Koerper;
 import koerper.kubus.Kubus;
 import punktkoerper.Punktkoerper;
 import kante.Dreikante;
+import welt.Welt;
 
 /*
   Eine Punktkoerperwelt ist eine Liste von Punktkörper.
@@ -23,7 +24,7 @@ import kante.Dreikante;
 
   Die Punktkoerperwelt zeigt uns nicht, wie sie aussieht!
 */
-public class Punktkoerperwelt {
+public class Punktkoerperwelt extends Welt {
     ArrayList<Punktkoerper> punktkoerperliste;
 
     // Wir sind mit eine Reihe von Körpern gegeben. Ein Körper kennt

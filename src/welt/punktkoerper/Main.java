@@ -7,8 +7,8 @@ import punktkoerper.Punktkoerper;
 import java.util.ArrayList;
 
 /*
-  javac -d classes $(find src -name '*.java')
-  java -cp classes welt.punktkoerper.Main
+  javac -d classes $(find src -name '*.java') \
+  && java -cp classes welt.punktkoerper.Main
 */
 
 public class Main {

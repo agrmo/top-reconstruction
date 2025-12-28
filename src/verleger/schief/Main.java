@@ -1,29 +1,26 @@
+package verleger.schief;
 
-package sicht.schief;
 import java.util.ArrayList;
-import javax.swing.JFrame;
+import kante.Zweikante;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
 import punktkoerper.Punktkoerper;
 import punktkoerper.kubus.Punktkubus;
 import vektor.Dreivektor;
-import verleger.schief.Schiefverleger;
 import welt.kante.Zweikantewelt;
 import welt.punktkoerper.Punktkoerperwelt;
 
 /*
   javac -d classes $(find src -name '*.java') \
-  && java -cp classes sicht.schief.Main
+  && java -cp classes verleger.schief.Main
 */
 
 public class Main {
+    public static void main(String[] args) {
 
-    public static void main(String[] args){
- 	JFrame frame = new JFrame();
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setSize(1200, 600);
-
-	// Mache die Punktkörperwelt.
+	// Mache eine dreidimensionale Punktkörperwelt.
+	// Diese Welt enthält einen Kubus auf der Stelle (100,100,100).
+	
 	Kubus k = new Kubus(50);
 	Dreipunkt p = new Dreipunkt(100,100,100);
 	Punktkubus pk = new Punktkubus(k, p);
@@ -31,19 +28,15 @@ public class Main {
 	pkl.add(pk);
 	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
 
-	// Mache den Verleger.
+	// Mache den Verleger, der eine zweidimensionale Welt aufbauen
+	// wird.
 	Dreivektor d = new Dreivektor(1,1,-1);
 	Schiefverleger sv = new Schiefverleger(pkw, d);
 
-	// Mache die zweidimensionale Kantenwelt.
+	// Benutzen den Verleger.
 	Zweikantewelt zkw = sv.verlegenWelt();
-	
-	// Mache eine Schiefsicht.
-	Schiefsicht ss = new Schiefsicht(zkw);
 
-	// Geben wir die Sicht zu Java, um darzustellen.
-	frame.add(ss);
-	frame.setVisible(true);
+	// Drucken sie.
+	System.out.println(zkw.drucken());
     }
 }
-
