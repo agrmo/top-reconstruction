@@ -24,8 +24,8 @@ public class Main {
 	frame.setSize(1200, 600);
 
 	// Mache die Punktkörperwelt.
-	Kubus k = new Kubus(50);
-	Dreipunkt p = new Dreipunkt(100,100,100);
+	Kubus k = new Kubus(10);
+	Dreipunkt p = new Dreipunkt(20,20,20);
 	Punktkubus pk = new Punktkubus(k, p);
 	ArrayList<Punktkoerper> pkl = new ArrayList<Punktkoerper>();
 	pkl.add(pk);
