@@ -1,5 +1,5 @@
+package sicht.kante;
 
-package sicht.schief;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import koerper.kubus.Kubus;
@@ -13,7 +13,7 @@ import welt.punktkoerper.Punktkoerperwelt;
 
 /*
   javac -d classes $(find src -name '*.java') \
-  && java -cp classes sicht.schief.Main
+  && java -cp classes sicht.kante.Main
 */
 
 public class Main {
@@ -38,8 +38,8 @@ public class Main {
 	// Mache die zweidimensionale Kantenwelt.
 	Zweikantewelt zkw = sv.verlegenWelt();
 	
-	// Mache eine Schiefsicht.
-	Schiefsicht ss = new Schiefsicht(zkw);
+	// Mache eine Kantesicht.
+	Kantesicht ss = new Kantesicht(zkw);
 
 	// Geben wir die Sicht zu Java, um darzustellen.
 	frame.add(ss);

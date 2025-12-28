@@ -1,4 +1,4 @@
-package sicht.schief;
+package sicht.kante;
 
 import java.util.ArrayList;
 import javax.swing.JComponent;
@@ -6,11 +6,11 @@ import java.awt.Graphics;
 import welt.kante.Zweikantewelt;
 import kante.Zweikante;
 
-// Schon ist die Schiefsicht eine Welt gegeben. Die gegebene Welt
-// enthält alle Körper und ihre befindenden Stellen. Die Schiefsicht
+// Schon ist die Kantesicht eine Welt gegeben. Die gegebene Welt
+// enthält alle Körper und ihre befindenden Stellen. Die Kantesicht
 // darf nur ausrechnen, wie die Körper aussehen. Dafür muss sie die
 // Dreikanten eines Kubus gut berechnen, und so weiter.
-public class Schiefsicht extends JComponent {
+public class Kantesicht extends JComponent {
 
     public Zweikantewelt zweikantewelt;
 
@@ -21,7 +21,7 @@ public class Schiefsicht extends JComponent {
     // 
     // Wir nehmen an, daß die Sichtfläche genau auf der z=0 Fläche
     // stehen. Ich konnte dei Fläche bestimmbar machen.
-    public Schiefsicht(Zweikantewelt zkw) {
+    public Kantesicht(Zweikantewelt zkw) {
 	this.zweikantewelt = zkw;
     }
 
