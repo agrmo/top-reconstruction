@@ -17,7 +17,8 @@ package sicht;
 // aussehen. Dafür muss sie die Dreikanten eines Kubus gut ausrechnen,
 // und so weiter.
 //
-//
+// Die Sicht kennt nicht, wie sie mit einem Mensch wechselwirken
+// kann. Zum Beispiel mit der Mouse oder der Tastatur.
 public class Sicht {
 
 }

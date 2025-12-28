@@ -6,7 +6,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseMotionAdapter;
 
-public class MouseHandlung implements MouseListener {
+public class MouseHandlung extends Handlung implements MouseListener {
 
     public void mousePressed(MouseEvent e) {
 	drucken("Mouse pressed; # of clicks: "
