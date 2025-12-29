@@ -15,10 +15,10 @@ import welt.kante.Zweikantewelt;
 public class Linearverleger {
 
     // Die Verschiebungzahlen.
-    double mx;
-    double bx;
-    double my;
-    double by;
+    public double mx;
+    public double bx;
+    public double my;
+    public double by;
 
     public Linearverleger(double mx, double bx, double my, double by) {
 	this.mx = mx;

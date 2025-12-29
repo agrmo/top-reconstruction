@@ -30,7 +30,7 @@ public class DruckTastaturHandlung extends Handlung implements KeyListener {
             int keyCode = e.getKeyCode();
             keyString = "key code = " + keyCode
 		+ " (" + KeyEvent.getKeyText(keyCode) + ")";
-        }
+	        }
          
         int modifiersEx = e.getModifiersEx();
         String modString = "extended modifiers = " + modifiersEx;

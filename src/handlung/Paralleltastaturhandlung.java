@@ -7,6 +7,8 @@ import sicht.parallel.Parallelsicht;
 // Nur zu drucken.
 public class Paralleltastaturhandlung extends Handlung implements KeyListener {
 
+    // Wir können nach einer Berührung der Tastatur diese Sicht
+    // anrufen, um sie sich wieder darzustellen.
     Parallelsicht parallelsicht;
 
     public Paralleltastaturhandlung(Parallelsicht ps) {

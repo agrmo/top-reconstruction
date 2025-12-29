@@ -21,6 +21,8 @@ package sicht;
 //
 // Die Sicht kennt nicht, wie sie mit einem Mensch wechselwirken
 // kann. Zum Beispiel mit der Mouse oder der Tastatur.
+//
+// Wir müssen entscheiden, wer diese Körper darstellen wird.
 public class Sicht {
 
 }

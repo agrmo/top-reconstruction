@@ -1,4 +1,4 @@
-package spiel.parallel;
+package spiel.linearschief;
 
 import java.util.ArrayList;
 import koerper.kubus.Kubus;
@@ -9,7 +9,7 @@ import welt.punktkoerper.Punktkoerperwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.parallel.Main
+  && java -cp classes spiel.linearschief.Main
 */
 
 public class Main{
@@ -27,8 +27,21 @@ public class Main{
 	pkl.add(pk);
 	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
 
-	// Geben die Welt in das Spiel ein.
-	Parallelspiel s = new Parallelspiel();
-	s.spielen(pkw);
+	// Wir müssen aber eine Anzahl von Eigenschaften nennen, um
+	// die Linearschiefsicht aufzubauen. Am Anfang sind sie
+	// einfach. Wir werden dieze Zahlen mit der Tastatur
+	// verändern!
+	double a = 1.0;
+	double mx = 1.0;
+	double bx = 0.0;
+	double my = 1.0;
+	double by = 0.0;
+
+	// Geben die Welt in das Spiel ein.  Wir müssen die
+	// Eigenschaften nicht im Spiel geben, nur in der
+	// Funktion. Wir sind dankbar dafür...
+	
+	Linearschiefspiel s = new Linearschiefspiel();
+	s.spielen(pkw, a, mx, bx, my, by);
     }
 }

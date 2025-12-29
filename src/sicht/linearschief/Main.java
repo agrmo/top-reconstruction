@@ -38,7 +38,7 @@ public class Main {
 	// (0,0) ------ (20,0) ------ (40,0)
 	// verschoben.
 	//
-	// Der Zahlen sind die wesentliche Eigenschaften, die wir
+	// Die Zahlen sind die wesentliche Eigenschaften, die wir
 	// brauchen, um die dreidimensionale Daten in einem
 	// zweidimensionalen Bildschirm darzustellen.
 	//

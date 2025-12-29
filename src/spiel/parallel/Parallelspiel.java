@@ -8,7 +8,7 @@ import welt.punktkoerper.Punktkoerperwelt;
 // Ein Spiel mit einer Parallelsicht einer Punktkörperwelt mit der
 // Tastatur.  Ein paralleles Spiel enthält eine parallele Handlung,
 // eine Punktkörperwelt und eine Parallelsicht. Beide die Handlung und
-// Sicht enthalten die Sicht, weil sie beiden sie wiederdarstellen
+// Spiel enthalten die Sicht, weil sie beiden sie wiederdarstellen
 // sollen.
 //
 public class Parallelspiel {

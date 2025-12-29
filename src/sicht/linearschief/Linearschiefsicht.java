@@ -14,9 +14,9 @@ import welt.punktkoerper.Punktkoerperwelt;
 // Zweikantewelt ab.
 public class Linearschiefsicht extends JComponent {
 
-    Punktkoerperwelt pkw;
-    Schiefverleger sv;
-    Linearverleger lv;
+    public Punktkoerperwelt pkw;
+    public Schiefverleger sv;
+    public Linearverleger lv;
 
     public Linearschiefsicht(Punktkoerperwelt pkw,
 			     double a,
@@ -26,7 +26,13 @@ public class Linearschiefsicht extends JComponent {
 	this.lv = new Linearverleger(mx, bx, my, by);
     }
 
-    // Wir müssen entscheiden, wer diese Körper darstellen wird.
+    // Stellen die Punktkörperwelt mit Hilfe zwier Verleger dar:
+    //
+    // 1. Schiefverleger: Er nimmt die Welt von einer
+    // dreidimensionalen zu einer zweidimensionalen.
+    //
+    // 2. Linearverleger: Er verhält sich wie ein Bildschirm, und
+    // verschiebt alle Punkten, sodaß wir sie sehen können.
     public void paintComponent(Graphics g) {
 	super.paintComponent(g);
 	
