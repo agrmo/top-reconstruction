@@ -13,6 +13,10 @@ public class Main {
  	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
+
+	Leersicht l = new Leersicht();
+	frame.add(l);
+	
 	frame.setVisible(true);
     }
 }

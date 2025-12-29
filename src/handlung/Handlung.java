@@ -8,6 +8,9 @@ package handlung;
 // Figur.
 //
 // In Java benutzen wir KeyListener, MouseListener usw.
+//
+// Eine Handlung enthält eine Sicht. Die Handlung gibt der Sicht den
+// Befehl, wieder darzustellen.
 public abstract class Handlung {
     
 }

@@ -9,6 +9,8 @@ package sicht;
 // Die Sicht bildet die Daten nicht auf. Am besten umwandelt sie die
 // ursprüngliche Daten nicht.
 //
+// Die Sicht enthält die Welt.
+//
 // Die Sicht stellt die Körper einer Welt dar, sodaß wir uns den
 // Körpern auf einem Bildschirm anschauen können.
 //
