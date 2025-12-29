@@ -22,14 +22,14 @@ public class Verschiebenverleger {
     // zweidimensionale Zweikantewelt.
     //
     public void verlegenWelt(Punktkoerperwelt pkw,
-			     Dreipunkt pv) {
+			     Dreipunkt verschiebenpunkt) {
 
 	ArrayList<Punktkoerper> pkl = pkw.punktkoerperliste;
 
 	for (int i = 0; i < pkl.size(); i++) {
 	    Punktkoerper pk = pkl.get(i);
 	    Dreipunkt p = pk.punkt;
-	    p.addieren(pv);
+	    p.addieren(verschiebenpunkt);
 	}
     }
 }

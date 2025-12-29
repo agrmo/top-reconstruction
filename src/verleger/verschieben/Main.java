@@ -27,10 +27,10 @@ public class Main {
 
 	// Der Verleger, der eine zweidimensionale Welt aufbauen wird.
 	Verschiebenverleger vv = new Verschiebenverleger();
-	Dreipunkt pv = new Dreipunkt(50,50,50);
+	Dreipunkt vp = new Dreipunkt(100,100,100);
 
 	// Benutzen den Verleger.
-	vv.verlegenWelt(pkw, pv);
+	vv.verlegenWelt(pkw, vp);
 
 	System.out.println(pkw.drucken());
     }
