@@ -38,13 +38,23 @@ public class Main {
 	// (0,0) ------ (20,0) ------ (40,0)
 	// verschoben.
 	//
-	// Der Vektor und die andere Zahlen sind die wesentliche
-	// Eigenschaften, die wir brauchen, um die dreidimensionale
-	// Daten in einem zweidimensionalen Bildschirm darzustellen.
+	// Der Zahlen sind die wesentliche Eigenschaften, die wir
+	// brauchen, um die dreidimensionale Daten in einem
+	// zweidimensionalen Bildschirm darzustellen.
+	//
+	// pkw: Die ursprüngliche dreidimensionale Daten
+	// 1.0: Die Zahl, die der schiefe Verleger benutzt
+	// 2.0 0.0 1.0 0.0: Die Zahlen, die der lineare Verleger benutzt
+	//   2.0: Multipliziere alle x Stellen mit 2.0
+	//   0.0: Addiere 0.0 zu alle x Stellen
+	//   1.0: Multipliziere alle y Stellen mit 1.0
+	//   0.0: Addiere 0.0 zu alle y Stellen
+	//
 	Linearschiefsicht lss = new Linearschiefsicht(pkw,
-						      1.0, 2.0, 0.0, 1.0, 0.0);
+						      1.0,
+						      2.0, 0.0, 1.0, 0.0);
 	
-	// Geben wir die Sicht zu Java, um darzustellen.
+	// Stellen die Daten dar.
 	frame.add(lss);
 	frame.setVisible(true);
     }
