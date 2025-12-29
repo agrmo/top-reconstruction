@@ -53,17 +53,4 @@ public class Punktkoerperwelt extends Welt {
 
 	return wk;
     }
-
-    // ein:
-    // aus: String
-    // Drucken die Stellen und Körper dieser Welt.
-    public String drucken() {
-	StringBuilder sb = new StringBuilder();
-	
-	for (int i = 0; i < this.punktkoerperliste.size(); i++) {
-	    sb.append(this.punktkoerperliste.get(i).drucken());
-	}
-
-	return sb.toString();
-    }
 }

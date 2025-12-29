@@ -19,18 +19,4 @@ public class Zweikantewelt extends Welt {
     public Zweikantewelt(ArrayList<Zweikante> zkl) {
 	this.kantenliste = zkl;
     }
-
-    public String drucken() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("Kanten dieser Welt:\n");
-	
-	for (int i = 0; i < this.kantenliste.size(); i++) {
-
-	    String ks = this.kantenliste.get(i).drucken();
-	    sb.append(ks);
-	    sb.append("\n");
-	}
-
-	return sb.toString();
-    }
 }

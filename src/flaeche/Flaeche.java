@@ -14,28 +14,10 @@ public class Flaeche {
     // Eine geordnete Reihe von Dreipunkten, die eine Fläche bildet.
     // Die Ordung der Dreipunkten ist hier sehr wichtig, sodaß wir die
     // Dreipunkten durchlaufen können, um die Fläche aufzubauen.
-    ArrayList<Dreipunkt> punktliste;
+    public ArrayList<Dreipunkt> punktliste;
 
     // ein: Liste von Dreipunkten
     public Flaeche(ArrayList<Dreipunkt> pl) {
 	this.punktliste = pl;
     }
-
-    // Mache ein String dieser Fläche.
-    public String drucken() {
-	StringBuilder sb = new StringBuilder();	
-	sb.append("Fläche: ");
-	sb.append("[");
-	
-	for (int i = 0; i < this.punktliste.size(); i++) {
-	    if (i != 0) {
-		sb.append(",");
-	    }
-	    sb.append(this.punktliste.get(i).drucken());
-	}
-	
-	sb.append("]");
-
-	return sb.toString();
-    }    
 }

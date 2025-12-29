@@ -33,11 +33,4 @@ public class Punktkubus extends Punktkoerper {
 	// Variablen sind veränderlich, welche unveränderlich?
     }
 
-    public String drucken() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("Punktkubus:\n");
-	sb.append(this.punkt.drucken());
-	sb.append(this.kubus.drucken());
-	return sb.toString();
-    }
 }

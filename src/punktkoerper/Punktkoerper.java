@@ -27,8 +27,4 @@ public abstract class Punktkoerper {
     // Nehme alle die Dreikanten dieses Körpers. Daher müssen wir über den
     // Ort des Körpers beachten.
     public abstract Dreikante[] nehmeKanten();
-
-    // ein:
-    // aus: String
-    public abstract String drucken();
 }

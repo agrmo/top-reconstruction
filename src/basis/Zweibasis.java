@@ -12,15 +12,4 @@ public class Zweibasis {
 	this.eins = eins;
 	this.zwei = zwei;
     }
-
-    // Mache ein String dieser Basis.
-    public String drucken() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("[");
-	sb.append(this.eins.drucken());
-	sb.append(",");
-	sb.append(this.zwei.drucken());
-	sb.append("]");
-	return sb.toString();
-    }
 }

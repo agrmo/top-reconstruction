@@ -15,6 +15,4 @@ package koerper;
 //
 public abstract class Koerper {
 
-    // Gib ein String der Eigenschaften dieses Körpers ab.
-    public abstract String drucken();
 }

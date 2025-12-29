@@ -31,7 +31,5 @@ public class Main {
 
 	// Benutzen den Verleger.
 	vv.verlegenWelt(pkw, vp);
-
-	System.out.println(pkw.drucken());
     }
 }

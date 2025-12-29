@@ -14,17 +14,4 @@ public class Dreibasis {
 	this.zwei = zwei;
 	this.drei = drei;
     }
-
-    // Mache ein String dieser Basis.
-    public String drucken() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("[");
-	sb.append(this.eins.drucken());
-	sb.append(",");
-	sb.append(this.zwei.drucken());
-	sb.append(",");
-	sb.append(this.drei.drucken());
-	sb.append("]");
-	return sb.toString();
-    }
 }

@@ -1,20 +1,18 @@
-package verleger.linear;
+package druck.welt;
 
 import java.util.ArrayList;
 import kante.Zweikante;
+import koerper.kubus.Kubus;
 import punkt.Zweipunkt;
 import welt.kante.Zweikantewelt;
-import druck.welt.Weltdrucker;
 
 /*
   javac -d classes $(find src -name '*.java') \
-  && java -cp classes verleger.linear.Main
+  && java -cp classes druck.welt.Main
 */
 
 public class Main {
     public static void main(String[] args) {
-
-	// Mache eine einfache Welt mit zwei Kanten.
 	Zweikante zka = new Zweikante(new Zweipunkt(30,30),
 				      new Zweipunkt(500,500));
 
@@ -28,14 +26,6 @@ public class Main {
 	// Mache die zweidimensionale Kantenwelt.
 	Zweikantewelt zkw = new Zweikantewelt(zkl);
 
-	// Der Verleger, der die Welt linear umwandelt.
-	Linearverleger lv = new Linearverleger(1.0, 1.0, 1.0, 1.0);
-	
-	// Wir brauchen nicht, eine ganze neue Zweikantewelt zu
-	// machen. Die ursprüngliche ist inhaltlich verarbeitet.
-	lv.verlegenWelt(zkw);
-
-	// Fertig. Drucken sie.
 	System.out.println(Weltdrucker.drucken(zkw));
     }
 }
