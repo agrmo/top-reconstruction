@@ -14,17 +14,12 @@ import welt.punktkoerper.Punktkoerperwelt;
 // Verlegung.
 public class Schiefverleger {
 
-    // Die dreidimensionale Welt mit den ursprünglichen Daten.
-    Punktkoerperwelt punktkoerperwelt;
-
     // Der Verlegungsvektor.
     public Dreivektor d;
 
-    // Der Verleger braucht die ursprüngliche Daten von der
-    // dreidimensionale Welt, und einen Verlegungsvektor, der die
+    // Der Verleger braucht nur einen Vektor, der eine
     // Verlegungsrichtung zeigt.
-    public Schiefverleger(Punktkoerperwelt pkw, Dreivektor d) {
-	this.punktkoerperwelt = pkw;
+    public Schiefverleger(Dreivektor d) {
 	this.d = d;
     }
 
@@ -58,13 +53,17 @@ public class Schiefverleger {
 	return zk;
     }
 
+    // ein: Punktkörperwelt
+    // pkw: Die dreidimensionale Welt mit den ursprünglichen Daten.
+    //
     // Verlegen die dreidimensionale Punktkörperwelt zu einer
     // zweidimensionale Zweikantewelt.
-    public Zweikantewelt verlegenWelt() {
+    //
+    public Zweikantewelt verlegenWelt(Punktkoerperwelt pkw) {
 
 	// Liste von Dreikanten. Nehme die Kanten der
 	// dreidimensionalen Welt.
-	ArrayList<Dreikante> dkl = this.punktkoerperwelt.nehmeKanten();
+	ArrayList<Dreikante> dkl = pkw.nehmeKanten();
 
 	// Liste von Zweikanten. Mache die Kanten für eine
 	// zweidimensionale Zweikantewelt.

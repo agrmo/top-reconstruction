@@ -29,20 +29,21 @@ public class Main {
 	pkl.add(pk);
 	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
 
-	// Mache den Verleger, der eine zweidimensionale Welt aufbauen
-	// wird.
+	// Der Verleger, der eine zweidimensionale Welt aufbaut.
 	Dreivektor d = new Dreivektor(1,1,-1);
-	Schiefverleger sv = new Schiefverleger(pkw, d);
-	
-	// Benutzen den Verleger.
-	Zweikantewelt zkw = sv.verlegenWelt();
+	Schiefverleger sv = new Schiefverleger(d);
 
-	// Mache den Verleger, der eine zweidimensionale Welt aufbauen
-	// wird.
-	Linearverleger lv = new Linearverleger(zkw, 1.0, 1.0, 1.0, 1.0);
-	lv.verlegenWelt();
+	// Der Verleger, der die Welt linear umwandelt.
+	Linearverleger lv = new Linearverleger(1.0, 1.0, 1.0, 1.0);
 
-	// Drucken sie.
+	// Benutzen die zwei Verleger.
+	Zweikantewelt zkw = sv.verlegenWelt(pkw);
+
+	// Wir brauchen nicht, eine ganze neue Zweikantewelt zu
+	// machen. Die ursprüngliche ist inhaltlich verarbeitet.
+	lv.verlegenWelt(zkw);
+
+	// Fertig. Drucken sie.
 	System.out.println(zkw.drucken());
     }
 }

@@ -20,7 +20,6 @@ public class Main {
 
 	// Mache eine dreidimensionale Punktkörperwelt.
 	// Diese Welt enthält einen Kubus auf der Stelle (100,100,100).
-	
 	Kubus k = new Kubus(50);
 	Dreipunkt p = new Dreipunkt(100,100,100);
 	Punktkubus pk = new Punktkubus(k, p);
@@ -28,13 +27,12 @@ public class Main {
 	pkl.add(pk);
 	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
 
-	// Mache den Verleger, der eine zweidimensionale Welt aufbauen
-	// wird.
+	// Der Verleger, der eine zweidimensionale Welt aufbauen wird.
 	Dreivektor d = new Dreivektor(1,1,-1);
-	Schiefverleger sv = new Schiefverleger(pkw, d);
+	Schiefverleger sv = new Schiefverleger(d);
 
 	// Benutzen den Verleger.
-	Zweikantewelt zkw = sv.verlegenWelt();
+	Zweikantewelt zkw = sv.verlegenWelt(pkw);
 
 	// Drucken sie.
 	System.out.println(zkw.drucken());

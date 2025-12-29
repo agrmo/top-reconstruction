@@ -14,19 +14,13 @@ import welt.kante.Zweikantewelt;
 //
 public class Linearverleger {
 
-    // Die zweidimensionale Welt mit den ursprünglichen Daten.
-    Zweikantewelt zweikantewelt;
-
     // Die Verschiebungzahlen.
     double mx;
     double bx;
     double my;
     double by;
 
-    public Linearverleger(Zweikantewelt zkw,
-			  double mx, double bx,
-			  double my, double by) {
-	this.zweikantewelt = zkw;
+    public Linearverleger(double mx, double bx, double my, double by) {
 	this.mx = mx;
 	this.bx = bx;
 	this.my = my;
@@ -45,15 +39,18 @@ public class Linearverleger {
     }
 
     // Verlegen die Welt.
-    public void verlegenWelt() {
+    // ein:
+    // zkw: Die zweidimensionale Welt mit den ursprünglichen Daten.
+    public void verlegenWelt(Zweikantewelt zkw) {
 
-	ArrayList<Zweikante> zkl = this.zweikantewelt.kantenliste;
+	ArrayList<Zweikante> zkl = zkw.kantenliste;
 
 	for (int i = 0; i < zkl.size(); i++) {
 	    Zweikante zk = zkl.get(i);
 	    this.verlegenKante(zk);
 	    
-	    // Die Kante ist selbst bearbeitet.
+	    // Die Kante ist inhaltlich bearbeitet. Wir geben eine
+	    // neue nicht aus.
 	}
     }
 }
