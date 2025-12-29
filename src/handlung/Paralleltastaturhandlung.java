@@ -12,69 +12,40 @@ public class Paralleltastaturhandlung extends Handlung implements KeyListener {
     public Paralleltastaturhandlung(Parallelsicht ps) {
 	this.parallelsicht = ps;
     }
-
-    public void keyTyped(KeyEvent e) {
-        drucken("Getastet: ", e);
-    }
      
     public void keyPressed(KeyEvent e) {
-        drucken("Tastendruck: ", e);
+	// Tue nichts.
     }
      
     public void keyReleased(KeyEvent e) {
-        drucken("Tastenfreisetzung: ", e);
+        // Tue nichts.
     }
 
-    void drucken(String keyStatus, KeyEvent e) {
-	
-        int id = e.getID();
-        String keyString;
+    // Eine Taste ist für diese Parallelsicht getastet. Eine
+    // Parallelsicht enthält keinen Verleger. Alle die Daten liegen
+    // genau in den ursprünglichen Daten, das ist die
+    // Punktkörperwelt. Leider können wir die ursprüngliche Daten
+    // einer Punktkörperwelt verändern, weil ein Punktkörper keine
+    // allgemeine Funktionen besitzt. (Gibt es einen anderen Weg?)
+    public void keyTyped(KeyEvent e) {
+	int id = e.getID();
 	
         if (id == KeyEvent.KEY_TYPED) {
-            char c = e.getKeyChar();
-            keyString = "key character = '" + c + "'";
-        } else {
-            int keyCode = e.getKeyCode();
-            keyString = "key code = " + keyCode
-		+ " (" + KeyEvent.getKeyText(keyCode) + ")";
+            char kc = e.getKeyChar();
+
+	    if (kc == 'w') {
+		System.out.println('w' + " getastet");
+		
+	    } else if (kc == 's') {
+		System.out.println('s' + " getastet");
+		
+	    } else if (kc == 'a') {
+		System.out.println('a' + " getastet");
+		
+	    } else if (kc == 'd') {
+		System.out.println('d' + " getastet");
+		
+	    }
         }
-         
-        int modifiersEx = e.getModifiersEx();
-        String modString = "extended modifiers = " + modifiersEx;
-        String tmpString = KeyEvent.getModifiersExText(modifiersEx);
-	
-        if (tmpString.length() > 0) {
-            modString += " (" + tmpString + ")";
-        } else {
-            modString += " (no extended modifiers)";
-        }
-         
-        String actionString = "action key? ";
-        if (e.isActionKey()) {
-            actionString += "YES";
-        } else {
-            actionString += "NO";
-        }
-         
-        String locationString = "key location: ";
-        int location = e.getKeyLocation();
-	
-        if (location == KeyEvent.KEY_LOCATION_STANDARD) {
-            locationString += "standard";
-        } else if (location == KeyEvent.KEY_LOCATION_LEFT) {
-            locationString += "left";
-        } else if (location == KeyEvent.KEY_LOCATION_RIGHT) {
-            locationString += "right";
-        } else if (location == KeyEvent.KEY_LOCATION_NUMPAD) {
-            locationString += "numpad";
-        } else {
-            locationString += "unknown";
-        }
-         
-        System.out.println(keyStatus + "\n"
-			   + "    " + keyString + "\n"
-			   + "    " + modString + "\n"
-			   + "    " + actionString + "\n"
-			   + "    " + locationString + "\n");	
-    }
+    }     
 }
