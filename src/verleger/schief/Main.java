@@ -6,7 +6,6 @@ import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
 import punktkoerper.Punktkoerper;
 import punktkoerper.kubus.Punktkubus;
-import vektor.Dreivektor;
 import welt.kante.Zweikantewelt;
 import welt.punktkoerper.Punktkoerperwelt;
 
@@ -28,8 +27,7 @@ public class Main {
 	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
 
 	// Der Verleger, der eine zweidimensionale Welt aufbauen wird.
-	Dreivektor d = new Dreivektor(1,1,-1);
-	Schiefverleger sv = new Schiefverleger(d);
+	Schiefverleger sv = new Schiefverleger(-1.0);
 
 	// Benutzen den Verleger.
 	Zweikantewelt zkw = sv.verlegenWelt(pkw);

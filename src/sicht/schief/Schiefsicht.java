@@ -3,7 +3,6 @@ package sicht.schief;
 import java.awt.Graphics;
 import javax.swing.JComponent;
 import sicht.kante.Kantesicht;
-import vektor.Dreivektor;
 import verleger.schief.Schiefverleger;
 import welt.kante.Zweikantewelt;
 import welt.punktkoerper.Punktkoerperwelt;
@@ -16,9 +15,9 @@ public class Schiefsicht extends JComponent {
     Punktkoerperwelt pkw;
     Schiefverleger sv;
 
-    public Schiefsicht(Punktkoerperwelt pkw, Dreivektor d) {
+    public Schiefsicht(Punktkoerperwelt pkw, double a) {
 	this.pkw = pkw;
-	this.sv = new Schiefverleger(d);
+	this.sv = new Schiefverleger(a);
     }
 
     // Wir müssen entscheiden, wer diese Körper darstellen wird.

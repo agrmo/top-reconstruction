@@ -4,7 +4,6 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JComponent;
 import kante.Dreikante;
-import vektor.Dreivektor;
 import welt.punktkoerper.Punktkoerperwelt;
 
 // Die Parallelsicht zeigt insbesondere nur die erste und zweite Teile
@@ -14,11 +13,6 @@ public class Parallelsicht extends JComponent {
 
     public Punktkoerperwelt pkw;
 
-    // ein: Dreivektor, ganze Zahl
-    //
-    // Zeigt die Ausbreitungsgröße. Zeigt wie groß das Bild ausdehnen
-    // werden im Unterschied mit dem ursprunglichen Stellen.
-    // 
     // Wir nehmen an, daß die Sichtfläche genau auf der z=0 Fläche
     // stehen. Ich konnte dei Fläche bestimmbar machen.
     public Parallelsicht(Punktkoerperwelt pkw) {

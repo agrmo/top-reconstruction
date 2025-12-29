@@ -6,7 +6,6 @@ import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
 import punktkoerper.Punktkoerper;
 import punktkoerper.kubus.Punktkubus;
-import vektor.Dreivektor;
 import welt.kante.Zweikantewelt;
 import welt.punktkoerper.Punktkoerperwelt;
 
@@ -30,8 +29,6 @@ public class Main {
 	pkl.add(pk);
 	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
 
-	Dreivektor d = new Dreivektor(1,1,-1);
-	
 	// Der Verleger vergrößert die stellen der Kanten. Nicht nur
 	// wird den Abstand zwischen den Punkten vergrößert, sondern
 	// auch den Abstand zum Ursprung. Zum Beispiel,
@@ -45,7 +42,7 @@ public class Main {
 	// Eigenschaften, die wir brauchen, um die dreidimensionale
 	// Daten in einem zweidimensionalen Bildschirm darzustellen.
 	Linearschiefsicht lss = new Linearschiefsicht(pkw,
-						      d, 2.0, 0.0, 1.0, 0.0);
+						      1.0, 2.0, 0.0, 1.0, 0.0);
 	
 	// Geben wir die Sicht zu Java, um darzustellen.
 	frame.add(lss);

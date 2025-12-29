@@ -26,11 +26,8 @@ public class Zweikantewelt extends Welt {
 	
 	for (int i = 0; i < this.kantenliste.size(); i++) {
 
-	    // Das String dieser Kante.
 	    String ks = this.kantenliste.get(i).drucken();
-
 	    sb.append(ks);
-
 	    sb.append("\n");
 	}
 

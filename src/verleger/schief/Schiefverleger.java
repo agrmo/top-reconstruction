@@ -5,7 +5,6 @@ import kante.Dreikante;
 import kante.Zweikante;
 import punkt.Dreipunkt;
 import punkt.Zweipunkt;
-import vektor.Dreivektor;
 import welt.kante.Zweikantewelt;
 import welt.punktkoerper.Punktkoerperwelt;
 
@@ -14,13 +13,13 @@ import welt.punktkoerper.Punktkoerperwelt;
 // Verlegung.
 public class Schiefverleger {
 
-    // Der Verlegungsvektor.
-    public Dreivektor d;
+    // Die Verlegungszahl.
+    public double a;
 
     // Der Verleger braucht nur einen Vektor, der eine
     // Verlegungsrichtung zeigt.
-    public Schiefverleger(Dreivektor d) {
-	this.d = d;
+    public Schiefverleger(double aEin) {
+	this.a = aEin;
     }
 
     // ein: Dreipunkt
@@ -29,8 +28,8 @@ public class Schiefverleger {
     // Verlege den gegeben dreidimensionalen Punkt auf einer
     // Sichtfläche, um einen zweidimensionalen Punkt zu bekommen.
     public Zweipunkt verlegenPunkt(Dreipunkt p) {
-	int ausX = p.eins - ((this.d.eins / this.d.drei) * p.drei);
-	int ausY = p.zwei - ((this.d.zwei / this.d.drei) * p.drei);
+	int ausX = p.eins + ((int) (this.a * p.drei));
+	int ausY = p.zwei + ((int) (this.a * p.drei));
 
 	Zweipunkt aus = new Zweipunkt(ausX, ausY);
 	

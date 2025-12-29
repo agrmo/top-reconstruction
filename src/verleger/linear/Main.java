@@ -2,14 +2,8 @@ package verleger.linear;
 
 import java.util.ArrayList;
 import kante.Zweikante;
-import koerper.kubus.Kubus;
-import punkt.Dreipunkt;
-import punktkoerper.Punktkoerper;
-import punktkoerper.kubus.Punktkubus;
-import vektor.Dreivektor;
+import punkt.Zweipunkt;
 import welt.kante.Zweikantewelt;
-import welt.punktkoerper.Punktkoerperwelt;
-import verleger.schief.Schiefverleger;
 
 /*
   javac -d classes $(find src -name '*.java') \
@@ -19,26 +13,23 @@ import verleger.schief.Schiefverleger;
 public class Main {
     public static void main(String[] args) {
 
-	// Mache eine dreidimensionale Punktkörperwelt.
-	// Diese Welt enthält einen Kubus auf der Stelle (100,100,100).
-	
-	Kubus k = new Kubus(50);
-	Dreipunkt p = new Dreipunkt(100,100,100);
-	Punktkubus pk = new Punktkubus(k, p);
-	ArrayList<Punktkoerper> pkl = new ArrayList<Punktkoerper>();
-	pkl.add(pk);
-	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
+	// Mache eine einfache Welt mit zwei Kanten.
+	Zweikante zka = new Zweikante(new Zweipunkt(30,30),
+				      new Zweipunkt(500,500));
 
-	// Der Verleger, der eine zweidimensionale Welt aufbaut.
-	Dreivektor d = new Dreivektor(1,1,-1);
-	Schiefverleger sv = new Schiefverleger(d);
+	Zweikante zkb = new Zweikante(new Zweipunkt(200,20),
+				      new Zweipunkt(500,100));
+	
+	ArrayList<Zweikante> zkl = new ArrayList<Zweikante>();
+	zkl.add(zka);
+	zkl.add(zkb);
+
+	// Mache die zweidimensionale Kantenwelt.
+	Zweikantewelt zkw = new Zweikantewelt(zkl);
 
 	// Der Verleger, der die Welt linear umwandelt.
 	Linearverleger lv = new Linearverleger(1.0, 1.0, 1.0, 1.0);
-
-	// Benutzen die zwei Verleger.
-	Zweikantewelt zkw = sv.verlegenWelt(pkw);
-
+	
 	// Wir brauchen nicht, eine ganze neue Zweikantewelt zu
 	// machen. Die ursprüngliche ist inhaltlich verarbeitet.
 	lv.verlegenWelt(zkw);
