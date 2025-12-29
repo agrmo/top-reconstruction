@@ -5,7 +5,6 @@ import javax.swing.JFrame;
 import welt.kante.Zweikantewelt;
 import punkt.Zweipunkt;
 import kante.Zweikante;
-import java.awt.Color;
 
 /*
   javac -d classes $(find src -name '*.java')	\
@@ -16,8 +15,6 @@ public class Main {
     
     public static void main(String[] args){
 	JFrame frame = new JFrame();
-	frame.getContentPane().setBackground(Color.BLACK);
-	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
 
