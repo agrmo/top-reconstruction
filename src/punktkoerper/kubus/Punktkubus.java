@@ -12,13 +12,10 @@ public class Punktkubus extends Punktkoerper {
 
     // Dieser Kubus.
     public Kubus kubus;
-
-    // Der Ort dieses Körpers
-    public Dreipunkt punkt;
     
     public Punktkubus(Kubus k, Dreipunkt p) {
-	this.kubus = k;
 	this.punkt = p;
+	this.kubus = k;
     }
 
     public Dreikante[] nehmeKanten() {
@@ -34,5 +31,13 @@ public class Punktkubus extends Punktkoerper {
 	// Ganz schwer zu verstehen ist, ob ich erlaubt bin, die
 	// ursprüngliche Daten des Körpers zu verändern. Welche
 	// Variablen sind veränderlich, welche unveränderlich?
+    }
+
+    public String drucken() {
+	StringBuilder sb = new StringBuilder();
+	sb.append("Punktkubus:\n");
+	sb.append(this.punkt.drucken());
+	sb.append(this.kubus.drucken());
+	return sb.toString();
     }
 }

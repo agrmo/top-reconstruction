@@ -16,10 +16,8 @@ public class Schiefverleger {
     // Die Verlegungszahl.
     public double a;
 
-    // Der Verleger braucht nur einen Vektor, der eine
-    // Verlegungsrichtung zeigt.
-    public Schiefverleger(double aEin) {
-	this.a = aEin;
+    public Schiefverleger(double a) {
+	this.a = a;
     }
 
     // ein: Dreipunkt

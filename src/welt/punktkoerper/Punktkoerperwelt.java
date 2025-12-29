@@ -25,14 +25,12 @@ import welt.Welt;
   Die Punktkoerperwelt zeigt uns nicht, wie sie aussieht!
 */
 public class Punktkoerperwelt extends Welt {
-    ArrayList<Punktkoerper> punktkoerperliste;
 
     // Wir sind mit eine Reihe von Körpern gegeben. Ein Körper kennt
     // nur seine Eigenschaften. Die Punktkoerperwelt versteht nicht nur
     // seine Eigenschaften, sondern auch wo er steht.
-    //
-    // Aber, diese Durchführung kennt die Ausrichtung der Körper
-    // nicht. 
+    public ArrayList<Punktkoerper> punktkoerperliste;
+
     public Punktkoerperwelt(ArrayList<Punktkoerper> pkl) {
 	this.punktkoerperliste = pkl;
     }
@@ -54,5 +52,18 @@ public class Punktkoerperwelt extends Welt {
 	}
 
 	return wk;
+    }
+
+    // ein:
+    // aus: String
+    // Drucken die Stellen und Körper dieser Welt.
+    public String drucken() {
+	StringBuilder sb = new StringBuilder();
+	
+	for (int i = 0; i < this.punktkoerperliste.size(); i++) {
+	    sb.append(this.punktkoerperliste.get(i).drucken());
+	}
+
+	return sb.toString();
     }
 }

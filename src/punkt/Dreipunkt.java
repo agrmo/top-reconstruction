@@ -18,13 +18,14 @@ public class Dreipunkt {
 
     public String drucken() {
 	StringBuilder sb = new StringBuilder();
+	sb.append("Punkt: ");
 	sb.append("[");
 	sb.append(this.eins);
 	sb.append(",");
 	sb.append(this.zwei);
 	sb.append(",");
 	sb.append(this.drei);
-	sb.append("]");
+	sb.append("]\n");
 	return sb.toString();
     }
 

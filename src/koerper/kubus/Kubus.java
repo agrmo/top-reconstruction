@@ -63,4 +63,13 @@ public class Kubus extends Koerper {
 	
 	return kanten;
     }
+
+    // aus: String
+    public String drucken() {
+	StringBuilder sb = new StringBuilder();
+	sb.append("Kubus: ");
+	sb.append(this.laenge);
+	sb.append("\n");
+	return sb.toString();
+    }
 }
