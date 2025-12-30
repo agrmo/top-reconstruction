@@ -2,9 +2,11 @@ package spiel.linearschiefverschieben;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import sicht.linearschiefverschieben.Linearschiefverschiebensicht;
-import spiel.Spiel;
 import punkt.Dreipunkt;
+import sicht.linearschief.Linearschiefsicht;
+import spiel.Spiel;
+import verleger.verschieben.Verschiebenverleger;
+import welt.punktkoerper.Punktkoerperwelt;
 
 // Ein Spiel, in dem wir die Welt und Sichten verändern können.
 //
@@ -14,12 +16,15 @@ import punkt.Dreipunkt;
 // Hoch Runter Links Rechts: Verschieben die Sicht verhältnismäßig.
 public class Linearschiefverschiebenspiel extends Spiel {
 
-    Linearschiefverschiebensicht lss;
+    Linearschiefsicht lss;
+    Punktkoerperwelt pkw;
 
-    public Linearschiefverschiebenspiel(Linearschiefverschiebensicht l) {
+    public Linearschiefverschiebenspiel(Linearschiefsicht l,
+					Punktkoerperwelt pkw) {
 	this.lss = l;
+	this.pkw = pkw;
     }
-
+    
     public void handelnMouseDrucken(MouseEvent me) {
 	// nichts
     }
@@ -42,6 +47,12 @@ public class Linearschiefverschiebenspiel extends Spiel {
     public void handelnMouse(MouseEvent me) {
 	// nichts
 	
+    }
+
+    // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy, dz.
+    void verschieben(int dx, int dy, int dz) {
+	Dreipunkt verschiebenpunkt = new Dreipunkt(dx,dy,dz);
+	Verschiebenverleger.verlegenWelt(this.pkw, verschiebenpunkt);
     }
     
     public void handelnTastatur(KeyEvent ke) {
@@ -68,23 +79,19 @@ public class Linearschiefverschiebenspiel extends Spiel {
 		veraendert = true;
 		
 	    } else if (kc == 't') {
-		Dreipunkt vp = new Dreipunkt(0,-1,0);
-		this.lss.verschiebenpunkt = (vp);
+		this.verschieben(0,-10,0);
 		veraendert = true;
 
 	    } else if (kc == 'g') {
-		Dreipunkt vp = new Dreipunkt(0,1,0);
-		this.lss.verschiebenpunkt = (vp);
+		this.verschieben(0,10,0);
 		veraendert = true;
 		
 	    } else if (kc == 'f') {
-		Dreipunkt vp = new Dreipunkt(-1,0,0);
-		this.lss.verschiebenpunkt = (vp);
+		this.verschieben(-10,0,0);
 		veraendert = true;
 		
 	    } else if (kc == 'h') {
-		Dreipunkt vp = new Dreipunkt(1,0,0);
-		this.lss.verschiebenpunkt = (vp);
+		this.verschieben(10,0,0);
 		veraendert = true;
 		
 	    } else if (kc == '[') {
@@ -94,7 +101,6 @@ public class Linearschiefverschiebenspiel extends Spiel {
 	    } else if (kc == ']') {
 		this.lss.sv.a -= 0.1;
 		veraendert = true;
-		
 	    }
         }
 

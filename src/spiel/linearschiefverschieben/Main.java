@@ -10,7 +10,7 @@ import punkt.Dreipunkt;
 import punkt.Dreipunkt;
 import punktkoerper.Punktkoerper;
 import punktkoerper.kubus.Punktkubus;
-import sicht.linearschiefverschieben.Linearschiefverschiebensicht;
+import sicht.linearschief.Linearschiefsicht;
 import welt.punktkoerper.Punktkoerperwelt;
 
 /*
@@ -35,14 +35,13 @@ public class Main {
 	double bx = 0.0;
 	double my = 1.0;
 	double by = 0.0;
-	Dreipunkt vp = new Dreipunkt(0,0,0);
-	Linearschiefverschiebensicht lss = new Linearschiefverschiebensicht(pkw,
-									    a,
-									    mx, bx, my, by,
-									    vp);
+	Linearschiefsicht lss = new Linearschiefsicht(pkw,
+						      a,
+						      mx, bx, my, by);
 	
 	// Mache das Spiel.
-	Linearschiefverschiebenspiel s = new Linearschiefverschiebenspiel(lss);
+	Linearschiefverschiebenspiel s = new Linearschiefverschiebenspiel(lss,
+									  pkw);
 
 	// Mache die Handlungen.
 	SpielMouseHandlung mh = new SpielMouseHandlung(s);

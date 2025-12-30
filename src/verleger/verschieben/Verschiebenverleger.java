@@ -21,8 +21,8 @@ public class Verschiebenverleger {
     // Verlegen die dreidimensionale Punktkörperwelt zu einer
     // zweidimensionale Zweikantewelt.
     //
-    public void verlegenWelt(Punktkoerperwelt pkw,
-			     Dreipunkt verschiebenpunkt) {
+    public static void verlegenWelt(Punktkoerperwelt pkw,
+				    Dreipunkt verschiebenpunkt) {
 
 	ArrayList<Punktkoerper> pkl = pkw.punktkoerperliste;
 
