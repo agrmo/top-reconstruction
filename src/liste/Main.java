@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 /*
-javac -d classes $(find src -name '*.java') && java -cp classes liste.Main
+javac -d classes $(find src -type f) && java -cp classes liste.Main
 */
 
 public class Main {

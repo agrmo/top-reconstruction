@@ -4,7 +4,7 @@ import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
 
 /*
-  javac -d classes $(find src -name '*.java') && java -cp classes graph.rechnen.hatkante.Main
+  javac -d classes $(find src -type f) && java -cp classes graph.rechnen.hatkante.Main
  */
 
 public class Main {

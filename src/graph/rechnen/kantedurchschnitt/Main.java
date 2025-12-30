@@ -2,13 +2,13 @@ package graph.rechnen.kantedurchschnitt;
 
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
-import graph.druck.tgf.GraphTGF;
+import druck.graph.tgf.GraphTGF;
 import graph.zufalls.Zufallsgraph;
 import graph.rechnen.kanteverteilung.Kanteverteilung;
 import liste.Liste;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes graph.rechnen.kantedurchschnitt.Main
 */
 

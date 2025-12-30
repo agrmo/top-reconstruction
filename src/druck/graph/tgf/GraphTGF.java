@@ -1,30 +1,47 @@
-package graph.druck.csv;
+package druck.graph.tgf;
  
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
 
-// Ein Object, die eine CSV-Datei erzeugen kann, die einen Graph
+// Ein Object, die eine TGF-Datei erzeugen kann, die einen Graph
 // verköpert. Deutlich nutzbar für das Programm Gephi.
-public class GraphCSV {
-    public GraphCSV() {
+// Beispiel:
+// Knoten: 0,1,2
+// Kanten: [0,1],[0,2]
+// Ergibt die TGF-Datei:
+// 1
+// 2
+// #
+// 0 1
+// 0 2
+public class GraphTGF {
+    public GraphTGF() {
 	
     }
 
-    // Mache eine CSV-Datei des Graphen, gegeben eine
+    // Mache eine TGF-Datei des Graphen, gegeben eine
     // Nachbarschaftsliste.
-    public String macheGepheiCSV(Nachbarschaftsliste nl) {
+    public String macheGepheiTGF(Nachbarschaftsliste nl) {
 	StringBuilder sb = new StringBuilder();
 
-	// Am Anfang gibt es immer die Zeile
-	sb.append("Source,Target\n");
-
-	// Wir brauchen nicht zu prüfen, ob es eine Kante gibt.
-	// Jede echte Kante ist genau in der Liste gegeben.
+	// Zuerst drucken wir alle die Knoten.
+	
 	for (int i = 0; i < nl.n.size(); i++) {
+	    sb.append(i);
+	    sb.append("\n");
+	}
+
+ 	// Eine TGF-Datei hat eine Grenze zwischen Knoten und Kanten.
+	sb.append("#\n");
+
+	// Zunächst drucken wir alle die Kanten.
+	
+	for (int i = 0; i < nl.n.size(); i++) {
+	    // sbKnoten: Die Kanten eines einzelnen Knoten
 	    StringBuilder sbKnoten = new StringBuilder();
 	    for (int j = 0; j < nl.n.get(i).size(); j++) {
 		sbKnoten.append(i);
-		sbKnoten.append(",");
+		sbKnoten.append(" ");
 		sbKnoten.append(nl.n.get(i).get(j));
 		sbKnoten.append("\n");
 	    }
@@ -39,11 +56,19 @@ public class GraphCSV {
 
     // Mache eine CSV-Datei des Graphen, gegeben eine
     // Nachbarschaftsmatrix.
-    public String macheGepheiCSV(Nachbarschaftsmatrix n) {
+    public String macheGepheiTGF(Nachbarschaftsmatrix n) {
 	StringBuilder sb = new StringBuilder();
 
-	// Am Anfang gibt es immer
-	sb.append("Source,Target\n");
+	// Zuerst drucken wir alle die Knoten.
+	for (int i = 0; i < n.n.length; i++) {
+	    sb.append(i);
+	    sb.append("\n");
+	}
+	
+	// Zunächst drucken wir die Grenze zwischen Knoten und Kanten.
+	sb.append("#\n");
+
+	// Zunächst drucken wir alle die Kanten.
 
 	for (int i = 0; i < n.n.length; i++) {
 	    // String für einen Knoten
@@ -51,7 +76,7 @@ public class GraphCSV {
 	    for (int j = 0; j < n.n.length; j++) {
 		if (n.n[i][j] == true) {
 		    sbKnoten.append(i);
-		    sbKnoten.append(",");
+		    sbKnoten.append(" ");
 		    sbKnoten.append(j);
 		    sbKnoten.append("\n");
 		}

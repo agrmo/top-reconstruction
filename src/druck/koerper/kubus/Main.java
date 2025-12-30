@@ -3,7 +3,7 @@ package druck.koerper.kubus;
 import koerper.kubus.Kubus;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes druck.koerper.kubus.Main
 */
 

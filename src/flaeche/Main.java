@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import punkt.Dreipunkt;
 
 /*
-  javac -d classes $(find src -name '*.java') && java -cp classes flaeche.Main
+  javac -d classes $(find src -type f) && java -cp classes flaeche.Main
 */
 
 public class Main {

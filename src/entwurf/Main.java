@@ -1,7 +1,7 @@
 package entwurf;
 
 /*
-  javac -d classes $(find src -name '*.java') && java -cp classes entwurf.Main
+  javac -d classes $(find src -type f) && java -cp classes entwurf.Main
 */
 
 public class Main {

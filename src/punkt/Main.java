@@ -3,7 +3,7 @@ package punkt;
 import druck.punkt.Punktdrucker;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes punkt.Main
 */
 

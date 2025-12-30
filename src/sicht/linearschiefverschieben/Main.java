@@ -11,7 +11,7 @@ import punkt.Dreipunkt;
 import welt.punktkoerper.Punktkoerperwelt;
 
 /*
-  javac -d classes $(find src -name '*.java')	\
+  javac -d classes $(find src -type f)	\
   && java -cp classes sicht.linearschiefverschieben.Main
 */
 

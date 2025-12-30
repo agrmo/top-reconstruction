@@ -4,7 +4,7 @@ import punkt.Dreipunkt;
 import kante.Dreikante;
 
 /*
-  javac -d classes $(find src -name '*.java')
+  javac -d classes $(find src -type f)
   java -cp classes koerper.kubus.Main
 */
 

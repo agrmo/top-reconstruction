@@ -1,12 +1,12 @@
 package graph.rechnen.kanteverteilung;
 
 import graph.Nachbarschaftsliste;
-import graph.druck.tgf.GraphTGF;
+import druck.graph.tgf.GraphTGF;
 import graph.zufalls.Zufallsgraph;
 import liste.Liste;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes graph.rechnen.kanteverteilung.Main
 */
 

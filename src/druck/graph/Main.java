@@ -1,10 +1,10 @@
-package graph.druck;
+package druck.graph;
 
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
 
 /*
-  javac -d classes $(find src -name '*.java') && java -cp classes graph.druck.Main
+  javac -d classes $(find src -type f) && java -cp classes druck.graph.Main
 */
 
 public class Main {

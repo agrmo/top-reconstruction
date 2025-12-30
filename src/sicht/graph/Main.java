@@ -6,7 +6,7 @@ import welt.graph.Graphwelt;
 import welt.graph.macher.gitter.Gitter;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes sicht.graph.Main
 */
 

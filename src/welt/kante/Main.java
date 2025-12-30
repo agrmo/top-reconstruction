@@ -5,7 +5,7 @@ import kante.Zweikante;
 import punkt.Zweipunkt;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes welt.kante.Main
 */
 

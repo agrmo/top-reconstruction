@@ -7,7 +7,7 @@ import vektor.Dreivektor;
 import vektor.Zweivektor;
 
 /*
-  javac -d classes $(find src -name '*.java')	\
+  javac -d classes $(find src -type f)	\
   && java -cp classes ecke.Main
 */
 

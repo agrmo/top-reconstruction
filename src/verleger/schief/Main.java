@@ -10,7 +10,7 @@ import welt.kante.Zweikantewelt;
 import welt.punktkoerper.Punktkoerperwelt;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes verleger.schief.Main
 */
 

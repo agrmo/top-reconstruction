@@ -4,7 +4,7 @@ import vektor.Zweivektor;
 import vektor.Dreivektor;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes basis.Main
 */
 

@@ -3,7 +3,7 @@ package welt.graph;
 import graph.Nachbarschaftsliste;
 
 /*
-  javac -d classes $(find src -name '*.java')
+  javac -d classes $(find src -type f)
   java -cp classes welt.graph.Main
 */
 

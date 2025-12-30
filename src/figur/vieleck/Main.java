@@ -5,7 +5,7 @@ import punkt.Zweipunkt;
 import druck.figur.vieleck.Vieleckdrucker;
 
 /*
-  javac -d classes $(find src -name '*.java') && java -cp classes figur.vieleck.Main;
+  javac -d classes $(find src -type f) && java -cp classes figur.vieleck.Main;
 */
 
 public class Main {

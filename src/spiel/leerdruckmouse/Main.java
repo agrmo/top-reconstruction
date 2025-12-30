@@ -4,7 +4,7 @@ import handlung.Handlung;
 import handlung.DruckMouseHandlung;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes spiel.leerdruckmouse.Main
 */
 

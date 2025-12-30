@@ -1,4 +1,4 @@
-package graph.druck;
+package druck.graph;
 
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;

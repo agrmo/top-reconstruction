@@ -2,14 +2,14 @@ package graph.zufalls;
 
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
-import graph.druck.GraphText;
-import graph.druck.csv.GraphCSV;
-import graph.druck.tgf.GraphTGF;
+import druck.graph.GraphText;
+import druck.graph.csv.GraphCSV;
+import druck.graph.tgf.GraphTGF;
 import graph.rechnen.kanteverteilung.Kanteverteilung;
 import liste.Liste;
 
 /*
-  javac -d classes $(find src -name '*.java') && java -cp classes graph.zufalls.Main
+  javac -d classes $(find src -type f) && java -cp classes graph.zufalls.Main
 */
 
 public class Main {

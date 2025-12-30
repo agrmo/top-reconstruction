@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-  javac -d classes $(find src -name '*.java') && java -cp classes zahl.Main
+  javac -d classes $(find src -type f) && java -cp classes zahl.Main
 */
 
 public class Main {

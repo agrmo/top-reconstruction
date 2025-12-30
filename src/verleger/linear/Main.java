@@ -6,7 +6,7 @@ import punkt.Zweipunkt;
 import welt.kante.Zweikantewelt;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes verleger.linear.Main
 */
 

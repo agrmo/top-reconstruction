@@ -5,7 +5,7 @@ import graph.Nachbarschaftsliste;
 import welt.graph.macher.gitter.Gitter;
 
 /*
-  javac -d classes $(find src -name '*.java')		\
+  javac -d classes $(find src -type f)		\
   && java -cp classes welt.graph.macher.gitter.Main
 */
 

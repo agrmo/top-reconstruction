@@ -5,7 +5,7 @@ import liste.Liste;
 import java.util.Arrays;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes graph.rechnen.tiefensuche.Main
 */
 

@@ -3,11 +3,11 @@ package graph.rechnen.teile;
 import java.util.ArrayList;
 import graph.Nachbarschaftsliste;
 import graph.zufalls.Zufallsgraph;
-import graph.druck.tgf.GraphTGF;
+import druck.graph.tgf.GraphTGF;
 import liste.Liste;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes graph.rechnen.teile.Main
 */
 

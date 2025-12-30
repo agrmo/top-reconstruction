@@ -3,7 +3,7 @@ package sicht.leer;
 import javax.swing.JFrame;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes sicht.leer.Main
 */
 

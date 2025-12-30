@@ -6,7 +6,7 @@ import basis.Zweibasis;
 import basis.Dreibasis;
 
 /*
-  javac -d classes $(find src -name '*.java') \
+  javac -d classes $(find src -type f) \
   && java -cp classes druck.basis.Main
 */
 

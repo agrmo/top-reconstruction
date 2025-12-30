@@ -3,15 +3,11 @@ package graph;
 import java.util.List;
 import java.util.ArrayList;
 
-/*
-  Ein Knoten ist eine ganze Zahl.
-  Eine Kantenliste ist eine Liste von Knoten.
-  Ein Graph ist eine Liste von Kantenliste.
- */
-
-/*
-  Eine ungerichtete Nachbarschaftsliste.
-*/
+// Ein Knoten ist eine ganze Zahl.
+// Eine Kantenliste ist eine Liste von Knoten.
+// Ein Graph ist eine Liste von Kantenliste.
+// 
+// Eine ungerichtete Nachbarschaftsliste.
 public class Nachbarschaftsliste {
 
     /*

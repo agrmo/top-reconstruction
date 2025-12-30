@@ -5,7 +5,7 @@ import punkt.Zweipunkt;
 import druck.kante.Kantedrucker;
 
 /*
-  javac -d classes $(find src -name '*.java')	\
+  javac -d classes $(find src -type f)	\
   && java -cp classes kante.Main
 */
 

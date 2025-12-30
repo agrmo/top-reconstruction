@@ -7,7 +7,7 @@ import punkt.Zweipunkt;
 import kante.Zweikante;
 
 /*
-  javac -d classes $(find src -name '*.java')	\
+  javac -d classes $(find src -type f)	\
   && java -cp classes sicht.kante.Main
 */
 

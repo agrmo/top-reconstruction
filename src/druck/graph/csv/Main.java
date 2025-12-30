@@ -1,24 +1,23 @@
-package graph.druck.tgf;
+package druck.graph.csv;
 
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
-import graph.zufalls.Zufallsgraph;
 
 /*
-  javac -d classes $(find src -name '*.java') && java -cp classes graph.druck.tgf.Main
+  javac -d classes $(find src -type f) && java -cp classes druck.graph.csv.Main
 */
 
 public class Main {
     public static void main(String[] args) {
 
-	GraphTGF gtgf = new GraphTGF();
+	GraphCSV gc = new GraphCSV();
 	
- 	int[][] paare = {{1,2},{2,0}};
+	int[][] paare = {{1,2},{2,0}};
 	int groese = 3;
 	Nachbarschaftsmatrix nm = new Nachbarschaftsmatrix(paare, groese);
-	System.out.println(gtgf.macheGepheiTGF(nm));
+	System.out.println(gc.macheGepheiCSV(nm));
 
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, groese);
-	System.out.println(gtgf.macheGepheiTGF(nl));
+	System.out.println(gc.macheGepheiCSV(nl));
     }
 }
