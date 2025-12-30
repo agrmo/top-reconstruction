@@ -1,38 +1,122 @@
 package spiel.linearschief;
 
-import javax.swing.JFrame;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 import sicht.linearschief.Linearschiefsicht;
-import handlung.Linearschieftastaturhandlung;
-import welt.punktkoerper.Punktkoerperwelt;
-import java.awt.Color;
+import spiel.Spiel;
 
 // Ein Spiel mit einer Linearschiefsicht einer Punktkörperwelt mit der
 // Tastatur.  Ein linearschiefes Spiel enthält eine Handlung, eine
 // Punktkörperwelt und eine Sicht. Die Handlung enthält auch die
 // Sicht, weil sie beiden sie wiederdarstellen sollen.
-public class Linearschiefspiel {
+public class Linearschiefspiel extends Spiel {
 
-    public Linearschiefspiel() {
+    // Wir werden diese Sicht nach einer Berührung der Tastatur
+    // anrufen, um sie sich wieder darzustellen.
+    Linearschiefsicht lss;
+
+    public Linearschiefspiel(Linearschiefsicht l) {
+	this.lss = l;
     }
 
-    public void spielen(Punktkoerperwelt pkw,
-			double a,
-			double mx, double bx, double my, double by) {
+    public void handelnMouseDrucken(MouseEvent me) {
+	// nichts
+    }
+    
+    public void handelnMouseLösen(MouseEvent me) {
+	// nichts
 	
-	JFrame frame = new JFrame();
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setSize(1200, 600);
-	frame.getContentPane().setBackground(Color.BLACK);
-	frame.getContentPane().setForeground(Color.WHITE);
-
-	Linearschiefsicht ps = new Linearschiefsicht(pkw,
-						     a,
-						     mx, bx, my, by);
+    }
+    
+    public void handelnMouseEin(MouseEvent me) {
+	// nichts
 	
-	Linearschieftastaturhandlung h = new Linearschieftastaturhandlung(ps);
+    }
+    
+    public void handelnMouseAus(MouseEvent me) {
+	// nichts
+	
+    }
+    
+    public void handelnMouse(MouseEvent me) {
+	// nichts
+	
+    }
+    
+    public void handelnTastatur(KeyEvent ke) {
+	int id = ke.getID();
+	boolean veraendert = false;
+	
+        if (id == KeyEvent.KEY_TYPED) {
+            char kc = ke.getKeyChar();
 
-	frame.add(ps);
-	frame.addKeyListener(h);
-	frame.setVisible(true);	
+	    if (kc == 'w') {
+		this.lss.lv.by -= 10.0;
+		veraendert = true;
+		
+	    } else if (kc == 's') {
+		this.lss.lv.by += 10.0;
+		veraendert = true;
+		
+	    } else if (kc == 'a') {
+		this.lss.lv.bx -= 10.0;
+		veraendert = true;
+		
+	    } else if (kc == 'd') {
+		this.lss.lv.bx += 10.0;
+		veraendert = true;
+		
+	    } else if (kc == '[') {
+		this.lss.sv.a += 0.1;
+		veraendert = true;
+		
+	    } else if (kc == ']') {
+		this.lss.sv.a -= 0.1;
+		veraendert = true;
+		
+	    }
+        }
+
+	if (veraendert == true) {
+	    this.lss.repaint();
+	}
+    }
+    
+    public void handelnTastaturDrucken(KeyEvent ke) {
+	int keyCode = ke.getKeyCode();
+	boolean veraendert = false;
+	    
+	if (keyCode == 38) {
+	    // Hoch getastet.
+		
+	    this.lss.lv.my *= 0.9;
+	    veraendert = true;
+		
+	} else if (keyCode == 40) {
+	    // Runter getastet.
+		
+	    this.lss.lv.my *= 1.1;
+	    veraendert = true;
+		
+	} else if (keyCode == 37) {
+	    // Links getastet.
+
+	    this.lss.lv.mx *= 0.9;
+	    veraendert = true;
+		
+	} else if (keyCode == 39) {
+	    // Rechts getastet.
+		
+	    this.lss.lv.mx *= 1.1;
+	    veraendert = true;
+	}
+
+	if (veraendert == true) {
+	    this.lss.repaint();
+	}
+    }
+    
+    public void handelnTastaturLösen(KeyEvent ke) {
+	// nichts
     }
 }
