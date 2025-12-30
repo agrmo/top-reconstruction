@@ -1,5 +1,8 @@
 package spiel;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+
 // Ein Spiel ist die Zusammenklebung von einer Sicht und einer
 // Handlung.
 //
@@ -7,14 +10,13 @@ package spiel;
 // fängt an, die Sicht darzustellen. Die Handlung gibt manchmal noch
 // mal der Sicht den Befehl, wieder darzustellen.
 public abstract class Spiel {
-
-    // Handeln ein Ereignis von der Tastatur?
-    // public void handelnTastatur() {
-	
-    // }
-
-    // Handeln ein Ereignis von der Mouse?
-    // public void handelnMouse() {
-	
-    //}
+    
+    public abstract void handelnMouseDrucken(MouseEvent me);
+    public abstract void handelnMouseLösen(MouseEvent me);
+    public abstract void handelnMouseEin(MouseEvent me);
+    public abstract void handelnMouseAus(MouseEvent me);
+    public abstract void handelnMouse(MouseEvent me);
+    public abstract void handelnTastatur(KeyEvent ke);
+    public abstract void handelnTastaturDrucken(KeyEvent ke);
+    public abstract void handelnTastaturLösen(KeyEvent ke);
 }

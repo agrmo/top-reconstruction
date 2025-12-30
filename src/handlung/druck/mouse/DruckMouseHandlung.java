@@ -1,10 +1,10 @@
-package handlung;
+package handlung.druck.mouse;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 // Nur zu drucken.
-public class DruckMouseHandlung extends Handlung implements MouseListener {
+public class DruckMouseHandlung implements MouseListener {
 
     public void mousePressed(MouseEvent e) {
 	drucken("Mouse gedruckt; # von Berührungen: "

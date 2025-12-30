@@ -1,10 +1,10 @@
-package handlung;
+package handlung.druck.tastatur;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 // Nur zu drucken.
-public class DruckTastaturHandlung extends Handlung implements KeyListener {
+public class DruckTastaturHandlung implements KeyListener {
 
     public void keyTyped(KeyEvent e) {
         drucken("Getastet: ", e);
