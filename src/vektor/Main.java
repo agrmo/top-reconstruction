@@ -1,7 +1,10 @@
 package vektor;
 
+import druck.vektor.Vektordrucker;
+
 /*
-  javac -d classes src/vektor/* && java -cp classes vektor.Main
+  javac -d classes $(find src -type f) \
+  && java -cp classes vektor.Main
 */
 
 public class Main {
@@ -10,22 +13,22 @@ public class Main {
 	Dreivektor vb = new Dreivektor(1,1,1);
 	va.addiere(vb);
 
-	System.out.println(va.drucken());
-	System.out.println(vb.drucken());
+	System.out.println(Vektordrucker.drucken(va));
+	System.out.println(Vektordrucker.drucken(vb));
 
 	vb.punkt(new Dreivektor(0,5,0));
 	
-	System.out.println(vb.drucken());
+	System.out.println(Vektordrucker.drucken(vb));
     }
     
     static void beispielZwei() {
 	Zweivektor va = new Zweivektor(1,2);
 	Zweivektor vb = new Zweivektor(1,1);
 	va.addiere(vb);
-	System.out.println(va.drucken());
-	System.out.println(vb.drucken());
+	System.out.println(Vektordrucker.drucken(va));
+	System.out.println(Vektordrucker.drucken(vb));
 	va.punkt(new Zweivektor(0,5));
-	System.out.println(va.drucken());
+	System.out.println(Vektordrucker.drucken(va));
     }
     
     public static void main(String[] args) {

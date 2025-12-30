@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import kante.Zweikante;
 import punkt.Zweipunkt;
 import welt.kante.Zweikantewelt;
-import druck.welt.Weltdrucker;
 
 /*
   javac -d classes $(find src -name '*.java') \
@@ -34,8 +33,5 @@ public class Main {
 	// Wir brauchen nicht, eine ganze neue Zweikantewelt zu
 	// machen. Die ursprüngliche ist inhaltlich verarbeitet.
 	lv.verlegenWelt(zkw);
-
-	// Fertig. Drucken sie.
-	System.out.println(Weltdrucker.drucken(zkw));
     }
 }

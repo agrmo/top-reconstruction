@@ -16,19 +16,6 @@ public class Dreipunkt {
 	this.drei = d;
     }
 
-    public String drucken() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("Punkt: ");
-	sb.append("[");
-	sb.append(this.eins);
-	sb.append(",");
-	sb.append(this.zwei);
-	sb.append(",");
-	sb.append(this.drei);
-	sb.append("]\n");
-	return sb.toString();
-    }
-
     // Addiere die Zahlen zu diesem Dreipunkt p.
     public void addieren(Dreipunkt p) {
 	this.eins += p.eins;

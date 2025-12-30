@@ -24,8 +24,6 @@ public class Main {
 	vl.add(vb);
 
 	Zweiecke e = new Zweiecke(p, vl);
-
-	System.out.println(e.kanten.get(0).drucken());
     }
 
     static void beispielZwei() {
@@ -41,8 +39,6 @@ public class Main {
 	vl.add(vc);
 
 	Dreiecke e = new Dreiecke(p, vl);
-
-	System.out.println(e.kanten.get(0).drucken());	
     }
     
     public static void main(String[] args) {

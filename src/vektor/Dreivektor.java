@@ -59,16 +59,4 @@ public class Dreivektor {
 	this.zwei = this.zwei * v.zwei;
 	this.drei = this.drei * v.drei;
     }
-
-    public String drucken() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("[");
-	sb.append(this.eins);
-	sb.append(",");
-	sb.append(this.zwei);
-	sb.append(",");
-	sb.append(this.drei);
-	sb.append("]");
-	return sb.toString();
-    }
 }

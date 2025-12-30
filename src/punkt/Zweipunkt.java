@@ -14,16 +14,6 @@ public class Zweipunkt {
 	this.zwei = z;
     }
 
-    public String drucken() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("[");
-	sb.append(this.eins);
-	sb.append(",");
-	sb.append(this.zwei);
-	sb.append("]");
-	return sb.toString();
-    }
-
     // Addiere die Zahlen zu diesem Zweipunkt p.
     public void addieren(Zweipunkt p) {
 	this.eins += p.eins;

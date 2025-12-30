@@ -52,14 +52,4 @@ public class Zweivektor {
 	this.eins = this.eins * v.eins;
 	this.zwei = this.zwei * v.zwei;
     }
-
-    public String drucken() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("[");
-	sb.append(this.eins);
-	sb.append(",");
-	sb.append(this.zwei);
-	sb.append("]");
-	return sb.toString();
-    }
 }

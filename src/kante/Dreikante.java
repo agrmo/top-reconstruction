@@ -19,16 +19,6 @@ public class Dreikante {
 	this.bis = b;
     }
 
-    public String drucken() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("Von ");
-	sb.append(this.von.drucken());
-	sb.append(" bis ");
-	sb.append(this.bis.drucken());
-
-	return sb.toString();
-    }
-
     public void addieren(Dreipunkt p) {
 	this.von.addieren(p);
 	this.bis.addieren(p);

@@ -8,7 +8,6 @@ import punktkoerper.Punktkoerper;
 import punktkoerper.kubus.Punktkubus;
 import welt.kante.Zweikantewelt;
 import welt.punktkoerper.Punktkoerperwelt;
-import druck.welt.Weltdrucker;
 
 /*
   javac -d classes $(find src -name '*.java') \
@@ -32,8 +31,5 @@ public class Main {
 
 	// Benutzen den Verleger.
 	Zweikantewelt zkw = sv.verlegenWelt(pkw);
-
-	// Drucken sie.
-	System.out.println(Weltdrucker.drucken(zkw));
     }
 }
