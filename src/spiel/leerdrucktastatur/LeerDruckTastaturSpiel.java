@@ -5,18 +5,16 @@ import handlung.DruckTastaturHandlung;
 
 // Ein Spiel mit der Tastatur ohne Darstellungen.
 public class LeerDruckTastaturSpiel {
-    DruckTastaturHandlung handlung;
 
-    public LeerDruckTastaturSpiel(DruckTastaturHandlung h) {
-	this.handlung = h;
+    public LeerDruckTastaturSpiel() {
     }
 
-    public void spielen() {
+    public void spielen(DruckTastaturHandlung h) {
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
 
-	frame.addKeyListener(this.handlung);
+	frame.addKeyListener(h);
 
 	frame.setVisible(true);	
     }

@@ -6,18 +6,17 @@ import handlung.Handlung;
 
 // Ein Spiel mit der Mouse ohne Darstellungen.
 public class LeerDruckMouseSpiel {
-    DruckMouseHandlung handlung;
 
-    public LeerDruckMouseSpiel(DruckMouseHandlung h) {
-	this.handlung = h;
+    public LeerDruckMouseSpiel() {
+	
     }
 
-    public void spielen() {
+    public void spielen(DruckMouseHandlung h) {
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
 
-	frame.addMouseListener(this.handlung);
+	frame.addMouseListener(h);
 
 	frame.setVisible(true);	
     }

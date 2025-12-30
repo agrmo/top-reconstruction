@@ -11,7 +11,7 @@ import handlung.DruckMouseHandlung;
 public class Main{
     public static void main(String[] args) {
 	DruckMouseHandlung h = new DruckMouseHandlung();
-	LeerDruckMouseSpiel s = new LeerDruckMouseSpiel(h);
-	s.spielen();
+	LeerDruckMouseSpiel s = new LeerDruckMouseSpiel();
+	s.spielen(h);
     }
 }

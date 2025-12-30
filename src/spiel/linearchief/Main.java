@@ -12,7 +12,7 @@ import welt.punktkoerper.Punktkoerperwelt;
   && java -cp classes spiel.linearschief.Main
 */
 
-public class Main{
+public class Main {
     public static void main(String[] args) {
 	
 	// Wir müssen nur eine Welt aufbauen und in das Spiel

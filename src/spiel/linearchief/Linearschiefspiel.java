@@ -10,7 +10,6 @@ import java.awt.Color;
 // Tastatur.  Ein linearschiefes Spiel enthält eine Handlung, eine
 // Punktkörperwelt und eine Sicht. Die Handlung enthält auch die
 // Sicht, weil sie beiden sie wiederdarstellen sollen.
-//
 public class Linearschiefspiel {
 
     public Linearschiefspiel() {
