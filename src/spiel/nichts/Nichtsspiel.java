@@ -1,14 +1,18 @@
-package spiel.leer;
+package spiel.nichts;
 
 import spiel.Spiel;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
 // Ein Spiel, das nichts tut.
-public class Leerspiel extends Spiel {
+public class Nichtsspiel extends Spiel {
 
-    public Leerspiel() {
+    public Nichtsspiel() {
 	
+    }
+
+    void nichts() {
+	System.out.println("Ich tue nichts.");
     }
 
     public void handelnMouseDrucken(MouseEvent me) {
@@ -48,9 +52,5 @@ public class Leerspiel extends Spiel {
     
     public void handelnTastaturLösen(KeyEvent ke) {
 	nichts();
-    }
-
-    void nichts() {
-	System.out.println("Ich tue nichts.");
     }
 }
