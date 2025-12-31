@@ -6,26 +6,26 @@ import punkt.Dreipunkt;
 import sicht.linearschief.Linearschiefsicht;
 import spiel.Spiel;
 import verleger.verschieben.Verschiebenverleger;
-import welt.punktkoerper.Punktkoerperwelt;
+import welt.koerper.Koerperwelt;
 
 // Ein Spiel, in dem wir die Welt und Sichten verändern können.
 //
 // WSAD: Verschieben die Sicht mit Hilfe der Linearschiefsicht
-// TGFH: Verschieben die ursprüngliche Punkten der Punktkörperwelt.
+// TGFH: Verschieben die ursprüngliche Punkten der Körperwelt.
 // []: Verschieben die Tiefe der Schiefsicht.
 // Hoch Runter Links Rechts: Verschieben die Sicht verhältnismäßig.
 // Mouse: Drucken und verschieben die Körper.
 public class Linearschiefverschiebenspiel extends Spiel {
 
     Linearschiefsicht lss;
-    Punktkoerperwelt pkw;
+    Koerperwelt kw;
     int mouseAnfangX;
     int mouseAnfangY;
 
     public Linearschiefverschiebenspiel(Linearschiefsicht l,
-					Punktkoerperwelt pkw) {
+					Koerperwelt kw) {
 	this.lss = l;
-	this.pkw = pkw;
+	this.kw = kw;
 
 	this.mouseAnfangX = 0;
 	this.mouseAnfangY = 0;
@@ -74,7 +74,7 @@ public class Linearschiefverschiebenspiel extends Spiel {
     // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy, dz.
     void verschieben(int dx, int dy, int dz) {
 	Dreipunkt verschiebenpunkt = new Dreipunkt(dx,dy,dz);
-	Verschiebenverleger.verlegenWelt(this.pkw, verschiebenpunkt);
+	Verschiebenverleger.verlegenWelt(this.kw, verschiebenpunkt);
     }
     
     public void handelnTastatur(KeyEvent ke) {

@@ -5,18 +5,18 @@ import javax.swing.JComponent;
 import sicht.kante.Kantesicht;
 import verleger.schief.Schiefverleger;
 import welt.kante.Zweikantewelt;
-import welt.punktkoerper.Punktkoerperwelt;
+import welt.koerper.Koerperwelt;
 
-// Eine Sicht, die eine dreidimensionale Punktkörperwelt einnimmt.
+// Eine Sicht, die eine dreidimensionale Körperwelt einnimmt.
 // Sie wandelt die Körperwelt mit nur einer Verlegung: einer schiefen
 // Verlegung. Sie gibt am Ende eine Zweikantewelt ab.
 public class Schiefsicht extends JComponent {
 
-    Punktkoerperwelt pkw;
+    Koerperwelt kw;
     Schiefverleger sv;
 
-    public Schiefsicht(Punktkoerperwelt pkw, double a) {
-	this.pkw = pkw;
+    public Schiefsicht(Koerperwelt kw, double a) {
+	this.kw = kw;
 	this.sv = new Schiefverleger(a);
     }
 
@@ -25,7 +25,7 @@ public class Schiefsicht extends JComponent {
 	super.paintComponent(g);
 	
 	// Benutzen die Verleger.
-	Zweikantewelt zkw = this.sv.verlegenWelt(this.pkw);
+	Zweikantewelt zkw = this.sv.verlegenWelt(this.kw);
 
 	// Wir haben schon eine Sicht, die die Zweikantewelt
 	// darstellen kann. Benutzen sie.

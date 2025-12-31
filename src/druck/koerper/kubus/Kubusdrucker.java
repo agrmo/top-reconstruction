@@ -1,7 +1,6 @@
 package druck.koerper.kubus;
 
 import koerper.kubus.Kubus;
-import punktkoerper.Punktkoerper;
 import druck.punkt.Punktdrucker;
 import druck.kante.Kantedrucker;
 import punkt.Dreipunkt;

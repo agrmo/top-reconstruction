@@ -3,10 +3,8 @@ package verleger.verschieben;
 import java.util.ArrayList;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
-import punktkoerper.Punktkoerper;
-import punktkoerper.kubus.Punktkubus;
-import welt.kante.Zweikantewelt;
-import welt.punktkoerper.Punktkoerperwelt;
+import koerper.Koerper;
+import welt.koerper.Koerperwelt;
 
 /*
   javac -d classes $(find src -type f) \
@@ -16,20 +14,21 @@ import welt.punktkoerper.Punktkoerperwelt;
 public class Main {
     public static void main(String[] args) {
 
-	// Mache eine dreidimensionale Punktkörperwelt.
+	// Mache eine dreidimensionale Körperwelt.
 	// Diese Welt enthält einen Kubus auf der Stelle (100,100,100).
 	Kubus k = new Kubus(50);
-	Dreipunkt p = new Dreipunkt(100,100,100);
-	Punktkubus pk = new Punktkubus(k, p);
-	ArrayList<Punktkoerper> pkl = new ArrayList<Punktkoerper>();
-	pkl.add(pk);
-	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
+	Dreipunkt o = new Dreipunkt(100,100,100);
+	ArrayList<Koerper> kl = new ArrayList<Koerper>();
+	kl.add(k);
+	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
+	ol.add(o);
+	Koerperwelt kw = new Koerperwelt(kl, ol);
 
-	// Der Verleger, der eine zweidimensionale Welt aufbauen wird.
+	// Der Verleger.
 	Verschiebenverleger vv = new Verschiebenverleger();
 	Dreipunkt vp = new Dreipunkt(100,100,100);
 
 	// Benutzen den Verleger.
-	vv.verlegenWelt(pkw, vp);
+	vv.verlegenWelt(kw, vp);
     }
 }

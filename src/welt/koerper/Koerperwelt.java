@@ -33,8 +33,8 @@ public class Koerperwelt {
     public ArrayList<Koerper> koerperliste;
     public ArrayList<Dreipunkt> ortliste;
 
-    public Koerperwelt(ArrayList<Koerper> pkl, ArrayList<Dreipunkt> ol) {
-	this.koerperliste = pkl;
+    public Koerperwelt(ArrayList<Koerper> kl, ArrayList<Dreipunkt> ol) {
+	this.koerperliste = kl;
 	this.ortliste = ol;
     }
 

@@ -5,9 +5,9 @@ import java.awt.event.MouseEvent;
 import sicht.linearschief.Linearschiefsicht;
 import spiel.Spiel;
 
-// Ein Spiel mit einer Linearschiefsicht einer Punktkörperwelt mit der
+// Ein Spiel mit einer Linearschiefsicht einer Körperwelt mit der
 // Tastatur.  Ein linearschiefes Spiel enthält eine Handlung, eine
-// Punktkörperwelt und eine Sicht. Die Handlung enthält auch die
+// Körperwelt und eine Sicht. Die Handlung enthält auch die
 // Sicht, weil sie beiden sie wiederdarstellen sollen.
 public class Linearschiefspiel extends Spiel {
 

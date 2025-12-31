@@ -6,9 +6,9 @@ import kante.Zweikante;
 import punkt.Dreipunkt;
 import punkt.Zweipunkt;
 import welt.kante.Zweikantewelt;
-import welt.punktkoerper.Punktkoerperwelt;
+import welt.koerper.Koerperwelt;
 
-// Ein Schiefverleger nimmt eine dreidimensionale Punktkörperwelt zu
+// Ein Schiefverleger nimmt eine dreidimensionale Körperwelt zu
 // einer zweidimensionalen Kantenwelt mit Hilfe einer orthographischen
 // Verlegung.
 public class Schiefverleger {
@@ -25,7 +25,7 @@ public class Schiefverleger {
     //
     // Verlege den gegeben dreidimensionalen Punkt auf einer
     // Sichtfläche, um einen zweidimensionalen Punkt zu bekommen.
-    public Zweipunkt verlegenPunkt(Dreipunkt p) {
+    Zweipunkt verlegenPunkt(Dreipunkt p) {
 	int ausX = p.eins + ((int) (this.a * p.drei));
 	int ausY = p.zwei + ((int) (this.a * p.drei));
 
@@ -39,7 +39,7 @@ public class Schiefverleger {
     //
     // Verlege die gegebene dreidimensionale Kante auf einer
     // Sichtfläche, um eine zweidimensionale Kante zu bekommen.
-    public Zweikante verlegenKante(Dreikante k) {
+    Zweikante verlegenKante(Dreikante k) {
 	Zweipunkt verlegterPunktVon = this.verlegenPunkt(k.von);
 	Zweipunkt verlegterPunktBis = this.verlegenPunkt(k.bis);
 
@@ -50,17 +50,17 @@ public class Schiefverleger {
 	return zk;
     }
 
-    // ein: Punktkörperwelt
-    // pkw: Die dreidimensionale Welt mit den ursprünglichen Daten.
+    // ein: Körperwelt
+    // kw: Die dreidimensionale Welt mit den ursprünglichen Daten.
     //
-    // Verlegen die dreidimensionale Punktkörperwelt zu einer
+    // Verlegen die dreidimensionale Körperwelt zu einer
     // zweidimensionale Zweikantewelt.
     //
-    public Zweikantewelt verlegenWelt(Punktkoerperwelt pkw) {
+    public Zweikantewelt verlegenWelt(Koerperwelt kw) {
 
 	// Liste von Dreikanten. Nehme die Kanten der
 	// dreidimensionalen Welt.
-	ArrayList<Dreikante> dkl = pkw.nehmeKanten();
+	ArrayList<Dreikante> dkl = kw.nehmeKanten();
 
 	// Liste von Zweikanten. Mache die Kanten für eine
 	// zweidimensionale Zweikantewelt.

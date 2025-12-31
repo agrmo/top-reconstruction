@@ -5,11 +5,10 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
-import punktkoerper.Punktkoerper;
-import punktkoerper.kubus.Punktkubus;
+import koerper.Koerper;
 import sicht.parallel.Parallelsicht;
 import spiel.Spiel;
-import welt.punktkoerper.Punktkoerperwelt;
+import welt.koerper.Koerperwelt;
 
 /*
   javac -d classes $(find src -type f) \
@@ -40,13 +39,14 @@ public class Main {
 	// Mache die Welt.
 	Kubus k = new Kubus(50);
 	Dreipunkt p = new Dreipunkt(100, 100, 100);
-	Punktkubus pk = new Punktkubus(k, p);
-	ArrayList<Punktkoerper> pkl = new ArrayList<Punktkoerper>();
-	pkl.add(pk);
-	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
+	ArrayList<Koerper> kl = new ArrayList<Koerper>();
+	kl.add(k);
+	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
+	ol.add(p);
+	Koerperwelt kw = new Koerperwelt(kl, ol);
 
 	// Mache die Sicht.
-	Parallelsicht ps = new Parallelsicht(pkw);
+	Parallelsicht ps = new Parallelsicht(kw);
 
 	// Mache das Spiel.
 	Spiel s = new Nichtsspiel();

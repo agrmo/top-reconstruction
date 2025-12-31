@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
-import punktkoerper.Punktkoerper;
-import punktkoerper.kubus.Punktkubus;
+import koerper.Koerper;
 import welt.kante.Zweikantewelt;
-import welt.punktkoerper.Punktkoerperwelt;
+import welt.koerper.Koerperwelt;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -24,10 +23,11 @@ public class Main {
 	// Mache die Welt.
 	Kubus k = new Kubus(10);
 	Dreipunkt p = new Dreipunkt(20,20,20);
-	Punktkubus pk = new Punktkubus(k, p);
-	ArrayList<Punktkoerper> pkl = new ArrayList<Punktkoerper>();
-	pkl.add(pk);
-	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
+	ArrayList<Koerper> kl = new ArrayList<Koerper>();
+	kl.add(k);
+	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
+	ol.add(p);
+	Koerperwelt kw = new Koerperwelt(kl, ol);
 
 	// Der Verleger vergrößert die stellen der Kanten. Nicht nur
 	// wird den Abstand zwischen den Punkten vergrößert, sondern
@@ -42,7 +42,7 @@ public class Main {
 	// brauchen, um die dreidimensionale Daten in einem
 	// zweidimensionalen Bildschirm darzustellen.
 	//
-	// pkw: Die ursprüngliche dreidimensionale Daten
+	// kw: Die ursprüngliche dreidimensionale Daten
 	// 1.0: Die Zahl, die der schiefe Verleger benutzt
 	// 2.0 0.0 1.0 0.0: Die Zahlen, die der lineare Verleger benutzt
 	//   2.0: Multipliziere alle x Stellen mit 2.0
@@ -50,7 +50,7 @@ public class Main {
 	//   1.0: Multipliziere alle y Stellen mit 1.0
 	//   0.0: Addiere 0.0 zu alle y Stellen
 	//
-	Linearschiefsicht lss = new Linearschiefsicht(pkw,
+	Linearschiefsicht lss = new Linearschiefsicht(kw,
 						      1.0,
 						      2.0, 0.0, 1.0, 0.0);
 	

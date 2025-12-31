@@ -1,11 +1,9 @@
 package verleger.verschieben;
 
-import java.util.ArrayList;
 import punkt.Dreipunkt;
-import welt.punktkoerper.Punktkoerperwelt;
-import punktkoerper.Punktkoerper;
+import welt.koerper.Koerperwelt;
 
-// Ein Zentrumverleger nimmt eine dreidimensionale Punktkörperwelt zu
+// Ein Verschiebenverleger nimmt eine dreidimensionale Körperwelt zu
 // der gleichen Art, aber mit alle Punkten verschoben.
 public class Verschiebenverleger {
 
@@ -13,23 +11,18 @@ public class Verschiebenverleger {
 	
     }
 
-    // ein:
-    // pkw: Punktkörperwelt
-    // pv: Dreipunkt zum Verschieben
-    // aus: 
+    // ein: Körperwelt, Dreipunkt
     //
-    // Verlegen die dreidimensionale Punktkörperwelt zu einer
+    // Verlegen die dreidimensionale Körperwelt zu einer
     // zweidimensionale Zweikantewelt.
     //
-    public static void verlegenWelt(Punktkoerperwelt pkw,
+    public static void verlegenWelt(Koerperwelt kw,
 				    Dreipunkt verschiebenpunkt) {
 
-	ArrayList<Punktkoerper> pkl = pkw.punktkoerperliste;
-
-	for (int i = 0; i < pkl.size(); i++) {
-	    Punktkoerper pk = pkl.get(i);
-	    Dreipunkt p = pk.punkt;
-	    p.addieren(verschiebenpunkt);
+	// Für jeden Orten der Welt, addiere zu ihm den Verschiebenpunkt.
+	
+	for (int i = 0; i < kw.ortliste.size(); i++) {
+	    kw.ortliste.get(i).addieren(verschiebenpunkt);
 	}
     }
 }

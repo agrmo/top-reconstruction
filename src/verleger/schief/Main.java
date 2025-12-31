@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import kante.Zweikante;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
-import punktkoerper.Punktkoerper;
-import punktkoerper.kubus.Punktkubus;
+import koerper.Koerper;
 import welt.kante.Zweikantewelt;
-import welt.punktkoerper.Punktkoerperwelt;
+import welt.koerper.Koerperwelt;
 
 /*
   javac -d classes $(find src -type f) \
@@ -17,19 +16,20 @@ import welt.punktkoerper.Punktkoerperwelt;
 public class Main {
     public static void main(String[] args) {
 
-	// Mache eine dreidimensionale Punktkörperwelt.
+	// Mache eine dreidimensionale Körperwelt.
 	// Diese Welt enthält einen Kubus auf der Stelle (100,100,100).
 	Kubus k = new Kubus(50);
 	Dreipunkt p = new Dreipunkt(100,100,100);
-	Punktkubus pk = new Punktkubus(k, p);
-	ArrayList<Punktkoerper> pkl = new ArrayList<Punktkoerper>();
-	pkl.add(pk);
-	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
+	ArrayList<Koerper> kl = new ArrayList<Koerper>();
+	kl.add(k);
+	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
+	ol.add(p);
+	Koerperwelt kw = new Koerperwelt(kl, ol);
 
 	// Der Verleger, der eine zweidimensionale Welt aufbauen wird.
 	Schiefverleger sv = new Schiefverleger(-1.0);
 
 	// Benutzen den Verleger.
-	Zweikantewelt zkw = sv.verlegenWelt(pkw);
+	Zweikantewelt zkw = sv.verlegenWelt(kw);
     }
 }

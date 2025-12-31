@@ -6,9 +6,9 @@ import sicht.kante.Kantesicht;
 import verleger.linear.Linearverleger;
 import verleger.schief.Schiefverleger;
 import welt.kante.Zweikantewelt;
-import welt.punktkoerper.Punktkoerperwelt;
+import welt.koerper.Koerperwelt;
 
-// Eine Sicht, die eine dreidimensionale Punktkörperwelt einnimmt.
+// Eine Sicht, die eine dreidimensionale Körperwelt einnimmt.
 // Sie wandelt die Körperwelt mit zwei Verlegungen: einer schiefen
 // Verlegung, und einer linearen Verlegung. Sie gibt am Ende eine
 // Zweikantewelt ab.
@@ -21,19 +21,19 @@ import welt.punktkoerper.Punktkoerperwelt;
 //
 public class Linearschiefsicht extends JComponent {
 
-    public Punktkoerperwelt pkw;
+    public Koerperwelt kw;
     public Schiefverleger sv;
     public Linearverleger lv;
 
-    public Linearschiefsicht(Punktkoerperwelt pkw,
+    public Linearschiefsicht(Koerperwelt kw,
 			     double a,
 			     double mx, double bx, double my, double by) {
-	this.pkw = pkw;
+	this.kw = kw;
 	this.sv = new Schiefverleger(a);
 	this.lv = new Linearverleger(mx, bx, my, by);
     }
 
-    // Stellen die Punktkörperwelt mit Hilfe zwier Verleger dar:
+    // Stellen die Körperwelt mit Hilfe zwier Verleger dar:
     //
     // 1. Schiefverleger: Er nimmt die Welt von einer
     // dreidimensionalen zu einer zweidimensionalen.
@@ -44,7 +44,7 @@ public class Linearschiefsicht extends JComponent {
 	super.paintComponent(g);
 	
 	// Benutzen die Verleger.
-	Zweikantewelt zkw = this.sv.verlegenWelt(this.pkw);
+	Zweikantewelt zkw = this.sv.verlegenWelt(this.kw);
 	lv.verlegenWelt(zkw);
 
 	// Wir haben schon eine Sicht, die die Zweikantewelt

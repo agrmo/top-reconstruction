@@ -5,10 +5,9 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
-import punktkoerper.Punktkoerper;
-import punktkoerper.kubus.Punktkubus;
+import koerper.Koerper;
 import sicht.linearschief.Linearschiefsicht;
-import welt.punktkoerper.Punktkoerperwelt;
+import welt.koerper.Koerperwelt;
 import handlung.spiel.SpielHandlung;
 
 /*
@@ -22,20 +21,21 @@ public class Main {
 	// Mache die Welt.
 	Kubus k = new Kubus(50);
 	Dreipunkt p = new Dreipunkt(100,100,100);
-	Punktkubus pk = new Punktkubus(k, p);
-	ArrayList<Punktkoerper> pkl = new ArrayList<Punktkoerper>();
-	pkl.add(pk);
-	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
-
+	ArrayList<Koerper> kl = new ArrayList<Koerper>();
+	kl.add(k);
+	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
+	ol.add(p);
+	Koerperwelt kw = new Koerperwelt(kl, ol);
+	
 	// Mache die Sicht.
 	double a = 1.0;
 	double mx = 1.0;
 	double bx = 0.0;
 	double my = 1.0;
 	double by = 0.0;
-	Linearschiefsicht lss = new Linearschiefsicht(pkw,
-						     a,
-						     mx, bx, my, by);
+	Linearschiefsicht lss = new Linearschiefsicht(kw,
+						      a,
+						      mx, bx, my, by);
 	
 	// Mache das Spiel.
 	Linearschiefspiel s = new Linearschiefspiel(lss);

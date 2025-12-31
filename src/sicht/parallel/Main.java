@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
-import punktkoerper.Punktkoerper;
-import punktkoerper.kubus.Punktkubus;
-import welt.punktkoerper.Punktkoerperwelt;
+import koerper.Koerper;
+import welt.koerper.Koerperwelt;
 
 /*
   javac -d classes $(find src -type f) \
@@ -20,16 +19,17 @@ public class Main {
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
 
-	// Mache eine Punktkörperwelt.
+	// Mache eine Körperwelt.
 	Kubus k = new Kubus(50);
 	Dreipunkt p = new Dreipunkt(100,100,100);
-	Punktkubus pk = new Punktkubus(k, p);
-	ArrayList<Punktkoerper> pkl = new ArrayList<Punktkoerper>();
-	pkl.add(pk);
-	Punktkoerperwelt pkw = new Punktkoerperwelt(pkl);
+	ArrayList<Koerper> kl = new ArrayList<Koerper>();
+	kl.add(k);
+	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
+	ol.add(p);
+	Koerperwelt kw = new Koerperwelt(kl, ol);
 	
 	// Mache eine Parallelsicht.
-	Parallelsicht ps = new Parallelsicht(pkw);
+	Parallelsicht ps = new Parallelsicht(kw);
 
 	// Geben wir die Sicht zu Java, um darzustellen.
 	frame.add(ps);
