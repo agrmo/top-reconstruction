@@ -59,10 +59,6 @@ public class Linearschiefverschiebenspiel extends Spiel {
     
     public void handelnMouseSchleifen(MouseEvent me) {
 
-	// Nicht nötig?
-	// if (this.mouseAnfangX > 0 && this.mouseAnfangY > 0) {	    
-	// }
-	
 	int jetztX = me.getX();
 	int jetztY = me.getY();
 	int unterschiedX = jetztX - this.mouseAnfangX;

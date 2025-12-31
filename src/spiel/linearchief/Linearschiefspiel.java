@@ -126,6 +126,4 @@ public class Linearschiefspiel extends Spiel {
     public void handelnTastaturLösen(KeyEvent ke) {
 	// nichts
     }
-
-    
 }

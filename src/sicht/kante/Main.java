@@ -14,10 +14,8 @@ import kante.Zweikante;
 public class Main {
     
     public static void main(String[] args){
-	JFrame frame = new JFrame();
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setSize(1200, 600);
-
+	
+	// Mache die zweidimensionale Kantenwelt.
 	Zweikante zka = new Zweikante(new Zweipunkt(30,30),
 				      new Zweipunkt(500,500));
 
@@ -27,14 +25,15 @@ public class Main {
 	ArrayList<Zweikante> zkl = new ArrayList<Zweikante>();
 	zkl.add(zka);
 	zkl.add(zkb);
-
-	// Mache die zweidimensionale Kantenwelt.
 	Zweikantewelt zkw = new Zweikantewelt(zkl);
 	
 	// Mache eine Kantesicht.
 	Kantesicht ks = new Kantesicht(zkw);
 
-	// Geben wir die Sicht zu Java, um darzustellen.
+	// Geh.
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize(1200, 600);
 	frame.add(ks);
 	frame.setVisible(true);
     }

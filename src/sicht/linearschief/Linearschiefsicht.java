@@ -12,6 +12,13 @@ import welt.punktkoerper.Punktkoerperwelt;
 // Sie wandelt die Körperwelt mit zwei Verlegungen: einer schiefen
 // Verlegung, und einer linearen Verlegung. Sie gibt am Ende eine
 // Zweikantewelt ab.
+//
+// a: Die Tiefe der z-Achse.
+//
+// Lineare Funktionen, die die Punkten der Welt verändern:
+// x' = mx * x + bx
+// y' = my * y + by
+//
 public class Linearschiefsicht extends JComponent {
 
     public Punktkoerperwelt pkw;
