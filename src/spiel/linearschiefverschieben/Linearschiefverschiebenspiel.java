@@ -14,26 +14,31 @@ import welt.punktkoerper.Punktkoerperwelt;
 // TGFH: Verschieben die ursprüngliche Punkten der Punktkörperwelt.
 // []: Verschieben die Tiefe der Schiefsicht.
 // Hoch Runter Links Rechts: Verschieben die Sicht verhältnismäßig.
+// Mouse: Drucken und verschieben die Körper.
 public class Linearschiefverschiebenspiel extends Spiel {
 
     Linearschiefsicht lss;
     Punktkoerperwelt pkw;
-    int mouseDruckenX;
-    int mouseDruckenY;
+    int mouseAnfangX;
+    int mouseAnfangY;
 
     public Linearschiefverschiebenspiel(Linearschiefsicht l,
 					Punktkoerperwelt pkw) {
 	this.lss = l;
 	this.pkw = pkw;
+
+	this.mouseAnfangX = 0;
+	this.mouseAnfangY = 0;
     }
     
     public void handelnMouseDrucken(MouseEvent me) {
-	this.mouseDruckenX = me.getX();
-	this.mouseDruckenY = me.getY();
+	this.mouseAnfangX = me.getX();
+	this.mouseAnfangY = me.getY();
     }
     
     public void handelnMouseLösen(MouseEvent me) {
-	// nichts
+	this.mouseAnfangX = 0;
+	this.mouseAnfangY = 0;
     }
     
     public void handelnMouseEin(MouseEvent me) {
@@ -53,7 +58,21 @@ public class Linearschiefverschiebenspiel extends Spiel {
     }
     
     public void handelnMouseSchleifen(MouseEvent me) {
-	// nichts
+
+	// Nicht nötig?
+	// if (this.mouseAnfangX > 0 && this.mouseAnfangY > 0) {	    
+	// }
+	
+	int jetztX = me.getX();
+	int jetztY = me.getY();
+	int unterschiedX = jetztX - this.mouseAnfangX;
+	int unterschiedY = jetztY - this.mouseAnfangY;
+	this.lss.lv.bx += unterschiedX;
+	this.lss.lv.by += unterschiedY;
+	this.mouseAnfangX = jetztX;
+	this.mouseAnfangY = jetztY;
+
+	this.lss.repaint();
     }
 
     // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy, dz.

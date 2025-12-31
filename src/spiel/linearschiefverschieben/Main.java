@@ -54,6 +54,7 @@ public class Main {
 	frame.add(lss);
 	frame.addKeyListener(sh);
 	frame.addMouseListener(sh);
+	frame.addMouseMotionListener(sh);
 	frame.setVisible(true);	
     }
 }
