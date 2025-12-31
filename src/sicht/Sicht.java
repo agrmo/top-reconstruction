@@ -27,5 +27,5 @@ package sicht;
 // Eine Sicht soll so wenig Berechnungen wie möglich machen, sodaß sie
 // die Welt darstellen wird.
 public class Sicht {
-
+    
 }

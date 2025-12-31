@@ -33,8 +33,9 @@ public class Linearverleger {
 	Zweipunkt bis = zk.bis;
 
 	zk.von.eins = (int) (zk.von.eins * mx + bx);
-	zk.bis.eins = (int) (zk.bis.eins * mx + bx);
 	zk.von.zwei = (int) (zk.von.zwei * my + by);
+	
+	zk.bis.eins = (int) (zk.bis.eins * mx + bx);
 	zk.bis.zwei = (int) (zk.bis.zwei * my + by);
     }
 
@@ -46,6 +47,7 @@ public class Linearverleger {
 	ArrayList<Zweikante> zkl = zkw.kantenliste;
 
 	for (int i = 0; i < zkl.size(); i++) {
+
 	    Zweikante zk = zkl.get(i);
 	    this.verlegenKante(zk);
 	    

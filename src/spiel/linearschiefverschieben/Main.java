@@ -4,10 +4,9 @@ import handlung.spiel.SpielHandlung;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import koerper.Koerper;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
-import punkt.Dreipunkt;
-import koerper.Koerper;
 import sicht.linearschief.Linearschiefsicht;
 import welt.koerper.Koerperwelt;
 
