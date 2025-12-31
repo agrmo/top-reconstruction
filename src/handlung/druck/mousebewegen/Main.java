@@ -1,4 +1,4 @@
-package handlung.druck.mouse;
+package handlung.druck.mousebewegen;
 
 import javax.swing.JFrame;
 
@@ -14,9 +14,9 @@ public class Main {
 	frame.setSize(1200, 600);
 
 	// Das Spiel tut nichts. Benutzen irgendeine Handlung.
-	DruckMouseHandlung h = new DruckMouseHandlung();
+	DruckMouseBewegenHandlung h = new DruckMouseBewegenHandlung();
 	
-	frame.addMouseListener(h);
+	frame.addMouseMotionListener(h);
 	frame.setVisible(true);
     }
 }

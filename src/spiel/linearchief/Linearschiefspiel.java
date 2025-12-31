@@ -42,6 +42,13 @@ public class Linearschiefspiel extends Spiel {
 	// nichts
 	
     }
+
+    public void handelnMouseBewegen(MouseEvent me) {
+	// nichts
+    }
+    public void handelnMouseSchleifen(MouseEvent me) {
+	// nichts
+    }
     
     public void handelnTastatur(KeyEvent ke) {
 	int id = ke.getID();
@@ -119,4 +126,6 @@ public class Linearschiefspiel extends Spiel {
     public void handelnTastaturLösen(KeyEvent ke) {
 	// nichts
     }
+
+    
 }

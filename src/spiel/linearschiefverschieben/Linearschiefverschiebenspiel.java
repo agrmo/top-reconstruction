@@ -34,22 +34,26 @@ public class Linearschiefverschiebenspiel extends Spiel {
     
     public void handelnMouseLösen(MouseEvent me) {
 	// nichts
-	
     }
     
     public void handelnMouseEin(MouseEvent me) {
 	// nichts
-	
     }
     
     public void handelnMouseAus(MouseEvent me) {
 	// nichts
-	
     }
     
     public void handelnMouse(MouseEvent me) {
 	// nichts
-	
+    }
+
+    public void handelnMouseBewegen(MouseEvent me) {
+	// nichts
+    }
+    
+    public void handelnMouseSchleifen(MouseEvent me) {
+	// nichts
     }
 
     // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy, dz.

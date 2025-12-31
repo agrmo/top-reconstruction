@@ -9,8 +9,7 @@ import punktkoerper.Punktkoerper;
 import punktkoerper.kubus.Punktkubus;
 import sicht.linearschief.Linearschiefsicht;
 import welt.punktkoerper.Punktkoerperwelt;
-import handlung.spiel.SpielMouseHandlung;
-import handlung.spiel.SpielTastaturHandlung;
+import handlung.spiel.SpielHandlung;
 
 /*
   javac -d classes $(find src -type f) \
@@ -38,13 +37,11 @@ public class Main {
 						     a,
 						     mx, bx, my, by);
 	
-
 	// Mache das Spiel.
 	Linearschiefspiel s = new Linearschiefspiel(lss);
 
 	// Mache die Handlungen.
-	SpielMouseHandlung mh = new SpielMouseHandlung(s);
-	SpielTastaturHandlung th = new SpielTastaturHandlung(s);
+	SpielHandlung sh = new SpielHandlung(s);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -53,8 +50,8 @@ public class Main {
 	frame.getContentPane().setBackground(Color.BLACK);
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.add(lss);
-	frame.addKeyListener(th);
-	frame.addMouseListener(mh);
+	frame.addKeyListener(sh);
+	frame.addMouseListener(sh);
 	frame.setVisible(true);	
     }
 }

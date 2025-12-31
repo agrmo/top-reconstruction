@@ -1,7 +1,6 @@
 package spiel.linearschiefverschieben;
 
-import handlung.spiel.SpielMouseHandlung;
-import handlung.spiel.SpielTastaturHandlung;
+import handlung.spiel.SpielHandlung;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -44,8 +43,7 @@ public class Main {
 									  pkw);
 
 	// Mache die Handlungen.
-	SpielMouseHandlung mh = new SpielMouseHandlung(s);
-	SpielTastaturHandlung th = new SpielTastaturHandlung(s);
+	SpielHandlung sh = new SpielHandlung(s);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -54,8 +52,8 @@ public class Main {
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize(1200, 600);
 	frame.add(lss);
-	frame.addKeyListener(th);
-	frame.addMouseListener(mh);
+	frame.addKeyListener(sh);
+	frame.addMouseListener(sh);
 	frame.setVisible(true);	
     }
 }

@@ -34,6 +34,14 @@ public class Nichtsspiel extends Spiel {
 	nichts();
 	
     }
+
+    public void handelnMouseBewegen(MouseEvent me) {
+	nichts();
+    }
+
+    public void handelnMouseSchleifen(MouseEvent me) {
+	nichts();
+    }
     
     public void handelnMouse(MouseEvent me) {
 	nichts();

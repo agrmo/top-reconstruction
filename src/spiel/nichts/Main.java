@@ -1,7 +1,6 @@
 package spiel.nichts;
 
-import handlung.spiel.SpielMouseHandlung;
-import handlung.spiel.SpielTastaturHandlung;
+import handlung.spiel.SpielHandlung;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import koerper.kubus.Kubus;
@@ -28,11 +27,11 @@ public class Main {
 	Nichtsspiel s = new Nichtsspiel();
 
 	// Die Handlungen werden das Spiel anrufen.
-	SpielMouseHandlung mh = new SpielMouseHandlung(s);
-	SpielTastaturHandlung th = new SpielTastaturHandlung(s);
+	SpielHandlung sh = new SpielHandlung(s);
 
-	frame.addMouseListener(mh);
-	frame.addKeyListener(th);
+	frame.addMouseListener(sh);
+	frame.addMouseMotionListener(sh);
+	frame.addKeyListener(sh);
 	
 	frame.setVisible(true);
     }
@@ -53,20 +52,20 @@ public class Main {
 	Spiel s = new Nichtsspiel();
 
 	// Mache die Handlungen.
-	SpielMouseHandlung mh = new SpielMouseHandlung(s);
-	SpielTastaturHandlung th = new SpielTastaturHandlung(s);
+	SpielHandlung sh = new SpielHandlung(s);
 
 	// Geh.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
 	frame.add(ps);
-	frame.addMouseListener(mh);
-	frame.addKeyListener(th);
+	frame.addMouseListener(sh);
+	frame.addMouseMotionListener(sh);
+	frame.addKeyListener(sh);
 	frame.setVisible(true);	
     }
     
     public static void main(String[] args) {
-	beispielZwei();
+	beispielEins();
     }
 }
