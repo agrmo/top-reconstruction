@@ -17,6 +17,7 @@ public class Main {
 	DruckMouseHandlung h = new DruckMouseHandlung();
 	
 	frame.addMouseListener(h);
+	frame.addMouseMotionListener(h);
 	frame.setVisible(true);
     }
 }

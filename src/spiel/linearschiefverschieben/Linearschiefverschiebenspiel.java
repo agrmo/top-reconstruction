@@ -18,6 +18,8 @@ public class Linearschiefverschiebenspiel extends Spiel {
 
     Linearschiefsicht lss;
     Punktkoerperwelt pkw;
+    int mouseDruckenX;
+    int mouseDruckenY;
 
     public Linearschiefverschiebenspiel(Linearschiefsicht l,
 					Punktkoerperwelt pkw) {
@@ -26,7 +28,8 @@ public class Linearschiefverschiebenspiel extends Spiel {
     }
     
     public void handelnMouseDrucken(MouseEvent me) {
-	// nichts
+	this.mouseDruckenX = me.getX();
+	this.mouseDruckenY = me.getY();
     }
     
     public void handelnMouseLösen(MouseEvent me) {

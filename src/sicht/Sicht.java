@@ -23,6 +23,9 @@ package sicht;
 // kann. Zum Beispiel mit der Mouse oder der Tastatur.
 //
 // Wir müssen entscheiden, wer diese Körper darstellen wird.
+//
+// Eine Sicht soll so wenig Berechnungen wie möglich machen, sodaß sie
+// die Welt darstellen wird.
 public class Sicht {
 
 }
