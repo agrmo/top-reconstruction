@@ -45,21 +45,26 @@ public class Kubus extends Koerper {
     // speichern die Werte der Dreikanten gar nicht! 
     public Dreikante[] nehmeKanten() {
 	Dreikante[] kanten = new Dreikante[12];
+	int l = this.laenge;
 
-	Dreipunkt[] punkten = this.nehmeEcken();
-
-	kanten[0] = new Dreikante(punkten[0], punkten[1]);
-	kanten[1] = new Dreikante(punkten[1], punkten[2]);
-	kanten[2] = new Dreikante(punkten[2], punkten[3]);
-	kanten[3] = new Dreikante(punkten[3], punkten[0]);
-	kanten[4] = new Dreikante(punkten[4], punkten[5]);
-	kanten[5] = new Dreikante(punkten[5], punkten[6]);
-	kanten[6] = new Dreikante(punkten[6], punkten[7]);
-	kanten[7] = new Dreikante(punkten[7], punkten[4]);
-	kanten[8] = new Dreikante(punkten[0], punkten[4]);
-	kanten[9] = new Dreikante(punkten[1], punkten[5]);
-	kanten[10] = new Dreikante(punkten[2], punkten[6]);
-	kanten[11] = new Dreikante(punkten[3], punkten[7]);
+	// Wichtig: Wir können einfach this.nehmeEcken() nehmen, und
+	// dessen Kennzeichen benutzen, aber das macht ein Pointer zum
+	// gleichen Punkt. Das ist innerhalb einer Schleife
+	// gefährlich, weil wir dreimal auf dem gleichen Punkte
+	// durchlaufen würden!
+	
+	kanten[0] = new Dreikante(new Dreipunkt(0,0,0), new Dreipunkt(l,0,0));
+	kanten[1] = new Dreikante(new Dreipunkt(l,0,0), new Dreipunkt(l,0,l));
+	kanten[2] = new Dreikante(new Dreipunkt(l,0,l), new Dreipunkt(0,0,l));
+	kanten[3] = new Dreikante(new Dreipunkt(0,0,l), new Dreipunkt(0,0,0));
+	kanten[4] = new Dreikante(new Dreipunkt(0,l,0), new Dreipunkt(l,l,0));
+	kanten[5] = new Dreikante(new Dreipunkt(l,l,0), new Dreipunkt(l,l,l));
+	kanten[6] = new Dreikante(new Dreipunkt(l,l,l), new Dreipunkt(0,l,l));
+	kanten[7] = new Dreikante(new Dreipunkt(0,l,l), new Dreipunkt(0,l,0));
+	kanten[8] = new Dreikante(new Dreipunkt(0,0,0), new Dreipunkt(0,l,0));
+	kanten[9] = new Dreikante(new Dreipunkt(l,0,0), new Dreipunkt(l,l,0));
+	kanten[10] = new Dreikante(new Dreipunkt(l,0,l), new Dreipunkt(l,l,l));
+	kanten[11] = new Dreikante(new Dreipunkt(0,0,l), new Dreipunkt(0,l,l));
 	
 	return kanten;
     }

@@ -1,5 +1,7 @@
 package koerper;
 
+import kante.Dreikante;
+
 // Ein Körper ist ein dreidimensionaler Ding. Wir können einen Körper
 // mit Hilfe der Sicht betrachten.  Er besitzt verschiedene
 // Eigenschaften, die für ihn wichtig ist, seine Ausdehnung zu
@@ -15,4 +17,9 @@ package koerper;
 //
 public abstract class Koerper {
 
+    // ein:
+    // aus: Liste von Dreikanten
+    // Nehme alle die Dreikanten dieses Körpers. Daher müssen wir über den
+    // Ort des Körpers beachten.
+    public abstract Dreikante[] nehmeKanten();
 }

@@ -21,5 +21,6 @@ public class Dreipunkt {
 	this.eins += p.eins;
 	this.zwei += p.zwei;
 	this.drei += p.drei;
+	// System.out.println(this.eins + " " + this.zwei + " " + this.drei);
     }
 }
