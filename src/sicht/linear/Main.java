@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import punkt.Zweipunkt;
 import kante.Zweikante;
-import welt.kante.Zweikantewelt;
+import welt.zweikante.Zweikantewelt;
 
 /*
   javac -d classes $(find src -type f)	\

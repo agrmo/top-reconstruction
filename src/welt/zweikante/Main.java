@@ -1,4 +1,4 @@
-package welt.kante;
+package welt.zweikante;
 
 import java.util.ArrayList;
 import kante.Zweikante;
@@ -6,7 +6,7 @@ import punkt.Zweipunkt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes welt.kante.Main
+  && java -cp classes welt.zweikante.Main
 */
 
 public class Main {

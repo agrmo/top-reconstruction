@@ -5,7 +5,7 @@ import kante.Dreikante;
 import kante.Zweikante;
 import punkt.Dreipunkt;
 import punkt.Zweipunkt;
-import welt.kante.Zweikantewelt;
+import welt.zweikante.Zweikantewelt;
 import welt.koerper.Koerperwelt;
 
 // Ein Schiefverleger nimmt eine dreidimensionale Körperwelt zu

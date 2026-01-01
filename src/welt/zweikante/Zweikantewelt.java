@@ -1,4 +1,4 @@
-package welt.kante;
+package welt.zweikante;
     
 import java.util.ArrayList;
 import welt.Welt;

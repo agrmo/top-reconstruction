@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import sicht.kante.Kantesicht;
 import verleger.linear.Linearverleger;
-import welt.kante.Zweikantewelt;
+import welt.zweikante.Zweikantewelt;
 
 // Eine Sicht, die eine Kantewelt einnimt. Sie macht eine lineare
 // Abbildung der Kantewelt.

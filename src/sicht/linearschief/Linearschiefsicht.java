@@ -5,7 +5,7 @@ import javax.swing.JComponent;
 import sicht.kante.Kantesicht;
 import verleger.linear.Linearverleger;
 import verleger.schief.Schiefverleger;
-import welt.kante.Zweikantewelt;
+import welt.zweikante.Zweikantewelt;
 import welt.koerper.Koerperwelt;
 
 // Eine Sicht, die eine dreidimensionale Körperwelt einnimmt.

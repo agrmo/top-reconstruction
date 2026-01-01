@@ -5,7 +5,7 @@ import kante.Zweikante;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
 import koerper.Koerper;
-import welt.kante.Zweikantewelt;
+import welt.zweikante.Zweikantewelt;
 import welt.koerper.Koerperwelt;
 
 /*

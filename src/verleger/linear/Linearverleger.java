@@ -3,7 +3,7 @@ package verleger.linear;
 import java.util.ArrayList;
 import punkt.Zweipunkt;
 import kante.Zweikante;
-import welt.kante.Zweikantewelt;
+import welt.zweikante.Zweikantewelt;
 import verdoppler.kante.Kanteverdoppler;
 
 // Dieser Verleger verhält sich wie ein Fenster. Er nimmt eine

@@ -3,7 +3,7 @@ package verleger.linear;
 import java.util.ArrayList;
 import kante.Zweikante;
 import punkt.Zweipunkt;
-import welt.kante.Zweikantewelt;
+import welt.zweikante.Zweikantewelt;
 
 /*
   javac -d classes $(find src -type f) \

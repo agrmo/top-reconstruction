@@ -2,7 +2,7 @@ package sicht.kante;
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import welt.kante.Zweikantewelt;
+import welt.zweikante.Zweikantewelt;
 import punkt.Zweipunkt;
 import kante.Zweikante;
 
