@@ -3,9 +3,10 @@ package figur.dreieck;
 import kante.Zweikante;
 import punkt.Zweipunkt;
 import verdoppler.punkt.Punktverdoppler;
+import figur.Figur;
 
 // Das gleichseitiges Dreieck.
-public class Dreieck {
+public class Dreieck extends Figur {
 
     public int laenge;
 
@@ -20,7 +21,7 @@ public class Dreieck {
 	Zweipunkt[] ecken = new Zweipunkt[3];
 
 	ecken[0] = new Zweipunkt(0,0);
-	ecken[1] = new Zweipunkt(0,this.laenge);
+	ecken[1] = new Zweipunkt(this.laenge,0);
 	ecken[2] = new Zweipunkt(this.laenge / 2.0, (Math.sqrt(3) * this.laenge) / 2.0);
 
 	return ecken;
