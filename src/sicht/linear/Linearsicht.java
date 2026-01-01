@@ -29,8 +29,14 @@ public class Linearsicht extends JComponent {
     // sie sehen können.
     public void paintComponent(Graphics g) {
 	super.paintComponent(g);
-	lv.verlegenWelt(this.kw);
-	Kantesicht ks = new Kantesicht(this.kw);
+
+	// Java wird paintComponent viel Mal anrufen.
+	// Das verschiebt jedes Mal die ursprüngliche Daten.
+	// Leider müssen wir eine ganze neue Welt aufbauen.
+	
+	Zweikantewelt neueZkw = lv.verlegenWelt(this.kw);
+	Kantesicht ks = new Kantesicht(neueZkw);
+	
 	ks.paintComponent(g);
     }
 }

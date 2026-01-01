@@ -45,11 +45,11 @@ public class Linearschiefsicht extends JComponent {
 	
 	// Benutzen die Verleger.
 	Zweikantewelt zkw = this.sv.verlegenWelt(this.kw);
-	lv.verlegenWelt(zkw);
+	Zweikantewelt zkwNeu = lv.verlegenWelt(zkw);
 
 	// Wir haben schon eine Sicht, die die Zweikantewelt
 	// darstellen kann. Benutzen sie.
-	Kantesicht ks = new Kantesicht(zkw);
+	Kantesicht ks = new Kantesicht(zkwNeu);
 	ks.paintComponent(g);
     }
 }

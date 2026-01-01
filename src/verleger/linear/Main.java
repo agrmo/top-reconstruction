@@ -30,8 +30,6 @@ public class Main {
 	// Der Verleger, der die Welt linear umwandelt.
 	Linearverleger lv = new Linearverleger(1.0, 1.0, 1.0, 1.0);
 	
-	// Wir brauchen nicht, eine ganze neue Zweikantewelt zu
-	// machen. Die ursprüngliche ist inhaltlich verarbeitet.
 	lv.verlegenWelt(zkw);
     }
 }

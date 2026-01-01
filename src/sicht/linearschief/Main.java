@@ -2,10 +2,9 @@ package sicht.linearschief;
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import koerper.Koerper;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
-import koerper.Koerper;
-import welt.kante.Zweikantewelt;
 import welt.koerper.Koerperwelt;
 
 /*
@@ -16,10 +15,7 @@ import welt.koerper.Koerperwelt;
 public class Main {
     
     public static void main(String[] args){
-	JFrame frame = new JFrame();
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setSize(1200, 600);
-	
+
 	// Mache die Welt.
 	Kubus k = new Kubus(10);
 	Dreipunkt p = new Dreipunkt(20,20,20);
@@ -55,6 +51,9 @@ public class Main {
 						      2.0, 0.0, 1.0, 0.0);
 	
 	// Stellen die Daten dar.
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize(1200, 600);
 	frame.add(lss);
 	frame.setVisible(true);
     }

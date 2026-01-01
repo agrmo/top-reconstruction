@@ -4,14 +4,17 @@ import java.util.ArrayList;
 import punkt.Zweipunkt;
 import kante.Zweikante;
 import welt.kante.Zweikantewelt;
+import verdoppler.kante.Kanteverdoppler;
 
-// Ein Linearverleger verhält sich wie ein Fenster. Er nimmt eine
+// Dieser Verleger verhält sich wie ein Fenster. Er nimmt eine
 // zweidimensionale Kantewelt und verschiebt alle Punkten wie die
 // gleichung:
 //
 // x' = x * m_x + b_x
 // y' = y * m_y + b_y
 //
+// Schwierig ist die Frage, ob man die Daten verdoppeln soll, oder nur
+// inhaltlich in der gleichen Welt bearbeiten.
 public class Linearverleger {
 
     // Die Verschiebungzahlen.
@@ -40,19 +43,17 @@ public class Linearverleger {
     }
 
     // Verlegen die Welt.
-    // ein:
-    // zkw: Die zweidimensionale Welt mit den ursprünglichen Daten.
-    public void verlegenWelt(Zweikantewelt zkw) {
+    // ein: Zweikantewelt
+    // aus: Zweikantewelt
+    public Zweikantewelt verlegenWelt(Zweikantewelt zkw) {
 
 	ArrayList<Zweikante> zkl = zkw.kantenliste;
+	ArrayList<Zweikante> zklNeu = Kanteverdoppler.verdoppeln(zkl);
 
 	for (int i = 0; i < zkl.size(); i++) {
-
-	    Zweikante zk = zkl.get(i);
-	    this.verlegenKante(zk);
-	    
-	    // Die Kante ist inhaltlich bearbeitet. Wir geben eine
-	    // neue nicht aus.
+	    this.verlegenKante(zklNeu.get(i));
 	}
+
+	return new Zweikantewelt(zklNeu);
     }
 }
