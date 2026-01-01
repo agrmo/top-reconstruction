@@ -19,8 +19,8 @@ public class Kantesicht extends JComponent {
 
     // Die Kanten stehen schon auf einer Ebene. Stellen sie dar.
     public void darstellenKante(Graphics g, Zweikante k) {
-	g.drawLine(k.von.eins, k.von.zwei,
-		   k.bis.eins, k.bis.zwei);
+	g.drawLine((int) k.von.eins, (int) k.von.zwei,
+		   (int) k.bis.eins, (int) k.bis.zwei);
     }
 
     public void paintComponent(Graphics g) {

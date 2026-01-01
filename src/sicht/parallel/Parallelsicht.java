@@ -27,8 +27,8 @@ public class Parallelsicht extends JComponent {
 	ArrayList<Dreikante> wk = this.kw.nehmeKanten();
 
 	for (int i = 0; i < wk.size(); i++) {
-	    g.drawLine(wk.get(i).von.eins, wk.get(i).von.zwei,
-		       wk.get(i).bis.eins, wk.get(i).bis.zwei);
+	    g.drawLine((int) wk.get(i).von.eins, (int) wk.get(i).von.zwei,
+		       (int) wk.get(i).bis.eins, (int) wk.get(i).bis.zwei);
 	}
     }
 }

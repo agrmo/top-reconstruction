@@ -26,8 +26,8 @@ public class Schiefverleger {
     // Verlege den gegeben dreidimensionalen Punkt auf einer
     // Sichtfläche, um einen zweidimensionalen Punkt zu bekommen.
     Zweipunkt verlegenPunkt(Dreipunkt p) {
-	int ausX = p.eins + ((int) (this.a * p.drei));
-	int ausY = p.zwei + ((int) (this.a * p.drei));
+	double ausX = p.eins + (this.a * p.drei);
+	double ausY = p.zwei + (this.a * p.drei);
 
 	Zweipunkt aus = new Zweipunkt(ausX, ausY);
 	

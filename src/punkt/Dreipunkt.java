@@ -6,11 +6,11 @@ package punkt;
 public class Dreipunkt {
 
     // Die Orten dieses Dreipunktes.
-    public int eins;
-    public int zwei;
-    public int drei;
+    public double eins;
+    public double zwei;
+    public double drei;
 
-    public Dreipunkt(int e, int z, int d) {
+    public Dreipunkt(double e, double z, double d) {
 	this.eins = e;
 	this.zwei = z;
 	this.drei = d;
@@ -21,6 +21,5 @@ public class Dreipunkt {
 	this.eins += p.eins;
 	this.zwei += p.zwei;
 	this.drei += p.drei;
-	// System.out.println(this.eins + " " + this.zwei + " " + this.drei);
     }
 }

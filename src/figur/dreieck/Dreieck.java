@@ -1,7 +1,8 @@
 package figur.dreieck;
 
-// Das Dreieck.
+// Das gleichseitiges Dreieck.
 public class Dreieck {
+    
     public Dreieck() {
 	
     }

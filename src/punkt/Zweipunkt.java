@@ -6,10 +6,10 @@ package punkt;
 public class Zweipunkt {
 
     // Die Orten dieses Zweipunktes.
-    public int eins;
-    public int zwei;
+    public double eins;
+    public double zwei;
 
-    public Zweipunkt(int e, int z) {
+    public Zweipunkt(double e, double z) {
 	this.eins = e;
 	this.zwei = z;
     }
