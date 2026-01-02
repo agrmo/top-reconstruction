@@ -5,16 +5,13 @@ import java.awt.event.MouseEvent;
 import punkt.Zweipunkt;
 import sicht.figur.Figursicht;
 import spiel.Spiel;
-import verleger.verschieben.Verschiebenverleger;
+import verschieber.Verschieber;
 import welt.figur.Figurwelt;
 
 // Ein Spiel, in dem wir die Welt und Sichten verändern können.
 //
-// WSAD: Verschieben die Sicht mit Hilfe der Figursicht
 // TGFH: Verschieben die ursprüngliche Punkten der Körperwelt.
-// []: Verschieben die Tiefe der Schiefsicht.
-// Hoch Runter Links Rechts: Verschieben die Sicht verhältnismäßig.
-// Mouse: Drucken und verschieben die Körper.
+// Mouse: Drucken und verschieben gleichzeitig alle Körper.
 public class Figurspiel extends Spiel {
 
     Figursicht fs;
@@ -75,7 +72,7 @@ public class Figurspiel extends Spiel {
     // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy.
     void verschieben(int dx, int dy) {
 	Zweipunkt verschiebenpunkt = new Zweipunkt(dx,dy);
-	Verschiebenverleger.verschiebenWelt(this.fw, verschiebenpunkt);
+	Verschieber.verschieben(this.fw, verschiebenpunkt);
     }
     
     public void handelnTastatur(KeyEvent ke) {

@@ -1,4 +1,4 @@
-package verleger.verschieben;
+package verschieber;
 
 import java.util.ArrayList;
 import koerper.kubus.Kubus;
@@ -8,7 +8,7 @@ import welt.koerper.Koerperwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes verleger.verschieben.Main
+  && java -cp classes verschieber.Main
 */
 
 public class Main {
@@ -24,11 +24,8 @@ public class Main {
 	ol.add(o);
 	Koerperwelt kw = new Koerperwelt(kl, ol);
 
-	// Der Verleger.
-	Verschiebenverleger vv = new Verschiebenverleger();
-	Dreipunkt vp = new Dreipunkt(100,100,100);
-
 	// Benutzen den Verleger.
-	vv.verlegenWelt(kw, vp);
+	Dreipunkt vp = new Dreipunkt(100,100,100);
+	Verschieber.verschieben(kw, vp);
     }
 }

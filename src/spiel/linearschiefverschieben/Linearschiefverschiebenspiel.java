@@ -5,7 +5,7 @@ import java.awt.event.MouseEvent;
 import punkt.Dreipunkt;
 import sicht.linearschief.Linearschiefsicht;
 import spiel.Spiel;
-import verleger.verschieben.Verschiebenverleger;
+import verschieber.Verschieber;
 import welt.koerper.Koerperwelt;
 
 // Ein Spiel, in dem wir die Welt und Sichten verändern können.
@@ -74,7 +74,7 @@ public class Linearschiefverschiebenspiel extends Spiel {
     // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy, dz.
     void verschieben(int dx, int dy, int dz) {
 	Dreipunkt verschiebenpunkt = new Dreipunkt(dx,dy,dz);
-	Verschiebenverleger.verlegenWelt(this.kw, verschiebenpunkt);
+	Verschieber.verschieben(this.kw, verschiebenpunkt);
     }
     
     public void handelnTastatur(KeyEvent ke) {
