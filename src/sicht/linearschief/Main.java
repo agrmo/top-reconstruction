@@ -13,9 +13,8 @@ import welt.koerper.Koerperwelt;
 */
 
 public class Main {
-    
-    public static void main(String[] args){
 
+    static void beispielEins() {
 	// Mache die Welt.
 	Kubus k = new Kubus(10);
 	Dreipunkt p = new Dreipunkt(20,20,20);
@@ -56,6 +55,10 @@ public class Main {
 	frame.setSize(1200, 600);
 	frame.add(lss);
 	frame.setVisible(true);
+    }
+
+    public static void main(String[] args){
+	beispielEins();
     }
 }
 
