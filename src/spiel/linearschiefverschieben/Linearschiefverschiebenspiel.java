@@ -63,8 +63,8 @@ public class Linearschiefverschiebenspiel extends Spiel {
 	int jetztY = me.getY();
 	int unterschiedX = jetztX - this.mouseAnfangX;
 	int unterschiedY = jetztY - this.mouseAnfangY;
-	this.lss.lv.bx += unterschiedX;
-	this.lss.lv.by += unterschiedY;
+	this.lss.bx += unterschiedX;
+	this.lss.by += unterschiedY;
 	this.mouseAnfangX = jetztX;
 	this.mouseAnfangY = jetztY;
 
@@ -85,19 +85,19 @@ public class Linearschiefverschiebenspiel extends Spiel {
             char kc = ke.getKeyChar();
 
 	    if (kc == 'w') {
-		this.lss.lv.by -= 10.0;
+		this.lss.by -= 10.0;
 		veraendert = true;
 		
 	    } else if (kc == 's') {
-		this.lss.lv.by += 10.0;
+		this.lss.by += 10.0;
 		veraendert = true;
 		
 	    } else if (kc == 'a') {
-		this.lss.lv.bx -= 10.0;
+		this.lss.bx -= 10.0;
 		veraendert = true;
 		
 	    } else if (kc == 'd') {
-		this.lss.lv.bx += 10.0;
+		this.lss.bx += 10.0;
 		veraendert = true;
 		
 	    } else if (kc == 't') {
@@ -138,25 +138,25 @@ public class Linearschiefverschiebenspiel extends Spiel {
 	if (keyCode == 38) {
 	    // Hoch getastet.
 		
-	    this.lss.lv.my *= 0.9;
+	    this.lss.my *= 0.9;
 	    veraendert = true;
 		
 	} else if (keyCode == 40) {
 	    // Runter getastet.
 		
-	    this.lss.lv.my *= 1.1;
+	    this.lss.my *= 1.1;
 	    veraendert = true;
 		
 	} else if (keyCode == 37) {
 	    // Links getastet.
 
-	    this.lss.lv.mx *= 0.9;
+	    this.lss.mx *= 0.9;
 	    veraendert = true;
 		
 	} else if (keyCode == 39) {
 	    // Rechts getastet.
 		
-	    this.lss.lv.mx *= 1.1;
+	    this.lss.mx *= 1.1;
 	    veraendert = true;
 	}
 

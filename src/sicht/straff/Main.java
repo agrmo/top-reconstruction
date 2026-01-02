@@ -1,4 +1,4 @@
-package sicht.linear;
+package sicht.straff;
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -8,7 +8,7 @@ import welt.zweikante.Zweikantewelt;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.linear.Main
+  && java -cp classes sicht.straff.Main
 */
 
 public class Main {
@@ -40,20 +40,17 @@ public class Main {
 	// zweidimensionalen Bildschirm darzustellen.
 	//
 	// kw: Die ursprüngliche dreidimensionale Daten
-	// 2.0 0.0 1.0 0.0: Die Zahlen, die der lineare Verleger benutzt
+	// 2.0 1.0: Die Zahlen, die der straffe Verleger benutzt
 	//   2.0: Multipliziere alle x Stellen mit 2.0
-	//   0.0: Addiere 0.0 zu alle x Stellen
 	//   1.0: Multipliziere alle y Stellen mit 1.0
-	//   0.0: Addiere 0.0 zu alle y Stellen
 	//
-	Linearsicht lss = new Linearsicht(zkw,
-					  2.0, 0.0, 1.0, 0.0);
+	Straffsicht ss = new Straffsicht(zkw, 2.0, 1.0);
 	
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
-	frame.add(lss);
+	frame.add(ss);
 	frame.setVisible(true);
     }
 
@@ -70,14 +67,13 @@ public class Main {
 	zkl.add(zkb);
 	Zweikantewelt zkw = new Zweikantewelt(zkl);
 
-	Linearsicht lss = new Linearsicht(zkw,
-					  2.0, 0.0, 1.0, 0.0);
+	Straffsicht ss = new Straffsicht(zkw, 1.0, 1.0);
 	
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
-	frame.add(lss);
+	frame.add(ss);
 	frame.setVisible(true);
     }
     

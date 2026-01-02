@@ -1,4 +1,4 @@
-package verleger.linear;
+package straffer;
 
 import java.util.ArrayList;
 import kante.Zweikante;
@@ -7,7 +7,7 @@ import welt.zweikante.Zweikantewelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes verleger.linear.Main
+  && java -cp classes straffer.Main
 */
 
 public class Main {
@@ -27,9 +27,6 @@ public class Main {
 	// Mache die zweidimensionale Kantenwelt.
 	Zweikantewelt zkw = new Zweikantewelt(zkl);
 
-	// Der Verleger, der die Welt linear umwandelt.
-	Linearverleger lv = new Linearverleger(1.0, 1.0, 1.0, 1.0);
-	
-	lv.verlegenWelt(zkw);
+	Straffer.straffenWelt(zkw, 2.0, 2.0);
     }
 }

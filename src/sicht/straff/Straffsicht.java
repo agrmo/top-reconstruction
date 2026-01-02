@@ -1,0 +1,47 @@
+package sicht.straff;
+
+import java.awt.Graphics;
+import verschieber.Verschieber;
+import javax.swing.JComponent;
+import sicht.kante.Kantesicht;
+import straffer.Straffer;
+import welt.zweikante.Zweikantewelt;
+
+// Eine Sicht, die eine Kantewelt einnimt. Sie macht eine straffe
+// Abbildung der Kantewelt.
+//
+// Die Abbildung, die die Punkten der Welt umwandelt:
+// x' = mx * x
+// y' = my * y
+//
+public class Straffsicht extends JComponent {
+
+    public Zweikantewelt kw;
+
+    public double mx;
+    public double my;
+
+    public Straffsicht(Zweikantewelt kw,
+		       double mx, double my) {
+	this.kw = kw;
+	this.mx = mx;
+	this.my = my;
+    }
+
+    // Stellen die Kantewelt mit Hilfe zwier Verleger dar.  Er verhält
+    // sich wie ein Bildschirm, und verschiebt alle Punkten, sodaß wir
+    // sie sehen können.
+    public void paintComponent(Graphics g) {
+	super.paintComponent(g);
+
+	// Java wird paintComponent viel Mal anrufen.  Das verschiebt
+	// jedes Mal die ursprüngliche Daten.  Leider müssen wir eine
+	// ganze neue Welt aufbauen.
+
+	Zweikantewelt zkwNeu = Straffer.straffenWelt(this.kw, this.mx, this.my);
+	
+	Kantesicht ks = new Kantesicht(zkwNeu);
+	
+	ks.paintComponent(g);
+    }
+}

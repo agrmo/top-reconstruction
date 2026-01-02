@@ -3,7 +3,8 @@ package sicht.linearschief;
 import java.awt.Graphics;
 import javax.swing.JComponent;
 import sicht.kante.Kantesicht;
-import verleger.linear.Linearverleger;
+import straffer.Straffer;
+import verschieber.Verschieber;
 import verleger.schief.Schiefverleger;
 import welt.zweikante.Zweikantewelt;
 import welt.koerper.Koerperwelt;
@@ -23,14 +24,22 @@ public class Linearschiefsicht extends JComponent {
 
     public Koerperwelt kw;
     public Schiefverleger sv;
-    public Linearverleger lv;
+
+    public double mx;
+    public double bx;
+    public double my;
+    public double by;
 
     public Linearschiefsicht(Koerperwelt kw,
 			     double a,
 			     double mx, double bx, double my, double by) {
 	this.kw = kw;
 	this.sv = new Schiefverleger(a);
-	this.lv = new Linearverleger(mx, bx, my, by);
+	
+	this.mx = mx;
+	this.bx = bx;
+	this.my = my;
+	this.by = by;
     }
 
     // Stellen die Körperwelt mit Hilfe zwier Verleger dar:
@@ -38,18 +47,25 @@ public class Linearschiefsicht extends JComponent {
     // 1. Schiefverleger: Er nimmt die Welt von einer
     // dreidimensionalen zu einer zweidimensionalen.
     //
-    // 2. Linearverleger: Er verhält sich wie ein Bildschirm, und
+    // 2. Straffer: Er verhält sich wie ein Bildschirm, und
     // verschiebt alle Punkten, sodaß wir sie sehen können.
     public void paintComponent(Graphics g) {
 	super.paintComponent(g);
 	
-	// Benutzen die Verleger.
+	// Benutzen die Verlegungen.
 	Zweikantewelt zkw = this.sv.verlegenWelt(this.kw);
-	Zweikantewelt zkwNeu = lv.verlegenWelt(zkw);
+
+	// Straffen die Punkten.
+	Zweikantewelt zkwNeu = Straffer.straffenWelt(zkw,
+						     this.mx, this.my);
+	
+	// Verschieben die Punkten.
+	Zweikantewelt zkwNeuNeu = Verschieber.verschieben(zkwNeu,
+							  this.bx, this.by);
 
 	// Wir haben schon eine Sicht, die die Zweikantewelt
 	// darstellen kann. Benutzen sie.
-	Kantesicht ks = new Kantesicht(zkwNeu);
+	Kantesicht ks = new Kantesicht(zkwNeuNeu);
 	ks.paintComponent(g);
     }
 }
