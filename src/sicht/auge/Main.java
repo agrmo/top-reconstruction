@@ -27,6 +27,7 @@ public class Main {
 	ol.add(p);
 	Koerperwelt kw = new Koerperwelt(kl, ol);
 
+	// Mache die Sicht.
 	int breite = 1200;
 	int hoehe = 600;
 	Dreipunkt ap = new Dreipunkt(0,0,0);

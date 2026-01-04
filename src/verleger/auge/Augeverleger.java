@@ -24,7 +24,7 @@ public class Augeverleger {
     // Verlege den gegeben dreidimensionalen Punkt.
     static Zweipunkt verlegen(Dreipunkt p, Dreipunkt augepunkt, int perspektive,
 			      int breite, int hoehe,
-			      int yaw, int pitch, int roll) {
+			      double yaw, double pitch, double roll) {
 
 	Zweipunkt xz = Punktdreher.drehen(new Zweipunkt(p.eins, p.drei), yaw);
 	Zweipunkt yz = Punktdreher.drehen(new Zweipunkt(p.zwei, xz.zwei), pitch);
@@ -52,7 +52,7 @@ public class Augeverleger {
     // Verlege die gegebene dreidimensionale Kante.
     static Zweikante verlegen(Dreikante k, Dreipunkt augepunkt, int perspektive,
 			      int breite, int hoehe,
-			      int yaw, int pitch, int roll) {
+			      double yaw, double pitch, double roll) {
 	
 	Zweipunkt verlegterPunktVon = Augeverleger.verlegen(k.von,
 							    augepunkt, perspektive,
@@ -77,7 +77,7 @@ public class Augeverleger {
     public static Zweikantewelt verlegen(Koerperwelt kw,
 					 Dreipunkt augepunkt, int perspektive,
 					 int breite, int hoehe,
-					 int yaw, int pitch, int roll) {
+					 double yaw, double pitch, double roll) {
 
 	// Liste von Dreikanten. Nehme die Kanten der
 	// dreidimensionalen Welt.

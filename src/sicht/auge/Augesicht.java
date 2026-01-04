@@ -13,19 +13,19 @@ import welt.koerper.Koerperwelt;
 // Verlegung. Sie gibt am Ende eine Zweikantewelt ab.
 public class Augesicht extends JComponent {
 
-    Koerperwelt kw;
-    Dreipunkt augepunkt;
-    int perspektive;
-    int breite;
-    int hoehe;
-    int yaw;
-    int pitch;
-    int roll;
+    public Koerperwelt kw;
+    public Dreipunkt augepunkt;
+    public int breite;
+    public int perspektive;
+    public int hoehe;
+    public double yaw;
+    public double pitch;
+    public double roll;
 
     public Augesicht(Koerperwelt kw,
 		     Dreipunkt augepunkt, int perspektive,
 		     int breite, int hoehe,
-		     int yaw, int pitch, int roll) {
+		     double yaw, double pitch, double roll) {
 
 	this.kw = kw;
 	this.augepunkt = augepunkt;

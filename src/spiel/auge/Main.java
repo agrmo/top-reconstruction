@@ -1,0 +1,57 @@
+package spiel.auge;
+
+import handlung.spiel.SpielHandlung;
+import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import koerper.Koerper;
+import koerper.kubus.Kubus;
+import punkt.Dreipunkt;
+import sicht.auge.Augesicht;
+import welt.koerper.Koerperwelt;
+import java.awt.Toolkit;
+import java.awt.Dimension;
+
+/*
+  javac -d classes $(find src -type f) \
+  && java -cp classes spiel.auge.Main
+*/
+
+public class Main {
+    public static void main(String[] args) {
+	
+	// Mache die Welt.
+	Kubus k = new Kubus(50);
+	Dreipunkt p = new Dreipunkt(0, 0, 0);
+	ArrayList<Koerper> kl = new ArrayList<Koerper>();
+	kl.add(k);
+	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
+	ol.add(p);
+	Koerperwelt kw = new Koerperwelt(kl, ol);
+
+	// Mache die Sicht.
+	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
+	int breite = (int) bildschirm.getWidth();
+	int hoehe = (int) bildschirm.getHeight();
+	Dreipunkt ap = new Dreipunkt(0, 0, 100);
+	Augesicht as = new Augesicht(kw, ap, 500, breite, hoehe, 0.0, 0.0, 0.0);
+	
+	// Mache das Spiel.
+	Augespiel s = new Augespiel(as, kw);
+
+	// Mache die Handlung.
+	SpielHandlung sh = new SpielHandlung(s);
+
+	// Geh.
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.getContentPane().setBackground(Color.BLACK);
+	frame.getContentPane().setForeground(Color.WHITE);
+	frame.setSize(breite, hoehe);
+	frame.add(as);
+	frame.addKeyListener(sh);
+	frame.addMouseListener(sh);
+	frame.addMouseMotionListener(sh);
+	frame.setVisible(true);	
+    }
+}
