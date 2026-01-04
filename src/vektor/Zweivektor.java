@@ -6,15 +6,23 @@ package vektor;
   Ein Zweivektor im Euklidraum.
 
   (Wie berechne ich Zweivektoren im Minkowskiraum?)
+
+  Was ist der Unterschied zweischen der Zweivektor und der Zweipunkt?
+
+  Der Zweipunkt steht immer im euklidischem Raum, dessen Basis gleich
+  mit der Welt ist. Der Zweivektor kann eine andere Basis besitzen,
+  sodaß seine Teile in anderen Richtungen zeigen können.
+
+  Zum Beispiel die Ecke enthält Dreivektoren, um ihre Kante zu zeigen.
  */
 public class Zweivektor {
     public int eins;
     public int zwei;
 
     // ein: ganze Zahl, ganze Zahl
-    public Zweivektor(int eins, int zwei) {
-	this.eins = eins;
-	this.zwei = zwei;
+    public Zweivektor(int e, int z) {
+	this.eins = e;
+	this.zwei = z;
     }
 
     // ein:

@@ -23,11 +23,11 @@ public class Verschieber {
 	Zweipunkt von = zk.von;
 	Zweipunkt bis = zk.bis;
 	
-	zk.von.eins = (int) (zk.von.eins + dx);
-	zk.von.zwei = (int) (zk.von.zwei + dy);
+	zk.von.xteil = (int) (zk.von.xteil + dx);
+	zk.von.yteil = (int) (zk.von.yteil + dy);
 	
-	zk.bis.eins = (int) (zk.bis.eins + dx);
-	zk.bis.zwei = (int) (zk.bis.zwei + dy);
+	zk.bis.xteil = (int) (zk.bis.xteil + dx);
+	zk.bis.yteil = (int) (zk.bis.yteil + dy);
     }
     
     // ein: Körperwelt, Dreipunkt

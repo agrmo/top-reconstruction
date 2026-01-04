@@ -26,17 +26,17 @@ public class Augeverleger {
 			      int breite, int hoehe,
 			      double yaw, double pitch, double roll) {
 
-	Zweipunkt xz = Punktdreher.drehen(new Zweipunkt(p.eins, p.drei), yaw);
-	Zweipunkt yz = Punktdreher.drehen(new Zweipunkt(p.zwei, xz.zwei), pitch);
-	Zweipunkt xy = Punktdreher.drehen(new Zweipunkt(xz.eins, yz.eins), pitch);
+	Zweipunkt xz = Punktdreher.drehen(new Zweipunkt(p.xteil, p.zteil), yaw);
+	Zweipunkt yz = Punktdreher.drehen(new Zweipunkt(p.yteil, xz.yteil), pitch);
+	Zweipunkt xy = Punktdreher.drehen(new Zweipunkt(xz.xteil, yz.xteil), pitch);
 
-	double x = xy.eins;
-	double y = xy.zwei;
-	double z = yz.zwei;
+	double x = xy.xteil;
+	double y = xy.yteil;
+	double z = yz.yteil;
 
-	x -= augepunkt.eins;
-	y -= augepunkt.zwei;
-	z -= augepunkt.drei;
+	x -= augepunkt.xteil;
+	y -= augepunkt.yteil;
+	z -= augepunkt.zteil;
 
 	int zweiDimensionaleX = (int) ((0.5 * ((double) breite)) + (x / z) * ((double) perspektive));
 	int zweiDimensionaleY = (int) ((0.5 * ((double) hoehe)) + (y / z) * ((double) perspektive));

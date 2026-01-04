@@ -5,18 +5,18 @@ package punkt;
 // Ein Zweipunkt ist eine Liste von zwei ganzen Zahlen.
 public class Zweipunkt {
 
-    // Die Orten dieses Zweipunktes.
-    public double eins;
-    public double zwei;
+    // Die Teile dieses Zweipunktes.
+    public double xteil;
+    public double yteil;
 
-    public Zweipunkt(double e, double z) {
-	this.eins = e;
-	this.zwei = z;
+    public Zweipunkt(double x, double y) {
+	this.xteil = x;
+	this.yteil = y;
     }
 
     // Addiere die Zahlen zu diesem Zweipunkt p.
     public void addieren(Zweipunkt p) {
-	this.eins += p.eins;
-	this.zwei += p.zwei;
+	this.xteil += p.xteil;
+	this.yteil += p.yteil;
     }
 }

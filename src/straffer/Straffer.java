@@ -23,11 +23,11 @@ public class Straffer {
 	Zweipunkt von = zk.von;
 	Zweipunkt bis = zk.bis;
 
-	zk.von.eins = (int) (zk.von.eins * mx);
-	zk.von.zwei = (int) (zk.von.zwei * my);
+	zk.von.xteil = (int) (zk.von.xteil * mx);
+	zk.von.yteil = (int) (zk.von.yteil * my);
 	
-	zk.bis.eins = (int) (zk.bis.eins * mx);
-	zk.bis.zwei = (int) (zk.bis.zwei * my);
+	zk.bis.xteil = (int) (zk.bis.xteil * mx);
+	zk.bis.yteil = (int) (zk.bis.yteil * my);
     }
 
     // Straffen die Welt.

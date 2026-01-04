@@ -6,6 +6,7 @@ package vektor;
   Ein Dreivektor im Euklidraum.
 
   (Wie berechne ich Dreivektoren im Minkowskiraum?)
+
  */
 public class Dreivektor {
     public int eins;
@@ -13,10 +14,10 @@ public class Dreivektor {
     public int drei;
 
     // ein: ganze Zahl, ganze Zahl, ganze Zahl
-    public Dreivektor(int eins, int zwei, int drei) {
-	this.eins = eins;
-	this.zwei = zwei;
-	this.drei = drei;
+    public Dreivektor(int e, int z, int d) {
+	this.eins = e;
+	this.zwei = z;
+	this.drei = d;
     }
 
     // ein:

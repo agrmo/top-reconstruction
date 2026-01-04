@@ -1,12 +1,9 @@
 package welt;
 
-// Die Welt. Eint Welt enthält die Orten verschiedener Dingen.
-//
-// Die Welt zeigt uns, wo verschiedene Sachen stehen.
+// Die Welt. Eine Welt enthält die Orten verschiedener Dingen.  Die
+// Welt zeigt uns, wo verschiedene Sachen stehen. Die Welt enthält nur
+// zwei Sachen: die Dingen innerhalb der Welt, und ihre Stellen.
 // 
-// Sie ist eine Sammlung verschiedener, nicht ganz gewohnten Sachen,
-// aber Sachen, die wir sofort verorten können. Mit unseren Augen.
-//
 public abstract class Welt {
     
 }

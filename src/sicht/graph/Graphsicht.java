@@ -22,12 +22,12 @@ public class Graphsicht extends JComponent {
 	gw = g;
     }
 
-    // Darstelle den i-ten Knoten.
+    // Stelle den i-ten Knoten dar.
     void darstellenKnoten(Graphics g, int i) {
 	g.fillOval(this.gw.orten[i][0], this.gw.orten[i][1], this.groese, this.groese);
     }
 
-    // Darstelle alle die zu dem i-ten Knoten verbundenen Kanten.
+    // Stelle alle die zu dem i-ten Knoten verbundenen Kanten dar.
     void darstellenKante(Graphics g, int i) {
 
 	// Wir brauchen nicht eine verdoppelte Nachbarschaftsliste.

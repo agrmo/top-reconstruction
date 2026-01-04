@@ -7,9 +7,9 @@ public class Punktdrucker {
     public static String drucken(Zweipunkt p) {
 	StringBuilder sb = new StringBuilder();
 	sb.append("[");
-	sb.append(p.eins);
+	sb.append(p.xteil);
 	sb.append(",");
-	sb.append(p.zwei);
+	sb.append(p.yteil);
 	sb.append("]");
 	return sb.toString();
     }
@@ -17,11 +17,11 @@ public class Punktdrucker {
     public static String drucken(Dreipunkt p) {
 	StringBuilder sb = new StringBuilder();
 	sb.append("[");
-	sb.append(p.eins);
+	sb.append(p.xteil);
 	sb.append(",");
-	sb.append(p.zwei);
+	sb.append(p.yteil);
 	sb.append(",");
-	sb.append(p.drei);
+	sb.append(p.zteil);
 	sb.append("]");
 	return sb.toString();
     }

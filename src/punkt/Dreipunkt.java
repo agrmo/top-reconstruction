@@ -6,20 +6,20 @@ package punkt;
 public class Dreipunkt {
 
     // Die Orten dieses Dreipunktes.
-    public double eins;
-    public double zwei;
-    public double drei;
+    public double xteil;
+    public double yteil;
+    public double zteil;
 
-    public Dreipunkt(double e, double z, double d) {
-	this.eins = e;
-	this.zwei = z;
-	this.drei = d;
+    public Dreipunkt(double x, double y, double z) {
+	this.xteil = x;
+	this.yteil = y;
+	this.zteil = z;
     }
 
     // Addiere die Zahlen zu diesem Dreipunkt p.
     public void addieren(Dreipunkt p) {
-	this.eins += p.eins;
-	this.zwei += p.zwei;
-	this.drei += p.drei;
+	this.xteil += p.xteil;
+	this.yteil += p.yteil;
+	this.zteil += p.zteil;
     }
 }

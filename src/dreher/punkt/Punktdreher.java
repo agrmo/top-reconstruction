@@ -22,8 +22,8 @@ public class Punktdreher {
     //
     // Gegen den Uhrzeigersinn.
     public static Zweipunkt drehen(Zweipunkt zp, double thetaRad) {
-	double xStrich = Math.cos(thetaRad)*zp.eins - Math.sin(thetaRad)*zp.zwei;
-	double yStrich = Math.sin(thetaRad)*zp.eins + Math.cos(thetaRad)*zp.zwei;
+	double xStrich = Math.cos(thetaRad)*zp.xteil - Math.sin(thetaRad)*zp.yteil;
+	double yStrich = Math.sin(thetaRad)*zp.xteil + Math.cos(thetaRad)*zp.yteil;
 
 	return new Zweipunkt(xStrich, yStrich);
     }

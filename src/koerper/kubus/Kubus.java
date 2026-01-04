@@ -1,7 +1,6 @@
 package koerper.kubus;
 
 import koerper.Koerper;
-import vektor.Dreivektor;
 import punkt.Dreipunkt;
 import kante.Dreikante;
 

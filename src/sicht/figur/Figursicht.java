@@ -25,8 +25,8 @@ public class Figursicht extends JComponent {
 	ArrayList<Zweikante> wk = this.fw.nehmeKanten();
 
 	for (int i = 0; i < wk.size(); i++) {
-	    g.drawLine((int) wk.get(i).von.eins, (int) wk.get(i).von.zwei,
-		       (int) wk.get(i).bis.eins, (int) wk.get(i).bis.zwei);
+	    g.drawLine((int) wk.get(i).von.xteil, (int) wk.get(i).von.yteil,
+		       (int) wk.get(i).bis.xteil, (int) wk.get(i).bis.yteil);
 	}
     }
 }
