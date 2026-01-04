@@ -63,7 +63,7 @@ public class Augespiel extends Spiel {
 	double unterschiedPitch = ((double) unterschiedY) / ((double) this.as.hoehe);
 
 	this.as.yaw -= unterschiedYaw;
-	this.as.pitch -= unterschiedPitch;
+	this.as.pitch += unterschiedPitch;
 	this.mouseAnfangX = jetztX;
 	this.mouseAnfangY = jetztY;
 
