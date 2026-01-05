@@ -1,0 +1,36 @@
+package sicht.zweipunkt;
+
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import punkt.Zweipunkt;
+import figur.quadrat.Quadrat;
+
+/*
+  javac -d classes $(find src -type f)	\
+  && java -cp classes sicht.zweipunkt.Main
+*/
+
+public class Main {
+
+    public static void main(String[] args){
+
+	// Mache die Daten.
+	ArrayList<Zweipunkt> pl = new ArrayList<Zweipunkt>();
+	Quadrat q = new Quadrat(50);
+
+	for (Zweipunkt zp : q.nehmeEcken()) {
+	    pl.add(zp);
+	}
+	
+	// Mache die Sicht.
+	Zweipunktsicht ps = new Zweipunktsicht(pl);
+
+	// Stellen die Daten dar.
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize(1200, 600);
+	frame.add(ps);
+	frame.setVisible(true);
+    }
+}
+
