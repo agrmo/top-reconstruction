@@ -3,6 +3,7 @@ package welt.graph.macher.gitter;
 import welt.graph.Graphwelt;
 import graph.Nachbarschaftsliste;
 import welt.graph.macher.gitter.Gitter;
+import punkt.Zweipunkt;
 
 /*
   javac -d classes $(find src -type f)		\
@@ -18,7 +19,7 @@ public class Main {
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
 
 	Gitter gitter = new Gitter(2, 10);
-	int[][] orten = gitter.machen(nl);
+	Zweipunkt[] orten = gitter.machen(nl);
 
 	Graphwelt gw = new Graphwelt(nl, orten);
     }    

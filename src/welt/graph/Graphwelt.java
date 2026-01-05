@@ -1,6 +1,7 @@
 package welt.graph;
 
 import graph.Nachbarschaftsliste;
+import punkt.Zweipunkt;
 
 /*
   Ein Koerper ist eine ganze Zahl.
@@ -26,10 +27,10 @@ import graph.Nachbarschaftsliste;
   Eine Graphwelt ist eine Welt des Graphen.
  */
 public class Graphwelt {
-    public int[][] orten;
+    public Zweipunkt[] orten;
     public Nachbarschaftsliste nachbarschaftsliste;
 
-    public Graphwelt(Nachbarschaftsliste n, int[][] o) {
+    public Graphwelt(Nachbarschaftsliste n, Zweipunkt[] o) {
 	orten = o;
 	nachbarschaftsliste = n;
     }

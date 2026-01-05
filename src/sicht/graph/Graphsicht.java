@@ -4,13 +4,12 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import welt.graph.Graphwelt;
+import punkt.Zweipunkt;
 
-// Ein Bild ist eine zweidimensionale Darstellung von etwas.
-// Wir können es unmittelbar zu Java eintragen, um zu darstellen.
-
-// Unser Sicht stellt uns einen Graph dar.
-  
-// Ihre Beobachtung der Welt erfolgt unabhängig vom Zeitverlauf derer.
+// Ein Bild ist eine zweidimensionale Darstellung von etwas.  Wir
+// können es unmittelbar zu Java eintragen, um zu darstellen.  Unser
+// Sicht stellt uns einen Graph dar.  Ihre Beobachtung der Welt
+// erfolgt unabhängig vom Zeitverlauf derer.
 public class Graphsicht extends JComponent {
     
     public Graphwelt gw;
@@ -24,7 +23,10 @@ public class Graphsicht extends JComponent {
 
     // Stelle den i-ten Knoten dar.
     void darstellenKnoten(Graphics g, int i) {
-	g.fillOval(this.gw.orten[i][0], this.gw.orten[i][1], this.groese, this.groese);
+	int knotenx = (int) this.gw.orten[i].xteil;
+	int knoteny = (int) this.gw.orten[i].yteil;
+	
+	g.fillOval(knotenx, knoteny, this.groese, this.groese);
     }
 
     // Stelle alle die zu dem i-ten Knoten verbundenen Kanten dar.
@@ -33,16 +35,16 @@ public class Graphsicht extends JComponent {
 	// Wir brauchen nicht eine verdoppelte Nachbarschaftsliste.
 	
 	// Wo dieser Knoten ist.
-	int vonX = this.gw.orten[i][0];
-	int vonY = this.gw.orten[i][1];
+	int vonX = (int) this.gw.orten[i].xteil;
+	int vonY = (int) this.gw.orten[i].yteil;
 
 	for (int j = 0; j < this.gw.nachbarschaftsliste.n.get(i).size(); j++) {
 
 	    // Wer der Knoten ist, dem dieser Knoten verbunden ist.
 	    int bisKnoten = this.gw.nachbarschaftsliste.n.get(i).get(j);
 		    
-	    int bisX = this.gw.orten[bisKnoten][0];
-	    int bisY = this.gw.orten[bisKnoten][1];
+	    int bisX = (int) this.gw.orten[bisKnoten].xteil;
+	    int bisY = (int) this.gw.orten[bisKnoten].yteil;
 		
 	    g.drawLine(vonX, vonY, bisX, bisY);
 	}

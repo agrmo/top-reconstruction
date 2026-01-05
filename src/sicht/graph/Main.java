@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import graph.Nachbarschaftsliste;
 import welt.graph.Graphwelt;
 import welt.graph.macher.gitter.Gitter;
+import punkt.Zweipunkt;
 
 /*
   javac -d classes $(find src -type f) \
@@ -27,7 +28,7 @@ public class Main {
 	Gitter gitter = new Gitter(2, 100);
 
 	// Bauen wir die Gitter auf.
-	int[][] orten = gitter.machen(nl);
+	Zweipunkt[] orten = gitter.machen(nl);
 
 	// Sammeln wir die Orten und den Graphen zusammen.
 	Graphwelt gw = new Graphwelt(nl, orten);
