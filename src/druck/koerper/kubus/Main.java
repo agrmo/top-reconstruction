@@ -12,6 +12,6 @@ public class Main {
 	Kubus k = new Kubus(1);
 	System.out.println(Kubusdrucker.druckenLaenge(k));
 	System.out.println(Kubusdrucker.druckenEcken(k));
-	System.out.println(Kubusdrucker.druckenKanten(k));
+	System.out.println(Kubusdrucker.druckenStrecken(k));
     }
 }

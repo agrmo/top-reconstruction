@@ -3,7 +3,7 @@ package sicht.figur;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JComponent;
-import kante.Zweikante;
+import strecke.Zweistrecke;
 import welt.figur.Figurwelt;
 
 // Die Figursicht zeigt insbesondere nur die erste und zweite Teile
@@ -21,8 +21,8 @@ public class Figursicht extends JComponent {
     public void paintComponent(Graphics g) {
 	super.paintComponent(g);
 
-	// Nehme die Zweikanten dieser Welt.
-	ArrayList<Zweikante> wk = this.fw.nehmeKanten();
+	// Nehme die Zweistrecken dieser Welt.
+	ArrayList<Zweistrecke> wk = this.fw.nehmeStrecken();
 
 	for (int i = 0; i < wk.size(); i++) {
 	    g.drawLine((int) wk.get(i).von.xteil, (int) wk.get(i).von.yteil,

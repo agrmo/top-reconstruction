@@ -3,8 +3,8 @@ package sicht.straff;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import punkt.Zweipunkt;
-import kante.Zweikante;
-import welt.zweikante.Zweikantewelt;
+import strecke.Zweistrecke;
+import welt.zweistrecke.Zweistreckewelt;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -15,18 +15,18 @@ public class Main {
 
     static void beispielEins() {
 	// Mache die Welt.
-	Zweikante zka = new Zweikante(new Zweipunkt(0,100),
+	Zweistrecke zka = new Zweistrecke(new Zweipunkt(0,100),
 				      new Zweipunkt(100,100));
 
-	Zweikante zkb = new Zweikante(new Zweipunkt(100,200),
+	Zweistrecke zkb = new Zweistrecke(new Zweipunkt(100,200),
 				      new Zweipunkt(200,200));
 	
-	ArrayList<Zweikante> zkl = new ArrayList<Zweikante>();
-	zkl.add(zka);
-	zkl.add(zkb);
-	Zweikantewelt zkw = new Zweikantewelt(zkl);
+	ArrayList<Zweistrecke> zsl = new ArrayList<Zweistrecke>();
+	zsl.add(zka);
+	zsl.add(zkb);
+	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
 
-	// Der Verleger vergrößert die stellen der Kanten. Nicht nur
+	// Der Verleger vergrößert die stellen der Strecken. Nicht nur
 	// wird den Abstand zwischen den Punkten vergrößert, sondern
 	// auch den Abstand zum Ursprung. Zum Beispiel,
 	//

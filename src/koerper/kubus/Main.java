@@ -1,7 +1,7 @@
 package koerper.kubus;
 
 import punkt.Dreipunkt;
-import kante.Dreikante;
+import strecke.Dreistrecke;
 
 /*
   javac -d classes $(find src -type f) \
@@ -12,6 +12,6 @@ public class Main {
     public static void main(String[] args) {
 	Kubus k = new Kubus(1);
 
-	Dreikante[] kl = k.nehmeKanten();
+	Dreistrecke[] kl = k.nehmeStrecken();
     }
 }

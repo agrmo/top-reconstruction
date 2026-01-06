@@ -1,15 +1,15 @@
 package verleger.schief;
 
 import java.util.ArrayList;
-import kante.Dreikante;
-import kante.Zweikante;
+import strecke.Dreistrecke;
+import strecke.Zweistrecke;
 import punkt.Dreipunkt;
 import punkt.Zweipunkt;
-import welt.zweikante.Zweikantewelt;
+import welt.zweistrecke.Zweistreckewelt;
 import welt.koerper.Koerperwelt;
 
 // Ein Schiefverleger nimmt eine dreidimensionale Körperwelt zu
-// einer zweidimensionalen Kantenwelt mit Hilfe einer orthographischen
+// einer zweidimensionalen Streckenwelt mit Hilfe einer orthographischen
 // Verlegung.
 public class Schiefverleger {
 
@@ -34,18 +34,18 @@ public class Schiefverleger {
 	return aus;
     }
 
-    // ein: Dreikante
-    // aus: Zweikante
+    // ein: Dreistrecke
+    // aus: Zweistrecke
     //
-    // Verlege die gegebene dreidimensionale Kante auf einer
-    // Sichtfläche, um eine zweidimensionale Kante zu bekommen.
-    Zweikante verlegenKante(Dreikante k) {
+    // Verlege die gegebene dreidimensionale Strecke auf einer
+    // Sichtfläche, um eine zweidimensionale Strecke zu bekommen.
+    Zweistrecke verlegenStrecke(Dreistrecke k) {
 	Zweipunkt verlegterPunktVon = this.verlegenPunkt(k.von);
 	Zweipunkt verlegterPunktBis = this.verlegenPunkt(k.bis);
 
-	// Diese ist die neue Kante, die nur in zwei Dimensionen
+	// Diese ist die neue Strecke, die nur in zwei Dimensionen
 	// liegt. 
-	Zweikante zk = new Zweikante(verlegterPunktVon, verlegterPunktBis);
+	Zweistrecke zk = new Zweistrecke(verlegterPunktVon, verlegterPunktBis);
 	
 	return zk;
     }
@@ -54,29 +54,29 @@ public class Schiefverleger {
     // kw: Die dreidimensionale Welt mit den ursprünglichen Daten.
     //
     // Verlegen die dreidimensionale Körperwelt zu einer
-    // zweidimensionale Zweikantewelt.
+    // zweidimensionale Zweistreckewelt.
     //
-    public Zweikantewelt verlegenWelt(Koerperwelt kw) {
+    public Zweistreckewelt verlegenWelt(Koerperwelt kw) {
 
-	// Liste von Dreikanten. Nehme die Kanten der
+	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.
-	ArrayList<Dreikante> dkl = kw.nehmeKanten();
+	ArrayList<Dreistrecke> dkl = kw.nehmeStrecken();
 
-	// Liste von Zweikanten. Mache die Kanten für eine
-	// zweidimensionale Zweikantewelt.
-	ArrayList<Zweikante> zkl = new ArrayList<Zweikante>();
+	// Liste von Zweistrecken. Mache die Strecken für eine
+	// zweidimensionale Zweistreckewelt.
+	ArrayList<Zweistrecke> zsl = new ArrayList<Zweistrecke>();
 	
 	for (int i = 0; i < dkl.size(); i++) {
-	    // Nehme die neue Kante. Sie ist Teil einer neuen Welt,
-	    // die Zweikantewelt.
-	    Zweikante zk = this.verlegenKante(dkl.get(i));
+	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
+	    // die Zweistreckewelt.
+	    Zweistrecke zk = this.verlegenStrecke(dkl.get(i));
 	
 	    // Fügen sie zu der Liste ein.
-	    zkl.add(zk);
+	    zsl.add(zk);
 	}
 
-	// Bauen die Zweikantewelt auf.
-	Zweikantewelt zkw = new Zweikantewelt(zkl);
+	// Bauen die Zweistreckewelt auf.
+	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
 
 	return zkw;
     }

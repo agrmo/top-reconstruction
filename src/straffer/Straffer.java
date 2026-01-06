@@ -2,9 +2,9 @@ package straffer;
 
 import java.util.ArrayList;
 import punkt.Zweipunkt;
-import kante.Zweikante;
-import welt.zweikante.Zweikantewelt;
-import verdoppler.kante.Kanteverdoppler;
+import strecke.Zweistrecke;
+import welt.zweistrecke.Zweistreckewelt;
+import verdoppler.strecke.Streckeverdoppler;
 
 // Ein Straffer strafft und quetscht die Stellen der Welt nach den
 // Gleichungen,
@@ -16,8 +16,8 @@ import verdoppler.kante.Kanteverdoppler;
 // inhaltlich in der gleichen Welt bearbeiten.
 public class Straffer {
 
-    // Straffen die Kante nach den Gleichungen.
-    static void straffenKante(Zweikante zk,
+    // Straffen die Strecke nach den Gleichungen.
+    static void straffenStrecke(Zweistrecke zk,
 			      double mx, double my) {
 	
 	Zweipunkt von = zk.von;
@@ -31,19 +31,19 @@ public class Straffer {
     }
 
     // Straffen die Welt.
-    // ein: Zweikantewelt
-    // aus: Zweikantewelt
-    public static Zweikantewelt straffenWelt(Zweikantewelt zkw,
+    // ein: Zweistreckewelt
+    // aus: Zweistreckewelt
+    public static Zweistreckewelt straffenWelt(Zweistreckewelt zkw,
 					     double mx,
 					     double my) {
 
-	ArrayList<Zweikante> zkl = zkw.kantenliste;
-	ArrayList<Zweikante> zklNeu = Kanteverdoppler.verdoppeln(zkl);
+	ArrayList<Zweistrecke> zsl = zkw.streckenliste;
+	ArrayList<Zweistrecke> zslNeu = Streckeverdoppler.verdoppeln(zsl);
 
-	for (int i = 0; i < zkl.size(); i++) {
-	    Straffer.straffenKante(zklNeu.get(i), mx, my);
+	for (int i = 0; i < zsl.size(); i++) {
+	    Straffer.straffenStrecke(zslNeu.get(i), mx, my);
 	}
 
-	return new Zweikantewelt(zklNeu);
+	return new Zweistreckewelt(zslNeu);
     }
 }

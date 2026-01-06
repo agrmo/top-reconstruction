@@ -1,19 +1,16 @@
-package straffer;
+package welt.zweistrecke;
 
 import java.util.ArrayList;
 import strecke.Zweistrecke;
 import punkt.Zweipunkt;
-import welt.zweistrecke.Zweistreckewelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes straffer.Main
+  && java -cp classes welt.zweistrecke.Main
 */
 
 public class Main {
     public static void main(String[] args) {
-
-	// Mache eine einfache Welt mit zwei Strecken.
 	Zweistrecke zka = new Zweistrecke(new Zweipunkt(30,30),
 				      new Zweipunkt(500,500));
 
@@ -26,7 +23,5 @@ public class Main {
 
 	// Mache die zweidimensionale Streckenwelt.
 	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
-
-	Straffer.straffenWelt(zkw, 2.0, 2.0);
     }
 }

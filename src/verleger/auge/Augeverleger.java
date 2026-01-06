@@ -2,15 +2,15 @@ package verleger.auge;
 
 import dreher.punkt.Punktdreher;
 import java.util.ArrayList;
-import kante.Dreikante;
-import kante.Zweikante;
+import strecke.Dreistrecke;
+import strecke.Zweistrecke;
 import punkt.Dreipunkt;
 import punkt.Zweipunkt;
 import welt.koerper.Koerperwelt;
-import welt.zweikante.Zweikantewelt;
+import welt.zweistrecke.Zweistreckewelt;
 
 // Ein Augeverleger nimmt eine dreidimensionale Körperwelt zu einer
-// zweidimensionalen Kantenwelt. Wir benutzen ein punktliches Auge als
+// zweidimensionalen Streckenwelt. Wir benutzen ein punktliches Auge als
 // Ursache der Sicht.
 public class Augeverleger {
 
@@ -65,11 +65,11 @@ public class Augeverleger {
 	return zpl;
     }
 
-    // ein: Dreikante, Augesicht
-    // aus: Zweikante
+    // ein: Dreistrecke, Augesicht
+    // aus: Zweistrecke
     //
-    // Verlege die gegebene dreidimensionale Kante.
-    static Zweikante verlegen(Dreikante k, Dreipunkt augepunkt, int perspektive,
+    // Verlege die gegebene dreidimensionale Strecke.
+    static Zweistrecke verlegen(Dreistrecke k, Dreipunkt augepunkt, int perspektive,
 			      int breite, int hoehe,
 			      double yaw, double pitch, double roll) {
 	
@@ -82,9 +82,9 @@ public class Augeverleger {
 							    breite, hoehe,
 							    yaw, pitch, roll);
 	
-	// Diese ist die neue Kante, die nur in zwei Dimensionen
+	// Diese ist die neue Strecke, die nur in zwei Dimensionen
 	// liegt. 
-	Zweikante zk = new Zweikante(verlegterPunktVon, verlegterPunktBis);
+	Zweistrecke zk = new Zweistrecke(verlegterPunktVon, verlegterPunktBis);
 	
 	return zk;
     }
@@ -92,33 +92,33 @@ public class Augeverleger {
     // ein: Körperwelt, Augesicht
     //
     // Verlegen die dreidimensionale Körperwelt zu einer
-    // zweidimensionale Zweikantewelt.
-    public static Zweikantewelt verlegen(Koerperwelt kw,
+    // zweidimensionale Zweistreckewelt.
+    public static Zweistreckewelt verlegen(Koerperwelt kw,
 					 Dreipunkt augepunkt, int perspektive,
 					 int breite, int hoehe,
 					 double yaw, double pitch, double roll) {
 
-	// Liste von Dreikanten. Nehme die Kanten der
+	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.
-	ArrayList<Dreikante> dkl = kw.nehmeKanten();
+	ArrayList<Dreistrecke> dkl = kw.nehmeStrecken();
 
-	// Liste von Zweikanten. Mache die Kanten für eine
-	// zweidimensionale Zweikantewelt.
-	ArrayList<Zweikante> zkl = new ArrayList<Zweikante>();
+	// Liste von Zweistrecken. Mache die Strecken für eine
+	// zweidimensionale Zweistreckewelt.
+	ArrayList<Zweistrecke> zsl = new ArrayList<Zweistrecke>();
 	
 	for (int i = 0; i < dkl.size(); i++) {
-	    // Nehme die neue Kante. Sie ist Teil einer neuen Welt,
-	    // die Zweikantewelt.
-	    Zweikante zk = Augeverleger.verlegen(dkl.get(i), augepunkt, perspektive,
+	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
+	    // die Zweistreckewelt.
+	    Zweistrecke zk = Augeverleger.verlegen(dkl.get(i), augepunkt, perspektive,
 						 breite, hoehe,
 						 yaw, pitch, roll);
 	
 	    // Fügen sie zu der Liste ein.
-	    zkl.add(zk);
+	    zsl.add(zk);
 	}
 
-	// Bauen die Zweikantewelt auf.
-	Zweikantewelt zkw = new Zweikantewelt(zkl);
+	// Bauen die Zweistreckewelt auf.
+	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
 
 	return zkw;
     }

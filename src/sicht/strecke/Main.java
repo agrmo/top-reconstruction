@@ -1,36 +1,36 @@
-package sicht.kante;
+package sicht.strecke;
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import welt.zweikante.Zweikantewelt;
+import welt.zweistrecke.Zweistreckewelt;
 import punkt.Zweipunkt;
-import kante.Zweikante;
+import strecke.Zweistrecke;
 import java.awt.Toolkit;
 import java.awt.Dimension;
 import verschieber.Verschieber;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.kante.Main
+  && java -cp classes sicht.strecke.Main
 */
 
 public class Main {
 
     static void beispielEins() {
-	// Mache die zweidimensionale Kantenwelt.
-	Zweikante zka = new Zweikante(new Zweipunkt(30,30),
+	// Mache die zweidimensionale Streckenwelt.
+	Zweistrecke zka = new Zweistrecke(new Zweipunkt(30,30),
 				      new Zweipunkt(500,500));
 
-	Zweikante zkb = new Zweikante(new Zweipunkt(200,20),
+	Zweistrecke zkb = new Zweistrecke(new Zweipunkt(200,20),
 				      new Zweipunkt(500,100));
 	
-	ArrayList<Zweikante> zkl = new ArrayList<Zweikante>();
-	zkl.add(zka);
-	zkl.add(zkb);
-	Zweikantewelt zkw = new Zweikantewelt(zkl);
+	ArrayList<Zweistrecke> zsl = new ArrayList<Zweistrecke>();
+	zsl.add(zka);
+	zsl.add(zkb);
+	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
 	
-	// Mache eine Kantesicht.
-	Kantesicht ks = new Kantesicht(zkw);
+	// Mache eine Streckesicht.
+	Streckesicht ks = new Streckesicht(zkw);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -42,25 +42,25 @@ public class Main {
 
     static void beispielZwei() {
 	// Mache die Welt.
-	Zweikante zka = new Zweikante(new Zweipunkt(0,0),
+	Zweistrecke zka = new Zweistrecke(new Zweipunkt(0,0),
 				      new Zweipunkt(100,0));
 
-	Zweikante zkb = new Zweikante(new Zweipunkt(200,0),
+	Zweistrecke zkb = new Zweistrecke(new Zweipunkt(200,0),
 				      new Zweipunkt(300,0));
 	
-	ArrayList<Zweikante> zkl = new ArrayList<Zweikante>();
-	zkl.add(zka);
-	zkl.add(zkb);
-	Zweikantewelt zkw = new Zweikantewelt(zkl);
+	ArrayList<Zweistrecke> zsl = new ArrayList<Zweistrecke>();
+	zsl.add(zka);
+	zsl.add(zkb);
+	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
 
 	// Die Sicht.
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	int halbBreite = (int) (screenSize.getWidth() / 2.0);
 	int halbHoehe = (int) (screenSize.getHeight() / 2.0);
 	
-	Zweikantewelt zkwNeu = Verschieber.verschieben(zkw, halbBreite, halbHoehe);
+	Zweistreckewelt zkwNeu = Verschieber.verschieben(zkw, halbBreite, halbHoehe);
 	    
-	Kantesicht ss = new Kantesicht(zkwNeu);
+	Streckesicht ss = new Streckesicht(zkwNeu);
 	
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();

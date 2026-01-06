@@ -29,8 +29,8 @@ public class Graphsicht extends JComponent {
 	g.fillOval(knotenx, knoteny, this.groese, this.groese);
     }
 
-    // Stelle alle die zu dem i-ten Knoten verbundenen Kanten dar.
-    void darstellenKante(Graphics g, int i) {
+    // Stelle alle die zu dem i-ten Knoten verbundenen Strecken dar.
+    void darstellenStrecke(Graphics g, int i) {
 
 	// Wir brauchen nicht eine verdoppelte Nachbarschaftsliste.
 	
@@ -58,9 +58,9 @@ public class Graphsicht extends JComponent {
 	    darstellenKnoten(g, i);
 	}
 
-	// Stelle die Kanten dar.
+	// Stelle die Strecken dar.
 	for (int i = 0; i < this.gw.nachbarschaftsliste.betrag; i++) {
-	    darstellenKante(g, i);
+	    darstellenStrecke(g, i);
 	}
     }
 

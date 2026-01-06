@@ -4,8 +4,8 @@ import punkt.Dreipunkt;
 import koerper.kubus.Kubus;
 import koerper.Koerper;
 import java.util.ArrayList;
-import druck.kante.Kantedrucker;
-import kante.Dreikante;
+import druck.strecke.Streckedrucker;
+import strecke.Dreistrecke;
 
 /*
   javac -d classes $(find src -type f) \
@@ -35,11 +35,11 @@ public class Main {
 	// Mache die Welt.
 	Koerperwelt kw = new Koerperwelt(kl, orten);
 
-	// Überprüfen die Kanten.
-	ArrayList<Dreikante> weltKanten = kw.nehmeKanten();
+	// Überprüfen die Strecken.
+	ArrayList<Dreistrecke> weltStrecken = kw.nehmeStrecken();
 
-	for (int i = 0; i < weltKanten.size(); i++) {
-	    System.out.println(Kantedrucker.drucken(weltKanten.get(i)));
+	for (int i = 0; i < weltStrecken.size(); i++) {
+	    System.out.println(Streckedrucker.drucken(weltStrecken.get(i)));
 	}
     }
 }

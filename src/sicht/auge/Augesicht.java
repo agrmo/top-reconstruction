@@ -3,14 +3,14 @@ package sicht.auge;
 import punkt.Dreipunkt;
 import java.awt.Graphics;
 import javax.swing.JComponent;
-import sicht.kante.Kantesicht;
+import sicht.strecke.Streckesicht;
 import verleger.auge.Augeverleger;
-import welt.zweikante.Zweikantewelt;
+import welt.zweistrecke.Zweistreckewelt;
 import welt.koerper.Koerperwelt;
 
 // Eine Sicht, die eine dreidimensionale Körperwelt einnimmt.
 // Sie wandelt die Körperwelt mit nur einer Verlegung: einer punkten
-// Verlegung. Sie gibt am Ende eine Zweikantewelt ab.
+// Verlegung. Sie gibt am Ende eine Zweistreckewelt ab.
 public class Augesicht extends JComponent {
 
     public Koerperwelt kw;
@@ -42,13 +42,13 @@ public class Augesicht extends JComponent {
 	super.paintComponent(g);
 	
 	// Benutzen die Verleger.
-	Zweikantewelt zkw = Augeverleger.verlegen(this.kw, this.augepunkt, this.perspektive,
+	Zweistreckewelt zkw = Augeverleger.verlegen(this.kw, this.augepunkt, this.perspektive,
 						  this.breite, this.hoehe,
 						  this.yaw, this.pitch, this.roll);
 
-	// Wir haben schon eine Sicht, die die Zweikantewelt
+	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.
-	Kantesicht ks = new Kantesicht(zkw);
+	Streckesicht ks = new Streckesicht(zkw);
 	ks.paintComponent(g);
     }
 }

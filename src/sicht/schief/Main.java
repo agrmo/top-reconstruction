@@ -15,9 +15,6 @@ import welt.koerper.Koerperwelt;
 public class Main {
     
     public static void main(String[] args){
-	JFrame frame = new JFrame();
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setSize(1200, 600);
 	
 	// Mache die Welt.
 	Kubus k = new Kubus(50);
@@ -28,11 +25,13 @@ public class Main {
 	ol.add(p);
 	Koerperwelt kw = new Koerperwelt(kl, ol);
 
-	// Wir müssen die Welt in die Sicht einsetzen, weil Java sie
-	// irgendwann anrufen wird, die Welt darzustellen.
-	Schiefsicht ss = new Schiefsicht(kw, -0.5);
+	// Mache die Sicht.
+	Schiefsicht ss = new Schiefsicht(kw, 0.1);
 	
-	// Geben wir die Sicht zu Java, um darzustellen.
+	// Stellen die Welt dar.
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize(1200, 600);
 	frame.add(ss);
 	frame.setVisible(true);
     }

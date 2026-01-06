@@ -2,7 +2,7 @@ package welt.figur;
     
 import java.util.ArrayList;
 import figur.Figur;
-import kante.Zweikante;
+import strecke.Zweistrecke;
 import punkt.Zweipunkt;
 
 /*
@@ -35,15 +35,15 @@ public class Figurwelt {
 	this.ortliste = ol;
     }
 
-    // aus: Liste von Zweikante
+    // aus: Liste von Zweistrecke
     //
-    // Nehme alle Zweikanten aller Figur dieser Welt in genau einer
-    // großen Liste. Die Zweikanteliste hat nur Tiefe 1. Also wir
-    // kennen nachdem nicht, ob eine Kante in einem Figur oder in
+    // Nehme alle Zweistrecken aller Figur dieser Welt in genau einer
+    // großen Liste. Die Zweistreckeliste hat nur Tiefe 1. Also wir
+    // kennen nachdem nicht, ob eine Strecke in einem Figur oder in
     // einem anderen Figur steht.
-    public ArrayList<Zweikante> nehmeKanten() {
+    public ArrayList<Zweistrecke> nehmeStrecken() {
 
-	ArrayList<Zweikante> kanten = new ArrayList<Zweikante>();
+	ArrayList<Zweistrecke> strecken = new ArrayList<Zweistrecke>();
 	
 	// Für alle Figur der Welt
 	for (int i = 0; i < this.figurliste.size(); i++) {
@@ -51,22 +51,22 @@ public class Figurwelt {
 	    // Nehme den Figur. Er kennt seinen Ort nicht.
 	    Figur k = this.figurliste.get(i);
 
-	    // Er gibt uns seine Kanten, dessen Ursprung aber auf ihm
+	    // Er gibt uns seine Strecken, dessen Ursprung aber auf ihm
 	    // selbst liegt.
-	    Zweikante[] kl = k.nehmeKanten();
+	    Zweistrecke[] kl = k.nehmeStrecken();
 
 	    Zweipunkt figurpunkt = this.ortliste.get(i);
 
-	    // Für alle seine Kanten
+	    // Für alle seine Strecken
 	    for (int j = 0; j < kl.length; j++) {
-		// addiere ihren Ort zu ihren Kanten.
+		// addiere ihren Ort zu ihren Strecken.
 		kl[j].addieren(figurpunkt);
 
-		// Nur dann fügen die Kante in der Liste zu.
-		kanten.add(kl[j]);
+		// Nur dann fügen die Strecke in der Liste zu.
+		strecken.add(kl[j]);
 	    }
 	}
 
-	return kanten;
+	return strecken;
     }
 }

@@ -26,10 +26,10 @@ public class Dreiecke {
 
     public Dreipunkt punkt;
 
-    public ArrayList<Dreivektor> kanten;
+    public ArrayList<Dreivektor> strecken;
 
     public Dreiecke(Dreipunkt p, ArrayList<Dreivektor> k) {
 	this.punkt = p;
-	this.kanten = k;
+	this.strecken = k;
     }
 }

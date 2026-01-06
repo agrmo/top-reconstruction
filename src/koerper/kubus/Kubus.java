@@ -2,7 +2,7 @@ package koerper.kubus;
 
 import koerper.Koerper;
 import punkt.Dreipunkt;
-import kante.Dreikante;
+import strecke.Dreistrecke;
 
 // Der Kubus. Wir müssen nicht bestimmen, woran dieser Kubus
 // liegt. Wir brauchen auch nicht zu bestimmen, was die
@@ -38,12 +38,12 @@ public class Kubus extends Koerper {
     }
 
     // ein:
-    // aus: Liste von Dreikanten
+    // aus: Liste von Dreistrecken
     //
-    // Nehme die die die Dreikanten dieses Körpers beleuchten. Wir
-    // speichern die Werte der Dreikanten gar nicht! 
-    public Dreikante[] nehmeKanten() {
-	Dreikante[] kanten = new Dreikante[12];
+    // Nehme die die die Dreistrecken dieses Körpers beleuchten. Wir
+    // speichern die Werte der Dreistrecken gar nicht! 
+    public Dreistrecke[] nehmeStrecken() {
+	Dreistrecke[] strecken = new Dreistrecke[12];
 	int l = this.laenge;
 
 	// Wichtig: Wir können einfach this.nehmeEcken() nehmen, und
@@ -52,19 +52,19 @@ public class Kubus extends Koerper {
 	// gefährlich, weil wir dreimal auf dem gleichen Punkte
 	// durchlaufen würden!
 	
-	kanten[0] = new Dreikante(new Dreipunkt(0,0,0), new Dreipunkt(l,0,0));
-	kanten[1] = new Dreikante(new Dreipunkt(l,0,0), new Dreipunkt(l,0,l));
-	kanten[2] = new Dreikante(new Dreipunkt(l,0,l), new Dreipunkt(0,0,l));
-	kanten[3] = new Dreikante(new Dreipunkt(0,0,l), new Dreipunkt(0,0,0));
-	kanten[4] = new Dreikante(new Dreipunkt(0,l,0), new Dreipunkt(l,l,0));
-	kanten[5] = new Dreikante(new Dreipunkt(l,l,0), new Dreipunkt(l,l,l));
-	kanten[6] = new Dreikante(new Dreipunkt(l,l,l), new Dreipunkt(0,l,l));
-	kanten[7] = new Dreikante(new Dreipunkt(0,l,l), new Dreipunkt(0,l,0));
-	kanten[8] = new Dreikante(new Dreipunkt(0,0,0), new Dreipunkt(0,l,0));
-	kanten[9] = new Dreikante(new Dreipunkt(l,0,0), new Dreipunkt(l,l,0));
-	kanten[10] = new Dreikante(new Dreipunkt(l,0,l), new Dreipunkt(l,l,l));
-	kanten[11] = new Dreikante(new Dreipunkt(0,0,l), new Dreipunkt(0,l,l));
+	strecken[0] = new Dreistrecke(new Dreipunkt(0,0,0), new Dreipunkt(l,0,0));
+	strecken[1] = new Dreistrecke(new Dreipunkt(l,0,0), new Dreipunkt(l,0,l));
+	strecken[2] = new Dreistrecke(new Dreipunkt(l,0,l), new Dreipunkt(0,0,l));
+	strecken[3] = new Dreistrecke(new Dreipunkt(0,0,l), new Dreipunkt(0,0,0));
+	strecken[4] = new Dreistrecke(new Dreipunkt(0,l,0), new Dreipunkt(l,l,0));
+	strecken[5] = new Dreistrecke(new Dreipunkt(l,l,0), new Dreipunkt(l,l,l));
+	strecken[6] = new Dreistrecke(new Dreipunkt(l,l,l), new Dreipunkt(0,l,l));
+	strecken[7] = new Dreistrecke(new Dreipunkt(0,l,l), new Dreipunkt(0,l,0));
+	strecken[8] = new Dreistrecke(new Dreipunkt(0,0,0), new Dreipunkt(0,l,0));
+	strecken[9] = new Dreistrecke(new Dreipunkt(l,0,0), new Dreipunkt(l,l,0));
+	strecken[10] = new Dreistrecke(new Dreipunkt(l,0,l), new Dreipunkt(l,l,l));
+	strecken[11] = new Dreistrecke(new Dreipunkt(0,0,l), new Dreipunkt(0,l,l));
 	
-	return kanten;
+	return strecken;
     }
 }

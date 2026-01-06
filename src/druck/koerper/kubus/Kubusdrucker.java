@@ -2,9 +2,9 @@ package druck.koerper.kubus;
 
 import koerper.kubus.Kubus;
 import druck.punkt.Punktdrucker;
-import druck.kante.Kantedrucker;
+import druck.strecke.Streckedrucker;
 import punkt.Dreipunkt;
-import kante.Dreikante;
+import strecke.Dreistrecke;
 
 public class Kubusdrucker {
     
@@ -28,13 +28,13 @@ public class Kubusdrucker {
 	return sb.toString();
     }
 
-    public static String druckenKanten(Kubus k) {
+    public static String druckenStrecken(Kubus k) {
 	StringBuilder sb = new StringBuilder();
-	sb.append("Kanten:");	
-	Dreikante[] kanten = k.nehmeKanten();
+	sb.append("Strecken:");	
+	Dreistrecke[] strecken = k.nehmeStrecken();
 
-	for (int i = 0; i < kanten.length; i++) {
-	    sb.append(Kantedrucker.drucken(kanten[i]));
+	for (int i = 0; i < strecken.length; i++) {
+	    sb.append(Streckedrucker.drucken(strecken[i]));
 	}
 	
 	return sb.toString();

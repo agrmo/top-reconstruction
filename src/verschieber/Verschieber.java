@@ -6,9 +6,9 @@ import punkt.Zweipunkt;
 import welt.koerper.Koerperwelt;
 import welt.figur.Figurwelt;
 import figur.Figur;
-import verdoppler.kante.Kanteverdoppler;
-import welt.zweikante.Zweikantewelt;
-import kante.Zweikante;
+import verdoppler.strecke.Streckeverdoppler;
+import welt.zweistrecke.Zweistreckewelt;
+import strecke.Zweistrecke;
 
 // Ein Verschieber nimmt eine dreidimensionale Körperwelt zu
 // der gleichen Art, aber mit alle Punkten verschoben.
@@ -18,8 +18,8 @@ public class Verschieber {
 	
     }
     
-    // ein: Zweikante, Double, Double
-    public static void verschiebenKante(Zweikante zk, double dx, double dy) {
+    // ein: Zweistrecke, Double, Double
+    public static void verschiebenStrecke(Zweistrecke zk, double dx, double dy) {
 	Zweipunkt von = zk.von;
 	Zweipunkt bis = zk.bis;
 	
@@ -33,7 +33,7 @@ public class Verschieber {
     // ein: Körperwelt, Dreipunkt
     //
     // Verlegen die dreidimensionale Körperwelt zu einer
-    // zweidimensionale Zweikantewelt.
+    // zweidimensionale Zweistreckewelt.
     //
     public static void verschieben(Koerperwelt kw,
 				   Dreipunkt verschiebenpunkt) {
@@ -58,18 +58,18 @@ public class Verschieber {
 	}
     }
 
-    // ein: Zweikantewelt, Double, Double
-    public static Zweikantewelt verschieben(Zweikantewelt zkw,
+    // ein: Zweistreckewelt, Double, Double
+    public static Zweistreckewelt verschieben(Zweistreckewelt zkw,
 					    double dx,
 					    double dy) {
 	
-	ArrayList<Zweikante> zkl = zkw.kantenliste;
-	ArrayList<Zweikante> zklNeu = Kanteverdoppler.verdoppeln(zkl);
+	ArrayList<Zweistrecke> zsl = zkw.streckenliste;
+	ArrayList<Zweistrecke> zslNeu = Streckeverdoppler.verdoppeln(zsl);
 	
-	for (int i = 0; i < zkl.size(); i++) {
-	    Verschieber.verschiebenKante(zklNeu.get(i), dx, dy);
+	for (int i = 0; i < zsl.size(); i++) {
+	    Verschieber.verschiebenStrecke(zslNeu.get(i), dx, dy);
 	}
 	
-	return new Zweikantewelt(zklNeu);
+	return new Zweistreckewelt(zslNeu);
     }
 }

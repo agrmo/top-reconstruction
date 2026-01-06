@@ -1,11 +1,11 @@
 package verleger.auge;
 
 import java.util.ArrayList;
-import kante.Zweikante;
+import strecke.Zweistrecke;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
 import koerper.Koerper;
-import welt.zweikante.Zweikantewelt;
+import welt.zweistrecke.Zweistreckewelt;
 import welt.koerper.Koerperwelt;
 
 /*
@@ -26,6 +26,6 @@ public class Main {
 	Koerperwelt kw = new Koerperwelt(kl, ol);
 
 	// Verlegen die Welt.
-	Zweikantewelt zkw = Augeverleger.verlegen(kw, new Dreipunkt(0,0,0), 500, 1200, 600, 0, 0, 0);
+	Zweistreckewelt zkw = Augeverleger.verlegen(kw, new Dreipunkt(0,0,0), 500, 1200, 600, 0, 0, 0);
     }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import koerper.Koerper;
 import koerper.kubus.Kubus;
 import koerper.Koerper;
-import kante.Dreikante;
+import strecke.Dreistrecke;
 import punkt.Dreipunkt;
 
 /*
@@ -38,15 +38,15 @@ public class Koerperwelt {
 	this.ortliste = ol;
     }
 
-    // aus: Liste von Dreikante
+    // aus: Liste von Dreistrecke
     //
-    // Nehme alle Dreikanten aller Körper dieser Welt in genau einer
-    // großen Liste. Die Dreikanteliste hat nur Tiefe 1. Also wir
-    // kennen nachdem nicht, ob eine Kante in einem Körper oder in
+    // Nehme alle Dreistrecken aller Körper dieser Welt in genau einer
+    // großen Liste. Die Dreistreckeliste hat nur Tiefe 1. Also wir
+    // kennen nachdem nicht, ob eine Strecke in einem Körper oder in
     // einem anderen Körper steht.
-    public ArrayList<Dreikante> nehmeKanten() {
+    public ArrayList<Dreistrecke> nehmeStrecken() {
 
-	ArrayList<Dreikante> kanten = new ArrayList<Dreikante>();
+	ArrayList<Dreistrecke> strecken = new ArrayList<Dreistrecke>();
 	
 	// Für alle Körper der Welt
 	for (int i = 0; i < this.koerperliste.size(); i++) {
@@ -54,22 +54,22 @@ public class Koerperwelt {
 	    // Nehme den Körper. Er kennt seinen Ort nicht.
 	    Koerper k = this.koerperliste.get(i);
 
-	    // Er gibt uns seine Kanten, dessen Ursprung aber auf ihm
+	    // Er gibt uns seine Strecken, dessen Ursprung aber auf ihm
 	    // selbst liegt.
-	    Dreikante[] kl = k.nehmeKanten();
+	    Dreistrecke[] kl = k.nehmeStrecken();
 
 	    Dreipunkt ap = this.ortliste.get(i);
 
-	    // Für alle seine Kanten
+	    // Für alle seine Strecken
 	    for (int j = 0; j < kl.length; j++) {
-		// addiere seinen Ort zu den Kanten des Körpers.
+		// addiere seinen Ort zu den Strecken des Körpers.
 		kl[j].addieren(ap);
 
-		// Nur dann fügen die Kante in der Liste zu.
-		kanten.add(kl[j]);
+		// Nur dann fügen die Strecke in der Liste zu.
+		strecken.add(kl[j]);
 	    }
 	}
 
-	return kanten;
+	return strecken;
     }
 }

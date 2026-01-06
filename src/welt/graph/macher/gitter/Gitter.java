@@ -11,7 +11,7 @@ import punkt.Zweipunkt;
   wir die Orten berechnen werden.
 */  
 public class Gitter {
-    // Die Anzahl von Kanten einer Zeile.
+    // Die Anzahl von Strecken einer Zeile.
     public int zeileBetrag;
 
     // Der Weg zwischen zwei Knoten.
@@ -24,7 +24,7 @@ public class Gitter {
 
     public Zweipunkt[] machen(Nachbarschaftsliste nl) {
 
-	// Jeder Knoten wird mit einem Ort verbunden.  Die Kanten
+	// Jeder Knoten wird mit einem Ort verbunden.  Die Strecken
 	// werden nicht genau bestimmt, sondern berechnet.
 	Zweipunkt[] orten = new Zweipunkt[nl.betrag];
 

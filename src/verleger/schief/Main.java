@@ -1,11 +1,11 @@
 package verleger.schief;
 
 import java.util.ArrayList;
-import kante.Zweikante;
+import strecke.Zweistrecke;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
 import koerper.Koerper;
-import welt.zweikante.Zweikantewelt;
+import welt.zweistrecke.Zweistreckewelt;
 import welt.koerper.Koerperwelt;
 
 /*
@@ -30,6 +30,6 @@ public class Main {
 	Schiefverleger sv = new Schiefverleger(-1.0);
 
 	// Benutzen den Verleger.
-	Zweikantewelt zkw = sv.verlegenWelt(kw);
+	Zweistreckewelt zkw = sv.verlegenWelt(kw);
     }
 }

@@ -2,17 +2,17 @@ package sicht.linearschief;
 
 import java.awt.Graphics;
 import javax.swing.JComponent;
-import sicht.kante.Kantesicht;
+import sicht.strecke.Streckesicht;
 import straffer.Straffer;
 import verschieber.Verschieber;
 import verleger.schief.Schiefverleger;
-import welt.zweikante.Zweikantewelt;
+import welt.zweistrecke.Zweistreckewelt;
 import welt.koerper.Koerperwelt;
 
 // Eine Sicht, die eine dreidimensionale Körperwelt einnimmt.
 // Sie wandelt die Körperwelt mit zwei Verlegungen: einer schiefen
 // Verlegung, und einer linearen Verlegung. Sie gibt am Ende eine
-// Zweikantewelt ab.
+// Zweistreckewelt ab.
 //
 // a: Die Tiefe der z-Achse.
 //
@@ -53,19 +53,19 @@ public class Linearschiefsicht extends JComponent {
 	super.paintComponent(g);
 	
 	// Benutzen die Verlegungen.
-	Zweikantewelt zkw = this.sv.verlegenWelt(this.kw);
+	Zweistreckewelt zkw = this.sv.verlegenWelt(this.kw);
 
 	// Straffen die Punkten.
-	Zweikantewelt zkwNeu = Straffer.straffenWelt(zkw,
-						     this.mx, this.my);
+	Zweistreckewelt zkwNeu = Straffer.straffenWelt(zkw,
+						       this.mx, this.my);
 	
 	// Verschieben die Punkten.
-	Zweikantewelt zkwNeuNeu = Verschieber.verschieben(zkwNeu,
-							  this.bx, this.by);
+	Zweistreckewelt zkwNeuNeu = Verschieber.verschieben(zkwNeu,
+							    this.bx, this.by);
 
-	// Wir haben schon eine Sicht, die die Zweikantewelt
+	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.
-	Kantesicht ks = new Kantesicht(zkwNeuNeu);
+	Streckesicht ks = new Streckesicht(zkwNeuNeu);
 	ks.paintComponent(g);
     }
 }

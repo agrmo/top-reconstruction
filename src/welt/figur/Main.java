@@ -4,8 +4,8 @@ import punkt.Zweipunkt;
 import figur.dreieck.Dreieck;
 import figur.Figur;
 import java.util.ArrayList;
-import druck.kante.Kantedrucker;
-import kante.Zweikante;
+import druck.strecke.Streckedrucker;
+import strecke.Zweistrecke;
 
 /*
   javac -d classes $(find src -type f) \
@@ -35,10 +35,10 @@ public class Main {
 	// Mache die Welt.
 	Figurwelt kw = new Figurwelt(fl, ol);
 
-	ArrayList<Zweikante> weltKanten = kw.nehmeKanten();
+	ArrayList<Zweistrecke> weltStrecken = kw.nehmeStrecken();
 
-	for (int i = 0; i < weltKanten.size(); i++) {
-	    System.out.println(Kantedrucker.drucken(weltKanten.get(i)));
+	for (int i = 0; i < weltStrecken.size(); i++) {
+	    System.out.println(Streckedrucker.drucken(weltStrecken.get(i)));
 	}
     }
 }

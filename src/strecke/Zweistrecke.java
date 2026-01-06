@@ -1,20 +1,23 @@
-package kante;
+package strecke;
 
 import punkt.Zweipunkt;
 
-// Eine Zweikante ist ein Paar von zwei Zweipunkten.
+// Eine Zweistrecke ist ein Paar von zwei Zweipunkten.
 //
-// Eine Zweikante ist eine zweidimensionale Kante.
+// Eine Zweistrecke ist eine zweidimensionale Strecke.
 //
-// Die Idee ist, daß wir eine Zweikante eines Körpers beschreiben
+// Die Idee ist, daß wir eine Zweistrecke eines Körpers beschreiben
 // wollen. Obwohl die Daten dahin ganz einfach sind, ist es schwierig,
 // die Datenstrukuren über einen Körper zu zeigen. Wir müssen ganz
 // klar sein, daß ein Paar von Orten Teil eines Körpers ist.
-public class Zweikante {
+//
+// Die Strecken können vielleicht Kanten verkörpern. Vielleicht die
+// Kanten einer Dreiecke oder eines Quadrats.
+public class Zweistrecke {
     public Zweipunkt von;
     public Zweipunkt bis;
     
-    public Zweikante(Zweipunkt v, Zweipunkt b) {
+    public Zweistrecke(Zweipunkt v, Zweipunkt b) {
 	this.von = v;
 	this.bis = b;
     }

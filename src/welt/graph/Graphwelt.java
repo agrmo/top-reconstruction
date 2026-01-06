@@ -12,7 +12,7 @@ import punkt.Zweipunkt;
   - Graph
   - Liste von Orten
   
-  Am Anfang ist ein Graph nicht darstellbar. Er besitzt viele Kanten
+  Am Anfang ist ein Graph nicht darstellbar. Er besitzt viele Strecken
   und Knoten, die keinen bestimmten Ort besitzen.
 
   Eine Graphwelt verbindet einen Graph mit Orten der Knoten, sodaß wir
@@ -20,8 +20,8 @@ import punkt.Zweipunkt;
   Computer ist kein Mensch.
 
   Wie stellte man die Orten eines Graphen? Die Knoten überliegen sich
-  nicht. Die Kanten sind geradlinige. Die Kanten überliegen so wenig
-  andere Kanten wie möglich. Und so weiter. Diese Grundlagen muss man
+  nicht. Die Strecken sind geradlinige. Die Strecken überliegen so wenig
+  andere Strecken wie möglich. Und so weiter. Diese Grundlagen muss man
   rechnerich beitragen.
 
   Eine Graphwelt ist eine Welt des Graphen.

@@ -1,0 +1,24 @@
+package welt.zweistrecke;
+    
+import java.util.ArrayList;
+import welt.Welt;
+import strecke.Zweistrecke;
+
+/*
+  Eine Zweistreckewelt ist eine Liste von zweidimensionalen Strecken.
+
+  Die Strecken können Teile einer Figur, eines Körpers oder eines
+  Graphen sein.
+
+  Die Welt konnte von einer dreidimensionalen Welt gebildet sein. Ein
+  auf einer zweidimensionale Ebene verlegter Kubus stellt keine schöne
+  Figur dar, weil er wahrscheinlich verschiedene Strecken innerhalb
+  der Figur enthält.
+*/
+public class Zweistreckewelt extends Welt {
+    public ArrayList<Zweistrecke> streckenliste;
+
+    public Zweistreckewelt(ArrayList<Zweistrecke> zsl) {
+	this.streckenliste = zsl;
+    }
+}

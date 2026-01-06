@@ -1,6 +1,6 @@
 package figur.dreieck;
 
-import kante.Zweikante;
+import strecke.Zweistrecke;
 import punkt.Zweipunkt;
 import verdoppler.punkt.Punktverdoppler;
 import figur.Figur;
@@ -27,21 +27,21 @@ public class Dreieck extends Figur {
 	return ecken;
     }
 
-    public Zweikante[] nehmeKanten() {
+    public Zweistrecke[] nehmeStrecken() {
 
 	Zweipunkt[] ecken = this.nehmeEcken();
 
-	Zweikante[] kanten = new Zweikante[3];
+	Zweistrecke[] strecken = new Zweistrecke[3];
 
-	kanten[0] = new Zweikante(Punktverdoppler.verdoppeln(ecken[0]),
+	strecken[0] = new Zweistrecke(Punktverdoppler.verdoppeln(ecken[0]),
 				  Punktverdoppler.verdoppeln(ecken[1]));
 
-	kanten[1] = new Zweikante(Punktverdoppler.verdoppeln(ecken[1]),
+	strecken[1] = new Zweistrecke(Punktverdoppler.verdoppeln(ecken[1]),
 				  Punktverdoppler.verdoppeln(ecken[2]));
 
-	kanten[2] = new Zweikante(Punktverdoppler.verdoppeln(ecken[2]),
+	strecken[2] = new Zweistrecke(Punktverdoppler.verdoppeln(ecken[2]),
 				  Punktverdoppler.verdoppeln(ecken[0]));
 
-	return kanten;
+	return strecken;
     }
 }

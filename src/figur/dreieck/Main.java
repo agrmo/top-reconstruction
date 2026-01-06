@@ -1,7 +1,7 @@
 package figur.dreieck;
 
-import kante.Zweikante;
-import druck.kante.Kantedrucker;
+import strecke.Zweistrecke;
+import druck.strecke.Streckedrucker;
 
 /*
   javac -d classes $(find src -type f) && java -cp classes figur.dreieck.Main
@@ -12,8 +12,8 @@ public class Main {
 	
 	Dreieck de = new Dreieck(5);
 
-	for (Zweikante zk : de.nehmeKanten()) {
-	    System.out.println(Kantedrucker.drucken(zk));
+	for (Zweistrecke zk : de.nehmeStrecken()) {
+	    System.out.println(Streckedrucker.drucken(zk));
 	}
     }
 }

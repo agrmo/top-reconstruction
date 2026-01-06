@@ -1,7 +1,7 @@
 package figur.quadrat;
 
 import figur.Figur;
-import kante.Zweikante;
+import strecke.Zweistrecke;
 import punkt.Zweipunkt;
 
 // Der Quadrat;
@@ -25,17 +25,17 @@ public class Quadrat extends Figur {
 	return ecken;
     }
 
-    public Zweikante[] nehmeKanten() {
+    public Zweistrecke[] nehmeStrecken() {
 	
-	Zweikante[] kanten = new Zweikante[4];
+	Zweistrecke[] strecken = new Zweistrecke[4];
 
 	int l = this.laenge;
 
-	kanten[0] = new Zweikante(new Zweipunkt(0,0),new Zweipunkt(l,0));
-	kanten[1] = new Zweikante(new Zweipunkt(l,0),new Zweipunkt(l,l));
-	kanten[2] = new Zweikante(new Zweipunkt(l,l),new Zweipunkt(0,l));
-	kanten[1] = new Zweikante(new Zweipunkt(0,l),new Zweipunkt(0,0));
+	strecken[0] = new Zweistrecke(new Zweipunkt(0,0),new Zweipunkt(l,0));
+	strecken[1] = new Zweistrecke(new Zweipunkt(l,0),new Zweipunkt(l,l));
+	strecken[2] = new Zweistrecke(new Zweipunkt(l,l),new Zweipunkt(0,l));
+	strecken[1] = new Zweistrecke(new Zweipunkt(0,l),new Zweipunkt(0,0));
 
-	return kanten;
+	return strecken;
     }
 }

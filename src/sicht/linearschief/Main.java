@@ -16,8 +16,8 @@ public class Main {
 
     static void beispielEins() {
 	// Mache die Welt.
-	Kubus k = new Kubus(10);
-	Dreipunkt p = new Dreipunkt(20,20,20);
+	Kubus k = new Kubus(50);
+	Dreipunkt p = new Dreipunkt(100, 100, 100);
 	ArrayList<Koerper> kl = new ArrayList<Koerper>();
 	kl.add(k);
 	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
@@ -46,10 +46,10 @@ public class Main {
 	//   0.0: Addiere 0.0 zu alle y Stellen
 	//
 	Linearschiefsicht lss = new Linearschiefsicht(kw,
-						      1.0,
+						      0.1,
 						      2.0, 0.0, 1.0, 0.0);
 	
-	// Stellen die Daten dar.
+	// Stellen die Welt dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);

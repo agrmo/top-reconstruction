@@ -3,7 +3,7 @@ package sicht.parallel;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JComponent;
-import kante.Dreikante;
+import strecke.Dreistrecke;
 import welt.koerper.Koerperwelt;
 
 // Die Parallelsicht zeigt insbesondere nur die erste und zweite Teile
@@ -23,8 +23,8 @@ public class Parallelsicht extends JComponent {
     public void paintComponent(Graphics g) {
 	super.paintComponent(g);
 
-	// Nehme die Dreikanten dieser Welt.
-	ArrayList<Dreikante> wk = this.kw.nehmeKanten();
+	// Nehme die Dreistrecken dieser Welt.
+	ArrayList<Dreistrecke> wk = this.kw.nehmeStrecken();
 
 	for (int i = 0; i < wk.size(); i++) {
 	    g.drawLine((int) wk.get(i).von.xteil, (int) wk.get(i).von.yteil,

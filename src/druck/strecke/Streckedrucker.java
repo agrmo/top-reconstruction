@@ -1,11 +1,11 @@
-package druck.kante;
+package druck.strecke;
 
-import kante.Zweikante;
-import kante.Dreikante;
+import strecke.Zweistrecke;
+import strecke.Dreistrecke;
 import druck.punkt.Punktdrucker;
 
-public class Kantedrucker {
-    public static String drucken(Zweikante k) {
+public class Streckedrucker {
+    public static String drucken(Zweistrecke k) {
 	StringBuilder sb = new StringBuilder();
 	sb.append("Von ");
 	sb.append(Punktdrucker.drucken(k.von));
@@ -15,7 +15,7 @@ public class Kantedrucker {
 	return sb.toString();
     }
 
-    public static String drucken(Dreikante k) {
+    public static String drucken(Dreistrecke k) {
 	StringBuilder sb = new StringBuilder();
 	sb.append("Von ");
 	sb.append(Punktdrucker.drucken(k.von));

@@ -13,7 +13,7 @@ package vektor;
   mit der Welt ist. Der Zweivektor kann eine andere Basis besitzen,
   sodaß seine Teile in anderen Richtungen zeigen können.
 
-  Zum Beispiel die Ecke enthält Dreivektoren, um ihre Kante zu zeigen.
+  Zum Beispiel die Ecke enthält Dreivektoren, um ihre Strecke zu zeigen.
  */
 public class Zweivektor {
     public int eins;
