@@ -46,6 +46,25 @@ public class Augeverleger {
 	return aus;
     }
 
+    // Ein: Liste von dreidimensionalen Punkten
+    // Aus: Liste von zweidimensionalen Punkten
+    //
+    // Verlegen diese zweidimensionale Punkten zu dreidimensionalen Punkten.
+    public static Zweipunkt[] verlegen(Dreipunkt[] dpl, Dreipunkt augepunkt, int perspektive,
+				       int breite, int hoehe,
+				       double yaw, double pitch, double roll) {
+	
+	Zweipunkt[] zpl = new Zweipunkt[dpl.length];
+
+	for (int i = 0; i < dpl.length; i++) {
+	    zpl[i] = Augeverleger.verlegen(dpl[i], augepunkt, perspektive,
+					   breite, hoehe,
+					   yaw, pitch, roll);
+	}
+	
+	return zpl;
+    }
+
     // ein: Dreikante, Augesicht
     // aus: Zweikante
     //

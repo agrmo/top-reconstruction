@@ -15,13 +15,9 @@ public class Main {
     public static void main(String[] args){
 
 	// Mache die Daten.
-	ArrayList<Zweipunkt> pl = new ArrayList<Zweipunkt>();
 	Quadrat q = new Quadrat(50);
+	Zweipunkt[] pl = q.nehmeEcken();
 
-	for (Zweipunkt zp : q.nehmeEcken()) {
-	    pl.add(zp);
-	}
-	
 	// Mache die Sicht.
 	Zweipunktsicht ps = new Zweipunktsicht(pl);
 

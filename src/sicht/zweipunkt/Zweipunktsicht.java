@@ -1,6 +1,5 @@
 package sicht.zweipunkt;
 
-import java.util.ArrayList;
 import javax.swing.JComponent;
 import java.awt.Graphics;
 import punkt.Zweipunkt;
@@ -10,11 +9,11 @@ public class Zweipunktsicht extends JComponent {
 
     // Wir müssen die Welt in die Sicht einsetzen, weil Java sie
     // irgendwann anrufen wird, die Welt darzustellen. 
-    public ArrayList<Zweipunkt> pl;
+    public Zweipunkt[] pl;
 
     int groese = 10;
     
-    public Zweipunktsicht(ArrayList<Zweipunkt> pl) {
+    public Zweipunktsicht(Zweipunkt[] pl) {
 	this.pl = pl;
     }
 
@@ -28,8 +27,8 @@ public class Zweipunktsicht extends JComponent {
 	super.paintComponent(g);
 
 	// Stelle jede Punkt dieser Welt dar.
-	for (int i = 0; i < this.pl.size(); i++) {
-	    this.darstellenPunkt(g, this.pl.get(i));
+	for (int i = 0; i < this.pl.length; i++) {
+	    this.darstellenPunkt(g, this.pl[i]);
 	}
     }
 }

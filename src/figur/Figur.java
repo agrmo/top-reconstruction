@@ -4,6 +4,11 @@ import kante.Zweikante;
 import punkt.Zweipunkt;
 
 // Eine Figur ist ein zweidimensionaler Ding.
+//
+// Eine Figur besitzt immer wie der Körper einen Inhalt.
+//
+// Eine Strecke, ein Weg und ein Punkt sind nicht Figuren oder
+// Körpern.
 public abstract class Figur {
 
     // aus: Liste von Zweikanten
