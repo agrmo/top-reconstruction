@@ -1,13 +1,12 @@
-package welt.graph.macher.gitter;
+package welt.zweigraph.gitter;
 
-import welt.graph.Graphwelt;
+import welt.zweigraph.Zweigraphwelt;
 import graph.Nachbarschaftsliste;
-import welt.graph.macher.gitter.Gitter;
 import punkt.Zweipunkt;
 
 /*
   javac -d classes $(find src -type f)		\
-  && java -cp classes welt.graph.macher.gitter.Main
+  && java -cp classes welt.zweigraph.gitter.Main
 */
 
 public class Main {
@@ -18,9 +17,8 @@ public class Main {
 	int betrag = 3;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
 
-	Gitter gitter = new Gitter(2, 10);
-	Zweipunkt[] orten = gitter.machen(nl);
+	Zweipunkt[] orten = Zweigitter.machen(nl, 20, 10);
 
-	Graphwelt gw = new Graphwelt(nl, orten);
+	Zweigraphwelt gw = new Zweigraphwelt(nl, orten);
     }    
 }

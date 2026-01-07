@@ -1,44 +1,40 @@
-package sicht.graph;
+package sicht.zweigraph;
 
 import javax.swing.JFrame;
 import graph.Nachbarschaftsliste;
-import welt.graph.Graphwelt;
-import welt.graph.macher.gitter.Gitter;
+import welt.zweigraph.Zweigraphwelt;
+import welt.zweigraph.gitter.Zweigitter;
 import punkt.Zweipunkt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes sicht.graph.Main
+  && java -cp classes sicht.zweigraph.Main
 */
 
 public class Main {
 
     public static void main(String[] args){
- 	JFrame frame = new JFrame();
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setSize(1200, 600);
 
 	// Baue einen Graph auf. Wir benutzen eine Nachbarschaftsliste.
 	int[][] paare = {{1,2},{2,0}};
 	int betrag = 3;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
 
-	// Bereiten wir eine Gitter vor. Jede Zeile wird zwei Knoten
+	// Bauen wir die Gitter auf.  Jede Zeile wird zwei Knoten
 	// besitzen. Jeder Knoten wird 100 voneinander getrennt.
-	Gitter gitter = new Gitter(2, 100);
-
-	// Bauen wir die Gitter auf.
-	Zweipunkt[] orten = gitter.machen(nl);
+	Zweipunkt[] orten = Zweigitter.machen(nl, 2, 100);
 
 	// Sammeln wir die Orten und den Graphen zusammen.
-	Graphwelt gw = new Graphwelt(nl, orten);
+	Zweigraphwelt gw = new Zweigraphwelt(nl, orten);
 
 	// Geben wir die Orten und den Graph zur Sicht.
-	Graphsicht gs = new Graphsicht(gw);
+	Zweigraphsicht gs = new Zweigraphsicht(gw);
 
-	// Geben wir die Sicht zu Java, um darzustellen.
+	// Stellen die Daten dar.
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize(1200, 600);
 	frame.add(gs);
-	
 	frame.setVisible(true);
     }
 }

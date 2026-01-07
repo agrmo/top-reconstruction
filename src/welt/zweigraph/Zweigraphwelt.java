@@ -1,4 +1,4 @@
-package welt.graph;
+package welt.zweigraph;
 
 import graph.Nachbarschaftsliste;
 import punkt.Zweipunkt;
@@ -26,11 +26,11 @@ import punkt.Zweipunkt;
 
   Eine Graphwelt ist eine Welt des Graphen.
  */
-public class Graphwelt {
+public class Zweigraphwelt {
     public Zweipunkt[] orten;
     public Nachbarschaftsliste nachbarschaftsliste;
 
-    public Graphwelt(Nachbarschaftsliste n, Zweipunkt[] o) {
+    public Zweigraphwelt(Nachbarschaftsliste n, Zweipunkt[] o) {
 	orten = o;
 	nachbarschaftsliste = n;
     }

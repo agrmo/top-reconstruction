@@ -1,4 +1,4 @@
-package welt.graph.macher.gitter;
+package welt.zweigraph.gitter;
 
 import graph.Nachbarschaftsliste;
 import punkt.Zweipunkt;
@@ -10,19 +10,13 @@ import punkt.Zweipunkt;
   keine Orten gibt? Nehmen wir eine Menge von Grundlagen an, mit denen
   wir die Orten berechnen werden.
 */  
-public class Gitter {
-    // Die Anzahl von Strecken einer Zeile.
-    public int zeileBetrag;
+public class Zweigitter {
 
-    // Der Weg zwischen zwei Knoten.
-    public int weg;
-
-    public Gitter(int zb, int w) {
-	zeileBetrag = zb;
-	weg = w;
-    }
-
-    public Zweipunkt[] machen(Nachbarschaftsliste nl) {
+    // zeileBetrag: Die Anzahl von Strecken einer Zeile.
+    // weg: Der Weg zwischen zwei Knoten.
+    public static Zweipunkt[] machen(Nachbarschaftsliste nl,
+				     int zeileBetrag,
+				     int weg) {
 
 	// Jeder Knoten wird mit einem Ort verbunden.  Die Strecken
 	// werden nicht genau bestimmt, sondern berechnet.
@@ -35,12 +29,12 @@ public class Gitter {
 	int kolonneKennzeichen = 0;
 
 	for (int i = 0; i < nl.betrag; i++) {
-	    for (int j = 0; j < this.zeileBetrag; j++) {
+	    for (int j = 0; j < zeileBetrag; j++) {
 
-		orten[i] = new Zweipunkt(zeileKennzeichen * this.weg,
-					 kolonneKennzeichen * this.weg);
+		orten[i] = new Zweipunkt(zeileKennzeichen * weg,
+					 kolonneKennzeichen * weg);
 		
-		if (zeileKennzeichen > this.zeileBetrag) {
+		if (zeileKennzeichen > zeileBetrag) {
 		    zeileKennzeichen = 0;
 		} else {
 		    zeileKennzeichen += 1;

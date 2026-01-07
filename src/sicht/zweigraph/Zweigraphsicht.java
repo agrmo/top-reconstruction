@@ -1,23 +1,23 @@
-package sicht.graph;
+package sicht.zweigraph;
 
 import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
-import welt.graph.Graphwelt;
+import welt.zweigraph.Zweigraphwelt;
 import punkt.Zweipunkt;
 
 // Ein Bild ist eine zweidimensionale Darstellung von etwas.  Wir
 // können es unmittelbar zu Java eintragen, um zu darstellen.  Unser
 // Sicht stellt uns einen Graph dar.  Ihre Beobachtung der Welt
 // erfolgt unabhängig vom Zeitverlauf derer.
-public class Graphsicht extends JComponent {
+public class Zweigraphsicht extends JComponent {
     
-    public Graphwelt gw;
+    public Zweigraphwelt gw;
     
     // Nehme an, wie groß ein Knoten ist.
-    int groese = 20;
+    int groese = 10;
     
-    public Graphsicht(Graphwelt g) {
+    public Zweigraphsicht(Zweigraphwelt g) {
 	gw = g;
     }
 
@@ -26,7 +26,7 @@ public class Graphsicht extends JComponent {
 	int knotenx = (int) this.gw.orten[i].xteil;
 	int knoteny = (int) this.gw.orten[i].yteil;
 	
-	g.fillOval(knotenx, knoteny, this.groese, this.groese);
+	g.drawOval(knotenx, knoteny, this.groese, this.groese);
     }
 
     // Stelle alle die zu dem i-ten Knoten verbundenen Strecken dar.
