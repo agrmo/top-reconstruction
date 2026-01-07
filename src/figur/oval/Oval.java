@@ -1,13 +1,13 @@
 package figur.oval;
 
 public class Oval {
-    public int xausdehnung;
-    public int yausdehnung;
+    public int breite;
+    public int hoehe;
 
     // ein: ganze Zahl, ganze Zahl
     // Der Radius dieses Ovals.
-    public Oval(int xa, int ya) {
-	this.xausdehnung = xa;
-	this.yausdehnung = ya;
+    public Oval(int b, int h) {
+	this.breite = b;
+	this.hoehe = h;
     }
 }
