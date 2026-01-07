@@ -1,6 +1,7 @@
 package druck.graph;
 
 import graph.Nachbarschaftsliste;
+import graph.Doppelnachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
 
 /*
@@ -8,8 +9,8 @@ import graph.Nachbarschaftsmatrix;
 */
 
 public class Main {
-    public static void main(String[] args) {
 
+    static void beispielEins() {
 	GraphText gd = new GraphText();
 	
 	int[][] paare = {{1,2},{2,0}};
@@ -23,5 +24,19 @@ public class Main {
 	nl.verdoppeln();
 
 	System.out.println(gd.drucke(nl));
+    }
+
+    static void beispielZwei() {
+	GraphText gd = new GraphText();
+	int[][] paare = {{1,2},{2,0}};
+	int groese = 3;
+	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
+	System.out.println(gd.drucke(nl));
+	Doppelnachbarschaftsliste dnl = new Doppelnachbarschaftsliste(nl);
+	System.out.println(gd.drucke(dnl));
+    }
+    
+    public static void main(String[] args) {
+	beispielZwei();
     }
 }

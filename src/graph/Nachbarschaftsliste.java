@@ -48,6 +48,12 @@ public class Nachbarschaftsliste {
       Die Anzahl der Knoten in diesem Graph. Wir müssen den Betrag
       bestimmt einnehmen, weil es Konten ohne Kanten geben konnte.
     */
+    
+    public Nachbarschaftsliste() {
+	// Nur benutzt, um Kinder zu machen.
+	// (Warum???)
+    }
+    
     public Nachbarschaftsliste(int[][] paare, int inBetrag) {
 	betrag = inBetrag;
 	
