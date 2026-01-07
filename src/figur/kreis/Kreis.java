@@ -1,7 +1,7 @@
-package figur.kries;
+package figur.kreis;
 
 public class Kreis {
-    int radius;
+    public int radius;
 
     // r: ganze Zahl
     // Der Radius dieses Kreises.

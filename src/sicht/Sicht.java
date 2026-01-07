@@ -1,31 +1,24 @@
 package sicht;
 
 // Im Allgemeinen ist eine Sicht ein Verfahren zum Anschauen einer
-// Datenstruktur.
+// Figur.
 //
-// Die ursprüngliche Daten können eindimensional, zweidimensional,
-// dreidimensional, räumlich oder zeitlich sein.
+// Die Sicht ist immer zweidimensional. Die zur Sicht gegebene Daten
+// sind immer zweidimensional.
+//
+// Aber die ursprüngliche Daten können eindimensional,
+// zweidimensional, dreidimensional, räumlich oder zeitlich sein.
 //
 // Die Sicht bildet die Daten nicht auf. Am besten umwandelt sie die
-// ursprüngliche Daten nicht.
-//
-// Die Sicht enthält die Welt.
+// ursprüngliche Daten nicht.  Eine Sicht soll so wenig Berechnungen
+// wie möglich machen, sodaß sie die Welt darstellen wird.
 //
 // Die Sicht stellt die Körper einer Welt dar, sodaß wir uns den
 // Körpern auf einem Bildschirm anschauen können.
 //
-// Die gegebene Welt enthält alle Körper und ihre befindenden
-// Stellen. Die Sicht darf nur ausrechnen, wie die Körper
-// aussehen. Dafür muss sie die Dreistrecken eines Kubus gut ausrechnen,
-// und so weiter.
-//
 // Die Sicht kennt nicht, wie sie mit einem Mensch wechselwirken
 // kann. Zum Beispiel mit der Mouse oder der Tastatur.
 //
-// Wir müssen entscheiden, wer diese Körper darstellen wird.
-//
-// Eine Sicht soll so wenig Berechnungen wie möglich machen, sodaß sie
-// die Welt darstellen wird.
 public class Sicht {
     
 }
