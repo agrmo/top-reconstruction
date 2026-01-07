@@ -1,0 +1,49 @@
+package graph.rechnen.kanteanzahl;
+
+import graph.Nachbarschaftsliste;
+
+/*
+  javac -d classes $(find src -type f) \
+  && java -cp classes graph.rechnen.kanteanzahl.Main
+*/
+
+public class Main {
+
+    static void beispielEins() {
+	int[][] paare = {{1,2},{2,0}};
+	int betrag = 3;
+	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
+	int ka = Kanteanzahl.berechnen(nl);
+	System.out.println(ka);
+    }
+
+    static void beispielZwei() {
+	/*
+	 * Darstellung:
+	 * 
+	 * 9
+	 * 
+	 * 1 - 7 - 3 - 4
+	 *     \   |
+	 *      \  |
+	 *       \ |
+	 *        0
+	 *
+	 * 6 - 2 - 8
+	 * |       |
+	 * ---------
+	 */
+	
+	int[][] paare = {{1,7},{7,3},{3,4},{3,0},{7,0},{6,2},{2,8},{6,8}};
+	int betrag = 10;
+	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
+	int ka = Kanteanzahl.berechnen(nl);
+
+	// Soll 8 geben.
+	System.out.println(ka);
+    }
+
+    public static void main(String[] args) {
+	beispielZwei();
+    }
+}
