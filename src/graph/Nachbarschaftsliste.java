@@ -74,37 +74,4 @@ public class Nachbarschaftsliste {
 	    n.get(paar[0]).add(paar[1]);
 	}
     }
-
-    // Am Anfang ist jede Kante nicht verdoppelt. z.B.,
-    // 0: [1]
-    // 1: []
-    //
-    // Dieser Graph besitzt eine Kante, und diese Kante ist nur einmal
-    // in der Liste bezeichnet. Doch besitzt der Knoten 1 eine
-    // Kante. Manchmal wollen wir alle Kanten unmittelbar in ihrer
-    // Liste gezeigt zu sein.
-    //
-    // z.B. ein:
-    // 0: [1]
-    // 1: []
-    // aus:
-    // 0: [1]
-    // 1: [0]
-    // Tun wir das.
-    public void verdoppeln() {
-	for (int i = 0; i < n.size(); i++) {
-	    ArrayList<Integer> knoten = n.get(i);
-
-	    // Für keden Knoten, setzen seine Kanten in den anderen
-	    // Knoten ein. 
-	    for (int j = 0; j < knoten.size(); j++) {
-		// Wir kennen nicht, ob diese Kante die ursprüngliche
-		// Kante ist, also prüfe ob die Kante schon im Knoten
-		// steht.
-		if (!n.get(knoten.get(j)).contains(i)) {
-		    n.get(knoten.get(j)).add(i);
-		}
-	    }
-	}
-    }
 }

@@ -2,6 +2,7 @@ package graph.rechnen.teile;
 
 import java.util.ArrayList;
 import graph.Nachbarschaftsliste;
+import graph.Doppelnachbarschaftsliste;
 import graph.zufalls.Zufallsgraph;
 import druck.graph.tgf.GraphTGF;
 import liste.Liste;
@@ -17,10 +18,10 @@ public class Main {
 	int[][] paare = {{1,2},{2,0}};
 	int betrag = 3;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
-	nl.verdoppeln();
-
+	Doppelnachbarschaftsliste dnl = new Doppelnachbarschaftsliste(nl);
+	
 	// Soll [[3,1]] geben.
-	int[][] tTeile = Teile.teile(nl);
+	int[][] tTeile = Teile.teile(dnl);
 	System.out.println(Liste.nehmeStringVonArrayArray(tTeile));
     }
 
@@ -46,12 +47,12 @@ public class Main {
 	int[][] paare = {{1,7},{7,3},{3,4},{3,0},{7,0},{6,2},{2,8},{6,8}};
 	int betrag = 10;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
-	nl.verdoppeln();
+	Doppelnachbarschaftsliste dnl = new Doppelnachbarschaftsliste(nl);
 
 	// Soll [[1,1],[5,1],[3,1]] abgeben.
-	int[][] tTeile = Teile.teile(nl);
+	int[][] tTeile = Teile.teile(dnl);
 	System.out.println(Liste.nehmeStringVonArrayArray(tTeile));
-	int groesste = Teile.groessterTeil(nl);
+	int groesste = Teile.groessterTeil(dnl);
 	System.out.println(groesste);
     }
 
@@ -60,11 +61,12 @@ public class Main {
 	GraphTGF gtgf = new GraphTGF();
 	System.out.println(gtgf.macheGepheiTGF(zg.nachbarschaftsliste));
 
-	zg.nachbarschaftsliste.verdoppeln();
+	Nachbarschaftsliste nl = zg.nachbarschaftsliste;
+	Doppelnachbarschaftsliste dnl = new Doppelnachbarschaftsliste(nl);
 	
-	int[][] tTeile = Teile.teile(zg.nachbarschaftsliste);
+	int[][] tTeile = Teile.teile(dnl);
 	System.out.println(Liste.nehmeStringVonArrayArray(tTeile));
-	int groesste = Teile.groessterTeil(zg.nachbarschaftsliste);
+	int groesste = Teile.groessterTeil(dnl);
 	System.out.println(groesste);	
     }
 
@@ -96,8 +98,9 @@ public class Main {
 	for (int i = 0; i < pListe.length; i++) {
 	    double p = pListe[i];
 	    Zufallsgraph zg = new Zufallsgraph(500, p);
-	    zg.nachbarschaftsliste.verdoppeln();
-	    int groesste = Teile.groessterTeil(zg.nachbarschaftsliste);
+	    Nachbarschaftsliste nl = zg.nachbarschaftsliste;
+	    Doppelnachbarschaftsliste dnl = new Doppelnachbarschaftsliste(nl);
+	    int groesste = Teile.groessterTeil(dnl);
 	    pZuBetrag[i] = new double[] {p, groesste};
 	}
 

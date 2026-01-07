@@ -37,10 +37,35 @@ public class Doppelnachbarschaftsliste extends Nachbarschaftsliste {
 	    // Für keden Knoten, setzen seine Kanten in den anderen
 	    // Knoten ein. 
 	    for (int j = 0; j < knoten.size(); j++) {
+
+		/*
+		  Diese Kante konnte die verdoppelte Kante sein, oder
+		  die ursprüngliche Kante sein.
+		  
+		  Beispiel:
+		  Anfang:
+		  0: []
+                  1: [2]
+                  2: [0]
+                  
+                  Schritt: [1,2]: Setzen ein: Von: 2 bis: 1
+
+		  Schritt: [2,0]: Setzen ein: Von: 0 bis: 2
+
+		  Schritt: [2,1]:
+		  Beide Kanten [2,1] und [1,2] stehen schon im Graphen.
+                  Setzen nicht ein: Von: 2 bis: 1
+
+		  Ende:
+                  0: [2]
+                  1: [2]
+                  2: [0, 1]
+
+		  Prüfe ob die Kante schon im Knoten steht.
+		 */
+
 		if (!n.get(knoten.get(j)).contains(i)) {
 		    n.get(knoten.get(j)).add(i);
-		} else {
-		    System.out.println("???");
 		}
 	    }
 	}

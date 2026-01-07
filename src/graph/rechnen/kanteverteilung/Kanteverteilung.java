@@ -2,24 +2,27 @@ package graph.rechnen.kanteverteilung;
 
 import liste.Liste;
 import graph.Nachbarschaftsliste;
-import graph.Nachbarschaftsmatrix;
+import graph.Doppelnachbarschaftsliste;
 import java.util.HashMap;
 import java.util.ArrayList;
 
+// Mache die Anzahlverteilung der Kanten im Graphen.
 public class Kanteverteilung {
-    // Mache einen Kurve, der die Anzahlverteilung der Kanten
-    // im Graphen zeigt.
+
     // ein: Nachbarschaftsliste
     // aus: int[][]. Erstes Zeichen ist die Anzahl der Kante. Zweites zeichen
     // ist die Anzahl der Knoten.
-    // z.B.
+
+    // Beispiel
     // [[0,0],[1,5],[2,10],[3,7],[4,3],[5,1]]
     // Keine Knote hat keine Kante. 5 Knoten besitzen eine Kante, usw. Kein
     // Knoten besitzt 6 Kanten.
-    // z.B.
+    
+    // Beispiel
     // [[0,1],[1,8],[2,5],[3,2],[4,1]]
     // Diese Liste zeigt, daß es keinen Knoten ohne Kante gibt.
-    // Es gibt 8 Knoten, die eine Kante besitzen, usw.    
+    // Es gibt 8 Knoten, die eine Kante besitzen, usw.
+    
     public static int[][] kanteVerteilung(Nachbarschaftsliste nl) {
 
 	// Gedanke:
@@ -39,8 +42,8 @@ public class Kanteverteilung {
 	// verdoppeln, sodaß jeder Knoten zeigt unmittelbar alle seine
 	// Kante.
 
-	nl.verdoppeln();
-
+	Doppelnachbarschaftsliste dnl = new Doppelnachbarschaftsliste(nl);
+	
 	// Eine Map der Abzählung der Kante.
 	// z.B.
 	// 0: 1
@@ -56,8 +59,8 @@ public class Kanteverteilung {
 	// seine Kante gerade gezeigt. Also wir müssen nur den Betrag
 	// der Liste aufzählen.
 
-	for (int i = 0; i < nl.n.size(); i++) {
-	    ArrayList<Integer> knoten = nl.n.get(i);
+	for (int i = 0; i < dnl.n.size(); i++) {
+	    ArrayList<Integer> knoten = dnl.n.get(i);
 	    int betrag = knoten.size();
 
 	    if (kv.containsKey(betrag)) {

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import graph.Nachbarschaftsliste;
-import graph.Nachbarschaftsmatrix;
+import graph.Doppelnachbarschaftsliste;
 import graph.rechnen.tiefensuche.Tiefensuche;
 import liste.Liste;
 
@@ -26,7 +26,7 @@ public class Teile {
     // Es gibt 3 Knoten, die in einem Teil stehen. Es gibt 1 3-Teile.    
     // aus:
     // [[1,2],[2,1],[3,1]]
-    public static int[][] teile(Nachbarschaftsliste nl) {
+    public static int[][] teile(Doppelnachbarschaftsliste dnl) {
 
 	// Gedanke:
 	// 1. Leere Abbildung t, die zeigt, wie viele Teile mit einem
@@ -60,14 +60,14 @@ public class Teile {
 
 	// Fangen wir mit dem Verfahren an.
 
-	for (int i = 0; i < nl.betrag; i++) {
+	for (int i = 0; i < dnl.betrag; i++) {
 	    nichtGesehen.add(i);
 	}
 
 	Tiefensuche t = new Tiefensuche();
 
-	// Ein Tiefensuche-Verfahren nimmt an, daß die
-	// Nachbarschaftsliste verdoppelt ist.
+	// Ein Tiefensuche-Verfahren nimmt an, daß der Graph
+	// verdoppelt ist.
 
 	while (nichtGesehen.size() > 0) {
 	    // Nehme nur einen neuen Knoten, der nicht gesehen ist.
@@ -85,7 +85,7 @@ public class Teile {
 	    // die wir einfach aufzählen werden. Tun wir das, bis wir
 	    // keinen neuen Knoten finden kann.
 
-	    int[] naechsterteil = t.tiefensuche(nl, naechsterKnoten);
+	    int[] naechsterteil = t.tiefensuche(dnl, naechsterKnoten);
 
 	    // Wir haben eine Menge von Knoten gefunden. Setzen die in
 	    // der gesehenen Menge ein, sodaß wir nicht diesen Teil
@@ -142,8 +142,8 @@ public class Teile {
     // Teileverteilung zu nehmen. Also das antwortet die Frage: wie
     // groß ist der größte Teil gieses Graphen? Nicht sehr
     // aufwandfrei, aber hilfreich.
-    public static int groessterTeil(Nachbarschaftsliste nl) {
-	int[][] t = teile(nl);
+    public static int groessterTeil(Doppelnachbarschaftsliste dnl) {
+	int[][] t = teile(dnl);
 
 	int groesste = 0;
 	

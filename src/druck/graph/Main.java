@@ -20,10 +20,6 @@ public class Main {
 	
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
 	System.out.println(gd.drucke(nl));
-
-	nl.verdoppeln();
-
-	System.out.println(gd.drucke(nl));
     }
 
     static void beispielZwei() {
