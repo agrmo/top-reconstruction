@@ -11,33 +11,43 @@ import java.util.ArrayList;
 public class Nachbarschaftsliste {
 
     /*
-      Die Daten der Nachbarschaftsliste.  z.B. Ein Graph mit 3 Knoten,
-      die eine Schleife bildet ist [[1],[2],[0]]. Es gibt zwei Arten
-      von dieser Nachbarschaftsliste: eine ohne Verdopplungen und eine
-      mit Verdopplungen. Der gleiche Graph mit Verdopplungen ist
-      [[1,2],[0,2],[0,1]]. Die Ordnung der Kanten ist ganz
-      unwichtig. Die Ordnung der Knoten in der Liste ist wichtig, weil
-      nur das Kennzeichen zeigt, welcher von der Knoten er ist.
+      Die Daten der Nachbarschaftsliste. Es gibt zwei Arten von dieser
+      Nachbarschaftsliste: eine ohne Verdopplungen und eine mit
+      Verdopplungen. Die Ordnung der Kanten ist ganz unwichtig. Die
+      Ordnung der Knoten in der Liste ist wichtig, weil nur das
+      Kennzeichen zeigt, welcher von der Knoten er ist.
+
+      Beispiel:
+      paare: [[1,2],[0,2],[0,1]]
+
+      Bildet die Nachbarschaftsliste:
+      0: [1]
+      1: [2]
+      2: [0]
     */
     public ArrayList<ArrayList<Integer>> n;
     public int betrag;
 
-    // paare: Liste von Liste von Integer
-    // List von Paare, die die Knoten einer Kante zeigen.
-    
-    // Die Knoten sind genau die Kennzeichen der Listen.
-    // z.B. [[1,2],[0,1],[2,0]] eine Schleife.
+    /*
+      paare: Liste von Liste von Integer
+      
+      List von Paare, die die Knoten einer Kante zeigen.Die Knoten
+      sind genau die Kennzeichen der Listen.  z.B. [[1,2],[0,1],[2,0]]
+      ist eine Schleife.
+      
+      Nehmen wir an, daß jede Kante is nur einmal in Paare gegeben,
+      z.B. nur [1,2] und nicht beide [1,2] und [2,1].
+      
+      paare konnte trotzdem Verdopplungen besitzen. Daß wäre ein
+      Fehler des Benutzers. (Ich sollte um diesen Fall kümmern. Wie
+      konnte ich bestätigen, daß der Graph keine Verdopplung trägt,
+      ohne Zweifel?)
+      
+      inBetrag: ganze Zahl
 
-    // Nehmen wir an, daß jede Kante is nur einmal in Paare gegeben,
-    // z.B. nur [1,2] und nicht beide [1,2] und [2,1].
-
-    // "paare" konnte trotzdem Verdopplungen besitzen. Daß wäre ein
-    // Fehler des Benutzers. (Ich sollte um diesen Fall kümmern. Wie
-    // konnte ich bestätigen, daß der Graph keine Verdopplung trägt,
-    // ohne Zweifel?)
-    
-    // inBetrag: ganze Zahl
-    // Die Anzahl der Knoten in diesem Graph.
+      Die Anzahl der Knoten in diesem Graph. Wir müssen den Betrag
+      bestimmt einnehmen, weil es Konten ohne Kanten geben konnte.
+    */
     public Nachbarschaftsliste(int[][] paare, int inBetrag) {
 	betrag = inBetrag;
 	
