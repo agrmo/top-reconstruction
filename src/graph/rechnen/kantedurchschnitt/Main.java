@@ -22,8 +22,7 @@ public class Main {
 	String tgfString = gtgf.macheGepheiTGF(nl);
 	System.out.println(tgfString);
 
-	Kantedurchschnitt kDurchschnitt = new Kantedurchschnitt();
-	double kd = kDurchschnitt.berechneKantedurchschnitt(nl);
+	double kd = Kantedurchschnitt.berechneKantedurchschnitt(nl);
 	System.out.println(kd);	
     }
 
@@ -37,15 +36,14 @@ public class Main {
 	GraphTGF gtgf = new GraphTGF();
 	System.out.println(gtgf.macheGepheiTGF(zg.nachbarschaftsliste));
 
-	Kanteverteilung kverteilung = new Kanteverteilung();
-	int[][] kv = kverteilung.kanteVerteilung(zg.nachbarschaftsliste);
-	// Nach gr.kanteVerteilung ist zg.nachbarschaftsliste VERDOPPELT!
-	Liste l = new Liste();
-	String kvString = l.nehmeStringVonArrayArray(kv);
+	int[][] kv = Kanteverteilung.kanteVerteilung(zg.nachbarschaftsliste);
+	
+	// Nach Kanteverteilung ist zg.nachbarschaftsliste VERDOPPELT!
+	
+	String kvString = Liste.nehmeStringVonArrayArray(kv);
 	System.out.println(kvString);
 
-	Kantedurchschnitt kDurchschnitt = new Kantedurchschnitt();
-	double kd = kDurchschnitt.berechneKantedurchschnitt(zg.nachbarschaftsliste);
+	double kd = Kantedurchschnitt.berechneKantedurchschnitt(zg.nachbarschaftsliste);
 	System.out.println(kd);
     }
 

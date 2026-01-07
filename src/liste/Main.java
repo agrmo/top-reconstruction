@@ -12,12 +12,10 @@ javac -d classes $(find src -type f) && java -cp classes liste.Main
 public class Main {
 
     public static void listeInteger() {
-	Liste l = new Liste();
-	
 	// drucken eine Liste von Liste von ganzen Zahlen...
 	ArrayList<int[]> a = new ArrayList<int[]>();
 	a.add(new int[] {1,2});
-	int[][] aArray = l.nehmeArrayListArrayInteger(a);
+	int[][] aArray = Liste.nehmeArrayListArrayInteger(a);
 	for (int[] zeile : aArray) {
 	    System.out.println(Arrays.toString(zeile));
 	}
@@ -28,19 +26,17 @@ public class Main {
 	bZeile.add(1);
 	bZeile.add(2);
 	b.add(bZeile);
-	int[][] paarearray = l.nehmeArrayListArrayListInteger(b);
+	int[][] paarearray = Liste.nehmeArrayListArrayListInteger(b);
 	for (int[] zeile : aArray) {
 	    System.out.println(Arrays.toString(zeile));
 	}	
     }
 
     public static void listeDouble() {
-	Liste l = new Liste();
-	
 	// drucken eine Liste von Liste von Double...
 	ArrayList<double[]> a = new ArrayList<double[]>();
 	a.add(new double[] {1.53,2.371});
-	double[][] aArray = l.nehmeArrayListArrayDouble(a);
+	double[][] aArray = Liste.nehmeArrayListArrayDouble(a);
 	for (double[] zeile : aArray) {
 	    System.out.println(Arrays.toString(zeile));
 	}
@@ -51,7 +47,7 @@ public class Main {
 	bZeile.add(1.9851);
 	bZeile.add(2.27461);
 	b.add(bZeile);
-	double[][] paarearray = l.nehmeArrayListArrayListDouble(b);
+	double[][] paarearray = Liste.nehmeArrayListArrayListDouble(b);
 	for (double[] zeile : aArray) {
 	    System.out.println(Arrays.toString(zeile));
 	}	
@@ -65,8 +61,8 @@ public class Main {
 	m.put(5,2);
 
 	Liste l = new Liste();
-	int[][] arrayarray = l.nehmeArrayArrayVonAbbildung(m);
-	String arrayarrayString = l.nehmeStringVonArrayArray(arrayarray);
+	int[][] arrayarray = Liste.nehmeArrayArrayVonAbbildung(m);
+	String arrayarrayString = Liste.nehmeStringVonArrayArray(arrayarray);
 	System.out.println(arrayarrayString);
     }
 
@@ -77,8 +73,7 @@ public class Main {
 	s.add(5);
 	s.add(6);
 
-	Liste l = new Liste();
-	int[] a = l.nehmeArrayVonMenge(s);
+	int[] a = Liste.nehmeArrayVonMenge(s);
 	System.out.println(Arrays.toString(a));
     }
 
@@ -87,7 +82,7 @@ public class Main {
 	double[][] doubleArrayArray = new double[2][];
 	doubleArrayArray[0] = new double[] {0.01,0.25};
 	doubleArrayArray[1] = new double[] {0.6,0.9};
-	String doubleArrayArrayString = l.nehmeStringVonArrayArrayDouble(doubleArrayArray);
+	String doubleArrayArrayString = Liste.nehmeStringVonArrayArrayDouble(doubleArrayArray);
 	System.out.println(doubleArrayArrayString);	
     }
     
@@ -99,6 +94,8 @@ public class Main {
 	
 	// arrayArrayAbbildung();
 
-	beispielZwei();
+	// beispielZwei();
+
+	listeInteger();
     }
 }

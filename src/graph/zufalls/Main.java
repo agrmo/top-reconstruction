@@ -22,10 +22,8 @@ public class Main {
 	GraphTGF gtgf = new GraphTGF();
 	System.out.println(gtgf.macheGepheiTGF(z.nachbarschaftsliste));	
 
-	Kanteverteilung kv = new Kanteverteilung();
-	int[][] verteilung = kv.kanteVerteilung(z.nachbarschaftsliste);
-	Liste l = new Liste();
-	String verteilungString = l.nehmeStringVonArrayArray(verteilung);
+	int[][] verteilung = Kanteverteilung.kanteVerteilung(z.nachbarschaftsliste);
+	String verteilungString = Liste.nehmeStringVonArrayArray(verteilung);
 	System.out.println(verteilungString);	
 	
 	// GraphText gt = new GraphText();

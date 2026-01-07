@@ -20,7 +20,7 @@ public class Kanteverteilung {
     // [[0,1],[1,8],[2,5],[3,2],[4,1]]
     // Diese Liste zeigt, daß es keinen Knoten ohne Kante gibt.
     // Es gibt 8 Knoten, die eine Kante besitzen, usw.    
-    public int[][] kanteVerteilung(Nachbarschaftsliste nl) {
+    public static int[][] kanteVerteilung(Nachbarschaftsliste nl) {
 
 	// Gedanke:
 	// 1. Zähle die Anzahl von Knoten aus, die keine Kante besitzen.
@@ -76,8 +76,7 @@ public class Kanteverteilung {
 	// Schon fertig, aber wir wollen eine int[][] zeigen, nicht
 	// eine Abbildung von int bis int.
 
-	Liste l = new Liste();
-	int[][] intkv = l.nehmeArrayArrayVonAbbildung(kv);
+	int[][] intkv = Liste.nehmeArrayArrayVonAbbildung(kv);
 
 	return intkv;
     }

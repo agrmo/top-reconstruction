@@ -1,7 +1,6 @@
 package graph.rechnen.tiefensuche;
 
 import graph.Nachbarschaftsliste;
-import liste.Liste;
 import java.util.Arrays;
 
 /*
@@ -17,8 +16,7 @@ public class Main {
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
 	
 	nl.verdoppeln();
-	Tiefensuche t = new Tiefensuche();
-	int[] gesehen = t.tiefensuche(nl, 1);
+	int[] gesehen = Tiefensuche.tiefensuche(nl, 1);
 	System.out.println(Arrays.toString(gesehen));	
     }
 
@@ -47,24 +45,23 @@ public class Main {
 
 	// Soll 9 sein.
 	nl.verdoppeln();
-	Tiefensuche t = new Tiefensuche();
-	int[] gesehenEins = t.tiefensuche(nl, 9);
+	int[] gesehenEins = Tiefensuche.tiefensuche(nl, 9);
 	System.out.println(Arrays.toString(gesehenEins));
 
 	// Soll [0, 1, 3, 4, 7] sein
-	int[] gesehenZwei = t.tiefensuche(nl, 7);
+	int[] gesehenZwei = Tiefensuche.tiefensuche(nl, 7);
 	System.out.println(Arrays.toString(gesehenZwei));
 
 	// Soll [0, 1, 3, 4, 7] sein
-	int[] gesehenDrei = t.tiefensuche(nl, 1);
+	int[] gesehenDrei = Tiefensuche.tiefensuche(nl, 1);
 	System.out.println(Arrays.toString(gesehenZwei));
 
 	// Soll [6,2,8] sein.
-	int[] gesehenVier = t.tiefensuche(nl, 6);
+	int[] gesehenVier = Tiefensuche.tiefensuche(nl, 6);
 	System.out.println(Arrays.toString(gesehenVier));
 
 	// Soll [6,2,8] sein.
-	int[] gesehenFuenf = t.tiefensuche(nl, 8);
+	int[] gesehenFuenf = Tiefensuche.tiefensuche(nl, 8);
 	System.out.println(Arrays.toString(gesehenFuenf));	
     }
     

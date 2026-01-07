@@ -8,17 +8,13 @@ import java.util.HashSet;
 // Funktionen an Listen.
 public class Liste {
 
-    public Liste() {
-	
-    }
-
     // ein:
     // Arraylist<int[]>
     // aus:
     // int[][]
     //
     // Gegeben eine ArrayList<int[]>, geben ein int[][] ab.
-    public int[][] nehmeArrayListArrayInteger(ArrayList<int[]> l) {
+    public static int[][] nehmeArrayListArrayInteger(ArrayList<int[]> l) {
 	int[][] arrayarray = new int[l.size()][];
 	
 	for (int i = 0; i < l.size(); i++) {
@@ -35,7 +31,7 @@ public class Liste {
     // int[][]
     //
     // Gegeben eine ArrayList<ArrayList<Integer>>, geben eine int[][] ab.
-    public int[][] nehmeArrayListArrayListInteger(ArrayList<ArrayList<Integer>> l) {
+    public static int[][] nehmeArrayListArrayListInteger(ArrayList<ArrayList<Integer>> l) {
 	int[][] arrayarray = new int[l.size()][];
 	
 	for (int i = 0; i < l.size(); i++) {
@@ -61,7 +57,7 @@ public class Liste {
     // double[][]
     //
     // Gegeben eine ArrayList<double[]>, geben ein double[][] ab.
-    public double[][] nehmeArrayListArrayDouble(ArrayList<double[]> l) {
+    public static double[][] nehmeArrayListArrayDouble(ArrayList<double[]> l) {
 	double[][] arrayarray = new double[l.size()][];
 	
 	for (int i = 0; i < l.size(); i++) {
@@ -73,7 +69,7 @@ public class Liste {
     }
 
     // Gegeben eine ArrayList<ArrayList<Integer>>, geben eine double[][] ab.
-    public double[][] nehmeArrayListArrayListDouble(ArrayList<ArrayList<Double>> l) {
+    public static double[][] nehmeArrayListArrayListDouble(ArrayList<ArrayList<Double>> l) {
 	double[][] arrayarray = new double[l.size()][];	
 	for (int i = 0; i < l.size(); i++) {
 	    ArrayList<Double> zeile = l.get(i);
@@ -93,7 +89,7 @@ public class Liste {
     // Gegeben ein Array von Array von Integer, mache ein einfaches
     // String dafür. Weiß ich nicht, warum Java diese Funktion nicht
     // schon besitzt.
-    public String nehmeStringVonArrayArray(int[][] arrayarray) {
+    public static String nehmeStringVonArrayArray(int[][] arrayarray) {
 	StringBuilder sb = new StringBuilder();
 
 	sb.append("[");
@@ -110,7 +106,7 @@ public class Liste {
 
     // und noch mal für Double
 
-    public String nehmeStringVonArrayArrayDouble(double[][] arrayarray) {
+    public static String nehmeStringVonArrayArrayDouble(double[][] arrayarray) {
 	StringBuilder sb = new StringBuilder();
 
 	sb.append("[");
@@ -131,7 +127,7 @@ public class Liste {
     // 1: 2
     // aus:
     // [[0,5],[1,2]]
-    public int[][] nehmeArrayArrayVonAbbildung(HashMap<Integer,Integer> m) {
+    public static int[][] nehmeArrayArrayVonAbbildung(HashMap<Integer,Integer> m) {
 	int[][] arrayarray = new int[m.size()][];
 
 	int i = 0;
@@ -148,7 +144,7 @@ public class Liste {
     // {0,1,2,5,6}
     // aus:
     // [0,1,2,5,6]
-    public int[] nehmeArrayVonMenge(HashSet<Integer> s) {
+    public static int[] nehmeArrayVonMenge(HashSet<Integer> s) {
 	int[] array = new int[s.size()];
 
 	int i = 0;

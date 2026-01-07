@@ -53,8 +53,7 @@ public class Zufallsgraph {
     public Zufallsgraph(int n, double p) {
 	ArrayList<int[]> paare = nehmePaare(n, p);
 
-	Liste l = new Liste();
-	int[][] paareArray = l.nehmeArrayListArrayInteger(paare);
+	int[][] paareArray = Liste.nehmeArrayListArrayInteger(paare);
 
 	nachbarschaftsliste = new Nachbarschaftsliste(paareArray, n);
     }

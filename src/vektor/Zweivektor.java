@@ -1,63 +1,64 @@
 package vektor;
 
 /*
-  Ein Zweivektor ist eine Liste von zwei ganzen Zahlen.
+  Ein Zweivektor ist eine Liste von zwei Zahlen.
   
   Ein Zweivektor im Euklidraum.
 
-  (Wie berechne ich Zweivektoren im Minkowskiraum?)
+  Was sind ähnlich mit dem Vektor und dem Punkt?
+
+  Sie besitzen die gleiche Basisvektoren.
 
   Was ist der Unterschied zweischen der Zweivektor und der Zweipunkt?
 
-  Der Zweipunkt steht immer im euklidischem Raum, dessen Basis gleich
-  mit der Welt ist. Der Zweivektor kann eine andere Basis besitzen,
-  sodaß seine Teile in anderen Richtungen zeigen können.
+  Der zweidimensionale Punkt und der zweidimensionale Vektor besitzen
+  verschiedenen Ursprung.
 
   Zum Beispiel die Ecke enthält Dreivektoren, um ihre Strecke zu zeigen.
  */
 public class Zweivektor {
-    public int eins;
-    public int zwei;
+    public int xteil;
+    public int yteil;
 
     // ein: ganze Zahl, ganze Zahl
-    public Zweivektor(int e, int z) {
-	this.eins = e;
-	this.zwei = z;
+    public Zweivektor(int x, int y) {
+	this.xteil = x;
+	this.yteil = y;
     }
 
     // ein:
     // v: Zweivektor
     // Addiere den gegebenen Zweivektor zu diesem.  
     public void addiere(Zweivektor v) {
-	this.eins += v.eins;
-	this.zwei += v.zwei;
+	this.xteil += v.xteil;
+	this.yteil += v.yteil;
     }
 
     // ein: Zweivektor
     // Subtrahiere den gegebenen Zweivektor zu diesem.  
     public void subtrahiere(Zweivektor v) {
-	this.eins -= v.eins;
-	this.zwei -= v.zwei;
+	this.xteil -= v.xteil;
+	this.yteil -= v.yteil;
     }
 
     // ein: Zweivektor
     // Dividiere den gegebenen Zweivektor zu diesem.  
     public void dividiere(Zweivektor v) {
-	this.eins = this.eins / v.eins;
-	this.zwei = this.zwei / v.zwei;
+	this.xteil = this.xteil / v.xteil;
+	this.yteil = this.yteil / v.yteil;
     }
 
     // ein: Zweivektor
     // Multipliziere ganz den gegebenen Zweivektor zu diesem.  
     public void multipliziere(Zweivektor v) {
-	this.eins = this.eins * v.eins;
-	this.zwei = this.zwei * v.zwei;
+	this.xteil = this.xteil * v.xteil;
+	this.yteil = this.yteil * v.yteil;
     }
     
     // ein: Zweivektor
     // Multipliziere teilweise den gegebenen Zweivektor zu diesem.  
     public void punkt(Zweivektor v) {
-	this.eins = this.eins * v.eins;
-	this.zwei = this.zwei * v.zwei;
+	this.xteil = this.xteil * v.xteil;
+	this.yteil = this.yteil * v.yteil;
     }
 }

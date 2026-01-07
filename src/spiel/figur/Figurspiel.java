@@ -19,8 +19,7 @@ public class Figurspiel extends Spiel {
     int mouseAnfangX;
     int mouseAnfangY;
 
-    public Figurspiel(Figursicht fs,
-		      Figurwelt fw) {
+    public Figurspiel(Figursicht fs, Figurwelt fw) {
 	this.fs = fs;
 	this.fw = fw;
 

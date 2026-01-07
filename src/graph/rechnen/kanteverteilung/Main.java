@@ -18,10 +18,8 @@ public class Main {
 	int betrag = 3;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
 
-	Kanteverteilung kv = new Kanteverteilung();
-	int[][] verteilung = kv.kanteVerteilung(nl);
-	Liste l = new Liste();
-	String verteilungString = l.nehmeStringVonArrayArray(verteilung);
+	int[][] verteilung = Kanteverteilung.kanteVerteilung(nl);
+	String verteilungString = Liste.nehmeStringVonArrayArray(verteilung);
 	System.out.println(verteilungString);	
     }
 
@@ -31,10 +29,8 @@ public class Main {
     	GraphTGF gtgf = new GraphTGF();
 	System.out.println(gtgf.macheGepheiTGF(zg.nachbarschaftsliste));
 
-	Kanteverteilung kv = new Kanteverteilung();
-	int[][] verteilung = kv.kanteVerteilung(zg.nachbarschaftsliste);
-	Liste l = new Liste();
-	String verteilungString = l.nehmeStringVonArrayArray(verteilung);
+	int[][] verteilung = Kanteverteilung.kanteVerteilung(zg.nachbarschaftsliste);
+	String verteilungString = Liste.nehmeStringVonArrayArray(verteilung);
 	System.out.println(verteilungString);	
     }    
 

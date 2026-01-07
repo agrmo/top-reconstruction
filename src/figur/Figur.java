@@ -13,7 +13,7 @@ public abstract class Figur {
 
     // aus: Liste von Zweistrecken
     //
-    // Nehme alle die Zweistrecken dieser Digur. Daher müssen wir über
+    // Nehme alle die Kanten dieser Digur. Daher müssen wir über
     // den Ort der Figur beachten.
     public abstract Zweistrecke[] nehmeStrecken();
 

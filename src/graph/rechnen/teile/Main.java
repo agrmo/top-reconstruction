@@ -20,10 +20,8 @@ public class Main {
 	nl.verdoppeln();
 
 	// Soll [[3,1]] geben.
-	Teile t = new Teile();
-	int[][] tTeile = t.teile(nl);
-	Liste l = new Liste();
-	System.out.println(l.nehmeStringVonArrayArray(tTeile));
+	int[][] tTeile = Teile.teile(nl);
+	System.out.println(Liste.nehmeStringVonArrayArray(tTeile));
     }
 
     public static void beispielZwei() {
@@ -51,11 +49,9 @@ public class Main {
 	nl.verdoppeln();
 
 	// Soll [[1,1],[5,1],[3,1]] abgeben.
-	Teile t = new Teile();
-	int[][] tTeile = t.teile(nl);
-	Liste l = new Liste();
-	System.out.println(l.nehmeStringVonArrayArray(tTeile));
-	int groesste = t.groessterTeil(nl);
+	int[][] tTeile = Teile.teile(nl);
+	System.out.println(Liste.nehmeStringVonArrayArray(tTeile));
+	int groesste = Teile.groessterTeil(nl);
 	System.out.println(groesste);
     }
 
@@ -66,11 +62,9 @@ public class Main {
 
 	zg.nachbarschaftsliste.verdoppeln();
 	
-	Teile t = new Teile();
-	int[][] tTeile = t.teile(zg.nachbarschaftsliste);
-	Liste l = new Liste();
-	System.out.println(l.nehmeStringVonArrayArray(tTeile));
-	int groesste = t.groessterTeil(zg.nachbarschaftsliste);
+	int[][] tTeile = Teile.teile(zg.nachbarschaftsliste);
+	System.out.println(Liste.nehmeStringVonArrayArray(tTeile));
+	int groesste = Teile.groessterTeil(zg.nachbarschaftsliste);
 	System.out.println(groesste);	
     }
 
@@ -103,13 +97,11 @@ public class Main {
 	    double p = pListe[i];
 	    Zufallsgraph zg = new Zufallsgraph(500, p);
 	    zg.nachbarschaftsliste.verdoppeln();
-	    Teile t = new Teile();
-	    int groesste = t.groessterTeil(zg.nachbarschaftsliste);
+	    int groesste = Teile.groessterTeil(zg.nachbarschaftsliste);
 	    pZuBetrag[i] = new double[] {p, groesste};
 	}
 
-	Liste l = new Liste();
-	String pZuBetragString = l.nehmeStringVonArrayArrayDouble(pZuBetrag);
+	String pZuBetragString = Liste.nehmeStringVonArrayArrayDouble(pZuBetrag);
 	System.out.println(pZuBetragString);
     }
 

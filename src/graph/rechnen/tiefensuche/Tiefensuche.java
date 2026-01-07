@@ -6,10 +6,9 @@ import java.util.HashSet;
 import liste.Liste;
 
 public class Tiefensuche  {
-    public Tiefensuche() {}
 
     // Die Nachbarschaftsliste muss verdoppelt sein.
-    public int[] tiefensuche(Nachbarschaftsliste nl, int anfangsKnoten) {
+    public static int[] tiefensuche(Nachbarschaftsliste nl, int anfangsKnoten) {
 
 	HashSet<Integer> gesehen = new HashSet<Integer>();
 
@@ -29,7 +28,6 @@ public class Tiefensuche  {
 	    }
 	}
 
-	Liste l = new Liste();
-	return l.nehmeArrayVonMenge(gesehen);
+	return Liste.nehmeArrayVonMenge(gesehen);
     }
 }

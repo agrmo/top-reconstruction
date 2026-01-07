@@ -10,9 +10,6 @@ import graph.rechnen.tiefensuche.Tiefensuche;
 import liste.Liste;
 
 public class Teile {
-    public Teile() {
-	
-    }
 
     // Wie viele Teile leben im Graph?
     // z.B.
@@ -29,7 +26,7 @@ public class Teile {
     // Es gibt 3 Knoten, die in einem Teil stehen. Es gibt 1 3-Teile.    
     // aus:
     // [[1,2],[2,1],[3,1]]
-    public int[][] teile(Nachbarschaftsliste nl) {
+    public static int[][] teile(Nachbarschaftsliste nl) {
 
 	// Gedanke:
 	// 1. Leere Abbildung t, die zeigt, wie viele Teile mit einem
@@ -145,7 +142,7 @@ public class Teile {
     // Teileverteilung zu nehmen. Also das antwortet die Frage: wie
     // groß ist der größte Teil gieses Graphen? Nicht sehr
     // aufwandfrei, aber hilfreich.
-    int groessterTeil(Nachbarschaftsliste nl) {
+    public static int groessterTeil(Nachbarschaftsliste nl) {
 	int[][] t = teile(nl);
 
 	int groesste = 0;

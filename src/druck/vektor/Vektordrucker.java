@@ -1,15 +1,15 @@
 package druck.vektor;
 
-import vektor.Zweivektor;
 import vektor.Dreivektor;
+import vektor.Zweivektor;
 
 public class Vektordrucker {
     public static String drucken(Zweivektor v) {
 	StringBuilder sb = new StringBuilder();
 	sb.append("[");
-	sb.append(v.eins);
+	sb.append(v.xteil);
 	sb.append(",");
-	sb.append(v.zwei);
+	sb.append(v.yteil);
 	sb.append("]");
 	return sb.toString();
     }
@@ -17,11 +17,11 @@ public class Vektordrucker {
     public static String drucken(Dreivektor v) {
 	StringBuilder sb = new StringBuilder();
 	sb.append("[");
-	sb.append(v.eins);
+	sb.append(v.xteil);
 	sb.append(",");
-	sb.append(v.zwei);
+	sb.append(v.yteil);
 	sb.append(",");
-	sb.append(v.drei);
+	sb.append(v.zteil);
 	sb.append("]");
 	return sb.toString();
     }

@@ -18,7 +18,7 @@ public class Straffer {
 
     // Straffen die Strecke nach den Gleichungen.
     static void straffenStrecke(Zweistrecke zk,
-			      double mx, double my) {
+				double mx, double my) {
 	
 	Zweipunkt von = zk.von;
 	Zweipunkt bis = zk.bis;
@@ -34,8 +34,8 @@ public class Straffer {
     // ein: Zweistreckewelt
     // aus: Zweistreckewelt
     public static Zweistreckewelt straffenWelt(Zweistreckewelt zkw,
-					     double mx,
-					     double my) {
+					       double mx,
+					       double my) {
 
 	ArrayList<Zweistrecke> zsl = zkw.streckenliste;
 	ArrayList<Zweistrecke> zslNeu = Streckeverdoppler.verdoppeln(zsl);
