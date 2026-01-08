@@ -1,7 +1,6 @@
 package verleger.auge;
 
 import dreher.punkt.Punktdreher;
-import java.util.ArrayList;
 import strecke.Dreistrecke;
 import strecke.Zweistrecke;
 import punkt.Dreipunkt;
@@ -100,21 +99,21 @@ public class Augeverleger {
 
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.
-	ArrayList<Dreistrecke> dkl = kw.nehmeStrecken();
+	Dreistrecke[] dkl = kw.nehmeStrecken();
 
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
-	ArrayList<Zweistrecke> zsl = new ArrayList<Zweistrecke>();
+	Zweistrecke[] zsl = new Zweistrecke[dkl.length];
 	
-	for (int i = 0; i < dkl.size(); i++) {
+	for (int i = 0; i < dkl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zk = Augeverleger.verlegen(dkl.get(i), augepunkt, perspektive,
-						 breite, hoehe,
-						 yaw, pitch, roll);
+	    Zweistrecke zk = Augeverleger.verlegen(dkl[i], augepunkt, perspektive,
+						   breite, hoehe,
+						   yaw, pitch, roll);
 	
 	    // Fügen sie zu der Liste ein.
-	    zsl.add(zk);
+	    zsl[i] = zk;
 	}
 
 	// Bauen die Zweistreckewelt auf.

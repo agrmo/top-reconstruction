@@ -12,14 +12,12 @@ import punkt.Zweipunkt;
 public class Main {
     public static void main(String[] args) {
 	Zweistrecke zka = new Zweistrecke(new Zweipunkt(30,30),
-				      new Zweipunkt(500,500));
+					  new Zweipunkt(500,500));
 
 	Zweistrecke zkb = new Zweistrecke(new Zweipunkt(200,20),
-				      new Zweipunkt(500,100));
+					  new Zweipunkt(500,100));
 	
-	ArrayList<Zweistrecke> zsl = new ArrayList<Zweistrecke>();
-	zsl.add(zka);
-	zsl.add(zkb);
+	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
 
 	// Mache die zweidimensionale Streckenwelt.
 	Zweistreckewelt zkw = new Zweistreckewelt(zsl);

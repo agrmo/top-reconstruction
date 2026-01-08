@@ -19,7 +19,7 @@ public class Main {
 	Zweipunkt[] pl = q.nehmeEcken();
 
 	// Mache die Sicht.
-	Zweipunktsicht ps = new Zweipunktsicht(pl);
+	Zweipunktsicht ps = new Zweipunktsicht(pl, 10);
 
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();

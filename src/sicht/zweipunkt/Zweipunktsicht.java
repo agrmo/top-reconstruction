@@ -1,6 +1,7 @@
 package sicht.zweipunkt;
 
 import javax.swing.JComponent;
+import javax.swing.JPanel;
 import java.awt.Graphics;
 import punkt.Zweipunkt;
 
@@ -11,16 +12,18 @@ public class Zweipunktsicht extends JComponent {
     // irgendwann anrufen wird, die Welt darzustellen. 
     public Zweipunkt[] pl;
 
-    int groese = 10;
-    
-    public Zweipunktsicht(Zweipunkt[] pl) {
+    // Die Größe des Kreises;
+    public int radius;
+
+    public Zweipunktsicht(Zweipunkt[] pl, int r) {
 	this.pl = pl;
+	this.radius = r;
     }
 
     // Die Punktn stehen schon auf einer Ebene. Stellen sie dar.
     public void darstellenPunkt(Graphics g, Zweipunkt k) {
 	g.drawOval((int) k.xteil, (int) k.yteil,
-		   this.groese, this.groese);
+		   this.radius, this.radius);
     }
 
     public void paintComponent(Graphics g) {

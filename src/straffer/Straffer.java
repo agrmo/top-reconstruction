@@ -33,15 +33,15 @@ public class Straffer {
     // Straffen die Welt.
     // ein: Zweistreckewelt
     // aus: Zweistreckewelt
-    public static Zweistreckewelt straffenWelt(Zweistreckewelt zkw,
+    public static Zweistreckewelt straffenWelt(Zweistreckewelt zsw,
 					       double mx,
 					       double my) {
 
-	ArrayList<Zweistrecke> zsl = zkw.streckenliste;
-	ArrayList<Zweistrecke> zslNeu = Streckeverdoppler.verdoppeln(zsl);
+	Zweistrecke[] zsl = zsw.streckenliste;
+	Zweistrecke[] zslNeu = Streckeverdoppler.verdoppeln(zsl);
 
-	for (int i = 0; i < zsl.size(); i++) {
-	    Straffer.straffenStrecke(zslNeu.get(i), mx, my);
+	for (int i = 0; i < zsl.length; i++) {
+	    Straffer.straffenStrecke(zslNeu[i], mx, my);
 	}
 
 	return new Zweistreckewelt(zslNeu);

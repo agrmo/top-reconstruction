@@ -1,13 +1,12 @@
 package sicht.strecke;
 
-import java.util.ArrayList;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JFrame;
-import welt.zweistrecke.Zweistreckewelt;
 import punkt.Zweipunkt;
 import strecke.Zweistrecke;
-import java.awt.Toolkit;
-import java.awt.Dimension;
 import verschieber.Verschieber;
+import welt.zweistrecke.Zweistreckewelt;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -23,10 +22,8 @@ public class Main {
 
 	Zweistrecke zkb = new Zweistrecke(new Zweipunkt(200,20),
 				      new Zweipunkt(500,100));
-	
-	ArrayList<Zweistrecke> zsl = new ArrayList<Zweistrecke>();
-	zsl.add(zka);
-	zsl.add(zkb);
+
+	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
 	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
 	
 	// Mache eine Streckesicht.
@@ -47,10 +44,8 @@ public class Main {
 
 	Zweistrecke zkb = new Zweistrecke(new Zweipunkt(200,0),
 				      new Zweipunkt(300,0));
-	
-	ArrayList<Zweistrecke> zsl = new ArrayList<Zweistrecke>();
-	zsl.add(zka);
-	zsl.add(zkb);
+
+	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
 	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
 
 	// Die Sicht.
@@ -69,9 +64,11 @@ public class Main {
 	frame.add(ss);
 	frame.setVisible(true);
     }
+
+    
     
     public static void main(String[] args){
-	beispielZwei();
+	beispielEins();
     }
 }
 

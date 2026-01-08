@@ -60,14 +60,14 @@ public class Verschieber {
 
     // ein: Zweistreckewelt, Double, Double
     public static Zweistreckewelt verschieben(Zweistreckewelt zkw,
-					    double dx,
-					    double dy) {
+					      double dx,
+					      double dy) {
 	
-	ArrayList<Zweistrecke> zsl = zkw.streckenliste;
-	ArrayList<Zweistrecke> zslNeu = Streckeverdoppler.verdoppeln(zsl);
+	Zweistrecke[] zsl = zkw.streckenliste;
+	Zweistrecke[] zslNeu = Streckeverdoppler.verdoppeln(zsl);
 	
-	for (int i = 0; i < zsl.size(); i++) {
-	    Verschieber.verschiebenStrecke(zslNeu.get(i), dx, dy);
+	for (int i = 0; i < zsl.length; i++) {
+	    Verschieber.verschiebenStrecke(zslNeu[i], dx, dy);
 	}
 	
 	return new Zweistreckewelt(zslNeu);

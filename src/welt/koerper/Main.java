@@ -36,10 +36,10 @@ public class Main {
 	Koerperwelt kw = new Koerperwelt(kl, orten);
 
 	// Überprüfen die Strecken.
-	ArrayList<Dreistrecke> weltStrecken = kw.nehmeStrecken();
+	Dreistrecke[] weltStrecken = kw.nehmeStrecken();
 
-	for (int i = 0; i < weltStrecken.size(); i++) {
-	    System.out.println(Streckedrucker.drucken(weltStrecken.get(i)));
+	for (int i = 0; i < weltStrecken.length; i++) {
+	    System.out.println(Streckedrucker.drucken(weltStrecken[i]));
 	}
     }
 }

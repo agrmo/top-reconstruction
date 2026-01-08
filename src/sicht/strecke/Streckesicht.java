@@ -1,7 +1,7 @@
 package sicht.strecke;
 
-import java.util.ArrayList;
 import javax.swing.JComponent;
+import javax.swing.JPanel;
 import java.awt.Graphics;
 import welt.zweistrecke.Zweistreckewelt;
 import strecke.Zweistrecke;
@@ -11,10 +11,10 @@ public class Streckesicht extends JComponent {
 
     // Wir müssen die Welt in die Sicht einsetzen, weil Java sie
     // irgendwann anrufen wird, die Welt darzustellen. 
-    public Zweistreckewelt zkw;
+    public Zweistreckewelt zsw;
     
-    public Streckesicht(Zweistreckewelt zkw) {
-	this.zkw = zkw;
+    public Streckesicht(Zweistreckewelt zsw) {
+	this.zsw = zsw;
     }
 
     // Die Strecken stehen schon auf einer Ebene. Stellen sie dar.
@@ -27,8 +27,8 @@ public class Streckesicht extends JComponent {
 	super.paintComponent(g);
 
 	// Stelle jede Strecke dieser Welt dar.
-	for (int i = 0; i < this.zkw.streckenliste.size(); i++) {
-	    this.darstellenStrecke(g, this.zkw.streckenliste.get(i));
+	for (int i = 0; i < this.zsw.streckenliste.length; i++) {
+	    this.darstellenStrecke(g, this.zsw.streckenliste[i]);
 	}
     }
 }

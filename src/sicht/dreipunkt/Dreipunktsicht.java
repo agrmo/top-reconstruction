@@ -46,7 +46,7 @@ public class Dreipunktsicht extends JComponent {
 
 	// Wir haben schon eine Sicht, die Zweipunkten darstellen
 	// kann. Benutzen sie.
-	Zweipunktsicht zps = new Zweipunktsicht(zpl);
+	Zweipunktsicht zps = new Zweipunktsicht(zpl, 10);
 	zps.paintComponent(g);
     }
 }

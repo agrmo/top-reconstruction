@@ -23,4 +23,10 @@ public abstract class Koerper {
     // Nehme alle Strecken dieses Körpers. Daher müssen wir über den Ort
     // des Körpers beachten.
     public abstract Dreistrecke[] nehmeStrecken();
+
+    // aus: ganze Zahl
+    //
+    // Nehme den Betrag der Strecken dieses Körpers. Genau wie viele
+    // Dreistrecke es gibt in nehmeStrecken().
+    public abstract int nehmestreckenanzahl();
 }

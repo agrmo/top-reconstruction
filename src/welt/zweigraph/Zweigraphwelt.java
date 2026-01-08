@@ -2,6 +2,9 @@ package welt.zweigraph;
 
 import graph.Nachbarschaftsliste;
 import punkt.Zweipunkt;
+import graph.rechnen.kanteanzahl.Kanteanzahl;
+import verdoppler.punkt.Punktverdoppler;
+import strecke.Zweistrecke;
 
 /*
   Ein Koerper ist eine ganze Zahl.
@@ -25,13 +28,104 @@ import punkt.Zweipunkt;
   rechnerich beitragen.
 
   Eine Graphwelt ist eine Welt des Graphen.
- */
+*/
 public class Zweigraphwelt {
+
+    // Die Stellen jedes Knoten.
     public Zweipunkt[] orten;
-    public Nachbarschaftsliste nachbarschaftsliste;
+
+    // Die Kanten jedes Knoten.
+    public Nachbarschaftsliste graph;
 
     public Zweigraphwelt(Nachbarschaftsliste n, Zweipunkt[] o) {
-	orten = o;
-	nachbarschaftsliste = n;
+	this.orten = o;
+	this.graph = n;
+    }
+
+    /*
+      Das Zentrum von drawCircle() jedes Knoten dieses Graphen sind
+      nicht genau auf dem punkt dargestellt. Zum Beispiel
+      
+      Knoten (0,0) radius 3
+      Kante (0,0) bis (10,10)
+      
+      Gewünscht:
+      
+      |---|
+      | \ |
+      |--\|
+      \
+      \
+      ...
+
+      Aber Java wird die beiden wieso darstellen,
+
+      \
+      |---|
+      |\  |
+      |-\-|
+      \
+      \
+      ...
+	     
+      weil das Zentrum des Kreises steht nicht auf (0,0). Wir müssen
+      die Stellen des Knoten verbessern. In diesem Beispiel
+      verschieben wir die Stellen des Kreises -3 in die x- und
+      y-Richtung.
+    */
+    void verbessernKnoten(Zweipunkt zp, int radius) {
+	Zweipunkt unterschied = new Zweipunkt(-radius, -radius);
+	zp.addieren(unterschied);
+    }
+
+    // ein: ganze Zahl
+    // Sie gibt neue Punkte aus.
+    // Diese Welt kennt wie groß ein Knoten ist.
+    public Zweipunkt[] nehmeKnoten(int radius) {
+
+	Zweipunkt[] auspunkte = new Zweipunkt[this.orten.length];
+	
+	for (int i = 0; i < this.orten.length; i++) {
+	    auspunkte[i] = Punktverdoppler.verdoppeln(this.orten[i]);
+	    verbessernKnoten(auspunkte[i], radius);
+	}
+	
+	return auspunkte;
+    }
+
+    // Rechne alle Kanten dieses Graphen aus.
+    public Zweistrecke[] nehmeKanten() {
+
+	// Zuerst berechne wie viele Kanten es gibt.
+	int ka = Kanteanzahl.berechnen(this.graph);
+
+	// Wir kennen wir viele Kanten dieser Graph gibt.
+	Zweistrecke[] kanten = new Zweistrecke[ka];
+
+	// Es gibt ka-mal Kanten dieses Graphen.
+	// Die Summe aller i und j ist gleich ka.
+	// Also laufe über jede Kante durch, und addiere die Kante.
+
+	int kantenzeichen = 0;
+	for (int i = 0; i < this.graph.betrag; i++) {
+	    // Wo dieser Knoten ist.
+	    int vonx = (int) this.orten[i].xteil;
+	    int vony = (int) this.orten[i].yteil;
+
+	    for (int j = 0; j < this.graph.n.get(i).size(); j++) {
+
+		// Wer der Knoten ist, dem dieser Knoten verbunden ist.
+		int bisKnoten = this.graph.n.get(i).get(j);
+		    
+		int bisx = (int) this.orten[bisKnoten].xteil;
+		int bisy = (int) this.orten[bisKnoten].yteil;
+
+		kanten[kantenzeichen] = new Zweistrecke(new Zweipunkt(vonx, vony),
+							new Zweipunkt(bisx, bisy));
+		kantenzeichen += 1;
+	    }
+	}
+
+	return kanten;
     }
 }

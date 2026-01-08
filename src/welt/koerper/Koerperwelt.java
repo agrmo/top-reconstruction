@@ -38,17 +38,31 @@ public class Koerperwelt {
 	this.ortliste = ol;
     }
 
+    // Nehme die Anzahl aller Strecken dieser Welt.
+    int nehmestreckenanzahl() {
+	int streckenanzahl = 0;
+	
+	for (int i = 0; i < this.koerperliste.size(); i++) {
+	    i += this.koerperliste.get(i).nehmestreckenanzahl();
+	}
+
+	return streckenanzahl;
+    }
+
     // aus: Liste von Dreistrecke
     //
     // Nehme alle Dreistrecken aller Körper dieser Welt in genau einer
     // großen Liste. Die Dreistreckeliste hat nur Tiefe 1. Also wir
     // kennen nachdem nicht, ob eine Strecke in einem Körper oder in
     // einem anderen Körper steht.
-    public ArrayList<Dreistrecke> nehmeStrecken() {
+    public Dreistrecke[] nehmeStrecken() {
 
-	ArrayList<Dreistrecke> strecken = new ArrayList<Dreistrecke>();
+	int streckenanzahl = this.nehmestreckenanzahl();
+	
+	Dreistrecke[] strecken = new Dreistrecke[streckenanzahl];
 	
 	// Für alle Körper der Welt
+	int streckezeichen = 0;
 	for (int i = 0; i < this.koerperliste.size(); i++) {
 
 	    // Nehme den Körper. Er kennt seinen Ort nicht.
@@ -66,7 +80,8 @@ public class Koerperwelt {
 		kl[j].addieren(ap);
 
 		// Nur dann fügen die Strecke in der Liste zu.
-		strecken.add(kl[j]);
+		strecken[streckezeichen] = kl[j];
+		streckezeichen += 1;
 	    }
 	}
 

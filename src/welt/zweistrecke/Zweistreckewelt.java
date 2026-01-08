@@ -1,6 +1,5 @@
 package welt.zweistrecke;
     
-import java.util.ArrayList;
 import welt.Welt;
 import strecke.Zweistrecke;
 
@@ -16,9 +15,9 @@ import strecke.Zweistrecke;
   der Figur enthält.
 */
 public class Zweistreckewelt extends Welt {
-    public ArrayList<Zweistrecke> streckenliste;
+    public Zweistrecke[] streckenliste;
 
-    public Zweistreckewelt(ArrayList<Zweistrecke> zsl) {
+    public Zweistreckewelt(Zweistrecke[] zsl) {
 	this.streckenliste = zsl;
     }
 }

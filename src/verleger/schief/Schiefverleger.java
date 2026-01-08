@@ -60,19 +60,19 @@ public class Schiefverleger {
 
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.
-	ArrayList<Dreistrecke> dkl = kw.nehmeStrecken();
+	Dreistrecke[] dkl = kw.nehmeStrecken();
 
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
-	ArrayList<Zweistrecke> zsl = new ArrayList<Zweistrecke>();
+	Zweistrecke[] zsl = new Zweistrecke[dkl.length];
 	
-	for (int i = 0; i < dkl.size(); i++) {
+	for (int i = 0; i < dkl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zk = this.verlegenStrecke(dkl.get(i));
+	    Zweistrecke zk = this.verlegenStrecke(dkl[i]);
 	
 	    // Fügen sie zu der Liste ein.
-	    zsl.add(zk);
+	    zsl[i] = zk;
 	}
 
 	// Bauen die Zweistreckewelt auf.

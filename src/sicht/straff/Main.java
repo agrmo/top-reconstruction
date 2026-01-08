@@ -1,6 +1,5 @@
 package sicht.straff;
 
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import punkt.Zweipunkt;
 import strecke.Zweistrecke;
@@ -21,9 +20,7 @@ public class Main {
 	Zweistrecke zkb = new Zweistrecke(new Zweipunkt(100,200),
 				      new Zweipunkt(200,200));
 	
-	ArrayList<Zweistrecke> zsl = new ArrayList<Zweistrecke>();
-	zsl.add(zka);
-	zsl.add(zkb);
+	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
 	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
 
 	// Der Verleger vergrößert die stellen der Strecken. Nicht nur

@@ -67,4 +67,8 @@ public class Kubus extends Koerper {
 	
 	return strecken;
     }
+
+    public int nehmestreckenanzahl() {
+	return 12;
+    }
 }

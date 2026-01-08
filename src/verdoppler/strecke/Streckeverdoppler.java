@@ -1,6 +1,5 @@
 package verdoppler.strecke;
 
-import java.util.ArrayList;
 import strecke.Zweistrecke;
 import punkt.Zweipunkt;
 import verdoppler.punkt.Punktverdoppler;
@@ -13,12 +12,12 @@ public class Streckeverdoppler {
 	return new Zweistrecke(vonNeu, bisNeu);
     }
 
-    public static ArrayList<Zweistrecke> verdoppeln(ArrayList<Zweistrecke> kl) {
+    public static Zweistrecke[] verdoppeln(Zweistrecke[] kl) {
 
-	ArrayList<Zweistrecke> klNeu = new ArrayList<Zweistrecke>();
+	Zweistrecke[] klNeu = new Zweistrecke[kl.length];
 	
-	for (int i = 0; i < kl.size(); i++) {
-	    klNeu.add(Streckeverdoppler.verdoppeln(kl.get(i)));
+	for (int i = 0; i < kl.length; i++) {
+	    klNeu[i] = Streckeverdoppler.verdoppeln(kl[i]);
 	}
 
 	return klNeu;
