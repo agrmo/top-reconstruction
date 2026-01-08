@@ -7,11 +7,12 @@ import sicht.strecke.Streckesicht;
 import verleger.auge.Augeverleger;
 import welt.zweistrecke.Zweistreckewelt;
 import welt.koerper.Koerperwelt;
+import sicht.Sicht;
 
 // Eine Sicht, die eine dreidimensionale Körperwelt einnimmt.
 // Sie wandelt die Körperwelt mit nur einer Verlegung: einer punkten
 // Verlegung. Sie gibt am Ende eine Zweistreckewelt ab.
-public class Augesicht extends JComponent {
+public class Augesicht extends Sicht {
 
     public Koerperwelt kw;
     public Dreipunkt augepunkt;
@@ -38,13 +39,12 @@ public class Augesicht extends JComponent {
     }
 
     // Wir müssen entscheiden, wer diese Körper darstellen wird.
-    public void paintComponent(Graphics g) {
-	super.paintComponent(g);
+    public void darstellen(Graphics g) {
 	
 	// Benutzen die Verleger.
 	Zweistreckewelt zkw = Augeverleger.verlegen(this.kw, this.augepunkt, this.perspektive,
-						  this.breite, this.hoehe,
-						  this.yaw, this.pitch, this.roll);
+						    this.breite, this.hoehe,
+						    this.yaw, this.pitch, this.roll);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.

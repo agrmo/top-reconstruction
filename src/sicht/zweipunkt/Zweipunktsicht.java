@@ -1,9 +1,9 @@
 package sicht.zweipunkt;
 
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import java.awt.Graphics;
 import punkt.Zweipunkt;
+import sicht.Sicht;
 
 // Eine Zweipunktsicht kann Punktn darstellen.
 public class Zweipunktsicht extends JComponent {

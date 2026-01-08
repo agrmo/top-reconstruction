@@ -6,6 +6,7 @@ import punkt.Dreipunkt;
 import sicht.auge.Augesicht;
 import spiel.Spiel;
 import welt.koerper.Koerperwelt;
+import maler.Maler;
 
 // Ein Spiel, in dem wir die Welt und Sichten verändern können.
 //
@@ -13,13 +14,16 @@ import welt.koerper.Koerperwelt;
 // Mouse: Drehen das Auge
 public class Augespiel extends Spiel {
 
+    Maler m;
     Augesicht as;
     Koerperwelt kw;
     int mouseAnfangX;
     int mouseAnfangY;
 
-    public Augespiel(Augesicht as,
+    public Augespiel(Maler m,
+		     Augesicht as,
 		     Koerperwelt kw) {
+	this.m = m;
 	this.as = as;
 	this.kw = kw;
 
@@ -67,7 +71,7 @@ public class Augespiel extends Spiel {
 	this.mouseAnfangX = jetztX;
 	this.mouseAnfangY = jetztY;
 
-	this.as.repaint();
+	this.m.repaint();
     }
 
     // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy, dz.
@@ -115,7 +119,7 @@ public class Augespiel extends Spiel {
         }
 
 	if (veraendert == true) {
-	    this.as.repaint();
+	    this.m.repaint();
 	}
     }
     
@@ -134,7 +138,7 @@ public class Augespiel extends Spiel {
 	}
 
 	if (veraendert == true) {
-	    this.as.repaint();
+	    this.m.repaint();
 	}
     }
     

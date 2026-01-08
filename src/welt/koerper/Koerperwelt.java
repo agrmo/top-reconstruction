@@ -43,7 +43,7 @@ public class Koerperwelt {
 	int streckenanzahl = 0;
 	
 	for (int i = 0; i < this.koerperliste.size(); i++) {
-	    i += this.koerperliste.get(i).nehmestreckenanzahl();
+	    streckenanzahl += this.koerperliste.get(i).nehmestreckenanzahl();
 	}
 
 	return streckenanzahl;

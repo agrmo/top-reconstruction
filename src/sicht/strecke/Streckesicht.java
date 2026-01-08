@@ -1,10 +1,10 @@
 package sicht.strecke;
 
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import java.awt.Graphics;
 import welt.zweistrecke.Zweistreckewelt;
 import strecke.Zweistrecke;
+import sicht.Sicht;
 
 // Eine Streckesicht kann Strecken darstellen.
 public class Streckesicht extends JComponent {

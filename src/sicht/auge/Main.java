@@ -6,6 +6,8 @@ import koerper.Koerper;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
 import welt.koerper.Koerperwelt;
+import maler.Maler;
+import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -13,9 +15,6 @@ import welt.koerper.Koerperwelt;
 */
 
 public class Main {
-
-    static void beispielEins() {
-    }
 
     public static void main(String[] args){
 	// Mache die dreidimensionale Welt.
@@ -32,12 +31,13 @@ public class Main {
 	int hoehe = 600;
 	Dreipunkt ap = new Dreipunkt(0,0,0);
 	Augesicht as = new Augesicht(kw, ap, 500, breite, hoehe, 0, 0, 0);
+	Maler m = new Maler(new Sicht[] {as});
 	
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(breite, hoehe);
-	frame.add(as);
+	frame.add(m);
 	frame.setVisible(true);
     }
 }

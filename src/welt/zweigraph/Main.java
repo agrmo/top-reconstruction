@@ -12,6 +12,8 @@ import strecke.Zweistrecke;
 import welt.zweigraph.Zweigraphwelt;
 import welt.zweigraph.gitter.Zweigitter;
 import welt.zweistrecke.Zweistreckewelt;
+import maler.Maler;
+import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f) \
@@ -32,25 +34,24 @@ public class Main {
         // Sammeln wir die Orten und den Graphen zusammen.
         Zweigraphwelt gw = new Zweigraphwelt(nl, orten);
   
-        // // Nehme die Kanten.
-	// Zweistrecke[] kanten = gw.nehmeKanten();
-	// Zweistreckewelt sw = new Zweistreckewelt(kanten);
+        // Nehme die Kanten.
+	Zweistrecke[] kanten = gw.nehmeKanten();
+	Zweistreckewelt sw = new Zweistreckewelt(kanten);
 
-	// // Nehme die Knoten.
-	// int radius = 10;
-	// Zweipunkt[] knoten = gw.nehmeKnoten(radius);
+	// Nehme die Knoten.
+	int radius = 10;
+	Zweipunkt[] knoten = gw.nehmeKnoten(radius);
 
-	// // Mache die Sicht.
+	// // Mache den Maler.
 	// Streckesicht ss = new Streckesicht(sw);
-	
 	// Zweipunktsicht ps = new Zweipunktsicht(knoten, radius);
+	// Maler m = new Maler(new Sicht[] {ss, ps});
   
         // // Stellen die Daten dar.
         // JFrame frame = new JFrame();
         // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // frame.setSize(1200, 600);
-        // frame.add(ss);
-	// frame.add(ps);
+        // frame.add(m);
         // frame.setVisible(true);
     }
     

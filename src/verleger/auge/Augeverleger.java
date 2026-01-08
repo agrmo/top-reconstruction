@@ -100,7 +100,7 @@ public class Augeverleger {
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.
 	Dreistrecke[] dkl = kw.nehmeStrecken();
-
+	
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
 	Zweistrecke[] zsl = new Zweistrecke[dkl.length];

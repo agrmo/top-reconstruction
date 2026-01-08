@@ -1,5 +1,7 @@
 package sicht;
 
+import java.awt.Graphics;
+
 // Im Allgemeinen ist eine Sicht ein Verfahren zum Anschauen einer
 // Figur.
 //
@@ -19,6 +21,6 @@ package sicht;
 // Die Sicht kennt nicht, wie sie mit einem Mensch wechselwirken
 // kann. Zum Beispiel mit der Mouse oder der Tastatur.
 //
-public class Sicht {
-    
+public abstract class Sicht {
+    public abstract void darstellen(Graphics g);
 }
