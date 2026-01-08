@@ -7,6 +7,7 @@ import sicht.figur.Figursicht;
 import spiel.Spiel;
 import verschieber.Verschieber;
 import welt.figur.Figurwelt;
+import maler.Maler;
 
 // Ein Spiel, in dem wir die Welt und Sichten verändern können.
 //
@@ -14,13 +15,13 @@ import welt.figur.Figurwelt;
 // Mouse: Drucken und verschieben gleichzeitig alle Körper.
 public class Figurspiel extends Spiel {
 
-    Figursicht fs;
+    Maler m;
     Figurwelt fw;
     int mouseAnfangX;
     int mouseAnfangY;
 
-    public Figurspiel(Figursicht fs, Figurwelt fw) {
-	this.fs = fs;
+    public Figurspiel(Maler m, Figurwelt fw) {
+	this.m = m;
 	this.fw = fw;
 
 	this.mouseAnfangX = 0;
@@ -52,6 +53,12 @@ public class Figurspiel extends Spiel {
     public void handelnMouseBewegen(MouseEvent me) {
 	// nichts
     }
+
+    // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy.
+    void verschieben(int dx, int dy) {
+	Zweipunkt verschiebenpunkt = new Zweipunkt(dx,dy);
+	Verschieber.verschieben(this.fw, verschiebenpunkt);
+    }
     
     public void handelnMouseSchleifen(MouseEvent me) {
 
@@ -65,13 +72,7 @@ public class Figurspiel extends Spiel {
 	this.mouseAnfangX = jetztX;
 	this.mouseAnfangY = jetztY;
 
-	this.fs.repaint();
-    }
-
-    // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy.
-    void verschieben(int dx, int dy) {
-	Zweipunkt verschiebenpunkt = new Zweipunkt(dx,dy);
-	Verschieber.verschieben(this.fw, verschiebenpunkt);
+	this.m.repaint();
     }
     
     public void handelnTastatur(KeyEvent ke) {
@@ -112,7 +113,7 @@ public class Figurspiel extends Spiel {
         }
 
 	if (veraendert == true) {
-	    this.fs.repaint();
+	    this.m.repaint();
 	}
     }
     
@@ -138,7 +139,7 @@ public class Figurspiel extends Spiel {
 	}
 
 	if (veraendert == true) {
-	    this.fs.repaint();
+	    this.m.repaint();
 	}
     }
     

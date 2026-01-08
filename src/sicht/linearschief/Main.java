@@ -6,6 +6,8 @@ import koerper.Koerper;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
 import welt.koerper.Koerperwelt;
+import maler.Maler;
+import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -45,15 +47,16 @@ public class Main {
 	//   1.0: Multipliziere alle y Stellen mit 1.0
 	//   0.0: Addiere 0.0 zu alle y Stellen
 	//
-	Linearschiefsicht lss = new Linearschiefsicht(kw,
+	Linearschiefsicht s = new Linearschiefsicht(kw,
 						      0.1,
 						      2.0, 0.0, 1.0, 0.0);
+	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Welt dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
-	frame.add(lss);
+	frame.add(m);
 	frame.setVisible(true);
     }
 

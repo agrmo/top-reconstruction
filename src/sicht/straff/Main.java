@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import punkt.Zweipunkt;
 import strecke.Zweistrecke;
 import welt.zweistrecke.Zweistreckewelt;
+import maler.Maler;
+import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -41,13 +43,14 @@ public class Main {
 	//   2.0: Multipliziere alle x Stellen mit 2.0
 	//   1.0: Multipliziere alle y Stellen mit 1.0
 	//
-	Straffsicht ss = new Straffsicht(zkw, 2.0, 1.0);
+	Straffsicht s = new Straffsicht(zkw, 2.0, 1.0);
+	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
-	frame.add(ss);
+	frame.add(m);
 	frame.setVisible(true);
     }
     

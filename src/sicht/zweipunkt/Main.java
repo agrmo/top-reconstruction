@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import punkt.Zweipunkt;
 import figur.quadrat.Quadrat;
+import maler.Maler;
+import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -19,13 +21,14 @@ public class Main {
 	Zweipunkt[] pl = q.nehmeEcken();
 
 	// Mache die Sicht.
-	Zweipunktsicht ps = new Zweipunktsicht(pl, 10);
+	Zweipunktsicht s = new Zweipunktsicht(pl, 10);
+	Maler m = new Maler(new Sicht[] {s});
 
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
-	frame.add(ps);
+	frame.add(m);
 	frame.setVisible(true);
     }
 }

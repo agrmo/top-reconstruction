@@ -2,14 +2,14 @@ package sicht.figur;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
-import javax.swing.JComponent;
 import strecke.Zweistrecke;
 import welt.figur.Figurwelt;
+import sicht.Sicht;
 
 // Die Figursicht zeigt insbesondere nur die erste und zweite Teile
 // der Figur. Sie ist einer der einfachsten Methoden, einen Figur
 // darzustellen.
-public class Figursicht extends JComponent {
+public class Figursicht extends Sicht {
 
     public Figurwelt fw;
 
@@ -18,9 +18,7 @@ public class Figursicht extends JComponent {
     }
 
     // Wir müssen entscheiden, wer diese Figur darstellen wird.
-    public void paintComponent(Graphics g) {
-	super.paintComponent(g);
-
+    public void darstellen(Graphics g) {
 	// Nehme die Zweistrecken dieser Welt.
 	ArrayList<Zweistrecke> wk = this.fw.nehmeStrecken();
 

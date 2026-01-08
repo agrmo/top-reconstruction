@@ -6,6 +6,9 @@ import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
 import koerper.Koerper;
 import welt.koerper.Koerperwelt;
+import maler.Maler;
+import sicht.Sicht;
+
 
 /*
   javac -d classes $(find src -type f) \
@@ -15,11 +18,8 @@ import welt.koerper.Koerperwelt;
 public class Main {
 
     public static void main(String[] args){
- 	JFrame frame = new JFrame();
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setSize(1200, 600);
-
-	// Mache eine Körperwelt.
+ 	
+	// Mache die Körperwelt.
 	Kubus k = new Kubus(50);
 	Dreipunkt p = new Dreipunkt(100,100,100);
 	ArrayList<Koerper> kl = new ArrayList<Koerper>();
@@ -28,11 +28,15 @@ public class Main {
 	ol.add(p);
 	Koerperwelt kw = new Koerperwelt(kl, ol);
 	
-	// Mache eine Parallelsicht.
-	Parallelsicht ps = new Parallelsicht(kw);
+	// Mache die Parallelsicht.
+	Parallelsicht s = new Parallelsicht(kw);
+	Maler m = new Maler(new Sicht[] {s});
 
-	// Geben wir die Sicht zu Java, um darzustellen.
-	frame.add(ps);
+	// Stellen die Daten dar.
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize(1200, 600);
+	frame.add(m);
 	frame.setVisible(true);
     }
 }

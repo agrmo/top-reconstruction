@@ -1,12 +1,12 @@
 package sicht.oval;
 
 import java.awt.Graphics;
-import javax.swing.JComponent;
 import punkt.Zweipunkt;
 import figur.oval.Oval;
+import sicht.Sicht;
 
 // Stellen eine Reihe von Ovalen dar.
-public class Ovalsicht extends JComponent {
+public class Ovalsicht extends Sicht {
 
     Oval[] ovalliste;
     Zweipunkt[] ortliste;
@@ -16,8 +16,7 @@ public class Ovalsicht extends JComponent {
 	this.ortliste = ol;
     }
 
-    public void paintComponent(Graphics g) {
-	super.paintComponent(g);
+    public void darstellen(Graphics g) {
 
 	for (int i = 0; i < this.ovalliste.length; i++) {
 	    g.drawOval((int) this.ortliste[i].xteil, (int) this.ortliste[i].yteil,

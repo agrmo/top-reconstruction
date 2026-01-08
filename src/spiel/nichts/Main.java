@@ -9,6 +9,8 @@ import koerper.Koerper;
 import sicht.parallel.Parallelsicht;
 import spiel.Spiel;
 import welt.koerper.Koerperwelt;
+import maler.Maler;
+import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f) \
@@ -18,20 +20,18 @@ import welt.koerper.Koerperwelt;
 public class Main {
 
     static void beispielEins() {
-	JFrame frame = new JFrame();
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setSize(1200, 600);
-
 	// Das Spiel nimmt Ereignissen von der Handlung ein.
 	Nichtsspiel s = new Nichtsspiel();
 
 	// Die Handlungen werden das Spiel anrufen.
 	SpielHandlung sh = new SpielHandlung(s);
 
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize(1200, 600);
 	frame.addMouseListener(sh);
 	frame.addMouseMotionListener(sh);
 	frame.addKeyListener(sh);
-	
 	frame.setVisible(true);
     }
 
@@ -47,6 +47,7 @@ public class Main {
 
 	// Mache die Sicht.
 	Parallelsicht ps = new Parallelsicht(kw);
+	Maler m = new Maler(new Sicht[] {ps});
 
 	// Mache das Spiel.
 	Spiel s = new Nichtsspiel();
@@ -54,11 +55,11 @@ public class Main {
 	// Mache die Handlungen.
 	SpielHandlung sh = new SpielHandlung(s);
 
-	// Geh.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
-	frame.add(ps);
+	frame.add(m);
 	frame.addMouseListener(sh);
 	frame.addMouseMotionListener(sh);
 	frame.addKeyListener(sh);

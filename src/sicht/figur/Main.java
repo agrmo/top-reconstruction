@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import punkt.Zweipunkt;
 import welt.figur.Figurwelt;
+import sicht.Sicht;
+import maler.Maler;
 
 /*
   javac -d classes $(find src -type f) \
@@ -27,12 +29,13 @@ public class Main {
 	
 	// Mache die Sicht.
 	Figursicht fs = new Figursicht(fw);
+	Maler m = new Maler(new Sicht[] {fs});
 
 	// Darstellen.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
-	frame.add(fs);
+	frame.add(m);
 	frame.setVisible(true);
     }
 }

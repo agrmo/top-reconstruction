@@ -4,18 +4,23 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import sicht.linearschief.Linearschiefsicht;
 import spiel.Spiel;
+import maler.Maler;
 
 // Ein Spiel mit einer Linearschiefsicht einer Körperwelt mit der
 // Tastatur.  Ein linearschiefes Spiel enthält eine Handlung, eine
-// Körperwelt und eine Sicht. Die Handlung enthält auch die
-// Sicht, weil sie beiden sie wiederdarstellen sollen.
+// Körperwelt und eine Sicht. Die Handlung enthält auch die Sicht,
+// weil sie beiden sie wiederdarstellen sollen.
 public class Linearschiefspiel extends Spiel {
+
+    // Der Maler.
+    Maler maler;
 
     // Wir werden diese Sicht nach einer Berührung der Tastatur
     // anrufen, um sie sich wieder darzustellen.
     Linearschiefsicht lss;
 
-    public Linearschiefspiel(Linearschiefsicht l) {
+    public Linearschiefspiel(Maler m, Linearschiefsicht l) {
+	this.maler = m;
 	this.lss = l;
     }
 
@@ -85,7 +90,7 @@ public class Linearschiefspiel extends Spiel {
         }
 
 	if (veraendert == true) {
-	    this.lss.repaint();
+	    this.maler.repaint();
 	}
     }
     
@@ -119,7 +124,7 @@ public class Linearschiefspiel extends Spiel {
 	}
 
 	if (veraendert == true) {
-	    this.lss.repaint();
+	    this.maler.repaint();
 	}
     }
     

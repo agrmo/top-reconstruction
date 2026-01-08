@@ -7,6 +7,8 @@ import punkt.Zweipunkt;
 import strecke.Zweistrecke;
 import verschieber.Verschieber;
 import welt.zweistrecke.Zweistreckewelt;
+import maler.Maler;
+import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -27,13 +29,14 @@ public class Main {
 	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
 	
 	// Mache eine Streckesicht.
-	Streckesicht ks = new Streckesicht(zkw);
+	Streckesicht s = new Streckesicht(zkw);
+	Maler m = new Maler(new Sicht[] {s});
 
-	// Geh.
+	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
-	frame.add(ks);
+	frame.add(m);
 	frame.setVisible(true);
     }
 
@@ -55,20 +58,21 @@ public class Main {
 	
 	Zweistreckewelt zkwNeu = Verschieber.verschieben(zkw, halbBreite, halbHoehe);
 	    
-	Streckesicht ss = new Streckesicht(zkwNeu);
+	Streckesicht s = new Streckesicht(zkwNeu);
+	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
-	frame.add(ss);
+	frame.add(m);
 	frame.setVisible(true);
     }
 
     
     
     public static void main(String[] args){
-	beispielEins();
+	beispielZwei();
     }
 }
 

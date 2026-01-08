@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import figur.kreis.Kreis;
 import punkt.Zweipunkt;
+import maler.Maler;
+import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -24,7 +26,8 @@ public class Main {
 	ol[1] = new Zweipunkt(50, 50);
 
 	// Mache die Sicht.
-	Kreissicht ks = new Kreissicht(kl, ol);
+	Kreissicht s = new Kreissicht(kl, ol);
+	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
@@ -32,7 +35,7 @@ public class Main {
         frame.getContentPane().setForeground(Color.WHITE);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
-	frame.add(ks);
+	frame.add(m);
 	frame.setVisible(true);
     }
 }

@@ -1,14 +1,14 @@
 package sicht.parallel;
 
 import java.awt.Graphics;
-import javax.swing.JComponent;
 import strecke.Dreistrecke;
 import welt.koerper.Koerperwelt;
+import sicht.Sicht;
 
 // Die Parallelsicht zeigt insbesondere nur die erste und zweite Teile
 // der Körper. Sie ist einer der einfachsten Methoden, einen
 // dreidimensionalen Körper darzustellen.
-public class Parallelsicht extends JComponent {
+public class Parallelsicht extends Sicht {
 
     public Koerperwelt kw;
 
@@ -19,9 +19,7 @@ public class Parallelsicht extends JComponent {
     }
 
     // Wir müssen entscheiden, wer diese Körper darstellen wird.
-    public void paintComponent(Graphics g) {
-	super.paintComponent(g);
-
+    public void darstellen(Graphics g) {
 	// Nehme die Dreistrecken dieser Welt.
 	Dreistrecke[] wk = this.kw.nehmeStrecken();
 

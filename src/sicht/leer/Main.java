@@ -1,6 +1,8 @@
 package sicht.leer;
 
 import javax.swing.JFrame;
+import maler.Maler;
+import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f) \
@@ -14,9 +16,10 @@ public class Main {
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
 
-	Leersicht l = new Leersicht();
-	frame.add(l);
+	Leersicht s = new Leersicht();
+	Maler m = new Maler(new Sicht[] {s});
 	
+	frame.add(m);
 	frame.setVisible(true);
     }
 }

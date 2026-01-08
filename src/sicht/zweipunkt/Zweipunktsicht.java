@@ -1,12 +1,11 @@
 package sicht.zweipunkt;
 
-import javax.swing.JComponent;
 import java.awt.Graphics;
 import punkt.Zweipunkt;
 import sicht.Sicht;
 
 // Eine Zweipunktsicht kann Punktn darstellen.
-public class Zweipunktsicht extends JComponent {
+public class Zweipunktsicht extends Sicht {
 
     // Wir müssen die Welt in die Sicht einsetzen, weil Java sie
     // irgendwann anrufen wird, die Welt darzustellen. 
@@ -26,9 +25,7 @@ public class Zweipunktsicht extends JComponent {
 		   this.radius, this.radius);
     }
 
-    public void paintComponent(Graphics g) {
-	super.paintComponent(g);
-
+    public void darstellen(Graphics g) {
 	// Stelle jede Punkt dieser Welt dar.
 	for (int i = 0; i < this.pl.length; i++) {
 	    this.darstellenPunkt(g, this.pl[i]);

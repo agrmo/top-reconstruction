@@ -7,7 +7,7 @@ import strecke.Zweistrecke;
 import sicht.Sicht;
 
 // Eine Streckesicht kann Strecken darstellen.
-public class Streckesicht extends JComponent {
+public class Streckesicht extends Sicht {
 
     // Wir müssen die Welt in die Sicht einsetzen, weil Java sie
     // irgendwann anrufen wird, die Welt darzustellen. 
@@ -23,9 +23,7 @@ public class Streckesicht extends JComponent {
 		   (int) k.bis.xteil, (int) k.bis.yteil);
     }
 
-    public void paintComponent(Graphics g) {
-	super.paintComponent(g);
-
+    public void darstellen(Graphics g) {
 	// Stelle jede Strecke dieser Welt dar.
 	for (int i = 0; i < this.zsw.streckenliste.length; i++) {
 	    this.darstellenStrecke(g, this.zsw.streckenliste[i]);

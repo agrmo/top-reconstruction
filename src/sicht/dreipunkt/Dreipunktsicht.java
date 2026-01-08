@@ -2,14 +2,14 @@ package sicht.dreipunkt;
 
 import punkt.Dreipunkt;
 import java.awt.Graphics;
-import javax.swing.JComponent;
 import verleger.auge.Augeverleger;
 import punkt.Zweipunkt;
 import punkt.Dreipunkt;
 import sicht.zweipunkt.Zweipunktsicht;
+import sicht.Sicht;
 
 // Stellen wir die Punkten mit Hilfe einer Punktperspektive dar.
-public class Dreipunktsicht extends JComponent {
+public class Dreipunktsicht extends Sicht {
 
     public Dreipunkt[] pl;
     public Dreipunkt augepunkt;
@@ -36,9 +36,7 @@ public class Dreipunktsicht extends JComponent {
     }
 
     // Wir müssen entscheiden, wer diese Körper darstellen wird.
-    public void paintComponent(Graphics g) {
-	super.paintComponent(g);
-	
+    public void darstellen(Graphics g) {
 	// Verlegen diese zweidimensionale Punkten zu dreidimensionalen Punkten.
 	Zweipunkt[] zpl = Augeverleger.verlegen(this.pl, this.augepunkt, this.perspektive,
 						this.breite, this.hoehe,
@@ -47,7 +45,7 @@ public class Dreipunktsicht extends JComponent {
 	// Wir haben schon eine Sicht, die Zweipunkten darstellen
 	// kann. Benutzen sie.
 	Zweipunktsicht zps = new Zweipunktsicht(zpl, 10);
-	zps.paintComponent(g);
+	zps.darstellen(g);
     }
 }
 

@@ -9,6 +9,8 @@ import figur.Figur;
 import punkt.Zweipunkt;
 import sicht.figur.Figursicht;
 import welt.figur.Figurwelt;
+import sicht.Sicht;
+import maler.Maler;
 
 /*
   javac -d classes $(find src -type f) \
@@ -29,9 +31,10 @@ public class Main {
 	
 	// Mache die Sicht.
 	Figursicht fs = new Figursicht(fw);
+	Maler m = new Maler(new Sicht[] {fs});
 	
 	// Mache das Spiel.
-	Figurspiel s = new Figurspiel(fs, fw);
+	Figurspiel s = new Figurspiel(m, fw);
 
 	// Mache die Handlungen.
 	SpielHandlung sh = new SpielHandlung(s);
@@ -42,7 +45,7 @@ public class Main {
 	frame.setSize(1200, 600);
 	frame.getContentPane().setBackground(Color.BLACK);
 	frame.getContentPane().setForeground(Color.WHITE);
-	frame.add(fs);
+	frame.add(m);
 	frame.addKeyListener(sh);
 	frame.addMouseListener(sh);
 	frame.addMouseMotionListener(sh);

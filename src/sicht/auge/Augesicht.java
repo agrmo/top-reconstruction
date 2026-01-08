@@ -49,7 +49,7 @@ public class Augesicht extends Sicht {
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.
 	Streckesicht ks = new Streckesicht(zkw);
-	ks.paintComponent(g);
+	ks.darstellen(g);
     }
 }
 

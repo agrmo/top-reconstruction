@@ -9,6 +9,8 @@ import koerper.Koerper;
 import sicht.linearschief.Linearschiefsicht;
 import welt.koerper.Koerperwelt;
 import handlung.spiel.SpielHandlung;
+import maler.Maler;
+import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f) \
@@ -36,9 +38,10 @@ public class Main {
 	Linearschiefsicht lss = new Linearschiefsicht(kw,
 						      a,
 						      mx, bx, my, by);
+	Maler m = new Maler(new Sicht[] {lss});
 	
 	// Mache das Spiel.
-	Linearschiefspiel s = new Linearschiefspiel(lss);
+	Linearschiefspiel s = new Linearschiefspiel(m, lss);
 
 	// Mache die Handlungen.
 	SpielHandlung sh = new SpielHandlung(s);
@@ -49,7 +52,7 @@ public class Main {
 	frame.setSize(1200, 600);
 	frame.getContentPane().setBackground(Color.BLACK);
 	frame.getContentPane().setForeground(Color.WHITE);
-	frame.add(lss);
+	frame.add(m);
 	frame.addKeyListener(sh);
 	frame.addMouseListener(sh);
 	frame.setVisible(true);	

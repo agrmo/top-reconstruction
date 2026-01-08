@@ -1,13 +1,13 @@
 package sicht.linearschief;
 
 import java.awt.Graphics;
-import javax.swing.JComponent;
 import sicht.strecke.Streckesicht;
 import straffer.Straffer;
 import verschieber.Verschieber;
 import verleger.schief.Schiefverleger;
 import welt.zweistrecke.Zweistreckewelt;
 import welt.koerper.Koerperwelt;
+import sicht.Sicht;
 
 // Eine Sicht, die eine dreidimensionale Körperwelt einnimmt.
 // Sie wandelt die Körperwelt mit zwei Verlegungen: einer schiefen
@@ -20,7 +20,7 @@ import welt.koerper.Koerperwelt;
 // x' = mx * x + bx
 // y' = my * y + by
 //
-public class Linearschiefsicht extends JComponent {
+public class Linearschiefsicht extends Sicht {
 
     public Koerperwelt kw;
     public Schiefverleger sv;
@@ -49,8 +49,7 @@ public class Linearschiefsicht extends JComponent {
     //
     // 2. Straffer: Er verhält sich wie ein Bildschirm, und
     // verschiebt alle Punkten, sodaß wir sie sehen können.
-    public void paintComponent(Graphics g) {
-	super.paintComponent(g);
+    public void darstellen(Graphics g) {
 	
 	// Benutzen die Verlegungen.
 	Zweistreckewelt zkw = this.sv.verlegenWelt(this.kw);
@@ -66,7 +65,7 @@ public class Linearschiefsicht extends JComponent {
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.
 	Streckesicht ks = new Streckesicht(zkwNeuNeu);
-	ks.paintComponent(g);
+	ks.darstellen(g);
     }
 }
 

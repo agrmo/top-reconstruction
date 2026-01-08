@@ -1,17 +1,17 @@
 package sicht.leer;
 
 import java.awt.Graphics;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
+import sicht.Sicht;
 
 // Eine Sicht ohne etwas zu sehen.
-public class Leersicht extends JComponent {
+public class Leersicht extends Sicht {
     
     public Leersicht() {
 	
     }
 
-    public void paintComponent(Graphics g) {
-	super.paintComponent(g);
+    public void darstellen(Graphics g) {
+	
     }
 }

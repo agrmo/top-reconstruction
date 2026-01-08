@@ -6,6 +6,8 @@ import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
 import koerper.Koerper;
 import welt.koerper.Koerperwelt;
+import maler.Maler;
+import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -26,13 +28,14 @@ public class Main {
 	Koerperwelt kw = new Koerperwelt(kl, ol);
 
 	// Mache die Sicht.
-	Schiefsicht ss = new Schiefsicht(kw, 0.1);
+	Schiefsicht s = new Schiefsicht(kw, 0.1);
+	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Welt dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
-	frame.add(ss);
+	frame.add(m);
 	frame.setVisible(true);
     }
 }

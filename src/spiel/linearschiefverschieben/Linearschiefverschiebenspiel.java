@@ -7,6 +7,7 @@ import sicht.linearschief.Linearschiefsicht;
 import spiel.Spiel;
 import verschieber.Verschieber;
 import welt.koerper.Koerperwelt;
+import maler.Maler;
 
 // Ein Spiel, in dem wir die Welt und Sichten verändern können.
 //
@@ -17,13 +18,16 @@ import welt.koerper.Koerperwelt;
 // Mouse: Drucken und verschieben die Körper.
 public class Linearschiefverschiebenspiel extends Spiel {
 
+    Maler m;
     Linearschiefsicht lss;
     Koerperwelt kw;
     int mouseAnfangX;
     int mouseAnfangY;
 
-    public Linearschiefverschiebenspiel(Linearschiefsicht l,
+    public Linearschiefverschiebenspiel(Maler m,
+					Linearschiefsicht l,
 					Koerperwelt kw) {
+	this.m = m;
 	this.lss = l;
 	this.kw = kw;
 
@@ -68,7 +72,7 @@ public class Linearschiefverschiebenspiel extends Spiel {
 	this.mouseAnfangX = jetztX;
 	this.mouseAnfangY = jetztY;
 
-	this.lss.repaint();
+	this.m.repaint();
     }
 
     // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy, dz.
@@ -127,7 +131,7 @@ public class Linearschiefverschiebenspiel extends Spiel {
         }
 
 	if (veraendert == true) {
-	    this.lss.repaint();
+	    this.m.repaint();
 	}
     }
     
@@ -161,7 +165,7 @@ public class Linearschiefverschiebenspiel extends Spiel {
 	}
 
 	if (veraendert == true) {
-	    this.lss.repaint();
+	    this.m.repaint();
 	}
     }
     
