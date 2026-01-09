@@ -27,7 +27,7 @@ public class Augeverleger {
 
 	Zweipunkt xz = Punktdreher.drehen(new Zweipunkt(p.xteil, p.zteil), yaw);
 	Zweipunkt yz = Punktdreher.drehen(new Zweipunkt(p.yteil, xz.yteil), pitch);
-	Zweipunkt xy = Punktdreher.drehen(new Zweipunkt(xz.xteil, yz.xteil), pitch);
+	Zweipunkt xy = Punktdreher.drehen(new Zweipunkt(xz.xteil, yz.xteil), roll);
 
 	double x = xy.xteil;
 	double y = xy.yteil;

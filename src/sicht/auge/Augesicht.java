@@ -52,5 +52,3 @@ public class Augesicht extends Sicht {
 	ks.darstellen(g);
     }
 }
-
-

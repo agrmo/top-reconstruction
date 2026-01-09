@@ -21,10 +21,8 @@ public class Main {
 	// Mache die dreidimensionale Welt.
 	ArrayList<Koerper> kl = new ArrayList<Koerper>();
 	kl.add(new Kubus(30));
-	kl.add(new Pyramide(40, 40));
 	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
 	ol.add(new Dreipunkt(0,0,200));
-	ol.add(new Dreipunkt(100,100,200));
 	
 	Koerperwelt kw = new Koerperwelt(kl, ol);
 
