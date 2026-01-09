@@ -14,7 +14,7 @@ import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.linearschiefverschieben.Main
+  && java -cp classes spiel.koerper.linearschiefverschieben.Main
 */
 
 public class Main {

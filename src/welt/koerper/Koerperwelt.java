@@ -41,7 +41,7 @@ public class Koerperwelt {
     // Nehme die Anzahl aller Strecken dieser Welt.
     int nehmestreckenanzahl() {
 	int streckenanzahl = 0;
-	
+
 	for (int i = 0; i < this.koerperliste.size(); i++) {
 	    streckenanzahl += this.koerperliste.get(i).nehmestreckenanzahl();
 	}

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import koerper.Koerper;
 import koerper.kubus.Kubus;
+import koerper.pyramide.Pyramide;
 import punkt.Dreipunkt;
 import sicht.auge.Augesicht;
 import welt.koerper.Koerperwelt;
@@ -16,21 +17,21 @@ import maler.Maler;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.auge.Main
+  && java -cp classes spiel.koerper.auge.Main
 */
 
 public class Main {
     public static void main(String[] args) {
 	
 	// Mache die Welt.
-	Kubus k = new Kubus(50);
-	Dreipunkt p = new Dreipunkt(0, 0, 0);
 	ArrayList<Koerper> kl = new ArrayList<Koerper>();
-	kl.add(k);
+	kl.add(new Kubus(30));
+	kl.add(new Pyramide(20, 20));
 	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
-	ol.add(p);
+	ol.add(new Dreipunkt(0,0,0));
+	ol.add(new Dreipunkt(20,20,20));
 	Koerperwelt kw = new Koerperwelt(kl, ol);
-
+	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	int breite = (int) bildschirm.getWidth();
