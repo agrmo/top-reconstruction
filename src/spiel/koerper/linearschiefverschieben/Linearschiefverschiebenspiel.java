@@ -1,4 +1,4 @@
-package spiel.linearschiefverschieben;
+package spiel.koerper.linearschiefverschieben;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;

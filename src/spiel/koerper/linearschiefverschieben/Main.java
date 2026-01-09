@@ -1,20 +1,20 @@
-package spiel.linearschief;
+package spiel.koerper.linearschiefverschieben;
 
+import handlung.spiel.SpielHandlung;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import koerper.Koerper;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
-import koerper.Koerper;
 import sicht.koerper.linearschief.Linearschiefsicht;
 import welt.koerper.Koerperwelt;
-import handlung.spiel.SpielHandlung;
 import maler.Maler;
 import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.linearschief.Main
+  && java -cp classes spiel.linearschiefverschieben.Main
 */
 
 public class Main {
@@ -28,7 +28,7 @@ public class Main {
 	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
 	ol.add(p);
 	Koerperwelt kw = new Koerperwelt(kl, ol);
-	
+
 	// Mache die Sicht.
 	double a = 1.0;
 	double mx = 1.0;
@@ -41,7 +41,7 @@ public class Main {
 	Maler m = new Maler(new Sicht[] {lss});
 	
 	// Mache das Spiel.
-	Linearschiefspiel s = new Linearschiefspiel(m, lss);
+	Linearschiefverschiebenspiel s = new Linearschiefverschiebenspiel(m, lss, kw);
 
 	// Mache die Handlungen.
 	SpielHandlung sh = new SpielHandlung(s);
@@ -49,12 +49,13 @@ public class Main {
 	// Geh.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setSize(1200, 600);
 	frame.getContentPane().setBackground(Color.BLACK);
 	frame.getContentPane().setForeground(Color.WHITE);
+	frame.setSize(1200, 600);
 	frame.add(m);
 	frame.addKeyListener(sh);
 	frame.addMouseListener(sh);
+	frame.addMouseMotionListener(sh);
 	frame.setVisible(true);	
     }
 }

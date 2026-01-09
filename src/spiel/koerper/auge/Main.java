@@ -1,4 +1,4 @@
-package spiel.auge;
+package spiel.koerper.auge;
 
 import handlung.spiel.SpielHandlung;
 import java.awt.Color;

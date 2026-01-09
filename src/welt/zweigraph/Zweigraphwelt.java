@@ -46,7 +46,7 @@ public class Zweigraphwelt {
       Das Zentrum von drawCircle() jedes Knoten dieses Graphen sind
       nicht genau auf dem punkt dargestellt. Zum Beispiel
       
-      Knoten (0,0) radius 3
+      Knoten (0,0) Durchmesser 3
       Kante (0,0) bis (10,10)
       
       Gewünscht:
@@ -54,9 +54,9 @@ public class Zweigraphwelt {
       |---|
       | \ |
       |--\|
-      \
-      \
-      ...
+          \
+           \
+            ...
 
       Aber Java wird die beiden wieso darstellen,
 
@@ -64,30 +64,31 @@ public class Zweigraphwelt {
       |---|
       |\  |
       |-\-|
-      \
-      \
-      ...
+         \
+          \
+           ...
 	     
-      weil das Zentrum des Kreises steht nicht auf (0,0). Wir müssen
+      weil das Zentrum des Kreises nicht auf (0,0) steht. Wir müssen
       die Stellen des Knoten verbessern. In diesem Beispiel
       verschieben wir die Stellen des Kreises -3 in die x- und
       y-Richtung.
     */
-    void verbessernKnoten(Zweipunkt zp, int radius) {
-	Zweipunkt unterschied = new Zweipunkt(-radius, -radius);
+    void verbessernKnoten(Zweipunkt zp, int durchmesser) {
+	Zweipunkt unterschied = new Zweipunkt(-(durchmesser / 2.0),
+					      -(durchmesser / 2.0));
 	zp.addieren(unterschied);
     }
 
     // ein: ganze Zahl
     // Sie gibt neue Punkte aus.
     // Diese Welt kennt wie groß ein Knoten ist.
-    public Zweipunkt[] nehmeKnoten(int radius) {
+    public Zweipunkt[] nehmeKnoten(int durchmesser) {
 
 	Zweipunkt[] auspunkte = new Zweipunkt[this.orten.length];
 	
 	for (int i = 0; i < this.orten.length; i++) {
 	    auspunkte[i] = Punktverdoppler.verdoppeln(this.orten[i]);
-	    verbessernKnoten(auspunkte[i], radius);
+	    verbessernKnoten(auspunkte[i], durchmesser);
 	}
 	
 	return auspunkte;

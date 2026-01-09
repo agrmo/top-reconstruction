@@ -11,18 +11,18 @@ public class Punktsicht extends Sicht {
     // irgendwann anrufen wird, die Welt darzustellen. 
     public Zweipunkt[] pl;
 
-    // Der Radius des Punktes.
-    public int radius;
+    // Der Durchmesser des Punktes.
+    public int durchmesser;
 
-    public Punktsicht(Zweipunkt[] pl, int r) {
+    public Punktsicht(Zweipunkt[] pl, int d) {
 	this.pl = pl;
-	this.radius = r;
+	this.durchmesser = d;
     }
 
     // Die Punkte stehen schon auf einer Ebene. Stellen sie dar.
     public void darstellenPunkt(Graphics g, Zweipunkt k) {
 	g.drawOval((int) k.xteil, (int) k.yteil,
-		   this.radius, this.radius);
+		   this.durchmesser, this.durchmesser);
     }
 
     // Stelle jeden Punkt dieser Welt dar.

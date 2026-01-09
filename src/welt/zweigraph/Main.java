@@ -1,19 +1,17 @@
 package welt.zweigraph;
 
+import welt.zweigraph.gitter.Zweigitter;
 import graph.Nachbarschaftsliste;
-import graph.Nachbarschaftsliste;
-import java.util.ArrayList;
-import javax.swing.JFrame;
-import punkt.Zweipunkt;
 import java.awt.Color;
+import javax.swing.JFrame;
+import maler.Maler;
+import punkt.Zweipunkt;
+import sicht.Sicht;
 import sicht.strecke.Streckesicht;
 import sicht.zweipunkt.Punktsicht;
 import strecke.Zweistrecke;
 import welt.zweigraph.Zweigraphwelt;
-import welt.zweigraph.gitter.Zweigitter;
 import welt.zweistrecke.Zweistreckewelt;
-import maler.Maler;
-import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f) \
@@ -39,12 +37,12 @@ public class Main {
 	Zweistreckewelt sw = new Zweistreckewelt(kanten);
 
 	// Nehme die Knoten.
-	int radius = 10;
-	Zweipunkt[] knoten = gw.nehmeKnoten(radius);
+	int durchmesser = 10;
+	Zweipunkt[] knoten = gw.nehmeKnoten(durchmesser);
 
 	// Mache den Maler.
 	Streckesicht ss = new Streckesicht(sw);
-	Punktsicht ps = new Punktsicht(knoten, radius);
+	Punktsicht ps = new Punktsicht(knoten, durchmesser);
 	Maler m = new Maler(new Sicht[] {ss, ps});
   
         // Stellen die Daten dar.

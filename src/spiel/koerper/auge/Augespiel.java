@@ -1,4 +1,4 @@
-package spiel.auge;
+package spiel.koerper.auge;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;

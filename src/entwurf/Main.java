@@ -6,9 +6,7 @@ package entwurf;
 
 public class Main {
     public static void main(String[] args) {
-	int a = 5;
-	double b = 0.5;
-	int c = (int) (((double) a) * b);
+	double c = - (5 / 2.0);
 
 	System.out.println(c);
     }
