@@ -42,17 +42,17 @@ public class Main {
 	int radius = 10;
 	Zweipunkt[] knoten = gw.nehmeKnoten(radius);
 
-	// // Mache den Maler.
-	// Streckesicht ss = new Streckesicht(sw);
-	// Punktsicht ps = new Punktsicht(knoten, radius);
-	// Maler m = new Maler(new Sicht[] {ss, ps});
+	// Mache den Maler.
+	Streckesicht ss = new Streckesicht(sw);
+	Punktsicht ps = new Punktsicht(knoten, radius);
+	Maler m = new Maler(new Sicht[] {ss, ps});
   
-        // // Stellen die Daten dar.
-        // JFrame frame = new JFrame();
-        // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // frame.setSize(1200, 600);
-        // frame.add(m);
-        // frame.setVisible(true);
+        // Stellen die Daten dar.
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1200, 600);
+        frame.add(m);
+        frame.setVisible(true);
     }
     
     public static void main(String[] args) {

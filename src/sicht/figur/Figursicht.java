@@ -1,7 +1,6 @@
 package sicht.figur;
 
 import java.awt.Graphics;
-import java.util.ArrayList;
 import strecke.Zweistrecke;
 import welt.figur.Figurwelt;
 import sicht.Sicht;
@@ -17,14 +16,14 @@ public class Figursicht extends Sicht {
 	this.fw = fw;
     }
 
-    // Wir müssen entscheiden, wer diese Figur darstellen wird.
+    // Stellen die Kanten dieser Welt dar.
     public void darstellen(Graphics g) {
-	// Nehme die Zweistrecken dieser Welt.
-	ArrayList<Zweistrecke> wk = this.fw.nehmeStrecken();
+	
+	Zweistrecke[] wk = this.fw.nehmeStrecken();
 
-	for (int i = 0; i < wk.size(); i++) {
-	    g.drawLine((int) wk.get(i).von.xteil, (int) wk.get(i).von.yteil,
-		       (int) wk.get(i).bis.xteil, (int) wk.get(i).bis.yteil);
+	for (int i = 0; i < wk.length; i++) {
+	    g.drawLine((int) wk[i].von.xteil, (int) wk[i].von.yteil,
+		       (int) wk[i].bis.xteil, (int) wk[i].bis.yteil);
 	}
     }
 }

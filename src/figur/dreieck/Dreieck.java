@@ -34,14 +34,18 @@ public class Dreieck extends Figur {
 	Zweistrecke[] strecken = new Zweistrecke[3];
 
 	strecken[0] = new Zweistrecke(Punktverdoppler.verdoppeln(ecken[0]),
-				  Punktverdoppler.verdoppeln(ecken[1]));
+				      Punktverdoppler.verdoppeln(ecken[1]));
 
 	strecken[1] = new Zweistrecke(Punktverdoppler.verdoppeln(ecken[1]),
-				  Punktverdoppler.verdoppeln(ecken[2]));
+				      Punktverdoppler.verdoppeln(ecken[2]));
 
 	strecken[2] = new Zweistrecke(Punktverdoppler.verdoppeln(ecken[2]),
-				  Punktverdoppler.verdoppeln(ecken[0]));
+				      Punktverdoppler.verdoppeln(ecken[0]));
 
 	return strecken;
+    }
+
+    public int nehmestreckenanzahl() {
+	return 3;
     }
 }

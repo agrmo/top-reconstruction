@@ -17,6 +17,12 @@ public abstract class Figur {
     // den Ort der Figur beachten.
     public abstract Zweistrecke[] nehmeStrecken();
 
+    // aus: ganze Zahl
+    //
+    // Nehme den Betrag der Strecken dieses Körpers. Genau wie viele
+    // Dreistrecke es gibt in nehmeStrecken().
+    public abstract int nehmestreckenanzahl();
+
     // aus: Liste von Zweipunkten
     //
     // Nehme alle Ecken dieser Figur.

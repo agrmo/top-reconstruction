@@ -41,11 +41,19 @@ public class Figurwelt {
     // großen Liste. Die Zweistreckeliste hat nur Tiefe 1. Also wir
     // kennen nachdem nicht, ob eine Strecke in einem Figur oder in
     // einem anderen Figur steht.
-    public ArrayList<Zweistrecke> nehmeStrecken() {
+    public Zweistrecke[] nehmeStrecken() {
 
-	ArrayList<Zweistrecke> strecken = new ArrayList<Zweistrecke>();
+	int streckeanzahl = 0;
+
+	// Nehme die gesamte Anzahl der Strecken der Figuren.
+	for (int i = 0; i < this.figurliste.size(); i++) {
+	    streckeanzahl += this.figurliste.get(i).nehmestreckenanzahl();
+	}
+
+	Zweistrecke[] strecken = new Zweistrecke[streckeanzahl];
 	
 	// Für alle Figur der Welt
+	int streckenzeichen = 0;
 	for (int i = 0; i < this.figurliste.size(); i++) {
 
 	    // Nehme den Figur. Er kennt seinen Ort nicht.
@@ -63,7 +71,8 @@ public class Figurwelt {
 		kl[j].addieren(figurpunkt);
 
 		// Nur dann fügen die Strecke in der Liste zu.
-		strecken.add(kl[j]);
+		strecken[streckenzeichen] = kl[j];
+		streckenzeichen += 1;
 	    }
 	}
 

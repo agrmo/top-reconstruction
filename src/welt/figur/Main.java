@@ -33,12 +33,13 @@ public class Main {
 	ol.add(p);
 	
 	// Mache die Welt.
-	Figurwelt kw = new Figurwelt(fl, ol);
+	Figurwelt fw = new Figurwelt(fl, ol);
 
-	ArrayList<Zweistrecke> weltStrecken = kw.nehmeStrecken();
+	// Drucken ihre Kanten
+	Zweistrecke[] strecken = fw.nehmeStrecken();
 
-	for (int i = 0; i < weltStrecken.size(); i++) {
-	    System.out.println(Streckedrucker.drucken(weltStrecken.get(i)));
+	for (int i = 0; i < strecken.length; i++) {
+	    System.out.println(Streckedrucker.drucken(strecken[i]));
 	}
     }
 }

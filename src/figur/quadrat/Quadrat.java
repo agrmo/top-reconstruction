@@ -25,6 +25,10 @@ public class Quadrat extends Figur {
 	return ecken;
     }
 
+    public int nehmestreckenanzahl() {
+	return 4;
+    }
+
     public Zweistrecke[] nehmeStrecken() {
 	
 	Zweistrecke[] strecken = new Zweistrecke[4];
