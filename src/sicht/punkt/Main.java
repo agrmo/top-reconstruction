@@ -49,11 +49,11 @@ public class Main {
 	int breite = 1200;
 	int hoehe = 600;
 	Dreipunkt augepunkt = new Dreipunkt(0,0,10);
-	int perspektive = 500;
+	int brennweite = 500;
 	double yaw = 0.0;
 	double pitch = 0.3;
 	double roll = 0.0;
-	Zweipunkt[] zpl = Augeverleger.verlegen(dpl, augepunkt, perspektive,
+	Zweipunkt[] zpl = Augeverleger.verlegen(dpl, augepunkt, brennweite,
 						breite, hoehe,
 						yaw, pitch, roll);
 	int radius = 10;
@@ -71,7 +71,7 @@ public class Main {
     }
 
     public static void main(String[] args){
-	beispielEins();
+	beispielZwei();
     }
 }
 

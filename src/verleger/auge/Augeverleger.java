@@ -21,7 +21,7 @@ public class Augeverleger {
     // aus: Zweipunkt
     //
     // Verlege den gegeben dreidimensionalen Punkt.
-    static Zweipunkt verlegen(Dreipunkt p, Dreipunkt augepunkt, int perspektive,
+    static Zweipunkt verlegen(Dreipunkt p, Dreipunkt augepunkt, int brennweite,
 			      int breite, int hoehe,
 			      double yaw, double pitch, double roll) {
 
@@ -37,8 +37,11 @@ public class Augeverleger {
 	y -= augepunkt.yteil;
 	z -= augepunkt.zteil;
 
-	int zweiDimensionaleX = (int) ((0.5 * ((double) breite)) + (x / z) * ((double) perspektive));
-	int zweiDimensionaleY = (int) ((0.5 * ((double) hoehe)) + (y / z) * ((double) perspektive));
+	int zweiDimensionaleX = (int) ((0.5 * ((double) breite))
+				       + (x/z) * ((double) brennweite));
+	
+	int zweiDimensionaleY = (int) ((0.5 * ((double) hoehe))
+				       + (y/z) * ((double) brennweite));
 
 	Zweipunkt aus = new Zweipunkt(zweiDimensionaleX, zweiDimensionaleY);
 	
@@ -49,14 +52,14 @@ public class Augeverleger {
     // Aus: Liste von zweidimensionalen Punkten
     //
     // Verlegen diese zweidimensionale Punkten zu dreidimensionalen Punkten.
-    public static Zweipunkt[] verlegen(Dreipunkt[] dpl, Dreipunkt augepunkt, int perspektive,
+    public static Zweipunkt[] verlegen(Dreipunkt[] dpl, Dreipunkt augepunkt, int brennweite,
 				       int breite, int hoehe,
 				       double yaw, double pitch, double roll) {
 	
 	Zweipunkt[] zpl = new Zweipunkt[dpl.length];
 
 	for (int i = 0; i < dpl.length; i++) {
-	    zpl[i] = Augeverleger.verlegen(dpl[i], augepunkt, perspektive,
+	    zpl[i] = Augeverleger.verlegen(dpl[i], augepunkt, brennweite,
 					   breite, hoehe,
 					   yaw, pitch, roll);
 	}
@@ -68,16 +71,16 @@ public class Augeverleger {
     // aus: Zweistrecke
     //
     // Verlege die gegebene dreidimensionale Strecke.
-    static Zweistrecke verlegen(Dreistrecke k, Dreipunkt augepunkt, int perspektive,
+    static Zweistrecke verlegen(Dreistrecke k, Dreipunkt augepunkt, int brennweite,
 			      int breite, int hoehe,
 			      double yaw, double pitch, double roll) {
 	
 	Zweipunkt verlegterPunktVon = Augeverleger.verlegen(k.von,
-							    augepunkt, perspektive,
+							    augepunkt, brennweite,
 							    breite, hoehe,
 							    yaw, pitch, roll);
 	
-	Zweipunkt verlegterPunktBis = Augeverleger.verlegen(k.bis, augepunkt, perspektive,
+	Zweipunkt verlegterPunktBis = Augeverleger.verlegen(k.bis, augepunkt, brennweite,
 							    breite, hoehe,
 							    yaw, pitch, roll);
 	
@@ -93,7 +96,7 @@ public class Augeverleger {
     // Verlegen die dreidimensionale Körperwelt zu einer
     // zweidimensionale Zweistreckewelt.
     public static Zweistreckewelt verlegen(Koerperwelt kw,
-					 Dreipunkt augepunkt, int perspektive,
+					 Dreipunkt augepunkt, int brennweite,
 					 int breite, int hoehe,
 					 double yaw, double pitch, double roll) {
 
@@ -108,7 +111,7 @@ public class Augeverleger {
 	for (int i = 0; i < dkl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zk = Augeverleger.verlegen(dkl[i], augepunkt, perspektive,
+	    Zweistrecke zk = Augeverleger.verlegen(dkl[i], augepunkt, brennweite,
 						   breite, hoehe,
 						   yaw, pitch, roll);
 	
