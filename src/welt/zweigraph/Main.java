@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import punkt.Zweipunkt;
 import java.awt.Color;
 import sicht.strecke.Streckesicht;
-import sicht.zweipunkt.Zweipunktsicht;
+import sicht.zweipunkt.Punktsicht;
 import strecke.Zweistrecke;
 import welt.zweigraph.Zweigraphwelt;
 import welt.zweigraph.gitter.Zweigitter;
@@ -44,7 +44,7 @@ public class Main {
 
 	// // Mache den Maler.
 	// Streckesicht ss = new Streckesicht(sw);
-	// Zweipunktsicht ps = new Zweipunktsicht(knoten, radius);
+	// Punktsicht ps = new Punktsicht(knoten, radius);
 	// Maler m = new Maler(new Sicht[] {ss, ps});
   
         // // Stellen die Daten dar.

@@ -4,8 +4,8 @@ import java.awt.Graphics;
 import punkt.Zweipunkt;
 import sicht.Sicht;
 
-// Eine Zweipunktsicht kann Punktn darstellen.
-public class Zweipunktsicht extends Sicht {
+// Eine Punktsicht kann Punkte darstellen.
+public class Punktsicht extends Sicht {
 
     // Wir müssen die Welt in die Sicht einsetzen, weil Java sie
     // irgendwann anrufen wird, die Welt darzustellen. 
@@ -14,12 +14,12 @@ public class Zweipunktsicht extends Sicht {
     // Die Größe des Kreises;
     public int radius;
 
-    public Zweipunktsicht(Zweipunkt[] pl, int r) {
+    public Punktsicht(Zweipunkt[] pl, int r) {
 	this.pl = pl;
 	this.radius = r;
     }
 
-    // Die Punktn stehen schon auf einer Ebene. Stellen sie dar.
+    // Die Punkte stehen schon auf einer Ebene. Stellen sie dar.
     public void darstellenPunkt(Graphics g, Zweipunkt k) {
 	g.drawOval((int) k.xteil, (int) k.yteil,
 		   this.radius, this.radius);

@@ -21,7 +21,7 @@ public class Main {
 	Zweipunkt[] pl = q.nehmeEcken();
 
 	// Mache die Sicht.
-	Zweipunktsicht s = new Zweipunktsicht(pl, 10);
+	Punktsicht s = new Punktsicht(pl, 10);
 	Maler m = new Maler(new Sicht[] {s});
 
 	// Stellen die Daten dar.

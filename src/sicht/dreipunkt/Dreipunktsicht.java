@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import verleger.auge.Augeverleger;
 import punkt.Zweipunkt;
 import punkt.Dreipunkt;
-import sicht.zweipunkt.Zweipunktsicht;
+import sicht.zweipunkt.Punktsicht;
 import sicht.Sicht;
 
 // Stellen wir die Punkten mit Hilfe einer Punktperspektive dar.
@@ -44,8 +44,8 @@ public class Dreipunktsicht extends Sicht {
 
 	// Wir haben schon eine Sicht, die Zweipunkten darstellen
 	// kann. Benutzen sie.
-	Zweipunktsicht zps = new Zweipunktsicht(zpl, 10);
-	zps.darstellen(g);
+	Punktsicht ps = new Punktsicht(zpl, 10);
+	ps.darstellen(g);
     }
 }
 
