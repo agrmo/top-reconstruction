@@ -1,4 +1,4 @@
-package sicht.linearschief;
+package sicht.koerper.linearschief;
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -11,7 +11,7 @@ import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.linearschief.Main
+  && java -cp classes sicht.koerper.linearschief.Main
 */
 
 public class Main {

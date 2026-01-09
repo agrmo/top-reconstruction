@@ -3,7 +3,7 @@ package spiel.linearschiefverschieben;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import punkt.Dreipunkt;
-import sicht.linearschief.Linearschiefsicht;
+import sicht.koerper.linearschief.Linearschiefsicht;
 import spiel.Spiel;
 import verschieber.Verschieber;
 import welt.koerper.Koerperwelt;

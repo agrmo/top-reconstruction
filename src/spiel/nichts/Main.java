@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
 import koerper.Koerper;
-import sicht.parallel.Parallelsicht;
+import sicht.koerper.parallel.Parallelsicht;
 import spiel.Spiel;
 import welt.koerper.Koerperwelt;
 import maler.Maler;

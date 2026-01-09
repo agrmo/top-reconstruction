@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
 import koerper.Koerper;
-import sicht.linearschief.Linearschiefsicht;
+import sicht.koerper.linearschief.Linearschiefsicht;
 import welt.koerper.Koerperwelt;
 import handlung.spiel.SpielHandlung;
 import maler.Maler;

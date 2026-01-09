@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import koerper.Koerper;
 import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
-import sicht.linearschief.Linearschiefsicht;
+import sicht.koerper.linearschief.Linearschiefsicht;
 import welt.koerper.Koerperwelt;
 import maler.Maler;
 import sicht.Sicht;

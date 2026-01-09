@@ -1,4 +1,4 @@
-package sicht.straff;
+package sicht.koerper.straff;
 
 import java.awt.Graphics;
 import verschieber.Verschieber;

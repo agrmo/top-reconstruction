@@ -1,4 +1,4 @@
-package sicht.linearschief;
+package sicht.koerper.linearschief;
 
 import java.awt.Graphics;
 import sicht.strecke.Streckesicht;

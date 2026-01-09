@@ -1,11 +1,16 @@
 package sicht.zweipunkt;
 
-import java.util.ArrayList;
-import javax.swing.JFrame;
-import punkt.Zweipunkt;
 import figur.quadrat.Quadrat;
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JFrame;
+import koerper.kubus.Kubus;
 import maler.Maler;
+import punkt.Dreipunkt;
+import punkt.Zweipunkt;
 import sicht.Sicht;
+import sicht.zweipunkt.Punktsicht;
+import verleger.auge.Augeverleger;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -14,9 +19,8 @@ import sicht.Sicht;
 
 public class Main {
 
-    public static void main(String[] args){
-
-	// Mache die Daten.
+    static void beispielEins() {
+	// Mache die Punkte.
 	Quadrat q = new Quadrat(50);
 	Zweipunkt[] pl = q.nehmeEcken();
 
@@ -26,10 +30,48 @@ public class Main {
 
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
+	frame.getContentPane().setBackground(Color.BLACK);
+        frame.getContentPane().setForeground(Color.WHITE);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
 	frame.add(m);
 	frame.setVisible(true);
+    }
+
+    static void beispielZwei() {
+	// Mache die dreidimensionalen Daten.
+	Kubus k = new Kubus(2);
+	Dreipunkt[] dpl = k.nehmeEcken();
+
+	// Verlegen die dreidimensionalen Daten.
+
+	// Mache die Sicht.
+	int breite = 1200;
+	int hoehe = 600;
+	Dreipunkt augepunkt = new Dreipunkt(0,0,10);
+	int perspektive = 500;
+	double yaw = 0.0;
+	double pitch = 0.3;
+	double roll = 0.0;
+	Zweipunkt[] zpl = Augeverleger.verlegen(dpl, augepunkt, perspektive,
+						breite, hoehe,
+						yaw, pitch, roll);
+	int radius = 10;
+	Punktsicht s = new Punktsicht(zpl, radius);
+	Maler m = new Maler(new Sicht[] {s});
+	
+	// Stellen die Daten dar.
+	JFrame frame = new JFrame();
+	frame.getContentPane().setBackground(Color.BLACK);
+        frame.getContentPane().setForeground(Color.WHITE);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize(breite, hoehe);
+	frame.add(m);
+	frame.setVisible(true);
+    }
+
+    public static void main(String[] args){
+	beispielEins();
     }
 }
 

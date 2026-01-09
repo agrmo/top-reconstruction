@@ -1,4 +1,4 @@
-package sicht.parallel;
+package sicht.koerper.parallel;
 
 import java.awt.Graphics;
 import strecke.Dreistrecke;

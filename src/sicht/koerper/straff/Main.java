@@ -1,4 +1,4 @@
-package sicht.straff;
+package sicht.koerper.straff;
 
 import javax.swing.JFrame;
 import punkt.Zweipunkt;
@@ -9,7 +9,7 @@ import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.straff.Main
+  && java -cp classes sicht.koerper.straff.Main
 */
 
 public class Main {

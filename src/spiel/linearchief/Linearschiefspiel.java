@@ -2,7 +2,7 @@ package spiel.linearschief;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import sicht.linearschief.Linearschiefsicht;
+import sicht.koerper.linearschief.Linearschiefsicht;
 import spiel.Spiel;
 import maler.Maler;
 

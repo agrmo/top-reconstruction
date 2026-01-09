@@ -11,7 +11,7 @@ public class Punktsicht extends Sicht {
     // irgendwann anrufen wird, die Welt darzustellen. 
     public Zweipunkt[] pl;
 
-    // Die Größe des Kreises;
+    // Der Radius des Punktes.
     public int radius;
 
     public Punktsicht(Zweipunkt[] pl, int r) {
@@ -25,8 +25,8 @@ public class Punktsicht extends Sicht {
 		   this.radius, this.radius);
     }
 
+    // Stelle jeden Punkt dieser Welt dar.
     public void darstellen(Graphics g) {
-	// Stelle jede Punkt dieser Welt dar.
 	for (int i = 0; i < this.pl.length; i++) {
 	    this.darstellenPunkt(g, this.pl[i]);
 	}
