@@ -49,7 +49,7 @@ public class Pyramide extends Koerper {
 	int[][] streckenzeichen = new int[][] {{0,1},{1,2},{2,3},{3,0},
 					       {0,4},{1,4},{2,4},{3,4}};
 
-	for (int i = 0; i < 8; i++) {
+	for (int i = 0; i < streckenzeichen.length; i++) {
 	    strecken[i] = new Dreistrecke(Punktverdoppler.verdoppeln(ecken[streckenzeichen[i][0]]),
 					  Punktverdoppler.verdoppeln(ecken[streckenzeichen[i][1]])); 
 	}

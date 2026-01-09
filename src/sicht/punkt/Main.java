@@ -41,7 +41,7 @@ public class Main {
     static void beispielZwei() {
 	// Mache die dreidimensionalen Daten.
 	Kubus k = new Kubus(2);
-	Dreipunkt[] dpl = k.nehmeEcken();
+	Dreipunkt[] dpl = k.nehmeecken();
 
 	// Verlegen die dreidimensionalen Daten.
 

@@ -19,7 +19,7 @@ public class Kubusdrucker {
     public static String druckenEcken(Kubus k) {
 	StringBuilder sb = new StringBuilder();
 	sb.append("Ecken:");
-	Dreipunkt[] ecken = k.nehmeEcken();
+	Dreipunkt[] ecken = k.nehmeecken();
 	
 	for (int i = 0; i < ecken.length; i++) {
 	    sb.append(Punktdrucker.drucken(ecken[i]));
