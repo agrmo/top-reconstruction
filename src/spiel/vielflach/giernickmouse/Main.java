@@ -14,7 +14,7 @@ import punkt.Zweipunkt;
 import sicht.Sicht;
 import sicht.vielflach.giernick.Giernicksicht;
 import sicht.text.Textsicht;
-import sicht.text.augetext.Augetextsicht;
+import sicht.text.giernick.Giernicktextsicht;
 import welt.vielflach.Vielflachwelt;
 
 /*
@@ -49,8 +49,8 @@ public class Main {
 	Dreipunkt ap = new Dreipunkt(0, 0, 100);
 	Giernicksicht as = new Giernicksicht(kw, ap, 500, breite, hoehe, 0.0, 0.0);
 
-	Augetextsicht ats = new Augetextsicht(as);
-	Maler m = new Maler(new Sicht[] {as, ats});
+	Giernicktextsicht gts = new Giernicktextsicht(as);
+	Maler m = new Maler(new Sicht[] {as, gts});
 	
 	// Mache das Spiel.
 	Giernickmousespiel s = new Giernickmousespiel(m, as, kw);

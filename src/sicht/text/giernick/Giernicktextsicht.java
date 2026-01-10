@@ -1,4 +1,4 @@
-package sicht.text.augetext;
+package sicht.text.giernick;
 
 import java.awt.Graphics;
 import sicht.vielflach.giernick.Giernicksicht;
@@ -7,12 +7,12 @@ import punkt.Zweipunkt;
 import sicht.Sicht;
 
 // Stellen die Eigenschaften der Giernicksicht dar.
-public class Augetextsicht extends Sicht {
+public class Giernicktextsicht extends Sicht {
 
     Giernicksicht augesicht;
     Textsicht textsicht;
 
-    public Augetextsicht(Giernicksicht as) {
+    public Giernicktextsicht(Giernicksicht as) {
 	this.augesicht = as;
 	this.textsicht = new Textsicht(new String[] {},
 				       new Zweipunkt[] {});

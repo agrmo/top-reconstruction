@@ -32,10 +32,10 @@ public class Giernickverleger {
 			      int breite, int hoehe,
 			      double gier, double nick) {
 
-	// Drehen den Punkt in der xz-Fläche.
+	// Drehen den Punkt in der xz-Fläche (um die y-Achse).
 	Zweipunkt xz = Punktdreher.drehen(new Zweipunkt(p.xteil, p.zteil), gier);
 
-	// Drehen den Punkt in der yz-Fläche.
+	// Drehen den Punkt in der yz-Fläche (um die x-Achse).
 	Zweipunkt yz = Punktdreher.drehen(new Zweipunkt(p.yteil, xz.yteil), nick);
 
 	// Nehmen die x, y und z-Punkte.
