@@ -1,4 +1,4 @@
-package spiel.koerper.auge;
+package spiel.koerper.augemouse;
 
 import handlung.spiel.SpielHandlung;
 import java.awt.Color;
@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import koerper.Koerper;
 import koerper.kubus.Kubus;
-import koerper.pyramide.Pyramide;
 import punkt.Dreipunkt;
 import sicht.auge.Augesicht;
 import welt.koerper.Koerperwelt;
@@ -17,7 +16,7 @@ import maler.Maler;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.koerper.auge.Main
+  && java -cp classes spiel.koerper.augemouse.Main
 */
 
 public class Main {
@@ -39,7 +38,7 @@ public class Main {
 	Maler m = new Maler(new Sicht[] {as});
 	
 	// Mache das Spiel.
-	Augespiel s = new Augespiel(m, as, kw);
+	Augemousespiel s = new Augemousespiel(m, as, kw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);
@@ -51,7 +50,6 @@ public class Main {
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize(breite, hoehe);
 	frame.add(m);
-	frame.addKeyListener(sh);
 	frame.addMouseListener(sh);
 	frame.addMouseMotionListener(sh);
 	frame.setVisible(true);	

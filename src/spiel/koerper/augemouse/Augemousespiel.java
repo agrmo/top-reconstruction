@@ -1,4 +1,4 @@
-package spiel.koerper.auge;
+package spiel.koerper.augemouse;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -12,7 +12,7 @@ import maler.Maler;
 //
 // WSAD: Verschieben das Auge
 // Mouse: Drehen das Auge
-public class Augespiel extends Spiel {
+public class Augemousespiel extends Spiel {
 
     Maler m;
     Augesicht as;
@@ -20,9 +20,9 @@ public class Augespiel extends Spiel {
     int mouseAnfangX;
     int mouseAnfangY;
 
-    public Augespiel(Maler m,
-		     Augesicht as,
-		     Koerperwelt kw) {
+    public Augemousespiel(Maler m,
+			  Augesicht as,
+			  Koerperwelt kw) {
 	this.m = m;
 	this.as = as;
 	this.kw = kw;
@@ -58,7 +58,6 @@ public class Augespiel extends Spiel {
     }
     
     public void handelnMouseSchleifen(MouseEvent me) {
-
 	int jetztX = me.getX();
 	int jetztY = me.getY();
 	int unterschiedX = jetztX - this.mouseAnfangX;
@@ -73,60 +72,13 @@ public class Augespiel extends Spiel {
 
 	this.m.repaint();
     }
-
-    // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy, dz.
-    void verschiebenauge(int dx, int dy, int dz) {
-	Dreipunkt verschiebenpunkt = new Dreipunkt(dx,dy,dz);
-	this.as.augepunkt.addieren(verschiebenpunkt);
-    }
     
     public void handelnTastatur(KeyEvent ke) {
-	int id = ke.getID();
-	boolean veraendert = false;
-	
-        if (id == KeyEvent.KEY_TYPED) {
-            char kc = ke.getKeyChar();
-
-	    if (kc == 'w') {
-		this.verschiebenauge(0,10,0);
-		veraendert = true;
-		
-	    } else if (kc == 's') {
-		this.verschiebenauge(0,-10,0);
-		veraendert = true;
-		
-	    } else if (kc == 'a') {
-		this.verschiebenauge(10,0,0);
-		veraendert = true;
-		
-	    } else if (kc == 'd') {
-		this.verschiebenauge(-10,0,0);
-		veraendert = true;
-	    }
-        }
-
-	if (veraendert == true) {
-	    this.m.repaint();
-	}
+	// nichts
     }
     
     public void handelnTastaturDrucken(KeyEvent ke) {
-	int keyCode = ke.getKeyCode();
-	boolean veraendert = false;
-	    
-	if (keyCode == 38) {
-	    // Hoch getastet.
-	} else if (keyCode == 40) {
-	    // Runter getastet.
-	} else if (keyCode == 37) {
-	    // Links getastet.
-	} else if (keyCode == 39) {
-	    // Rechts getastet.
-	}
-
-	if (veraendert == true) {
-	    this.m.repaint();
-	}
+	// nichts
     }
     
     public void handelnTastaturLösen(KeyEvent ke) {
