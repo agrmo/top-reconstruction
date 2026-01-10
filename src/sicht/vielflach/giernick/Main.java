@@ -1,4 +1,4 @@
-package sicht.auge;
+package sicht.vielflach.giernick;
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -12,7 +12,7 @@ import vielflach.pyramide.Pyramide;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.auge.Main
+  && java -cp classes sicht.vielflach.giernick.Main
 */
 
 public class Main {
@@ -22,15 +22,15 @@ public class Main {
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(new Kubus(30));
 	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
-	ol.add(new Dreipunkt(0,0,200));
+	ol.add(new Dreipunkt(0,0,100));
 	
 	Vielflachwelt kw = new Vielflachwelt(kl, ol);
 
 	// Mache die Sicht.
 	int breite = 1200;
 	int hoehe = 600;
-	Dreipunkt ap = new Dreipunkt(0,0,100);
-	Augesicht as = new Augesicht(kw, ap, 500, breite, hoehe, 0.5, 0.3);
+	Dreipunkt ap = new Dreipunkt(0,0,0);
+	Giernicksicht as = new Giernicksicht(kw, ap, 500, breite, hoehe, 0.2, 0.4);
 	Maler m = new Maler(new Sicht[] {as});
 	
 	// Stellen die Daten dar.

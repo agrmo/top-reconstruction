@@ -1,4 +1,4 @@
-package spiel.vielflach.augetastatur;
+package spiel.vielflach.giernicktastatur;
 
 import handlung.spiel.SpielHandlung;
 import java.awt.Color;
@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
 import punkt.Dreipunkt;
-import sicht.auge.Augesicht;
+import sicht.vielflach.giernick.Giernicksicht;
 import welt.vielflach.Vielflachwelt;
 import java.awt.Toolkit;
 import java.awt.Dimension;
@@ -16,7 +16,7 @@ import maler.Maler;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.vielflach.augetastatur.Main
+  && java -cp classes spiel.vielflach.giernicktastatur.Main
 */
 
 public class Main {
@@ -34,11 +34,11 @@ public class Main {
 	int breite = (int) bildschirm.getWidth();
 	int hoehe = (int) bildschirm.getHeight();
 	Dreipunkt ap = new Dreipunkt(0, 0, 100);
-	Augesicht as = new Augesicht(kw, ap, 500, breite, hoehe, 0.0, 0.0);
+	Giernicksicht as = new Giernicksicht(kw, ap, 500, breite, hoehe, 0.0, 0.0);
 	Maler m = new Maler(new Sicht[] {as});
 	
 	// Mache das Spiel.
-	Augetastaturspiel s = new Augetastaturspiel(m, as, kw);
+	Giernicktastaturspiel s = new Giernicktastaturspiel(m, as, kw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);

@@ -1,4 +1,4 @@
-package sicht.auge;
+package sicht.vielflach.giernick;
 
 import punkt.Dreipunkt;
 import java.awt.Graphics;
@@ -12,7 +12,7 @@ import sicht.Sicht;
 // Eine Sicht, die eine dreidimensionale Vielflachwelt einnimmt.
 // Sie wandelt die Vielflachwelt mit nur einer Verlegung: einer punkten
 // Verlegung. Sie gibt am Ende eine Zweistreckewelt ab.
-public class Augesicht extends Sicht {
+public class Giernicksicht extends Sicht {
 
     public Vielflachwelt kw;
     public Dreipunkt augepunkt;
@@ -22,7 +22,7 @@ public class Augesicht extends Sicht {
     public double gier;
     public double nick;
 
-    public Augesicht(Vielflachwelt kw,
+    public Giernicksicht(Vielflachwelt kw,
 		     Dreipunkt augepunkt, int brennweite,
 		     int breite, int hoehe,
 		     double gier, double nick) {

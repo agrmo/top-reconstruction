@@ -1,9 +1,9 @@
-package spiel.vielflach.augetastatur;
+package spiel.vielflach.giernicktastatur;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import punkt.Dreipunkt;
-import sicht.auge.Augesicht;
+import sicht.vielflach.giernick.Giernicksicht;
 import spiel.Spiel;
 import welt.vielflach.Vielflachwelt;
 import maler.Maler;
@@ -12,15 +12,15 @@ import maler.Maler;
 //
 // WSAD: Verschieben das Auge
 // Mouse: Drehen das Auge
-public class Augetastaturspiel extends Spiel {
+public class Giernicktastaturspiel extends Spiel {
 
     Maler m;
-    Augesicht as;
+    Giernicksicht as;
     Vielflachwelt kw;
 
-    public Augetastaturspiel(Maler m,
-			     Augesicht as,
-			     Vielflachwelt kw) {
+    public Giernicktastaturspiel(Maler m,
+				 Giernicksicht as,
+				 Vielflachwelt kw) {
 	this.m = m;
 	this.as = as;
 	this.kw = kw;

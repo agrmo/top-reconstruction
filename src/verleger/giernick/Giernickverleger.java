@@ -24,7 +24,7 @@ public class Giernickverleger {
 	
     }
 
-    // ein: Dreipunkt, Augesicht
+    // ein: Dreipunkt, Giernicksicht
     // aus: Zweipunkt
     //
     // Verlege den gegeben dreidimensionalen Punkt.
@@ -79,7 +79,7 @@ public class Giernickverleger {
 	return zpl;
     }
 
-    // ein: Dreistrecke, Augesicht
+    // ein: Dreistrecke, Giernicksicht
     // aus: Zweistrecke
     //
     // Verlege die gegebene dreidimensionale Strecke.
@@ -103,7 +103,7 @@ public class Giernickverleger {
 	return zk;
     }
 
-    // ein: Vielflachwelt, Augesicht
+    // ein: Vielflachwelt, Giernicksicht
     //
     // Verlegen die dreidimensionale Vielflachwelt zu einer
     // zweidimensionale Zweistreckewelt.

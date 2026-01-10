@@ -1,4 +1,4 @@
-package spiel.vielflach.augemouse;
+package spiel.vielflach.giernickmouse;
 
 import handlung.spiel.SpielHandlung;
 import java.awt.Color;
@@ -12,14 +12,14 @@ import maler.Maler;
 import punkt.Dreipunkt;
 import punkt.Zweipunkt;
 import sicht.Sicht;
-import sicht.auge.Augesicht;
+import sicht.vielflach.giernick.Giernicksicht;
 import sicht.text.Textsicht;
 import sicht.text.augetext.Augetextsicht;
 import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.vielflach.augemouse.Main
+  && java -cp classes spiel.vielflach.giernickmouse.Main
 */
 
 public class Main {
@@ -47,13 +47,13 @@ public class Main {
 	int breite = (int) bildschirm.getWidth();
 	int hoehe = (int) bildschirm.getHeight();
 	Dreipunkt ap = new Dreipunkt(0, 0, 100);
-	Augesicht as = new Augesicht(kw, ap, 500, breite, hoehe, 0.0, 0.0);
+	Giernicksicht as = new Giernicksicht(kw, ap, 500, breite, hoehe, 0.0, 0.0);
 
 	Augetextsicht ats = new Augetextsicht(as);
 	Maler m = new Maler(new Sicht[] {as, ats});
 	
 	// Mache das Spiel.
-	Augemousespiel s = new Augemousespiel(m, as, kw);
+	Giernickmousespiel s = new Giernickmousespiel(m, as, kw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);

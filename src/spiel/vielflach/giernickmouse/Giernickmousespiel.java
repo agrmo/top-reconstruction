@@ -1,24 +1,24 @@
-package spiel.vielflach.augemouse;
+package spiel.vielflach.giernickmouse;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import punkt.Dreipunkt;
-import sicht.auge.Augesicht;
+import sicht.vielflach.giernick.Giernicksicht;
 import spiel.Spiel;
 import welt.vielflach.Vielflachwelt;
 import maler.Maler;
 
-public class Augemousespiel extends Spiel {
+public class Giernickmousespiel extends Spiel {
 
     Maler m;
-    Augesicht as;
+    Giernicksicht as;
     Vielflachwelt kw;
     int mouseAnfangX;
     int mouseAnfangY;
 
-    public Augemousespiel(Maler m,
-			  Augesicht as,
-			  Vielflachwelt kw) {
+    public Giernickmousespiel(Maler m,
+			      Giernicksicht as,
+			      Vielflachwelt kw) {
 	this.m = m;
 	this.as = as;
 	this.kw = kw;
