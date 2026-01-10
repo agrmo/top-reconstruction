@@ -26,6 +26,8 @@ public class Main {
 	Koerperwelt kw = new Koerperwelt(kl, ol);
 
 	// Verlegen die Welt.
-	Zweistreckewelt zkw = Augeverleger.verlegen(kw, new Dreipunkt(0,0,0), 500, 1200, 600, 0, 0, 0);
+	Zweistreckewelt zkw = Augeverleger.verlegen(kw,
+						    new Dreipunkt(0,0,0),
+						    500, 1200, 600, 0, 0, 0);
     }
 }

@@ -19,22 +19,22 @@ public class Augesicht extends Sicht {
     public int breite;
     public int brennweite;
     public int hoehe;
-    public double yaw;
-    public double pitch;
+    public double gier;
+    public double nick;
     public double roll;
 
     public Augesicht(Koerperwelt kw,
 		     Dreipunkt augepunkt, int brennweite,
 		     int breite, int hoehe,
-		     double yaw, double pitch, double roll) {
+		     double gier, double nick, double roll) {
 
 	this.kw = kw;
 	this.augepunkt = augepunkt;
 	this.brennweite = brennweite;
 	this.breite = breite;
 	this.hoehe = hoehe;
-	this.yaw = yaw;
-	this.pitch = pitch;
+	this.gier = gier;
+	this.nick = nick;
 	this.roll = roll;
     }
 
@@ -44,7 +44,7 @@ public class Augesicht extends Sicht {
 	// Benutzen die Verleger.
 	Zweistreckewelt zkw = Augeverleger.verlegen(this.kw, this.augepunkt, this.brennweite,
 						    this.breite, this.hoehe,
-						    this.yaw, this.pitch, this.roll);
+						    this.gier, this.nick, this.roll);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.

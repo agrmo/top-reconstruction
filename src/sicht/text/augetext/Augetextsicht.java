@@ -21,8 +21,8 @@ public class Augetextsicht extends Sicht {
     public void darstellen(Graphics g) {
 	String[] tl = new String[] {
 	    Double.toString(this.augesicht.roll),
-	    Double.toString(this.augesicht.pitch),
-	    Double.toString(this.augesicht.yaw)
+	    Double.toString(this.augesicht.nick),
+	    Double.toString(this.augesicht.gier)
 	};
 
 	Zweipunkt[] tol = new Zweipunkt[] {

@@ -58,11 +58,11 @@ public class Augemousespiel extends Spiel {
 	int jetztY = me.getY();
 	int unterschiedX = jetztX - this.mouseAnfangX;
 	int unterschiedY = jetztY - this.mouseAnfangY;
-	double unterschiedYaw = ((double) unterschiedX) / ((double) this.as.breite);
-	double unterschiedPitch = ((double) unterschiedY) / ((double) this.as.hoehe);
+	double unterschiedGier = ((double) unterschiedX) / ((double) this.as.breite);
+	double unterschiedNick = ((double) unterschiedY) / ((double) this.as.hoehe);
 
-	this.as.yaw += unterschiedYaw;
-	this.as.pitch += unterschiedPitch;
+	this.as.gier += unterschiedGier;
+	this.as.nick += unterschiedNick;
 	this.mouseAnfangX = jetztX;
 	this.mouseAnfangY = jetztY;
 

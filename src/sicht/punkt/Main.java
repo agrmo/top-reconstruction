@@ -50,12 +50,12 @@ public class Main {
 	int hoehe = 600;
 	Dreipunkt augepunkt = new Dreipunkt(0,0,10);
 	int brennweite = 500;
-	double yaw = 0.0;
-	double pitch = 0.3;
+	double gier = 0.0;
+	double nick = 0.3;
 	double roll = 0.0;
 	Zweipunkt[] zpl = Augeverleger.verlegen(dpl, augepunkt, brennweite,
 						breite, hoehe,
-						yaw, pitch, roll);
+						gier, nick, roll);
 	int radius = 10;
 	Punktsicht s = new Punktsicht(zpl, radius);
 	Maler m = new Maler(new Sicht[] {s});
