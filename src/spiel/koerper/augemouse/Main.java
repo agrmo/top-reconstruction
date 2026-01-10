@@ -25,6 +25,16 @@ import welt.koerper.Koerperwelt;
 public class Main {
     public static void main(String[] args) {
 	
+	// Ein Spiel, in dem wir einen Kubus drehen können. Eigenlich
+	// gibt es hier ein Problem. Sobald wir den Kubus auf dem Kopf
+	// stehen, ist es nicht mehr möglich, die Mouse richtig in der
+	// Gier-Achse zu drehen. Die Mouse geht rechts, und der Kubus
+	// geht links. Problem!
+	//
+	// Eine mögliche Lösung dafur ist, daß wir die Basisvektoren
+	// wiederaufstehen sollen, sofort nach jeder Drehung des
+	// Kubus. Hier gibt es keine Lösung.
+	
 	// Mache die Welt.
 	ArrayList<Koerper> kl = new ArrayList<Koerper>();
 	kl.add(new Kubus(60));

@@ -8,10 +8,6 @@ import spiel.Spiel;
 import welt.koerper.Koerperwelt;
 import maler.Maler;
 
-// Ein Spiel, in dem wir die Welt und Sichten verändern können.
-//
-// WSAD: Verschieben das Auge
-// Mouse: Drehen das Auge
 public class Augemousespiel extends Spiel {
 
     Maler m;
