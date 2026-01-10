@@ -12,6 +12,6 @@ public class Main {
     public static void main(String[] args) {
 	Kubus k = new Kubus(1);
 
-	Dreistrecke[] kl = k.nehmeStrecken();
+	Dreistrecke[] kl = k.nehmekanten();
     }
 }

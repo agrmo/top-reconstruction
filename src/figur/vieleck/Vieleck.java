@@ -17,10 +17,10 @@ public class Vieleck {
     // Die Ordung der Zweipunkten ist hier sehr wichtig, sodaß wir die
     // Zweipunkten entweder gegen oder in den Uhrzeigersinn
     // durchlaufen können, um das Vieleck aufzubauen.
-    public ArrayList<Zweipunkt> punktliste;
+    public ArrayList<Zweipunkt> ecken;
 
     // ein: Liste von Zweipunkten
     public Vieleck(ArrayList<Zweipunkt> pl) {
-	this.punktliste = pl;
+	this.ecken = pl;
     }
 }

@@ -17,7 +17,7 @@ public class Dreieck extends Figur {
 	this.laenge = l;
     }
 
-    public Zweipunkt[] nehmeEcken() {
+    public Zweipunkt[] nehmeecken() {
 	Zweipunkt[] ecken = new Zweipunkt[3];
 
 	ecken[0] = new Zweipunkt(0,0);
@@ -27,9 +27,13 @@ public class Dreieck extends Figur {
 	return ecken;
     }
 
-    public Zweistrecke[] nehmeStrecken() {
+    public int nehmekantenanzahl() {
+	return 3;
+    }
 
-	Zweipunkt[] ecken = this.nehmeEcken();
+    public Zweistrecke[] nehmekanten() {
+
+	Zweipunkt[] ecken = this.nehmeecken();
 
 	Zweistrecke[] strecken = new Zweistrecke[3];
 
@@ -43,9 +47,5 @@ public class Dreieck extends Figur {
 				      Punktverdoppler.verdoppeln(ecken[0]));
 
 	return strecken;
-    }
-
-    public int nehmestreckenanzahl() {
-	return 3;
     }
 }

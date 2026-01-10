@@ -38,7 +38,7 @@ public class Kubus extends Koerper {
 	return punkten;
     }
 
-    public int nehmestreckenanzahl() {
+    public int nehmekantenanzahl() {
 	return 12;
     }
 
@@ -47,7 +47,7 @@ public class Kubus extends Koerper {
     //
     // Nehme die die die Dreistrecken dieses Körpers beleuchten. Wir
     // speichern die Werte der Dreistrecken gar nicht! 
-    public Dreistrecke[] nehmeStrecken() {
+    public Dreistrecke[] nehmekanten() {
 	Dreistrecke[] strecken = new Dreistrecke[12];
 
 	Dreipunkt[] ecken = this.nehmeecken();

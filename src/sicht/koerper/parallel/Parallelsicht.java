@@ -21,7 +21,7 @@ public class Parallelsicht extends Sicht {
     // Wir müssen entscheiden, wer diese Körper darstellen wird.
     public void darstellen(Graphics g) {
 	// Nehme die Dreistrecken dieser Welt.
-	Dreistrecke[] wk = this.kw.nehmeStrecken();
+	Dreistrecke[] wk = this.kw.nehmekanten();
 
 	for (int i = 0; i < wk.length; i++) {
 	    g.drawLine((int) wk[i].von.xteil, (int) wk[i].von.yteil,

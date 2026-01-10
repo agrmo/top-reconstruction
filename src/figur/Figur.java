@@ -15,16 +15,16 @@ public abstract class Figur {
     //
     // Nehme alle die Kanten dieser Digur. Daher müssen wir über
     // den Ort der Figur beachten.
-    public abstract Zweistrecke[] nehmeStrecken();
+    public abstract Zweistrecke[] nehmekanten();
 
     // aus: ganze Zahl
     //
     // Nehme den Betrag der Strecken dieses Körpers. Genau wie viele
-    // Dreistrecke es gibt in nehmeStrecken().
-    public abstract int nehmestreckenanzahl();
+    // Dreistrecke es gibt in nehmekanten().
+    public abstract int nehmekantenanzahl();
 
     // aus: Liste von Zweipunkten
     //
     // Nehme alle Ecken dieser Figur.
-    public abstract Zweipunkt[] nehmeEcken();
+    public abstract Zweipunkt[] nehmeecken();
 }

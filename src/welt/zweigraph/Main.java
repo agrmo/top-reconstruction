@@ -33,7 +33,7 @@ public class Main {
         Zweigraphwelt gw = new Zweigraphwelt(nl, orten);
   
         // Nehme die Kanten.
-	Zweistrecke[] kanten = gw.nehmeKanten();
+	Zweistrecke[] kanten = gw.nehmekanten();
 	Zweistreckewelt sw = new Zweistreckewelt(kanten);
 
 	// Nehme die Knoten.

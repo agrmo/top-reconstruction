@@ -39,14 +39,14 @@ public class Koerperwelt {
     }
 
     // Nehme die Anzahl aller Strecken dieser Welt.
-    int nehmestreckenanzahl() {
-	int streckenanzahl = 0;
+    int nehmekantenanzahl() {
+	int kantenanzahl = 0;
 
 	for (int i = 0; i < this.koerperliste.size(); i++) {
-	    streckenanzahl += this.koerperliste.get(i).nehmestreckenanzahl();
+	    kantenanzahl += this.koerperliste.get(i).nehmekantenanzahl();
 	}
 
-	return streckenanzahl;
+	return kantenanzahl;
     }
 
     // aus: Liste von Dreistrecke
@@ -55,11 +55,11 @@ public class Koerperwelt {
     // großen Liste. Die Dreistreckeliste hat nur Tiefe 1. Also wir
     // kennen nachdem nicht, ob eine Strecke in einem Körper oder in
     // einem anderen Körper steht.
-    public Dreistrecke[] nehmeStrecken() {
+    public Dreistrecke[] nehmekanten() {
 
-	int streckenanzahl = this.nehmestreckenanzahl();
+	int kantenanzahl = this.nehmekantenanzahl();
 	
-	Dreistrecke[] strecken = new Dreistrecke[streckenanzahl];
+	Dreistrecke[] strecken = new Dreistrecke[kantenanzahl];
 	
 	// Für alle Körper der Welt
 	int streckezeichen = 0;
@@ -70,7 +70,7 @@ public class Koerperwelt {
 
 	    // Er gibt uns seine Strecken, dessen Ursprung aber auf ihm
 	    // selbst liegt.
-	    Dreistrecke[] kl = k.nehmeStrecken();
+	    Dreistrecke[] kl = k.nehmekanten();
 
 	    Dreipunkt ap = this.ortliste.get(i);
 

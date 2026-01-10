@@ -36,11 +36,11 @@ public class Pyramide extends Koerper {
 	return ecken;
     }
     
-    public int nehmestreckenanzahl() {
+    public int nehmekantenanzahl() {
 	return 8;
     }
     
-    public Dreistrecke[] nehmeStrecken() {
+    public Dreistrecke[] nehmekanten() {
 
 	Dreistrecke[] strecken = new Dreistrecke[8];
 

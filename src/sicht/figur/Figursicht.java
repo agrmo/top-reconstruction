@@ -19,7 +19,7 @@ public class Figursicht extends Sicht {
     // Stellen die Kanten dieser Welt dar.
     public void darstellen(Graphics g) {
 	
-	Zweistrecke[] wk = this.fw.nehmeStrecken();
+	Zweistrecke[] wk = this.fw.nehmekanten();
 
 	for (int i = 0; i < wk.length; i++) {
 	    g.drawLine((int) wk[i].von.xteil, (int) wk[i].von.yteil,

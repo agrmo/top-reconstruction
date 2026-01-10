@@ -37,7 +37,7 @@ public class Dreiwelt {
 	
     // }
 
-    // public Zweistrecke[] nehmeKanten() {
+    // public Zweistrecke[] nehmekanten() {
 	
     // }
 }

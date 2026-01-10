@@ -95,7 +95,7 @@ public class Zweigraphwelt {
     }
 
     // Rechne alle Kanten dieses Graphen aus.
-    public Zweistrecke[] nehmeKanten() {
+    public Zweistrecke[] nehmekanten() {
 
 	// Zuerst berechne wie viele Kanten es gibt.
 	int ka = Kanteanzahl.berechnen(this.graph);
@@ -116,10 +116,10 @@ public class Zweigraphwelt {
 	    for (int j = 0; j < this.graph.n.get(i).size(); j++) {
 
 		// Wer der Knoten ist, dem dieser Knoten verbunden ist.
-		int bisKnoten = this.graph.n.get(i).get(j);
+		int bisknoten = this.graph.n.get(i).get(j);
 		    
-		int bisx = (int) this.orten[bisKnoten].xteil;
-		int bisy = (int) this.orten[bisKnoten].yteil;
+		int bisx = (int) this.orten[bisknoten].xteil;
+		int bisy = (int) this.orten[bisknoten].yteil;
 
 		kanten[kantenzeichen] = new Zweistrecke(new Zweipunkt(vonx, vony),
 							new Zweipunkt(bisx, bisy));

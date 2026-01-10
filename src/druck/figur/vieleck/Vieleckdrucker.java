@@ -9,11 +9,11 @@ public class Vieleckdrucker {
 	StringBuilder sb = new StringBuilder();	
 	sb.append("[");
 	
-	for (int i = 0; i < v.punktliste.size(); i++) {
+	for (int i = 0; i < v.ecken.size(); i++) {
 	    if (i != 0) {
 		sb.append(",");
 	    }
-	    sb.append(Punktdrucker.drucken(v.punktliste.get(i)));
+	    sb.append(Punktdrucker.drucken(v.ecken.get(i)));
 	}
 	
 	sb.append("]");

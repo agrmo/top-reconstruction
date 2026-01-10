@@ -36,7 +36,7 @@ public class Main {
 	Koerperwelt kw = new Koerperwelt(kl, orten);
 
 	// Überprüfen die Strecken.
-	Dreistrecke[] weltStrecken = kw.nehmeStrecken();
+	Dreistrecke[] weltStrecken = kw.nehmekanten();
 
 	for (int i = 0; i < weltStrecken.length; i++) {
 	    System.out.println(Streckedrucker.drucken(weltStrecken[i]));

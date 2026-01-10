@@ -12,7 +12,7 @@ public class Quadrat extends Figur {
 	laenge = l;
     }
 
-    public Zweipunkt[] nehmeEcken() {
+    public Zweipunkt[] nehmeecken() {
 	Zweipunkt[] ecken = new Zweipunkt[4];
 
 	int l = this.laenge;
@@ -25,11 +25,11 @@ public class Quadrat extends Figur {
 	return ecken;
     }
 
-    public int nehmestreckenanzahl() {
+    public int nehmekantenanzahl() {
 	return 4;
     }
 
-    public Zweistrecke[] nehmeStrecken() {
+    public Zweistrecke[] nehmekanten() {
 	
 	Zweistrecke[] strecken = new Zweistrecke[4];
 

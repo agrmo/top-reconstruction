@@ -60,7 +60,7 @@ public class Schiefverleger {
 
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.
-	Dreistrecke[] dkl = kw.nehmeStrecken();
+	Dreistrecke[] dkl = kw.nehmekanten();
 
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.

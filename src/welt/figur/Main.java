@@ -36,7 +36,7 @@ public class Main {
 	Figurwelt fw = new Figurwelt(fl, ol);
 
 	// Drucken ihre Kanten
-	Zweistrecke[] strecken = fw.nehmeStrecken();
+	Zweistrecke[] strecken = fw.nehmekanten();
 
 	for (int i = 0; i < strecken.length; i++) {
 	    System.out.println(Streckedrucker.drucken(strecken[i]));

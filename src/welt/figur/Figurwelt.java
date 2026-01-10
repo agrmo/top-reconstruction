@@ -41,13 +41,13 @@ public class Figurwelt {
     // großen Liste. Die Zweistreckeliste hat nur Tiefe 1. Also wir
     // kennen nachdem nicht, ob eine Strecke in einem Figur oder in
     // einem anderen Figur steht.
-    public Zweistrecke[] nehmeStrecken() {
+    public Zweistrecke[] nehmekanten() {
 
 	int streckeanzahl = 0;
 
 	// Nehme die gesamte Anzahl der Strecken der Figuren.
 	for (int i = 0; i < this.figurliste.size(); i++) {
-	    streckeanzahl += this.figurliste.get(i).nehmestreckenanzahl();
+	    streckeanzahl += this.figurliste.get(i).nehmekantenanzahl();
 	}
 
 	Zweistrecke[] strecken = new Zweistrecke[streckeanzahl];
@@ -61,7 +61,7 @@ public class Figurwelt {
 
 	    // Er gibt uns seine Strecken, dessen Ursprung aber auf ihm
 	    // selbst liegt.
-	    Zweistrecke[] kl = k.nehmeStrecken();
+	    Zweistrecke[] kl = k.nehmekanten();
 
 	    Zweipunkt figurpunkt = this.ortliste.get(i);
 

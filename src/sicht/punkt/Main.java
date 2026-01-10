@@ -22,7 +22,7 @@ public class Main {
     static void beispielEins() {
 	// Mache die Punkte.
 	Quadrat q = new Quadrat(50);
-	Zweipunkt[] pl = q.nehmeEcken();
+	Zweipunkt[] pl = q.nehmeecken();
 
 	// Mache die Sicht.
 	Punktsicht s = new Punktsicht(pl, 10);

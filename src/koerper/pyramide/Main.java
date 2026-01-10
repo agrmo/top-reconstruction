@@ -18,7 +18,7 @@ public class Main {
 	Dreipunkt[] pl = p.nehmeecken();
 	
 	// Kanten
-	Dreistrecke[] kl = p.nehmeStrecken();
+	Dreistrecke[] kl = p.nehmekanten();
 
 	for (int i = 0; i < pl.length; i++) {
 	    System.out.println(Punktdrucker.drucken(pl[i]));

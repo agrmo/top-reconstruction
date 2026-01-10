@@ -104,13 +104,13 @@ public class Augeverleger {
     // Verlegen die dreidimensionale Körperwelt zu einer
     // zweidimensionale Zweistreckewelt.
     public static Zweistreckewelt verlegen(Koerperwelt kw,
-					 Dreipunkt augepunkt, int brennweite,
-					 int breite, int hoehe,
-					 double gier, double nick, double roll) {
+					   Dreipunkt augepunkt, int brennweite,
+					   int breite, int hoehe,
+					   double gier, double nick, double roll) {
 
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.
-	Dreistrecke[] dkl = kw.nehmeStrecken();
+	Dreistrecke[] dkl = kw.nehmekanten();
 	
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
