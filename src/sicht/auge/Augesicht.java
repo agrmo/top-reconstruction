@@ -4,7 +4,7 @@ import punkt.Dreipunkt;
 import java.awt.Graphics;
 import javax.swing.JComponent;
 import sicht.strecke.Streckesicht;
-import verleger.auge.Augeverleger;
+import verleger.giernick.Giernickverleger;
 import welt.zweistrecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 import sicht.Sicht;
@@ -21,12 +21,11 @@ public class Augesicht extends Sicht {
     public int hoehe;
     public double gier;
     public double nick;
-    public double roll;
 
     public Augesicht(Vielflachwelt kw,
 		     Dreipunkt augepunkt, int brennweite,
 		     int breite, int hoehe,
-		     double gier, double nick, double roll) {
+		     double gier, double nick) {
 
 	this.kw = kw;
 	this.augepunkt = augepunkt;
@@ -35,16 +34,15 @@ public class Augesicht extends Sicht {
 	this.hoehe = hoehe;
 	this.gier = gier;
 	this.nick = nick;
-	this.roll = roll;
     }
 
     // Wir müssen entscheiden, wer diese Körper darstellen wird.
     public void darstellen(Graphics g) {
 	
 	// Benutzen die Verleger.
-	Zweistreckewelt zkw = Augeverleger.verlegen(this.kw, this.augepunkt, this.brennweite,
+	Zweistreckewelt zkw = Giernickverleger.verlegen(this.kw, this.augepunkt, this.brennweite,
 						    this.breite, this.hoehe,
-						    this.gier, this.nick, this.roll);
+						    this.gier, this.nick);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.

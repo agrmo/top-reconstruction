@@ -1,4 +1,4 @@
-package verleger.auge;
+package verleger.giernick;
 
 import dreher.punkt.Punktdreher;
 import strecke.Dreistrecke;
@@ -8,12 +8,19 @@ import punkt.Zweipunkt;
 import welt.vielflach.Vielflachwelt;
 import welt.zweistrecke.Zweistreckewelt;
 
-// Ein Augeverleger nimmt eine dreidimensionale Vielflachwelt zu einer
-// zweidimensionalen Streckenwelt. Wir benutzen ein punktliches Auge als
-// Ursache der Sicht.
-public class Augeverleger {
+// Ein Giernickverleger verlegt eine dreidimensionale Welt von
+// Vielflächen zu einer zweidimensionalen Welt von Punkten und
+// Strecken.
+//
+// Schritte:
+// 1. Drehen alle Punkte in der xz-Fläche mit einem Gierwinkel.
+// 2. Drehen alle Punkte in der yz-Fläche mit einem Nickwinkel.
+// 3. Entfernen die Kamera vom Ursprung.
+// 4. Projizieren alle Punkte zu einer zweidimensionalen Fläche.
+// 5. Verschieben alle Punkte zum Zentrum des Bildchirms.
+public class Giernickverleger {
 
-    public Augeverleger() {
+    public Giernickverleger() {
 	
     }
 
@@ -23,20 +30,17 @@ public class Augeverleger {
     // Verlege den gegeben dreidimensionalen Punkt.
     static Zweipunkt verlegen(Dreipunkt p, Dreipunkt augepunkt, int brennweite,
 			      int breite, int hoehe,
-			      double gier, double nick, double roll) {
+			      double gier, double nick) {
 
 	// Drehen den Punkt in der xz-Fläche.
 	Zweipunkt xz = Punktdreher.drehen(new Zweipunkt(p.xteil, p.zteil), gier);
 
-	// Drehen den Punkt in der yz-Achse.
+	// Drehen den Punkt in der yz-Fläche.
 	Zweipunkt yz = Punktdreher.drehen(new Zweipunkt(p.yteil, xz.yteil), nick);
 
-	// Drehen den Punkt in der xy-Achse.
-	Zweipunkt xy = Punktdreher.drehen(new Zweipunkt(xz.xteil, yz.xteil), roll);
-
 	// Nehmen die x, y und z-Punkte.
-	double x = xy.xteil;
-	double y = xy.yteil;
+	double x = xz.xteil;
+	double y = yz.xteil;
 	double z = yz.yteil;
 
 	// Trennen das Auge vom Ursprung der Welt.
@@ -62,14 +66,14 @@ public class Augeverleger {
     // Verlegen diese zweidimensionale Punkten zu dreidimensionalen Punkten.
     public static Zweipunkt[] verlegen(Dreipunkt[] dpl, Dreipunkt augepunkt, int brennweite,
 				       int breite, int hoehe,
-				       double gier, double nick, double roll) {
+				       double gier, double nick) {
 	
 	Zweipunkt[] zpl = new Zweipunkt[dpl.length];
 
 	for (int i = 0; i < dpl.length; i++) {
-	    zpl[i] = Augeverleger.verlegen(dpl[i], augepunkt, brennweite,
-					   breite, hoehe,
-					   gier, nick, roll);
+	    zpl[i] = Giernickverleger.verlegen(dpl[i], augepunkt, brennweite,
+					       breite, hoehe,
+					       gier, nick);
 	}
 	
 	return zpl;
@@ -80,17 +84,17 @@ public class Augeverleger {
     //
     // Verlege die gegebene dreidimensionale Strecke.
     static Zweistrecke verlegen(Dreistrecke k, Dreipunkt augepunkt, int brennweite,
-			      int breite, int hoehe,
-			      double gier, double nick, double roll) {
+				int breite, int hoehe,
+				double gier, double nick) {
 	
-	Zweipunkt verlegterPunktVon = Augeverleger.verlegen(k.von,
+	Zweipunkt verlegterPunktVon = Giernickverleger.verlegen(k.von,
 							    augepunkt, brennweite,
 							    breite, hoehe,
-							    gier, nick, roll);
+							    gier, nick);
 	
-	Zweipunkt verlegterPunktBis = Augeverleger.verlegen(k.bis, augepunkt, brennweite,
+	Zweipunkt verlegterPunktBis = Giernickverleger.verlegen(k.bis, augepunkt, brennweite,
 							    breite, hoehe,
-							    gier, nick, roll);
+							    gier, nick);
 	
 	// Diese ist die neue Strecke, die nur in zwei Dimensionen
 	// liegt. 
@@ -106,7 +110,7 @@ public class Augeverleger {
     public static Zweistreckewelt verlegen(Vielflachwelt kw,
 					   Dreipunkt augepunkt, int brennweite,
 					   int breite, int hoehe,
-					   double gier, double nick, double roll) {
+					   double gier, double nick) {
 
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.
@@ -119,10 +123,10 @@ public class Augeverleger {
 	for (int i = 0; i < dkl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zk = Augeverleger.verlegen(dkl[i], augepunkt, brennweite,
-						   breite, hoehe,
-						   gier, nick, roll);
-	
+	    Zweistrecke zk = Giernickverleger.verlegen(dkl[i], augepunkt, brennweite,
+						       breite, hoehe,
+						       gier, nick);
+	    
 	    // Fügen sie zu der Liste ein.
 	    zsl[i] = zk;
 	}

@@ -34,7 +34,7 @@ public class Main {
 	int breite = (int) bildschirm.getWidth();
 	int hoehe = (int) bildschirm.getHeight();
 	Dreipunkt ap = new Dreipunkt(0, 0, 100);
-	Augesicht as = new Augesicht(kw, ap, 500, breite, hoehe, 0.0, 0.0, 0.0);
+	Augesicht as = new Augesicht(kw, ap, 500, breite, hoehe, 0.0, 0.0);
 	Maler m = new Maler(new Sicht[] {as});
 	
 	// Mache das Spiel.

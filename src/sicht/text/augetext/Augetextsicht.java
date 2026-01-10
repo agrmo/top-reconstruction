@@ -20,7 +20,6 @@ public class Augetextsicht extends Sicht {
 
     public void darstellen(Graphics g) {
 	String[] tl = new String[] {
-	    Double.toString(this.augesicht.roll),
 	    Double.toString(this.augesicht.nick),
 	    Double.toString(this.augesicht.gier)
 	};
@@ -28,7 +27,6 @@ public class Augetextsicht extends Sicht {
 	Zweipunkt[] tol = new Zweipunkt[] {
 	    new Zweipunkt(0,12),
 	    new Zweipunkt(0,24),
-	    new Zweipunkt(0,36)
 	};
 
 	// Ein bischen schneller. Wir benutzen die gleiche Sicht jedes Mal.

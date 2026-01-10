@@ -10,7 +10,7 @@ import punkt.Dreipunkt;
 import punkt.Zweipunkt;
 import sicht.Sicht;
 import sicht.zweipunkt.Punktsicht;
-import verleger.auge.Augeverleger;
+import verleger.giernick.Giernickverleger;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -52,10 +52,9 @@ public class Main {
 	int brennweite = 500;
 	double gier = 0.0;
 	double nick = 0.3;
-	double roll = 0.0;
-	Zweipunkt[] zpl = Augeverleger.verlegen(dpl, augepunkt, brennweite,
+	Zweipunkt[] zpl = Giernickverleger.verlegen(dpl, augepunkt, brennweite,
 						breite, hoehe,
-						gier, nick, roll);
+						gier, nick);
 	int radius = 10;
 	Punktsicht s = new Punktsicht(zpl, radius);
 	Maler m = new Maler(new Sicht[] {s});

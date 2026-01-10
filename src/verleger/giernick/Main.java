@@ -1,4 +1,4 @@
-package verleger.auge;
+package verleger.giernick;
 
 import java.util.ArrayList;
 import strecke.Zweistrecke;
@@ -10,7 +10,7 @@ import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes verleger.auge.Main
+  && java -cp classes verleger.giernick.Main
 */
 
 public class Main {
@@ -26,8 +26,9 @@ public class Main {
 	Vielflachwelt kw = new Vielflachwelt(kl, ol);
 
 	// Verlegen die Welt.
-	Zweistreckewelt zkw = Augeverleger.verlegen(kw,
-						    new Dreipunkt(0,0,0),
-						    500, 1200, 600, 0, 0, 0);
+	Zweistreckewelt zkw = Giernickverleger.verlegen(kw,
+							new Dreipunkt(0,0,0), 500,
+							1200, 600,
+							0, 0);
     }
 }

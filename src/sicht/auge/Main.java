@@ -29,8 +29,8 @@ public class Main {
 	// Mache die Sicht.
 	int breite = 1200;
 	int hoehe = 600;
-	Dreipunkt ap = new Dreipunkt(0,0,0);
-	Augesicht as = new Augesicht(kw, ap, 500, breite, hoehe, 0.3, 0.3, 0.1);
+	Dreipunkt ap = new Dreipunkt(0,0,100);
+	Augesicht as = new Augesicht(kw, ap, 500, breite, hoehe, 0.5, 0.3);
 	Maler m = new Maler(new Sicht[] {as});
 	
 	// Stellen die Daten dar.
