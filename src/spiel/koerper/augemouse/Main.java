@@ -2,17 +2,20 @@ package spiel.koerper.augemouse;
 
 import handlung.spiel.SpielHandlung;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import koerper.Koerper;
 import koerper.kubus.Kubus;
-import punkt.Dreipunkt;
-import sicht.auge.Augesicht;
-import welt.koerper.Koerperwelt;
-import java.awt.Toolkit;
-import java.awt.Dimension;
-import sicht.Sicht;
 import maler.Maler;
+import punkt.Dreipunkt;
+import punkt.Zweipunkt;
+import sicht.Sicht;
+import sicht.auge.Augesicht;
+import sicht.text.Textsicht;
+import sicht.text.augetext.Augetextsicht;
+import welt.koerper.Koerperwelt;
 
 /*
   javac -d classes $(find src -type f) \
@@ -35,7 +38,9 @@ public class Main {
 	int hoehe = (int) bildschirm.getHeight();
 	Dreipunkt ap = new Dreipunkt(0, 0, 100);
 	Augesicht as = new Augesicht(kw, ap, 500, breite, hoehe, 0.0, 0.0, 0.0);
-	Maler m = new Maler(new Sicht[] {as});
+
+	Augetextsicht ats = new Augetextsicht(as);
+	Maler m = new Maler(new Sicht[] {as, ats});
 	
 	// Mache das Spiel.
 	Augemousespiel s = new Augemousespiel(m, as, kw);

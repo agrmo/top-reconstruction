@@ -1,0 +1,41 @@
+package sicht.text.augetext;
+
+import java.awt.Graphics;
+import sicht.auge.Augesicht;
+import sicht.text.Textsicht;
+import punkt.Zweipunkt;
+import sicht.Sicht;
+
+// Stellen die Eigenschaften der Augesicht dar.
+public class Augetextsicht extends Sicht {
+
+    Augesicht augesicht;
+    Textsicht textsicht;
+
+    public Augetextsicht(Augesicht as) {
+	this.augesicht = as;
+	this.textsicht = new Textsicht(new String[] {},
+				       new Zweipunkt[] {});
+    }
+
+    public void darstellen(Graphics g) {
+	String[] tl = new String[] {
+	    Double.toString(this.augesicht.roll),
+	    Double.toString(this.augesicht.pitch),
+	    Double.toString(this.augesicht.yaw)
+	};
+
+	Zweipunkt[] tol = new Zweipunkt[] {
+	    new Zweipunkt(0,12),
+	    new Zweipunkt(0,24),
+	    new Zweipunkt(0,36)
+	};
+
+	// Ein bischen schneller. Wir benutzen die gleiche Sicht jedes Mal.
+	this.textsicht.textliste = tl;
+	this.textsicht.ortliste = tol;
+	this.textsicht.darstellen(g);
+    }
+}
+
+

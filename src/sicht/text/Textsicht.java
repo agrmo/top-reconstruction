@@ -7,8 +7,8 @@ import sicht.Sicht;
 // Stellen eine Reihe von Texten dar.
 public class Textsicht extends Sicht {
 
-    String[] textliste;
-    Zweipunkt[] ortliste;
+    public String[] textliste;
+    public Zweipunkt[] ortliste;
 
     public Textsicht(String[] tl, Zweipunkt[] ol) {
 	this.textliste = tl;
