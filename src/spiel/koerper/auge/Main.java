@@ -25,11 +25,9 @@ public class Main {
 	
 	// Mache die Welt.
 	ArrayList<Koerper> kl = new ArrayList<Koerper>();
-	kl.add(new Kubus(30));
-	kl.add(new Pyramide(20, 20));
+	kl.add(new Kubus(60));
 	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
-	ol.add(new Dreipunkt(0,0,0));
-	ol.add(new Dreipunkt(20,20,20));
+	ol.add(new Dreipunkt(-30,-30,-30));
 	Koerperwelt kw = new Koerperwelt(kl, ol);
 	
 	// Mache die Sicht.

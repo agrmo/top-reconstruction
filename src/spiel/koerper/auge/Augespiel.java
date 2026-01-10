@@ -102,19 +102,6 @@ public class Augespiel extends Spiel {
 	    } else if (kc == 'd') {
 		this.verschiebenauge(-10,0,0);
 		veraendert = true;
-		
-	    } else if (kc == 't') {
-		//
-	    } else if (kc == 'g') {
-		//
-	    } else if (kc == 'f') {
-		//
-	    } else if (kc == 'h') {
-		//
-	    } else if (kc == '[') {
-		//
-	    } else if (kc == ']') {
-		//
 	    }
         }
 
