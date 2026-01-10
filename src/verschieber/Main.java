@@ -1,10 +1,10 @@
 package verschieber;
 
 import java.util.ArrayList;
-import koerper.kubus.Kubus;
+import vielflach.kubus.Kubus;
 import punkt.Dreipunkt;
-import koerper.Koerper;
-import welt.koerper.Koerperwelt;
+import vielflach.Vielflach;
+import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f) \
@@ -14,15 +14,15 @@ import welt.koerper.Koerperwelt;
 public class Main {
     public static void main(String[] args) {
 
-	// Mache eine dreidimensionale Körperwelt.
+	// Mache eine dreidimensionale Vielflachwelt.
 	// Diese Welt enthält einen Kubus auf der Stelle (100,100,100).
 	Kubus k = new Kubus(50);
 	Dreipunkt o = new Dreipunkt(100,100,100);
-	ArrayList<Koerper> kl = new ArrayList<Koerper>();
+	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(k);
 	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
 	ol.add(o);
-	Koerperwelt kw = new Koerperwelt(kl, ol);
+	Vielflachwelt kw = new Vielflachwelt(kl, ol);
 
 	// Benutzen den Verleger.
 	Dreipunkt vp = new Dreipunkt(100,100,100);

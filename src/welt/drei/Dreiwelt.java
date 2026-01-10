@@ -1,36 +1,35 @@
 package welt.drei;
     
-import java.util.ArrayList;
-import koerper.Koerper;
-import strecke.Dreistrecke;
-import vektor.Dreivektor;
 import punkt.Dreipunkt;
-import figur.Figur;
+import strecke.Dreistrecke;
 import strecke.Zweistrecke;
+import vektor.Dreivektor;
+import vieleck.Vieleck;
+import vielflach.Vielflach;
 
 // Eine Dreiwelt enthält ein-, zwei- und dreidimensionale
-// Dingen. D.h. Punkten, Figuren und Körper.  Sie enthält keine Farbe.
-// Die Punkten, Figuren und Körper stehen in ihre eigene Listen. 
+// Dingen. D.h. Punkten, Vielecken und Körper.  Sie enthält keine Farbe.
+// Die Punkten, Vielecken und Körper stehen in ihre eigene Listen. 
 public class Dreiwelt {
 
-    // Diese Welt enthält Punkten, Strecken, Figuren und Körpern.
+    // Diese Welt enthält Punkten, Strecken, Vielecken und Körpern.
     public Dreipunkt[] punktliste;
     public Dreistrecke[] streckeliste;
-    public Figur[] figurliste;
-    public Koerper[] koerperliste;
+    public Vieleck[] vieleckliste;
+    public Vielflach[] vielflachliste;
 
-    // Die Figuren und Körper müssen einen Ort besitzen.
-    public Dreipunkt[] figurorten;
-    public Dreipunkt[] koerperorten;
+    // Die Vielecken und Körper müssen einen Ort besitzen.
+    public Dreipunkt[] vieleckorten;
+    public Dreipunkt[] vielflachorten;
 
-    // Die Figuren und Körper müssen eine Ausrichtung besitzen.
-    public Dreivektor[] figurausrichtungen;
-    public Dreivektor[] koerperausrichtungen;
+    // Die Vielecken und Körper müssen eine Ausrichtung besitzen.
+    public Dreivektor[] vieleckausrichtungen;
+    public Dreivektor[] vielflachausrichtungen;
 
-    public Dreiwelt(Dreipunkt[] pl, Dreistrecke[] sl, Koerper[] kl) {
+    public Dreiwelt(Dreipunkt[] pl, Dreistrecke[] sl, Vielflach[] kl) {
  	this.punktliste = pl;
 	this.streckeliste = sl;
-	this.koerperliste = kl;
+	this.vielflachliste = kl;
     }
 
     // public Dreipunkt[] nehmePunkten() {

@@ -1,12 +1,12 @@
 package verleger.schief;
 
 import java.util.ArrayList;
-import strecke.Zweistrecke;
-import koerper.kubus.Kubus;
 import punkt.Dreipunkt;
-import koerper.Koerper;
+import strecke.Zweistrecke;
+import vielflach.Vielflach;
+import vielflach.kubus.Kubus;
+import welt.vielflach.Vielflachwelt;
 import welt.zweistrecke.Zweistreckewelt;
-import welt.koerper.Koerperwelt;
 
 /*
   javac -d classes $(find src -type f) \
@@ -16,15 +16,15 @@ import welt.koerper.Koerperwelt;
 public class Main {
     public static void main(String[] args) {
 
-	// Mache eine dreidimensionale Körperwelt.
+	// Mache eine dreidimensionale Vielflachwelt.
 	// Diese Welt enthält einen Kubus auf der Stelle (100,100,100).
 	Kubus k = new Kubus(50);
 	Dreipunkt p = new Dreipunkt(100,100,100);
-	ArrayList<Koerper> kl = new ArrayList<Koerper>();
+	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(k);
 	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
 	ol.add(p);
-	Koerperwelt kw = new Koerperwelt(kl, ol);
+	Vielflachwelt kw = new Vielflachwelt(kl, ol);
 
 	// Der Verleger, der eine zweidimensionale Welt aufbauen wird.
 	Schiefverleger sv = new Schiefverleger(-1.0);

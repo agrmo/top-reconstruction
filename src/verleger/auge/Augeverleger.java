@@ -5,10 +5,10 @@ import strecke.Dreistrecke;
 import strecke.Zweistrecke;
 import punkt.Dreipunkt;
 import punkt.Zweipunkt;
-import welt.koerper.Koerperwelt;
+import welt.vielflach.Vielflachwelt;
 import welt.zweistrecke.Zweistreckewelt;
 
-// Ein Augeverleger nimmt eine dreidimensionale Körperwelt zu einer
+// Ein Augeverleger nimmt eine dreidimensionale Vielflachwelt zu einer
 // zweidimensionalen Streckenwelt. Wir benutzen ein punktliches Auge als
 // Ursache der Sicht.
 public class Augeverleger {
@@ -99,11 +99,11 @@ public class Augeverleger {
 	return zk;
     }
 
-    // ein: Körperwelt, Augesicht
+    // ein: Vielflachwelt, Augesicht
     //
-    // Verlegen die dreidimensionale Körperwelt zu einer
+    // Verlegen die dreidimensionale Vielflachwelt zu einer
     // zweidimensionale Zweistreckewelt.
-    public static Zweistreckewelt verlegen(Koerperwelt kw,
+    public static Zweistreckewelt verlegen(Vielflachwelt kw,
 					   Dreipunkt augepunkt, int brennweite,
 					   int breite, int hoehe,
 					   double gier, double nick, double roll) {

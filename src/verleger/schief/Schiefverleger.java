@@ -1,14 +1,13 @@
 package verleger.schief;
 
-import java.util.ArrayList;
 import strecke.Dreistrecke;
 import strecke.Zweistrecke;
 import punkt.Dreipunkt;
 import punkt.Zweipunkt;
 import welt.zweistrecke.Zweistreckewelt;
-import welt.koerper.Koerperwelt;
+import welt.vielflach.Vielflachwelt;
 
-// Ein Schiefverleger nimmt eine dreidimensionale Körperwelt zu
+// Ein Schiefverleger nimmt eine dreidimensionale Vielflachwelt zu
 // einer zweidimensionalen Streckenwelt mit Hilfe einer orthographischen
 // Verlegung.
 public class Schiefverleger {
@@ -50,13 +49,13 @@ public class Schiefverleger {
 	return zk;
     }
 
-    // ein: Körperwelt
+    // ein: Vielflachwelt
     // kw: Die dreidimensionale Welt mit den ursprünglichen Daten.
     //
-    // Verlegen die dreidimensionale Körperwelt zu einer
+    // Verlegen die dreidimensionale Vielflachwelt zu einer
     // zweidimensionale Zweistreckewelt.
     //
-    public Zweistreckewelt verlegenWelt(Koerperwelt kw) {
+    public Zweistreckewelt verlegenWelt(Vielflachwelt kw) {
 
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.

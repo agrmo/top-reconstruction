@@ -1,10 +1,10 @@
 package sicht.zweipunkt;
 
-import figur.quadrat.Quadrat;
+import vieleck.quadrat.Quadrat;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JFrame;
-import koerper.kubus.Kubus;
+import vielflach.kubus.Kubus;
 import maler.Maler;
 import punkt.Dreipunkt;
 import punkt.Zweipunkt;

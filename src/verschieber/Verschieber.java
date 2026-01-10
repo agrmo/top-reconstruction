@@ -1,23 +1,16 @@
 package verschieber;
 
-import java.util.ArrayList;
 import punkt.Dreipunkt;
 import punkt.Zweipunkt;
-import welt.koerper.Koerperwelt;
-import welt.figur.Figurwelt;
-import figur.Figur;
-import verdoppler.strecke.Streckeverdoppler;
-import welt.zweistrecke.Zweistreckewelt;
 import strecke.Zweistrecke;
+import verdoppler.strecke.Streckeverdoppler;
+import welt.vieleck.Vieleckwelt;
+import welt.vielflach.Vielflachwelt;
+import welt.zweistrecke.Zweistreckewelt;
 
-// Ein Verschieber nimmt eine dreidimensionale Körperwelt zu
-// der gleichen Art, aber mit alle Punkten verschoben.
+// Ein Verschieber verschiebt einfach alle Punkten einer Welt.
 public class Verschieber {
 
-    public Verschieber() {
-	
-    }
-    
     // ein: Zweistrecke, Double, Double
     public static void verschiebenStrecke(Zweistrecke zk, double dx, double dy) {
 	Zweipunkt von = zk.von;
@@ -29,41 +22,26 @@ public class Verschieber {
 	zk.bis.xteil = (int) (zk.bis.xteil + dx);
 	zk.bis.yteil = (int) (zk.bis.yteil + dy);
     }
-    
-    // ein: Körperwelt, Dreipunkt
-    //
-    // Verlegen die dreidimensionale Körperwelt zu einer
-    // zweidimensionale Zweistreckewelt.
-    //
-    public static void verschieben(Koerperwelt kw,
-				   Dreipunkt verschiebenpunkt) {
 
-	// Für jeden Orten der Welt, addiere zu ihm den Verschiebenpunkt.
-	
-	for (int i = 0; i < kw.ortliste.size(); i++) {
-	    kw.ortliste.get(i).addieren(verschiebenpunkt);
-	}
-    }
-
-    // ein: Figurwelt, Zweipunkt
+    // ein: Vieleckwelt, Zweipunkt
     //
-    // Verlegen die zweidimensionale Figurwelt zu einer
+    // Verlegen die zweidimensionale Vieleckwelt zu einer
     // gleichen Welt, mit alle Orten verschoben.
-    public static void verschieben(Figurwelt fw,
+    public static void verschieben(Vieleckwelt welt,
 				   Zweipunkt verschiebenpunkt) {
-	// Für jeden Orten der Welt, addiere zu ihm den Verschiebenpunkt.
 
-	for (int i = 0; i < fw.ortliste.size(); i++) {
-	    fw.ortliste.get(i).addieren(verschiebenpunkt);
+	// Für jeden Orten der Welt, addiere zu ihm den Verschiebenpunkt.
+	for (int i = 0; i < welt.ortliste.size(); i++) {
+	    welt.ortliste.get(i).addieren(verschiebenpunkt);
 	}
     }
 
     // ein: Zweistreckewelt, Double, Double
-    public static Zweistreckewelt verschieben(Zweistreckewelt zkw,
+    public static Zweistreckewelt verschieben(Zweistreckewelt zsw,
 					      double dx,
 					      double dy) {
 	
-	Zweistrecke[] zsl = zkw.streckenliste;
+	Zweistrecke[] zsl = zsw.streckenliste;
 	Zweistrecke[] zslNeu = Streckeverdoppler.verdoppeln(zsl);
 	
 	for (int i = 0; i < zsl.length; i++) {
@@ -71,5 +49,20 @@ public class Verschieber {
 	}
 	
 	return new Zweistreckewelt(zslNeu);
+    }
+
+    // ein: Vielflachwelt, Dreipunkt
+    //
+    // Verlegen die dreidimensionale Vielflachwelt zu einer
+    // zweidimensionale Zweistreckewelt.
+    //
+    public static void verschieben(Vielflachwelt welt,
+				   Dreipunkt verschiebenpunkt) {
+
+	// Für jeden Orten der Welt, addiere zu ihm den Verschiebenpunkt.
+	
+	for (int i = 0; i < welt.ortliste.size(); i++) {
+	    welt.ortliste.get(i).addieren(verschiebenpunkt);
+	}
     }
 }

@@ -2,11 +2,11 @@ package verleger.auge;
 
 import java.util.ArrayList;
 import strecke.Zweistrecke;
-import koerper.kubus.Kubus;
+import vielflach.kubus.Kubus;
 import punkt.Dreipunkt;
-import koerper.Koerper;
+import vielflach.Vielflach;
 import welt.zweistrecke.Zweistreckewelt;
-import welt.koerper.Koerperwelt;
+import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f) \
@@ -19,11 +19,11 @@ public class Main {
 	// Mache die dreidimensionale Welt.
 	Kubus k = new Kubus(50);
 	Dreipunkt p = new Dreipunkt(100,100,100);
-	ArrayList<Koerper> kl = new ArrayList<Koerper>();
+	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(k);
 	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
 	ol.add(p);
-	Koerperwelt kw = new Koerperwelt(kl, ol);
+	Vielflachwelt kw = new Vielflachwelt(kl, ol);
 
 	// Verlegen die Welt.
 	Zweistreckewelt zkw = Augeverleger.verlegen(kw,

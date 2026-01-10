@@ -18,15 +18,4 @@ import strecke.Dreistrecke;
 //
 public abstract class Koerper {
 
-    // aus: Liste von Strecken
-    //
-    // Nehme alle Strecken dieses Körpers. Daher müssen wir über den Ort
-    // des Körpers beachten.
-    public abstract Dreistrecke[] nehmekanten();
-
-    // aus: ganze Zahl
-    //
-    // Nehme den Betrag der Strecken dieses Körpers. Genau wie viele
-    // Dreistrecke es gibt in nehmekanten().
-    public abstract int nehmekantenanzahl();
 }

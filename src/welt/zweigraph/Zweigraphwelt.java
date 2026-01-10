@@ -7,10 +7,6 @@ import verdoppler.punkt.Punktverdoppler;
 import strecke.Zweistrecke;
 
 /*
-  Ein Koerper ist eine ganze Zahl.
-  
-  Ein Ort ist ein Paar von ganzen Zahlen.
-  
   Eine Graphwelt ist ein Paar von:
   - Graph
   - Liste von Orten

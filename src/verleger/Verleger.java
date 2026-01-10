@@ -1,7 +1,5 @@
 package verleger;
 
-import welt.Welt;
-
 // Ein Verleger umwandelt eine dreidimensionale Welt von Dingen in
 // einer dreidimensionalen.
 //

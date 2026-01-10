@@ -6,15 +6,15 @@ import javax.swing.JComponent;
 import sicht.strecke.Streckesicht;
 import verleger.auge.Augeverleger;
 import welt.zweistrecke.Zweistreckewelt;
-import welt.koerper.Koerperwelt;
+import welt.vielflach.Vielflachwelt;
 import sicht.Sicht;
 
-// Eine Sicht, die eine dreidimensionale Körperwelt einnimmt.
-// Sie wandelt die Körperwelt mit nur einer Verlegung: einer punkten
+// Eine Sicht, die eine dreidimensionale Vielflachwelt einnimmt.
+// Sie wandelt die Vielflachwelt mit nur einer Verlegung: einer punkten
 // Verlegung. Sie gibt am Ende eine Zweistreckewelt ab.
 public class Augesicht extends Sicht {
 
-    public Koerperwelt kw;
+    public Vielflachwelt kw;
     public Dreipunkt augepunkt;
     public int breite;
     public int brennweite;
@@ -23,7 +23,7 @@ public class Augesicht extends Sicht {
     public double nick;
     public double roll;
 
-    public Augesicht(Koerperwelt kw,
+    public Augesicht(Vielflachwelt kw,
 		     Dreipunkt augepunkt, int brennweite,
 		     int breite, int hoehe,
 		     double gier, double nick, double roll) {
