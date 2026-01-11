@@ -48,7 +48,6 @@ public class Main {
 	int hoehe = (int) bildschirm.getHeight();
 	Dreipunkt ap = new Dreipunkt(0, 0, 100);
 	Giernicksicht as = new Giernicksicht(kw, ap, 500, breite, hoehe, 0.0, 0.0);
-
 	Giernicktextsicht gts = new Giernicktextsicht(as);
 	Maler m = new Maler(new Sicht[] {as, gts});
 	

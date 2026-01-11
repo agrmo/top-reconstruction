@@ -7,6 +7,7 @@ import punkt.Dreipunkt;
 import punkt.Zweipunkt;
 import welt.vielflach.Vielflachwelt;
 import welt.zweistrecke.Zweistreckewelt;
+import dreher.giernick.Giernickdreher;
 
 // Ein Giernickverleger verlegt eine dreidimensionale Welt von
 // Vielflächen zu einer zweidimensionalen Welt von Punkten und
@@ -32,28 +33,19 @@ public class Giernickverleger {
 			      int breite, int hoehe,
 			      double gier, double nick) {
 
-	// Drehen den Punkt in der xz-Fläche (um die y-Achse).
-	Zweipunkt xz = Punktdreher.drehen(new Zweipunkt(p.xteil, p.zteil), gier);
-
-	// Drehen den Punkt in der yz-Fläche (um die x-Achse).
-	Zweipunkt yz = Punktdreher.drehen(new Zweipunkt(p.yteil, xz.yteil), nick);
-
-	// Nehmen die x, y und z-Punkte.
-	double x = xz.xteil;
-	double y = yz.xteil;
-	double z = yz.yteil;
+	Dreipunkt pgedreht = Giernickdreher.drehen(p, gier, nick);
 
 	// Trennen das Auge vom Ursprung der Welt.
-	x -= augepunkt.xteil;
-	y -= augepunkt.yteil;
-	z -= augepunkt.zteil;
+	pgedreht.xteil -= augepunkt.xteil;
+	pgedreht.yteil -= augepunkt.yteil;
+	pgedreht.zteil -= augepunkt.zteil;
 
 	// Letzendlich verlegen die Stellen von drei zu zwei Dimensionen.
 	int zweiDimensionaleX = (int) ((0.5 * ((double) breite))
-				       + (x/z) * ((double) brennweite));
+				       + (pgedreht.xteil/pgedreht.zteil) * ((double) brennweite));
 	
 	int zweiDimensionaleY = (int) ((0.5 * ((double) hoehe))
-				       + (y/z) * ((double) brennweite));
+				       + (pgedreht.yteil/pgedreht.zteil) * ((double) brennweite));
 
 	Zweipunkt aus = new Zweipunkt(zweiDimensionaleX, zweiDimensionaleY);
 	
