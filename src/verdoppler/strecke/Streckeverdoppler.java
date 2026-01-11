@@ -1,13 +1,13 @@
 package verdoppler.strecke;
 
 import strecke.Zweistrecke;
-import punkt.Zweipunkt;
-import verdoppler.punkt.Punktverdoppler;
+import vektor.Zweivektor;
+import verdoppler.vektor.Vektorverdoppler;
 
 public class Streckeverdoppler {
     public static Zweistrecke verdoppeln(Zweistrecke k) {
-	Zweipunkt vonNeu = Punktverdoppler.verdoppeln(k.von);
-	Zweipunkt bisNeu = Punktverdoppler.verdoppeln(k.bis);
+	Zweivektor vonNeu = Vektorverdoppler.verdoppeln(k.von);
+	Zweivektor bisNeu = Vektorverdoppler.verdoppeln(k.bis);
 	
 	return new Zweistrecke(vonNeu, bisNeu);
     }

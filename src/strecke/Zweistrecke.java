@@ -1,8 +1,8 @@
 package strecke;
 
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 
-// Eine Zweistrecke ist ein Paar von zwei Zweipunkten.
+// Eine Zweistrecke ist ein Paar von zwei Zweivektoren.
 //
 // Eine Zweistrecke ist eine zweidimensionale Strecke.
 //
@@ -14,16 +14,16 @@ import punkt.Zweipunkt;
 // Die Strecken können vielleicht Kanten verkörpern. Vielleicht die
 // Kanten einer Dreiecke oder eines Quadrats.
 public class Zweistrecke {
-    public Zweipunkt von;
-    public Zweipunkt bis;
+    public Zweivektor von;
+    public Zweivektor bis;
     
-    public Zweistrecke(Zweipunkt v, Zweipunkt b) {
+    public Zweistrecke(Zweivektor v, Zweivektor b) {
 	this.von = v;
 	this.bis = b;
     }
 
-    public void addieren(Zweipunkt p) {
-	this.von.addieren(p);
-	this.bis.addieren(p);
+    public void addiere(Zweivektor p) {
+	this.von.addiere(p);
+	this.bis.addiere(p);
     }
 }

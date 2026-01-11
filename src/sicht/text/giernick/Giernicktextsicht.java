@@ -3,7 +3,7 @@ package sicht.text.giernick;
 import java.awt.Graphics;
 import sicht.vielflach.giernick.Giernicksicht;
 import sicht.text.Textsicht;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import sicht.Sicht;
 
 // Stellen die Eigenschaften der Giernicksicht dar.
@@ -15,7 +15,7 @@ public class Giernicktextsicht extends Sicht {
     public Giernicktextsicht(Giernicksicht as) {
 	this.augesicht = as;
 	this.textsicht = new Textsicht(new String[] {},
-				       new Zweipunkt[] {});
+				       new Zweivektor[] {});
     }
 
     public void darstellen(Graphics g) {
@@ -24,9 +24,9 @@ public class Giernicktextsicht extends Sicht {
 	    Double.toString(this.augesicht.gier)
 	};
 
-	Zweipunkt[] tol = new Zweipunkt[] {
-	    new Zweipunkt(0,12),
-	    new Zweipunkt(0,24),
+	Zweivektor[] tol = new Zweivektor[] {
+	    new Zweivektor(0,12),
+	    new Zweivektor(0,24),
 	};
 
 	// Ein bischen schneller. Wir benutzen die gleiche Sicht jedes Mal.

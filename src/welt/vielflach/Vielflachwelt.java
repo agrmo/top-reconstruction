@@ -1,7 +1,7 @@
 package welt.vielflach;
     
 import java.util.ArrayList;
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 import strecke.Dreistrecke;
 import vielflach.Vielflach;
 
@@ -29,9 +29,9 @@ public class Vielflachwelt {
     // nur seine Eigenschaften. Die Vielflachwelt versteht nicht nur
     // seine Eigenschaften, sondern auch wo er steht.
     public ArrayList<Vielflach> vielflachliste;
-    public ArrayList<Dreipunkt> ortliste;
+    public ArrayList<Dreivektor> ortliste;
 
-    public Vielflachwelt(ArrayList<Vielflach> kl, ArrayList<Dreipunkt> ol) {
+    public Vielflachwelt(ArrayList<Vielflach> kl, ArrayList<Dreivektor> ol) {
 	this.vielflachliste = kl;
 	this.ortliste = ol;
     }
@@ -70,12 +70,12 @@ public class Vielflachwelt {
 	    // selbst liegt.
 	    Dreistrecke[] kl = k.nehmekanten();
 
-	    Dreipunkt ap = this.ortliste.get(i);
+	    Dreivektor ap = this.ortliste.get(i);
 
 	    // Für alle seine Strecken
 	    for (int j = 0; j < kl.length; j++) {
 		// addiere seinen Ort zu den Strecken des Körpers.
-		kl[j].addieren(ap);
+		kl[j].addiere(ap);
 
 		// Nur dann fügen die Strecke in der Liste zu.
 		strecken[streckezeichen] = kl[j];

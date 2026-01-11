@@ -16,7 +16,7 @@ public class Main {
 	System.out.println(Vektordrucker.drucken(va));
 	System.out.println(Vektordrucker.drucken(vb));
 
-	vb.punkt(new Dreivektor(0,5,0));
+	vb.vektor(new Dreivektor(0,5,0));
 	
 	System.out.println(Vektordrucker.drucken(vb));
     }
@@ -27,7 +27,7 @@ public class Main {
 	va.addiere(vb);
 	System.out.println(Vektordrucker.drucken(va));
 	System.out.println(Vektordrucker.drucken(vb));
-	va.punkt(new Zweivektor(0,5));
+	va.vektor(new Zweivektor(0,5));
 	System.out.println(Vektordrucker.drucken(va));
     }
     

@@ -5,13 +5,13 @@ package vektor;
   
   Ein Zweivektor im Euklidraum.
 
-  Was sind ähnlich mit dem Vektor und dem Punkt?
+  Was sind ähnlich mit dem Vektor und dem Vektor?
 
   Sie besitzen die gleiche Basisvektoren.
 
-  Was ist der Unterschied zweischen der Zweivektor und der Zweipunkt?
+  Was ist der Unterschied zweischen der Zweivektor und der Zweivektor?
 
-  Der zweidimensionale Punkt und der zweidimensionale Vektor besitzen
+  Der zweidimensionale Vektor und der zweidimensionale Vektor besitzen
   verschiedenen Ursprung.
 
   Zum Beispiel die Ecke enthält Dreivektoren, um ihre Strecke zu zeigen.
@@ -57,7 +57,7 @@ public class Zweivektor {
     
     // ein: Zweivektor
     // Multipliziere teilweise den gegebenen Zweivektor zu diesem.  
-    public void punkt(Zweivektor v) {
+    public void vektor(Zweivektor v) {
 	this.eins = this.eins * v.eins;
 	this.zwei = this.zwei * v.zwei;
     }

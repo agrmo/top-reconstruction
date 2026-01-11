@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 import welt.vielflach.Vielflachwelt;
 import maler.Maler;
 import sicht.Sicht;
@@ -19,15 +19,15 @@ public class Main {
     static void beispielEins() {
 	// Mache die Welt.
 	Kubus k = new Kubus(50);
-	Dreipunkt p = new Dreipunkt(100, 100, 100);
+	Dreivektor p = new Dreivektor(100, 100, 100);
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(k);
-	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
+	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
 	ol.add(p);
 	Vielflachwelt kw = new Vielflachwelt(kl, ol);
 
 	// Der Verleger vergrößert die stellen der Kanten. Nicht nur
-	// wird den Abstand zwischen den Punkten vergrößert, sondern
+	// wird den Abstand zwischen den Vektoren vergrößert, sondern
 	// auch den Abstand zum Ursprung. Zum Beispiel,
 	//
 	// (0,0) --- (10,0) --- (20,0)

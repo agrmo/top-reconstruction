@@ -1,16 +1,16 @@
 package basis;
 
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 
-// Eine Basis ist eine Liste von drei Punkten, die alle den Betrag
+// Eine Basis ist eine Liste von drei Vektoren, die alle den Betrag
 // Eins besitzen.
 public class Dreibasis {
-    public Dreipunkt eins;
-    public Dreipunkt zwei;
-    public Dreipunkt drei;
+    public Dreivektor eins;
+    public Dreivektor zwei;
+    public Dreivektor drei;
 
-    // ein: Dreipunkt, Dreipunkt, Dreipunkt
-    public Dreibasis(Dreipunkt eins, Dreipunkt zwei, Dreipunkt drei) {
+    // ein: Dreivektor, Dreivektor, Dreivektor
+    public Dreibasis(Dreivektor eins, Dreivektor zwei, Dreivektor drei) {
 	this.eins = eins;
 	this.zwei = zwei;
 	this.drei = drei;

@@ -2,8 +2,8 @@ package verleger.schief;
 
 import strecke.Dreistrecke;
 import strecke.Zweistrecke;
-import punkt.Dreipunkt;
-import punkt.Zweipunkt;
+import vektor.Dreivektor;
+import vektor.Zweivektor;
 import welt.zweistrecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 
@@ -19,16 +19,16 @@ public class Schiefverleger {
 	this.a = a;
     }
 
-    // ein: Dreipunkt
-    // aus: Zweipunkt
+    // ein: Dreivektor
+    // aus: Zweivektor
     //
-    // Verlege den gegeben dreidimensionalen Punkt auf einer
-    // Sichtfläche, um einen zweidimensionalen Punkt zu bekommen.
-    Zweipunkt verlegenPunkt(Dreipunkt p) {
-	double ausX = p.xteil + (this.a * p.zteil);
-	double ausY = p.yteil + (this.a * p.zteil);
+    // Verlege den gegeben dreidimensionalen Vektor auf einer
+    // Sichtfläche, um einen zweidimensionalen Vektor zu bekommen.
+    Zweivektor verlegenVektor(Dreivektor p) {
+	double ausX = p.eins + (this.a * p.drei);
+	double ausY = p.zwei + (this.a * p.drei);
 
-	Zweipunkt aus = new Zweipunkt(ausX, ausY);
+	Zweivektor aus = new Zweivektor(ausX, ausY);
 	
 	return aus;
     }
@@ -39,12 +39,12 @@ public class Schiefverleger {
     // Verlege die gegebene dreidimensionale Strecke auf einer
     // Sichtfläche, um eine zweidimensionale Strecke zu bekommen.
     Zweistrecke verlegenStrecke(Dreistrecke k) {
-	Zweipunkt verlegterPunktVon = this.verlegenPunkt(k.von);
-	Zweipunkt verlegterPunktBis = this.verlegenPunkt(k.bis);
+	Zweivektor verlegterVektorVon = this.verlegenVektor(k.von);
+	Zweivektor verlegterVektorBis = this.verlegenVektor(k.bis);
 
 	// Diese ist die neue Strecke, die nur in zwei Dimensionen
 	// liegt. 
-	Zweistrecke zk = new Zweistrecke(verlegterPunktVon, verlegterPunktBis);
+	Zweistrecke zk = new Zweistrecke(verlegterVektorVon, verlegterVektorBis);
 	
 	return zk;
     }

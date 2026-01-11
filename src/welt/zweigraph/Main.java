@@ -5,10 +5,10 @@ import graph.Nachbarschaftsliste;
 import java.awt.Color;
 import javax.swing.JFrame;
 import maler.Maler;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import sicht.Sicht;
 import sicht.strecke.Streckesicht;
-import sicht.zweipunkt.Punktsicht;
+import sicht.vektor.Vektorsicht;
 import strecke.Zweistrecke;
 import welt.zweigraph.Zweigraphwelt;
 import welt.zweistrecke.Zweistreckewelt;
@@ -27,7 +27,7 @@ public class Main {
   
         // Bauen wir die Gitter auf.  Jede Zeile wird zwei Knoten
         // besitzen. Jeder Knoten wird 100 voneinander getrennt.
-        Zweipunkt[] orten = Zweigitter.machen(nl, 2, 100);
+        Zweivektor[] orten = Zweigitter.machen(nl, 2, 100);
   
         // Sammeln wir die Orten und den Graphen zusammen.
         Zweigraphwelt gw = new Zweigraphwelt(nl, orten);
@@ -38,11 +38,11 @@ public class Main {
 
 	// Nehme die Knoten.
 	int durchmesser = 10;
-	Zweipunkt[] knoten = gw.nehmeKnoten(durchmesser);
+	Zweivektor[] knoten = gw.nehmeKnoten(durchmesser);
 
 	// Mache den Maler.
 	Streckesicht ss = new Streckesicht(sw);
-	Punktsicht ps = new Punktsicht(knoten, durchmesser);
+	Vektorsicht ps = new Vektorsicht(knoten, durchmesser);
 	Maler m = new Maler(new Sicht[] {ss, ps});
   
         // Stellen die Daten dar.

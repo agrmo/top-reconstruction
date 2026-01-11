@@ -1,7 +1,7 @@
 package straffer;
 
 import java.util.ArrayList;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import strecke.Zweistrecke;
 import welt.zweistrecke.Zweistreckewelt;
 import verdoppler.strecke.Streckeverdoppler;
@@ -20,14 +20,14 @@ public class Straffer {
     static void straffenStrecke(Zweistrecke zk,
 				double mx, double my) {
 	
-	Zweipunkt von = zk.von;
-	Zweipunkt bis = zk.bis;
+	Zweivektor von = zk.von;
+	Zweivektor bis = zk.bis;
 
-	zk.von.xteil = (int) (zk.von.xteil * mx);
-	zk.von.yteil = (int) (zk.von.yteil * my);
+	zk.von.eins = (int) (zk.von.eins * mx);
+	zk.von.zwei = (int) (zk.von.zwei * my);
 	
-	zk.bis.xteil = (int) (zk.bis.xteil * mx);
-	zk.bis.yteil = (int) (zk.bis.yteil * my);
+	zk.bis.eins = (int) (zk.bis.eins * mx);
+	zk.bis.zwei = (int) (zk.bis.zwei * my);
     }
 
     // Straffen die Welt.

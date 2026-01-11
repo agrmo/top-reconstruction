@@ -54,7 +54,7 @@ public class Dreivektor {
     
     // ein: Dreivektor
     // Multipliziere teilweise den gegebenen Dreivektor zu diesem.  
-    public void punkt(Dreivektor v) {
+    public void vektor(Dreivektor v) {
 	this.eins = this.eins * v.eins;
 	this.zwei = this.zwei * v.zwei;
 	this.drei = this.drei * v.drei;

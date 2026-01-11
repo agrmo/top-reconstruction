@@ -1,15 +1,15 @@
 package basis;
 
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 
-// Eine Basis ist eine Liste von zwei Punkten, die alle den Betrag
+// Eine Basis ist eine Liste von zwei Vektoren, die alle den Betrag
 // Eins besitzen.
 public class Zweibasis {
-    public Zweipunkt eins;
-    public Zweipunkt zwei;
+    public Zweivektor eins;
+    public Zweivektor zwei;
 
-    // ein: Zweipunkt, Zweipunkt
-    public Zweibasis(Zweipunkt eins, Zweipunkt zwei) {
+    // ein: Zweivektor, Zweivektor
+    public Zweibasis(Zweivektor eins, Zweivektor zwei) {
 	this.eins = eins;
 	this.zwei = zwei;
     }

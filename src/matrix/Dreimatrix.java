@@ -54,7 +54,7 @@ public class Dreimatrix {
 	};
     }
 
-    public void addieren(Dreimatrix m) {
+    public void addiere(Dreimatrix m) {
 	this.a += m.a;
 	this.b += m.b;
 	this.c += m.c;	

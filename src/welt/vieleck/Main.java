@@ -1,6 +1,6 @@
 package welt.vieleck;
 
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import vieleck.dreieck.Dreieck;
 import vieleck.Vieleck;
 import java.util.ArrayList;
@@ -21,14 +21,14 @@ public class Main {
 	
 	// Ein Dreieck und dessen Ort.
 	Dreieck k = new Dreieck(50);
-	Zweipunkt p = new Zweipunkt(100,100);
+	Zweivektor p = new Zweivektor(100,100);
 
 	// Liste von Vielecken.
 	ArrayList<Vieleck> fl = new ArrayList<Vieleck>();
 	fl.add(k);
 
 	// Liste von Orten.
-	ArrayList<Zweipunkt> ol = new ArrayList<Zweipunkt>();
+	ArrayList<Zweivektor> ol = new ArrayList<Zweivektor>();
 	ol.add(p);
 	
 	// Mache die Welt.

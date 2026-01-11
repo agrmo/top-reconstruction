@@ -1,16 +1,16 @@
 package sicht.text;
 
 import java.awt.Graphics;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import sicht.Sicht;
 
 // Stellen eine Reihe von Texten dar.
 public class Textsicht extends Sicht {
 
     public String[] textliste;
-    public Zweipunkt[] ortliste;
+    public Zweivektor[] ortliste;
 
-    public Textsicht(String[] tl, Zweipunkt[] ol) {
+    public Textsicht(String[] tl, Zweivektor[] ol) {
 	this.textliste = tl;
 	this.ortliste = ol;
     }
@@ -19,8 +19,8 @@ public class Textsicht extends Sicht {
 
 	for (int i = 0; i < this.textliste.length; i++) {
 	    g.drawString(this.textliste[i],
-			 (int) this.ortliste[i].xteil,
-			 (int) this.ortliste[i].yteil);
+			 (int) this.ortliste[i].eins,
+			 (int) this.ortliste[i].zwei);
 	}
     }
 }

@@ -1,31 +1,31 @@
-package sicht.zweipunkt;
+package sicht.vektor;
 
-import vieleck.quadrat.Quadrat;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JFrame;
-import vielflach.kubus.Kubus;
 import maler.Maler;
-import punkt.Dreipunkt;
-import punkt.Zweipunkt;
 import sicht.Sicht;
-import sicht.zweipunkt.Punktsicht;
+import sicht.vektor.Vektorsicht;
+import vektor.Dreivektor;
+import vektor.Zweivektor;
 import verleger.giernick.Giernickverleger;
+import vieleck.quadrat.Quadrat;
+import vielflach.kubus.Kubus;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.zweipunkt.Main
+  && java -cp classes sicht.vektor.Main
 */
 
 public class Main {
 
     static void beispielEins() {
-	// Mache die Punkte.
+	// Mache die Vektore.
 	Quadrat q = new Quadrat(50);
-	Zweipunkt[] pl = q.nehmeecken();
+	Zweivektor[] pl = q.nehmeecken();
 
 	// Mache die Sicht.
-	Punktsicht s = new Punktsicht(pl, 10);
+	Vektorsicht s = new Vektorsicht(pl, 10);
 	Maler m = new Maler(new Sicht[] {s});
 
 	// Stellen die Daten dar.
@@ -41,22 +41,22 @@ public class Main {
     static void beispielZwei() {
 	// Mache die dreidimensionalen Daten.
 	Kubus k = new Kubus(2);
-	Dreipunkt[] dpl = k.nehmeecken();
+	Dreivektor[] dpl = k.nehmeecken();
 
 	// Verlegen die dreidimensionalen Daten.
 
 	// Mache die Sicht.
 	int breite = 1200;
 	int hoehe = 600;
-	Dreipunkt augepunkt = new Dreipunkt(0,0,10);
+	Dreivektor augevektor = new Dreivektor(0,0,10);
 	int brennweite = 500;
 	double gier = 0.0;
 	double nick = 0.3;
-	Zweipunkt[] zpl = Giernickverleger.verlegen(dpl, augepunkt, brennweite,
+	Zweivektor[] zpl = Giernickverleger.verlegen(dpl, augevektor, brennweite,
 						breite, hoehe,
 						gier, nick);
 	int radius = 10;
-	Punktsicht s = new Punktsicht(zpl, radius);
+	Vektorsicht s = new Vektorsicht(zpl, radius);
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Daten dar.

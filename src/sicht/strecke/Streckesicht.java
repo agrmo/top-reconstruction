@@ -19,8 +19,8 @@ public class Streckesicht extends Sicht {
 
     // Die Strecken stehen schon auf einer Ebene. Stellen sie dar.
     public void darstellenStrecke(Graphics g, Zweistrecke k) {
-	g.drawLine((int) k.von.xteil, (int) k.von.yteil,
-		   (int) k.bis.xteil, (int) k.bis.yteil);
+	g.drawLine((int) k.von.eins, (int) k.von.zwei,
+		   (int) k.bis.eins, (int) k.bis.zwei);
     }
 
     public void darstellen(Graphics g) {

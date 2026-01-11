@@ -16,7 +16,7 @@ import sicht.Sicht;
 //
 // a: Die Tiefe der z-Achse.
 //
-// Lineare Funktionen, die die Punkten der Welt verändern:
+// Lineare Funktionen, die die Vektoren der Welt verändern:
 // x' = mx * x + bx
 // y' = my * y + by
 //
@@ -48,17 +48,17 @@ public class Linearschiefsicht extends Sicht {
     // dreidimensionalen zu einer zweidimensionalen.
     //
     // 2. Straffer: Er verhält sich wie ein Bildschirm, und
-    // verschiebt alle Punkten, sodaß wir sie sehen können.
+    // verschiebt alle Vektoren, sodaß wir sie sehen können.
     public void darstellen(Graphics g) {
 	
 	// Benutzen die Verlegungen.
 	Zweistreckewelt zkw = this.sv.verlegenWelt(this.kw);
 
-	// Straffen die Punkten.
+	// Straffen die Vektoren.
 	Zweistreckewelt zkwNeu = Straffer.straffenWelt(zkw,
 						       this.mx, this.my);
 	
-	// Verschieben die Punkten.
+	// Verschieben die Vektoren.
 	Zweistreckewelt zkwNeuNeu = Verschieber.verschieben(zkwNeu,
 							    this.bx, this.by);
 

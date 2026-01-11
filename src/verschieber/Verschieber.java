@@ -1,38 +1,38 @@
 package verschieber;
 
-import punkt.Dreipunkt;
-import punkt.Zweipunkt;
+import vektor.Dreivektor;
+import vektor.Zweivektor;
 import strecke.Zweistrecke;
 import verdoppler.strecke.Streckeverdoppler;
 import welt.vieleck.Vieleckwelt;
 import welt.vielflach.Vielflachwelt;
 import welt.zweistrecke.Zweistreckewelt;
 
-// Ein Verschieber verschiebt einfach alle Punkten einer Welt.
+// Ein Verschieber verschiebt einfach alle Vektoren einer Welt.
 public class Verschieber {
 
     // ein: Zweistrecke, Double, Double
     public static void verschiebenStrecke(Zweistrecke zk, double dx, double dy) {
-	Zweipunkt von = zk.von;
-	Zweipunkt bis = zk.bis;
+	Zweivektor von = zk.von;
+	Zweivektor bis = zk.bis;
 	
-	zk.von.xteil = (int) (zk.von.xteil + dx);
-	zk.von.yteil = (int) (zk.von.yteil + dy);
+	zk.von.eins = (int) (zk.von.eins + dx);
+	zk.von.zwei = (int) (zk.von.zwei + dy);
 	
-	zk.bis.xteil = (int) (zk.bis.xteil + dx);
-	zk.bis.yteil = (int) (zk.bis.yteil + dy);
+	zk.bis.eins = (int) (zk.bis.eins + dx);
+	zk.bis.zwei = (int) (zk.bis.zwei + dy);
     }
 
-    // ein: Vieleckwelt, Zweipunkt
+    // ein: Vieleckwelt, Zweivektor
     //
     // Verlegen die zweidimensionale Vieleckwelt zu einer
     // gleichen Welt, mit alle Orten verschoben.
     public static void verschieben(Vieleckwelt welt,
-				   Zweipunkt verschiebenpunkt) {
+				   Zweivektor verschiebenvektor) {
 
-	// Für jeden Orten der Welt, addiere zu ihm den Verschiebenpunkt.
+	// Für jeden Orten der Welt, addiere zu ihm den Verschiebenvektor.
 	for (int i = 0; i < welt.ortliste.size(); i++) {
-	    welt.ortliste.get(i).addieren(verschiebenpunkt);
+	    welt.ortliste.get(i).addiere(verschiebenvektor);
 	}
     }
 
@@ -51,18 +51,18 @@ public class Verschieber {
 	return new Zweistreckewelt(zslNeu);
     }
 
-    // ein: Vielflachwelt, Dreipunkt
+    // ein: Vielflachwelt, Dreivektor
     //
     // Verlegen die dreidimensionale Vielflachwelt zu einer
     // zweidimensionale Zweistreckewelt.
     //
     public static void verschieben(Vielflachwelt welt,
-				   Dreipunkt verschiebenpunkt) {
+				   Dreivektor verschiebenvektor) {
 
-	// Für jeden Orten der Welt, addiere zu ihm den Verschiebenpunkt.
+	// Für jeden Orten der Welt, addiere zu ihm den Verschiebenvektor.
 	
 	for (int i = 0; i < welt.ortliste.size(); i++) {
-	    welt.ortliste.get(i).addieren(verschiebenpunkt);
+	    welt.ortliste.get(i).addiere(verschiebenvektor);
 	}
     }
 }

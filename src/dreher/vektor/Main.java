@@ -1,4 +1,4 @@
-package dreher.giernick;
+package dreher.vektor;
 
 import vektor.Zweivektor;
 import vektor.Dreivektor;
@@ -6,26 +6,23 @@ import druck.vektor.Vektordrucker;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes dreher.giernick.Main
+  && java -cp classes dreher.vektor.Main
 */
 
 public class Main {
-
     static void beispielEins() {
-	Dreivektor pa = new Dreivektor(1,1,1);
-	
-	// Soll [-1,1,-1] sein
-	Dreivektor pb = Giernickdreher.drehen(pa, Math.PI, 0);
+	// Gegen den Uhrzeigersinn.
+	Zweivektor pa = new Zweivektor(1,0);
+	Zweivektor pb = Vektordreher.drehen(pa, Math.PI / 2.0);
 
 	System.out.println(Vektordrucker.drucken(pa));
-	System.out.println(Vektordrucker.drucken(pb));	
+	System.out.println(Vektordrucker.drucken(pb));
     }
 
     static void beispielZwei() {
-	Dreivektor pa = new Dreivektor(1,1,1);
-	
-	// Soll [-1,-1,1] sein
-	Dreivektor pb = Giernickdreher.drehen(pa, Math.PI, Math.PI);
+	// Gegen den Uhrzeigersinn.
+	Zweivektor pa = new Zweivektor(1,1);
+	Zweivektor pb = Vektordreher.drehen(pa, Math.PI / 2.0);
 
 	System.out.println(Vektordrucker.drucken(pa));
 	System.out.println(Vektordrucker.drucken(pb));

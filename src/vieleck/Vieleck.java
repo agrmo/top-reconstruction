@@ -1,12 +1,12 @@
 package vieleck;
 
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import strecke.Zweistrecke;
 
 // Ein Vieleck ist eine Vieleck, die aus mindestens drei durch Linien
-// verbundenen, voneinander verschiedenen Zweipunkten besteht.
+// verbundenen, voneinander verschiedenen Zweivektoren besteht.
 //
-// Ein Vieleck ist eine Liste von zweidimensionalen Punkten. Das
+// Ein Vieleck ist eine Liste von zweidimensionalen Vektoren. Das
 // Vieleck kann eine Fläche eines dreidimensionalen Körpers zeigen.
 //
 // Ein Vieleck kennt seinen Ort in einer Welt nicht.
@@ -15,7 +15,7 @@ import strecke.Zweistrecke;
 //
 // Eine Vieleck besitzt immer wie der Körper einen Inhalt.
 //
-// Eine Strecke, ein Weg und ein Punkt sind nicht Vielecken oder
+// Eine Strecke, ein Weg und ein Vektor sind nicht Vielecken oder
 // Körpern.
 public abstract class Vieleck {
     
@@ -34,8 +34,8 @@ public abstract class Vieleck {
     // Nehme alle die Kanten dieses Vielecks.
     public abstract Zweistrecke[] nehmekanten();
 
-    // aus: Liste von Zweipunkten
+    // aus: Liste von Zweivektoren
     //
     // Nehme alle die Ecken dieses Vielecks.
-    public abstract Zweipunkt[] nehmeecken();
+    public abstract Zweivektor[] nehmeecken();
 }

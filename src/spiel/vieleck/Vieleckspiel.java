@@ -2,7 +2,7 @@ package spiel.vieleck;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import sicht.vieleck.Vielecksicht;
 import spiel.Spiel;
 import verschieber.Verschieber;
@@ -11,7 +11,7 @@ import maler.Maler;
 
 // Ein Spiel, in dem wir die Welt und Sichten verändern können.
 //
-// TGFH: Verschieben die ursprüngliche Punkten der Vielflachwelt.
+// TGFH: Verschieben die ursprüngliche Vektoren der Vielflachwelt.
 // Mouse: Drucken und verschieben gleichzeitig alle Körper.
 public class Vieleckspiel extends Spiel {
 
@@ -54,10 +54,10 @@ public class Vieleckspiel extends Spiel {
 	// nichts
     }
 
-    // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy.
+    // Verschiebe die ursprüngliche Vektoren der Welt nach dx, dy.
     void verschieben(int dx, int dy) {
-	Zweipunkt verschiebenpunkt = new Zweipunkt(dx,dy);
-	Verschieber.verschieben(this.fw, verschiebenpunkt);
+	Zweivektor verschiebenvektor = new Zweivektor(dx,dy);
+	Verschieber.verschieben(this.fw, verschiebenvektor);
     }
     
     public void handelnMouseSchleifen(MouseEvent me) {

@@ -3,7 +3,7 @@ package sicht.strecke;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import strecke.Zweistrecke;
 import verschieber.Verschieber;
 import welt.zweistrecke.Zweistreckewelt;
@@ -19,11 +19,11 @@ public class Main {
 
     static void beispielEins() {
 	// Mache die zweidimensionale Streckenwelt.
-	Zweistrecke zka = new Zweistrecke(new Zweipunkt(30,30),
-				      new Zweipunkt(500,500));
+	Zweistrecke zka = new Zweistrecke(new Zweivektor(30,30),
+				      new Zweivektor(500,500));
 
-	Zweistrecke zkb = new Zweistrecke(new Zweipunkt(200,20),
-				      new Zweipunkt(500,100));
+	Zweistrecke zkb = new Zweistrecke(new Zweivektor(200,20),
+				      new Zweivektor(500,100));
 
 	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
 	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
@@ -42,11 +42,11 @@ public class Main {
 
     static void beispielZwei() {
 	// Mache die Welt.
-	Zweistrecke zka = new Zweistrecke(new Zweipunkt(0,0),
-				      new Zweipunkt(100,0));
+	Zweistrecke zka = new Zweistrecke(new Zweivektor(0,0),
+				      new Zweivektor(100,0));
 
-	Zweistrecke zkb = new Zweistrecke(new Zweipunkt(200,0),
-				      new Zweipunkt(300,0));
+	Zweistrecke zkb = new Zweistrecke(new Zweivektor(200,0),
+				      new Zweivektor(300,0));
 
 	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
 	Zweistreckewelt zkw = new Zweistreckewelt(zsl);

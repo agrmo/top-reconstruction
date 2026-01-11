@@ -3,7 +3,7 @@ package verleger.giernick;
 import java.util.ArrayList;
 import strecke.Zweistrecke;
 import vielflach.kubus.Kubus;
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 import vielflach.Vielflach;
 import welt.zweistrecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
@@ -18,16 +18,16 @@ public class Main {
 
 	// Mache die dreidimensionale Welt.
 	Kubus k = new Kubus(50);
-	Dreipunkt p = new Dreipunkt(100,100,100);
+	Dreivektor p = new Dreivektor(100,100,100);
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(k);
-	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
+	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
 	ol.add(p);
 	Vielflachwelt kw = new Vielflachwelt(kl, ol);
 
 	// Verlegen die Welt.
 	Zweistreckewelt zkw = Giernickverleger.verlegen(kw,
-							new Dreipunkt(0,0,0), 500,
+							new Dreivektor(0,0,0), 500,
 							1200, 600,
 							0, 0);
     }

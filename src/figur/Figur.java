@@ -4,7 +4,7 @@ package figur;
 //
 // Eine Figur besitzt immer wie der Körper einen Inhalt.
 //
-// Eine Strecke, ein Weg und ein Punkt sind nicht Figuren oder
+// Eine Strecke, ein Weg und ein Vektor sind nicht Figuren oder
 // Körpern.
 public abstract class Figur {
 

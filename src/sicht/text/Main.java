@@ -2,7 +2,7 @@ package sicht.text;
 
 import java.awt.Color;
 import javax.swing.JFrame;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import maler.Maler;
 import sicht.Sicht;
 
@@ -23,11 +23,11 @@ public class Main {
 	    "Ich verstehe nur, was zu mir passiert ist."
 	};
 	
-	Zweipunkt[] ol = new Zweipunkt[] {
-	    new Zweipunkt(0,12),
-	    new Zweipunkt(0,24),
-	    new Zweipunkt(0,36),
-	    new Zweipunkt(0,48)
+	Zweivektor[] ol = new Zweivektor[] {
+	    new Zweivektor(0,12),
+	    new Zweivektor(0,24),
+	    new Zweivektor(0,36),
+	    new Zweivektor(0,48)
 	};
 	
 	// Mache die Sicht.

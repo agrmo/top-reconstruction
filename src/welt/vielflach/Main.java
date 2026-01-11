@@ -2,7 +2,7 @@ package welt.vielflach;
 
 import druck.strecke.Streckedrucker;
 import java.util.ArrayList;
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 import strecke.Dreistrecke;
 import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
@@ -22,14 +22,14 @@ public class Main {
 	
 	// Ein Kubus und dessen Ort.
 	Kubus k = new Kubus(50);
-	Dreipunkt p = new Dreipunkt(100,100,100);
+	Dreivektor p = new Dreivektor(100,100,100);
 
 	// Liste von Vielflachn.
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(k);
 
 	// Liste von Orten.
-	ArrayList<Dreipunkt> orten = new ArrayList<Dreipunkt>();
+	ArrayList<Dreivektor> orten = new ArrayList<Dreivektor>();
 	orten.add(p);
 	
 	// Mache die Welt.

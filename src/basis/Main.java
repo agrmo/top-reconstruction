@@ -1,7 +1,7 @@
 package basis;
 
-import punkt.Zweipunkt;
-import punkt.Dreipunkt;
+import vektor.Zweivektor;
+import vektor.Dreivektor;
 
 /*
   javac -d classes $(find src -type f) \
@@ -10,16 +10,16 @@ import punkt.Dreipunkt;
 
 public class Main {
     static void beispielEins() {
-	Zweipunkt va = new Zweipunkt(0,0);
-	Zweipunkt vb = new Zweipunkt(0,1);
+	Zweivektor va = new Zweivektor(0,0);
+	Zweivektor vb = new Zweivektor(0,1);
 	
 	Zweibasis b = new Zweibasis(va, vb);
     }
 
     static void beispielZwei() {
-	Dreipunkt va = new Dreipunkt(0,0,1);
-	Dreipunkt vb = new Dreipunkt(0,1,0);
-	Dreipunkt vc = new Dreipunkt(1,0,0);
+	Dreivektor va = new Dreivektor(0,0,1);
+	Dreivektor vb = new Dreivektor(0,1,0);
+	Dreivektor vc = new Dreivektor(1,0,0);
 	
 	Dreibasis b = new Dreibasis(va, vb, vc);
     }

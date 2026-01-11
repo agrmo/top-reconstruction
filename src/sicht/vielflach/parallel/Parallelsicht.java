@@ -24,8 +24,8 @@ public class Parallelsicht extends Sicht {
 	Dreistrecke[] wk = this.kw.nehmekanten();
 
 	for (int i = 0; i < wk.length; i++) {
-	    g.drawLine((int) wk[i].von.xteil, (int) wk[i].von.yteil,
-		       (int) wk[i].bis.xteil, (int) wk[i].bis.yteil);
+	    g.drawLine((int) wk[i].von.eins, (int) wk[i].von.zwei,
+		       (int) wk[i].bis.eins, (int) wk[i].bis.zwei);
 	}
     }
 }

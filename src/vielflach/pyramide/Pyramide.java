@@ -1,9 +1,9 @@
 package vielflach.pyramide;
 
 import vielflach.Vielflach;
-import verdoppler.punkt.Punktverdoppler;
+import verdoppler.vektor.Vektorverdoppler;
 import strecke.Dreistrecke;
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 
 // Die Pyramide.
 public class Pyramide extends Vielflach {
@@ -27,14 +27,14 @@ public class Pyramide extends Vielflach {
 	return 8;
     }
 
-    public Dreipunkt[] nehmeecken() {
+    public Dreivektor[] nehmeecken() {
 
-	Dreipunkt[] ecken = new Dreipunkt[5];
-	ecken[0] = new Dreipunkt(0,0,0);
-	ecken[1] = new Dreipunkt(0,this.laenge,0);
-	ecken[2] = new Dreipunkt(this.laenge,this.laenge,0);
-	ecken[3] = new Dreipunkt(this.laenge,0,0);
-	ecken[4] = new Dreipunkt(this.laenge / 2.0, this.laenge / 2.0, this.hoehe);
+	Dreivektor[] ecken = new Dreivektor[5];
+	ecken[0] = new Dreivektor(0,0,0);
+	ecken[1] = new Dreivektor(0,this.laenge,0);
+	ecken[2] = new Dreivektor(this.laenge,this.laenge,0);
+	ecken[3] = new Dreivektor(this.laenge,0,0);
+	ecken[4] = new Dreivektor(this.laenge / 2.0, this.laenge / 2.0, this.hoehe);
 
 	return ecken;
     }
@@ -43,17 +43,17 @@ public class Pyramide extends Vielflach {
 
 	Dreistrecke[] strecken = new Dreistrecke[8];
 
-	Dreipunkt[] ecken = this.nehmeecken();
+	Dreivektor[] ecken = this.nehmeecken();
 
 	int[][] streckenzeichen = new int[][] {{0,1},{1,2},{2,3},{3,0},
 					       {0,4},{1,4},{2,4},{3,4}};
 
 	for (int i = 0; i < streckenzeichen.length; i++) {
-	    strecken[i] = new Dreistrecke(Punktverdoppler.verdoppeln(ecken[streckenzeichen[i][0]]),
-					  Punktverdoppler.verdoppeln(ecken[streckenzeichen[i][1]])); 
+	    strecken[i] = new Dreistrecke(Vektorverdoppler.verdoppeln(ecken[streckenzeichen[i][0]]),
+					  Vektorverdoppler.verdoppeln(ecken[streckenzeichen[i][1]])); 
 	}
 
-	// Wir sollen die Punkte verdoppeln, sodaß die Zeiger der
+	// Wir sollen die Vektore verdoppeln, sodaß die Zeiger der
 	// Strecken nicht voneinander abhängig sind. Das ist viel
 	// einfacher in einem Programm.
 

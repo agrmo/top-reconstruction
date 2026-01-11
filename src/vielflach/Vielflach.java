@@ -1,10 +1,10 @@
 package vielflach;
 
 import strecke.Dreistrecke;
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 
 // Ein Vielflach ist eine dreidimensionale Körper, die durch eine
-// Reihe von Punkten bestimmt ist.
+// Reihe von Vektoren bestimmt ist.
 public abstract class Vielflach {
 
     // aus: ganze Zahl
@@ -17,10 +17,10 @@ public abstract class Vielflach {
     // Nehme die Anzahl der Strecken dieses Körpers.
     public abstract int nehmekantenanzahl();
 
-    // aus: Liste von Punkten
+    // aus: Liste von Vektoren
     //
     // Nehme alle Strecken dieses Körpers.
-    public abstract Dreipunkt[] nehmeecken();
+    public abstract Dreivektor[] nehmeecken();
     
     // aus: Liste von Strecken
     //

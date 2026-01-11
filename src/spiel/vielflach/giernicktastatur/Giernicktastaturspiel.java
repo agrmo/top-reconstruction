@@ -2,7 +2,7 @@ package spiel.vielflach.giernicktastatur;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 import sicht.vielflach.giernick.Giernicksicht;
 import spiel.Spiel;
 import welt.vielflach.Vielflachwelt;
@@ -54,10 +54,10 @@ public class Giernicktastaturspiel extends Spiel {
 	// nichts
     }
 
-    // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy, dz.
+    // Verschiebe die ursprüngliche Vektoren der Welt nach dx, dy, dz.
     void verschiebenauge(int dx, int dy, int dz) {
-	Dreipunkt verschiebenpunkt = new Dreipunkt(dx,dy,dz);
-	this.as.augepunkt.addieren(verschiebenpunkt);
+	Dreivektor verschiebenvektor = new Dreivektor(dx,dy,dz);
+	this.as.augevektor.addiere(verschiebenvektor);
     }
     
     public void handelnTastatur(KeyEvent ke) {

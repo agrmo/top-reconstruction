@@ -1,27 +1,27 @@
 package dreher.giernick;
 
-import punkt.Zweipunkt;
-import punkt.Dreipunkt;
-import dreher.punkt.Punktdreher;
+import vektor.Zweivektor;
+import vektor.Dreivektor;
+import dreher.vektor.Vektordreher;
 
 public class Giernickdreher {
 
-    // Drehen den Punkt zweimal: einmal in der xz-Fläche, und einmal
+    // Drehen den Vektor zweimal: einmal in der xz-Fläche, und einmal
     // in der yz-Fläche.
-    public static Dreipunkt drehen(Dreipunkt p, double gier, double nick) {
-	// Drehen den Punkt in der xz-Fläche (um die y-Achse).
-	Zweipunkt xz = Punktdreher.drehen(new Zweipunkt(p.xteil, p.zteil), gier);
+    public static Dreivektor drehen(Dreivektor p, double gier, double nick) {
+	// Drehen den Vektor in der xz-Fläche (um die y-Achse).
+	Zweivektor xz = Vektordreher.drehen(new Zweivektor(p.eins, p.drei), gier);
 
-	// Drehen den Punkt in der yz-Fläche (um die x-Achse).
-	Zweipunkt yz = Punktdreher.drehen(new Zweipunkt(p.yteil, xz.yteil), nick);
+	// Drehen den Vektor in der yz-Fläche (um die x-Achse).
+	Zweivektor yz = Vektordreher.drehen(new Zweivektor(p.zwei, xz.zwei), nick);
 
 	// Nehmen die x, y und z-Teile.
-	double x = xz.xteil;
-	double y = yz.xteil;
-	double z = yz.yteil;
+	double x = xz.eins;
+	double y = yz.eins;
+	double z = yz.zwei;
 
-	// Der Punkt ist gedreht um die zwei Flächen.
-	Dreipunkt pgedreht = new Dreipunkt(x, y, z);
+	// Der Vektor ist gedreht um die zwei Flächen.
+	Dreivektor pgedreht = new Dreivektor(x, y, z);
 
 	return pgedreht;
     }

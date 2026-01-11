@@ -1,69 +1,69 @@
 package verleger.giernick;
 
-import dreher.punkt.Punktdreher;
+import dreher.vektor.Vektordreher;
 import strecke.Dreistrecke;
 import strecke.Zweistrecke;
-import punkt.Dreipunkt;
-import punkt.Zweipunkt;
+import vektor.Dreivektor;
+import vektor.Zweivektor;
 import welt.vielflach.Vielflachwelt;
 import welt.zweistrecke.Zweistreckewelt;
 import dreher.giernick.Giernickdreher;
 
 // Ein Giernickverleger verlegt eine dreidimensionale Welt von
-// Vielflächen zu einer zweidimensionalen Welt von Punkten und
+// Vielflächen zu einer zweidimensionalen Welt von Vektoren und
 // Strecken.
 //
 // Schritte:
-// 1. Drehen alle Punkte in der xz-Fläche mit einem Gierwinkel.
-// 2. Drehen alle Punkte in der yz-Fläche mit einem Nickwinkel.
+// 1. Drehen alle Vektore in der xz-Fläche mit einem Gierwinkel.
+// 2. Drehen alle Vektore in der yz-Fläche mit einem Nickwinkel.
 // 3. Entfernen die Kamera vom Ursprung.
-// 4. Projizieren alle Punkte zu einer zweidimensionalen Fläche.
-// 5. Verschieben alle Punkte zum Zentrum des Bildchirms.
+// 4. Projizieren alle Vektore zu einer zweidimensionalen Fläche.
+// 5. Verschieben alle Vektore zum Zentrum des Bildchirms.
 public class Giernickverleger {
 
     public Giernickverleger() {
 	
     }
 
-    // ein: Dreipunkt, Giernicksicht
-    // aus: Zweipunkt
+    // ein: Dreivektor, Giernicksicht
+    // aus: Zweivektor
     //
-    // Verlege den gegeben dreidimensionalen Punkt.
-    static Zweipunkt verlegen(Dreipunkt p, Dreipunkt augepunkt, int brennweite,
+    // Verlege den gegeben dreidimensionalen Vektor.
+    static Zweivektor verlegen(Dreivektor p, Dreivektor augevektor, int brennweite,
 			      int breite, int hoehe,
 			      double gier, double nick) {
 
-	Dreipunkt pgedreht = Giernickdreher.drehen(p, gier, nick);
+	Dreivektor pgedreht = Giernickdreher.drehen(p, gier, nick);
 
 	// Trennen das Auge vom Ursprung der Welt.
-	pgedreht.xteil -= augepunkt.xteil;
-	pgedreht.yteil -= augepunkt.yteil;
-	pgedreht.zteil -= augepunkt.zteil;
+	pgedreht.eins -= augevektor.eins;
+	pgedreht.zwei -= augevektor.zwei;
+	pgedreht.drei -= augevektor.drei;
 
 	// Letzendlich verlegen die Stellen von drei zu zwei Dimensionen.
 	int zweiDimensionaleX = (int) ((0.5 * ((double) breite))
-				       + (pgedreht.xteil/pgedreht.zteil) * ((double) brennweite));
+				       + (pgedreht.eins/pgedreht.drei) * ((double) brennweite));
 	
 	int zweiDimensionaleY = (int) ((0.5 * ((double) hoehe))
-				       + (pgedreht.yteil/pgedreht.zteil) * ((double) brennweite));
+				       + (pgedreht.zwei/pgedreht.drei) * ((double) brennweite));
 
-	Zweipunkt aus = new Zweipunkt(zweiDimensionaleX, zweiDimensionaleY);
+	Zweivektor aus = new Zweivektor(zweiDimensionaleX, zweiDimensionaleY);
 	
 	return aus;
     }
 
-    // Ein: Liste von dreidimensionalen Punkten
-    // Aus: Liste von zweidimensionalen Punkten
+    // Ein: Liste von dreidimensionalen Vektoren
+    // Aus: Liste von zweidimensionalen Vektoren
     //
-    // Verlegen diese zweidimensionale Punkten zu dreidimensionalen Punkten.
-    public static Zweipunkt[] verlegen(Dreipunkt[] dpl, Dreipunkt augepunkt, int brennweite,
+    // Verlegen diese zweidimensionale Vektoren zu dreidimensionalen Vektoren.
+    public static Zweivektor[] verlegen(Dreivektor[] dpl, Dreivektor augevektor, int brennweite,
 				       int breite, int hoehe,
 				       double gier, double nick) {
 	
-	Zweipunkt[] zpl = new Zweipunkt[dpl.length];
+	Zweivektor[] zpl = new Zweivektor[dpl.length];
 
 	for (int i = 0; i < dpl.length; i++) {
-	    zpl[i] = Giernickverleger.verlegen(dpl[i], augepunkt, brennweite,
+	    zpl[i] = Giernickverleger.verlegen(dpl[i], augevektor, brennweite,
 					       breite, hoehe,
 					       gier, nick);
 	}
@@ -75,22 +75,22 @@ public class Giernickverleger {
     // aus: Zweistrecke
     //
     // Verlege die gegebene dreidimensionale Strecke.
-    static Zweistrecke verlegen(Dreistrecke k, Dreipunkt augepunkt, int brennweite,
+    static Zweistrecke verlegen(Dreistrecke k, Dreivektor augevektor, int brennweite,
 				int breite, int hoehe,
 				double gier, double nick) {
 	
-	Zweipunkt verlegterPunktVon = Giernickverleger.verlegen(k.von,
-							    augepunkt, brennweite,
+	Zweivektor verlegterVektorVon = Giernickverleger.verlegen(k.von,
+							    augevektor, brennweite,
 							    breite, hoehe,
 							    gier, nick);
 	
-	Zweipunkt verlegterPunktBis = Giernickverleger.verlegen(k.bis, augepunkt, brennweite,
+	Zweivektor verlegterVektorBis = Giernickverleger.verlegen(k.bis, augevektor, brennweite,
 							    breite, hoehe,
 							    gier, nick);
 	
 	// Diese ist die neue Strecke, die nur in zwei Dimensionen
 	// liegt. 
-	Zweistrecke zk = new Zweistrecke(verlegterPunktVon, verlegterPunktBis);
+	Zweistrecke zk = new Zweistrecke(verlegterVektorVon, verlegterVektorBis);
 	
 	return zk;
     }
@@ -100,7 +100,7 @@ public class Giernickverleger {
     // Verlegen die dreidimensionale Vielflachwelt zu einer
     // zweidimensionale Zweistreckewelt.
     public static Zweistreckewelt verlegen(Vielflachwelt kw,
-					   Dreipunkt augepunkt, int brennweite,
+					   Dreivektor augevektor, int brennweite,
 					   int breite, int hoehe,
 					   double gier, double nick) {
 
@@ -115,7 +115,7 @@ public class Giernickverleger {
 	for (int i = 0; i < dkl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zk = Giernickverleger.verlegen(dkl[i], augepunkt, brennweite,
+	    Zweistrecke zk = Giernickverleger.verlegen(dkl[i], augevektor, brennweite,
 						       breite, hoehe,
 						       gier, nick);
 	    

@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import sicht.Sicht;
 import sicht.vieleck.Vielecksicht;
 import vieleck.Vieleck;
@@ -24,8 +24,8 @@ public class Main {
 	Dreieck d = new Dreieck(50);
 	ArrayList<Vieleck> fl = new ArrayList<Vieleck>();
 	fl.add(d);
-	Zweipunkt p = new Zweipunkt(100,100);
-	ArrayList<Zweipunkt> ol = new ArrayList<Zweipunkt>();
+	Zweivektor p = new Zweivektor(100,100);
+	ArrayList<Zweivektor> ol = new ArrayList<Zweivektor>();
 	ol.add(p);
 	Vieleckwelt fw = new Vieleckwelt(fl, ol);
 	

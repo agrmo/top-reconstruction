@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 import sicht.vielflach.linearschief.Linearschiefsicht;
 import welt.vielflach.Vielflachwelt;
 import maler.Maler;
@@ -22,10 +22,10 @@ public class Main {
 	
 	// Mache die Welt.
 	Kubus k = new Kubus(50);
-	Dreipunkt p = new Dreipunkt(100,100,100);
+	Dreivektor p = new Dreivektor(100,100,100);
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(k);
-	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
+	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
 	ol.add(p);
 	Vielflachwelt kw = new Vielflachwelt(kl, ol);
 

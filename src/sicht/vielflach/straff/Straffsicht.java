@@ -10,7 +10,7 @@ import sicht.Sicht;
 // Eine Sicht, die eine Streckewelt einnimt. Sie macht eine straffe
 // Abbildung der Streckewelt.
 //
-// Die Abbildung, die die Punkten der Welt umwandelt:
+// Die Abbildung, die die Vektoren der Welt umwandelt:
 // x' = mx * x
 // y' = my * y
 //
@@ -29,7 +29,7 @@ public class Straffsicht extends Sicht {
     }
 
     // Stellen die Streckewelt mit Hilfe zwier Verleger dar.  Er verhält
-    // sich wie ein Bildschirm, und verschiebt alle Punkten, sodaß wir
+    // sich wie ein Bildschirm, und verschiebt alle Vektoren, sodaß wir
     // sie sehen können.
     public void darstellen(Graphics g) {
 	// Java wird paintComponent viel Mal anrufen.  Das verschiebt

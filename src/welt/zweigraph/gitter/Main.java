@@ -2,7 +2,7 @@ package welt.zweigraph.gitter;
 
 import welt.zweigraph.Zweigraphwelt;
 import graph.Nachbarschaftsliste;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 
 /*
   javac -d classes $(find src -type f)		\
@@ -17,7 +17,7 @@ public class Main {
 	int betrag = 3;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
 
-	Zweipunkt[] orten = Zweigitter.machen(nl, 20, 10);
+	Zweivektor[] orten = Zweigitter.machen(nl, 20, 10);
 
 	Zweigraphwelt gw = new Zweigraphwelt(nl, orten);
     }    

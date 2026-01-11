@@ -1,7 +1,7 @@
 package welt.zweigraph.gitter;
 
 import graph.Nachbarschaftsliste;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 
 /*
   Diese Art von Verortung baut eine Gitter von Knoten auf.
@@ -14,13 +14,13 @@ public class Zweigitter {
 
     // zeileBetrag: Die Anzahl von Strecken einer Zeile.
     // weg: Der Weg zwischen zwei Knoten.
-    public static Zweipunkt[] machen(Nachbarschaftsliste nl,
+    public static Zweivektor[] machen(Nachbarschaftsliste nl,
 				     int zeileBetrag,
 				     int weg) {
 
 	// Jeder Knoten wird mit einem Ort verbunden.  Die Strecken
 	// werden nicht genau bestimmt, sondern berechnet.
-	Zweipunkt[] orten = new Zweipunkt[nl.betrag];
+	Zweivektor[] orten = new Zweivektor[nl.betrag];
 
 	// Der Platz der Zeile des vorherkommenden Knoten.
 	int zeileKennzeichen = 0;
@@ -31,7 +31,7 @@ public class Zweigitter {
 	for (int i = 0; i < nl.betrag; i++) {
 	    for (int j = 0; j < zeileBetrag; j++) {
 
-		orten[i] = new Zweipunkt(zeileKennzeichen * weg,
+		orten[i] = new Zweivektor(zeileKennzeichen * weg,
 					 kolonneKennzeichen * weg);
 		
 		if (zeileKennzeichen > zeileBetrag) {

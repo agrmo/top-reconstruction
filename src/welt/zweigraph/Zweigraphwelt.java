@@ -1,9 +1,9 @@
 package welt.zweigraph;
 
 import graph.Nachbarschaftsliste;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import graph.rechnen.kanteanzahl.Kanteanzahl;
-import verdoppler.punkt.Punktverdoppler;
+import verdoppler.vektor.Vektorverdoppler;
 import strecke.Zweistrecke;
 
 /*
@@ -28,19 +28,19 @@ import strecke.Zweistrecke;
 public class Zweigraphwelt {
 
     // Die Stellen jedes Knoten.
-    public Zweipunkt[] orten;
+    public Zweivektor[] orten;
 
     // Die Kanten jedes Knoten.
     public Nachbarschaftsliste graph;
 
-    public Zweigraphwelt(Nachbarschaftsliste n, Zweipunkt[] o) {
+    public Zweigraphwelt(Nachbarschaftsliste n, Zweivektor[] o) {
 	this.orten = o;
 	this.graph = n;
     }
 
     /*
       Das Zentrum von drawCircle() jedes Knoten dieses Graphen sind
-      nicht genau auf dem punkt dargestellt. Zum Beispiel
+      nicht genau auf dem vektor dargestellt. Zum Beispiel
       
       Knoten (0,0) Durchmesser 3
       Kante (0,0) bis (10,10)
@@ -69,25 +69,25 @@ public class Zweigraphwelt {
       verschieben wir die Stellen des Kreises -3 in die x- und
       y-Richtung.
     */
-    void verbessernKnoten(Zweipunkt zp, int durchmesser) {
-	Zweipunkt unterschied = new Zweipunkt(-(durchmesser / 2.0),
+    void verbessernKnoten(Zweivektor zp, int durchmesser) {
+	Zweivektor unterschied = new Zweivektor(-(durchmesser / 2.0),
 					      -(durchmesser / 2.0));
-	zp.addieren(unterschied);
+	zp.addiere(unterschied);
     }
 
     // ein: ganze Zahl
-    // Sie gibt neue Punkte aus.
+    // Sie gibt neue Vektore aus.
     // Diese Welt kennt wie groß ein Knoten ist.
-    public Zweipunkt[] nehmeKnoten(int durchmesser) {
+    public Zweivektor[] nehmeKnoten(int durchmesser) {
 
-	Zweipunkt[] auspunkte = new Zweipunkt[this.orten.length];
+	Zweivektor[] ausvektore = new Zweivektor[this.orten.length];
 	
 	for (int i = 0; i < this.orten.length; i++) {
-	    auspunkte[i] = Punktverdoppler.verdoppeln(this.orten[i]);
-	    verbessernKnoten(auspunkte[i], durchmesser);
+	    ausvektore[i] = Vektorverdoppler.verdoppeln(this.orten[i]);
+	    verbessernKnoten(ausvektore[i], durchmesser);
 	}
 	
-	return auspunkte;
+	return ausvektore;
     }
 
     // Rechne alle Kanten dieses Graphen aus.
@@ -106,19 +106,19 @@ public class Zweigraphwelt {
 	int kantenzeichen = 0;
 	for (int i = 0; i < this.graph.betrag; i++) {
 	    // Wo dieser Knoten ist.
-	    int vonx = (int) this.orten[i].xteil;
-	    int vony = (int) this.orten[i].yteil;
+	    int vonx = (int) this.orten[i].eins;
+	    int vony = (int) this.orten[i].zwei;
 
 	    for (int j = 0; j < this.graph.n.get(i).size(); j++) {
 
 		// Wer der Knoten ist, dem dieser Knoten verbunden ist.
 		int bisknoten = this.graph.n.get(i).get(j);
 		    
-		int bisx = (int) this.orten[bisknoten].xteil;
-		int bisy = (int) this.orten[bisknoten].yteil;
+		int bisx = (int) this.orten[bisknoten].eins;
+		int bisy = (int) this.orten[bisknoten].zwei;
 
-		kanten[kantenzeichen] = new Zweistrecke(new Zweipunkt(vonx, vony),
-							new Zweipunkt(bisx, bisy));
+		kanten[kantenzeichen] = new Zweistrecke(new Zweivektor(vonx, vony),
+							new Zweivektor(bisx, bisy));
 		kantenzeichen += 1;
 	    }
 	}

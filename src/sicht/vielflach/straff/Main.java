@@ -1,7 +1,7 @@
 package sicht.vielflach.straff;
 
 import javax.swing.JFrame;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import strecke.Zweistrecke;
 import welt.zweistrecke.Zweistreckewelt;
 import maler.Maler;
@@ -16,17 +16,17 @@ public class Main {
 
     static void beispielEins() {
 	// Mache die Welt.
-	Zweistrecke zka = new Zweistrecke(new Zweipunkt(0,100),
-				      new Zweipunkt(100,100));
+	Zweistrecke zka = new Zweistrecke(new Zweivektor(0,100),
+				      new Zweivektor(100,100));
 
-	Zweistrecke zkb = new Zweistrecke(new Zweipunkt(100,200),
-				      new Zweipunkt(200,200));
+	Zweistrecke zkb = new Zweistrecke(new Zweivektor(100,200),
+				      new Zweivektor(200,200));
 	
 	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
 	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
 
 	// Der Verleger vergrößert die stellen der Strecken. Nicht nur
-	// wird den Abstand zwischen den Punkten vergrößert, sondern
+	// wird den Abstand zwischen den Vektoren vergrößert, sondern
 	// auch den Abstand zum Ursprung. Zum Beispiel,
 	//
 	// (0,0) --- (10,0) --- (20,0)

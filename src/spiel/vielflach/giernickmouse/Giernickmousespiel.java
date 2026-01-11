@@ -2,7 +2,7 @@ package spiel.vielflach.giernickmouse;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 import sicht.vielflach.giernick.Giernicksicht;
 import spiel.Spiel;
 import welt.vielflach.Vielflachwelt;

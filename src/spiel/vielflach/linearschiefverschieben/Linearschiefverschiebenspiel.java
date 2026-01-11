@@ -2,7 +2,7 @@ package spiel.vielflach.linearschiefverschieben;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 import sicht.vielflach.linearschief.Linearschiefsicht;
 import spiel.Spiel;
 import verschieber.Verschieber;
@@ -12,7 +12,7 @@ import maler.Maler;
 // Ein Spiel, in dem wir die Welt und Sichten verändern können.
 //
 // WSAD: Verschieben die Sicht mit Hilfe der Linearschiefsicht
-// TGFH: Verschieben die ursprüngliche Punkten der Vielflachwelt.
+// TGFH: Verschieben die ursprüngliche Vektoren der Vielflachwelt.
 // []: Verschieben die Tiefe der Schiefsicht.
 // Hoch Runter Links Rechts: Verschieben die Sicht verhältnismäßig.
 // Mouse: Drucken und verschieben die Körper.
@@ -75,10 +75,10 @@ public class Linearschiefverschiebenspiel extends Spiel {
 	this.m.repaint();
     }
 
-    // Verschiebe die ursprüngliche Punkten der Welt nach dx, dy, dz.
+    // Verschiebe die ursprüngliche Vektoren der Welt nach dx, dy, dz.
     void verschieben(int dx, int dy, int dz) {
-	Dreipunkt verschiebenpunkt = new Dreipunkt(dx,dy,dz);
-	Verschieber.verschieben(this.kw, verschiebenpunkt);
+	Dreivektor verschiebenvektor = new Dreivektor(dx,dy,dz);
+	Verschieber.verschieben(this.kw, verschiebenvektor);
     }
     
     public void handelnTastatur(KeyEvent ke) {

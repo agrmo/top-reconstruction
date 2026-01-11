@@ -1,7 +1,7 @@
 package verleger.schief;
 
 import java.util.ArrayList;
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 import strecke.Zweistrecke;
 import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
@@ -19,10 +19,10 @@ public class Main {
 	// Mache eine dreidimensionale Vielflachwelt.
 	// Diese Welt enthält einen Kubus auf der Stelle (100,100,100).
 	Kubus k = new Kubus(50);
-	Dreipunkt p = new Dreipunkt(100,100,100);
+	Dreivektor p = new Dreivektor(100,100,100);
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(k);
-	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
+	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
 	ol.add(p);
 	Vielflachwelt kw = new Vielflachwelt(kl, ol);
 

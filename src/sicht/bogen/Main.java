@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import bogen.Bogen;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import maler.Maler;
 import sicht.Sicht;
 
@@ -19,11 +19,11 @@ public class Main {
 	
 	// Mache die Daten.
 	Bogen[] bl = new Bogen[2];
-	Zweipunkt[] ol = new Zweipunkt[2];
+	Zweivektor[] ol = new Zweivektor[2];
 	bl[0] = new Bogen(60,40,0,-90);
 	bl[1] = new Bogen(50,30,0,90);
-	ol[0] = new Zweipunkt(200, 200);
-	ol[1] = new Zweipunkt(100, 100);
+	ol[0] = new Zweivektor(200, 200);
+	ol[1] = new Zweivektor(100, 100);
 
 	// Mache die Sicht.
 	Bogensicht s = new Bogensicht(bl, ol);

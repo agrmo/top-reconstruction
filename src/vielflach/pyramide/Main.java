@@ -1,8 +1,8 @@
 package vielflach.pyramide;
 
 import strecke.Dreistrecke;
-import punkt.Dreipunkt;
-import druck.punkt.Punktdrucker;
+import vektor.Dreivektor;
+import druck.vektor.Vektordrucker;
 import druck.strecke.Streckedrucker;
 
 /*
@@ -15,13 +15,13 @@ public class Main {
 	Pyramide p = new Pyramide(5,5);
 
 	// Ecken
-	Dreipunkt[] pl = p.nehmeecken();
+	Dreivektor[] pl = p.nehmeecken();
 	
 	// Kanten
 	Dreistrecke[] kl = p.nehmekanten();
 
 	for (int i = 0; i < pl.length; i++) {
-	    System.out.println(Punktdrucker.drucken(pl[i]));
+	    System.out.println(Vektordrucker.drucken(pl[i]));
 	}
 
 	for (int i = 0; i < kl.length; i++) {

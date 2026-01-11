@@ -2,7 +2,7 @@ package welt.zweistrecke;
 
 import java.util.ArrayList;
 import strecke.Zweistrecke;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 
 /*
   javac -d classes $(find src -type f) \
@@ -11,11 +11,11 @@ import punkt.Zweipunkt;
 
 public class Main {
     public static void main(String[] args) {
-	Zweistrecke zka = new Zweistrecke(new Zweipunkt(30,30),
-					  new Zweipunkt(500,500));
+	Zweistrecke zka = new Zweistrecke(new Zweivektor(30,30),
+					  new Zweivektor(500,500));
 
-	Zweistrecke zkb = new Zweistrecke(new Zweipunkt(200,20),
-					  new Zweipunkt(500,100));
+	Zweistrecke zkb = new Zweistrecke(new Zweivektor(200,20),
+					  new Zweivektor(500,100));
 	
 	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
 

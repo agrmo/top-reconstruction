@@ -4,7 +4,7 @@ import vieleck.Vieleck;
 import vieleck.dreieck.Dreieck;
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import welt.vieleck.Vieleckwelt;
 import sicht.Sicht;
 import maler.Maler;
@@ -20,10 +20,10 @@ public class Main {
  	
 	// Mache die Welt.
 	Dreieck k = new Dreieck(50);
-	Zweipunkt p = new Zweipunkt(100,100);
+	Zweivektor p = new Zweivektor(100,100);
 	ArrayList<Vieleck> fl = new ArrayList<Vieleck>();
 	fl.add(k);
-	ArrayList<Zweipunkt> ol = new ArrayList<Zweipunkt>();
+	ArrayList<Zweivektor> ol = new ArrayList<Zweivektor>();
 	ol.add(p);
 	Vieleckwelt fw = new Vieleckwelt(fl, ol);
 	

@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import figur.oval.Oval;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import maler.Maler;
 import sicht.Sicht;
 
@@ -19,11 +19,11 @@ public class Main {
 	
 	// Mache die Daten.
 	Oval[] kl = new Oval[2];
-	Zweipunkt[] ol = new Zweipunkt[2];
+	Zweivektor[] ol = new Zweivektor[2];
 	kl[0] = new Oval(30,20);
 	kl[1] = new Oval(10,20);
-	ol[0] = new Zweipunkt(100, 100);
-	ol[1] = new Zweipunkt(50, 50);
+	ol[0] = new Zweivektor(100, 100);
+	ol[1] = new Zweivektor(50, 50);
 
 	// Mache die Sicht.
 	Ovalsicht s = new Ovalsicht(kl, ol);

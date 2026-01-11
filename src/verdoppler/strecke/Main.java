@@ -1,6 +1,6 @@
 package verdoppler.strecke;
 
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import druck.strecke.Streckedrucker;
 import strecke.Zweistrecke;
 
@@ -13,13 +13,13 @@ public class Main {
     public static void main(String[] args) {
 
 	Zweistrecke[] kl = new Zweistrecke[] {
-	    new Zweistrecke(new Zweipunkt(1,1), new Zweipunkt(2,2)),
-	    new Zweistrecke(new Zweipunkt(1,2), new Zweipunkt(2,3))
+	    new Zweistrecke(new Zweivektor(1,1), new Zweivektor(2,2)),
+	    new Zweistrecke(new Zweivektor(1,2), new Zweivektor(2,3))
 	};
 
 	Zweistrecke[] klNeu = Streckeverdoppler.verdoppeln(kl);
 	
-	kl[1].addieren(new Zweipunkt(5,5));
+	kl[1].addiere(new Zweivektor(5,5));
 
 	for (int i = 0; i < kl.length; i++) {
 	    System.out.println(Streckedrucker.drucken(kl[i]));

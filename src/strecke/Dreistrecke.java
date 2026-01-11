@@ -1,8 +1,8 @@
 package strecke;
 
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 
-// Eine Dreistrecke ist ein Paar von zwei Dreipunkten.
+// Eine Dreistrecke ist ein Paar von zwei Dreivektoren.
 //
 // Eine Dreistrecke ist eine dreidimensionale Strecke.
 //
@@ -10,16 +10,16 @@ import punkt.Dreipunkt;
 //
 // Häufig benutzt ist eine Strecke als Strecke eines Körpers.
 public class Dreistrecke {
-    public Dreipunkt von;
-    public Dreipunkt bis;
+    public Dreivektor von;
+    public Dreivektor bis;
     
-    public Dreistrecke(Dreipunkt v, Dreipunkt b) {
+    public Dreistrecke(Dreivektor v, Dreivektor b) {
 	this.von = v;
 	this.bis = b;
     }
 
-    public void addieren(Dreipunkt p) {
-	this.von.addieren(p);
-	this.bis.addieren(p);
+    public void addiere(Dreivektor p) {
+	this.von.addiere(p);
+	this.bis.addiere(p);
     }
 }

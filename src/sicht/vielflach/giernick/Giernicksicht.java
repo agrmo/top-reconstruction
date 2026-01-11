@@ -1,6 +1,6 @@
 package sicht.vielflach.giernick;
 
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 import java.awt.Graphics;
 import javax.swing.JComponent;
 import sicht.strecke.Streckesicht;
@@ -10,12 +10,12 @@ import welt.vielflach.Vielflachwelt;
 import sicht.Sicht;
 
 // Eine Sicht, die eine dreidimensionale Vielflachwelt einnimmt.
-// Sie wandelt die Vielflachwelt mit nur einer Verlegung: einer punkten
+// Sie wandelt die Vielflachwelt mit nur einer Verlegung: einer vektoren
 // Verlegung. Sie gibt am Ende eine Zweistreckewelt ab.
 public class Giernicksicht extends Sicht {
 
     public Vielflachwelt kw;
-    public Dreipunkt augepunkt;
+    public Dreivektor augevektor;
     public int breite;
     public int brennweite;
     public int hoehe;
@@ -23,12 +23,12 @@ public class Giernicksicht extends Sicht {
     public double nick;
 
     public Giernicksicht(Vielflachwelt kw,
-		     Dreipunkt augepunkt, int brennweite,
-		     int breite, int hoehe,
-		     double gier, double nick) {
+			 Dreivektor augevektor, int brennweite,
+			 int breite, int hoehe,
+			 double gier, double nick) {
 
 	this.kw = kw;
-	this.augepunkt = augepunkt;
+	this.augevektor = augevektor;
 	this.brennweite = brennweite;
 	this.breite = breite;
 	this.hoehe = hoehe;
@@ -40,9 +40,9 @@ public class Giernicksicht extends Sicht {
     public void darstellen(Graphics g) {
 	
 	// Benutzen die Verleger.
-	Zweistreckewelt zkw = Giernickverleger.verlegen(this.kw, this.augepunkt, this.brennweite,
-						    this.breite, this.hoehe,
-						    this.gier, this.nick);
+	Zweistreckewelt zkw = Giernickverleger.verlegen(this.kw, this.augevektor, this.brennweite,
+							this.breite, this.hoehe,
+							this.gier, this.nick);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.

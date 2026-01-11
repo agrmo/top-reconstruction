@@ -1,8 +1,8 @@
 package druck.vielflach;
 
-import druck.punkt.Punktdrucker;
+import druck.vektor.Vektordrucker;
 import druck.strecke.Streckedrucker;
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 import strecke.Dreistrecke;
 import vielflach.Vielflach;
 
@@ -11,11 +11,11 @@ public class Vielflachdrucker {
     public static String druckenEcken(Vielflach k) {
 	StringBuilder sb = new StringBuilder();
 	sb.append("Ecken:");
-	Dreipunkt[] ecken = k.nehmeecken();
+	Dreivektor[] ecken = k.nehmeecken();
 	
 	for (int i = 0; i < ecken.length; i++) {
 	    sb.append("\n");
-	    sb.append(Punktdrucker.drucken(ecken[i]));
+	    sb.append(Vektordrucker.drucken(ecken[i]));
 	}
 	
 	return sb.toString();

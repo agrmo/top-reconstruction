@@ -3,7 +3,7 @@ package welt.vieleck;
 import java.util.ArrayList;
 import vieleck.Vieleck;
 import strecke.Zweistrecke;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 
 /*
   Eine Vieleckwelt ist eine Liste von Vieleckn.
@@ -28,9 +28,9 @@ public class Vieleckwelt {
     // kennt nur seine Eigenschaften. Die Welt versteht nicht nur seine
     // Eigenschaften, sondern auch wo sie in der Welt steht.
     public ArrayList<Vieleck> vieleckliste;
-    public ArrayList<Zweipunkt> ortliste;
+    public ArrayList<Zweivektor> ortliste;
 
-    public Vieleckwelt(ArrayList<Vieleck> fl, ArrayList<Zweipunkt> ol) {
+    public Vieleckwelt(ArrayList<Vieleck> fl, ArrayList<Zweivektor> ol) {
 	this.vieleckliste = fl;
 	this.ortliste = ol;
     }
@@ -63,12 +63,12 @@ public class Vieleckwelt {
 	    // selbst liegt.
 	    Zweistrecke[] kl = k.nehmekanten();
 
-	    Zweipunkt vieleckpunkt = this.ortliste.get(i);
+	    Zweivektor vieleckvektor = this.ortliste.get(i);
 
 	    // Für alle seine Strecken
 	    for (int j = 0; j < kl.length; j++) {
 		// addiere ihren Ort zu ihren Strecken.
-		kl[j].addieren(vieleckpunkt);
+		kl[j].addiere(vieleckvektor);
 
 		// Nur dann fügen die Strecke in der Liste zu.
 		strecken[streckenzeichen] = kl[j];

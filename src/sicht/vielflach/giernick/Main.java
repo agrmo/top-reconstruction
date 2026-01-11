@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
-import punkt.Dreipunkt;
+import vektor.Dreivektor;
 import welt.vielflach.Vielflachwelt;
 import maler.Maler;
 import sicht.Sicht;
@@ -21,15 +21,15 @@ public class Main {
 	// Mache die dreidimensionale Welt.
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(new Kubus(30));
-	ArrayList<Dreipunkt> ol = new ArrayList<Dreipunkt>();
-	ol.add(new Dreipunkt(0,0,100));
+	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
+	ol.add(new Dreivektor(0,0,100));
 	
 	Vielflachwelt kw = new Vielflachwelt(kl, ol);
 
 	// Mache die Sicht.
 	int breite = 1200;
 	int hoehe = 600;
-	Dreipunkt ap = new Dreipunkt(0,0,0);
+	Dreivektor ap = new Dreivektor(0,0,0);
 	Giernicksicht as = new Giernicksicht(kw, ap, 500, breite, hoehe, 0.2, 0.4);
 	Maler m = new Maler(new Sicht[] {as});
 	

@@ -1,7 +1,7 @@
 package straffer;
 
 import strecke.Zweistrecke;
-import punkt.Zweipunkt;
+import vektor.Zweivektor;
 import welt.zweistrecke.Zweistreckewelt;
 
 /*
@@ -13,11 +13,11 @@ public class Main {
     public static void main(String[] args) {
 
 	// Mache eine einfache Welt mit zwei Strecken.
-	Zweistrecke zka = new Zweistrecke(new Zweipunkt(30,30),
-				      new Zweipunkt(500,500));
+	Zweistrecke zka = new Zweistrecke(new Zweivektor(30,30),
+				      new Zweivektor(500,500));
 
-	Zweistrecke zkb = new Zweistrecke(new Zweipunkt(200,20),
-				      new Zweipunkt(500,100));
+	Zweistrecke zkb = new Zweistrecke(new Zweivektor(200,20),
+				      new Zweivektor(500,100));
 	
 	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
 
