@@ -21,10 +21,6 @@ import dreher.giernick.Giernickdreher;
 // 5. Verschieben alle Vektore zum Zentrum des Bildchirms.
 public class Giernickverleger {
 
-    public Giernickverleger() {
-	
-    }
-
     // ein: Dreivektor, Giernicksicht
     // aus: Zweivektor
     //
