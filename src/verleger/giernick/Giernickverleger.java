@@ -1,13 +1,13 @@
 package verleger.giernick;
 
 import dreher.vektor.Vektordreher;
+import dreher.vektor.Vektordreher;
 import strecke.Dreistrecke;
 import strecke.Zweistrecke;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
 import welt.vielflach.Vielflachwelt;
 import welt.zweistrecke.Zweistreckewelt;
-import dreher.giernick.Giernickdreher;
 
 // Ein Giernickverleger verlegt eine dreidimensionale Welt von
 // Vielflächen zu einer zweidimensionalen Welt von Vektoren und
@@ -25,23 +25,24 @@ public class Giernickverleger {
     // aus: Zweivektor
     //
     // Verlege den gegeben dreidimensionalen Vektor.
-    static Zweivektor verlegen(Dreivektor p, Dreivektor augevektor, int brennweite,
+    static Zweivektor verlegen(Dreivektor pa, Dreivektor augevektor, int brennweite,
 			      int breite, int hoehe,
 			      double gier, double nick) {
 
-	Dreivektor pgedreht = Giernickdreher.drehen(p, gier, nick);
+	Dreivektor pb = Vektordreher.drehenY(pa, gier);
+	Dreivektor pc = Vektordreher.drehenX(pb, nick);
 
 	// Trennen das Auge vom Ursprung der Welt.
-	pgedreht.eins -= augevektor.eins;
-	pgedreht.zwei -= augevektor.zwei;
-	pgedreht.drei -= augevektor.drei;
+	pc.eins -= augevektor.eins;
+	pc.zwei -= augevektor.zwei;
+	pc.drei -= augevektor.drei;
 
 	// Letzendlich verlegen die Stellen von drei zu zwei Dimensionen.
 	int zweiDimensionaleX = (int) ((0.5 * ((double) breite))
-				       + (pgedreht.eins/pgedreht.drei) * ((double) brennweite));
+				       + (pc.eins/pc.drei) * ((double) brennweite));
 	
 	int zweiDimensionaleY = (int) ((0.5 * ((double) hoehe))
-				       + (pgedreht.zwei/pgedreht.drei) * ((double) brennweite));
+				       + (pc.zwei/pc.drei) * ((double) brennweite));
 
 	Zweivektor aus = new Zweivektor(zweiDimensionaleX, zweiDimensionaleY);
 	
@@ -76,13 +77,13 @@ public class Giernickverleger {
 				double gier, double nick) {
 	
 	Zweivektor verlegterVektorVon = Giernickverleger.verlegen(k.von,
-							    augevektor, brennweite,
-							    breite, hoehe,
-							    gier, nick);
+								  augevektor, brennweite,
+								  breite, hoehe,
+								  gier, nick);
 	
 	Zweivektor verlegterVektorBis = Giernickverleger.verlegen(k.bis, augevektor, brennweite,
-							    breite, hoehe,
-							    gier, nick);
+								  breite, hoehe,
+								  gier, nick);
 	
 	// Diese ist die neue Strecke, die nur in zwei Dimensionen
 	// liegt. 

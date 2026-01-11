@@ -15,7 +15,7 @@ public class Main {
 	Zweivektor pa = new Zweivektor(1,0);
 	Zweivektor pb = Vektordreher.drehen(pa, Math.PI / 2.0);
 
-	System.out.println(Vektordrucker.drucken(pa));
+	// Soll [0,1] sein.
 	System.out.println(Vektordrucker.drucken(pb));
     }
 
@@ -24,11 +24,30 @@ public class Main {
 	Zweivektor pa = new Zweivektor(1,1);
 	Zweivektor pb = Vektordreher.drehen(pa, Math.PI / 2.0);
 
-	System.out.println(Vektordrucker.drucken(pa));
+	// Soll [-1,1] sein.
 	System.out.println(Vektordrucker.drucken(pb));
+    }
+
+    static void beispielDrei() {
+	Dreivektor pa = new Dreivektor(1,1,1);
+	
+	Dreivektor pb = Vektordreher.drehenY(pa, Math.PI);
+
+	// Soll [-1,1,-1] sein
+	System.out.println(Vektordrucker.drucken(pb));	
+    }
+
+    static void beispielVier() {
+	Dreivektor pa = new Dreivektor(1,1,1);
+	
+	Dreivektor pb = Vektordreher.drehenY(pa, Math.PI);
+	Dreivektor pc = Vektordreher.drehenX(pb, Math.PI);
+
+	// Soll [-1,-1,1] sein
+	System.out.println(Vektordrucker.drucken(pc));
     }
     
     public static void main(String[] args) {
-	beispielEins();
+	beispielVier();
     }
 }
