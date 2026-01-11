@@ -31,10 +31,11 @@ public class Main {
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
-	int breite = (int) bildschirm.getWidth();
-	int hoehe = (int) bildschirm.getHeight();
+	double breite =  bildschirm.getWidth();
+	double hoehe = bildschirm.getHeight();
+	double brennweite = 500;
 	Dreivektor ap = new Dreivektor(0, 0, 100);
-	Giernicksicht as = new Giernicksicht(kw, ap, 500, breite, hoehe, 0.0, 0.0);
+	Giernicksicht as = new Giernicksicht(kw, ap, brennweite, breite, hoehe, 0.0, 0.0);
 	Maler m = new Maler(new Sicht[] {as});
 	
 	// Mache das Spiel.
@@ -48,7 +49,7 @@ public class Main {
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.getContentPane().setBackground(Color.BLACK);
 	frame.getContentPane().setForeground(Color.WHITE);
-	frame.setSize(breite, hoehe);
+	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
 	frame.addKeyListener(sh);
 	frame.setVisible(true);	

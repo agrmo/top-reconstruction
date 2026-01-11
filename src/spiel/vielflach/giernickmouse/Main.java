@@ -44,8 +44,8 @@ public class Main {
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
-	int breite = (int) bildschirm.getWidth();
-	int hoehe = (int) bildschirm.getHeight();
+	double breite = bildschirm.getWidth();
+	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0, 0, 100);
 	Giernicksicht as = new Giernicksicht(kw, ap, 500, breite, hoehe, 0.0, 0.0);
 	Giernicktextsicht gts = new Giernicktextsicht(as);
@@ -62,7 +62,7 @@ public class Main {
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.getContentPane().setBackground(Color.BLACK);
 	frame.getContentPane().setForeground(Color.WHITE);
-	frame.setSize(breite, hoehe);
+	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
 	frame.addMouseListener(sh);
 	frame.addMouseMotionListener(sh);

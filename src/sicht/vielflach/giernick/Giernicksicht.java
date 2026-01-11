@@ -16,15 +16,15 @@ public class Giernicksicht extends Sicht {
 
     public Vielflachwelt kw;
     public Dreivektor augevektor;
-    public int breite;
-    public int brennweite;
-    public int hoehe;
+    public double breite;
+    public double brennweite;
+    public double hoehe;
     public double gier;
     public double nick;
 
     public Giernicksicht(Vielflachwelt kw,
-			 Dreivektor augevektor, int brennweite,
-			 int breite, int hoehe,
+			 Dreivektor augevektor, double brennweite,
+			 double breite, double hoehe,
 			 double gier, double nick) {
 
 	this.kw = kw;
@@ -34,6 +34,8 @@ public class Giernicksicht extends Sicht {
 	this.hoehe = hoehe;
 	this.gier = gier;
 	this.nick = nick;
+
+	// Wir brauchen eine Matrix, die die jetzige Basisvektoren 
     }
 
     // Wir müssen entscheiden, wer diese Körper darstellen wird.

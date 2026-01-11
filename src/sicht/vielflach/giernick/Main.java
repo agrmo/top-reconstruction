@@ -27,16 +27,17 @@ public class Main {
 	Vielflachwelt kw = new Vielflachwelt(kl, ol);
 
 	// Mache die Sicht.
-	int breite = 1200;
-	int hoehe = 600;
+	double breite = 1200;
+	double hoehe = 600;
+	double brennweite = 500;
 	Dreivektor ap = new Dreivektor(0,0,0);
-	Giernicksicht as = new Giernicksicht(kw, ap, 500, breite, hoehe, 0.2, 0.4);
+	Giernicksicht as = new Giernicksicht(kw, ap, brennweite, breite, hoehe, 0.2, 0.4);
 	Maler m = new Maler(new Sicht[] {as});
 	
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setSize(breite, hoehe);
+	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
 	frame.setVisible(true);
     }

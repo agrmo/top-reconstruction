@@ -58,8 +58,8 @@ public class Giernickmousespiel extends Spiel {
 	int jetztY = me.getY();
 	int unterschiedX = jetztX - this.mouseAnfangX;
 	int unterschiedY = jetztY - this.mouseAnfangY;
-	double unterschiedGier = ((double) unterschiedX) / ((double) this.as.breite);
-	double unterschiedNick = ((double) unterschiedY) / ((double) this.as.hoehe);
+	double unterschiedGier = ((double) unterschiedX) / this.as.breite;
+	double unterschiedNick = ((double) unterschiedY) / this.as.hoehe;
 
 	this.as.gier += unterschiedGier;
 	this.as.nick += unterschiedNick;
