@@ -18,14 +18,13 @@ public class Vektordreher {
 	
     }
 
-    // Dreh einen zweidimensionalen Vektor um den Ursprung.
-    //
-    // Gegen den Uhrzeigersinn.
-    public static Zweivektor drehen(Zweivektor zp, double thetaRad) {
-	double xStrich = Math.cos(thetaRad)*zp.eins - Math.sin(thetaRad)*zp.zwei;
-	double yStrich = Math.sin(thetaRad)*zp.eins + Math.cos(thetaRad)*zp.zwei;
+    // Dreh einen zweidimensionalen Vektor um den Ursprung.  Gegen den
+    // Uhrzeigersinn. Theta hat die Einheit Rad.
+    public static Zweivektor drehen(Zweivektor zp, double theta) {
+	double xNeu = Math.cos(theta)*zp.eins - Math.sin(theta)*zp.zwei;
+	double yNeu = Math.sin(theta)*zp.eins + Math.cos(theta)*zp.zwei;
 
-	return new Zweivektor(xStrich, yStrich);
+	return new Zweivektor(xNeu, yNeu);
     }
 
     // Dreh einen dreidimensionalen Vektor um die x-Achse.
@@ -38,7 +37,7 @@ public class Vektordreher {
 	
     // }
 
-    // Dreh einen dreidimensionalen Vektor um die y-Achse.
+    // Dreh einen dreidimensionalen Vektor um die z-Achse.
     // public static Dreivektor drehenZAchse(Dreivektor dp) {
 	
     // }

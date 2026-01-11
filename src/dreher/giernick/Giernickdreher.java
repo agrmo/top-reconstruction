@@ -24,4 +24,8 @@ public class Giernickdreher {
 	Dreivektor pgedreht = new Dreivektor(xz.eins, yz.eins, yz.zwei);
 	return pgedreht;
     }
+
+    public static Dreimatrix drehenGier(Dreimatrix m, double gier) {
+	
+    }
 }
