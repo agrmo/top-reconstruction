@@ -2,7 +2,7 @@ package punkt;
 
 // Der Zweipunkt.
 //
-// Ein Zweipunkt ist eine Liste von zwei ganzen Zahlen.
+// Ein Zweipunkt ist eine Liste von zwei Zahlen.
 public class Zweipunkt {
 
     // Die Teile dieses Zweipunktes.

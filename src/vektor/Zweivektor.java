@@ -17,11 +17,11 @@ package vektor;
   Zum Beispiel die Ecke enthält Dreivektoren, um ihre Strecke zu zeigen.
  */
 public class Zweivektor {
-    public int eins;
-    public int zwei;
+    public double eins;
+    public double zwei;
 
     // ein: ganze Zahl, ganze Zahl
-    public Zweivektor(int x, int y) {
+    public Zweivektor(double x, double y) {
 	this.eins = x;
 	this.zwei = y;
     }

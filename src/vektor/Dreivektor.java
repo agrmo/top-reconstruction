@@ -8,12 +8,12 @@ package vektor;
   (Wie berechne ich Dreivektoren im Minkowskiraum?)
  */
 public class Dreivektor {
-    public int eins;
-    public int zwei;
-    public int drei;
+    public double eins;
+    public double zwei;
+    public double drei;
 
     // ein: ganze Zahl, ganze Zahl, ganze Zahl
-    public Dreivektor(int x, int y, int z) {
+    public Dreivektor(double x, double y, double z) {
 	this.eins = x;
 	this.zwei = y;
 	this.drei = z;
