@@ -23,7 +23,7 @@ public class Doppelnachbarschaftsliste extends Nachbarschaftsliste {
     public Doppelnachbarschaftsliste(Nachbarschaftsliste nEin) {
 	this.betrag = nEin.betrag;
 
-	// Achtung: Wir addieren einen Zeiger! Wir nehmen an, daß
+	// Achtung: Wir addiere einen Zeiger! Wir nehmen an, daß
 	// der ursprüngliche Graph nEin nicht mehr bearbeitet
 	// wird.
 	this.n = nEin.n;

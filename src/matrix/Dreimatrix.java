@@ -66,7 +66,7 @@ public class Dreimatrix {
 	this.i += m.i;
     }
 
-    public void subtrahieren(Dreimatrix m) {
+    public void subtrahiere(Dreimatrix m) {
 	this.a -= m.a;
 	this.b -= m.b;
 	this.c -= m.c;	
@@ -79,7 +79,7 @@ public class Dreimatrix {
     }
 
     // Multipliziere diese 3x3 Matrix mit dem 3x1 Vektor v.
-    public Dreivektor multiplizieren(Dreivektor v) {
+    public Dreivektor multipliziere(Dreivektor v) {
 	
 	return new Dreivektor(this.a * v.eins + this.b * v.zwei + this.c * v.drei,
 			      this.d * v.eins + this.e * v.zwei + this.f * v.drei,
@@ -87,7 +87,7 @@ public class Dreimatrix {
     }
 
     // Multipliziere diese 3x3 Matrix mit dem 3x3 Matrix m.
-    public Dreimatrix multiplizieren(Dreimatrix m) {
+    public Dreimatrix multipliziere(Dreimatrix m) {
 	
 	return new Dreimatrix(this.a * m.a + this.b * m.d + this.c * m.g,
 			      this.a * m.b + this.b * m.e + this.c * m.h,

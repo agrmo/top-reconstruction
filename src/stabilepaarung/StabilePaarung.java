@@ -210,7 +210,7 @@ public class StabilePaarung {
 	    }
 
 	    // Der Mann ist fertig, um einen Antrag mit dieser Frau vorzuschlagen.
-	    // Addieren sie zu die Frauen, die er schon vorgeschlagen hat.
+	    // Addiere sie zu die Frauen, die er schon vorgeschlagen hat.
 	    Set<Integer> frauVorschlaege = vorschlaege.get(mann);
 	    frauVorschlaege.add(frau);
 	    vorschlaege.put(mann, frauVorschlaege);

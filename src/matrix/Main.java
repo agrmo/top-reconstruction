@@ -22,7 +22,7 @@ public class Main {
 	Dreivektor v = new Dreivektor(1,1,1);
 
 	// Soll [1,1,1] sein.
-	System.out.println(Vektordrucker.drucken(m.multiplizieren(v)));
+	System.out.println(Vektordrucker.drucken(m.multipliziere(v)));
     }
 
     static void beispielDrei() {
@@ -30,7 +30,7 @@ public class Main {
 	Dreimatrix mb = new Dreimatrix(1,0,0,0,1,0,0,0,1);
 
 	// Soll [[1,0,0],[0,1,0],[0,0,1]] sein.
-	System.out.println(Matrixdrucker.drucken(ma.multiplizieren(mb)));
+	System.out.println(Matrixdrucker.drucken(ma.multipliziere(mb)));
     }
 
     static void beispielVier() {
@@ -38,7 +38,7 @@ public class Main {
 	Dreimatrix mb = new Dreimatrix(0,0,1,0,1,0,1,0,0);
 
 	// Soll [[0,0,1],[0,1,0],[1,0,0]] sein.
-	System.out.println(Matrixdrucker.drucken(ma.multiplizieren(mb)));
+	System.out.println(Matrixdrucker.drucken(ma.multipliziere(mb)));
     }
 
     public static void main(String[] args) {
