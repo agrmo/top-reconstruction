@@ -17,10 +17,17 @@ public class Textsicht extends Sicht {
 
     public void darstellen(Graphics g) {
 
+	int zeilehoehe = g.getFontMetrics().getHeight();
+
 	for (int i = 0; i < this.textliste.length; i++) {
-	    g.drawString(this.textliste[i],
-			 (int) this.ortliste[i].eins,
-			 (int) this.ortliste[i].zwei);
+	    
+	    String[] zeilen = this.textliste[i].split("\n");
+	    
+	    for (int j = 0; j < zeilen.length; j++) {
+		g.drawString(zeilen[j],
+			     (int) this.ortliste[i].eins,
+			     (int) (this.ortliste[i].zwei + (j * zeilehoehe)));
+	    }
 	}
     }
 }

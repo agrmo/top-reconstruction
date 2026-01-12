@@ -26,12 +26,13 @@ public class Main {
 	ol.add(p);
 	Vielflachwelt kw = new Vielflachwelt(kl, ol);
 
+	Dreimatrix vorbasis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
 	Dreimatrix basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
 
 	// Verlegen die Welt.
 	Zweistreckewelt zkw = Basisverleger.verlegen(kw,
 						     new Dreivektor(0,0,0), 500,
 						     1200, 600,
-						     basis);
+						     vorbasis, basis);
     }
 }

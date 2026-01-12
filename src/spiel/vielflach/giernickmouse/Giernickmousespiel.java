@@ -39,6 +39,11 @@ public class Giernickmousespiel extends Spiel {
     public void handelnMouseLösen(MouseEvent me) {
 	this.mouseAnfangX = 0;
 	this.mouseAnfangY = 0;
+
+	this.as.vorbasis = this.as.basis.punkt(this.as.vorbasis);
+	this.as.basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
+
+	this.m.repaint();
     }
     
     public void handelnMouseEin(MouseEvent me) {
@@ -46,7 +51,7 @@ public class Giernickmousespiel extends Spiel {
     }
     
     public void handelnMouseAus(MouseEvent me) {
-	System.out.println(Matrixdrucker.drucken(this.as.basis));
+	// nichts
     }
     
     public void handelnMouse(MouseEvent me) {

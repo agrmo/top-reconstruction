@@ -26,22 +26,23 @@ public class Basisverleger {
     //
     // Verlege den gegeben dreidimensionalen Vektor.
     public static Zweivektor verlegen(Dreivektor pa, Dreivektor augevektor, double brennweite,
-			       double breite, double hoehe,
-			       Dreimatrix basis) {
+				      double breite, double hoehe,
+				      Dreimatrix vorbasis, Dreimatrix basis) {
 
-	Dreivektor pb = basis.punkt(pa);
+	Dreivektor pb = vorbasis.punkt(pa);
+	Dreivektor pc = basis.punkt(pb);
 
 	// Trennen das Auge vom Ursprung der Welt.
-	pb.eins -= augevektor.eins;
-	pb.zwei -= augevektor.zwei;
-	pb.drei -= augevektor.drei;
+	pc.eins -= augevektor.eins;
+	pc.zwei -= augevektor.zwei;
+	pc.drei -= augevektor.drei;
 
 	// Letzendlich verlegen die Stellen von drei zu zwei Dimensionen.
 	int zweiDimensionaleX = (int) ((0.5 * breite)
-				       + (pb.eins/pb.drei) * brennweite);
+				       + (pc.eins/pc.drei) * brennweite);
 	
 	int zweiDimensionaleY = (int) ((0.5 * hoehe)
-				       + (pb.zwei/pb.drei) * brennweite);
+				       + (pc.zwei/pc.drei) * brennweite);
 
 	Zweivektor aus = new Zweivektor(zweiDimensionaleX, zweiDimensionaleY);
 	
@@ -53,42 +54,23 @@ public class Basisverleger {
     //
     // Verlege die gegebene dreidimensionale Strecke.
     public static Zweistrecke verlegen(Dreistrecke k, Dreivektor augevektor, double brennweite,
-				double breite, double hoehe,
-				Dreimatrix basis) {
+				       double breite, double hoehe,
+				       Dreimatrix vorbasis, Dreimatrix basis) {
 	
 	Zweivektor verlegterVektorVon = Basisverleger.verlegen(k.von,
 							       augevektor, brennweite,
 							       breite, hoehe,
-							       basis);
+							       vorbasis, basis);
 	
 	Zweivektor verlegterVektorBis = Basisverleger.verlegen(k.bis, augevektor, brennweite,
 							       breite, hoehe,
-							       basis);
+							       vorbasis, basis);
 	
 	// Diese ist die neue Strecke, die nur in zwei Dimensionen
 	// liegt. 
 	Zweistrecke zk = new Zweistrecke(verlegterVektorVon, verlegterVektorBis);
 	
 	return zk;
-    }
-
-    // Ein: Liste von dreidimensionalen Vektoren
-    // Aus: Liste von zweidimensionalen Vektoren
-    //
-    // Verlegen diese zweidimensionale Vektoren zu dreidimensionalen Vektoren.
-    public static Zweivektor[] verlegen(Dreivektor[] dpl, Dreivektor augevektor, double brennweite,
-					double breite, double hoehe,
-					Dreimatrix basis) {
-	
-	Zweivektor[] zpl = new Zweivektor[dpl.length];
-
-	for (int i = 0; i < dpl.length; i++) {
-	    zpl[i] = Basisverleger.verlegen(dpl[i], augevektor, brennweite,
-					    breite, hoehe,
-					    basis);
-	}
-	
-	return zpl;
     }
 
     // ein: Vielflachwelt, Giernicksicht
@@ -98,7 +80,7 @@ public class Basisverleger {
     public static Zweistreckewelt verlegen(Vielflachwelt kw,
 					   Dreivektor augevektor, double brennweite,
 					   double breite, double hoehe,
-					   Dreimatrix basis) {
+					   Dreimatrix vorbasis, Dreimatrix basis) {
 	
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.
@@ -113,7 +95,7 @@ public class Basisverleger {
 	    // die Zweistreckewelt.
 	    Zweistrecke zk = Basisverleger.verlegen(dkl[i], augevektor, brennweite,
 						    breite, hoehe,
-						    basis);
+						    vorbasis, basis);
 	    
 	    // Fügen sie zu der Liste ein.
 	    zsl[i] = zk;
