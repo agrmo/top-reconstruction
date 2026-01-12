@@ -1,4 +1,4 @@
-package spiel.vielflach.giernickmouse;
+package spiel.vielflach.giernick;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -19,8 +19,8 @@ public class Giernickspiel extends Spiel {
     double nickanfang;
 
     public Giernickspiel(Maler m,
-			      Giernicksicht as,
-			      Vielflachwelt kw) {
+			 Giernicksicht as,
+			 Vielflachwelt kw) {
 	this.m = m;
 	this.as = as;
 	this.kw = kw;

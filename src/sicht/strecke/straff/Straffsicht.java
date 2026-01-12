@@ -1,4 +1,4 @@
-package sicht.vielflach.straff;
+package sicht.strecke.straff;
 
 import java.awt.Graphics;
 import verschieber.Verschieber;
@@ -16,14 +16,13 @@ import sicht.Sicht;
 //
 public class Straffsicht extends Sicht {
 
-    public Zweistreckewelt kw;
-
+    public Zweistreckewelt welt;
     public double mx;
     public double my;
 
-    public Straffsicht(Zweistreckewelt kw,
+    public Straffsicht(Zweistreckewelt welt,
 		       double mx, double my) {
-	this.kw = kw;
+	this.welt = welt;
 	this.mx = mx;
 	this.my = my;
     }
@@ -36,7 +35,7 @@ public class Straffsicht extends Sicht {
 	// jedes Mal die ursprüngliche Daten.  Leider müssen wir eine
 	// ganze neue Welt aufbauen.
 
-	Zweistreckewelt zkwNeu = Straffer.straffenWelt(this.kw, this.mx, this.my);
+	Zweistreckewelt zkwNeu = Straffer.straffenWelt(this.welt, this.mx, this.my);
 	
 	Streckesicht ks = new Streckesicht(zkwNeu);
 	

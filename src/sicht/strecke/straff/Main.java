@@ -1,4 +1,4 @@
-package sicht.vielflach.straff;
+package sicht.strecke.straff;
 
 import javax.swing.JFrame;
 import vektor.Zweivektor;
@@ -9,21 +9,21 @@ import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.vielflach.straff.Main
+  && java -cp classes sicht.strecke.straff.Main
 */
 
 public class Main {
 
     static void beispielEins() {
 	// Mache die Welt.
-	Zweistrecke zka = new Zweistrecke(new Zweivektor(0,100),
-				      new Zweivektor(100,100));
-
-	Zweistrecke zkb = new Zweistrecke(new Zweivektor(100,200),
-				      new Zweivektor(200,200));
+	Zweistrecke zsa = new Zweistrecke(new Zweivektor(0,100),
+					  new Zweivektor(100,100));
 	
-	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
-	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
+	Zweistrecke zsb = new Zweistrecke(new Zweivektor(100,200),
+					  new Zweivektor(200,200));
+	
+	Zweistrecke[] zsl = new Zweistrecke[] {zsa, zsb};
+	Zweistreckewelt zsw = new Zweistreckewelt(zsl);
 
 	// Der Verleger vergrößert die stellen der Strecken. Nicht nur
 	// wird den Abstand zwischen den Vektoren vergrößert, sondern
@@ -43,7 +43,7 @@ public class Main {
 	//   2.0: Multipliziere alle x Stellen mit 2.0
 	//   1.0: Multipliziere alle y Stellen mit 1.0
 	//
-	Straffsicht s = new Straffsicht(zkw, 2.0, 1.0);
+	Straffsicht s = new Straffsicht(zsw, 2.0, 1.0);
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Daten dar.

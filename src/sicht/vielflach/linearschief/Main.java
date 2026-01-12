@@ -24,7 +24,7 @@ public class Main {
 	kl.add(k);
 	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
 	ol.add(p);
-	Vielflachwelt kw = new Vielflachwelt(kl, ol);
+	Vielflachwelt welt = new Vielflachwelt(kl, ol);
 
 	// Der Verleger vergrößert die stellen der Kanten. Nicht nur
 	// wird den Abstand zwischen den Vektoren vergrößert, sondern
@@ -39,7 +39,7 @@ public class Main {
 	// brauchen, um die dreidimensionale Daten in einem
 	// zweidimensionalen Bildschirm darzustellen.
 	//
-	// kw: Die ursprüngliche dreidimensionale Daten
+	// welt: Die ursprüngliche dreidimensionale Daten
 	// 1.0: Die Zahl, die der schiefe Verleger benutzt
 	// 2.0 0.0 1.0 0.0: Die Zahlen, die der lineare Verleger benutzt
 	//   2.0: Multipliziere alle x Stellen mit 2.0
@@ -47,9 +47,9 @@ public class Main {
 	//   1.0: Multipliziere alle y Stellen mit 1.0
 	//   0.0: Addiere 0.0 zu alle y Stellen
 	//
-	Linearschiefsicht s = new Linearschiefsicht(kw,
-						      0.1,
-						      2.0, 0.0, 1.0, 0.0);
+	Linearschiefsicht s = new Linearschiefsicht(welt,
+						    0.1,
+						    2.0, 0.0, 1.0, 0.0);
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Welt dar.

@@ -27,19 +27,19 @@ public class Main {
 	Zweivektor p = new Zweivektor(100,100);
 	ArrayList<Zweivektor> ol = new ArrayList<Zweivektor>();
 	ol.add(p);
-	Vieleckwelt fw = new Vieleckwelt(fl, ol);
+	Vieleckwelt welt = new Vieleckwelt(fl, ol);
 	
 	// Mache die Sicht.
-	Vielecksicht fs = new Vielecksicht(fw);
-	Maler m = new Maler(new Sicht[] {fs});
+	Vielecksicht sicht = new Vielecksicht(welt);
+	Maler m = new Maler(new Sicht[] {sicht});
 	
 	// Mache das Spiel.
-	Vieleckspiel s = new Vieleckspiel(m, fw);
+	Vieleckspiel s = new Vieleckspiel(m, welt);
 
 	// Mache die Handlungen.
 	SpielHandlung sh = new SpielHandlung(s);
 
-	// Geh.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);

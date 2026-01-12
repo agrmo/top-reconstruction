@@ -1,4 +1,4 @@
-package spiel.vielflach.basismouse;
+package spiel.vielflach.basis;
 
 import handlung.spiel.SpielHandlung;
 import java.awt.Color;
@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
-import sicht.vielflach.basis.Basistextsicht;
 import sicht.vielflach.basis.Basissicht;
+import sicht.vielflach.basis.Basistextsicht;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
 import vielflach.Vielflach;
@@ -18,21 +18,20 @@ import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.vielflach.giernickmouse.Main
+  && java -cp classes spiel.vielflach.basis.Main
 */
 
 public class Main {
     public static void main(String[] args) {
-	
-	// Ein Spiel, in dem wir einen Kubus drehen können. Eigenlich
-	// gibt es hier ein Problem. Sobald wir den Kubus auf dem Kopf
-	// stehen, ist es nicht mehr möglich, die Mouse richtig in der
-	// Gier-Achse zu drehen. Die Mouse geht rechts, und der Kubus
-	// geht links. Problem!
-	//
-	// Eine mögliche Lösung dafur ist, daß wir die Basisvektoren
-	// wiederaufstehen sollen, sofort nach jeder Drehung des
-	// Kubus. Hier gibt es keine Lösung.
+
+	// Hier ist die Lösung des Problems, das wir im Giernickspiel
+	// gefunden hatten. Eine Drehung mit der Mouse nach einem
+	// Kopfstehen des Kubus fällt uns unrichtig. Die Lösung ist
+	// die Bearbeitung zweier Matrizen. Die erste Matrix is die
+	// vorherige Matrix. Die zweite Matrix is die jetzige
+	// Matrix. Die Mouse dreht die zweite Matrix. Nach die Lösung
+	// der Mouse multiplizieren wir die zwei Matrizen, speichern
+	// diese Matrix als vorherige, und erneuen die zweite Matrix.
 	
 	// Mache die Welt.
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
@@ -52,7 +51,7 @@ public class Main {
 	Maler m = new Maler(new Sicht[] {gs, bs});
 	
 	// Mache das Spiel.
-	Basismousespiel s = new Basismousespiel(m, gs, kw);
+	Basisspiel s = new Basisspiel(m, gs, kw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);

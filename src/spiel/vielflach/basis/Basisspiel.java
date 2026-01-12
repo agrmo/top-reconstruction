@@ -1,18 +1,18 @@
-package spiel.vielflach.basismouse;
+package spiel.vielflach.basis;
 
+import dreher.matrix.Matrixdreher;
+import dreher.vektor.Vektordreher;
+import druck.matrix.Matrixdrucker;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import vektor.Dreivektor;
+import maler.Maler;
+import matrix.Dreimatrix;
 import sicht.vielflach.basis.Basissicht;
 import spiel.Spiel;
+import vektor.Dreivektor;
 import welt.vielflach.Vielflachwelt;
-import maler.Maler;
-import dreher.vektor.Vektordreher;
-import dreher.matrix.Matrixdreher;
-import matrix.Dreimatrix;
-import druck.matrix.Matrixdrucker;
 
-public class Basismousespiel extends Spiel {
+public class Basisspiel extends Spiel {
 
     Maler m;
     Basissicht as;
@@ -20,9 +20,9 @@ public class Basismousespiel extends Spiel {
     int mouseAnfangX;
     int mouseAnfangY;
 
-    public Basismousespiel(Maler m,
-			   Basissicht as,
-			   Vielflachwelt kw) {
+    public Basisspiel(Maler m,
+		      Basissicht as,
+		      Vielflachwelt kw) {
 	this.m = m;
 	this.as = as;
 	this.kw = kw;

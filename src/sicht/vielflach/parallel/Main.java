@@ -9,7 +9,6 @@ import welt.vielflach.Vielflachwelt;
 import maler.Maler;
 import sicht.Sicht;
 
-
 /*
   javac -d classes $(find src -type f) \
   && java -cp classes sicht.vielflach.parallel.Main
@@ -18,18 +17,20 @@ import sicht.Sicht;
 public class Main {
 
     public static void main(String[] args){
+
+	// Mit der Parallelsicht sieht ein Kubus wie ein Quader aus.
  	
-	// Mache die Vielflachwelt.
+	// Mache die Welt.
 	Kubus k = new Kubus(50);
 	Dreivektor p = new Dreivektor(100,100,100);
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(k);
 	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
 	ol.add(p);
-	Vielflachwelt kw = new Vielflachwelt(kl, ol);
+	Vielflachwelt welt = new Vielflachwelt(kl, ol);
 	
-	// Mache die Parallelsicht.
-	Parallelsicht s = new Parallelsicht(kw);
+	// Mache die Sicht.
+	Parallelsicht s = new Parallelsicht(welt);
 	Maler m = new Maler(new Sicht[] {s});
 
 	// Stellen die Daten dar.

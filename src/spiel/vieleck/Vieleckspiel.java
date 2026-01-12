@@ -16,13 +16,13 @@ import maler.Maler;
 public class Vieleckspiel extends Spiel {
 
     Maler m;
-    Vieleckwelt fw;
+    Vieleckwelt welt;
     int mouseAnfangX;
     int mouseAnfangY;
 
-    public Vieleckspiel(Maler m, Vieleckwelt fw) {
+    public Vieleckspiel(Maler m, Vieleckwelt welt) {
 	this.m = m;
-	this.fw = fw;
+	this.welt = welt;
 
 	this.mouseAnfangX = 0;
 	this.mouseAnfangY = 0;
@@ -57,7 +57,7 @@ public class Vieleckspiel extends Spiel {
     // Verschiebe die ursprüngliche Vektoren der Welt nach dx, dy.
     void verschieben(int dx, int dy) {
 	Zweivektor verschiebenvektor = new Zweivektor(dx,dy);
-	Verschieber.verschieben(this.fw, verschiebenvektor);
+	Verschieber.verschieben(this.welt, verschiebenvektor);
     }
     
     public void handelnMouseSchleifen(MouseEvent me) {
@@ -83,32 +83,17 @@ public class Vieleckspiel extends Spiel {
             char kc = ke.getKeyChar();
 
 	    if (kc == 'w') {
-		
-	    } else if (kc == 's') {
-		
-	    } else if (kc == 'a') {
-		
-	    } else if (kc == 'd') {
-		
-	    } else if (kc == 't') {
 		this.verschieben(0,-10);
-		veraendert = true;
-
-	    } else if (kc == 'g') {
+		veraendert = true;		
+	    } else if (kc == 's') {
 		this.verschieben(0,10);
-		veraendert = true;
-		
-	    } else if (kc == 'f') {
+		veraendert = true;		
+	    } else if (kc == 'a') {
 		this.verschieben(-10,0);
 		veraendert = true;
-		
-	    } else if (kc == 'h') {
+	    } else if (kc == 'd') {
 		this.verschieben(10,0);
 		veraendert = true;
-		
-	    } else if (kc == '[') {
-		
-	    } else if (kc == ']') {
 	    }
         }
 
@@ -118,29 +103,7 @@ public class Vieleckspiel extends Spiel {
     }
     
     public void handelnTastaturDrucken(KeyEvent ke) {
-	int keyCode = ke.getKeyCode();
-	boolean veraendert = false;
-	    
-	if (keyCode == 38) {
-	    // Hoch getastet.
-		
-		
-	} else if (keyCode == 40) {
-	    // Runter getastet.
-		
-		
-	} else if (keyCode == 37) {
-	    // Links getastet.
-
-		
-	} else if (keyCode == 39) {
-	    // Rechts getastet.
-		
-	}
-
-	if (veraendert == true) {
-	    this.m.repaint();
-	}
+	// nichts
     }
     
     public void handelnTastaturLösen(KeyEvent ke) {

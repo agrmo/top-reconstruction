@@ -22,18 +22,17 @@ import sicht.Sicht;
 //
 public class Linearschiefsicht extends Sicht {
 
-    public Vielflachwelt kw;
+    public Vielflachwelt welt;
     public Schiefverleger sv;
-
     public double mx;
     public double bx;
     public double my;
     public double by;
 
-    public Linearschiefsicht(Vielflachwelt kw,
+    public Linearschiefsicht(Vielflachwelt welt,
 			     double a,
 			     double mx, double bx, double my, double by) {
-	this.kw = kw;
+	this.welt = welt;
 	this.sv = new Schiefverleger(a);
 	
 	this.mx = mx;
@@ -52,7 +51,7 @@ public class Linearschiefsicht extends Sicht {
     public void darstellen(Graphics g) {
 	
 	// Benutzen die Verlegungen.
-	Zweistreckewelt zkw = this.sv.verlegenWelt(this.kw);
+	Zweistreckewelt zkw = this.sv.verlegenWelt(this.welt);
 
 	// Straffen die Vektoren.
 	Zweistreckewelt zkwNeu = Straffer.straffenWelt(zkw,

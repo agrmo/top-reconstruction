@@ -10,18 +10,18 @@ import sicht.Sicht;
 // dreidimensionalen Körper darzustellen.
 public class Parallelsicht extends Sicht {
 
-    public Vielflachwelt kw;
+    public Vielflachwelt welt;
 
     // Wir nehmen an, daß die Sichtfläche genau auf der z=0 Fläche
     // stehen. Ich konnte dei Fläche bestimmbar machen.
-    public Parallelsicht(Vielflachwelt kw) {
-	this.kw = kw;
+    public Parallelsicht(Vielflachwelt welt) {
+	this.welt = welt;
     }
 
     // Wir müssen entscheiden, wer diese Körper darstellen wird.
     public void darstellen(Graphics g) {
 	// Nehme die Dreistrecken dieser Welt.
-	Dreistrecke[] wk = this.kw.nehmekanten();
+	Dreistrecke[] wk = this.welt.nehmekanten();
 
 	for (int i = 0; i < wk.length; i++) {
 	    g.drawLine((int) wk[i].von.eins, (int) wk[i].von.zwei,

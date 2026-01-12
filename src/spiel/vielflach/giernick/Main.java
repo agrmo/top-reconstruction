@@ -1,4 +1,4 @@
-package spiel.vielflach.giernickmouse;
+package spiel.vielflach.giernick;
 
 import handlung.spiel.SpielHandlung;
 import java.awt.Color;
@@ -17,7 +17,7 @@ import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.vielflach.giernickmouse.Main
+  && java -cp classes spiel.vielflach.giernick.Main
 */
 
 public class Main {
