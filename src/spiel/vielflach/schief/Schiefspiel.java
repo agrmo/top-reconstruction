@@ -21,8 +21,10 @@ public class Schiefspiel extends Spiel {
     Maler m;
     Linearschiefsicht lss;
     Vielflachwelt kw;
-    int mouseAnfangX;
-    int mouseAnfangY;
+    int mouseanfangx;
+    int mouseanfangy;
+    double anfangbx;
+    double anfangby;
 
     public Schiefspiel(Maler m,
 		       Linearschiefsicht l,
@@ -30,19 +32,18 @@ public class Schiefspiel extends Spiel {
 	this.m = m;
 	this.lss = l;
 	this.kw = kw;
-
-	this.mouseAnfangX = 0;
-	this.mouseAnfangY = 0;
     }
     
     public void handelnMouseDrucken(MouseEvent me) {
-	this.mouseAnfangX = me.getX();
-	this.mouseAnfangY = me.getY();
+	this.mouseanfangx = me.getX();
+	this.mouseanfangy = me.getY();
+
+	this.anfangbx = this.lss.bx;
+	this.anfangby = this.lss.by;
     }
     
     public void handelnMouseLösen(MouseEvent me) {
-	this.mouseAnfangX = 0;
-	this.mouseAnfangY = 0;
+	// nichts
     }
     
     public void handelnMouseEin(MouseEvent me) {
@@ -63,15 +64,13 @@ public class Schiefspiel extends Spiel {
     
     public void handelnMouseSchleifen(MouseEvent me) {
 
-	int jetztX = me.getX();
-	int jetztY = me.getY();
-	int unterschiedX = jetztX - this.mouseAnfangX;
-	int unterschiedY = jetztY - this.mouseAnfangY;
-	this.lss.bx += unterschiedX;
-	this.lss.by += unterschiedY;
-	this.mouseAnfangX = jetztX;
-	this.mouseAnfangY = jetztY;
-
+	int jetztx = me.getX();
+	int jetzty = me.getY();
+	int unterschiedx = jetztx - this.mouseanfangx;
+	int unterschiedy = jetzty - this.mouseanfangy;
+	this.lss.bx = this.anfangbx + unterschiedx;
+	this.lss.by = this.anfangby + unterschiedy;
+	
 	this.m.repaint();
     }
 
