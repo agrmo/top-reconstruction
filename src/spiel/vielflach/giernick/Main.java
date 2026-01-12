@@ -50,7 +50,7 @@ public class Main {
 	Maler m = new Maler(new Sicht[] {gs});
 	
 	// Mache das Spiel.
-	Giernickmousespiel s = new Giernickmousespiel(m, gs, kw);
+	Giernickspiel s = new Giernickspiel(m, gs, kw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);

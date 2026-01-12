@@ -8,7 +8,7 @@ import spiel.Spiel;
 import welt.vielflach.Vielflachwelt;
 import maler.Maler;
 
-public class Giernickmousespiel extends Spiel {
+public class Giernickspiel extends Spiel {
 
     Maler m;
     Giernicksicht as;
@@ -18,7 +18,7 @@ public class Giernickmousespiel extends Spiel {
     double gieranfang;
     double nickanfang;
 
-    public Giernickmousespiel(Maler m,
+    public Giernickspiel(Maler m,
 			      Giernicksicht as,
 			      Vielflachwelt kw) {
 	this.m = m;
