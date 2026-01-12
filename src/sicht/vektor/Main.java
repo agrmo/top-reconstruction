@@ -53,8 +53,8 @@ public class Main {
 	double gier = 0.0;
 	double nick = 0.3;
 	Zweivektor[] zpl = Giernickverleger.verlegen(dpl, augevektor, brennweite,
-						breite, hoehe,
-						gier, nick);
+						     breite, hoehe,
+						     gier, nick);
 	int radius = 10;
 	Vektorsicht s = new Vektorsicht(zpl, radius);
 	Maler m = new Maler(new Sicht[] {s});

@@ -19,10 +19,6 @@ import vektor.Dreivektor;
 // Drehungen aufbauen.
 public class Vektordreher {
 
-    public Vektordreher() {
-	
-    }
-
     // Dreh einen zweidimensionalen Vektor um den Ursprung gegen den
     // Uhrzeigersinn. Theta hat die Einheit Rad.
     public static Zweivektor drehen(Zweivektor zp, double theta) {

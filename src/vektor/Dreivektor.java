@@ -1,12 +1,6 @@
 package vektor;
 
-/*
-  Ein Dreivektor ist eine Liste von drei ganzen Zahlen.
-  
-  Ein Dreivektor im Euklidraum.
-
-  (Wie berechne ich Dreivektoren im Minkowskiraum?)
- */
+// Ein Dreivektor ist eine Liste von drei ganzen Zahlen.
 public class Dreivektor {
     public double eins;
     public double zwei;
@@ -19,8 +13,7 @@ public class Dreivektor {
 	this.drei = z;
     }
 
-    // ein:
-    // v: Dreivektor
+    // ein: Dreivektor
     // Addiere den gegebenen Dreivektor zu diesem.  
     public void addiere(Dreivektor v) {
 	this.eins += v.eins;
@@ -43,18 +36,10 @@ public class Dreivektor {
 	this.zwei = this.zwei / v.zwei;
 	this.drei = this.drei / v.drei;
     }
-
-    // ein: Dreivektor
-    // Multipliziere ganz den gegebenen Dreivektor zu diesem.  
-    public void multipliziere(Dreivektor v) {
-	this.eins = this.eins * v.eins;
-	this.zwei = this.zwei * v.zwei;
-	this.drei = this.drei * v.drei;
-    }
     
     // ein: Dreivektor
     // Multipliziere teilweise den gegebenen Dreivektor zu diesem.  
-    public void vektor(Dreivektor v) {
+    public void punkt(Dreivektor v) {
 	this.eins = this.eins * v.eins;
 	this.zwei = this.zwei * v.zwei;
 	this.drei = this.drei * v.drei;

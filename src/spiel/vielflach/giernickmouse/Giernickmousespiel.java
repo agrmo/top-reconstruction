@@ -7,6 +7,10 @@ import sicht.vielflach.giernick.Giernicksicht;
 import spiel.Spiel;
 import welt.vielflach.Vielflachwelt;
 import maler.Maler;
+import dreher.vektor.Vektordreher;
+import dreher.matrix.Matrixdreher;
+import matrix.Dreimatrix;
+import druck.matrix.Matrixdrucker;
 
 public class Giernickmousespiel extends Spiel {
 
@@ -42,7 +46,7 @@ public class Giernickmousespiel extends Spiel {
     }
     
     public void handelnMouseAus(MouseEvent me) {
-	// nichts
+	System.out.println(Matrixdrucker.drucken(this.as.basis));
     }
     
     public void handelnMouse(MouseEvent me) {
@@ -58,11 +62,15 @@ public class Giernickmousespiel extends Spiel {
 	int jetztY = me.getY();
 	int unterschiedX = jetztX - this.mouseAnfangX;
 	int unterschiedY = jetztY - this.mouseAnfangY;
-	double unterschiedGier = ((double) unterschiedX) / this.as.breite;
-	double unterschiedNick = ((double) unterschiedY) / this.as.hoehe;
+	double winkelGier = ((double) unterschiedX) / this.as.breite;
+	double winkelNick = -((double) unterschiedY) / this.as.hoehe;
 
-	this.as.gier += unterschiedGier;
-	this.as.nick += unterschiedNick;
+	Dreimatrix giermatrix = Matrixdreher.machedrehery(winkelGier);
+	Dreimatrix nickmatrix = Matrixdreher.machedreherx(winkelNick);
+
+	this.as.basis = this.as.basis.punkt(giermatrix);
+	this.as.basis = this.as.basis.punkt(nickmatrix);
+	
 	this.mouseAnfangX = jetztX;
 	this.mouseAnfangY = jetztY;
 

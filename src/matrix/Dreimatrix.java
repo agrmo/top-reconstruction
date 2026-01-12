@@ -3,14 +3,6 @@ package matrix;
 import vektor.Dreivektor;
 
 // Die Matrix.
-//
-// mymatrix = new double[][] {{0, 0, 0},{0, 0, 0},{0, 0, 0}};
-// mc = Matrix.multiply(ma, mb);
-//
-// mymatrix = new Dreimatrix(0, 0, 0, 0, 0, 0, 0, 0, 0);
-// mc = ma.multiply(mb);
-// 
-// new Dreimatrix
 public class Dreimatrix {
     
     public double a;
@@ -86,8 +78,14 @@ public class Dreimatrix {
 			      this.g * v.eins + this.h * v.zwei + this.i * v.drei);
     }
 
-    // Multipliziere diese 3x3 Matrix mit dem 3x3 Matrix m.
-    public Dreimatrix multipliziere(Dreimatrix m) {
+    /* Multipliziere diese 3x3 Matrix mit dem 3x3 Matrix m.
+
+       |abc|   |abc|    
+       |def| * |def| = ...
+       |ghi|   |ghi|    
+       
+     */
+    public Dreimatrix punkt(Dreimatrix m) {
 	
 	return new Dreimatrix(this.a * m.a + this.b * m.d + this.c * m.g,
 			      this.a * m.b + this.b * m.e + this.c * m.h,
@@ -98,5 +96,19 @@ public class Dreimatrix {
 			      this.g * m.a + this.h * m.d + this.i * m.g,
 			      this.g * m.b + this.h * m.e + this.i * m.h,
 			      this.g * m.c + this.h * m.f + this.i * m.i);
+    }
+
+    /* Multipliziere diese Matrix mit dem Vektor.
+
+       |abc|   |j|     
+       |def| * |k|  = ...
+       |ghi|   |l|     
+    
+    */
+    public Dreivektor punkt(Dreivektor v) {
+
+	return new Dreivektor(this.a * v.eins + this.b * v.zwei + this.c * v.drei,
+			      this.d * v.eins + this.e * v.zwei + this.f * v.drei,
+			      this.g * v.eins + this.h * v.zwei + this.i * v.drei);
     }
 }

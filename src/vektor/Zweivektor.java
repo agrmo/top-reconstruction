@@ -47,17 +47,10 @@ public class Zweivektor {
 	this.eins = this.eins / v.eins;
 	this.zwei = this.zwei / v.zwei;
     }
-
-    // ein: Zweivektor
-    // Multipliziere ganz den gegebenen Zweivektor zu diesem.  
-    public void multipliziere(Zweivektor v) {
-	this.eins = this.eins * v.eins;
-	this.zwei = this.zwei * v.zwei;
-    }
     
     // ein: Zweivektor
     // Multipliziere teilweise den gegebenen Zweivektor zu diesem.  
-    public void vektor(Zweivektor v) {
+    public void punkt(Zweivektor v) {
 	this.eins = this.eins * v.eins;
 	this.zwei = this.zwei * v.zwei;
     }

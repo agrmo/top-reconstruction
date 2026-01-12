@@ -4,10 +4,11 @@ import vektor.Dreivektor;
 import java.awt.Graphics;
 import javax.swing.JComponent;
 import sicht.strecke.Streckesicht;
-import verleger.giernick.Giernickverleger;
+import verleger.basis.Basisverleger;
 import welt.zweistrecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 import sicht.Sicht;
+import matrix.Dreimatrix;
 
 // Eine Sicht, die eine dreidimensionale Vielflachwelt einnimmt.
 // Sie wandelt die Vielflachwelt mit nur einer Verlegung: einer vektoren
@@ -21,6 +22,7 @@ public class Giernicksicht extends Sicht {
     public double hoehe;
     public double gier;
     public double nick;
+    public Dreimatrix basis;
 
     public Giernicksicht(Vielflachwelt kw,
 			 Dreivektor augevektor, double brennweite,
@@ -32,6 +34,9 @@ public class Giernicksicht extends Sicht {
 	this.brennweite = brennweite;
 	this.breite = breite;
 	this.hoehe = hoehe;
+	
+	this.basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
+	
 	this.gier = gier;
 	this.nick = nick;
 
@@ -42,9 +47,9 @@ public class Giernicksicht extends Sicht {
     public void darstellen(Graphics g) {
 	
 	// Benutzen die Verleger.
-	Zweistreckewelt zkw = Giernickverleger.verlegen(this.kw, this.augevektor, this.brennweite,
-							this.breite, this.hoehe,
-							this.gier, this.nick);
+	Zweistreckewelt zkw = Basisverleger.verlegen(this.kw, this.augevektor, this.brennweite,
+						     this.breite, this.hoehe,
+						     this.basis);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.
