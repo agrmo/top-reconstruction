@@ -10,16 +10,16 @@ import sicht.Sicht;
 // darzustellen.
 public class Vielecksicht extends Sicht {
 
-    public Vieleckwelt fw;
+    public Vieleckwelt welt;
 
-    public Vielecksicht(Vieleckwelt fw) {
-	this.fw = fw;
+    public Vielecksicht(Vieleckwelt welt) {
+	this.welt = welt;
     }
 
     // Stellen die Kanten dieser Welt dar.
     public void darstellen(Graphics g) {
 	
-	Zweistrecke[] wk = this.fw.nehmekanten();
+	Zweistrecke[] wk = this.welt.nehmekanten();
 
 	for (int i = 0; i < wk.length; i++) {
 	    g.drawLine((int) wk[i].von.eins, (int) wk[i].von.zwei,

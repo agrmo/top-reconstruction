@@ -1,4 +1,4 @@
-package spiel.vielflach.linearschiefverschieben;
+package spiel.vielflach.schief;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -16,7 +16,7 @@ import maler.Maler;
 // []: Verschieben die Tiefe der Schiefsicht.
 // Hoch Runter Links Rechts: Verschieben die Sicht verhältnismäßig.
 // Mouse: Drucken und verschieben die Körper.
-public class Linearschiefverschiebenspiel extends Spiel {
+public class Schiefspiel extends Spiel {
 
     Maler m;
     Linearschiefsicht lss;
@@ -24,9 +24,9 @@ public class Linearschiefverschiebenspiel extends Spiel {
     int mouseAnfangX;
     int mouseAnfangY;
 
-    public Linearschiefverschiebenspiel(Maler m,
-					Linearschiefsicht l,
-					Vielflachwelt kw) {
+    public Schiefspiel(Maler m,
+		       Linearschiefsicht l,
+		       Vielflachwelt kw) {
 	this.m = m;
 	this.lss = l;
 	this.kw = kw;
