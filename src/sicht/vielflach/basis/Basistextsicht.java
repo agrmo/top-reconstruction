@@ -1,19 +1,19 @@
-package sicht.text.giernick;
+package sicht.vielflach.basis;
 
 import java.awt.Graphics;
-import sicht.vielflach.giernick.Giernicksicht;
+import sicht.vielflach.basis.Basissicht;
 import sicht.text.Textsicht;
 import vektor.Zweivektor;
 import sicht.Sicht;
 import druck.matrix.Matrixdrucker;
 
 // Stellen die Eigenschaften der Giernicksicht dar.
-public class Giernicktextsicht extends Sicht {
+public class Basistextsicht extends Sicht {
 
-    Giernicksicht gs;
+    Basissicht gs;
     Textsicht textsicht;
 
-    public Giernicktextsicht(Giernicksicht gs) {
+    public Basistextsicht(Basissicht gs) {
 	this.gs = gs;
 	this.textsicht = new Textsicht(new String[] {},
 				       new Zweivektor[] {});

@@ -10,12 +10,12 @@ import welt.vielflach.Vielflachwelt;
 import welt.zweistrecke.Zweistreckewelt;
 
 // Ein Giernickverleger verlegt eine dreidimensionale Welt von
-// Vielflächen zu einer zweidimensionalen Welt von Vektoren und
+// Vielflächen zu einer zweidimensionalen Welt von Punkten und
 // Strecken.
 //
 // Schritte:
-// 1. Drehen alle Vektore in der xz-Fläche mit einem Gierwinkel.
-// 2. Drehen alle Vektore in der yz-Fläche mit einem Nickwinkel.
+// 1. Drehen alle Vektoren in der xz-Fläche mit einem Gierwinkel.
+// 2. Drehen alle Vektoren in der yz-Fläche mit einem Nickwinkel.
 // 3. Entfernen die Kamera vom Ursprung.
 // 4. Projizieren alle Vektore zu einer zweidimensionalen Fläche.
 // 5. Verschieben alle Vektore zum Zentrum des Bildchirms.
@@ -53,9 +53,10 @@ public class Giernickverleger {
     // Aus: Liste von zweidimensionalen Vektoren
     //
     // Verlegen diese zweidimensionale Vektoren zu dreidimensionalen Vektoren.
-    public static Zweivektor[] verlegen(Dreivektor[] dpl, Dreivektor augevektor, double brennweite,
-				       double breite, double hoehe,
-				       double gier, double nick) {
+    public static Zweivektor[] verlegen(Dreivektor[] dpl,
+					Dreivektor augevektor, double brennweite,
+					double breite, double hoehe,
+					double gier, double nick) {
 	
 	Zweivektor[] zpl = new Zweivektor[dpl.length];
 
@@ -72,7 +73,8 @@ public class Giernickverleger {
     // aus: Zweistrecke
     //
     // Verlege die gegebene dreidimensionale Strecke.
-    static Zweistrecke verlegen(Dreistrecke k, Dreivektor augevektor, double brennweite,
+    static Zweistrecke verlegen(Dreistrecke k,
+				Dreivektor augevektor, double brennweite,
 				double breite, double hoehe,
 				double gier, double nick) {
 	

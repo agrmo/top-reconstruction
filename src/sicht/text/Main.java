@@ -18,9 +18,9 @@ public class Main {
 	// Mache die Daten.
 	String[] tl = new String[] {
 	    "Hallo",
-	    "Wie gehts?",
+	    "Wo bin ich?",
 	    "Ich brauche Zeit.",
-	    "Ich verstehe nur, was zu mir passiert ist."
+	    "Ich verstehe nur, was ich bearbeitete."
 	};
 	
 	Zweivektor[] ol = new Zweivektor[] {

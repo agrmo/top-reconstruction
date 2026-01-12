@@ -21,7 +21,7 @@ import matrix.Dreimatrix;
 // 5. Verschieben alle Vektore zum Zentrum des Bildchirms.
 public class Basisverleger {
 
-    // ein: Dreivektor, Giernicksicht
+    // ein: Dreivektor, ...
     // aus: Zweivektor
     //
     // Verlege den gegeben dreidimensionalen Vektor.
@@ -49,7 +49,7 @@ public class Basisverleger {
 	return aus;
     }
 
-    // ein: Dreistrecke
+    // ein: Dreistrecke, ...
     // aus: Zweistrecke
     //
     // Verlege die gegebene dreidimensionale Strecke.
@@ -73,7 +73,8 @@ public class Basisverleger {
 	return zk;
     }
 
-    // ein: Vielflachwelt, Giernicksicht
+    // ein: Vielflachwelt, ...
+    // aus: Zweistreckewelt
     //
     // Verlegen die dreidimensionale Vielflachwelt zu einer
     // zweidimensionale Zweistreckewelt.

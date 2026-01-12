@@ -16,7 +16,7 @@ import welt.vielflach.Vielflachwelt;
 public class Main {
     public static void main(String[] args) {
 
-	// Mache die dreidimensionale Welt.
+	// Mache die Welt.
 	Kubus k = new Kubus(50);
 	Dreivektor p = new Dreivektor(100,100,100);
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();

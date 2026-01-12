@@ -1,4 +1,4 @@
-package spiel.vielflach.giernickmouse;
+package spiel.vielflach.basismouse;
 
 import handlung.spiel.SpielHandlung;
 import java.awt.Color;
@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
-import sicht.vielflach.giernick.Giernicksicht;
+import sicht.vielflach.basis.Basistextsicht;
+import sicht.vielflach.basis.Basissicht;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
 import vielflach.Vielflach;
@@ -31,8 +32,7 @@ public class Main {
 	//
 	// Eine mögliche Lösung dafur ist, daß wir die Basisvektoren
 	// wiederaufstehen sollen, sofort nach jeder Drehung des
-	// Kubus. Hier gibt es keine Lösung. Die Lösung ist das
-	// "Basismousespiel."
+	// Kubus. Hier gibt es keine Lösung.
 	
 	// Mache die Welt.
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
@@ -46,11 +46,13 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0, 0, 100);
-	Giernicksicht gs = new Giernicksicht(kw, ap, 500, breite, hoehe, 0.0, 0.0);
-	Maler m = new Maler(new Sicht[] {gs});
+	Basissicht gs = new Basissicht(kw, ap, 500, breite, hoehe);
+	Basistextsicht bs = new Basistextsicht(gs);
+
+	Maler m = new Maler(new Sicht[] {gs, bs});
 	
 	// Mache das Spiel.
-	Giernickmousespiel s = new Giernickmousespiel(m, gs, kw);
+	Basismousespiel s = new Basismousespiel(m, gs, kw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);
