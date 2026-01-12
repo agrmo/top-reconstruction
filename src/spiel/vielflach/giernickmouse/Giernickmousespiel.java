@@ -13,8 +13,10 @@ public class Giernickmousespiel extends Spiel {
     Maler m;
     Giernicksicht as;
     Vielflachwelt kw;
-    int mouseAnfangX;
-    int mouseAnfangY;
+    int mouseanfangx;
+    int mouseanfangy;
+    double gieranfang;
+    double nickanfang;
 
     public Giernickmousespiel(Maler m,
 			      Giernicksicht as,
@@ -22,19 +24,18 @@ public class Giernickmousespiel extends Spiel {
 	this.m = m;
 	this.as = as;
 	this.kw = kw;
-
-	this.mouseAnfangX = 0;
-	this.mouseAnfangY = 0;
     }
     
     public void handelnMouseDrucken(MouseEvent me) {
-	this.mouseAnfangX = me.getX();
-	this.mouseAnfangY = me.getY();
+	this.mouseanfangx = me.getX();
+	this.mouseanfangy = me.getY();
+
+	this.gieranfang = this.as.gier;
+	this.nickanfang = this.as.nick;
     }
     
     public void handelnMouseLösen(MouseEvent me) {
-	this.mouseAnfangX = 0;
-	this.mouseAnfangY = 0;
+	// nichts
     }
     
     public void handelnMouseEin(MouseEvent me) {
@@ -54,19 +55,16 @@ public class Giernickmousespiel extends Spiel {
     }
     
     public void handelnMouseSchleifen(MouseEvent me) {
-	int jetztX = me.getX();
-	int jetztY = me.getY();
-	int unterschiedX = jetztX - this.mouseAnfangX;
-	int unterschiedY = jetztY - this.mouseAnfangY;
-	double unterschiedGier = ((double) unterschiedX) / this.as.breite;
-	double unterschiedNick = ((double) unterschiedY) / this.as.hoehe;
+	int jetztx = me.getX();
+	int jetzty = me.getY();
+	int unterschiedx = jetztx - this.mouseanfangx;
+	int unterschiedy = jetzty - this.mouseanfangy;
+	double gierunterschied = ((double) unterschiedx) / this.as.breite;
+	double nickunterschied = ((double) unterschiedy) / this.as.hoehe;
 
-	this.as.gier += unterschiedGier;
-	this.as.nick += unterschiedNick;
+	this.as.gier = this.gieranfang + gierunterschied;
+	this.as.nick = this.nickanfang + nickunterschied;
 	
-	this.mouseAnfangX = jetztX;
-	this.mouseAnfangY = jetztY;
-
 	this.m.repaint();
     }
     

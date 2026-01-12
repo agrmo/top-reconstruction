@@ -15,7 +15,7 @@ import maler.Maler;
 // TGFH: Verschieben die ursprüngliche Vektoren der Vielflachwelt.
 // []: Verschieben die Tiefe der Schiefsicht.
 // Hoch Runter Links Rechts: Verschieben die Sicht verhältnismäßig.
-// Mouse: Drucken und verschieben die Körper.
+// Mouse: Drucken und verschieben das Vielflach.
 public class Schiefspiel extends Spiel {
 
     Maler m;
