@@ -20,19 +20,46 @@ Date&\today\\
 \end{tabular}
 \end{center}
 \section*{Problem 1.}
-%% C.f. Peskin Ch. 9, Srednicky Ch. 44. We will calculate both (3.1) and (3.2) just to be thorough. For the c-number Gaussian integral,
-%% \n{intf}{\int_{-\infty}^\infty}
-%% \n{nih}{-\br{1}{2}}
-%% \n{egh}{\br{1}{2}}
-%% \g{\intf \intf e^{\nih x^T A x} dx_1 ... dx_n &= \int e^{\nih y^T D y} dy_1 ... dy_n \\
-%% &= \int dy_1...dy_n e^{\nih \sum lambda_i y_i^2}\\
-%% \intertext{The $n$ integrals can be separated.}
-%% &= \Pi_i \int dy_i e^{\nih \lambda_i y_i^2} \\
-%% \intertext{The integrals are each Gaussian integrals.}
-%% &= \Pi_i (\br{2\pi}{\lambda_i})^{1/2}
-%% \intertext{Using $\Pi_i \lambda_i = \det D = \det(C^{-1} A C) = \det A$ we have the answer for the real valued case.}
-%% &= (\br{(2\pi)^n}{\det A})^{1/2}}
-%% Now for the Grassman-Gauss integral. Let $M$ be a complex antisymmetric matrix.
-%% \g{\psi_i = U_{ij} \psi_j'}
-%% \g{\int d^d\psi e^{\egh \psi^T M \psi}\\
-%% &= asdf}
+C.f. Peskin Ch. 9, Srednicky Ch. 44. We will calculate both (3.1) and (3.2) just to be thorough. For the c-number Gaussian integral,
+\n{intf}{\int_{-\infty}^\infty}
+\n{nih}{-\br{1}{2}}
+\n{egh}{\br{1}{2}}
+\n{dui}{(\det U)^{-1}}
+\n{pin}{\Pi_{\alpha=1}^{\br{1}{2}n}}
+\g{\intf \intf e^{\nih x^T A x} dx_1 ... dx_n &= \int e^{\nih y^T D y} dy_1 ... dy_n \\
+&= \int dy_1...dy_n e^{\nih \sum lambda_i y_i^2}\\
+\intertext{The $n$ integrals can be separated.}
+&= \Pi_i \int dy_i e^{\nih \lambda_i y_i^2} \\
+\intertext{The integrals are each Gaussian integrals.}
+&= \Pi_i (\br{2\pi}{\lambda_i})^{1/2}
+\intertext{Using $\Pi_i \lambda_i = \det D = \det(C^{-1} A C) = \det A$ we have the answer for the real valued case.}
+&= (\br{(2\pi)^n}{\det A})^{1/2}}
+Now for the Grassman-Gauss integral. Let $M$ be a complex antisymmetric matrix.
+\g{\psi_i = U_{ij} \psi_j'}
+\g{\int d^d\psi e^{\egh \psi^T M \psi} &= \dui \pin d^2 \psi_\alpha e^{\egh \psi^T M_\alpha \psi}\intertext{Use $\int d^2 \psi_\alpha e^{\egh \psi^T M_\alpha \psi = m_\alpha}$}
+&= \dui \pin m_\alpha\\
+&= \boxed{(\det M)^{\br{1}{2}}}}
+\section*{Problem 2.}
+C.f. Tong's SUSY notes.
+\n{pneu}{\prod_{n=1}^\infty}
+\n{sneu}{\sum_{n=1}^\infty}
+\g{\zeich{nz8cb}\prod_{n=\br{1}{2},\br{3}{2},...}^\infty \br{n}{\beta} &= \pneu \br{2n}{\beta} = (\pneu \br{2}{\beta})(\pneu n)}
+These two infinite products can be individually computed using zeta function regularization. For the first, let $\br{2}{\beta}=b$,
+\g{\pneu \br{2}{\beta} &= \pneu b = e^{\sum_{n=1}^\infty \log b} = e^{\log b + \log b + ...} \\
+&= e^{\log \beta (1 + 1 + ...)} 
+\intertext{Use the regularized sum $\sum_{i=1}^\infty 1 = -\br{1}{2}$}
+&= e^{-\br{1}{2}\log \beta}\\
+&= \br{1}{\sqrt{\beta}}}
+If $\beta>0$, then the answer is real, otherwise imaginary. Similarly for the other infinite product of $n$,
+\g{\zeich{mcia}\pneu n = 1 \cdot 2 \cdot ... = e^{\sneu \log n} = e^{\log 1 + \log 2 + ...}}
+To compute \gzeich{mcia} we will need $\sneu \log n$ which we will do quickly here,
+\g{\zeta(s)=\sneu \br{1}{n^s}}
+\g{\dd{x} a^x = a^x \log a}
+\g{\dd{s}(n^{-s})=-n^{-s}\log n}
+\g{\zeta(s)'=-\sneu \br{\log n}{n^s}}
+\g{\zeta(0)'=-\sneu \log{n} = -\br{1}{2}\log(2\pi)}
+So the infinite product of $n$ \gzeich{mcia} is
+\g{\pneu n = e^{\sneu \log n}=e^{\br{1}{2}\log(2\pi)}=(2\pi)^{1/2}}
+The answer \gzeich{nz8cb} is then,
+\g{\prod_{\br{1}{2},\br{3}{2},...}^\infty \br{n}{\beta} &=(\br{2}{\beta})^{-\br{1}{2}} (2\pi)^{\br{1}{2}} = \boxed{\sqrt{\pi\beta}}}
+\end{document}
