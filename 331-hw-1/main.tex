@@ -40,26 +40,26 @@ Now for the Grassman-Gauss integral. Let $M$ be a complex antisymmetric matrix.
 &= \dui \pin m_\alpha\\
 &= \boxed{(\det M)^{\br{1}{2}}}}
 \section*{Problem 2.}
-C.f. Tong's SUSY notes.
-\n{pneu}{\prod_{n=1}^\infty}
+\n{proded}{\prod_{n=1,3,...}^\infty}
+\n{prodez}{\prod_{n=1,2,...}^\infty}
+\n{summez}{\sum_{n=1}^\infty}
+C.f. Tong's SUSY notes. We have a couple approaches which have varying degrees of rigor.
+\g{\zeich{nz8xcn}\prod_{\br{1}{2},\br{3}{2},...}^\infty \br{n}{\beta} = \br{1}{2\beta}\cdot\br{3}{2\beta}\cdot\br{5}{2\beta}... = \br{\proded n}{\proded 2\beta}=\br{\prodez n}{\prodez 2\beta}}
+Here we claim that a ratio of products over every other integer is the same as a ratio of products over all integers. With that in mind the two products can be regularized with the zeta function as usual. The first product is,
 \n{sneu}{\sum_{n=1}^\infty}
-\g{\zeich{nz8cb}\prod_{n=\br{1}{2},\br{3}{2},...}^\infty \br{n}{\beta} &= \pneu \br{2n}{\beta} = (\pneu \br{2}{\beta})(\pneu n)}
-These two infinite products can be individually computed using zeta function regularization. For the first, let $\br{2}{\beta}=b$,
-\g{\pneu \br{2}{\beta} &= \pneu b = e^{\sum_{n=1}^\infty \log b} = e^{\log b + \log b + ...} \\
-&= e^{\log \beta (1 + 1 + ...)} 
-\intertext{Use the regularized sum $\sum_{i=1}^\infty 1 = -\br{1}{2}$}
-&= e^{-\br{1}{2}\log \beta}\\
-&= \br{1}{\sqrt{\beta}}}
-If $\beta>0$, then the answer is real, otherwise imaginary. Similarly for the other infinite product of $n$,
-\g{\zeich{mcia}\pneu n = 1 \cdot 2 \cdot ... = e^{\sneu \log n} = e^{\log 1 + \log 2 + ...}}
-To compute \gzeich{mcia} we will need $\sneu \log n$ which we will do quickly here,
-\g{\zeta(s)=\sneu \br{1}{n^s}}
+\n{pneu}{\prod_{n=1}^\infty}
+\g{\zeta(s)=\sum \br{1}{n^s}}
 \g{\dd{x} a^x = a^x \log a}
 \g{\dd{s}(n^{-s})=-n^{-s}\log n}
 \g{\zeta(s)'=-\sneu \br{\log n}{n^s}}
 \g{\zeta(0)'=-\sneu \log{n} = -\br{1}{2}\log(2\pi)}
-So the infinite product of $n$ \gzeich{mcia} is
+So the infinite product of $n$ is
 \g{\pneu n = e^{\sneu \log n}=e^{\br{1}{2}\log(2\pi)}=(2\pi)^{1/2}}
-The answer \gzeich{nz8cb} is then,
-\g{\prod_{\br{1}{2},\br{3}{2},...}^\infty \br{n}{\beta} &=(\br{2}{\beta})^{-\br{1}{2}} (2\pi)^{\br{1}{2}} = \boxed{\sqrt{\pi\beta}}}
+The second product is,
+\g{a=e^{\log a}}
+\g{\prodez a = e^{\summez \log a} = e^{\log a + \log a + ...} = e^{(1+1+...)\log a} = e^{-\br{1}{2}\log a} = \br{1}{\sqrt{a}}}
+And so the regularized product \gzeich{nz8xcn} is
+\g{\prod_{\br{1}{2},\br{3}{2},...}^\infty \br{n}{\beta}=\br{\prodez n}{\prodez 2\beta}=\br{(2\pi)^{1/2}}{(2\beta)^{-1/2}}=\boxed{2(\beta\pi)^{1/2}}}
+\section*{Problem 3}
+
 \end{document}
