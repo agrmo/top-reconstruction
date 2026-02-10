@@ -119,3 +119,8 @@ diagonale Strich
 
 %\usepackage{amsfonts}
 %\usepackage{amsmath}
+
+-
+
+%\item A. E. Romero and V. A. Dolgashev. High Efficiency Travelling Wave X-Band Linac With Tunable Output Energy (SLAC-PUB-17681). SLAC National Accelerator Laboratory, 2022.
+%\item A. E. Romero and K. Kim. RF Demodulation Theory (LCLSII-2.7-EN-2010). SLAC National Accelerator Laboratory, 2021.
