@@ -85,6 +85,13 @@ public class Main {
 	String doubleArrayArrayString = Liste.nehmeStringVonArrayArrayDouble(doubleArrayArray);
 	System.out.println(doubleArrayArrayString);	
     }
+
+    public static void beispielDrei() {
+	ArrayList<Integer> l = new ArrayList<Integer>();
+	l.add(4);
+	l.add(5);
+	System.out.println(Arrays.toString(Liste.nehmeArrayInt(l)));
+    }
     
     public static void main(String[] args) {
 
@@ -96,6 +103,6 @@ public class Main {
 
 	// beispielZwei();
 
-	listeInteger();
+	beispielDrei();
     }
 }

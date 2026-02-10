@@ -8,6 +8,20 @@ import java.util.HashSet;
 // Funktionen an Listen.
 public class Liste {
 
+    // ein: ArrayList<Integer>
+    // aus: int[]
+    //
+    // Warum existiert diese Funktion nicht...?
+    public static int[] nehmeArrayInt(ArrayList<Integer> l) {
+	int[] aus = new int[l.size()];
+
+	for (int i = 0; i < l.size(); i++) {
+	    aus[i] = l.get(i);
+	}
+
+	return aus;
+    }
+
     // ein:
     // Arraylist<int[]>
     // aus:
@@ -144,6 +158,8 @@ public class Liste {
     // {0,1,2,5,6}
     // aus:
     // [0,1,2,5,6]
+    //
+    // n.b. die ursprüngliche Menge hat keine Reihenfolge
     public static int[] nehmeArrayVonMenge(HashSet<Integer> s) {
 	int[] array = new int[s.size()];
 
