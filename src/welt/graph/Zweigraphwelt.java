@@ -27,11 +27,11 @@ import strecke.Zweistrecke;
 */
 public class Zweigraphwelt {
 
-    // Die Stellen jedes Knoten.
-    public Zweivektor[] orten;
-
-    // Die Kanten jedes Knoten.
+    // Der Graph.
     public Nachbarschaftsliste graph;
+
+    // Die Orten jedes Knoten.
+    public Zweivektor[] orten;
 
     public Zweigraphwelt(Nachbarschaftsliste n, Zweivektor[] o) {
 	this.orten = o;
@@ -39,8 +39,8 @@ public class Zweigraphwelt {
     }
 
     /*
-      Das Zentrum von drawCircle() jedes Knoten dieses Graphen sind
-      nicht genau auf dem vektor dargestellt. Zum Beispiel
+      Das Zentrum von drawCircle() von Java ist nicht genau auf dem
+      gegebenen Ort dargestellt. Zum Beispiel
       
       Knoten (0,0) Durchmesser 3
       Kante (0,0) bis (10,10)
@@ -64,14 +64,14 @@ public class Zweigraphwelt {
           \
            ...
 	     
-      weil das Zentrum des Kreises nicht auf (0,0) steht. Wir müssen
+      weil das Zentrum des Kreises nicht auf (0,0) steht. Wir sollen
       die Stellen des Knoten verbessern. In diesem Beispiel
       verschieben wir die Stellen des Kreises -3 in die x- und
       y-Richtung.
     */
-    void verbessernKnoten(Zweivektor zp, int durchmesser) {
+    void verbessernknoten(Zweivektor zp, int durchmesser) {
 	Zweivektor unterschied = new Zweivektor(-(durchmesser / 2.0),
-					      -(durchmesser / 2.0));
+						-(durchmesser / 2.0));
 	zp.addiere(unterschied);
     }
 
@@ -80,14 +80,14 @@ public class Zweigraphwelt {
     // Diese Welt kennt wie groß ein Knoten ist.
     public Zweivektor[] nehmeKnoten(int durchmesser) {
 
-	Zweivektor[] ausvektore = new Zweivektor[this.orten.length];
+	Zweivektor[] ausvektoren = new Zweivektor[this.orten.length];
 	
 	for (int i = 0; i < this.orten.length; i++) {
-	    ausvektore[i] = Vektorverdoppler.verdoppeln(this.orten[i]);
-	    verbessernKnoten(ausvektore[i], durchmesser);
+	    ausvektoren[i] = Vektorverdoppler.verdoppeln(this.orten[i]);
+	    verbessernknoten(ausvektoren[i], durchmesser);
 	}
 	
-	return ausvektore;
+	return ausvektoren;
     }
 
     // Rechne alle Kanten dieses Graphen aus.
