@@ -1,4 +1,4 @@
-package welt.zweigraph.gitter;
+package welt.graph.gitter;
 
 import graph.Nachbarschaftsliste;
 import vektor.Zweivektor;

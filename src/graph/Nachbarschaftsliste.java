@@ -3,6 +3,17 @@ package graph;
 import java.util.List;
 import java.util.ArrayList;
 
+// Ein ungerichteter, ungewichteter Graph. 
+//
+// Der Graph besitzt n Knoten und am höchstens (1/2)N(N-1) Kanten.
+//
+// Wichtige Regel: Die Knoten sind immer als eine ganze Zahl. Die
+// Kennzeichen der Knoten sind 0 bis Größe - 1. Deshalb jede Liste von
+// Nachbarn ist immer eine Liste von ganzen Zahlen von 0 bis Größe -
+// 1.
+//
+// Die Durchführung dieses Graphen ist eine Nachbarschaftsliste.
+//
 // Ein Knoten ist eine ganze Zahl.
 // Eine Kantenliste ist eine Liste von Knoten.
 // Ein Graph ist eine Liste von Kantenliste.
@@ -46,12 +57,11 @@ public class Nachbarschaftsliste {
       inBetrag: ganze Zahl
 
       Die Anzahl der Knoten in diesem Graph. Wir müssen den Betrag
-      bestimmt einnehmen, weil es Konten ohne Kanten geben konnte.
+      bestimmt einnehmen, weil es Knoten ohne Kanten geben konnte.
     */
     
     public Nachbarschaftsliste() {
 	// Nur benutzt, um Kinder zu machen.
-	// (Warum???)
     }
     
     public Nachbarschaftsliste(int[][] paare, int inBetrag) {

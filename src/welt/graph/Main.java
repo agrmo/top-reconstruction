@@ -1,24 +1,63 @@
-package welt.zweigraph;
+package welt.graph;
 
-import welt.zweigraph.gitter.Zweigitter;
 import graph.Nachbarschaftsliste;
 import java.awt.Color;
 import javax.swing.JFrame;
 import maler.Maler;
-import vektor.Zweivektor;
 import sicht.Sicht;
-import sicht.strecke.Streckesicht;
 import sicht.punkt.Punktsicht;
+import sicht.strecke.Streckesicht;
 import strecke.Zweistrecke;
-import welt.zweigraph.Zweigraphwelt;
+import vektor.Zweivektor;
+import welt.graph.Zweigraphwelt;
+import welt.graph.gitter.Zweigitter;
 import welt.zweistrecke.Zweistreckewelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes welt.zweigraph.Main
+  && java -cp classes welt.graph.Main
 */
 
 public class Main {
+
+    static void beispielEins() {
+
+	// Der Graph.
+	int[][] paare = {{1,2},{2,0}};
+        int betrag = 3;
+        Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
+
+	// Die Orten.
+        Zweivektor[] orten = {
+	    new Zweivektor(10,10),
+	    new Zweivektor(50,50),
+	    new Zweivektor(100,40)};
+  
+        // Die Welt.
+        Zweigraphwelt gw = new Zweigraphwelt(nl, orten);
+  
+        // Die Kanten.
+	Zweistrecke[] kanten = gw.nehmekanten();
+	Zweistreckewelt sw = new Zweistreckewelt(kanten);
+
+	// Die Knoten.
+	int durchmesser = 10;
+	Zweivektor[] knoten = gw.nehmeKnoten(durchmesser);
+
+	// Der Maler.
+	Streckesicht ss = new Streckesicht(sw);
+	Punktsicht ps = new Punktsicht(knoten, durchmesser);
+	Maler m = new Maler(new Sicht[] {ss, ps});
+  
+        // Stellen die Daten dar.
+        JFrame frame = new JFrame();
+	frame.getContentPane().setBackground(Color.BLACK);
+        frame.getContentPane().setForeground(Color.WHITE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1200, 600);
+        frame.add(m);
+        frame.setVisible(true);
+    }
 
     static void beispielZwei() {
 	int[][] paare = {{1,2},{2,0}};
@@ -47,6 +86,8 @@ public class Main {
   
         // Stellen die Daten dar.
         JFrame frame = new JFrame();
+	frame.getContentPane().setBackground(Color.BLACK);
+        frame.getContentPane().setForeground(Color.WHITE);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1200, 600);
         frame.add(m);
@@ -54,6 +95,6 @@ public class Main {
     }
     
     public static void main(String[] args) {
-	beispielZwei();
+	beispielEins();
     }    
 }

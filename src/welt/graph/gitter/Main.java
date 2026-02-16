@@ -1,12 +1,12 @@
-package welt.zweigraph.gitter;
+package welt.graph.gitter;
 
-import welt.zweigraph.Zweigraphwelt;
+import welt.graph.Zweigraphwelt;
 import graph.Nachbarschaftsliste;
 import vektor.Zweivektor;
 
 /*
   javac -d classes $(find src -type f)		\
-  && java -cp classes welt.zweigraph.gitter.Main
+  && java -cp classes welt.graph.gitter.Main
 */
 
 public class Main {

@@ -1,4 +1,4 @@
-package welt.zweigraph;
+package welt.graph;
 
 import graph.Nachbarschaftsliste;
 import vektor.Zweivektor;
