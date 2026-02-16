@@ -1,28 +1,29 @@
 package sicht.vielflach.basis;
 
 import java.awt.Graphics;
-import sicht.vielflach.basis.Basissicht;
+import sicht.vielflach.basis.Vielflachbasissicht;
 import sicht.text.Textsicht;
 import vektor.Zweivektor;
 import sicht.Sicht;
 import druck.matrix.Matrixdrucker;
 
-// Stellen die Eigenschaften der Giernicksicht dar.
-public class Basistextsicht extends Sicht {
+// Eine Sicht, die einen Text der Eigenschaften der
+// Vielflachbasissicht auf dem Bildschirm schreibt.
+public class Vielflachbasistextsicht extends Sicht {
 
-    Basissicht gs;
+    Vielflachbasissicht vbs;
     Textsicht textsicht;
 
-    public Basistextsicht(Basissicht gs) {
-	this.gs = gs;
+    public Vielflachbasistextsicht(Vielflachbasissicht vbs) {
+	this.vbs = vbs;
 	this.textsicht = new Textsicht(new String[] {},
 				       new Zweivektor[] {});
     }
 
     public void darstellen(Graphics g) {
 	String[] tl = new String[] {
-	    Matrixdrucker.drucken(this.gs.vorbasis),
-	    Matrixdrucker.drucken(this.gs.basis)
+	    Matrixdrucker.drucken(this.vbs.vorbasis),
+	    Matrixdrucker.drucken(this.vbs.basis)
 	};
 
 	Zweivektor[] tol = new Zweivektor[] {

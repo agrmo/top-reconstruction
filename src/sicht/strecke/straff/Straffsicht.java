@@ -31,14 +31,14 @@ public class Straffsicht extends Sicht {
     // sich wie ein Bildschirm, und verschiebt alle Vektoren, sodaß wir
     // sie sehen können.
     public void darstellen(Graphics g) {
-	// Java wird paintComponent viel Mal anrufen.  Das verschiebt
-	// jedes Mal die ursprüngliche Daten.  Leider müssen wir eine
-	// ganze neue Welt aufbauen.
-
-	Zweistreckewelt zkwNeu = Straffer.straffenWelt(this.welt, this.mx, this.my);
 	
-	Streckesicht ks = new Streckesicht(zkwNeu);
+	// Java wird paintComponent viel Mal anrufen.  Das würde jedes
+	// Mal die ursprüngliche Daten verschieben. Das kann nicht
+	// sein. Deshalb müssen wir leider eine ganze neue Welt
+	// aufbauen.
 	
-	ks.darstellen(g);
+	Zweistreckewelt zsw = Straffer.straffenWelt(this.welt, this.mx, this.my);
+	Streckesicht ss = new Streckesicht(zsw);
+	ss.darstellen(g);
     }
 }

@@ -73,39 +73,39 @@ public class Giernickverleger {
     // aus: Zweistrecke
     //
     // Verlege die gegebene dreidimensionale Strecke.
-    static Zweistrecke verlegen(Dreistrecke k,
+    static Zweistrecke verlegen(Dreistrecke ds,
 				Dreivektor augevektor, double brennweite,
 				double breite, double hoehe,
 				double gier, double nick) {
 	
-	Zweivektor verlegterVektorVon = Giernickverleger.verlegen(k.von,
+	Zweivektor verlegterVektorVon = Giernickverleger.verlegen(ds.von,
 								  augevektor, brennweite,
 								  breite, hoehe,
 								  gier, nick);
 	
-	Zweivektor verlegterVektorBis = Giernickverleger.verlegen(k.bis, augevektor, brennweite,
+	Zweivektor verlegterVektorBis = Giernickverleger.verlegen(ds.bis, augevektor, brennweite,
 								  breite, hoehe,
 								  gier, nick);
 	
 	// Diese ist die neue Strecke, die nur in zwei Dimensionen
 	// liegt. 
-	Zweistrecke zk = new Zweistrecke(verlegterVektorVon, verlegterVektorBis);
+	Zweistrecke zs = new Zweistrecke(verlegterVektorVon, verlegterVektorBis);
 	
-	return zk;
+	return zs;
     }
 
     // ein: Vielflachwelt, Giernicksicht
     //
     // Verlegen die dreidimensionale Vielflachwelt zu einer
     // zweidimensionale Zweistreckewelt.
-    public static Zweistreckewelt verlegen(Vielflachwelt kw,
+    public static Zweistreckewelt verlegen(Vielflachwelt vw,
 					   Dreivektor augevektor, double brennweite,
 					   double breite, double hoehe,
 					   double gier, double nick) {
 
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.
-	Dreistrecke[] dkl = kw.nehmekanten();
+	Dreistrecke[] dkl = vw.nehmekanten();
 	
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
@@ -123,8 +123,8 @@ public class Giernickverleger {
 	}
 
 	// Bauen die Zweistreckewelt auf.
-	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
+	Zweistreckewelt zsw = new Zweistreckewelt(zsl);
 
-	return zkw;
+	return zsw;
     }
 }

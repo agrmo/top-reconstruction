@@ -24,9 +24,9 @@ public class Schiefverleger {
     //
     // Verlege den gegeben dreidimensionalen Vektor auf einer
     // Sichtfläche, um einen zweidimensionalen Vektor zu bekommen.
-    Zweivektor verlegenVektor(Dreivektor p) {
-	double ausX = p.eins + (this.a * p.drei);
-	double ausY = p.zwei + (this.a * p.drei);
+    Zweivektor verlegenVektor(Dreivektor v) {
+	double ausX = v.eins + (this.a * v.drei);
+	double ausY = v.zwei + (this.a * v.drei);
 
 	Zweivektor aus = new Zweivektor(ausX, ausY);
 	
@@ -38,45 +38,45 @@ public class Schiefverleger {
     //
     // Verlege die gegebene dreidimensionale Strecke auf einer
     // Sichtfläche, um eine zweidimensionale Strecke zu bekommen.
-    Zweistrecke verlegenStrecke(Dreistrecke k) {
-	Zweivektor verlegterVektorVon = this.verlegenVektor(k.von);
-	Zweivektor verlegterVektorBis = this.verlegenVektor(k.bis);
+    Zweistrecke verlegenStrecke(Dreistrecke ds) {
+	Zweivektor verlegterVektorVon = this.verlegenVektor(ds.von);
+	Zweivektor verlegterVektorBis = this.verlegenVektor(ds.bis);
 
 	// Diese ist die neue Strecke, die nur in zwei Dimensionen
 	// liegt. 
-	Zweistrecke zk = new Zweistrecke(verlegterVektorVon, verlegterVektorBis);
+	Zweistrecke zs = new Zweistrecke(verlegterVektorVon, verlegterVektorBis);
 	
-	return zk;
+	return zs;
     }
 
-    // ein: Vielflachwelt
-    // kw: Die dreidimensionale Welt mit den ursprünglichen Daten.
+    // ein: 
+    // Vielflachwelt: Die dreidimensionale Welt mit den ursprünglichen Daten.
     //
     // Verlegen die dreidimensionale Vielflachwelt zu einer
     // zweidimensionale Zweistreckewelt.
     //
-    public Zweistreckewelt verlegenWelt(Vielflachwelt kw) {
+    public Zweistreckewelt verlegenWelt(Vielflachwelt vw) {
 
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.
-	Dreistrecke[] dkl = kw.nehmekanten();
+	Dreistrecke[] dsl = vw.nehmekanten();
 
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
-	Zweistrecke[] zsl = new Zweistrecke[dkl.length];
+	Zweistrecke[] zsl = new Zweistrecke[dsl.length];
 	
-	for (int i = 0; i < dkl.length; i++) {
+	for (int i = 0; i < dsl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zk = this.verlegenStrecke(dkl[i]);
+	    Zweistrecke zs = this.verlegenStrecke(dsl[i]);
 	
 	    // Fügen sie zu der Liste ein.
-	    zsl[i] = zk;
+	    zsl[i] = zs;
 	}
 
 	// Bauen die Zweistreckewelt auf.
-	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
+	Zweistreckewelt zsw = new Zweistreckewelt(zsl);
 
-	return zkw;
+	return zsw;
     }
 }

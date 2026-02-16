@@ -21,14 +21,14 @@ public class Main {
 	// Mache die Welt.
 	Kubus k = new Kubus(50);
 	Dreivektor p = new Dreivektor(100,100,100);
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(k);
+	ArrayList<Vielflach> vl = new ArrayList<Vielflach>();
+	vl.add(k);
 	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
 	ol.add(p);
-	Vielflachwelt kw = new Vielflachwelt(kl, ol);
+	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 
 	// Mache die Sicht.
-	Schiefsicht s = new Schiefsicht(kw, 0.1);
+	Schiefsicht s = new Schiefsicht(vw, 0.1);
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Welt dar.

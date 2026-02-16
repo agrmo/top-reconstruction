@@ -22,10 +22,10 @@ public class Main {
 	kl.add(k);
 	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
 	ol.add(o);
-	Vielflachwelt kw = new Vielflachwelt(kl, ol);
+	Vielflachwelt vw = new Vielflachwelt(kl, ol);
 
 	// Benutzen den Verleger.
 	Dreivektor vp = new Dreivektor(100,100,100);
-	Verschieber.verschieben(kw, vp);
+	Verschieber.verschieben(vw, vp);
     }
 }

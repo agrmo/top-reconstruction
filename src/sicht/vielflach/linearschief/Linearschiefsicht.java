@@ -51,20 +51,20 @@ public class Linearschiefsicht extends Sicht {
     public void darstellen(Graphics g) {
 	
 	// Benutzen die Verlegungen.
-	Zweistreckewelt zkw = this.sv.verlegenWelt(this.welt);
+	Zweistreckewelt zsw = this.sv.verlegenWelt(this.welt);
 
 	// Straffen die Vektoren.
-	Zweistreckewelt zkwNeu = Straffer.straffenWelt(zkw,
+	Zweistreckewelt zswNeu = Straffer.straffenWelt(zsw,
 						       this.mx, this.my);
 	
 	// Verschieben die Vektoren.
-	Zweistreckewelt zkwNeuNeu = Verschieber.verschieben(zkwNeu,
+	Zweistreckewelt zswNeuNeu = Verschieber.verschieben(zswNeu,
 							    this.bx, this.by);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.
-	Streckesicht ks = new Streckesicht(zkwNeuNeu);
-	ks.darstellen(g);
+	Streckesicht ss = new Streckesicht(zswNeuNeu);
+	ss.darstellen(g);
     }
 }
 

@@ -19,18 +19,18 @@ public class Main {
     public static void main(String[] args){
 
 	// Mache die Welt.
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(new Kubus(30));
+	ArrayList<Vielflach> vl = new ArrayList<Vielflach>();
+	vl.add(new Kubus(30));
 	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
 	ol.add(new Dreivektor(0,0,100));
-	Vielflachwelt kw = new Vielflachwelt(kl, ol);
+	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 
 	// Mache die Sicht.
 	double breite = 1200;
 	double hoehe = 600;
 	double brennweite = 500;
 	Dreivektor ap = new Dreivektor(0,0,0);
-	Giernicksicht gs = new Giernicksicht(kw, ap, brennweite, breite, hoehe, 0.2, 0.4);
+	Giernicksicht gs = new Giernicksicht(vw, ap, brennweite, breite, hoehe, 0.2, 0.4);
 	Maler m = new Maler(new Sicht[] {gs});
 	
 	// Stellen die Daten dar.

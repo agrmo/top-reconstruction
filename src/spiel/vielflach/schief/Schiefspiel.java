@@ -20,7 +20,7 @@ public class Schiefspiel extends Spiel {
 
     Maler m;
     Linearschiefsicht lss;
-    Vielflachwelt kw;
+    Vielflachwelt vw;
     int mouseanfangx;
     int mouseanfangy;
     double anfangbx;
@@ -28,10 +28,10 @@ public class Schiefspiel extends Spiel {
 
     public Schiefspiel(Maler m,
 		       Linearschiefsicht l,
-		       Vielflachwelt kw) {
+		       Vielflachwelt vw) {
 	this.m = m;
 	this.lss = l;
-	this.kw = kw;
+	this.vw = vw;
     }
     
     public void handelnMouseDrucken(MouseEvent me) {
@@ -77,7 +77,7 @@ public class Schiefspiel extends Spiel {
     // Verschiebe die ursprüngliche Vektoren der Welt nach dx, dy, dz.
     void verschieben(int dx, int dy, int dz) {
 	Dreivektor verschiebenvektor = new Dreivektor(dx,dy,dz);
-	Verschieber.verschieben(this.kw, verschiebenvektor);
+	Verschieber.verschieben(this.vw, verschiebenvektor);
     }
     
     public void handelnTastatur(KeyEvent ke) {

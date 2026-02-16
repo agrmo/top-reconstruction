@@ -30,7 +30,7 @@ public class Main {
 	double hoehe = 600;
 	double brennweite = 500;
 	Dreivektor ap = new Dreivektor(0,0,0);
-	Basissicht bs = new Basissicht(welt, ap, brennweite, breite, hoehe);
+	Vielflachbasissicht bs = new Vielflachbasissicht(welt, ap, brennweite, breite, hoehe);
 	Maler m = new Maler(new Sicht[] {bs});
 	
 	// Stellen die Daten dar.

@@ -13,9 +13,9 @@ import matrix.Dreimatrix;
 // Eine Sicht, die eine dreidimensionale Vielflachwelt einnimmt.
 // Sie wandelt die Vielflachwelt mit nur einer Verlegung: einer vektoren
 // Verlegung. Sie gibt am Ende eine Zweistreckewelt ab.
-public class Basissicht extends Sicht {
+public class Vielflachbasissicht extends Sicht {
 
-    public Vielflachwelt kw;
+    public Vielflachwelt vw;
     public Dreivektor augevektor;
     public double breite;
     public double brennweite;
@@ -23,11 +23,11 @@ public class Basissicht extends Sicht {
     public Dreimatrix vorbasis;
     public Dreimatrix basis;
 
-    public Basissicht(Vielflachwelt kw,
-		      Dreivektor augevektor, double brennweite,
-		      double breite, double hoehe) {
+    public Vielflachbasissicht(Vielflachwelt vw,
+			       Dreivektor augevektor, double brennweite,
+			       double breite, double hoehe) {
 
-	this.kw = kw;
+	this.vw = vw;
 	this.augevektor = augevektor;
 	this.brennweite = brennweite;
 	this.breite = breite;
@@ -39,13 +39,13 @@ public class Basissicht extends Sicht {
     public void darstellen(Graphics g) {
 	
 	// Benutzen die Verleger.
-	Zweistreckewelt zkw = Basisverleger.verlegen(this.kw, this.augevektor, this.brennweite,
+	Zweistreckewelt zsw = Basisverleger.verlegen(this.vw, this.augevektor, this.brennweite,
 						     this.breite, this.hoehe,
 						     this.vorbasis, this.basis);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.
-	Streckesicht ks = new Streckesicht(zkw);
-	ks.darstellen(g);
+	Streckesicht ss = new Streckesicht(zsw);
+	ss.darstellen(g);
     }
 }

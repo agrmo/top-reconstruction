@@ -25,7 +25,7 @@ public class Main {
 	Zweistrecke[] zsl = new Zweistrecke[] {zsa, zsb};
 	Zweistreckewelt zsw = new Zweistreckewelt(zsl);
 
-	// Der Verleger vergrößert die stellen der Strecken. Nicht nur
+	// Der Verleger vergrößert die Stellen der Strecken. Nicht nur
 	// wird den Abstand zwischen den Vektoren vergrößert, sondern
 	// auch den Abstand zum Ursprung. Zum Beispiel,
 	//
@@ -34,11 +34,6 @@ public class Main {
 	// (0,0) ------ (20,0) ------ (40,0)
 	// verschoben.
 	//
-	// Die Zahlen sind die wesentliche Eigenschaften, die wir
-	// brauchen, um die dreidimensionale Daten in einem
-	// zweidimensionalen Bildschirm darzustellen.
-	//
-	// kw: Die ursprüngliche dreidimensionale Daten
 	// 2.0 1.0: Die Zahlen, die der straffe Verleger benutzt
 	//   2.0: Multipliziere alle x Stellen mit 2.0
 	//   1.0: Multipliziere alle y Stellen mit 1.0

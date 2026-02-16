@@ -23,11 +23,11 @@ public class Main {
 	// Mache die Welt.
 	Kubus k = new Kubus(50);
 	Dreivektor p = new Dreivektor(100,100,100);
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(k);
+	ArrayList<Vielflach> vl = new ArrayList<Vielflach>();
+	vl.add(k);
 	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
 	ol.add(p);
-	Vielflachwelt kw = new Vielflachwelt(kl, ol);
+	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 
 	// Mache die Sicht.
 	double a = 0.3;
@@ -35,13 +35,13 @@ public class Main {
 	double bx = 0.0;
 	double my = 1.0;
 	double by = 0.0;
-	Linearschiefsicht lss = new Linearschiefsicht(kw,
+	Linearschiefsicht lss = new Linearschiefsicht(vw,
 						      a,
 						      mx, bx, my, by);
 	Maler m = new Maler(new Sicht[] {lss});
 	
 	// Mache das Spiel.
-	Schiefspiel s = new Schiefspiel(m, lss, kw);
+	Schiefspiel s = new Schiefspiel(m, lss, vw);
 
 	// Mache die Handlungen.
 	SpielHandlung sh = new SpielHandlung(s);

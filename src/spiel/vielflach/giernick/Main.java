@@ -35,22 +35,22 @@ public class Main {
 	// "Basismousespiel."
 	
 	// Mache die Welt.
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(new Kubus(60));
+	ArrayList<Vielflach> vl = new ArrayList<Vielflach>();
+	vl.add(new Kubus(60));
 	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
 	ol.add(new Dreivektor(-30,-30,-30));
-	Vielflachwelt kw = new Vielflachwelt(kl, ol);
+	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0, 0, 100);
-	Giernicksicht gs = new Giernicksicht(kw, ap, 500, breite, hoehe, 0.0, 0.0);
+	Giernicksicht gs = new Giernicksicht(vw, ap, 500, breite, hoehe, 0.0, 0.0);
 	Maler m = new Maler(new Sicht[] {gs});
 	
 	// Mache das Spiel.
-	Giernickspiel s = new Giernickspiel(m, gs, kw);
+	Giernickspiel s = new Giernickspiel(m, gs, vw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);

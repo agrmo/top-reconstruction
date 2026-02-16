@@ -7,25 +7,25 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import maler.Maler;
 import matrix.Dreimatrix;
-import sicht.vielflach.basis.Basissicht;
+import sicht.vielflach.basis.Vielflachbasissicht;
 import spiel.Spiel;
 import vektor.Dreivektor;
 import welt.vielflach.Vielflachwelt;
 
-public class Basisspiel extends Spiel {
+public class Vielflachbasisspiel extends Spiel {
 
     Maler m;
-    Basissicht as;
-    Vielflachwelt kw;
+    Vielflachbasissicht vbs;
+    Vielflachwelt vw;
     int mouseAnfangX;
     int mouseAnfangY;
 
-    public Basisspiel(Maler m,
-		      Basissicht as,
-		      Vielflachwelt kw) {
+    public Vielflachbasisspiel(Maler m,
+			       Vielflachbasissicht vbs,
+			       Vielflachwelt vw) {
 	this.m = m;
-	this.as = as;
-	this.kw = kw;
+	this.vbs = vbs;
+	this.vw = vw;
 
 	this.mouseAnfangX = 0;
 	this.mouseAnfangY = 0;
@@ -40,8 +40,8 @@ public class Basisspiel extends Spiel {
 	this.mouseAnfangX = 0;
 	this.mouseAnfangY = 0;
 
-	this.as.vorbasis = this.as.basis.punkt(this.as.vorbasis);
-	this.as.basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
+	this.vbs.vorbasis = this.vbs.basis.punkt(this.vbs.vorbasis);
+	this.vbs.basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
 
 	this.m.repaint();
     }
@@ -67,14 +67,14 @@ public class Basisspiel extends Spiel {
 	int jetztY = me.getY();
 	int unterschiedX = jetztX - this.mouseAnfangX;
 	int unterschiedY = jetztY - this.mouseAnfangY;
-	double winkelGier = ((double) unterschiedX) / this.as.breite;
-	double winkelNick = -((double) unterschiedY) / this.as.hoehe;
+	double winkelGier = ((double) unterschiedX) / this.vbs.breite;
+	double winkelNick = -((double) unterschiedY) / this.vbs.hoehe;
 
 	Dreimatrix giermatrix = Matrixdreher.machedrehery(winkelGier);
 	Dreimatrix nickmatrix = Matrixdreher.machedreherx(winkelNick);
 
-	this.as.basis = this.as.basis.punkt(giermatrix);
-	this.as.basis = this.as.basis.punkt(nickmatrix);
+	this.vbs.basis = this.vbs.basis.punkt(giermatrix);
+	this.vbs.basis = this.vbs.basis.punkt(nickmatrix);
 	
 	this.mouseAnfangX = jetztX;
 	this.mouseAnfangY = jetztY;

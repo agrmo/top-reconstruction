@@ -1,6 +1,5 @@
 package welt.zweistrecke;
 
-import java.util.ArrayList;
 import strecke.Zweistrecke;
 import vektor.Zweivektor;
 
@@ -11,15 +10,15 @@ import vektor.Zweivektor;
 
 public class Main {
     public static void main(String[] args) {
-	Zweistrecke zka = new Zweistrecke(new Zweivektor(30,30),
+	Zweistrecke zsa = new Zweistrecke(new Zweivektor(30,30),
 					  new Zweivektor(500,500));
 
-	Zweistrecke zkb = new Zweistrecke(new Zweivektor(200,20),
+	Zweistrecke zsb = new Zweistrecke(new Zweivektor(200,20),
 					  new Zweivektor(500,100));
 	
-	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
+	Zweistrecke[] zsl = new Zweistrecke[] {zsa, zsb};
 
 	// Mache die zweidimensionale Streckenwelt.
-	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
+	Zweistreckewelt zsw = new Zweistreckewelt(zsl);
     }
 }

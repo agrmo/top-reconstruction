@@ -26,10 +26,10 @@ public class Main {
 				      new Zweivektor(500,100));
 
 	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
-	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
+	Zweistreckewelt zsw = new Zweistreckewelt(zsl);
 	
 	// Mache eine Streckesicht.
-	Streckesicht s = new Streckesicht(zkw);
+	Streckesicht s = new Streckesicht(zsw);
 	Maler m = new Maler(new Sicht[] {s});
 
 	// Stellen die Daten dar.
@@ -42,23 +42,23 @@ public class Main {
 
     static void beispielZwei() {
 	// Mache die Welt.
-	Zweistrecke zka = new Zweistrecke(new Zweivektor(0,0),
-				      new Zweivektor(100,0));
+	Zweistrecke zsa = new Zweistrecke(new Zweivektor(0,0),
+					  new Zweivektor(100,0));
+	
+	Zweistrecke zsb = new Zweistrecke(new Zweivektor(200,0),
+					  new Zweivektor(300,0));
 
-	Zweistrecke zkb = new Zweistrecke(new Zweivektor(200,0),
-				      new Zweivektor(300,0));
+	Zweistrecke[] zsl = new Zweistrecke[] {zsa, zsb};
+	Zweistreckewelt zsw = new Zweistreckewelt(zsl);
 
-	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
-	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
-
-	// Die Sicht.
+	// Mache die Sicht.
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	int halbBreite = (int) (screenSize.getWidth() / 2.0);
 	int halbHoehe = (int) (screenSize.getHeight() / 2.0);
 	
-	Zweistreckewelt zkwNeu = Verschieber.verschieben(zkw, halbBreite, halbHoehe);
+	Zweistreckewelt zswNeu = Verschieber.verschieben(zsw, halbBreite, halbHoehe);
 	    
-	Streckesicht s = new Streckesicht(zkwNeu);
+	Streckesicht s = new Streckesicht(zswNeu);
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Daten dar.

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
-import sicht.vielflach.basis.Basissicht;
-import sicht.vielflach.basis.Basistextsicht;
+import sicht.vielflach.basis.Vielflachbasissicht;
+import sicht.vielflach.basis.Vielflachbasistextsicht;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
 import vielflach.Vielflach;
@@ -37,20 +37,20 @@ public class Main {
 	kl.add(new Kubus(60));
 	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
 	ol.add(new Dreivektor(-30,-30,-30));
-	Vielflachwelt kw = new Vielflachwelt(kl, ol);
+	Vielflachwelt vw = new Vielflachwelt(kl, ol);
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0, 0, 100);
-	Basissicht gs = new Basissicht(kw, ap, 500, breite, hoehe);
-	Basistextsicht bs = new Basistextsicht(gs);
+	Vielflachbasissicht vbs = new Vielflachbasissicht(vw, ap, 500, breite, hoehe);
+	Vielflachbasistextsicht vbts = new Vielflachbasistextsicht(vbs);
 
-	Maler m = new Maler(new Sicht[] {gs, bs});
+	Maler m = new Maler(new Sicht[] {vbs, vbts});
 	
 	// Mache das Spiel.
-	Basisspiel s = new Basisspiel(m, gs, kw);
+	Vielflachbasisspiel s = new Vielflachbasisspiel(m, vbs, vw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);
@@ -73,19 +73,19 @@ public class Main {
 	kl.add(new Kubus(60));
 	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
 	ol.add(new Dreivektor(-30,-30,-30));
-	Vielflachwelt kw = new Vielflachwelt(kl, ol);
+	Vielflachwelt vw = new Vielflachwelt(kl, ol);
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0, 0, 100);
-	Basissicht gs = new Basissicht(kw, ap, 500, breite, hoehe);
+	Vielflachbasissicht vbs = new Vielflachbasissicht(vw, ap, 500, breite, hoehe);
 
-	Maler m = new Maler(new Sicht[] {gs});
+	Maler m = new Maler(new Sicht[] {vbs});
 	
 	// Mache das Spiel.
-	Basisspiel s = new Basisspiel(m, gs, kw);
+	Vielflachbasisspiel s = new Vielflachbasisspiel(m, vbs, vw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);
@@ -103,6 +103,6 @@ public class Main {
     }
     
     public static void main(String[] args) {
-	beispielZwei();
+	beispielEins();
     }
 }

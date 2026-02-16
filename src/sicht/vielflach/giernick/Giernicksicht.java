@@ -14,7 +14,7 @@ import sicht.Sicht;
 // Verlegung. Sie gibt am Ende eine Zweistreckewelt ab.
 public class Giernicksicht extends Sicht {
 
-    public Vielflachwelt kw;
+    public Vielflachwelt vw;
     public Dreivektor augevektor;
     public double breite;
     public double brennweite;
@@ -22,12 +22,12 @@ public class Giernicksicht extends Sicht {
     public double gier;
     public double nick;
 
-    public Giernicksicht(Vielflachwelt kw,
+    public Giernicksicht(Vielflachwelt vw,
 			 Dreivektor augevektor, double brennweite,
 			 double breite, double hoehe,
 			 double gier, double nick) {
 
-	this.kw = kw;
+	this.vw = vw;
 	this.augevektor = augevektor;
 	this.brennweite = brennweite;
 	this.breite = breite;
@@ -39,13 +39,13 @@ public class Giernicksicht extends Sicht {
     public void darstellen(Graphics g) {
 	
 	// Benutzen die Verleger.
-	Zweistreckewelt zkw = Giernickverleger.verlegen(this.kw, this.augevektor, this.brennweite,
+	Zweistreckewelt zsw = Giernickverleger.verlegen(this.vw, this.augevektor, this.brennweite,
 							this.breite, this.hoehe,
 							this.gier, this.nick);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.
-	Streckesicht ks = new Streckesicht(zkw);
-	ks.darstellen(g);
+	Streckesicht ss = new Streckesicht(zsw);
+	ss.darstellen(g);
     }
 }

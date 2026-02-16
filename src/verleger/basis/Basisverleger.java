@@ -17,8 +17,8 @@ import matrix.Dreimatrix;
 // Schritte:
 // 1. Wandeln alle Punkte zur neuen Basis um.
 // 3. Entfernen die Kamera vom Ursprung.
-// 4. Projizieren alle Vektore zu einer zweidimensionalen Fläche.
-// 5. Verschieben alle Vektore zum Zentrum des Bildchirms.
+// 4. Projizieren alle Vektoren zu einer zweidimensionalen Fläche.
+// 5. Verschieben alle Vektoren zum Zentrum des Bildchirms.
 public class Basisverleger {
 
     // ein: Dreivektor, ...
@@ -78,33 +78,33 @@ public class Basisverleger {
     //
     // Verlegen die dreidimensionale Vielflachwelt zu einer
     // zweidimensionale Zweistreckewelt.
-    public static Zweistreckewelt verlegen(Vielflachwelt kw,
+    public static Zweistreckewelt verlegen(Vielflachwelt vw,
 					   Dreivektor augevektor, double brennweite,
 					   double breite, double hoehe,
 					   Dreimatrix vorbasis, Dreimatrix basis) {
 	
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.
-	Dreistrecke[] dkl = kw.nehmekanten();
+	Dreistrecke[] dsl = vw.nehmekanten();
 	
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
-	Zweistrecke[] zsl = new Zweistrecke[dkl.length];
+	Zweistrecke[] zsl = new Zweistrecke[dsl.length];
 	
-	for (int i = 0; i < dkl.length; i++) {
+	for (int i = 0; i < dsl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zk = Basisverleger.verlegen(dkl[i], augevektor, brennweite,
+	    Zweistrecke zs = Basisverleger.verlegen(dsl[i], augevektor, brennweite,
 						    breite, hoehe,
 						    vorbasis, basis);
 	    
 	    // Fügen sie zu der Liste ein.
-	    zsl[i] = zk;
+	    zsl[i] = zs;
 	}
 
 	// Bauen die Zweistreckewelt auf.
-	Zweistreckewelt zkw = new Zweistreckewelt(zsl);
+	Zweistreckewelt zsw = new Zweistreckewelt(zsl);
 
-	return zkw;
+	return zsw;
     }
 }
