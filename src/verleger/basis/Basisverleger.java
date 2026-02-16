@@ -53,24 +53,24 @@ public class Basisverleger {
     // aus: Zweistrecke
     //
     // Verlege die gegebene dreidimensionale Strecke.
-    public static Zweistrecke verlegen(Dreistrecke k, Dreivektor augevektor, double brennweite,
+    public static Zweistrecke verlegen(Dreistrecke ds, Dreivektor augevektor, double brennweite,
 				       double breite, double hoehe,
 				       Dreimatrix vorbasis, Dreimatrix basis) {
 	
-	Zweivektor verlegterVektorVon = Basisverleger.verlegen(k.von,
+	Zweivektor verlegterVektorVon = Basisverleger.verlegen(ds.von,
 							       augevektor, brennweite,
 							       breite, hoehe,
 							       vorbasis, basis);
 	
-	Zweivektor verlegterVektorBis = Basisverleger.verlegen(k.bis, augevektor, brennweite,
+	Zweivektor verlegterVektorBis = Basisverleger.verlegen(ds.bis, augevektor, brennweite,
 							       breite, hoehe,
 							       vorbasis, basis);
 	
 	// Diese ist die neue Strecke, die nur in zwei Dimensionen
 	// liegt. 
-	Zweistrecke zk = new Zweistrecke(verlegterVektorVon, verlegterVektorBis);
+	Zweistrecke zs = new Zweistrecke(verlegterVektorVon, verlegterVektorBis);
 	
-	return zk;
+	return zs;
     }
 
     // ein: Vielflachwelt, ...

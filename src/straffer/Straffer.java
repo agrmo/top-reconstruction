@@ -17,17 +17,17 @@ import verdoppler.strecke.Streckeverdoppler;
 public class Straffer {
 
     // Straffen die Strecke nach den Gleichungen.
-    static void straffenStrecke(Zweistrecke zk,
+    static void straffenStrecke(Zweistrecke zs,
 				double mx, double my) {
 	
-	Zweivektor von = zk.von;
-	Zweivektor bis = zk.bis;
+	Zweivektor von = zs.von;
+	Zweivektor bis = zs.bis;
 
-	zk.von.eins = (int) (zk.von.eins * mx);
-	zk.von.zwei = (int) (zk.von.zwei * my);
+	zs.von.eins = (int) (zs.von.eins * mx);
+	zs.von.zwei = (int) (zs.von.zwei * my);
 	
-	zk.bis.eins = (int) (zk.bis.eins * mx);
-	zk.bis.zwei = (int) (zk.bis.zwei * my);
+	zs.bis.eins = (int) (zs.bis.eins * mx);
+	zs.bis.zwei = (int) (zs.bis.zwei * my);
     }
 
     // Straffen die Welt.

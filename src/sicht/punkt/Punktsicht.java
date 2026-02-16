@@ -1,12 +1,12 @@
-package sicht.vektor;
+package sicht.punkt;
 
 import java.awt.Graphics;
 import vektor.Zweivektor;
 import sicht.Sicht;
 
-// Eine Vektorsicht kann Vektore darstellen.  Die Vektore stehen schon
+// Eine Punktsicht kann Vektore darstellen.  Die Vektore stehen schon
 // auf einer Ebene.
-public class Vektorsicht extends Sicht {
+public class Punktsicht extends Sicht {
 
     // Die Stellen jedes Vektores.
     public Zweivektor[] pl;
@@ -14,7 +14,7 @@ public class Vektorsicht extends Sicht {
     // Der Durchmesser jedes Vektores.
     public int durchmesser;
 
-    public Vektorsicht(Zweivektor[] pl, int d) {
+    public Punktsicht(Zweivektor[] pl, int d) {
 	this.pl = pl;
 	this.durchmesser = d;
     }

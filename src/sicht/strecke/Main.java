@@ -2,13 +2,14 @@ package sicht.strecke;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.Color;
 import javax.swing.JFrame;
-import vektor.Zweivektor;
-import strecke.Zweistrecke;
-import verschieber.Verschieber;
-import welt.zweistrecke.Zweistreckewelt;
 import maler.Maler;
 import sicht.Sicht;
+import strecke.Zweistrecke;
+import vektor.Zweivektor;
+import verschieber.Verschieber;
+import welt.zweistrecke.Zweistreckewelt;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -34,6 +35,8 @@ public class Main {
 
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
+	frame.getContentPane().setBackground(Color.BLACK);
+        frame.getContentPane().setForeground(Color.WHITE);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
 	frame.add(m);
@@ -63,6 +66,8 @@ public class Main {
 	
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
+	frame.getContentPane().setBackground(Color.BLACK);
+        frame.getContentPane().setForeground(Color.WHITE);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
 	frame.add(m);

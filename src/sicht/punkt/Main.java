@@ -1,11 +1,10 @@
-package sicht.vektor;
+package sicht.punkt;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
-import sicht.vektor.Vektorsicht;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
 import verleger.giernick.Giernickverleger;
@@ -14,7 +13,7 @@ import vielflach.kubus.Kubus;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.vektor.Main
+  && java -cp classes sicht.punkt.Main
 */
 
 public class Main {
@@ -25,7 +24,7 @@ public class Main {
 	Zweivektor[] pl = q.nehmeecken();
 
 	// Mache die Sicht.
-	Vektorsicht s = new Vektorsicht(pl, 10);
+	Punktsicht s = new Punktsicht(pl, 10);
 	Maler m = new Maler(new Sicht[] {s});
 
 	// Stellen die Daten dar.
@@ -56,7 +55,7 @@ public class Main {
 						     breite, hoehe,
 						     gier, nick);
 	int radius = 10;
-	Vektorsicht s = new Vektorsicht(zpl, radius);
+	Punktsicht s = new Punktsicht(zpl, radius);
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Daten dar.

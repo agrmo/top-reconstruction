@@ -12,8 +12,8 @@ public class Main {
 	
 	Dreieck de = new Dreieck(5);
 
-	for (Zweistrecke zk : de.nehmekanten()) {
-	    System.out.println(Streckedrucker.drucken(zk));
+	for (Zweistrecke zs : de.nehmekanten()) {
+	    System.out.println(Streckedrucker.drucken(zs));
 	}
     }
 }

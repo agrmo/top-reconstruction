@@ -53,6 +53,7 @@ public class Giernickverleger {
     // Aus: Liste von zweidimensionalen Vektoren
     //
     // Verlegen diese zweidimensionale Vektoren zu dreidimensionalen Vektoren.
+    // In diesem Sinne sind die Vektoren Punkten.
     public static Zweivektor[] verlegen(Dreivektor[] dpl,
 					Dreivektor augevektor, double brennweite,
 					double breite, double hoehe,
@@ -105,21 +106,21 @@ public class Giernickverleger {
 
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt.
-	Dreistrecke[] dkl = vw.nehmekanten();
+	Dreistrecke[] dsl = vw.nehmekanten();
 	
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
-	Zweistrecke[] zsl = new Zweistrecke[dkl.length];
+	Zweistrecke[] zsl = new Zweistrecke[dsl.length];
 	
-	for (int i = 0; i < dkl.length; i++) {
+	for (int i = 0; i < dsl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zk = Giernickverleger.verlegen(dkl[i], augevektor, brennweite,
+	    Zweistrecke zs = Giernickverleger.verlegen(dsl[i], augevektor, brennweite,
 						       breite, hoehe,
 						       gier, nick);
 	    
 	    // Fügen sie zu der Liste ein.
-	    zsl[i] = zk;
+	    zsl[i] = zs;
 	}
 
 	// Bauen die Zweistreckewelt auf.

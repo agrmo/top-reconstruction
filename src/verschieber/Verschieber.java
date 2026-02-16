@@ -12,15 +12,15 @@ import welt.zweistrecke.Zweistreckewelt;
 public class Verschieber {
 
     // ein: Zweistrecke, Double, Double
-    public static void verschiebenStrecke(Zweistrecke zk, double dx, double dy) {
-	Zweivektor von = zk.von;
-	Zweivektor bis = zk.bis;
+    public static void verschiebenStrecke(Zweistrecke zs, double dx, double dy) {
+	Zweivektor von = zs.von;
+	Zweivektor bis = zs.bis;
 	
-	zk.von.eins = (int) (zk.von.eins + dx);
-	zk.von.zwei = (int) (zk.von.zwei + dy);
+	zs.von.eins = (int) (zs.von.eins + dx);
+	zs.von.zwei = (int) (zs.von.zwei + dy);
 	
-	zk.bis.eins = (int) (zk.bis.eins + dx);
-	zk.bis.zwei = (int) (zk.bis.zwei + dy);
+	zs.bis.eins = (int) (zs.bis.eins + dx);
+	zs.bis.zwei = (int) (zs.bis.zwei + dy);
     }
 
     // ein: Vieleckwelt, Zweivektor

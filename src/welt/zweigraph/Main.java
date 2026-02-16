@@ -8,7 +8,7 @@ import maler.Maler;
 import vektor.Zweivektor;
 import sicht.Sicht;
 import sicht.strecke.Streckesicht;
-import sicht.vektor.Vektorsicht;
+import sicht.punkt.Punktsicht;
 import strecke.Zweistrecke;
 import welt.zweigraph.Zweigraphwelt;
 import welt.zweistrecke.Zweistreckewelt;
@@ -42,7 +42,7 @@ public class Main {
 
 	// Mache den Maler.
 	Streckesicht ss = new Streckesicht(sw);
-	Vektorsicht ps = new Vektorsicht(knoten, durchmesser);
+	Punktsicht ps = new Punktsicht(knoten, durchmesser);
 	Maler m = new Maler(new Sicht[] {ss, ps});
   
         // Stellen die Daten dar.
