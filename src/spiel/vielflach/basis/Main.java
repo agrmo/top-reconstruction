@@ -22,8 +22,7 @@ import welt.vielflach.Vielflachwelt;
 */
 
 public class Main {
-    public static void main(String[] args) {
-
+    static void beispielEins() {
 	// Hier ist die Lösung des Problems, das wir im Giernickspiel
 	// gefunden hatten. Eine Drehung mit der Mouse nach einem
 	// Kopfstehen des Kubus fällt uns unrichtig. Die Lösung ist
@@ -65,6 +64,45 @@ public class Main {
 	frame.add(m);
 	frame.addMouseListener(sh);
 	frame.addMouseMotionListener(sh);
-	frame.setVisible(true);	
+	frame.setVisible(true);
+    }
+
+    static void beispielZwei() {
+	// Mache die Welt.
+	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
+	kl.add(new Kubus(60));
+	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
+	ol.add(new Dreivektor(-30,-30,-30));
+	Vielflachwelt kw = new Vielflachwelt(kl, ol);
+	
+	// Mache die Sicht.
+	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
+	double breite = bildschirm.getWidth();
+	double hoehe = bildschirm.getHeight();
+	Dreivektor ap = new Dreivektor(0, 0, 100);
+	Basissicht gs = new Basissicht(kw, ap, 500, breite, hoehe);
+
+	Maler m = new Maler(new Sicht[] {gs});
+	
+	// Mache das Spiel.
+	Basisspiel s = new Basisspiel(m, gs, kw);
+
+	// Mache die Handlung.
+	SpielHandlung sh = new SpielHandlung(s);
+
+	// Geh.
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.getContentPane().setBackground(Color.BLACK);
+	frame.getContentPane().setForeground(Color.WHITE);
+	frame.setSize((int) breite, (int) hoehe);
+	frame.add(m);
+	frame.addMouseListener(sh);
+	frame.addMouseMotionListener(sh);
+	frame.setVisible(true);
+    }
+    
+    public static void main(String[] args) {
+	beispielZwei();
     }
 }
