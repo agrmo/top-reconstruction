@@ -93,7 +93,7 @@ public class Main {
         frame.add(m);
         frame.setVisible(true);
     }
-    
+
     public static void main(String[] args) {
 	beispielEins();
     }    
