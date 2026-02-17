@@ -6,7 +6,7 @@ import strecke.Zweistrecke;
 import verdoppler.strecke.Streckeverdoppler;
 import welt.vieleck.Vieleckwelt;
 import welt.vielflach.Vielflachwelt;
-import welt.zweistrecke.Zweistreckewelt;
+import welt.strecke.Zweistreckewelt;
 
 // Ein Verschieber verschiebt einfach alle Vektoren einer Welt.
 public class Verschieber {

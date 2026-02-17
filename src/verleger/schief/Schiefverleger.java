@@ -4,7 +4,7 @@ import strecke.Dreistrecke;
 import strecke.Zweistrecke;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
-import welt.zweistrecke.Zweistreckewelt;
+import welt.strecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 
 // Ein Schiefverleger nimmt eine dreidimensionale Vielflachwelt zu

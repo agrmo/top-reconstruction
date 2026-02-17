@@ -5,7 +5,7 @@ import sicht.strecke.Streckesicht;
 import straffer.Straffer;
 import verschieber.Verschieber;
 import verleger.schief.Schiefverleger;
-import welt.zweistrecke.Zweistreckewelt;
+import welt.strecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 import sicht.Sicht;
 

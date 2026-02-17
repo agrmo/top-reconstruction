@@ -5,7 +5,7 @@ import sicht.Sicht;
 import sicht.strecke.Streckesicht;
 import verleger.schief.Schiefverleger;
 import welt.vielflach.Vielflachwelt;
-import welt.zweistrecke.Zweistreckewelt;
+import welt.strecke.Zweistreckewelt;
 
 // Eine Sicht, die eine dreidimensionale Vielflachwelt einnimmt.
 // Sie wandelt die Vielflachwelt mit nur einer Verlegung: einer schiefen

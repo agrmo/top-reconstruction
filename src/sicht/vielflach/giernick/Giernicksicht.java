@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import sicht.strecke.Streckesicht;
 import verleger.giernick.Giernickverleger;
-import welt.zweistrecke.Zweistreckewelt;
+import welt.strecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 import sicht.Sicht;
 

@@ -11,7 +11,7 @@ import strecke.Zweistrecke;
 import vektor.Zweivektor;
 import welt.graph.Zweigraphwelt;
 import welt.graph.gitter.Zweigitter;
-import welt.zweistrecke.Zweistreckewelt;
+import welt.strecke.Zweistreckewelt;
 
 /*
   javac -d classes $(find src -type f) \

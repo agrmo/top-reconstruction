@@ -7,7 +7,7 @@ import strecke.Zweistrecke;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
 import welt.vielflach.Vielflachwelt;
-import welt.zweistrecke.Zweistreckewelt;
+import welt.strecke.Zweistreckewelt;
 import matrix.Dreimatrix;
 
 // Ein Basisverleger verlegt eine dreidimensionale Welt von

@@ -7,7 +7,7 @@ import verdoppler.vektor.Vektorverdoppler;
 import strecke.Zweistrecke;
 
 /*
-  Eine Graphwelt ist ein Paar von:
+  Eine Zweigraphwelt ist ein Paar von:
   - Graph
   - Liste von Orten
   

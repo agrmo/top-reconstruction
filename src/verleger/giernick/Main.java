@@ -5,7 +5,7 @@ import strecke.Zweistrecke;
 import vielflach.kubus.Kubus;
 import vektor.Dreivektor;
 import vielflach.Vielflach;
-import welt.zweistrecke.Zweistreckewelt;
+import welt.strecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 
 /*

@@ -3,7 +3,7 @@ package straffer;
 import java.util.ArrayList;
 import vektor.Zweivektor;
 import strecke.Zweistrecke;
-import welt.zweistrecke.Zweistreckewelt;
+import welt.strecke.Zweistreckewelt;
 import verdoppler.strecke.Streckeverdoppler;
 
 // Ein Straffer strafft und quetscht die Stellen der Welt nach den

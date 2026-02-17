@@ -1,4 +1,4 @@
-package welt.zweistrecke;
+package welt.strecke;
     
 import welt.Welt;
 import strecke.Zweistrecke;
@@ -14,7 +14,7 @@ import strecke.Zweistrecke;
   Figur dar, weil er wahrscheinlich verschiedene Strecken innerhalb
   der Figur enthält.
 */
-public class Zweistreckewelt extends Welt {
+public class Zweistreckewelt {
     public Zweistrecke[] streckenliste;
 
     public Zweistreckewelt(Zweistrecke[] zsl) {

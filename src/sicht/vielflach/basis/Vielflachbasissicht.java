@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import sicht.strecke.Streckesicht;
 import verleger.basis.Basisverleger;
-import welt.zweistrecke.Zweistreckewelt;
+import welt.strecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 import sicht.Sicht;
 import matrix.Dreimatrix;

@@ -6,7 +6,7 @@ import strecke.Zweistrecke;
 import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
 import welt.vielflach.Vielflachwelt;
-import welt.zweistrecke.Zweistreckewelt;
+import welt.strecke.Zweistreckewelt;
 
 /*
   javac -d classes $(find src -type f) \
