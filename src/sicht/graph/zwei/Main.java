@@ -19,7 +19,7 @@ public class Main {
 	// Der Graph.
 	int[][] paare = {{1,2},{2,0}};
         int betrag = 3;
-        Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
+        Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
 
 	// Die Orten.
         Zweivektor[] orten = {

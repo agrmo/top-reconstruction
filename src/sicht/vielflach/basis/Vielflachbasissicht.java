@@ -1,14 +1,14 @@
 package sicht.vielflach.basis;
 
-import vektor.Dreivektor;
 import java.awt.Graphics;
 import javax.swing.JComponent;
+import matrix.Dreimatrix;
+import sicht.Sicht;
 import sicht.strecke.Streckesicht;
+import vektor.Dreivektor;
 import verleger.basis.Basisverleger;
 import welt.strecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
-import sicht.Sicht;
-import matrix.Dreimatrix;
 
 // Eine Sicht, die eine dreidimensionale Vielflachwelt einnimmt.
 // Sie wandelt die Vielflachwelt mit nur einer Verlegung: einer vektoren

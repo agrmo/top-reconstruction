@@ -1,16 +1,16 @@
 package sicht.graph.drei;
 
-import vektor.Dreivektor;
 import java.awt.Graphics;
 import javax.swing.JComponent;
-import sicht.strecke.Streckesicht;
-import sicht.graph.zwei.Zweigraphsicht;
-import verleger.basis.Basisverleger;
-import welt.strecke.Zweistreckewelt;
-import welt.graph.Zweigraphwelt;
-import welt.graph.Dreigraphwelt;
-import sicht.Sicht;
 import matrix.Dreimatrix;
+import sicht.Sicht;
+import sicht.graph.zwei.Zweigraphsicht;
+import sicht.strecke.Streckesicht;
+import vektor.Dreivektor;
+import verleger.basis.Basisverleger;
+import welt.graph.Dreigraphwelt;
+import welt.graph.Zweigraphwelt;
+import welt.strecke.Zweistreckewelt;
 
 // Eine Sicht, die eine dreidimensionale Zweigraphwelt darstellt.
 // Sie wandelt die Zweigraphwelt mit nur einer Verlegung: einer vektoren
@@ -25,16 +25,15 @@ public class Dreigraphbasissicht extends Sicht {
     public Dreimatrix vorbasis;
     public Dreimatrix basis;
 
-    public Dreigraphbasissicht(Dreigraphwelt dgw) {
+    public Dreigraphbasissicht(Dreigraphwelt dgw,
+			       Dreivektor augevektor, double brennweite,
+			       double breite, double hoehe) {
 
 	this.dgw = dgw;
-
-	// Nicht besonders wichtig, dass diese als Parameter eingehen
-	// sollten. Vielleicht bestimme die alle einfach jetzt.
-	this.augevektor = new Dreivektor(0,0,0);
-	this.brennweite = 500;
-	this.breite = 1200;
-	this.hoehe = 600;
+	this.augevektor = augevektor;
+	this.brennweite = brennweite;
+	this.breite = breite;
+	this.hoehe = hoehe;
 	this.vorbasis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
 	this.basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
     }
