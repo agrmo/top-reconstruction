@@ -1,15 +1,18 @@
-package sicht.graph;
+package sicht.graph.drei;
 
 import java.awt.Color;
 import javax.swing.JFrame;
 import vektor.Zweivektor;
+import vektor.Dreivektor;
 import graph.Nachbarschaftsliste;
+import welt.graph.Dreigraphwelt;
+import sicht.graph.zwei.Zweigraphsicht;
 import maler.Maler;
 import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.graph.Main
+  && java -cp classes sicht.graph.drei.Main
 */
 
 public class Main {
@@ -21,14 +24,15 @@ public class Main {
         Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
 
 	// Die Orten.
-        Zweivektor[] orten = {
-	    new Zweivektor(10,10),
-	    new Zweivektor(50,50),
-	    new Zweivektor(100,40)
+        Dreivektor[] orten = {
+	    new Dreivektor(10,10,100),
+	    new Dreivektor(50,50,120),
+	    new Dreivektor(100,40,150)
 	};
-  
-	Zweigraphsicht zgs = new Zweigraphsicht(nl, orten);
-	Maler m = new Maler(new Sicht[] {zgs});
+
+	Dreigraphwelt dgw = new Dreigraphwelt(nl, orten);
+	Dreigraphbasissicht s = new Dreigraphbasissicht(dgw);
+	Maler m = new Maler(new Sicht[] {s});
   
         // Stellen die Daten dar.
         JFrame frame = new JFrame();

@@ -1,5 +1,6 @@
 package verleger.basis;
 
+import druck.vektor.Vektordrucker;
 import dreher.vektor.Vektordreher;
 import dreher.vektor.Vektordreher;
 import strecke.Dreistrecke;
@@ -9,6 +10,8 @@ import vektor.Zweivektor;
 import welt.vielflach.Vielflachwelt;
 import welt.strecke.Zweistreckewelt;
 import matrix.Dreimatrix;
+import welt.graph.Zweigraphwelt;
+import welt.graph.Dreigraphwelt;
 
 // Ein Basisverleger verlegt eine dreidimensionale Welt von
 // Vielflächen zu einer zweidimensionalen Welt von Vektoren und
@@ -25,7 +28,8 @@ public class Basisverleger {
     // aus: Zweivektor
     //
     // Verlege den gegeben dreidimensionalen Vektor.
-    public static Zweivektor verlegen(Dreivektor pa, Dreivektor augevektor, double brennweite,
+    public static Zweivektor verlegen(Dreivektor pa,
+				      Dreivektor augevektor, double brennweite,
 				      double breite, double hoehe,
 				      Dreimatrix vorbasis, Dreimatrix basis) {
 
@@ -106,5 +110,34 @@ public class Basisverleger {
 	Zweistreckewelt zsw = new Zweistreckewelt(zsl);
 
 	return zsw;
+    }
+
+    // Die Kanten und Knoten dieses Graphen werden von drei
+    // Dimensionen zu zwei Dimensionen verlegen.
+    public static Zweigraphwelt verlegen(Dreigraphwelt dgw,
+					 Dreivektor augevektor, double brennweite,
+					 double breite, double hoehe,
+					 Dreimatrix vorbasis, Dreimatrix basis) {
+
+	// Die dreidimensionale Knoten sind dgw.orten.  Wir brauchen
+	// nicht, die Kanten zu verlegen.  Die Orten von dgw.orten
+	// bestimmen die Kanten.  Es gibt nichts innerhalb der
+	// Nachbarschaftsliste zu verlegen. Sie enthält keine
+	// Orten. Nach der Verlegung von dgw.orten, können wir
+	// nehmekanten() von der Zweigraphwelt nehmen. Fertig.
+
+	// Die zweidimensionale Knoten.
+	Zweivektor[] zweiorten = new Zweivektor[dgw.orten.length];
+
+	for (int i = 0; i < dgw.orten.length; i++) {
+	    zweiorten[i] = Basisverleger.verlegen(dgw.orten[i],
+						  augevektor, brennweite,
+						  breite, hoehe,
+						  vorbasis, basis);
+	}
+
+	Zweigraphwelt zgw = new Zweigraphwelt(dgw.graph, zweiorten);
+
+	return zgw;
     }
 }

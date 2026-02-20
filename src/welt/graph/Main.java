@@ -1,17 +1,8 @@
 package welt.graph;
 
-import graph.Nachbarschaftsliste;
-import java.awt.Color;
-import javax.swing.JFrame;
-import maler.Maler;
-import sicht.Sicht;
-import sicht.punkt.Punktsicht;
-import sicht.strecke.Streckesicht;
-import strecke.Zweistrecke;
+import vektor.Dreivektor;
 import vektor.Zweivektor;
-import welt.graph.Zweigraphwelt;
-import welt.graph.gitter.Zweigitter;
-import welt.strecke.Zweistreckewelt;
+import graph.Nachbarschaftsliste;
 
 /*
   javac -d classes $(find src -type f) \
@@ -21,7 +12,6 @@ import welt.strecke.Zweistreckewelt;
 public class Main {
 
     static void beispielEins() {
-
 	// Der Graph.
 	int[][] paare = {{1,2},{2,0}};
         int betrag = 3;
@@ -31,70 +21,31 @@ public class Main {
         Zweivektor[] orten = {
 	    new Zweivektor(10,10),
 	    new Zweivektor(50,50),
-	    new Zweivektor(100,40)};
+	    new Zweivektor(100,40)
+	};
   
         // Die Welt.
         Zweigraphwelt gw = new Zweigraphwelt(nl, orten);
-  
-        // Die Kanten.
-	Zweistrecke[] kanten = gw.nehmekanten();
-	Zweistreckewelt sw = new Zweistreckewelt(kanten);
-
-	// Die Knoten.
-	int durchmesser = 10;
-	Zweivektor[] knoten = gw.nehmeKnoten(durchmesser);
-
-	// Der Maler.
-	Streckesicht ss = new Streckesicht(sw);
-	Punktsicht ps = new Punktsicht(knoten, durchmesser);
-	Maler m = new Maler(new Sicht[] {ss, ps});
-  
-        // Stellen die Daten dar.
-        JFrame frame = new JFrame();
-	frame.getContentPane().setBackground(Color.BLACK);
-        frame.getContentPane().setForeground(Color.WHITE);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1200, 600);
-        frame.add(m);
-        frame.setVisible(true);
     }
 
     static void beispielZwei() {
+	// Der Graph.
 	int[][] paare = {{1,2},{2,0}};
         int betrag = 3;
         Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
-  
-        // Bauen wir die Gitter auf.  Jede Zeile wird zwei Knoten
-        // besitzen. Jeder Knoten wird 100 voneinander getrennt.
-        Zweivektor[] orten = Zweigitter.machen(nl, 2, 100);
-  
-        // Sammeln wir die Orten und den Graphen zusammen.
-        Zweigraphwelt gw = new Zweigraphwelt(nl, orten);
-  
-        // Nehme die Kanten.
-	Zweistrecke[] kanten = gw.nehmekanten();
-	Zweistreckewelt sw = new Zweistreckewelt(kanten);
 
-	// Nehme die Knoten.
-	int durchmesser = 10;
-	Zweivektor[] knoten = gw.nehmeKnoten(durchmesser);
-
-	// Mache den Maler.
-	Streckesicht ss = new Streckesicht(sw);
-	Punktsicht ps = new Punktsicht(knoten, durchmesser);
-	Maler m = new Maler(new Sicht[] {ss, ps});
+	// Die Orten.
+        Dreivektor[] orten = {
+	    new Dreivektor(10,10,10),
+	    new Dreivektor(50,50,50),
+	    new Dreivektor(100,40,50)
+	};
   
-        // Stellen die Daten dar.
-        JFrame frame = new JFrame();
-	frame.getContentPane().setBackground(Color.BLACK);
-        frame.getContentPane().setForeground(Color.WHITE);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1200, 600);
-        frame.add(m);
-        frame.setVisible(true);
+        // Die Welt.
+        Dreigraphwelt gw = new Dreigraphwelt(nl, orten);
     }
 
     public static void main(String[] args) {
-	beispielEins();
+	beispielZwei();
     }    
 }

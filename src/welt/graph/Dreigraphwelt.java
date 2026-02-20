@@ -1,21 +1,21 @@
 package welt.graph;
 
 import graph.Nachbarschaftsliste;
-import vektor.Zweivektor;
+import vektor.Dreivektor;
 import graph.rechnen.kanteanzahl.Kanteanzahl;
 import verdoppler.vektor.Vektorverdoppler;
-import strecke.Zweistrecke;
+import strecke.Dreistrecke;
 
 /*
-  Eine Zweigraphwelt ist ein Paar von:
+  Eine Dreigraphwelt ist ein Paar von:
   - Graph
   - Liste von Orten
   
   Am Anfang ist ein Graph nicht darstellbar. Er besitzt viele Strecken
-  und Knoten, die keinen bestimmten Ort besitzen.
+  und Knoten, aber mit keinen Orten verbunden.
 
   Eine Graphwelt verbindet einen Graph mit Orten der Knoten, sodaß wir
-  ihn vorstellen können. Das tut man ohne Berechnungen, aber ein
+  ihn anschauen können. Das tut man ohne Berechnungen, aber ein
   Computer ist kein Mensch.
 
   Wie stellte man die Orten eines Graphen? Die Knoten überliegen sich
@@ -25,16 +25,16 @@ import strecke.Zweistrecke;
 
   Eine Graphwelt ist eine Welt des Graphen.
 */
-public class Zweigraphwelt {
+public class Dreigraphwelt {
 
     // Der Graph.
     public Nachbarschaftsliste graph;
 
     // Die Orten jedes Knoten.
-    public Zweivektor[] orten;
+    public Dreivektor[] orten;
 
-    public Zweigraphwelt(Nachbarschaftsliste g, Zweivektor[] o) {
-	this.graph = g;
+    public Dreigraphwelt(Nachbarschaftsliste n, Dreivektor[] o) {
+	this.graph = n;
 	this.orten = o;
     }
 
@@ -42,8 +42,8 @@ public class Zweigraphwelt {
       Das Zentrum von drawCircle() von Java ist nicht genau auf dem
       gegebenen Ort dargestellt. Zum Beispiel
       
-      Knoten (0,0) Durchmesser 3
-      Kante (0,0) bis (10,10)
+      Knoten (0,0,0) Durchmesser 3
+      Kante (0,0,0) bis (10,10,10)
       
       Gewünscht:
       
@@ -64,13 +64,14 @@ public class Zweigraphwelt {
           \
            ...
 	     
-      weil das Zentrum des Kreises nicht auf (0,0) steht. Wir sollen
+      weil das Zentrum des Kreises nicht auf (0,0,0) steht. Wir sollen
       die Stellen des Knoten verbessern. In diesem Beispiel
-      verschieben wir die Stellen des Kreises -3 in die x- und
-      y-Richtung.
+      verschieben wir die Stellen des Kreises -3 in die x-,
+      y- und z-Richtung.
     */
-    void verbessernknoten(Zweivektor zp, int durchmesser) {
-	Zweivektor unterschied = new Zweivektor(-(durchmesser / 2.0),
+    void verbessernknoten(Dreivektor zp, int durchmesser) {
+	Dreivektor unterschied = new Dreivektor(-(durchmesser / 2.0),
+						-(durchmesser / 2.0),
 						-(durchmesser / 2.0));
 	zp.addiere(unterschied);
     }
@@ -78,9 +79,9 @@ public class Zweigraphwelt {
     // ein: ganze Zahl
     // Sie gibt neue Vektore aus.
     // Diese Welt kennt wie groß ein Knoten ist.
-    public Zweivektor[] nehmeKnoten(int durchmesser) {
+    public Dreivektor[] nehmeKnoten(int durchmesser) {
 
-	Zweivektor[] ausvektoren = new Zweivektor[this.orten.length];
+	Dreivektor[] ausvektoren = new Dreivektor[this.orten.length];
 	
 	for (int i = 0; i < this.orten.length; i++) {
 	    ausvektoren[i] = Vektorverdoppler.verdoppeln(this.orten[i]);
@@ -90,35 +91,38 @@ public class Zweigraphwelt {
 	return ausvektoren;
     }
 
-    // Rechne alle Kanten dieses Graphen aus.
-    public Zweistrecke[] nehmekanten() {
+    // Nehme die Kanten dieses Graphen.
+    public Dreistrecke[] nehmekanten() {
 
 	// Zuerst berechne wie viele Kanten es gibt.
-	int ka = Kanteanzahl.berechnen(this.graph);
+	int laenge = Kanteanzahl.berechnen(this.graph);
 
 	// Wir kennen wir viele Kanten dieser Graph gibt.
-	Zweistrecke[] kanten = new Zweistrecke[ka];
+	Dreistrecke[] kanten = new Dreistrecke[laenge];
 
-	// Es gibt ka-mal Kanten dieses Graphen.
-	// Die Summe aller i und j ist gleich ka.
-	// Also laufe über jede Kante durch, und addiere die Kante.
-
+	// Es gibt laenge-mal Kanten dieses Graphen.
+	// Die Summe aller i und j ist gleich laenge.
+	// Also laufe über jede Kante durch, und addiere die Kanten.
 	int kantenzeichen = 0;
+
+	// Für jeden Knoten,
 	for (int i = 0; i < this.graph.betrag; i++) {
-	    // Wo dieser Knoten ist.
+	    // Nehme den Streckeanfang.
 	    int vonx = (int) this.orten[i].eins;
 	    int vony = (int) this.orten[i].zwei;
+	    int vonz = (int) this.orten[i].drei;
 
 	    for (int j = 0; j < this.graph.n.get(i).size(); j++) {
 
-		// Wer der Knoten ist, dem dieser Knoten verbunden ist.
+		// Nehme das Streckeende.
 		int bisknoten = this.graph.n.get(i).get(j);
 		    
 		int bisx = (int) this.orten[bisknoten].eins;
 		int bisy = (int) this.orten[bisknoten].zwei;
+		int bisz = (int) this.orten[bisknoten].drei;
 
-		kanten[kantenzeichen] = new Zweistrecke(new Zweivektor(vonx, vony),
-							new Zweivektor(bisx, bisy));
+		kanten[kantenzeichen] = new Dreistrecke(new Dreivektor(vonx, vony, vonz),
+							new Dreivektor(bisx, bisy, bisz));
 		kantenzeichen += 1;
 	    }
 	}
