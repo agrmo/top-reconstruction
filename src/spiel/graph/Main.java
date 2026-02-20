@@ -28,9 +28,9 @@ public class Main {
 
 	// Die Orten.
         Dreivektor[] orten = {
-	    new Dreivektor(10,10,100),
-	    new Dreivektor(50,50,120),
-	    new Dreivektor(100,40,150)
+	    new Dreivektor(-10,20,10),
+	    new Dreivektor(-20,-20,-10),
+	    new Dreivektor(20,-10,10)
 	};
 
 	// Mache die Welt.
@@ -40,7 +40,7 @@ public class Main {
 	double breite = 1200;
 	double hoehe = 600;
 	double brennweite = 500;
-	Dreivektor augepunkt = new Dreivektor(0,0,0);
+	Dreivektor augepunkt = new Dreivektor(0,0,100);
 	Dreigraphbasissicht ds = new Dreigraphbasissicht(dgw, augepunkt, brennweite,
 							 breite, hoehe);
 	Maler m = new Maler(new Sicht[] {ds});
