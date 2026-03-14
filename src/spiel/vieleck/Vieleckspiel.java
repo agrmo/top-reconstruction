@@ -2,12 +2,12 @@ package spiel.vieleck;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import vektor.Zweivektor;
+import maler.Maler;
 import sicht.vieleck.Vielecksicht;
 import spiel.Spiel;
+import vektor.Zweivektor;
 import verschieber.Verschieber;
 import welt.vieleck.Vieleckwelt;
-import maler.Maler;
 
 // Ein Spiel, in dem wir die Welt und Sichten verändern können.
 //

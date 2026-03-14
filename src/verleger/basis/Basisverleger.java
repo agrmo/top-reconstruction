@@ -18,7 +18,8 @@ import welt.graph.Dreigraphwelt;
 // Strecken.
 //
 // Schritte:
-// 1. Wandeln alle Punkte zur neuen Basis um.
+// 1. Wandeln alle Punkte mit der vorigen Basis um.
+// 2. Wandeln alle Punkte mit der jetzigen Basis um.
 // 3. Entfernen die Kamera vom Ursprung.
 // 4. Projizieren alle Vektoren zu einer zweidimensionalen Fläche.
 // 5. Verschieben alle Vektoren zum Zentrum des Bildchirms.

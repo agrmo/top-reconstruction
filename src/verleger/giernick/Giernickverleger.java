@@ -17,8 +17,8 @@ import welt.strecke.Zweistreckewelt;
 // 1. Drehen alle Vektoren in der xz-Fläche mit einem Gierwinkel.
 // 2. Drehen alle Vektoren in der yz-Fläche mit einem Nickwinkel.
 // 3. Entfernen die Kamera vom Ursprung.
-// 4. Projizieren alle Vektore zu einer zweidimensionalen Fläche.
-// 5. Verschieben alle Vektore zum Zentrum des Bildchirms.
+// 4. Verlegen alle Vektoren zu einer zweidimensionalen Fläche.
+// 5. Verschieben alle Vektoren zum Zentrum des Bildchirms.
 public class Giernickverleger {
 
     // ein: Dreivektor, Giernicksicht

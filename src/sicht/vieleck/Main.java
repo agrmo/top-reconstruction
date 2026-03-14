@@ -1,13 +1,13 @@
 package sicht.vieleck;
 
-import vieleck.Vieleck;
-import vieleck.dreieck.Dreieck;
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import vektor.Zweivektor;
-import welt.vieleck.Vieleckwelt;
-import sicht.Sicht;
 import maler.Maler;
+import sicht.Sicht;
+import vektor.Zweivektor;
+import vieleck.Vieleck;
+import vieleck.dreieck.Dreieck;
+import welt.vieleck.Vieleckwelt;
 
 /*
   javac -d classes $(find src -type f) \

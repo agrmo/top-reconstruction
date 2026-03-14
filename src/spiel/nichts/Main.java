@@ -11,9 +11,6 @@ import spiel.Spiel;
 
 public class Main {
 
-    static void beispielEins() {
-    }
-
     public static void main(String[] args) {
 	// Das Spiel nimmt Ereignissen von der Handlung ein.
 	Nichtsspiel s = new Nichtsspiel();
@@ -21,6 +18,7 @@ public class Main {
 	// Die Handlungen werden das Spiel anrufen.
 	SpielHandlung sh = new SpielHandlung(s);
 
+	// Fangen die Handlung an.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);

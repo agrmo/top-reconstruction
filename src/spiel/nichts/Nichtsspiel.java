@@ -12,7 +12,7 @@ public class Nichtsspiel extends Spiel {
     }
 
     void nichts() {
-	System.out.println("Ich tue nichts.");
+	System.out.println("Etwas ist passiert, aber ich tue nichts.");
     }
 
     public void handelnMouseDrucken(MouseEvent me) {

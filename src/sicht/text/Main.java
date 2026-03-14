@@ -17,10 +17,10 @@ public class Main {
 	
 	// Mache die Daten.
 	String[] tl = new String[] {
-	    "Hallo",
-	    "Wo bin ich?",
-	    "Ich brauche Zeit.",
-	    "Ich verstehe nur, was ich bearbeitete."
+	    "Ich bin nun blind, Andrea.",
+	    "Ich sehe nicht mehr.",
+	    "Ich glotze nur noch in die Dunkelheit.",
+	    "Geh jetzt."
 	};
 	
 	Zweivektor[] ol = new Zweivektor[] {

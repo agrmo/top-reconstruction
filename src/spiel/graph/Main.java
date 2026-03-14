@@ -51,7 +51,7 @@ public class Main {
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(gs);
 
-	// Geh.
+	// Fangen die Handlung an.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.getContentPane().setBackground(Color.BLACK);
