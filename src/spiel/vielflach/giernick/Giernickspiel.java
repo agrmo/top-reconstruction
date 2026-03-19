@@ -8,6 +8,8 @@ import spiel.Spiel;
 import welt.vielflach.Vielflachwelt;
 import maler.Maler;
 
+// Das Giernickspiel ist einfacher als das Basisspiel, versagt aber an
+// der Mousebewegung nach einer Drehung von 180 Grad.
 public class Giernickspiel extends Spiel {
 
     Maler m;

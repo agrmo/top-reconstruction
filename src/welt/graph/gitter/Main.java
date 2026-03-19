@@ -11,8 +11,8 @@ import vektor.Zweivektor;
 
 public class Main {
     public static void main(String[] args) {
-
-	// Es gibt genau 3 Knoten.
+	
+	// Dieser Graph enthält drei Knoten.
 	int[][] paare = {{1,2},{2,0}};
 	int betrag = 3;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);

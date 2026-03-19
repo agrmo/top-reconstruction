@@ -3,8 +3,8 @@ package vielflach;
 import strecke.Dreistrecke;
 import vektor.Dreivektor;
 
-// Ein Vielflach ist eine dreidimensionale Körper, die durch eine
-// Reihe von Vektoren bestimmt ist.
+// Ein Vielflach ist ein dreidimensionaler Körper, der von Ecken
+// bestimmt ist.
 public abstract class Vielflach {
 
     // aus: ganze Zahl

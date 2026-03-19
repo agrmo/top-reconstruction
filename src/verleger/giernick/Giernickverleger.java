@@ -19,6 +19,9 @@ import welt.strecke.Zweistreckewelt;
 // 3. Entfernen die Kamera vom Ursprung.
 // 4. Verlegen alle Vektoren zu einer zweidimensionalen Fläche.
 // 5. Verschieben alle Vektoren zum Zentrum des Bildchirms.
+//
+// Das Giernickverleger ist einfacher als der Basisverleger, versagt
+// aber nach einer Drehung von 180 Grad. Damit speichern wir den Code.
 public class Giernickverleger {
 
     // ein: Dreivektor, Giernicksicht

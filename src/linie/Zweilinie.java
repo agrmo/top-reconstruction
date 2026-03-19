@@ -1,5 +1,7 @@
 package linie;
 
+import vektor.Zweivektor;
+
 // Eine Linie ist eine Linie ohne festgelegte Endpunkte.  Verlängt man
 // eine Strecke unendlich über beide Endpunkte hinaus, entsteht eine
 // Gerade.

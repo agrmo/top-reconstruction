@@ -62,6 +62,10 @@ public class Main {
 	frame.addMouseMotionListener(sh);
 	frame.setVisible(true);
     }
+
+    static void beispielZwei() {
+	
+    }
     
     public static void main(String[] args) {
 	beispielEins();
