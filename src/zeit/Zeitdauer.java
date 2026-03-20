@@ -18,6 +18,6 @@ public class Zeitdauer {
 
     public static void anfangen(Vielflachbasiswesen vbw) {
 	final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
-	executorService.scheduleAtFixedRate(vbw, 0, 10, TimeUnit.MILLISECONDS);
+	executorService.scheduleAtFixedRate(vbw, 0, 4, TimeUnit.MILLISECONDS);
     }
 }

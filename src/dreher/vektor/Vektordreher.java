@@ -30,7 +30,7 @@ public class Vektordreher {
 
     // Drehen den Vektor in um die x-Achse (in die yz-Fläche). Es
     // heißt Nick.
-    public static Dreivektor drehenX(Dreivektor p, double theta) {
+    public static Dreivektor drehenX(Dreivektor p, double theta) {o
 
 	Zweivektor yz = Vektordreher.drehen(new Zweivektor(p.zwei, p.drei), theta);
 
