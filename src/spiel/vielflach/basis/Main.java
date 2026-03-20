@@ -26,11 +26,12 @@ public class Main {
 	// Hier ist die Lösung des Problems, das wir im Giernickspiel
 	// gefunden hatten. Eine Drehung mit der Mouse nach einem
 	// Kopfstehen des Kubus fällt uns unrichtig. Die Lösung ist
-	// die Bearbeitung zweier Matrizen. Die erste Matrix is die
-	// vorherige Matrix. Die zweite Matrix is die jetzige
-	// Matrix. Die Mouse dreht die zweite Matrix. Nach die Lösung
-	// der Mouse multiplizieren wir die zwei Matrizen, speichern
-	// diese Matrix als vorherige, und erneuen die zweite Matrix.
+	// die Bearbeitung nicht nur einer Matrix, sondern zweier
+	// Matrizen. Die erste Matrix is die vorherige Matrix. Die
+	// zweite Matrix is die jetzige Matrix. Die Mouse dreht die
+	// zweite Matrix. Nach die Lösung der Mouse multiplizieren wir
+	// die zwei Matrizen, speichern diese Matrix als vorherige,
+	// und erneuen die zweite Matrix.
 	
 	// Mache die Welt.
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();

@@ -34,15 +34,15 @@ public class SpielHandlung implements MouseListener, MouseMotionListener, KeyLis
     }
 
     public void mouseClicked(MouseEvent e) {
-	spiel.handelnMouse(e);
+	this.spiel.handelnMouse(e);
     }
 
     public void mouseMoved(MouseEvent e) {
-	spiel.handelnMouseBewegen(e);
+	this.spiel.handelnMouseBewegen(e);
     }
 
     public void mouseDragged(MouseEvent e) {
-	spiel.handelnMouseSchleifen(e);
+	this.spiel.handelnMouseSchleifen(e);
     }
 
     public void keyTyped(KeyEvent e) {
