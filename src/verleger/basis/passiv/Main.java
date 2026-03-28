@@ -1,4 +1,4 @@
-package verleger.basis;
+package verleger.basis.passiv;
 
 import java.util.ArrayList;
 import strecke.Zweistrecke;
@@ -11,7 +11,7 @@ import matrix.Dreimatrix;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes verleger.basis.Main
+  && java -cp classes verleger.basis.passiv.Main
 */
 
 public class Main {
@@ -28,11 +28,14 @@ public class Main {
 
 	Dreimatrix vorbasis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
 	Dreimatrix basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
+	Dreivektor augevektoranfang = new Dreivektor(0,0,0);
+	int brennweiteanfang = 500;
 
 	// Verlegen die Welt.
-	Zweistreckewelt zsw = Basisverleger.verlegen(vw,
-						     new Dreivektor(0,0,0), 500,
-						     1200, 600,
-						     vorbasis, basis);
+	Zweistreckewelt zsw = Basisverlegerpassiv.verlegen(vw,
+							   augevektoranfang,
+							   brennweiteanfang,
+							   1200, 600,
+							   vorbasis, basis);
     }
 }

@@ -1,7 +1,7 @@
 package verleger;
 
-// Ein Verleger umwandelt immer eine dreidimensionale Welt von Dingen
-// in einer dreidimensionalen.
+// Ein Verleger umwandelt immer eine dreidimensionale Welt in einer
+// zweidimensionalen Welt.
 //
 // Um eine dreidimensionale Welt auf einem Bildschirm darzustellen,
 // müssen wir die dreidimensionale Stellen zu zwei Dimensionen
