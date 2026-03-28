@@ -93,6 +93,16 @@ public class Basisverlegerpassiv {
 	// Basisverleger müssen wir nur die Augen drehen.  Die
 	// ursprünglichen Stellen der Dingen dieser Welt werden nicht
 	// gedreht.
+
+	// Wir haben eine Wahl. Wir können entweder eine aktive oder
+	// eine passive Umwandlung der Koordinatenstellen
+	// benutzen. Offentsichtlich ist eine passive Umwandlung
+	// rechnerisch schneller. Aber beide Konzepten sind wichtig zu
+	// programmieren. Hier benutzen wir eine passive
+	// Umwandlung. Deshalb werden wir den Titel "passiv"
+	// schreiben. Die aktive Umwandlung ist nicht
+	// programmiert. Sie ergibt keinen Vorteil.
+	
 	Dreivektor augevektorb = vorbasis.punkt(augevektor);
 	Dreivektor augevektorc = basis.punkt(augevektorb);
 	
@@ -119,5 +129,34 @@ public class Basisverlegerpassiv {
         Zweistreckewelt zsw = new Zweistreckewelt(zsl);
 
 	return zsw;
+    }
+
+    // Die Kanten und Knoten dieses Graphen werden von drei
+    // Dimensionen zu zwei Dimensionen verlegen.
+    public static Zweigraphwelt verlegen(Dreigraphwelt dgw,
+					 Dreivektor augevektor, double brennweite,
+					 double breite, double hoehe,
+					 Dreimatrix vorbasis, Dreimatrix basis) {
+
+	// Die dreidimensionale Knoten sind dgw.orten.  Wir brauchen
+	// nicht, die Kanten zu verlegen.  Die Orten von dgw.orten
+	// bestimmen die Kanten.  Es gibt nichts innerhalb der
+	// Nachbarschaftsliste zu verlegen. Sie enthält keine
+	// Orten. Nach der Verlegung von dgw.orten, können wir
+	// nehmekanten() von der Zweigraphwelt nehmen. Fertig.
+
+	// Die zweidimensionale Knoten.
+	Zweivektor[] zweiorten = new Zweivektor[dgw.orten.length];
+
+	for (int i = 0; i < dgw.orten.length; i++) {
+	    zweiorten[i] = Basisverlegerpassiv.verlegen(dgw.orten[i],
+							augevektor, brennweite,
+							breite, hoehe,
+							vorbasis, basis);
+	}
+
+	Zweigraphwelt zgw = new Zweigraphwelt(dgw.graph, zweiorten);
+
+	return zgw;
     }
 }

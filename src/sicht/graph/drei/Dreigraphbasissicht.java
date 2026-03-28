@@ -7,7 +7,7 @@ import sicht.Sicht;
 import sicht.graph.zwei.Zweigraphsicht;
 import sicht.strecke.Streckesicht;
 import vektor.Dreivektor;
-import verleger.basis.Basisverleger;
+import verleger.basis.passiv.Basisverlegerpassiv;
 import welt.graph.Dreigraphwelt;
 import welt.graph.Zweigraphwelt;
 import welt.strecke.Zweistreckewelt;
@@ -42,10 +42,10 @@ public class Dreigraphbasissicht extends Sicht {
 	
 	// Benutzen den Verleger.
 	
-	Zweigraphwelt zgw = Basisverleger.verlegen(this.dgw,
-						   this.augevektor, this.brennweite,
-						   this.breite, this.hoehe,
-						   this.vorbasis, this.basis);
+	Zweigraphwelt zgw = Basisverlegerpassiv.verlegen(this.dgw,
+							 this.augevektor, this.brennweite,
+							 this.breite, this.hoehe,
+							 this.vorbasis, this.basis);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.

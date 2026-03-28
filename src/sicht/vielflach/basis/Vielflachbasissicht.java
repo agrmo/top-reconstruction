@@ -6,7 +6,7 @@ import matrix.Dreimatrix;
 import sicht.Sicht;
 import sicht.strecke.Streckesicht;
 import vektor.Dreivektor;
-import verleger.basis.Basisverleger;
+import verleger.basis.passiv.Basisverlegerpassiv;
 import welt.strecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 
@@ -38,10 +38,10 @@ public class Vielflachbasissicht extends Sicht {
 
     public void darstellen(Graphics g) {
 	
-	// Benutzen die Verleger.
-	Zweistreckewelt zsw = Basisverleger.verlegen(this.vw, this.augevektor, this.brennweite,
-						     this.breite, this.hoehe,
-						     this.vorbasis, this.basis);
+	// Benutzen die Verleger.  
+	Zweistreckewelt zsw = Basisverlegerpassiv.verlegen(this.vw, this.augevektor, this.brennweite,
+							   this.breite, this.hoehe,
+							   this.vorbasis, this.basis);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.
