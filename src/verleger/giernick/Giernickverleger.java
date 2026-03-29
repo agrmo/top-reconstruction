@@ -14,14 +14,13 @@ import welt.strecke.Zweistreckewelt;
 // Strecken.
 //
 // Schritte:
-// 1. Drehen alle Vektoren in der xz-Fläche mit einem Gierwinkel.
-// 2. Drehen alle Vektoren in der yz-Fläche mit einem Nickwinkel.
+// 1. Drehen alle Vektoren in der xz-Fläche mit dem Gierwinkel.
+// 2. Drehen alle Vektoren in der yz-Fläche mit dem Nickwinkel.
 // 3. Entfernen die Kamera vom Ursprung.
 // 4. Verlegen alle Vektoren zu einer zweidimensionalen Fläche.
 // 5. Verschieben alle Vektoren zum Zentrum des Bildchirms.
 //
-// Das Giernickverleger ist einfacher als der Basisverleger, versagt
-// aber nach einer Drehung von 180 Grad. Damit speichern wir den Code.
+// Der Giernickverleger ist einfacher als der Basisverleger.
 public class Giernickverleger {
 
     // ein: Dreivektor, Giernicksicht
