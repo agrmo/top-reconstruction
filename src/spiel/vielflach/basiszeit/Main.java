@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
-import sicht.vielflach.basis.Vielflachbasissicht;
-import sicht.vielflach.basis.Vielflachbasistextsicht;
+import sicht.vielflach.auge.Augesicht;
+import sicht.vielflach.auge.Augetextsicht;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
 import vielflach.Vielflach;
@@ -35,7 +35,7 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0, 0, 100);
-	Vielflachbasissicht vbs = new Vielflachbasissicht(vw, ap, 500, breite, hoehe);
+	Augesicht vbs = new Augesicht(vw, ap, 500, breite, hoehe);
 
 	Maler m = new Maler(new Sicht[] {vbs});
 	

@@ -1,4 +1,4 @@
-package sicht.vielflach.basis;
+package sicht.vielflach.auge;
 
 import java.awt.Graphics;
 import javax.swing.JComponent;
@@ -6,14 +6,14 @@ import matrix.Dreimatrix;
 import sicht.Sicht;
 import sicht.strecke.Streckesicht;
 import vektor.Dreivektor;
-import verleger.basis.Basisverleger;
+import verleger.auge.Augeverleger;
 import welt.strecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 
 // Eine Sicht, die eine dreidimensionale Vielflachwelt einnimmt.
 // Sie wandelt die Vielflachwelt mit nur einer Verlegung: einer vektoren
 // Verlegung. Sie gibt am Ende eine Zweistreckewelt ab.
-public class Vielflachbasissicht extends Sicht {
+public class Augesicht extends Sicht {
 
     public Vielflachwelt vw;
     public Dreivektor augevektor;
@@ -23,9 +23,9 @@ public class Vielflachbasissicht extends Sicht {
     public Dreimatrix vorbasis;
     public Dreimatrix basis;
 
-    public Vielflachbasissicht(Vielflachwelt vw,
-			       Dreivektor augevektor, double brennweite,
-			       double breite, double hoehe) {
+    public Augesicht(Vielflachwelt vw,
+		     Dreivektor augevektor, double brennweite,
+		     double breite, double hoehe) {
 
 	this.vw = vw;
 	this.augevektor = augevektor;
@@ -39,9 +39,9 @@ public class Vielflachbasissicht extends Sicht {
     public void darstellen(Graphics g) {
 	
 	// Benutzen die Verleger.  
-	Zweistreckewelt zsw = Basisverleger.verlegen(this.vw, this.augevektor, this.brennweite,
-						     this.breite, this.hoehe,
-						     this.vorbasis, this.basis);
+	Zweistreckewelt zsw = Augeverleger.verlegen(this.vw, this.augevektor, this.brennweite,
+						    this.breite, this.hoehe,
+						    this.vorbasis, this.basis);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.

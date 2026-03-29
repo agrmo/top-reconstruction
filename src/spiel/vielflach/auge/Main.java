@@ -1,4 +1,4 @@
-package spiel.vielflach.basis;
+package spiel.vielflach.auge;
 
 import handlung.spiel.SpielHandlung;
 import java.awt.Color;
@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
-import sicht.vielflach.basis.Vielflachbasissicht;
-import sicht.vielflach.basis.Vielflachbasistextsicht;
+import sicht.vielflach.auge.Augesicht;
+import sicht.vielflach.auge.Augetextsicht;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
 import vielflach.Vielflach;
@@ -18,7 +18,7 @@ import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.vielflach.basis.Main
+  && java -cp classes spiel.vielflach.auge.Main;
 */
 
 public class Main {
@@ -45,13 +45,13 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0, 0, 100);
-	Vielflachbasissicht vbs = new Vielflachbasissicht(vw, ap, 500, breite, hoehe);
-	Vielflachbasistextsicht vbts = new Vielflachbasistextsicht(vbs);
+	Augesicht vas = new Augesicht(vw, ap, 500, breite, hoehe);
+	Augetextsicht vats = new Augetextsicht(vas);
 
-	Maler m = new Maler(new Sicht[] {vbs, vbts});
+	Maler m = new Maler(new Sicht[] {vas, vats});
 	
 	// Mache das Spiel.
-	Vielflachbasisspiel s = new Vielflachbasisspiel(m, vbs, vw);
+	Augespiel s = new Augespiel(m, vas, vw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);
@@ -81,12 +81,12 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0, 0, 100);
-	Vielflachbasissicht vbs = new Vielflachbasissicht(vw, ap, 500, breite, hoehe);
+	Augesicht vas = new Augesicht(vw, ap, 500, breite, hoehe);
 
-	Maler m = new Maler(new Sicht[] {vbs});
+	Maler m = new Maler(new Sicht[] {vas});
 	
 	// Mache das Spiel.
-	Vielflachbasisspiel s = new Vielflachbasisspiel(m, vbs, vw);
+	Augespiel s = new Augespiel(m, vas, vw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);

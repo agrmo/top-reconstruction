@@ -1,20 +1,20 @@
-package sicht.vielflach.basis;
+package sicht.vielflach.auge;
 
 import java.awt.Graphics;
-import sicht.vielflach.basis.Vielflachbasissicht;
+import sicht.vielflach.auge.Augesicht;
 import sicht.text.Textsicht;
 import vektor.Zweivektor;
 import sicht.Sicht;
 import druck.matrix.Matrixdrucker;
 
 // Eine Sicht, die einen Text der Eigenschaften der
-// Vielflachbasissicht auf dem Bildschirm schreibt.
-public class Vielflachbasistextsicht extends Sicht {
+// Augesicht auf dem Bildschirm schreibt.
+public class Augetextsicht extends Sicht {
 
-    Vielflachbasissicht vbs;
+    Augesicht vbs;
     Textsicht textsicht;
 
-    public Vielflachbasistextsicht(Vielflachbasissicht vbs) {
+    public Augetextsicht(Augesicht vbs) {
 	this.vbs = vbs;
 	this.textsicht = new Textsicht(new String[] {},
 				       new Zweivektor[] {});

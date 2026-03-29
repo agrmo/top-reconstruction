@@ -1,7 +1,7 @@
 package wesen;
 
 import vektor.Dreivektor;
-import sicht.vielflach.basis.Vielflachbasissicht;
+import sicht.vielflach.auge.Augesicht;
 import maler.Maler;
 import dreher.vektor.Vektordreher;
 
@@ -9,17 +9,17 @@ import dreher.vektor.Vektordreher;
 public class Vielflachbasiswesen implements Runnable {
 
     Maler m;
-    Vielflachbasissicht vbs;
+    Augesicht vas;
     
-    public Vielflachbasiswesen(Vielflachbasissicht vbs, Maler m) {
+    public Vielflachbasiswesen(Augesicht vas, Maler m) {
 	this.m = m;
-	this.vbs = vbs;
+	this.vas = vas;
     }
 
     public void run() {
-	// this.vbs.augevektor.addiere(new Dreivektor(0, 0, 1));
-	Dreivektor dva = Vektordreher.drehenX(this.vbs.augevektor, 0.02);
-	this.vbs.augevektor = dva;
+	// this.vas.augevektor.addiere(new Dreivektor(0, 0, 1));
+	Dreivektor dva = Vektordreher.drehenX(this.vas.augevektor, 0.02);
+	this.vas.augevektor = dva;
 	this.m.repaint();
     }
 }

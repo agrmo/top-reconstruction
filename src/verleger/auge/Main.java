@@ -1,4 +1,4 @@
-package verleger.basis;
+package verleger.auge;
 
 import java.util.ArrayList;
 import strecke.Zweistrecke;
@@ -30,9 +30,9 @@ public class Main {
 	Dreimatrix basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
 
 	// Verlegen die Welt.
-	Zweistreckewelt zsw = Basisverleger.verlegen(vw,
-						     new Dreivektor(0,0,0), 500,
-						     1200, 600,
-						     vorbasis, basis);
+	Zweistreckewelt zsw = Augeverleger.verlegen(vw,
+						    new Dreivektor(0,0,0), 500,
+						    1200, 600,
+						    vorbasis, basis);
     }
 }

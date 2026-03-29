@@ -1,4 +1,4 @@
-package verleger.basis;
+package verleger.auge;
 
 import druck.vektor.Vektordrucker;
 import dreher.vektor.Vektordreher;
@@ -13,7 +13,7 @@ import matrix.Dreimatrix;
 import welt.graph.Zweigraphwelt;
 import welt.graph.Dreigraphwelt;
 
-// Ein Basisverleger verlegt eine dreidimensionale Welt von
+// Ein Augeverleger verlegt eine dreidimensionale Welt von
 // Vielflächen zu einer zweidimensionalen Welt von Vektoren und
 // Strecken.
 //
@@ -23,7 +23,7 @@ import welt.graph.Dreigraphwelt;
 // 3. Entfernen die Kamera vom Ursprung.
 // 4. Projizieren alle Vektoren zu einer zweidimensionalen Fläche.
 // 5. Verschieben alle Vektoren zum Zentrum des Bildchirms.
-public class Basisverleger {
+public class Augeverleger {
 
     // ein: Dreivektor, ...
     // aus: Zweivektor
@@ -62,14 +62,14 @@ public class Basisverleger {
 				       double breite, double hoehe,
 				       Dreimatrix vorbasis, Dreimatrix basis) {
 	
-	Zweivektor verlegterVektorVon = Basisverleger.verlegen(ds.von,
-							       augevektor, brennweite,
-							       breite, hoehe,
-							       vorbasis, basis);
+	Zweivektor verlegterVektorVon = Augeverleger.verlegen(ds.von,
+							      augevektor, brennweite,
+							      breite, hoehe,
+							      vorbasis, basis);
 	
-	Zweivektor verlegterVektorBis = Basisverleger.verlegen(ds.bis, augevektor, brennweite,
-							       breite, hoehe,
-							       vorbasis, basis);
+	Zweivektor verlegterVektorBis = Augeverleger.verlegen(ds.bis, augevektor, brennweite,
+							      breite, hoehe,
+							      vorbasis, basis);
 	
 	// Diese ist die neue Strecke, die nur in zwei Dimensionen
 	// liegt. 
@@ -99,9 +99,9 @@ public class Basisverleger {
 	for (int i = 0; i < dsl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zs = Basisverleger.verlegen(dsl[i], augevektor, brennweite,
-						    breite, hoehe,
-						    vorbasis, basis);
+	    Zweistrecke zs = Augeverleger.verlegen(dsl[i], augevektor, brennweite,
+						   breite, hoehe,
+						   vorbasis, basis);
 	    
 	    // Fügen sie zu der Liste ein.
 	    zsl[i] = zs;
@@ -131,10 +131,10 @@ public class Basisverleger {
 	Zweivektor[] zweiorten = new Zweivektor[dgw.orten.length];
 
 	for (int i = 0; i < dgw.orten.length; i++) {
-	    zweiorten[i] = Basisverleger.verlegen(dgw.orten[i],
-						  augevektor, brennweite,
-						  breite, hoehe,
-						  vorbasis, basis);
+	    zweiorten[i] = Augeverleger.verlegen(dgw.orten[i],
+						 augevektor, brennweite,
+						 breite, hoehe,
+						 vorbasis, basis);
 	}
 
 	Zweigraphwelt zgw = new Zweigraphwelt(dgw.graph, zweiorten);

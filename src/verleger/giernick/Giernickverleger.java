@@ -20,7 +20,7 @@ import welt.strecke.Zweistreckewelt;
 // 4. Verlegen alle Vektoren zu einer zweidimensionalen Fläche.
 // 5. Verschieben alle Vektoren zum Zentrum des Bildchirms.
 //
-// Der Giernickverleger ist einfacher als der Basisverleger.
+// Der Giernickverleger ist einfacher als der Augeverleger.
 public class Giernickverleger {
 
     // ein: Dreivektor, Giernicksicht

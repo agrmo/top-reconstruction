@@ -1,4 +1,4 @@
-package sicht.vielflach.basis;
+package sicht.vielflach.auge;
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -11,7 +11,7 @@ import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.vielflach.basis.Main
+  && java -cp classes sicht.vielflach.auge.Main
 */
 
 public class Main {
@@ -30,8 +30,8 @@ public class Main {
 	double hoehe = 600;
 	double brennweite = 500;
 	Dreivektor ap = new Dreivektor(0,0,0);
-	Vielflachbasissicht bs = new Vielflachbasissicht(welt, ap, brennweite, breite, hoehe);
-	Maler m = new Maler(new Sicht[] {bs});
+	Augesicht as = new Augesicht(welt, ap, brennweite, breite, hoehe);
+	Maler m = new Maler(new Sicht[] {as});
 	
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
