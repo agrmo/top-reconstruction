@@ -15,11 +15,21 @@ import welt.vielflach.Vielflachwelt;
 // Verlegung. Sie gibt am Ende eine Zweistreckewelt ab.
 public class Augesicht extends Sicht {
 
+    // Die ursprünglichen Daten der Welt, aber nicht bearbeitet.
     public Vielflachwelt vw;
-    public Dreivektor augevektor;
+
+    // Die Eigenschaften dieser Augen.
     public double breite;
     public double brennweite;
     public double hoehe;
+
+    // Der Augevektor ist genau mit den zwei Basen verbunden.  Ist den
+    // Augenpunkt verschoben oder gedreht, müssen auch die Matrizen
+    // bearbeitet werden.
+    //
+    // Warum speichern wir beide den Augepunkt und die Matrizen?
+    // Weil wir die Matrizen durch das Darstellen machen müssen.
+    public Dreivektor augevektor;
     public Dreimatrix vorbasis;
     public Dreimatrix basis;
 

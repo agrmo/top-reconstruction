@@ -1,4 +1,4 @@
-package spiel.vielflach.basiszeit;
+package spiel.vielflach.augezeit;
 
 import dreher.matrix.Matrixdreher;
 import dreher.vektor.Vektordreher;
@@ -14,22 +14,22 @@ import welt.vielflach.Vielflachwelt;
 import zeit.Zeitdauer;
 import wesen.Vielflachbasiswesen;
 
-public class Vielflachbasiszeitspiel extends Spiel {
+public class Augezeitspiel extends Spiel {
 
     Maler m;
-    Augesicht vas;
+    Augesicht as;
     Vielflachwelt vw;
     int mouseAnfangX;
     int mouseAnfangY;
     Vielflachbasiswesen vbw;
 
-    public Vielflachbasiszeitspiel(Maler m,
-				   Augesicht vas,
-				   Vielflachwelt vw) {
+    public Augezeitspiel(Maler m,
+			 Augesicht as,
+			 Vielflachwelt vw) {
 	this.m = m;
-	this.vas = vas;
+	this.as = as;
 	this.vw = vw;
-	this.vbw = new Vielflachbasiswesen(vas, m);
+	this.vbw = new Vielflachbasiswesen(as, m);
 
 	this.mouseAnfangX = 0;
 	this.mouseAnfangY = 0;
@@ -44,8 +44,8 @@ public class Vielflachbasiszeitspiel extends Spiel {
 	this.mouseAnfangX = 0;
 	this.mouseAnfangY = 0;
 
-	this.vas.vorbasis = this.vas.basis.punkt(this.vas.vorbasis);
-	this.vas.basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
+	this.as.vorbasis = this.as.basis.punkt(this.as.vorbasis);
+	this.as.basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
 
 	this.m.repaint();
     }
@@ -71,14 +71,14 @@ public class Vielflachbasiszeitspiel extends Spiel {
 	int jetztY = me.getY();
 	int unterschiedX = jetztX - this.mouseAnfangX;
 	int unterschiedY = jetztY - this.mouseAnfangY;
-	double winkelGier = ((double) unterschiedX) / this.vas.breite;
-	double winkelNick = -((double) unterschiedY) / this.vas.hoehe;
+	double winkelGier = ((double) unterschiedX) / this.as.breite;
+	double winkelNick = -((double) unterschiedY) / this.as.hoehe;
 
 	Dreimatrix giermatrix = Matrixdreher.machedrehery(winkelGier);
 	Dreimatrix nickmatrix = Matrixdreher.machedreherx(winkelNick);
 
-	this.vas.basis = this.vas.basis.punkt(giermatrix);
-	this.vas.basis = this.vas.basis.punkt(nickmatrix);
+	this.as.basis = this.as.basis.punkt(giermatrix);
+	this.as.basis = this.as.basis.punkt(nickmatrix);
 	
 	this.mouseAnfangX = jetztX;
 	this.mouseAnfangY = jetztY;

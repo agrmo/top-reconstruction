@@ -1,4 +1,4 @@
-package spiel.vielflach.basiszeit;
+package spiel.vielflach.augezeit;
 
 import handlung.spiel.SpielHandlung;
 import java.awt.Color;
@@ -9,7 +9,6 @@ import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
 import sicht.vielflach.auge.Augesicht;
-import sicht.vielflach.auge.Augetextsicht;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
 import vielflach.Vielflach;
@@ -18,7 +17,7 @@ import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.vielflach.basiszeit.Main
+  && java -cp classes spiel.vielflach.augezeit.Main
 */
 
 public class Main {
@@ -35,12 +34,12 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0, 0, 100);
-	Augesicht vbs = new Augesicht(vw, ap, 500, breite, hoehe);
+	Augesicht as = new Augesicht(vw, ap, 500, breite, hoehe);
 
-	Maler m = new Maler(new Sicht[] {vbs});
+	Maler m = new Maler(new Sicht[] {as});
 	
 	// Mache das Spiel.
-	Vielflachbasiszeitspiel s = new Vielflachbasiszeitspiel(m, vbs, vw);
+	Augezeitspiel s = new Augezeitspiel(m, as, vw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);

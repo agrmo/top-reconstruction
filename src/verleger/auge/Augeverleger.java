@@ -89,7 +89,8 @@ public class Augeverleger {
 					   Dreimatrix vorbasis, Dreimatrix basis) {
 	
 	// Liste von Dreistrecken. Nehme die Strecken der
-	// dreidimensionalen Welt.
+	// dreidimensionalen Welt. Jede Strecke hier wird zu einer
+	// zweidimensionalen Fläche verlegt.
 	Dreistrecke[] dsl = vw.nehmekanten();
 	
 	// Liste von Zweistrecken. Mache die Strecken für eine
