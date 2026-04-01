@@ -23,15 +23,11 @@ public class Augesicht extends Sicht {
     public double brennweite;
     public double hoehe;
 
-    // Der Augevektor ist genau mit den zwei Basen verbunden.  Ist den
-    // Augenpunkt verschoben oder gedreht, müssen auch die Matrizen
-    // bearbeitet werden.
+    // Der Augevektor. Er zeigt wovon wir uns die Welt anschauen.
     //
-    // Warum speichern wir beide den Augepunkt und die Matrizen?
-    // Weil wir die Matrizen durch das Darstellen machen müssen.
+    // Wir müssen die Basis der Welt umdrehen, sodass die Dingen
+    // innerhalb der Welt an der Augenfläche richtig verlegt werden.
     public Dreivektor augevektor;
-    public Dreimatrix vorbasis;
-    public Dreimatrix basis;
 
     public Augesicht(Vielflachwelt vw,
 		     Dreivektor augevektor, double brennweite,
@@ -42,16 +38,13 @@ public class Augesicht extends Sicht {
 	this.brennweite = brennweite;
 	this.breite = breite;
 	this.hoehe = hoehe;
-	this.vorbasis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
-	this.basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
     }
 
     public void darstellen(Graphics g) {
 	
-	// Benutzen die Verleger.  
+	// Benutzen den Verleger.  
 	Zweistreckewelt zsw = Augeverleger.verlegen(this.vw, this.augevektor, this.brennweite,
-						    this.breite, this.hoehe,
-						    this.vorbasis, this.basis);
+						    this.breite, this.hoehe);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.

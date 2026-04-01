@@ -2,7 +2,7 @@ package verleger.auge;
 
 import druck.vektor.Vektordrucker;
 import dreher.vektor.Vektordreher;
-import dreher.vektor.Vektordreher;
+import dreher.matrix.Matrixdreher;
 import strecke.Dreistrecke;
 import strecke.Zweistrecke;
 import vektor.Dreivektor;
@@ -10,6 +10,7 @@ import vektor.Zweivektor;
 import welt.vielflach.Vielflachwelt;
 import welt.strecke.Zweistreckewelt;
 import matrix.Dreimatrix;
+import matrix.rollnickgier.Rollnickgiermatrix;
 import welt.graph.Zweigraphwelt;
 import welt.graph.Dreigraphwelt;
 
@@ -24,30 +25,31 @@ import welt.graph.Dreigraphwelt;
 // 4. Projizieren alle Vektoren zu einer zweidimensionalen Fläche.
 // 5. Verschieben alle Vektoren zum Zentrum des Bildchirms.
 public class Augeverleger {
-
+    
     // ein: Dreivektor, ...
     // aus: Zweivektor
     //
     // Verlege den gegeben dreidimensionalen Vektor.
-    public static Zweivektor verlegen(Dreivektor pa,
+    public static Zweivektor verlegen(Dreivektor va,
 				      Dreivektor augevektor, double brennweite,
 				      double breite, double hoehe,
-				      Dreimatrix vorbasis, Dreimatrix basis) {
+				      Dreimatrix basismatrix) {
 
-	Dreivektor pb = vorbasis.punkt(pa);
-	Dreivektor pc = basis.punkt(pb);
+	// Drehen die Basis der Vektor um.
+	Dreivektor vb = basismatrix.punkt(va);
 
-	// Trenne das Auge vom Ursprung der Welt.
-	pc.eins -= augevektor.eins;
-	pc.zwei -= augevektor.zwei;
-	pc.drei -= augevektor.drei;
+	// Trenne den Vektor vom Ursprung, wie ein Augenpaar.
+	// Je ferner der Vektor bewegt wird, desto kleiner sieht er aus.
+	vb.eins -= augevektor.eins;
+	vb.zwei -= augevektor.zwei;
+	vb.drei -= augevektor.drei;
 
 	// Letzendlich verlegen die Stellen von drei zu zwei Dimensionen.
 	int zweiDimensionaleX = (int) ((0.5 * breite)
-				       + (pc.eins/pc.drei) * brennweite);
+				       + (vb.eins/vb.drei) * brennweite);
 	
 	int zweiDimensionaleY = (int) ((0.5 * hoehe)
-				       + (pc.zwei/pc.drei) * brennweite);
+				       + (vb.zwei/vb.drei) * brennweite);
 
 	Zweivektor aus = new Zweivektor(zweiDimensionaleX, zweiDimensionaleY);
 	
@@ -60,16 +62,16 @@ public class Augeverleger {
     // Verlege die gegebene dreidimensionale Strecke.
     public static Zweistrecke verlegen(Dreistrecke ds, Dreivektor augevektor, double brennweite,
 				       double breite, double hoehe,
-				       Dreimatrix vorbasis, Dreimatrix basis) {
+				       Dreimatrix basismatrix) {
 	
 	Zweivektor verlegterVektorVon = Augeverleger.verlegen(ds.von,
 							      augevektor, brennweite,
 							      breite, hoehe,
-							      vorbasis, basis);
+							      basismatrix);
 	
 	Zweivektor verlegterVektorBis = Augeverleger.verlegen(ds.bis, augevektor, brennweite,
 							      breite, hoehe,
-							      vorbasis, basis);
+							      basismatrix);
 	
 	// Diese ist die neue Strecke, die nur in zwei Dimensionen
 	// liegt. 
@@ -85,14 +87,16 @@ public class Augeverleger {
     // zweidimensionale Zweistreckewelt.
     public static Zweistreckewelt verlegen(Vielflachwelt vw,
 					   Dreivektor augevektor, double brennweite,
-					   double breite, double hoehe,
-					   Dreimatrix vorbasis, Dreimatrix basis) {
+					   double breite, double hoehe) {
 	
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt. Jede Strecke hier wird zu einer
 	// zweidimensionalen Fläche verlegt.
 	Dreistrecke[] dsl = vw.nehmekanten();
-	
+
+	// Berechne die Matrix, die die Basis dreht.
+	Dreimatrix basismatrix = Rollnickgiermatrix.nehmebasisdrehungmatrix(augevektor);
+
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
 	Zweistrecke[] zsl = new Zweistrecke[dsl.length];
@@ -102,7 +106,7 @@ public class Augeverleger {
 	    // die Zweistreckewelt.
 	    Zweistrecke zs = Augeverleger.verlegen(dsl[i], augevektor, brennweite,
 						   breite, hoehe,
-						   vorbasis, basis);
+						   basismatrix);
 	    
 	    // Fügen sie zu der Liste ein.
 	    zsl[i] = zs;
@@ -118,24 +122,29 @@ public class Augeverleger {
     // Dimensionen zu zwei Dimensionen verlegen.
     public static Zweigraphwelt verlegen(Dreigraphwelt dgw,
 					 Dreivektor augevektor, double brennweite,
-					 double breite, double hoehe,
-					 Dreimatrix vorbasis, Dreimatrix basis) {
+					 double breite, double hoehe) {
 
 	// Die dreidimensionale Knoten sind dgw.orten.  Wir brauchen
-	// nicht, die Kanten zu verlegen.  Die Orten von dgw.orten
-	// bestimmen die Kanten.  Es gibt nichts innerhalb der
-	// Nachbarschaftsliste zu verlegen. Sie enthält keine
+	// nicht, die Kanten zu verlegen.  Wir müssen nur die
+	// Dreivektoren innerhalb dgw.orten verlegen. Die Orten von
+	// dgw.orten bestimmen die Kanten.  Es gibt nichts innerhalb
+	// der Nachbarschaftsliste zu verlegen. Sie enthält keine
 	// Orten. Nach der Verlegung von dgw.orten, können wir
 	// nehmekanten() von der Zweigraphwelt nehmen. Fertig.
+
+	// Berechne die Matrix, die die Basis dreht.
+	Dreimatrix basismatrix = Rollnickgiermatrix.nehmebasisdrehungmatrix(augevektor);
 
 	// Die zweidimensionale Knoten.
 	Zweivektor[] zweiorten = new Zweivektor[dgw.orten.length];
 
 	for (int i = 0; i < dgw.orten.length; i++) {
+	    
+	    // dgw.orten[i] Dreivektor -> zweiorten[i] Zweivektor
 	    zweiorten[i] = Augeverleger.verlegen(dgw.orten[i],
 						 augevektor, brennweite,
 						 breite, hoehe,
-						 vorbasis, basis);
+						 basismatrix);
 	}
 
 	Zweigraphwelt zgw = new Zweigraphwelt(dgw.graph, zweiorten);

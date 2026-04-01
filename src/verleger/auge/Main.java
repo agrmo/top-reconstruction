@@ -26,13 +26,9 @@ public class Main {
 	ol.add(p);
 	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 
-	Dreimatrix vorbasis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
-	Dreimatrix basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
-
 	// Verlegen die Welt.
 	Zweistreckewelt zsw = Augeverleger.verlegen(vw,
 						    new Dreivektor(0,0,0), 500,
-						    1200, 600,
-						    vorbasis, basis);
+						    1200, 600);
     }
 }

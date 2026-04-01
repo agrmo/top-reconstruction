@@ -81,7 +81,7 @@ public class Dreimatrix {
     /* Multipliziere diese 3x3 Matrix mit dem 3x3 Matrix m.
 
        |abc|   |abc|    
-       |def| * |def| = ...
+       |def| * |def| = eine Matrix
        |ghi|   |ghi|    
        
      */
@@ -101,7 +101,7 @@ public class Dreimatrix {
     /* Multipliziere diese Matrix mit dem Vektor.
 
        |abc|   |j|     
-       |def| * |k|  = ...
+       |def| * |k|  = ein Dreivektor
        |ghi|   |l|     
     
     */

@@ -22,8 +22,6 @@ public class Dreigraphbasissicht extends Sicht {
     public double breite;
     public double brennweite;
     public double hoehe;
-    public Dreimatrix vorbasis;
-    public Dreimatrix basis;
 
     public Dreigraphbasissicht(Dreigraphwelt dgw,
 			       Dreivektor augevektor, double brennweite,
@@ -34,8 +32,6 @@ public class Dreigraphbasissicht extends Sicht {
 	this.brennweite = brennweite;
 	this.breite = breite;
 	this.hoehe = hoehe;
-	this.vorbasis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
-	this.basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
     }
 
     public void darstellen(Graphics g) {
@@ -43,9 +39,8 @@ public class Dreigraphbasissicht extends Sicht {
 	// Benutzen den Verleger.
 	
 	Zweigraphwelt zgw = Augeverleger.verlegen(this.dgw,
-							 this.augevektor, this.brennweite,
-							 this.breite, this.hoehe,
-							 this.vorbasis, this.basis);
+						  this.augevektor, this.brennweite,
+						  this.breite, this.hoehe);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.

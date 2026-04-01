@@ -40,8 +40,8 @@ public class Main {
 	double breite = 1200;
 	double hoehe = 600;
 	double brennweite = 500;
-	Dreivektor augepunkt = new Dreivektor(0,0,100);
-	Dreigraphbasissicht ds = new Dreigraphbasissicht(dgw, augepunkt, brennweite,
+	Dreivektor augevektor = new Dreivektor(0,0,100);
+	Dreigraphbasissicht ds = new Dreigraphbasissicht(dgw, augevektor, brennweite,
 							 breite, hoehe);
 	Maler m = new Maler(new Sicht[] {ds});
 	

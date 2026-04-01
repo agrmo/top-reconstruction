@@ -17,8 +17,8 @@ public class Augespiel extends Spiel {
     Maler m;
     Augesicht vas;
     Vielflachwelt vw;
-    int mouseAnfangX;
-    int mouseAnfangY;
+    int mousevorx;
+    int mousevory;
 
     public Augespiel(Maler m,
 		     Augesicht vas,
@@ -27,21 +27,18 @@ public class Augespiel extends Spiel {
 	this.vas = vas;
 	this.vw = vw;
 
-	this.mouseAnfangX = 0;
-	this.mouseAnfangY = 0;
+	this.mousevorx = 0;
+	this.mousevory = 0;
     }
     
     public void handelnMouseDrucken(MouseEvent me) {
-	this.mouseAnfangX = me.getX();
-	this.mouseAnfangY = me.getY();
+	this.mousevorx = me.getX();
+	this.mousevory = me.getY();
     }
     
     public void handelnMouseLösen(MouseEvent me) {
-	this.mouseAnfangX = 0;
-	this.mouseAnfangY = 0;
-
-	this.vas.vorbasis = this.vas.basis.punkt(this.vas.vorbasis);
-	this.vas.basis = new Dreimatrix(1,0,0,0,1,0,0,0,1);
+	this.mousevorx = 0;
+	this.mousevory = 0;
 
 	this.m.repaint();
     }
@@ -61,23 +58,24 @@ public class Augespiel extends Spiel {
     public void handelnMouseBewegen(MouseEvent me) {
 	// nichts
     }
-    
+
+    // Bewegen die Augen.
     public void handelnMouseSchleifen(MouseEvent me) {
-	int jetztX = me.getX();
-	int jetztY = me.getY();
-	int unterschiedX = jetztX - this.mouseAnfangX;
-	int unterschiedY = jetztY - this.mouseAnfangY;
-	double winkelGier = ((double) unterschiedX) / this.vas.breite;
-	double winkelNick = -((double) unterschiedY) / this.vas.hoehe;
+	int jetztx = me.getX();
+	int jetzty = me.getY();
+	int unterschiedX = jetztx - this.mousevorx;
+	int unterschiedY = jetzty - this.mousevory;
+	double winkelgier = -((double) unterschiedX) / this.vas.breite;
+	double winkelnick = ((double) unterschiedY) / this.vas.hoehe;
 
-	Dreimatrix giermatrix = Matrixdreher.machedrehery(winkelGier);
-	Dreimatrix nickmatrix = Matrixdreher.machedreherx(winkelNick);
+	Dreimatrix giermatrix = Matrixdreher.machedrehery(winkelgier);
+	Dreimatrix nickmatrix = Matrixdreher.machedreherx(winkelnick);
 
-	this.vas.basis = this.vas.basis.punkt(giermatrix);
-	this.vas.basis = this.vas.basis.punkt(nickmatrix);
+	this.vas.augevektor = nickmatrix.punkt(this.vas.augevektor);
+	this.vas.augevektor = giermatrix.punkt(this.vas.augevektor);
 	
-	this.mouseAnfangX = jetztX;
-	this.mouseAnfangY = jetztY;
+	this.mousevorx = jetztx;
+	this.mousevory = jetzty;
 
 	this.m.repaint();
     }

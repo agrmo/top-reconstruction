@@ -5,6 +5,7 @@ import matrix.Dreimatrix;
 public class Matrixdreher {
 
     /* Bauen eine Matrix, die um die x-Achse (in der yz-Fläche) dreht.
+       Oder der Nickwinkel.
        
        |1 0    0  |
        |0 cos  sin|
@@ -17,6 +18,7 @@ public class Matrixdreher {
     }
 
     /* Bauen eine Matrix, die um die y-Achse (in der zx-Fläche) dreht.
+       Oder der Rollwinkel.
        
        |cos 0  -sin|
        |0   1  0   |
@@ -29,6 +31,7 @@ public class Matrixdreher {
     }
 
     /* Bauen eine Matrix, die um die z-Achse (in der xy-Fläche) dreht.
+       Oder der Gierwinkel.
        
        |cos  sin 0|
        |-sin cos 0|
