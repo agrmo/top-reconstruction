@@ -25,15 +25,20 @@ public class Augetextsicht extends Sicht {
 
     public void darstellen(Graphics g) {
 	Dreimatrix basismatrix = Rollnickgiermatrix.nehmebasisdrehungmatrix(this.as.augevektor);
+
+	StringBuilder sb = new StringBuilder();
+	sb.append(this.as.augevektor.betrag());
 	
 	String[] tl = new String[] {
 	    Vektordrucker.drucken(this.as.augevektor),
-	    Matrixdrucker.drucken(basismatrix)
+	    Matrixdrucker.drucken(basismatrix),
+	    sb.toString()
 	};
 
 	Zweivektor[] tol = new Zweivektor[] {
 	    new Zweivektor(0,12),
-	    new Zweivektor(0,12*6)
+	    new Zweivektor(0,12*2),
+	    new Zweivektor(0,12*8)
 	};
 
 	// Ein bischen schneller. Wir benutzen die gleiche Sicht jedes Mal.

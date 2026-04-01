@@ -44,4 +44,11 @@ public class Dreivektor {
 	this.zwei = this.zwei * v.zwei;
 	this.drei = this.drei * v.drei;
     }
+
+    // Der Betrag dieses Vektors.
+    public double betrag() {
+	return Math.sqrt(this.eins * this.eins
+			 + this.zwei * this.zwei
+			 + this.drei * this.drei);
+    }
 }
