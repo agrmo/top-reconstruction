@@ -11,7 +11,7 @@ public class Matrixdreher {
        |0 cos  sin|
        |0 -sin cos|
      */
-    public static Dreimatrix machedreherx(double theta) {
+    public static Dreimatrix nehmedreherx(double theta) {
 	return new Dreimatrix(1, 0, 0,
 			      0, Math.cos(theta), Math.sin(theta),
 			      0, -Math.sin(theta), Math.cos(theta));
@@ -24,7 +24,7 @@ public class Matrixdreher {
        |0   1  0   |
        |sin 0  cos |
      */
-    public static Dreimatrix machedrehery(double theta) {
+    public static Dreimatrix nehmedrehery(double theta) {
 	return new Dreimatrix(Math.cos(theta), 0, -Math.sin(theta),
 			      0, 1, 0,
 			      Math.sin(theta), 0, Math.cos(theta));
@@ -37,7 +37,7 @@ public class Matrixdreher {
        |-sin cos 0|
        |0    0   1|
      */
-    public static Dreimatrix machedreherz(double theta) {
+    public static Dreimatrix nehmedreherz(double theta) {
 	return new Dreimatrix(Math.cos(theta), Math.sin(theta), 0,
 			      -Math.sin(theta), Math.cos(theta), 0,
 			      0, 0, 1);

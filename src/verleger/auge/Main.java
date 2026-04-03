@@ -11,7 +11,7 @@ import matrix.Dreimatrix;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes verleger.basis.Main
+  && java -cp classes verleger.auge.Main
 */
 
 public class Main {

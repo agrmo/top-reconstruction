@@ -13,9 +13,9 @@ import druck.matrix.Matrixdrucker;
 
 public class Main {
     static void beispielEins() {
-	Dreimatrix mx = Matrixdreher.machedreherx(Math.PI);
-	Dreimatrix my = Matrixdreher.machedrehery(Math.PI);
-	Dreimatrix mz = Matrixdreher.machedreherz(Math.PI);
+	Dreimatrix mx = Matrixdreher.nehmedreherx(Math.PI);
+	Dreimatrix my = Matrixdreher.nehmedrehery(Math.PI);
+	Dreimatrix mz = Matrixdreher.nehmedreherz(Math.PI);
 
 	System.out.println(Matrixdrucker.drucken(mx));
 	System.out.println(Matrixdrucker.drucken(my));
@@ -23,9 +23,9 @@ public class Main {
     }
 
     static void beispielZwei() {
-	Dreimatrix mx = Matrixdreher.machedreherx(Math.PI);
-	Dreimatrix my = Matrixdreher.machedrehery(Math.PI);
-	Dreimatrix mz = Matrixdreher.machedreherz(Math.PI);
+	Dreimatrix mx = Matrixdreher.nehmedreherx(Math.PI);
+	Dreimatrix my = Matrixdreher.nehmedrehery(Math.PI);
+	Dreimatrix mz = Matrixdreher.nehmedreherz(Math.PI);
 	
 	Dreivektor v = new Dreivektor(1,0,0);
 
@@ -36,7 +36,7 @@ public class Main {
 
 	// Die Bahnen von 2 und 3 sind verschieden, aber die
 	// endgültigen Vektoren sind gleich.
-	
+
 	// Soll 
 	// [1,0,0]
 	// [-1,0,0]
@@ -54,6 +54,6 @@ public class Main {
     }
     
     public static void main(String[] args) {
-	beispielZwei();
+	beispielEins();
     }
 }

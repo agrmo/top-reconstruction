@@ -68,8 +68,8 @@ public class Graphspiel extends Spiel {
 	double winkelgier = ((double) unterschiedX) / this.ds.breite;
 	double winkelnick = -((double) unterschiedY) / this.ds.hoehe;
 
-	Dreimatrix giermatrix = Matrixdreher.machedrehery(winkelgier);
-	Dreimatrix nickmatrix = Matrixdreher.machedreherx(winkelnick);
+	Dreimatrix giermatrix = Matrixdreher.nehmedrehery(winkelgier);
+	Dreimatrix nickmatrix = Matrixdreher.nehmedreherx(winkelnick);
 
 	// Richtig...?
 	this.ds.augevektor = giermatrix.punkt(this.ds.augevektor);

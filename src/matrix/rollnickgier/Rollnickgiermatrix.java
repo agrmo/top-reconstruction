@@ -36,14 +36,17 @@ public class Rollnickgiermatrix {
 	Double thetagier = Rollnickgiermatrix.nehmegierwinkel(augevektor);
 	Double thetanick = Rollnickgiermatrix.nehmenickwinkel(augevektor);
 	
-	Dreimatrix matrixroll = Matrixdreher.machedrehery(thetaroll);
-	Dreimatrix matrixnick = Matrixdreher.machedreherx(thetanick);
-	Dreimatrix matrixgier = Matrixdreher.machedreherz(thetagier);
+	Dreimatrix matrixroll = Matrixdreher.nehmedrehery(thetaroll);
+	Dreimatrix matrixnick = Matrixdreher.nehmedreherx(thetanick);
+	Dreimatrix matrixgier = Matrixdreher.nehmedreherz(thetagier);
 
-	Dreimatrix ma = matrixroll.punkt(matrixgier);
-	Dreimatrix mb = ma.punkt(matrixnick);
+	// Dreimatrix ma = matrixroll.punkt(matrixnick);
+	// Dreimatrix mb = ma.punkt(matrixgier);
+
+	matrixroll.addiere(matrixnick);
+	matrixroll.addiere(matrixgier);
 
 	// mb ist alle 3 Drehungen zusammen.
-	return mb;
+	return matrixroll;
     }
 }

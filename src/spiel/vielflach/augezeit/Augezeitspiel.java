@@ -71,8 +71,8 @@ public class Augezeitspiel extends Spiel {
 	double winkelgier = ((double) unterschiedX) / this.as.breite;
 	double winkelnick = -((double) unterschiedY) / this.as.hoehe;
 
-	Dreimatrix giermatrix = Matrixdreher.machedrehery(winkelgier);
-	Dreimatrix nickmatrix = Matrixdreher.machedreherx(winkelnick);
+	Dreimatrix giermatrix = Matrixdreher.nehmedrehery(winkelgier);
+	Dreimatrix nickmatrix = Matrixdreher.nehmedreherx(winkelnick);
 
 	this.as.augevektor = giermatrix.punkt(this.as.augevektor);
 	this.as.augevektor = nickmatrix.punkt(this.as.augevektor);
