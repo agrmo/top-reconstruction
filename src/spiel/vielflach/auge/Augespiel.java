@@ -65,14 +65,14 @@ public class Augespiel extends Spiel {
 	int jetzty = me.getY();
 	int unterschiedX = jetztx - this.mousevorx;
 	int unterschiedY = jetzty - this.mousevory;
-	double winkelgier = -((double) unterschiedX) / this.vas.breite;
-	double winkelnick = ((double) unterschiedY) / this.vas.hoehe;
+	double winkelx = -((double) unterschiedX) / this.vas.breite;
+	// double winkely = ((double) unterschiedY) / this.vas.hoehe;
 
-	Dreimatrix giermatrix = Matrixdreher.nehmedrehery(winkelgier);
-	Dreimatrix nickmatrix = Matrixdreher.nehmedreherx(winkelnick);
+	Dreimatrix ma = Matrixdreher.nehmedreherx(winkelx);
+	// Dreimatrix mb = Matrixdreher.nehmedrehery(winkely);
+	// Dreimatrix mc = ma.punkt(mb);
 
-	this.vas.augevektor = nickmatrix.punkt(this.vas.augevektor);
-	this.vas.augevektor = giermatrix.punkt(this.vas.augevektor);
+	this.vas.augevektor = ma.punkt(this.vas.augevektor);
 	
 	this.mousevorx = jetztx;
 	this.mousevory = jetzty;

@@ -45,8 +45,25 @@ public class Main {
 
 	System.out.println(Vektordrucker.drucken(vb));
     }
+
+    static void beispielVier() {
+	
+	// Nehme die Basis von [100,100,100]
+	Dreivektor va = new Dreivektor(100,100,100);
+	Dreimatrix ma = Rollnickgiermatrix.nehmebasisdrehungmatrix(va);
+
+	System.out.println(Matrixdrucker.drucken(ma));
+
+	// Die Basis soll den Punkt [30,30,30] zur Zentrumachse des
+	// Koordinatensystems schieben.
+
+	Dreivektor vb = new Dreivektor(30,30,30);
+	Dreivektor vc = ma.punkt(vb);
+
+	System.out.println(Vektordrucker.drucken(vc));
+    }
     
     public static void main(String[] args) {
-	beispielZwei();
+	beispielVier();
     }
 }

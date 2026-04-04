@@ -29,7 +29,7 @@ public class Main {
 	double breite = 1200;
 	double hoehe = 600;
 	double brennweite = 500;
-	Dreivektor ap = new Dreivektor(0,0,0);
+	Dreivektor ap = new Dreivektor(100,0,0);
 	Augesicht as = new Augesicht(welt, ap, brennweite, breite, hoehe);
 	Maler m = new Maler(new Sicht[] {as});
 	

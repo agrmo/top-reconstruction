@@ -3,6 +3,7 @@ package matrix.rollnickgier;
 import matrix.Dreimatrix;
 import vektor.Dreivektor;
 import dreher.matrix.Matrixdreher;
+import druck.matrix.Matrixdrucker;
 
 public class Rollnickgiermatrix {
 
@@ -35,18 +36,26 @@ public class Rollnickgiermatrix {
 	Double thetaroll = Rollnickgiermatrix.nehmerollwinkel(augevektor);
 	Double thetagier = Rollnickgiermatrix.nehmegierwinkel(augevektor);
 	Double thetanick = Rollnickgiermatrix.nehmenickwinkel(augevektor);
+
+	// System.out.println("thetaroll: " + thetaroll);
+	// System.out.println("thetanick: " + thetanick);
+	// System.out.println("thetagier: " + thetagier);
 	
 	Dreimatrix matrixroll = Matrixdreher.nehmedrehery(thetaroll);
 	Dreimatrix matrixnick = Matrixdreher.nehmedreherx(thetanick);
 	Dreimatrix matrixgier = Matrixdreher.nehmedreherz(thetagier);
 
-	// Dreimatrix ma = matrixroll.punkt(matrixnick);
-	// Dreimatrix mb = ma.punkt(matrixgier);
+	// System.out.println("matrixroll:");
+	// System.out.println(Matrixdrucker.drucken(matrixroll));
+	// System.out.println("matrixnick:");
+	// System.out.println(Matrixdrucker.drucken(matrixnick));
+	// System.out.println("matrixgier:");
+	// System.out.println(Matrixdrucker.drucken(matrixgier));
 
-	matrixroll.addiere(matrixnick);
-	matrixroll.addiere(matrixgier);
+	Dreimatrix ma = matrixroll.punkt(matrixnick);
+	Dreimatrix mb = ma.punkt(matrixgier);
 
 	// mb ist alle 3 Drehungen zusammen.
-	return matrixroll;
+	return mb;
     }
 }

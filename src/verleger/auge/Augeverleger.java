@@ -1,26 +1,24 @@
 package verleger.auge;
 
-import druck.vektor.Vektordrucker;
-import dreher.vektor.Vektordreher;
-import dreher.matrix.Matrixdreher;
+import druck.matrix.Matrixdrucker;
+import matrix.Dreimatrix;
+import matrix.rollnickgier.Rollnickgiermatrix;
 import strecke.Dreistrecke;
 import strecke.Zweistrecke;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
-import welt.vielflach.Vielflachwelt;
-import welt.strecke.Zweistreckewelt;
-import matrix.Dreimatrix;
-import matrix.rollnickgier.Rollnickgiermatrix;
-import welt.graph.Zweigraphwelt;
 import welt.graph.Dreigraphwelt;
+import welt.graph.Zweigraphwelt;
+import welt.strecke.Zweistreckewelt;
+import welt.vielflach.Vielflachwelt;
 
 // Ein Augeverleger verlegt eine dreidimensionale Welt von
 // Vielflächen zu einer zweidimensionalen Welt von Vektoren und
 // Strecken.
 //
 // Schritte:
-// 1. Wandeln alle Punkte mit der vorigen Basis um.
-// 2. Wandeln alle Punkte mit der jetzigen Basis um.
+// 1. Berechne die nötige Drehung.
+// 2. Drehe den Punkt.
 // 3. Entfernen die Kamera vom Ursprung.
 // 4. Projizieren alle Vektoren zu einer zweidimensionalen Fläche.
 // 5. Verschieben alle Vektoren zum Zentrum des Bildchirms.
@@ -38,11 +36,13 @@ public class Augeverleger {
 	// Drehen die Basis der Vektor um.
 	Dreivektor vb = basismatrix.punkt(va);
 
+	// augevektor = basismatrix.punkt(augevektor);
+
 	// Trenne den Vektor vom Ursprung, wie ein Augenpaar.
 	// Je ferner der Vektor bewegt wird, desto kleiner sieht er aus.
-	va.eins -= augevektor.eins;
-	va.zwei -= augevektor.zwei;
-	va.drei -= augevektor.drei;
+	vb.eins -= augevektor.eins;
+	vb.zwei -= augevektor.zwei;
+	vb.drei -= augevektor.drei;
 
 	// Letzendlich verlegen die Stellen von drei zu zwei Dimensionen.
 	int zweiDimensionaleX = (int) ((0.5 * breite)
@@ -96,7 +96,7 @@ public class Augeverleger {
 
 	// Berechne die Matrix, die die Basis dreht.
 	Dreimatrix basismatrix = Rollnickgiermatrix.nehmebasisdrehungmatrix(augevektor);
-
+	
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
 	Zweistrecke[] zsl = new Zweistrecke[dsl.length];
