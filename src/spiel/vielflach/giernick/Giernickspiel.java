@@ -8,8 +8,11 @@ import spiel.Spiel;
 import welt.vielflach.Vielflachwelt;
 import maler.Maler;
 
-// Das Giernickspiel ist einfacher als das Basisspiel, versagt aber an
-// der Mousebewegung nach einer Drehung von 180 Grad.
+// Das Giernickspiel benuzt zur Drehung nur zwei Winkel: einen in der
+// Gier-Richtung und einen in der Nick-Richtung. Das funktioniert
+// richtig gut am Anfang. Das Problem ist nach einer Drehung. Nach
+// einer Drehung sind die Gier und Nick-Achsen anders als am
+// Anfang. Deshalb sieht die Drehungen nachdem nicht richtig aus.
 public class Giernickspiel extends Spiel {
 
     Maler m;

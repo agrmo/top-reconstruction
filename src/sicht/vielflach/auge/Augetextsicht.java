@@ -6,9 +6,6 @@ import sicht.text.Textsicht;
 import vektor.Zweivektor;
 import sicht.Sicht;
 import druck.vektor.Vektordrucker;
-import druck.matrix.Matrixdrucker;
-import matrix.Dreimatrix;
-import matrix.rollnickgier.Rollnickgiermatrix;
 
 // Eine Sicht, die einen Text der Eigenschaften der
 // Augesicht auf dem Bildschirm schreibt.
@@ -24,26 +21,23 @@ public class Augetextsicht extends Sicht {
     }
 
     public void darstellen(Graphics g) {
-	Dreimatrix basismatrix = Rollnickgiermatrix.nehmebasisdrehungmatrix(this.as.augevektor);
-
 	StringBuilder sb = new StringBuilder();
+	sb.append("Betrag: ");
 	sb.append(this.as.augevektor.betrag());
 	
-	String[] tl = new String[] {
+	String[] texte = new String[] {
 	    Vektordrucker.drucken(this.as.augevektor),
-	    Matrixdrucker.drucken(basismatrix),
 	    sb.toString()
 	};
 
-	Zweivektor[] tol = new Zweivektor[] {
+	Zweivektor[] orte = new Zweivektor[] {
 	    new Zweivektor(0,12),
-	    new Zweivektor(0,12*2),
-	    new Zweivektor(0,12*8)
+	    new Zweivektor(0,12*2)
 	};
 
 	// Ein bischen schneller. Wir benutzen die gleiche Sicht jedes Mal.
-	this.textsicht.textliste = tl;
-	this.textsicht.ortliste = tol;
+	this.textsicht.textliste = texte;
+	this.textsicht.ortliste = orte;
 	this.textsicht.darstellen(g);
     }
 }

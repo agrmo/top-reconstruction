@@ -2,7 +2,6 @@ package verleger.auge;
 
 import druck.matrix.Matrixdrucker;
 import matrix.Dreimatrix;
-import matrix.rollnickgier.Rollnickgiermatrix;
 import strecke.Dreistrecke;
 import strecke.Zweistrecke;
 import vektor.Dreivektor;
@@ -36,6 +35,7 @@ public class Augeverleger {
 	// Drehen die Basis der Vektor um.
 	Dreivektor vb = basismatrix.punkt(va);
 
+	// ich verstehe nicht
 	// augevektor = basismatrix.punkt(augevektor);
 
 	// Trenne den Vektor vom Ursprung, wie ein Augenpaar.
@@ -94,8 +94,8 @@ public class Augeverleger {
 	// zweidimensionalen Fläche verlegt.
 	Dreistrecke[] dsl = vw.nehmekanten();
 
-	// Berechne die Matrix, die die Basis dreht.
-	Dreimatrix basismatrix = Rollnickgiermatrix.nehmebasisdrehungmatrix(augevektor);
+	// ich verstehe nicht
+	Dreimatrix basismatrix = new Dreimatrix(0,0,1,0,1,0,0,0,1);
 	
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
@@ -132,8 +132,8 @@ public class Augeverleger {
 	// Orten. Nach der Verlegung von dgw.orten, können wir
 	// nehmekanten() von der Zweigraphwelt nehmen. Fertig.
 
-	// Berechne die Matrix, die die Basis dreht.
-	Dreimatrix basismatrix = Rollnickgiermatrix.nehmebasisdrehungmatrix(augevektor);
+	// ich verstehe nicht
+	Dreimatrix basismatrix = new Dreimatrix(0,0,1,0,1,0,0,0,1);
 
 	// Die zweidimensionale Knoten.
 	Zweivektor[] zweiorten = new Zweivektor[dgw.orten.length];
