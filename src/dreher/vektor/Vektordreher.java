@@ -45,7 +45,7 @@ public class Vektordreher {
     }
 
     // Drehen den Vektor um die y-Achse (in die xz-Fläche). Es heißt
-    // Gier.
+    // Roll.
     public static Dreivektor drehenY(Dreivektor p, double theta) {
 
 	Zweivektor xz = Vektordreher.drehen(new Zweivektor(p.eins, p.drei), theta);

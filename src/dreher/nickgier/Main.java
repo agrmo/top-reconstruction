@@ -39,13 +39,18 @@ public class Main {
     }
 
     static void beispielDrei() {
-	// Man shaut sich dem Vektor [30,30,30] von Standpunkt [100,100,100] an.
-	Dreivektor va = new Dreivektor(30,30,30);
-	Dreivektor augevektor = new Dreivektor(100,100,100);
 	
     }
 
+    static void beispielVier() {
+	// Man steht auf dem Punkt [100,100,100].
+	
+	// Man shaut sich dem Vektor [30,30,30] von Standpunkt [100,100,100] an.
+	Dreivektor va = new Dreivektor(30,30,30);
+	Dreivektor augevektor = new Dreivektor(100,100,100);	
+    }
+
     public static void main(String[] args) {
-	beispielZwei();
+	beispielDrei();
     }
 }
