@@ -107,7 +107,20 @@ public class Main {
 	// Was sind die wesentlichen Drehungen, um den Vektor
 	// [0.707,0.5,0.5] zurück zu [1,0,0] zu drehen?
 
-	// 
+	// Zuerst drehe den Winkel um die yz-Fläche zu der xy-Fläche.
+	// Zuzweit drehe den Winkel um die xy-Fläche zu [1,0,0].
+
+	double thetayz = Math.atan(vc.drei / vc.zwei);
+	System.out.println(thetayz); // 0.78 Rad = 45 Grad
+
+	Dreivektor vd = Vektordreher.drehenX(vc, -1 * thetayz);
+	System.out.println(Vektordrucker.drucken(vd)); // [0.707,0.707,0]
+
+	double thetaxy = Math.atan(vd.zwei / vd.eins);
+	System.out.println(thetaxy); // 0.78 Rad = 45 Grad
+
+	Dreivektor ve = Vektordreher.drehenZ(vd, -1 * thetaxy);
+	System.out.println(Vektordrucker.drucken(ve)); // [1,0,0]
     }
 
     static void beispielSieben() {
