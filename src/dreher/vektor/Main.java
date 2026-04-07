@@ -93,16 +93,20 @@ public class Main {
 	*/
 	
 	Dreivektor vc = new Dreivektor(0.707,0.5,0.5);
-	double thetaroll = Math.atan(vc.drei / vc.eins);
-	double thetanick = Math.atan(vc.drei / vc.zwei);
-	double thetagier = Math.atan(vc.eins / vc.zwei);
 
-	System.out.println("Roll: " + thetaroll); // 0.6155509032954322
-	System.out.println("Nick: " + thetanick); // 0.7853981633974483
-	System.out.println("Gier: " + thetagier); // 0.9552454234994644
+	// Der Winkel um die x-Achse.
+	double thetax = Math.atan(vc.drei / vc.zwei);
+	// Der Winkel um die y-Achse.
+	double thetay = Math.atan(vc.drei / vc.eins);
+	// Der Winkel um die z-Achse.
+	double thetaz = Math.atan(vc.eins / vc.zwei);
+
+	System.out.println("Um X: " + thetax); // 0.7853981633974483
+	System.out.println("Um Y: " + thetay); // 0.6155509032954322
+	System.out.println("Um Z: " + thetaz); // 0.9552454234994644
 	
-	// Die Nick und Gierwinkel sind nicht die ursprünglichen
-	// Winkel, die den Vektor zuerst gedreht haben.
+	// Die Winkel sind nicht die ursprünglichen Winkel, die den
+	// Vektor zuerst gedreht haben.
 
 	// Was sind die wesentlichen Drehungen, um den Vektor
 	// [0.707,0.5,0.5] zurück zu [1,0,0] zu drehen?
