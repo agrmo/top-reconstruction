@@ -128,10 +128,56 @@ public class Main {
     }
 
     static void beispielSieben() {
-	// Man versucht, den Vektor [0,1,1] zurück zum [1,0,0] zu drehen.
+	
+	// Man versucht, zwei Winkel zu berechnen, die eine Drehung
+	// der Basis bedeutet. Wir wollen eine neue Basis für den
+	// Punkt (70,70,70) berechnen. Mithilfe dieser zwei
+	// Drehungwinkel kann irgendein Punkt auf der Linie
+	// (0,0,0)-(70,70,70) zu der x-Ache gedreht werden. Das
+	// überprüfen wir.
+
+	Dreivektor va = new Dreivektor(70,70,70);
+
+	double thetaeins = Math.atan(va.drei / va.zwei);
+	System.out.println(thetaeins); // 0.78 Rad
+
+	Dreivektor vb = Vektordreher.drehenX(va, -1 * thetaeins);
+	System.out.println(Vektordrucker.drucken(vb));
+
+	// Jetzt liegt der Punkt auf der z=0 Fläche.
+	// Drehen den Vektor zur x-Achse.
+
+	double thetazwei = Math.atan(vb.zwei / vb.eins);
+
+	Dreivektor vc = Vektordreher.drehenZ(vb, -1 * thetazwei);
+
+	System.out.println(Vektordrucker.drucken(vc));
+
+	// Jetzt liegt der Vektor auf der x-Achse. Die y-Teil und
+	// z-Teil sind 0, und der x-Teil ist der gesamte Betrag des
+	// Vektors.
+
+	// Jetzt prüfen, ob den Punkt (50,50,50) auch auf die x-Achse
+	// gelegt werden kann.
+
+	Dreivektor vd = new Dreivektor(50,50,50);
+	Dreivektor ve = Vektordreher.drehenX(vd, -1 * thetaeins);
+	Dreivektor vf = Vektordreher.drehenZ(ve, -1 * thetazwei);
+	System.out.println(Vektordrucker.drucken(vf)); // [86,0,0]
+
+	// Ja. Richtig.
+    }
+
+    static void beispielAcht() {
+	// Man steht auf dem Punkt [100,100,100].
+	// Er versucht, den Vektor [50,50,50] zu sehen.
+	// Er sieht solchen Vektor direkt an.
+	// Solcher Vektor sieht von seinem Standpunkt wie ein Punkt aus.
+	
+	// Was sind die zwei wesentlichen Drehungen, um
     }
     
     public static void main(String[] args) {
-	beispielSechs();
+	beispielSieben();
     }
 }
