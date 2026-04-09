@@ -35,12 +35,12 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0, 0, 100);
-	Augesicht vas = new Augesicht(vw, ap, 500, breite, hoehe);
+	Augesicht as = new Augesicht(vw, ap, 500, breite, hoehe);
 
-	Maler m = new Maler(new Sicht[] {vas});
+	Maler m = new Maler(new Sicht[] {as});
 	
 	// Mache das Spiel.
-	Augespiel s = new Augespiel(m, vas, vw);
+	Augespiel s = new Augespiel(m, as, vw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);
@@ -80,13 +80,13 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(50,50,50);
-	Augesicht vas = new Augesicht(vw, ap, 500, breite, hoehe);
-	Augetextsicht vats = new Augetextsicht(vas);
+	Augesicht as = new Augesicht(vw, ap, 500, breite, hoehe);
+	Augetextsicht ats = new Augetextsicht(as);
 
-	Maler m = new Maler(new Sicht[] {vas, vats});
+	Maler m = new Maler(new Sicht[] {as, ats});
 	
 	// Mache das Spiel.
-	Augespiel s = new Augespiel(m, vas, vw);
+	Augespiel s = new Augespiel(m, as, vw);
 
 	// Mache die Handlung.
 	SpielHandlung sh = new SpielHandlung(s);
