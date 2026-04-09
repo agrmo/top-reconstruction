@@ -11,6 +11,7 @@ import sicht.vielflach.auge.Augesicht;
 import spiel.Spiel;
 import vektor.Dreivektor;
 import welt.vielflach.Vielflachwelt;
+import dreher.achse.Achsedreher;
 
 public class Augespiel extends Spiel {
 
@@ -63,10 +64,10 @@ public class Augespiel extends Spiel {
     public void handelnMouseSchleifen(MouseEvent me) {
 	int jetztx = me.getX();
 	int jetzty = me.getY();
-	int unterschiedX = jetztx - this.mousevorx;
-	int unterschiedY = jetzty - this.mousevory;
-	double winkelx = -((double) unterschiedX) / this.vas.breite;
-	double winkely = -((double) unterschiedY) / this.vas.hoehe;
+	int unterschiedx = jetztx - this.mousevorx;
+	int unterschiedy = jetzty - this.mousevory;
+	double winkelx = ((double) unterschiedx) / this.vas.breite;
+	double winkely = ((double) unterschiedy) / this.vas.hoehe;
 
 	Dreimatrix ma = Matrixdreher.nehmedreherx(winkelx);
 	Dreimatrix mb = Matrixdreher.nehmedrehery(winkely);
