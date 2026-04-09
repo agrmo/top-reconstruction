@@ -40,7 +40,7 @@ public class Giernicksicht extends Sicht {
     public void darstellen(Graphics g) {
 	
 	// Benutzen die Verleger.
-	Zweistreckewelt zsw = Giernickverleger.verlegen(this.vw, this.augevektor, this.brennweite,
+	Zweistreckewelt zsw = Giernickverleger.verlege(this.vw, this.augevektor, this.brennweite,
 							this.breite, this.hoehe,
 							this.gier, this.nick);
 

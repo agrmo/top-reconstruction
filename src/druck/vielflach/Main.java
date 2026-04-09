@@ -10,7 +10,7 @@ import vielflach.kubus.Kubus;
 public class Main {
     public static void main(String[] args) {
 	Kubus k = new Kubus(1);
-	System.out.println(Vielflachdrucker.druckenEcken(k));
-	System.out.println(Vielflachdrucker.druckenStrecken(k));
+	System.out.println(Vielflachdrucker.druckeecken(k));
+	System.out.println(Vielflachdrucker.druckestrecken(k));
     }
 }

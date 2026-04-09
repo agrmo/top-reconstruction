@@ -26,9 +26,9 @@ public class Main {
 	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 
 	// Verlegen die Welt.
-	Zweistreckewelt zsw = Giernickverleger.verlegen(vw,
-							new Dreivektor(0,0,0), 500,
-							1200, 600,
-							0, 0);
+	Zweistreckewelt zsw = Giernickverleger.verlege(vw,
+						       new Dreivektor(0,0,0), 500,
+						       1200, 600,
+						       0, 0);
     }
 }

@@ -5,7 +5,7 @@ import vieleck.Vieleck;
 import vektor.Zweivektor;
 
 public class Vieleckdrucker {
-    public static String drucken(Vieleck v) {
+    public static String drucke(Vieleck v) {
 	StringBuilder sb = new StringBuilder();	
 	sb.append("[");
 
@@ -15,7 +15,7 @@ public class Vieleckdrucker {
 	    if (i != 0) {
 		sb.append(",");
 	    }
-	    sb.append(Vektordrucker.drucken(ecken[i]));
+	    sb.append(Vektordrucker.drucke(ecken[i]));
 	}
 	
 	sb.append("]");

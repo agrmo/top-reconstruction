@@ -14,7 +14,7 @@ public class Main {
 	Dreimatrix m = new Dreimatrix(1,2,3,4,5,6,7,8,9);
 
 	// Soll [[1,2,3],[4,5,6],[7,8,9]] sein.
-	System.out.println(Matrixdrucker.drucken(m));
+	System.out.println(Matrixdrucker.drucke(m));
     }
 
     static void beispielZwei() {
@@ -22,7 +22,7 @@ public class Main {
 	Dreivektor v = new Dreivektor(1,1,1);
 
 	// Soll [1,1,1] sein.
-	System.out.println(Vektordrucker.drucken(m.punkt(v)));
+	System.out.println(Vektordrucker.drucke(m.punkt(v)));
     }
 
     static void beispielDrei() {
@@ -30,7 +30,7 @@ public class Main {
 	Dreimatrix mb = new Dreimatrix(1,0,0,0,1,0,0,0,1);
 
 	// Soll [[1,0,0],[0,1,0],[0,0,1]] sein.
-	System.out.println(Matrixdrucker.drucken(ma.punkt(mb)));
+	System.out.println(Matrixdrucker.drucke(ma.punkt(mb)));
     }
 
     static void beispielVier() {
@@ -38,21 +38,21 @@ public class Main {
 	Dreimatrix mb = new Dreimatrix(0,0,1,0,1,0,1,0,0);
 
 	// Soll [[0,0,1],[0,1,0],[1,0,0]] sein.
-	System.out.println(Matrixdrucker.drucken(ma.punkt(mb)));
+	System.out.println(Matrixdrucker.drucke(ma.punkt(mb)));
     }
 
     static void beispielFuenf() {
 	Dreimatrix m = new Dreimatrix(1,0,0,0,1,0,0,0,1);
 	Dreivektor v = new Dreivektor(4,4,4);
 
-	System.out.println(Vektordrucker.drucken(m.punkt(v)));
+	System.out.println(Vektordrucker.drucke(m.punkt(v)));
     }
 
     static void beispielSechs() {
 	Dreimatrix ma = new Dreimatrix(1,2,3,4,5,6,7,8,9);
 	Dreimatrix mb = new Dreimatrix(3,2,1,6,5,4,9,8,7);
 	Dreimatrix mc = ma.punkt(mb);
-	System.out.println(Matrixdrucker.drucken(mc));
+	System.out.println(Matrixdrucker.drucke(mc));
 
 	/*
          |42.0 36.0 30.0|

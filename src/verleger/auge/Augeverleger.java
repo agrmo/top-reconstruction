@@ -28,7 +28,7 @@ public class Augeverleger {
     // aus: Zweivektor
     //
     // Verlege den gegeben dreidimensionalen Vektor.
-    public static Zweivektor verlegen(Dreivektor va,
+    public static Zweivektor verlege(Dreivektor va,
 				      double augenentfernung, double brennweite,
 				      double breite, double hoehe,
 				      Dreimatrix basismatrix) {
@@ -36,7 +36,8 @@ public class Augeverleger {
 	// Drehen die Basis der Vektor um.
 	Dreivektor vb = basismatrix.punkt(va);
 
-	// Warum ist das richtig?
+	// Jetzt ist die Stelle gedreht.
+	// Entferne die Augen entlang der z-Achse.
 	vb.drei += augenentfernung;
 
 	// Letzendlich verlegen die Stellen von drei zu zwei Dimensionen.
@@ -55,16 +56,16 @@ public class Augeverleger {
     // aus: Zweistrecke
     //
     // Verlege die gegebene dreidimensionale Strecke.
-    public static Zweistrecke verlegen(Dreistrecke ds, double augenentfernung, double brennweite,
+    public static Zweistrecke verlege(Dreistrecke ds, double augenentfernung, double brennweite,
 				       double breite, double hoehe,
 				       Dreimatrix basismatrix) {
 	
-	Zweivektor verlegterVektorVon = Augeverleger.verlegen(ds.von,
+	Zweivektor verlegterVektorVon = Augeverleger.verlege(ds.von,
 							      augenentfernung, brennweite,
 							      breite, hoehe,
 							      basismatrix);
 	
-	Zweivektor verlegterVektorBis = Augeverleger.verlegen(ds.bis, augenentfernung, brennweite,
+	Zweivektor verlegterVektorBis = Augeverleger.verlege(ds.bis, augenentfernung, brennweite,
 							      breite, hoehe,
 							      basismatrix);
 	
@@ -80,7 +81,7 @@ public class Augeverleger {
     //
     // Verlegen die dreidimensionale Vielflachwelt zu einer
     // zweidimensionale Zweistreckewelt.
-    public static Zweistreckewelt verlegen(Vielflachwelt vw,
+    public static Zweistreckewelt verlege(Vielflachwelt vw,
 					   Dreivektor augevektor, double brennweite,
 					   double breite, double hoehe) {
 	
@@ -102,7 +103,7 @@ public class Augeverleger {
 	for (int i = 0; i < dsl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zs = Augeverleger.verlegen(dsl[i], augenentfernung, brennweite,
+	    Zweistrecke zs = Augeverleger.verlege(dsl[i], augenentfernung, brennweite,
 						   breite, hoehe,
 						   basismatrix);
 	    
@@ -118,7 +119,7 @@ public class Augeverleger {
 
     // Die Kanten und Knoten dieses Graphen werden von drei
     // Dimensionen zu zwei Dimensionen verlegen.
-    public static Zweigraphwelt verlegen(Dreigraphwelt dgw,
+    public static Zweigraphwelt verlege(Dreigraphwelt dgw,
 					 Dreivektor augevektor, double brennweite,
 					 double breite, double hoehe) {
 
@@ -142,7 +143,7 @@ public class Augeverleger {
 	for (int i = 0; i < dgw.orten.length; i++) {
 	    
 	    // dgw.orten[i] Dreivektor -> zweiorten[i] Zweivektor
-	    zweiorten[i] = Augeverleger.verlegen(dgw.orten[i],
+	    zweiorten[i] = Augeverleger.verlege(dgw.orten[i],
 						 augenentfernung, brennweite,
 						 breite, hoehe,
 						 basismatrix);

@@ -7,18 +7,18 @@ import java.awt.event.KeyListener;
 public class DruckTastaturHandlung implements KeyListener {
 
     public void keyTyped(KeyEvent e) {
-        drucken("Getastet: ", e);
+        drucke("Getastet: ", e);
     }
      
     public void keyPressed(KeyEvent e) {
-        drucken("Tastendruck: ", e);
+        drucke("Tastendruck: ", e);
     }
      
     public void keyReleased(KeyEvent e) {
-        drucken("Tastenfreisetzung: ", e);
+        drucke("Tastenfreisetzung: ", e);
     }
 
-    void drucken(String keyStatus, KeyEvent e) {
+    void drucke(String keyStatus, KeyEvent e) {
 	
         int id = e.getID();
         String keyString;

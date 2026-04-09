@@ -16,25 +16,25 @@ public class Main {
 	Dreivektor pb = new Dreivektor(2,2,2);
 	Dreistrecke ds = new Dreistrecke(pa, pb);
 
-	System.out.println(Streckedrucker.drucken(ds));
+	System.out.println(Streckedrucker.drucke(ds));
     }
 
     static void beispielZwei() {
 	Dreivektor pa = new Dreivektor(1,1,1);
 	Dreivektor pb = new Dreivektor(2,2,2);
 	Dreistrecke ds = new Dreistrecke(pa, pb);
-	System.out.println(Streckedrucker.drucken(ds));
+	System.out.println(Streckedrucker.drucke(ds));
 	ds.addiere(new Dreivektor(5,5,5));
-	System.out.println(Streckedrucker.drucken(ds));    
+	System.out.println(Streckedrucker.drucke(ds));    
     }
     
     static void beispielDrei() {
 	Zweivektor pa = new Zweivektor(1,1);
 	Zweivektor pb = new Zweivektor(2,2);
 	Zweistrecke zs = new Zweistrecke(pa, pb);
-	System.out.println(Streckedrucker.drucken(zs));
+	System.out.println(Streckedrucker.drucke(zs));
 	zs.addiere(new Zweivektor(5,5));
-	System.out.println(Streckedrucker.drucken(zs));
+	System.out.println(Streckedrucker.drucke(zs));
     }
 
     public static void main(String[] args) {

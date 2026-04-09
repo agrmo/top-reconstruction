@@ -13,7 +13,7 @@ public class Main {
 	Dreieck de = new Dreieck(5);
 
 	for (Zweistrecke zs : de.nehmekanten()) {
-	    System.out.println(Streckedrucker.drucken(zs));
+	    System.out.println(Streckedrucker.drucke(zs));
 	}
     }
 }

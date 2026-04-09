@@ -22,15 +22,15 @@ public class Vektordreher {
     // Dreh einen zweidimensionalen Vektor um den Ursprung gegen den
     // Uhrzeigersinn. Theta hat die Einheit Rad.
     public static Zweivektor drehen(Zweivektor zp, double theta) {
-	double xNeu = Math.cos(theta)*zp.eins - Math.sin(theta)*zp.zwei;
-	double yNeu = Math.sin(theta)*zp.eins + Math.cos(theta)*zp.zwei;
+	double xneu = Math.cos(theta)*zp.eins - Math.sin(theta)*zp.zwei;
+	double yneu = Math.sin(theta)*zp.eins + Math.cos(theta)*zp.zwei;
 
-	return new Zweivektor(xNeu, yNeu);
+	return new Zweivektor(xneu, yneu);
     }
 
     // Drehen den Vektor in um die x-Achse (in die yz-Fläche). Es
     // heißt Nick.
-    public static Dreivektor drehenX(Dreivektor p, double theta) {
+    public static Dreivektor drehex(Dreivektor p, double theta) {
 
 	Zweivektor yz = Vektordreher.drehen(new Zweivektor(p.zwei, p.drei), theta);
 
@@ -46,7 +46,7 @@ public class Vektordreher {
 
     // Drehen den Vektor um die y-Achse (in die xz-Fläche). Es heißt
     // Roll.
-    public static Dreivektor drehenY(Dreivektor p, double theta) {
+    public static Dreivektor drehey(Dreivektor p, double theta) {
 
 	Zweivektor xz = Vektordreher.drehen(new Zweivektor(p.eins, p.drei), theta);
 	
@@ -61,7 +61,7 @@ public class Vektordreher {
     }
 
     // Drehen den Vektor um die z-Achse (in die xy-Fläche). Es heißt Gier.
-    public static Dreivektor drehenZ(Dreivektor p, double theta) {
+    public static Dreivektor drehez(Dreivektor p, double theta) {
 
 	Zweivektor xy = Vektordreher.drehen(new Zweivektor(p.eins, p.zwei), theta);
 	

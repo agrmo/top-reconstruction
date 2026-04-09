@@ -30,6 +30,6 @@ public class Main {
 	Schiefverleger sv = new Schiefverleger(-1.0);
 
 	// Benutzen den Verleger.
-	Zweistreckewelt zsw = sv.verlegenWelt(vw);
+	Zweistreckewelt zsw = sv.verlegewelt(vw);
     }
 }

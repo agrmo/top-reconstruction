@@ -4,7 +4,7 @@ import vektor.Dreivektor;
 import vektor.Zweivektor;
 
 public class Vektordrucker {
-    public static String drucken(Zweivektor v) {
+    public static String drucke(Zweivektor v) {
 	StringBuilder sb = new StringBuilder();
 	sb.append("[");
 	sb.append(v.eins);
@@ -14,7 +14,7 @@ public class Vektordrucker {
 	return sb.toString();
     }
 
-    public static String drucken(Dreivektor v) {
+    public static String drucke(Dreivektor v) {
 	StringBuilder sb = new StringBuilder();
 	sb.append("[");
 	sb.append(v.eins);

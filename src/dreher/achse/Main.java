@@ -16,10 +16,10 @@ public class Main {
 	Dreivektor va = new Dreivektor(50,50,50);
 	Dreimatrix ma = Achsedreher.nehmexachsedrehung(va);
 
-	System.out.println(Matrixdrucker.drucken(ma));
+	System.out.println(Matrixdrucker.drucke(ma));
 
 	Dreivektor vb = ma.punkt(va);
-	System.out.println(Vektordrucker.drucken(vb));
+	System.out.println(Vektordrucker.drucke(vb));
 	
 	// [86,0,0]
     }
@@ -28,10 +28,10 @@ public class Main {
 	Dreivektor va = new Dreivektor(30,-10,20);
 	Dreimatrix ma = Achsedreher.nehmexachsedrehung(va);
 
-	System.out.println(Matrixdrucker.drucken(ma));
+	System.out.println(Matrixdrucker.drucke(ma));
 
 	Dreivektor vb = ma.punkt(va);
-	System.out.println(Vektordrucker.drucken(vb));
+	System.out.println(Vektordrucker.drucke(vb));
 	
 	// [37,0,0]
     }
@@ -40,10 +40,10 @@ public class Main {
 	Dreivektor va = new Dreivektor(-30,-10,-20);
 	Dreimatrix ma = Achsedreher.nehmexachsedrehung(va);
 
-	System.out.println(Matrixdrucker.drucken(ma));
+	System.out.println(Matrixdrucker.drucke(ma));
 
 	Dreivektor vb = ma.punkt(va);
-	System.out.println(Vektordrucker.drucken(vb));
+	System.out.println(Vektordrucker.drucke(vb));
 	
 	// [-37,0,0] ?
     }

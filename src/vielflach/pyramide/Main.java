@@ -21,11 +21,11 @@ public class Main {
 	Dreistrecke[] kl = p.nehmekanten();
 
 	for (int i = 0; i < pl.length; i++) {
-	    System.out.println(Vektordrucker.drucken(pl[i]));
+	    System.out.println(Vektordrucker.drucke(pl[i]));
 	}
 
 	for (int i = 0; i < kl.length; i++) {
-	    System.out.println(Streckedrucker.drucken(kl[i]));
+	    System.out.println(Streckedrucker.drucke(kl[i]));
 	}
     }
 }

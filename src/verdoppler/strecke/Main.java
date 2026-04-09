@@ -22,11 +22,11 @@ public class Main {
 	kl[1].addiere(new Zweivektor(5,5));
 
 	for (int i = 0; i < kl.length; i++) {
-	    System.out.println(Streckedrucker.drucken(kl[i]));
+	    System.out.println(Streckedrucker.drucke(kl[i]));
 	}
 
 	for (int i = 0; i < kl.length; i++) {
-	    System.out.println(Streckedrucker.drucken(klNeu[i]));
+	    System.out.println(Streckedrucker.drucke(klNeu[i]));
 	}
     }
 }

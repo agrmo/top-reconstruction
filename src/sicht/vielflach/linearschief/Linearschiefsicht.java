@@ -51,7 +51,7 @@ public class Linearschiefsicht extends Sicht {
     public void darstellen(Graphics g) {
 	
 	// Benutzen die Verlegungen.
-	Zweistreckewelt zsw = this.sv.verlegenWelt(this.welt);
+	Zweistreckewelt zsw = this.sv.verlegewelt(this.welt);
 
 	// Straffen die Vektoren.
 	Zweistreckewelt zswNeu = Straffer.straffenWelt(zsw,

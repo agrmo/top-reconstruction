@@ -13,22 +13,22 @@ public class Main {
 	Dreivektor vb = new Dreivektor(1,1,1);
 	va.addiere(vb);
 
-	System.out.println(Vektordrucker.drucken(va));
-	System.out.println(Vektordrucker.drucken(vb));
+	System.out.println(Vektordrucker.drucke(va));
+	System.out.println(Vektordrucker.drucke(vb));
 
 	vb.punkt(new Dreivektor(0,5,0));
 	
-	System.out.println(Vektordrucker.drucken(vb));
+	System.out.println(Vektordrucker.drucke(vb));
     }
     
     static void beispielZwei() {
 	Zweivektor va = new Zweivektor(1,2);
 	Zweivektor vb = new Zweivektor(1,1);
 	va.addiere(vb);
-	System.out.println(Vektordrucker.drucken(va));
-	System.out.println(Vektordrucker.drucken(vb));
+	System.out.println(Vektordrucker.drucke(va));
+	System.out.println(Vektordrucker.drucke(vb));
 	va.punkt(new Zweivektor(0,5));
-	System.out.println(Vektordrucker.drucken(va));
+	System.out.println(Vektordrucker.drucke(va));
     }
     
     public static void main(String[] args) {

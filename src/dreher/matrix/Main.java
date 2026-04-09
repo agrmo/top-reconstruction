@@ -17,9 +17,9 @@ public class Main {
 	Dreimatrix my = Matrixdreher.nehmedrehery(Math.PI);
 	Dreimatrix mz = Matrixdreher.nehmedreherz(Math.PI);
 
-	System.out.println(Matrixdrucker.drucken(mx));
-	System.out.println(Matrixdrucker.drucken(my));
-	System.out.println(Matrixdrucker.drucken(mz));
+	System.out.println(Matrixdrucker.drucke(mx));
+	System.out.println(Matrixdrucker.drucke(my));
+	System.out.println(Matrixdrucker.drucke(mz));
     }
 
     static void beispielZwei() {
@@ -42,9 +42,9 @@ public class Main {
 	// [-1,0,0]
 	// [-1,0,0]
 	// geben.
-	System.out.println(Vektordrucker.drucken(mx.punkt(v)));
-	System.out.println(Vektordrucker.drucken(my.punkt(v)));
-	System.out.println(Vektordrucker.drucken(mz.punkt(v)));
+	System.out.println(Vektordrucker.drucke(mx.punkt(v)));
+	System.out.println(Vektordrucker.drucke(my.punkt(v)));
+	System.out.println(Vektordrucker.drucke(mz.punkt(v)));
     }
 
     static void beispielDrei() {
@@ -78,7 +78,7 @@ public class Main {
 	Dreivektor vb = ma.punkt(va);
 	Dreivektor vc = mb.punkt(vb);
 
-	System.out.println(Vektordrucker.drucken(vc));
+	System.out.println(Vektordrucker.drucke(vc));
 
 	// Wenn wir die zwei Matrizen zuerst multiplizieren und
 	// nachdem die endgültige Matrix anwenden, wird der Vektor
@@ -94,7 +94,7 @@ public class Main {
 	Dreivektor vd = (mb.punkt(ma)).punkt(va);
 	// ma ist die erste Drehung. Sie steht an der rechten Seite.
 
-	System.out.println(Vektordrucker.drucken(vd));
+	System.out.println(Vektordrucker.drucke(vd));
     }
 
     static void beispielVier() {

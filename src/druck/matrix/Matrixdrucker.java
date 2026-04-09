@@ -4,7 +4,7 @@ import matrix.Dreimatrix;
 
 public class Matrixdrucker {
     
-    public static String drucken(Dreimatrix m) {
+    public static String drucke(Dreimatrix m) {
 	StringBuilder sb = new StringBuilder();
 
 	sb.append("\n|");

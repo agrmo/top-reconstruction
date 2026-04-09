@@ -39,7 +39,7 @@ public class Main {
 	Dreistrecke[] strecken = welt.nehmekanten();
 
 	for (int i = 0; i < strecken.length; i++) {
-	    System.out.println(Streckedrucker.drucken(strecken[i]));
+	    System.out.println(Streckedrucker.drucke(strecken[i]));
 	}
     }
 }

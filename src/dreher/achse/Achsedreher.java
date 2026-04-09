@@ -12,7 +12,7 @@ public class Achsedreher {
     // bin.
     public static Dreimatrix nehmexachsedrehung(Dreivektor va) {
 	double thetaeins = Math.atan(va.drei / va.zwei);
-	Dreivektor vb = Vektordreher.drehenX(va, -1 * thetaeins);
+	Dreivektor vb = Vektordreher.drehex(va, -1 * thetaeins);
 	double thetazwei = Math.atan(vb.zwei / vb.eins);
 	
 	Dreimatrix ma = Matrixdreher.nehmedreherx(-1 * thetaeins);

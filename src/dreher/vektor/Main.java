@@ -17,7 +17,7 @@ public class Main {
 	Zweivektor pb = Vektordreher.drehen(pa, Math.PI / 2.0);
 
 	// Soll [0,1] sein.
-	System.out.println(Vektordrucker.drucken(pb));
+	System.out.println(Vektordrucker.drucke(pb));
     }
 
     static void beispielZwei() {
@@ -26,55 +26,55 @@ public class Main {
 	Zweivektor pb = Vektordreher.drehen(pa, Math.PI / 2.0);
 
 	// Soll [-1,1] sein.
-	System.out.println(Vektordrucker.drucken(pb));
+	System.out.println(Vektordrucker.drucke(pb));
     }
 
     static void beispielDrei() {
 	Dreivektor pa = new Dreivektor(1,1,1);
 	
-	Dreivektor pb = Vektordreher.drehenY(pa, Math.PI);
+	Dreivektor pb = Vektordreher.drehey(pa, Math.PI);
 
 	// Soll [-1,1,-1] sein
-	System.out.println(Vektordrucker.drucken(pb));	
+	System.out.println(Vektordrucker.drucke(pb));	
     }
 
     static void beispielVier() {
 	Dreivektor pa = new Dreivektor(1,1,1);
 	
-	Dreivektor pb = Vektordreher.drehenY(pa, Math.PI);
-	Dreivektor pc = Vektordreher.drehenX(pb, Math.PI);
+	Dreivektor pb = Vektordreher.drehey(pa, Math.PI);
+	Dreivektor pc = Vektordreher.drehex(pb, Math.PI);
 
 	// Soll [-1,-1,1] sein
-	System.out.println(Vektordrucker.drucken(pc));
+	System.out.println(Vektordrucker.drucke(pc));
     }
 
     static void beispielFuenf() {
 	// Man dreht den Vektor [1,0,0] zweimal: mit einem Gierwinkel
 	// und nachdem mit einem Nickwinkel.
 	Dreivektor va = new Dreivektor(1,0,0);
-	Dreivektor vb = Vektordreher.drehenZ(va, Math.PI / 4.0);
-	Dreivektor vc = Vektordreher.drehenX(vb, Math.PI / 4.0);
+	Dreivektor vb = Vektordreher.drehez(va, Math.PI / 4.0);
+	Dreivektor vc = Vektordreher.drehex(vb, Math.PI / 4.0);
 	
 	// Man dreht den Vektor [1,0,0] zweimal: mit einem Nickwinkel
 	// und nachdem mit einem Gierwinkel.
 	Dreivektor vd = new Dreivektor(1,0,0);
-	Dreivektor ve = Vektordreher.drehenX(vd, Math.PI / 4.0);
-	Dreivektor vf = Vektordreher.drehenZ(ve, Math.PI / 4.0);
+	Dreivektor ve = Vektordreher.drehex(vd, Math.PI / 4.0);
+	Dreivektor vf = Vektordreher.drehez(ve, Math.PI / 4.0);
 
 	// Ist die Drehung erst mit dem Gierwinkel gleich die Drehung
 	// erst mit dem Nickwinkel?
 	StringBuilder sb = new StringBuilder();
-	sb.append(Vektordrucker.drucken(va));
+	sb.append(Vektordrucker.drucke(va));
 	sb.append(" -> ");
-	sb.append(Vektordrucker.drucken(vb));
+	sb.append(Vektordrucker.drucke(vb));
 	sb.append(" -> ");
-	sb.append(Vektordrucker.drucken(vc));
+	sb.append(Vektordrucker.drucke(vc));
 	sb.append("\n");
-	sb.append(Vektordrucker.drucken(vd));
+	sb.append(Vektordrucker.drucke(vd));
 	sb.append(" -> ");
-	sb.append(Vektordrucker.drucken(ve));
+	sb.append(Vektordrucker.drucke(ve));
 	sb.append(" -> ");
-	sb.append(Vektordrucker.drucken(vf));
+	sb.append(Vektordrucker.drucke(vf));
 	
 	System.out.println(sb.toString());
 	// Nein.
@@ -86,8 +86,8 @@ public class Main {
 	  Der Vektor vc wurde gemacht von
 	  
 	  Dreivektor va = new Dreivektor(1,0,0);
-	  Dreivektor vb = Vektordreher.drehenZ(va, Math.PI / 4.0); Gier
-	  Dreivektor vc = Vektordreher.drehenX(vb, Math.PI / 4.0); Nick
+	  Dreivektor vb = Vektordreher.drehez(va, Math.PI / 4.0); Gier
+	  Dreivektor vc = Vektordreher.drehex(vb, Math.PI / 4.0); Nick
 
 	  Also vc = [0.707,0.5,0.5].
 	*/
@@ -117,14 +117,14 @@ public class Main {
 	double thetayz = Math.atan(vc.drei / vc.zwei);
 	System.out.println(thetayz); // 0.78 Rad = 45 Grad
 
-	Dreivektor vd = Vektordreher.drehenX(vc, -1 * thetayz);
-	System.out.println(Vektordrucker.drucken(vd)); // [0.707,0.707,0]
+	Dreivektor vd = Vektordreher.drehex(vc, -1 * thetayz);
+	System.out.println(Vektordrucker.drucke(vd)); // [0.707,0.707,0]
 
 	double thetaxy = Math.atan(vd.zwei / vd.eins);
 	System.out.println(thetaxy); // 0.78 Rad = 45 Grad
 
-	Dreivektor ve = Vektordreher.drehenZ(vd, -1 * thetaxy);
-	System.out.println(Vektordrucker.drucken(ve)); // [1,0,0]
+	Dreivektor ve = Vektordreher.drehez(vd, -1 * thetaxy);
+	System.out.println(Vektordrucker.drucke(ve)); // [1,0,0]
     }
 
     static void beispielSieben() {
@@ -141,8 +141,8 @@ public class Main {
 	double thetaeins = Math.atan(va.drei / va.zwei);
 	System.out.println(thetaeins); // 0.785 Rad
 
-	Dreivektor vb = Vektordreher.drehenX(va, -1 * thetaeins);
-	System.out.println(Vektordrucker.drucken(vb));
+	Dreivektor vb = Vektordreher.drehex(va, -1 * thetaeins);
+	System.out.println(Vektordrucker.drucke(vb));
 
 	// Jetzt liegt der Punkt auf der z=0 Fläche.
 	// Drehen den Vektor auf die x-Achse.
@@ -150,8 +150,8 @@ public class Main {
 	double thetazwei = Math.atan(vb.zwei / vb.eins);
 	System.out.println(thetazwei); // 0.955 Rad
 
-	Dreivektor vc = Vektordreher.drehenZ(vb, -1 * thetazwei);
-	System.out.println(Vektordrucker.drucken(vc));
+	Dreivektor vc = Vektordreher.drehez(vb, -1 * thetazwei);
+	System.out.println(Vektordrucker.drucke(vc));
 
 	// Jetzt liegt der Vektor auf der x-Achse. Die y-Teil und
 	// z-Teil sind 0, und der x-Teil ist der gesamte Betrag des
@@ -161,9 +161,9 @@ public class Main {
 	// gelegt werden kann.
 
 	Dreivektor vd = new Dreivektor(50,50,50);
-	Dreivektor ve = Vektordreher.drehenX(vd, -1 * thetaeins);
-	Dreivektor vf = Vektordreher.drehenZ(ve, -1 * thetazwei);
-	System.out.println(Vektordrucker.drucken(vf)); // [86,0,0]
+	Dreivektor ve = Vektordreher.drehex(vd, -1 * thetaeins);
+	Dreivektor vf = Vektordreher.drehez(ve, -1 * thetazwei);
+	System.out.println(Vektordrucker.drucke(vf)); // [86,0,0]
 
 	// Ja. Richtig.
     }

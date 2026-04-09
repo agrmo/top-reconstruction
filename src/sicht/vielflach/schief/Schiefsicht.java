@@ -23,7 +23,7 @@ public class Schiefsicht extends Sicht {
     // Wir müssen entscheiden, wer diese Körper darstellen wird.
     public void darstellen(Graphics g) {
 	// Benutzen die Verleger.
-	Zweistreckewelt zsw = this.sv.verlegenWelt(this.vw);
+	Zweistreckewelt zsw = this.sv.verlegewelt(this.vw);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.

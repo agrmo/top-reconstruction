@@ -27,7 +27,7 @@ public class Main {
 	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 
 	// Verlegen die Welt.
-	Zweistreckewelt zsw = Augeverleger.verlegen(vw,
+	Zweistreckewelt zsw = Augeverleger.verlege(vw,
 						    new Dreivektor(0,0,0), 500,
 						    1200, 600);
     }

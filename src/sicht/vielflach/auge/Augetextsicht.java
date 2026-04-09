@@ -26,7 +26,7 @@ public class Augetextsicht extends Sicht {
 	sb.append(this.as.augevektor.betrag());
 	
 	String[] texte = new String[] {
-	    Vektordrucker.drucken(this.as.augevektor),
+	    Vektordrucker.drucke(this.as.augevektor),
 	    sb.toString()
 	};
 

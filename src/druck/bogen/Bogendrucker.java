@@ -4,7 +4,7 @@ import bogen.Bogen;
 
 public class Bogendrucker {
     
-    public static String drucken(Bogen b) {
+    public static String drucke(Bogen b) {
 	StringBuilder sb = new StringBuilder();
 
 	sb.append("Bogen: Breite ");

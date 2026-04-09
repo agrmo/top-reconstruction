@@ -38,7 +38,7 @@ public class Dreigraphbasissicht extends Sicht {
 	
 	// Benutzen den Verleger.
 	
-	Zweigraphwelt zgw = Augeverleger.verlegen(this.dgw,
+	Zweigraphwelt zgw = Augeverleger.verlege(this.dgw,
 						  this.augevektor, this.brennweite,
 						  this.breite, this.hoehe);
 

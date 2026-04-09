@@ -43,7 +43,7 @@ public class Augesicht extends Sicht {
     public void darstellen(Graphics g) {
 	
 	// Benutzen den Verleger.  
-	Zweistreckewelt zsw = Augeverleger.verlegen(this.vw, this.augevektor, this.brennweite,
+	Zweistreckewelt zsw = Augeverleger.verlege(this.vw, this.augevektor, this.brennweite,
 						    this.breite, this.hoehe);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt

@@ -10,6 +10,6 @@ import bogen.Bogen;
 public class Main {
     public static void main(String[] args) {
 	Bogen b = new Bogen(5, 5, 20, 10);
-	System.out.println(Bogendrucker.drucken(b));
+	System.out.println(Bogendrucker.drucke(b));
     }
 }
