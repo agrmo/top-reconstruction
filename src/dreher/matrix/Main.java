@@ -85,8 +85,8 @@ public class Main {
 	// auch richtig auf die x-Achse gedreht?
 
 	// Eigenlich ist ma.punkt(mb) nicht richtig.  mb.punkt(ma) ist
-	// richtig.  Die Ordnung der Matrix-Multiplikation muss von
-	// rechts nach links gezeigt wird.
+	// richtig.  Die Matrix-Multiplikation muss von rechts nach
+	// links geordnet werden.
 	
 	// Dreimatrix mc = mb.punkt(ma);
 	// Dreivektor vd = mc.punkt(va);
