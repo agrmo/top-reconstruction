@@ -60,7 +60,7 @@ public class Augespiel extends Spiel {
 	// nichts
     }
 
-    // Bewegen die Augen.
+    // Bewege die Augen.
     public void handelnMouseSchleifen(MouseEvent me) {
 	int jetztx = me.getX();
 	int jetzty = me.getY();
@@ -69,11 +69,8 @@ public class Augespiel extends Spiel {
 	double winkelx = ((double) unterschiedx) / this.vas.breite;
 	double winkely = ((double) unterschiedy) / this.vas.hoehe;
 
-	Dreimatrix ma = Matrixdreher.nehmedreherx(winkelx);
-	Dreimatrix mb = Matrixdreher.nehmedrehery(winkely);
-
-	this.vas.augevektor = mb.punkt(this.vas.augevektor);
-	this.vas.augevektor = ma.punkt(this.vas.augevektor);
+	// this.vas.augevektor.eins += unterschiedx;
+	this.vas.augevektor.drei += unterschiedy;
 	
 	this.mousevorx = jetztx;
 	this.mousevory = jetzty;
