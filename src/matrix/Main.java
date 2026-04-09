@@ -48,7 +48,20 @@ public class Main {
 	System.out.println(Vektordrucker.drucken(m.punkt(v)));
     }
 
+    static void beispielSechs() {
+	Dreimatrix ma = new Dreimatrix(1,2,3,4,5,6,7,8,9);
+	Dreimatrix mb = new Dreimatrix(3,2,1,6,5,4,9,8,7);
+	Dreimatrix mc = ma.punkt(mb);
+	System.out.println(Matrixdrucker.drucken(mc));
+
+	/*
+         |42.0 36.0 30.0|
+         |96.0 81.0 66.0|
+         |150.0 126.0 102.0|
+	*/
+    }
+
     public static void main(String[] args) {
-	beispielFuenf();
+	beispielSechs();
     }
 }

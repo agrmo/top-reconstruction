@@ -139,18 +139,18 @@ public class Main {
 	Dreivektor va = new Dreivektor(70,70,70);
 
 	double thetaeins = Math.atan(va.drei / va.zwei);
-	System.out.println(thetaeins); // 0.78 Rad
+	System.out.println(thetaeins); // 0.785 Rad
 
 	Dreivektor vb = Vektordreher.drehenX(va, -1 * thetaeins);
 	System.out.println(Vektordrucker.drucken(vb));
 
 	// Jetzt liegt der Punkt auf der z=0 Fläche.
-	// Drehen den Vektor zur x-Achse.
+	// Drehen den Vektor auf die x-Achse.
 
 	double thetazwei = Math.atan(vb.zwei / vb.eins);
+	System.out.println(thetazwei); // 0.955 Rad
 
 	Dreivektor vc = Vektordreher.drehenZ(vb, -1 * thetazwei);
-
 	System.out.println(Vektordrucker.drucken(vc));
 
 	// Jetzt liegt der Vektor auf der x-Achse. Die y-Teil und
