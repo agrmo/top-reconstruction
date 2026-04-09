@@ -23,52 +23,6 @@ import welt.vielflach.Vielflachwelt;
 
 public class Main {
     static void beispielEins() {
-	// Hier ist die Lösung des Problems, das wir im Giernickspiel
-	// gefunden hatten. Eine Drehung mit der Mouse nach einem
-	// Kopfstehen des Kubus fällt uns unrichtig. Die Lösung ist
-	// die Bearbeitung nicht nur einer Matrix, sondern zweier
-	// Matrizen. Die erste Matrix is die vorherige Matrix. Die
-	// zweite Matrix is die jetzige Matrix. Die Mouse dreht die
-	// zweite Matrix. Nach die Lösung der Mouse multiplizieren wir
-	// die zwei Matrizen, speichern diese Matrix als vorherige,
-	// und erneuen die zweite Matrix.
-	
-	// Mache die Welt.
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(new Kubus(60));
-	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
-	ol.add(new Dreivektor(-30,-30,-30));
-	Vielflachwelt vw = new Vielflachwelt(kl, ol);
-	
-	// Mache die Sicht.
-	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
-	double breite = bildschirm.getWidth();
-	double hoehe = bildschirm.getHeight();
-	Dreivektor ap = new Dreivektor(0, 0, 100);
-	Augesicht vas = new Augesicht(vw, ap, 500, breite, hoehe);
-	Augetextsicht vats = new Augetextsicht(vas);
-
-	Maler m = new Maler(new Sicht[] {vas, vats});
-	
-	// Mache das Spiel.
-	Augespiel s = new Augespiel(m, vas, vw);
-
-	// Mache die Handlung.
-	SpielHandlung sh = new SpielHandlung(s);
-
-	// Geh.
-	JFrame frame = new JFrame();
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.getContentPane().setBackground(Color.BLACK);
-	frame.getContentPane().setForeground(Color.WHITE);
-	frame.setSize((int) breite, (int) hoehe);
-	frame.add(m);
-	frame.addMouseListener(sh);
-	frame.addMouseMotionListener(sh);
-	frame.setVisible(true);
-    }
-
-    static void beispielZwei() {
 	// Mache die Welt.
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(new Kubus(60));
@@ -102,8 +56,54 @@ public class Main {
 	frame.addMouseMotionListener(sh);
 	frame.setVisible(true);
     }
+
+    static void beispielZwei() {
+	// Hier ist die Lösung des Problems, das wir im Giernickspiel
+	// gefunden hatten. Eine Drehung mit der Mouse nach einem
+	// Kopfstehen des Kubus fällt uns unrichtig. Die Lösung ist
+	// die Bearbeitung nicht nur einer Matrix, sondern zweier
+	// Matrizen. Die erste Matrix is die vorherige Matrix. Die
+	// zweite Matrix is die jetzige Matrix. Die Mouse dreht die
+	// zweite Matrix. Nach die Lösung der Mouse multiplizieren wir
+	// die zwei Matrizen, speichern diese Matrix als vorherige,
+	// und erneuen die zweite Matrix.
+	
+	// Mache die Welt.
+	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
+	kl.add(new Kubus(30));
+	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
+	ol.add(new Dreivektor(-15,-15,-15));
+	Vielflachwelt vw = new Vielflachwelt(kl, ol);
+	
+	// Mache die Sicht.
+	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
+	double breite = bildschirm.getWidth();
+	double hoehe = bildschirm.getHeight();
+	Dreivektor ap = new Dreivektor(50,50,50);
+	Augesicht vas = new Augesicht(vw, ap, 500, breite, hoehe);
+	Augetextsicht vats = new Augetextsicht(vas);
+
+	Maler m = new Maler(new Sicht[] {vas, vats});
+	
+	// Mache das Spiel.
+	Augespiel s = new Augespiel(m, vas, vw);
+
+	// Mache die Handlung.
+	SpielHandlung sh = new SpielHandlung(s);
+
+	// Geh.
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.getContentPane().setBackground(Color.BLACK);
+	frame.getContentPane().setForeground(Color.WHITE);
+	frame.setSize((int) breite, (int) hoehe);
+	frame.add(m);
+	frame.addMouseListener(sh);
+	frame.addMouseMotionListener(sh);
+	frame.setVisible(true);
+    }
     
     public static void main(String[] args) {
-	beispielEins();
+	beispielZwei();
     }
 }

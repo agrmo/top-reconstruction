@@ -24,5 +24,8 @@ public class Achsedreher {
 	
 	return mb.punkt(ma);
     }
+
+    // public static Dreimatrix nehmeyachsedrehung
+    // public static Dreimatrix nehmezachsedrehung
 }
 

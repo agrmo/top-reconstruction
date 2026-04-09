@@ -1,5 +1,6 @@
 package verleger.auge;
 
+import dreher.achse.Achsedreher;
 import druck.matrix.Matrixdrucker;
 import matrix.Dreimatrix;
 import strecke.Dreistrecke;
@@ -28,21 +29,15 @@ public class Augeverleger {
     //
     // Verlege den gegeben dreidimensionalen Vektor.
     public static Zweivektor verlegen(Dreivektor va,
-				      Dreivektor augevektor, double brennweite,
+				      double augenentfernung, double brennweite,
 				      double breite, double hoehe,
 				      Dreimatrix basismatrix) {
 
 	// Drehen die Basis der Vektor um.
 	Dreivektor vb = basismatrix.punkt(va);
 
-	// ich verstehe nicht
-	// augevektor = basismatrix.punkt(augevektor);
-
-	// Trenne den Vektor vom Ursprung, wie ein Augenpaar.
-	// Je ferner der Vektor bewegt wird, desto kleiner sieht er aus.
-	vb.eins -= augevektor.eins;
-	vb.zwei -= augevektor.zwei;
-	vb.drei -= augevektor.drei;
+	// Warum ist das richtig?
+	vb.drei += augenentfernung;
 
 	// Letzendlich verlegen die Stellen von drei zu zwei Dimensionen.
 	int zweiDimensionaleX = (int) ((0.5 * breite)
@@ -60,16 +55,16 @@ public class Augeverleger {
     // aus: Zweistrecke
     //
     // Verlege die gegebene dreidimensionale Strecke.
-    public static Zweistrecke verlegen(Dreistrecke ds, Dreivektor augevektor, double brennweite,
+    public static Zweistrecke verlegen(Dreistrecke ds, double augenentfernung, double brennweite,
 				       double breite, double hoehe,
 				       Dreimatrix basismatrix) {
 	
 	Zweivektor verlegterVektorVon = Augeverleger.verlegen(ds.von,
-							      augevektor, brennweite,
+							      augenentfernung, brennweite,
 							      breite, hoehe,
 							      basismatrix);
 	
-	Zweivektor verlegterVektorBis = Augeverleger.verlegen(ds.bis, augevektor, brennweite,
+	Zweivektor verlegterVektorBis = Augeverleger.verlegen(ds.bis, augenentfernung, brennweite,
 							      breite, hoehe,
 							      basismatrix);
 	
@@ -94,8 +89,11 @@ public class Augeverleger {
 	// zweidimensionalen Fläche verlegt.
 	Dreistrecke[] dsl = vw.nehmekanten();
 
-	// ich verstehe nicht
-	Dreimatrix basismatrix = new Dreimatrix(0,0,1,0,1,0,0,0,1);
+	// Berechne die nötige Drehung.
+	Dreimatrix basismatrix = Achsedreher.nehmexachsedrehung(augevektor);
+
+	// Berechne den Betrag des Vektors. Er ist die Augeentfernung.
+	double augenentfernung = augevektor.betrag();
 	
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
@@ -104,7 +102,7 @@ public class Augeverleger {
 	for (int i = 0; i < dsl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zs = Augeverleger.verlegen(dsl[i], augevektor, brennweite,
+	    Zweistrecke zs = Augeverleger.verlegen(dsl[i], augenentfernung, brennweite,
 						   breite, hoehe,
 						   basismatrix);
 	    
@@ -135,6 +133,9 @@ public class Augeverleger {
 	// ich verstehe nicht
 	Dreimatrix basismatrix = new Dreimatrix(0,0,1,0,1,0,0,0,1);
 
+	// Berechne den Betrag des Vektors. Er ist die Augeentfernung.
+	double augenentfernung = augevektor.betrag();
+
 	// Die zweidimensionale Knoten.
 	Zweivektor[] zweiorten = new Zweivektor[dgw.orten.length];
 
@@ -142,7 +143,7 @@ public class Augeverleger {
 	    
 	    // dgw.orten[i] Dreivektor -> zweiorten[i] Zweivektor
 	    zweiorten[i] = Augeverleger.verlegen(dgw.orten[i],
-						 augevektor, brennweite,
+						 augenentfernung, brennweite,
 						 breite, hoehe,
 						 basismatrix);
 	}
