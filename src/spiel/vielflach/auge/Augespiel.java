@@ -70,24 +70,6 @@ public class Augespiel extends Spiel {
 	double winkelx = ((double) unterschiedx) / this.vas.breite;
 	double winkely = ((double) unterschiedy) / this.vas.hoehe;
 
-	Dreimatrix ma = Matrixdreher.nehmedreherx(winkelx);
-        Dreimatrix mb = Matrixdreher.nehmedrehery(winkely);
-	Dreimatrix mc = Achsedreher.nehmexachsedrehung(this.vas.augevektor);
-	Dreimatrix md = Achsedreher.nehmexachsedrehungumkehrung(this.vas.augevektor);
-
-	System.out.print("auge ");
-	System.out.println(Vektordrucker.drucke(this.vas.augevektor));
-        Dreivektor va = mc.punkt(this.vas.augevektor);
-	System.out.print("vor drehung ");
-	System.out.println(Vektordrucker.drucke(va));
-	Dreivektor vb = ma.punkt(mb.punkt(va));
-	System.out.print("nach drehung ");
-	System.out.println(Vektordrucker.drucke(vb));
-	Dreivektor vc = md.punkt(vb);
-	System.out.print("nach umkehrung ");
-	System.out.println(Vektordrucker.drucke(vc));
-	this.vas.augevektor = vc;
-
 	this.mousevorx = jetztx;
 	this.mousevory = jetzty;
 
@@ -95,7 +77,41 @@ public class Augespiel extends Spiel {
     }
     
     public void handelnTastatur(KeyEvent ke) {
-	// nichts
+	int id = ke.getID();
+	boolean veraendert = false;
+	
+        if (id == KeyEvent.KEY_TYPED) {
+            char kc = ke.getKeyChar();
+
+	    if (kc == 'w') {
+		this.vas.augevektor.zwei += 10.0;
+		veraendert = true;
+		
+	    } else if (kc == 's') {
+		this.vas.augevektor.zwei -= 10.0;
+		veraendert = true;
+		
+	    } else if (kc == 'a') {
+		this.vas.augevektor.eins -= 10.0;
+		veraendert = true;
+		
+	    } else if (kc == 'd') {
+		this.vas.augevektor.eins += 10.0;
+		veraendert = true;
+		
+	    } else if (kc == 't') {
+		this.vas.augevektor.drei += 10;
+		veraendert = true;
+		
+	    } else if (kc == 'g') {
+		this.vas.augevektor.drei -= 10;
+		veraendert = true;
+	    }
+        }
+
+	if (veraendert == true) {
+	    this.m.repaint();
+	}
     }
     
     public void handelnTastaturDrucken(KeyEvent ke) {

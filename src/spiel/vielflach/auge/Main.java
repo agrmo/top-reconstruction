@@ -100,6 +100,7 @@ public class Main {
 	frame.add(m);
 	frame.addMouseListener(sh);
 	frame.addMouseMotionListener(sh);
+	frame.addKeyListener(sh);
 	frame.setVisible(true);
     }
     

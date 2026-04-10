@@ -33,14 +33,16 @@ public class Augeverleger {
 				     double breite, double hoehe,
 				     Dreimatrix basis) {
 	
-	// Drehen die Basis der Vektor um.
+	// Drehe die Basis des Vektors um.
 	Dreivektor vb = basis.punkt(va);
 
 	// Jetzt ist die Stelle gedreht.
 	// Entferne die Augen entlang der z-Achse.
-	vb.drei -= auge.drei;
+	vb.eins -= augeb.eins;
+	vb.zwei -= augeb.zwei;
+	vb.drei -= augeb.drei;
 	
-	// Letzendlich verlegen die Stellen von drei zu zwei Dimensionen.
+	// Letzendlich verlegen die Stellen von drei bis zwei Dimensionen.
 	int zweidimensionalex = (int) ((0.5 * breite)
 				       + (vb.eins/vb.drei) * brennweite);
 	
