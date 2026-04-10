@@ -79,7 +79,7 @@ public class Main {
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
-	Dreivektor ap = new Dreivektor(50,50,50);
+	Dreivektor ap = new Dreivektor(50,50,0);
 	Augesicht as = new Augesicht(vw, ap, 500, breite, hoehe);
 	Augetextsicht ats = new Augetextsicht(as);
 

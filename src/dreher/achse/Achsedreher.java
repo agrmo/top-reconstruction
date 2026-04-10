@@ -6,15 +6,6 @@ import dreher.matrix.Matrixdreher;
 import dreher.vektor.Vektordreher;
 
 public class Achsedreher {
-
-    public static Dreimatrix nehmedrehung(Dreivektor va) {
-	double thetaeins = Math.atan(va.drei / va.zwei);
-	Dreivektor vb = Vektordreher.drehex(va, -1 * thetaeins);
-	double thetazwei = Math.atan(vb.zwei / vb.eins);
-	Dreimatrix ma = Matrixdreher.nehmedreherx(thetaeins);
-	Dreimatrix mb = Matrixdreher.nehmedreherz(thetazwei);
-	return mb.punkt(ma);
-    }
 	
     // Berechne die Drehungmatrix, um den Punkt auf die x-Achse zu
     // legen. Solche Drehung nennen wir "Achsedrehung" weil ich dumm
@@ -32,6 +23,18 @@ public class Achsedreher {
 	// sodaß va auf die x-Achse gelegt wird.
 	
 	return mb.punkt(ma);
+    }
+
+    // Die umhekrung von nehmexachsedrehung
+    public static Dreimatrix nehmexachsedrehungumkehrung(Dreivektor va) {
+	
+	double thetaeins = Math.atan(va.drei / va.zwei);
+	Dreivektor vb = Vektordreher.drehex(va, -1 * thetaeins);
+	double thetazwei = Math.atan(vb.zwei / vb.eins);
+	Dreimatrix ma = Matrixdreher.nehmedreherx(thetaeins);
+	Dreimatrix mb = Matrixdreher.nehmedreherz(thetazwei);
+
+	return ma.punkt(mb);
     }
 
     // public static Dreimatrix nehmeyachsedrehung

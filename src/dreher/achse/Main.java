@@ -48,7 +48,24 @@ public class Main {
 	// [-37,0,0] ?
     }
 
+    static void beispielVier() {
+
+	// Gegeben einen Vektor [50,50,50],
+	// 1. Drehe ihn zu der x-Achse
+	// 2. Drehe ihn zurück zu [50,50,50].
+
+	Dreivektor va = new Dreivektor(50,50,50);
+	Dreimatrix ma = Achsedreher.nehmexachsedrehung(va);
+	Dreimatrix mb = Achsedreher.nehmexachsedrehungumkehrung(va);
+	Dreivektor vb = ma.punkt(va);
+	Dreivektor vc = mb.punkt(vb);
+
+	System.out.println(Vektordrucker.drucke(va));
+	System.out.println(Vektordrucker.drucke(vb));
+	System.out.println(Vektordrucker.drucke(vc));
+    }
+
     public static void main(String[] args) {
-	beispielZwei();
+	beispielVier();
     }
 }
