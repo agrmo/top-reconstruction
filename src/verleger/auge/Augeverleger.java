@@ -29,26 +29,25 @@ public class Augeverleger {
     //
     // Verlege den gegeben dreidimensionalen Vektor.
     public static Zweivektor verlege(Dreivektor va,
-				     double augenentfernung, double brennweite,
+				     Dreivektor auge, double brennweite,
 				     double breite, double hoehe,
 				     Dreimatrix basis) {
-	
 	
 	// Drehen die Basis der Vektor um.
 	Dreivektor vb = basis.punkt(va);
 
 	// Jetzt ist die Stelle gedreht.
 	// Entferne die Augen entlang der z-Achse.
-	va.drei -= augenentfernung;
+	vb.drei -= auge.drei;
 	
 	// Letzendlich verlegen die Stellen von drei zu zwei Dimensionen.
-	int zweiDimensionaleX = (int) ((0.5 * breite)
+	int zweidimensionalex = (int) ((0.5 * breite)
 				       + (vb.eins/vb.drei) * brennweite);
 	
-	int zweiDimensionaleY = (int) ((0.5 * hoehe)
+	int zweidimensionaley = (int) ((0.5 * hoehe)
 				       + (vb.zwei/vb.drei) * brennweite);
 
-	Zweivektor aus = new Zweivektor(zweiDimensionaleX, zweiDimensionaleY);
+	Zweivektor aus = new Zweivektor(zweidimensionalex, zweidimensionaley);
 	
 	return aus;
     }
@@ -57,16 +56,16 @@ public class Augeverleger {
     // aus: Zweistrecke
     //
     // Verlege die gegebene dreidimensionale Strecke.
-    public static Zweistrecke verlege(Dreistrecke ds, double augenentfernung, double brennweite,
+    public static Zweistrecke verlege(Dreistrecke ds, Dreivektor auge, double brennweite,
 				      double breite, double hoehe,
 				      Dreimatrix basis) {
 	
 	Zweivektor verlegterVektorVon = Augeverleger.verlege(ds.von,
-							     augenentfernung, brennweite,
+							     auge, brennweite,
 							     breite, hoehe,
 							     basis);
 	
-	Zweivektor verlegterVektorBis = Augeverleger.verlege(ds.bis, augenentfernung, brennweite,
+	Zweivektor verlegterVektorBis = Augeverleger.verlege(ds.bis, auge, brennweite,
 							     breite, hoehe,
 							     basis);
 	
@@ -83,7 +82,7 @@ public class Augeverleger {
     // Verlegen die dreidimensionale Vielflachwelt zu einer
     // zweidimensionale Zweistreckewelt.
     public static Zweistreckewelt verlege(Vielflachwelt vw,
-					  Dreivektor augevektor, double brennweite,
+					  Dreivektor auge, double brennweite,
 					  double breite, double hoehe) {
 	
 	// Liste von Dreistrecken. Nehme die Strecken der
@@ -92,10 +91,7 @@ public class Augeverleger {
 	Dreistrecke[] dsl = vw.nehmekanten();
 
 	// Berechne die nötige Drehung.
-	Dreimatrix basis = Achsedreher.nehmexachsedrehung(augevektor);
-
-	// Berechne den Betrag des Vektors. Er ist die Augeentfernung.
-	double augenentfernung = augevektor.betrag();
+	Dreimatrix basis = Achsedreher.nehmexachsedrehung(auge);
 	
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
@@ -104,7 +100,7 @@ public class Augeverleger {
 	for (int i = 0; i < dsl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zs = Augeverleger.verlege(dsl[i], augenentfernung, brennweite,
+	    Zweistrecke zs = Augeverleger.verlege(dsl[i], auge, brennweite,
 						  breite, hoehe,
 						  basis);
 	    
@@ -121,7 +117,7 @@ public class Augeverleger {
     // Die Kanten und Knoten dieses Graphen werden von drei
     // Dimensionen zu zwei Dimensionen verlegen.
     public static Zweigraphwelt verlege(Dreigraphwelt dgw,
-					Dreivektor augevektor, double brennweite,
+					Dreivektor auge, double brennweite,
 					double breite, double hoehe) {
 
 	// Die dreidimensionale Knoten sind dgw.orten.  Wir brauchen
@@ -135,9 +131,6 @@ public class Augeverleger {
 	// ich verstehe nicht
 	Dreimatrix basis = new Dreimatrix(0,0,1,0,1,0,0,0,1);
 
-	// Berechne den Betrag des Vektors. Er ist die Augeentfernung.
-	double augenentfernung = augevektor.betrag();
-
 	// Die zweidimensionale Knoten.
 	Zweivektor[] zweiorten = new Zweivektor[dgw.orten.length];
 
@@ -145,7 +138,7 @@ public class Augeverleger {
 	    
 	    // dgw.orten[i] Dreivektor -> zweiorten[i] Zweivektor
 	    zweiorten[i] = Augeverleger.verlege(dgw.orten[i],
-						augenentfernung, brennweite,
+						auge, brennweite,
 						breite, hoehe,
 						basis);
 	}
