@@ -1,11 +1,11 @@
 package sicht.vielflach.auge;
 
-import java.awt.Graphics;
-import sicht.vielflach.auge.Augesicht;
-import sicht.text.Textsicht;
-import vektor.Zweivektor;
-import sicht.Sicht;
 import druck.vektor.Vektordrucker;
+import java.awt.Graphics;
+import sicht.Sicht;
+import sicht.text.Textsicht;
+import sicht.vielflach.auge.Augesicht;
+import vektor.Zweivektor;
 
 // Eine Sicht, die einen Text der Eigenschaften der
 // Augesicht auf dem Bildschirm schreibt.
@@ -23,10 +23,10 @@ public class Augetextsicht extends Sicht {
     public void darstellen(Graphics g) {
 	StringBuilder sb = new StringBuilder();
 	sb.append("Betrag: ");
-	sb.append(this.as.augevektor.betrag());
+	sb.append(this.as.entfernung.betrag());
 	
 	String[] texte = new String[] {
-	    Vektordrucker.drucke(this.as.augevektor),
+	    Vektordrucker.drucke(this.as.entfernung),
 	    sb.toString()
 	};
 

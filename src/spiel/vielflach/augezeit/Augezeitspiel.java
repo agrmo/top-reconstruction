@@ -11,8 +11,8 @@ import sicht.vielflach.auge.Augesicht;
 import spiel.Spiel;
 import vektor.Dreivektor;
 import welt.vielflach.Vielflachwelt;
-import zeit.Zeitdauer;
 import wesen.Vielflachbasiswesen;
+import zeit.Zeitdauer;
 
 public class Augezeitspiel extends Spiel {
 
@@ -74,8 +74,8 @@ public class Augezeitspiel extends Spiel {
 	Dreimatrix giermatrix = Matrixdreher.nehmedrehery(winkelgier);
 	Dreimatrix nickmatrix = Matrixdreher.nehmedreherx(winkelnick);
 
-	this.as.augevektor = giermatrix.punkt(this.as.augevektor);
-	this.as.augevektor = nickmatrix.punkt(this.as.augevektor);
+	this.as.entfernung = giermatrix.punkt(this.as.entfernung);
+	this.as.entfernung = nickmatrix.punkt(this.as.entfernung);
 	
 	this.mousevorx = jetztx;
 	this.mousevory = jetzty;

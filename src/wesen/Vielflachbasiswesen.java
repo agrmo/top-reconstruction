@@ -17,9 +17,7 @@ public class Vielflachbasiswesen implements Runnable {
     }
 
     public void run() {
-	// this.vas.augevektor.addiere(new Dreivektor(0, 0, 1));
-	Dreivektor dva = Vektordreher.drehex(this.vas.augevektor, 0.02);
-	this.vas.augevektor = dva;
+	this.vas.entfernung.addiere(new Dreivektor(0, 0, 1));
 	this.m.repaint();
     }
 }

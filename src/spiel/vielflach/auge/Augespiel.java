@@ -28,21 +28,14 @@ public class Augespiel extends Spiel {
 	this.m = m;
 	this.vas = vas;
 	this.vw = vw;
-
-	this.mousevorx = 0;
-	this.mousevory = 0;
     }
     
     public void handelnMouseDrucken(MouseEvent me) {
-	this.mousevorx = me.getX();
-	this.mousevory = me.getY();
+	// nichts
     }
     
     public void handelnMouseLösen(MouseEvent me) {
-	this.mousevorx = 0;
-	this.mousevory = 0;
-
-	this.m.repaint();
+	// nichts
     }
     
     public void handelnMouseEin(MouseEvent me) {
@@ -61,19 +54,8 @@ public class Augespiel extends Spiel {
 	// nichts
     }
 
-    // Bewege die Augen.
     public void handelnMouseSchleifen(MouseEvent me) {
-	int jetztx = me.getX();
-	int jetzty = me.getY();
-	int unterschiedx = jetztx - this.mousevorx;
-	int unterschiedy = jetzty - this.mousevory;
-	double winkelx = ((double) unterschiedx) / this.vas.breite;
-	double winkely = ((double) unterschiedy) / this.vas.hoehe;
-
-	this.mousevorx = jetztx;
-	this.mousevory = jetzty;
-
-	this.m.repaint();
+	// nichts
     }
     
     public void handelnTastatur(KeyEvent ke) {
@@ -84,29 +66,54 @@ public class Augespiel extends Spiel {
             char kc = ke.getKeyChar();
 
 	    if (kc == 'w') {
-		this.vas.augevektor.zwei += 10.0;
+		this.vas.entfernung.zwei -= 10.0;
 		veraendert = true;
 		
 	    } else if (kc == 's') {
-		this.vas.augevektor.zwei -= 10.0;
+		this.vas.entfernung.zwei += 10.0;
 		veraendert = true;
 		
 	    } else if (kc == 'a') {
-		this.vas.augevektor.eins -= 10.0;
+		this.vas.entfernung.eins -= 10.0;
 		veraendert = true;
 		
 	    } else if (kc == 'd') {
-		this.vas.augevektor.eins += 10.0;
+		this.vas.entfernung.eins += 10.0;
 		veraendert = true;
 		
 	    } else if (kc == 't') {
-		this.vas.augevektor.drei += 10;
+		this.vas.entfernung.drei += 10;
 		veraendert = true;
 		
 	    } else if (kc == 'g') {
-		this.vas.augevektor.drei -= 10;
+		this.vas.entfernung.drei -= 10;
+		veraendert = true;
+		
+	    } else if (kc == 'h') {
+		this.vas.winkeleins += 0.05;
+		veraendert = true;
+		
+	    } else if (kc == 'j') {
+		this.vas.winkelzwei += 0.05;		
+		veraendert = true;
+		
+	    } else if (kc == 'k') {
+		this.vas.winkeldrei += 0.05;		
+		veraendert = true;
+		
+	    } else if (kc == 'y') {
+		this.vas.winkeleins -= 0.05;
+		veraendert = true;
+		
+	    } else if (kc == 'u') {
+		this.vas.winkelzwei -= 0.05;		
+		veraendert = true;
+		
+	    } else if (kc == 'i') {
+		this.vas.winkeldrei -= 0.05;		
 		veraendert = true;
 	    }
+	    
         }
 
 	if (veraendert == true) {

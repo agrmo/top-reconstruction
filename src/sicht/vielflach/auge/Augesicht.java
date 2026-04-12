@@ -23,28 +23,38 @@ public class Augesicht extends Sicht {
     public double brennweite;
     public double hoehe;
 
-    // Der Augevektor. Er zeigt wovon wir uns die Welt anschauen.
-    //
-    // Wir müssen die Basis der Welt umdrehen, sodass die Dingen
-    // innerhalb der Welt an der Augenfläche richtig verlegt werden.
-    public Dreivektor augevektor;
+    // Ein Vektor, mit dem wir die Weltkoordinaten verschieben
+    // werden. Er funktioniert wie ein Augenpaar. Er zeigt wovon wir
+    // uns die Welt anschauen.
+    public Dreivektor entfernung;
+
+    // Die Eulerwinkel.
+    public double winkeleins;
+    public double winkelzwei;
+    public double winkeldrei;
 
     public Augesicht(Vielflachwelt vw,
-		     Dreivektor augevektor, double brennweite,
+		     Dreivektor entfernung, double brennweite,
 		     double breite, double hoehe) {
 
 	this.vw = vw;
-	this.augevektor = augevektor;
 	this.brennweite = brennweite;
 	this.breite = breite;
 	this.hoehe = hoehe;
+	this.entfernung = new Dreivektor(0,0,0);
+	this.winkeleins = 0;
+	this.winkelzwei = 0;
+	this.winkeldrei = 0;
     }
 
     public void darstellen(Graphics g) {
 	
 	// Benutzen den Verleger.  
-	Zweistreckewelt zsw = Augeverleger.verlege(this.vw, this.augevektor, this.brennweite,
-						    this.breite, this.hoehe);
+	Zweistreckewelt zsw = Augeverleger.verlege(this.vw, this.entfernung, this.brennweite,
+						   this.breite, this.hoehe,
+						   this.winkeleins,
+						   this.winkelzwei,
+						   this.winkeldrei);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.

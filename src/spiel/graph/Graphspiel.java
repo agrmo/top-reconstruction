@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import maler.Maler;
 import matrix.Dreimatrix;
-import sicht.graph.drei.Dreigraphbasissicht;
+import sicht.graph.drei.Dreigraphaugesicht;
 import spiel.Spiel;
 import vektor.Dreivektor;
 import welt.graph.Dreigraphwelt;
@@ -16,13 +16,13 @@ import welt.graph.Dreigraphwelt;
 public class Graphspiel extends Spiel {
 
     Maler m;
-    Dreigraphbasissicht ds;
+    Dreigraphaugesicht ds;
     Dreigraphwelt dgw;
     int mousevorx;
     int mousevory;
 
     public Graphspiel(Maler m,
-		      Dreigraphbasissicht ds,
+		      Dreigraphaugesicht ds,
 		      Dreigraphwelt dgw) {
 	this.m = m;
 	this.ds = ds;

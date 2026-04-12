@@ -15,7 +15,7 @@ import welt.strecke.Zweistreckewelt;
 // Eine Sicht, die eine dreidimensionale Zweigraphwelt darstellt.
 // Sie wandelt die Zweigraphwelt mit nur einer Verlegung: einer vektoren
 // Verlegung.
-public class Dreigraphbasissicht extends Sicht {
+public class Dreigraphaugesicht extends Sicht {
 
     public Dreigraphwelt dgw;
     public Dreivektor augevektor;
@@ -23,9 +23,9 @@ public class Dreigraphbasissicht extends Sicht {
     public double brennweite;
     public double hoehe;
 
-    public Dreigraphbasissicht(Dreigraphwelt dgw,
-			       Dreivektor augevektor, double brennweite,
-			       double breite, double hoehe) {
+    public Dreigraphaugesicht(Dreigraphwelt dgw,
+			      Dreivektor augevektor, double brennweite,
+			      double breite, double hoehe) {
 
 	this.dgw = dgw;
 	this.augevektor = augevektor;
@@ -36,11 +36,11 @@ public class Dreigraphbasissicht extends Sicht {
 
     public void darstellen(Graphics g) {
 	
-	// Benutzen den Verleger.
-	
+	// Benutzen den Verleger.	
 	Zweigraphwelt zgw = Augeverleger.verlege(this.dgw,
-						  this.augevektor, this.brennweite,
-						  this.breite, this.hoehe);
+						 this.augevektor, this.brennweite,
+						 this.breite, this.hoehe,
+						 0, 0, 0);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.

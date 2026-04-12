@@ -35,7 +35,6 @@ public class Main {
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0, 0, 100);
 	Augesicht as = new Augesicht(vw, ap, 500, breite, hoehe);
-
 	Maler m = new Maler(new Sicht[] {as});
 	
 	// Mache das Spiel.

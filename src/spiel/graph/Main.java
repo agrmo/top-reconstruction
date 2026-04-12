@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
-import sicht.graph.drei.Dreigraphbasissicht;
+import sicht.graph.drei.Dreigraphaugesicht;
 import vektor.Dreivektor;
 import welt.graph.Dreigraphwelt;
 
@@ -41,8 +41,8 @@ public class Main {
 	double hoehe = 600;
 	double brennweite = 500;
 	Dreivektor augevektor = new Dreivektor(0,0,100);
-	Dreigraphbasissicht ds = new Dreigraphbasissicht(dgw, augevektor, brennweite,
-							 breite, hoehe);
+	Dreigraphaugesicht ds = new Dreigraphaugesicht(dgw, augevektor, brennweite,
+						       breite, hoehe);
 	Maler m = new Maler(new Sicht[] {ds});
 	
 	// Mache das Spiel.

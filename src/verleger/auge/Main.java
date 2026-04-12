@@ -1,13 +1,13 @@
 package verleger.auge;
 
 import java.util.ArrayList;
+import matrix.Dreimatrix;
 import strecke.Zweistrecke;
-import vielflach.kubus.Kubus;
 import vektor.Dreivektor;
 import vielflach.Vielflach;
+import vielflach.kubus.Kubus;
 import welt.strecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
-import matrix.Dreimatrix;
 
 /*
   javac -d classes $(find src -type f) \
@@ -28,7 +28,8 @@ public class Main {
 
 	// Verlegen die Welt.
 	Zweistreckewelt zsw = Augeverleger.verlege(vw,
-						    new Dreivektor(0,0,0), 500,
-						    1200, 600);
+						   new Dreivektor(0,0,0), 500,
+						   1200, 600,
+						   0,0,0);
     }
 }
