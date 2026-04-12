@@ -21,18 +21,27 @@ public class Augetextsicht extends Sicht {
     }
 
     public void darstellen(Graphics g) {
-	StringBuilder sb = new StringBuilder();
-	sb.append("Betrag: ");
-	sb.append(this.as.entfernung.betrag());
+	StringBuilder sba = new StringBuilder();
+	sba.append("Betrag: ");
+	sba.append(this.as.entfernung.betrag());
+	StringBuilder sbb = new StringBuilder();
+	sbb.append("Drehung: ");
+	sbb.append(this.as.winkeleins);
+	sbb.append(", ");
+	sbb.append(this.as.winkelzwei);
+	sbb.append(", ");
+	sbb.append(this.as.winkeldrei);
 	
 	String[] texte = new String[] {
 	    Vektordrucker.drucke(this.as.entfernung),
-	    sb.toString()
+	    sba.toString(),
+	    sbb.toString()
 	};
 
 	Zweivektor[] orte = new Zweivektor[] {
 	    new Zweivektor(0,12),
-	    new Zweivektor(0,12*2)
+	    new Zweivektor(0,12*2),
+	    new Zweivektor(0,12*3)
 	};
 
 	// Ein bischen schneller. Wir benutzen die gleiche Sicht jedes Mal.
