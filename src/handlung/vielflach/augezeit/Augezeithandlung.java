@@ -12,11 +12,9 @@ import vektor.Dreivektor;
 import welt.vielflach.Vielflachwelt;
 import wesen.Vielflachbasiswesen;
 import zeit.Zeitdauer;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import handlung.Handlung;
 
-public class Augezeithandlung implements MouseListener, MouseMotionListener, KeyListener {
+public class Augezeithandlung extends Handlung {
 
     Maler m;
     Augesicht as;
@@ -37,30 +35,6 @@ public class Augezeithandlung implements MouseListener, MouseMotionListener, Key
 	this.mousevory = 0;
     }
 
-    public void mouseEntered(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseExited(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseClicked(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseMoved(MouseEvent me) {
-	// nichts
-    }
-
-    public void keyPressed(KeyEvent ke) {
-	// nichts
-    }
-
-    public void keyReleased(KeyEvent ke) {
-	// nichts
-    }
-    
     public void mousePressed(MouseEvent me) {
 	this.mousevorx = me.getX();
 	this.mousevory = me.getY();

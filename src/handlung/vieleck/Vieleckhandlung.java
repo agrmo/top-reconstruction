@@ -29,6 +29,13 @@ public class Vieleckhandlung implements MouseListener, MouseMotionListener, KeyL
 	this.mouseAnfangX = 0;
 	this.mouseAnfangY = 0;
     }
+
+    // Verschiebe die ursprüngliche Vektoren der Welt nach dx, dy.
+    void verschieben(int dx, int dy) {
+	Zweivektor verschiebenvektor = new Zweivektor(dx,dy);
+	Verschieber.verschieben(this.welt, verschiebenvektor);
+    }
+    
     
     public void mousePressed(MouseEvent me) {
 	this.mouseAnfangX = me.getX();
@@ -38,12 +45,6 @@ public class Vieleckhandlung implements MouseListener, MouseMotionListener, KeyL
     public void mouseReleased(MouseEvent me) {
 	this.mouseAnfangX = 0;
 	this.mouseAnfangY = 0;
-    }
-    
-    // Verschiebe die ursprüngliche Vektoren der Welt nach dx, dy.
-    void verschieben(int dx, int dy) {
-	Zweivektor verschiebenvektor = new Zweivektor(dx,dy);
-	Verschieber.verschieben(this.welt, verschiebenvektor);
     }
     
     public void mouseDragged(MouseEvent me) {

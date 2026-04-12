@@ -23,8 +23,8 @@ public class Graphhandlung implements MouseListener, MouseMotionListener  {
     int mousevory;
 
     public Graphhandlung(Maler m,
-		      Dreigraphaugesicht ds,
-		      Dreigraphwelt dgw) {
+			 Dreigraphaugesicht ds,
+			 Dreigraphwelt dgw) {
 	this.m = m;
 	this.ds = ds;
 	this.dgw = dgw;
