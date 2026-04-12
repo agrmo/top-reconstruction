@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 public class Main {
 
-    public static void beispielEins() {
+    public static void beispieleins() {
 	int[][] paare = {{1,2},{2,0}};
 	int betrag = 3;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
@@ -21,7 +21,7 @@ public class Main {
 	System.out.println(Arrays.toString(gesehen));	
     }
 
-    public static void beispielZwei() {
+    public static void beispielzwei() {
 	/*
 	 * Darstellung:
 	 * 
@@ -66,7 +66,7 @@ public class Main {
 	System.out.println(Arrays.toString(gesehenFuenf));
     }
 
-    public static void beispielDrei() {
+    public static void beispieldrei() {
 	/*
 	  
                      5       4
@@ -93,6 +93,6 @@ public class Main {
     }
     
     public static void main(String[] args) {
-	beispielDrei();
+	beispieldrei();
     }
 }

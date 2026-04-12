@@ -9,7 +9,7 @@ import graph.Nachbarschaftsliste;
 
 public class Main {
 
-    static void beispielEins() {
+    static void beispieleins() {
 	int[][] paare = {{1,2},{2,0}};
 	int betrag = 3;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
@@ -17,7 +17,7 @@ public class Main {
 	System.out.println(ka);
     }
 
-    static void beispielZwei() {
+    static void beispielzwei() {
 	/*
 	 * Darstellung:
 	 * 
@@ -44,6 +44,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-	beispielZwei();
+	beispielzwei();
     }
 }

@@ -14,7 +14,7 @@ import liste.Liste;
 
 public class Main {
 
-    public static void beispielEins() {
+    public static void beispieleins() {
 	int[][] paare = {{1,2},{2,0}};
 	int betrag = 3;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
@@ -25,7 +25,7 @@ public class Main {
 	System.out.println(Liste.nehmeStringVonArrayArray(tTeile));
     }
 
-    public static void beispielZwei() {
+    public static void beispielzwei() {
 	/*
 	 * Darstellung:
 	 * 
@@ -56,7 +56,7 @@ public class Main {
 	System.out.println(groesste);
     }
 
-    public static void beispielDrei() {
+    public static void beispieldrei() {
 	Zufallsgraph zg = new Zufallsgraph(500, 0.01);
 	GraphTGF gtgf = new GraphTGF();
 	System.out.println(gtgf.macheGepheiTGF(zg.nachbarschaftsliste));
@@ -70,7 +70,7 @@ public class Main {
 	System.out.println(groesste);	
     }
 
-    public static void beispielVier() {
+    public static void beispielvier() {
 	// Berechne eine Reihe von Zufallsgraphen.
 	// Die Graphen haben die gleiche Anzahl von Knoten.
 	// Die Wahrscheinlichkeit p wird erhöht.
@@ -109,6 +109,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-	beispielVier();
+	beispielvier();
     }
 }

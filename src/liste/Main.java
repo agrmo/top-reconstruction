@@ -66,7 +66,7 @@ public class Main {
 	System.out.println(arrayarrayString);
     }
 
-    public static void beispielEins() {
+    public static void beispieleins() {
 	HashSet<Integer> s = new HashSet<Integer>();
 	s.add(1);
 	s.add(2);
@@ -77,7 +77,7 @@ public class Main {
 	System.out.println(Arrays.toString(a));
     }
 
-    public static void beispielZwei() {
+    public static void beispielzwei() {
 	Liste l = new Liste();
 	double[][] doubleArrayArray = new double[2][];
 	doubleArrayArray[0] = new double[] {0.01,0.25};
@@ -86,7 +86,7 @@ public class Main {
 	System.out.println(doubleArrayArrayString);	
     }
 
-    public static void beispielDrei() {
+    public static void beispieldrei() {
 	ArrayList<Integer> l = new ArrayList<Integer>();
 	l.add(4);
 	l.add(5);
@@ -101,8 +101,8 @@ public class Main {
 	
 	// arrayArrayAbbildung();
 
-	// beispielZwei();
+	// beispielzwei();
 
-	beispielDrei();
+	beispieldrei();
     }
 }

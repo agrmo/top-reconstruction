@@ -22,7 +22,7 @@ import welt.vielflach.Vielflachwelt;
 */
 
 public class Main {
-    static void beispielEins() {
+    static void beispieleins() {
 	// Mache die Welt.
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(new Kubus(60));
@@ -57,7 +57,7 @@ public class Main {
 	frame.setVisible(true);
     }
 
-    static void beispielZwei() {
+    static void beispielzwei() {
 	// Hier ist die Lösung des Problems, das wir im Giernickspiel
 	// gefunden hatten. Eine Drehung mit der Mouse nach einem
 	// Kopfstehen des Kubus fällt uns unrichtig. Die Lösung ist
@@ -103,8 +103,10 @@ public class Main {
 	frame.addKeyListener(sh);
 	frame.setVisible(true);
     }
+
+    
     
     public static void main(String[] args) {
-	beispielZwei();
+	beispielzwei();
     }
 }

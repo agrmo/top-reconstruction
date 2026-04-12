@@ -21,7 +21,7 @@ import welt.vielflach.Vielflachwelt;
 */
 
 public class Main {
-    static void beispielEins() {
+    static void beispieleins() {
 	// Mache die Welt.
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(new Kubus(60));
@@ -57,6 +57,6 @@ public class Main {
     }
     
     public static void main(String[] args) {
-	beispielEins();
+	beispieleins();
     }
 }

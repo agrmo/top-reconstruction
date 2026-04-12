@@ -18,7 +18,7 @@ import welt.strecke.Zweistreckewelt;
 
 public class Main {
 
-    static void beispielEins() {
+    static void beispieleins() {
 	// Mache die zweidimensionale Streckenwelt.
 	Zweistrecke zka = new Zweistrecke(new Zweivektor(30,30),
 				      new Zweivektor(500,500));
@@ -43,7 +43,7 @@ public class Main {
 	frame.setVisible(true);
     }
 
-    static void beispielZwei() {
+    static void beispielzwei() {
 	// Mache die Welt.
 	Zweistrecke zsa = new Zweistrecke(new Zweivektor(0,0),
 					  new Zweivektor(100,0));
@@ -75,7 +75,7 @@ public class Main {
     }
 
     public static void main(String[] args){
-	beispielZwei();
+	beispielzwei();
     }
 }
 

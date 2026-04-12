@@ -17,7 +17,7 @@ import sicht.Sicht;
 
 public class Main {
 
-    static void beispielEins() {
+    static void beispieleins() {
 	// Der Graph.
 	int[][] paare = {{1,2},{2,0}};
         int betrag = 3;
@@ -53,6 +53,6 @@ public class Main {
     }
 
     public static void main(String[] args){
-	beispielEins();
+	beispieleins();
     }
 }

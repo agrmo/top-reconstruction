@@ -16,7 +16,7 @@ import sicht.Sicht;
 
 public class Main {
 
-    static void beispielEins() {
+    static void beispieleins() {
 	// Mache die Welt.
 	Kubus k = new Kubus(50);
 	Dreivektor p = new Dreivektor(100, 100, 100);
@@ -61,7 +61,7 @@ public class Main {
     }
 
     public static void main(String[] args){
-	beispielEins();
+	beispieleins();
     }
 }
 

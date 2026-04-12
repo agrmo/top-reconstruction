@@ -13,7 +13,7 @@ import liste.Liste;
 public class Main {
 
     // Kanteverteilung eines bestimmten Graphen
-    public static void beispielEins() {
+    public static void beispieleins() {
 	int[][] paare = {{1,2},{2,0}};
 	int betrag = 3;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
@@ -24,7 +24,7 @@ public class Main {
     }
 
     // Kanteverteilung eines Zufallsgraphen
-    public static void beispielZwei() {
+    public static void beispielzwei() {
 	Zufallsgraph zg = new Zufallsgraph(5, 0.3);
     	GraphTGF gtgf = new GraphTGF();
 	System.out.println(gtgf.macheGepheiTGF(zg.nachbarschaftsliste));
@@ -35,7 +35,7 @@ public class Main {
     }    
 
     public static void main(String[] args) {
-	beispielZwei();
+	beispielzwei();
     }
 }
 

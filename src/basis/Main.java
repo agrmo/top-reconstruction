@@ -9,14 +9,14 @@ import vektor.Dreivektor;
 */
 
 public class Main {
-    static void beispielEins() {
+    static void beispieleins() {
 	Zweivektor va = new Zweivektor(0,0);
 	Zweivektor vb = new Zweivektor(0,1);
 	
 	Zweibasis b = new Zweibasis(va, vb);
     }
 
-    static void beispielZwei() {
+    static void beispielzwei() {
 	Dreivektor va = new Dreivektor(0,0,1);
 	Dreivektor vb = new Dreivektor(0,1,0);
 	Dreivektor vc = new Dreivektor(1,0,0);
@@ -25,6 +25,6 @@ public class Main {
     }
     
     public static void main(String[] args) {
-	beispielEins();
+	beispieleins();
     }
 }

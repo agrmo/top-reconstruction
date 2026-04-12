@@ -6,11 +6,11 @@ package winkel;
 */
 
 public class Main {
-    static void beispielEins() {
+    static void beispieleins() {
 	
     }
 
     public static void main(String[] args) {
-	beispielEins();
+	beispieleins();
     }
 }

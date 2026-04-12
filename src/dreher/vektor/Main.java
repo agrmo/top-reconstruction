@@ -11,7 +11,7 @@ import dreher.vektor.Vektordreher;
 */
 
 public class Main {
-    static void beispielEins() {
+    static void beispieleins() {
 	// Gegen den Uhrzeigersinn.
 	Zweivektor pa = new Zweivektor(1,0);
 	Zweivektor pb = Vektordreher.drehen(pa, Math.PI / 2.0);
@@ -20,7 +20,7 @@ public class Main {
 	System.out.println(Vektordrucker.drucke(pb));
     }
 
-    static void beispielZwei() {
+    static void beispielzwei() {
 	// Gegen den Uhrzeigersinn.
 	Zweivektor pa = new Zweivektor(1,1);
 	Zweivektor pb = Vektordreher.drehen(pa, Math.PI / 2.0);
@@ -29,7 +29,7 @@ public class Main {
 	System.out.println(Vektordrucker.drucke(pb));
     }
 
-    static void beispielDrei() {
+    static void beispieldrei() {
 	Dreivektor pa = new Dreivektor(1,1,1);
 	
 	Dreivektor pb = Vektordreher.drehey(pa, Math.PI);
@@ -38,7 +38,7 @@ public class Main {
 	System.out.println(Vektordrucker.drucke(pb));	
     }
 
-    static void beispielVier() {
+    static void beispielvier() {
 	Dreivektor pa = new Dreivektor(1,1,1);
 	
 	Dreivektor pb = Vektordreher.drehey(pa, Math.PI);
@@ -48,7 +48,7 @@ public class Main {
 	System.out.println(Vektordrucker.drucke(pc));
     }
 
-    static void beispielFuenf() {
+    static void beispielfuenf() {
 	// Man dreht den Vektor [1,0,0] zweimal: mit einem Gierwinkel
 	// und nachdem mit einem Nickwinkel.
 	Dreivektor va = new Dreivektor(1,0,0);
@@ -80,7 +80,7 @@ public class Main {
 	// Nein.
     }
 
-    static void beispielSechs() {
+    static void beispielsechs() {
 	/*
 	  Versuche den endgültigen Vektor zurück zum Ursprung zu drehen.
 	  Der Vektor vc wurde gemacht von

@@ -12,7 +12,7 @@ import druck.matrix.Matrixdrucker;
 */
 
 public class Main {
-    static void beispielEins() {
+    static void beispieleins() {
 	Dreimatrix mx = Matrixdreher.nehmedreherx(Math.PI);
 	Dreimatrix my = Matrixdreher.nehmedrehery(Math.PI);
 	Dreimatrix mz = Matrixdreher.nehmedreherz(Math.PI);
@@ -22,7 +22,7 @@ public class Main {
 	System.out.println(Matrixdrucker.drucke(mz));
     }
 
-    static void beispielZwei() {
+    static void beispielzwei() {
 	Dreimatrix mx = Matrixdreher.nehmedreherx(Math.PI);
 	Dreimatrix my = Matrixdreher.nehmedrehery(Math.PI);
 	Dreimatrix mz = Matrixdreher.nehmedreherz(Math.PI);
@@ -47,7 +47,7 @@ public class Main {
 	System.out.println(Vektordrucker.drucke(mz.punkt(v)));
     }
 
-    static void beispielDrei() {
+    static void beispieldrei() {
 
 	// Was ist die richtige Methode, um zwei Drehungen nacheinander zu ketten?
 	// 1. Gegeben zwei Winkel, die den Vektor (50,50,50) auf die x-Achse legen kann.
@@ -97,10 +97,10 @@ public class Main {
 	System.out.println(Vektordrucker.drucke(vd));
     }
 
-    static void beispielVier() {
+    static void beispielvier() {
     }
     
     public static void main(String[] args) {
-	beispielDrei();
+	beispieldrei();
     }
 }

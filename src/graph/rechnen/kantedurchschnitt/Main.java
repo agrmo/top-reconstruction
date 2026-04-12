@@ -13,7 +13,7 @@ import liste.Liste;
 */
 
 public class Main {
-    public static void beispielEins() {
+    public static void beispieleins() {
 	GraphTGF gtgf = new GraphTGF();
 	
 	int[][] paare = {{1,2},{2,0}};
@@ -26,7 +26,7 @@ public class Main {
 	System.out.println(kd);	
     }
 
-    public static void beispielZwei() {
+    public static void beispielzwei() {
 	// DIE ORDNUNG IST HIER WICHTIG!!!
 	// NACH KANTEVERTEILUNG IST DER GRAPH VERDOPPELT!
 	// ALSO DIE KANTEDURCHSCHNITT WURDE VERÄNDERT!
@@ -48,6 +48,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-	beispielEins();
+	beispieleins();
     }
 }

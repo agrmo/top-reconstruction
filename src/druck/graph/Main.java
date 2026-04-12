@@ -10,7 +10,7 @@ import graph.Nachbarschaftsmatrix;
 
 public class Main {
 
-    static void beispielEins() {
+    static void beispieleins() {
 	GraphText gd = new GraphText();
 	
 	int[][] paare = {{1,2},{2,0}};
@@ -22,7 +22,7 @@ public class Main {
 	System.out.println(gd.drucke(nl));
     }
 
-    static void beispielZwei() {
+    static void beispielzwei() {
 	GraphText gd = new GraphText();
 	int[][] paare = {{1,2},{2,0}};
 	int groese = 3;
@@ -33,6 +33,6 @@ public class Main {
     }
     
     public static void main(String[] args) {
-	beispielZwei();
+	beispielzwei();
     }
 }

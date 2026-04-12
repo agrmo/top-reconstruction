@@ -12,7 +12,7 @@ import vektor.Dreivektor;
 */
 
 public class Main {
-    static void beispielEins() {
+    static void beispieleins() {
 	Dreivektor va = new Dreivektor(50,50,50);
 	Dreimatrix ma = Achsedreher.nehmexachsedrehung(va);
 
@@ -24,7 +24,7 @@ public class Main {
 	// [86,0,0]
     }
 
-    static void beispielZwei() {
+    static void beispielzwei() {
 	Dreivektor va = new Dreivektor(30,-10,20);
 	Dreimatrix ma = Achsedreher.nehmexachsedrehung(va);
 
@@ -36,7 +36,7 @@ public class Main {
 	// [37,0,0]
     }
 
-    static void beispielDrei() {
+    static void beispieldrei() {
 	Dreivektor va = new Dreivektor(-30,-10,-20);
 	Dreimatrix ma = Achsedreher.nehmexachsedrehung(va);
 
@@ -48,7 +48,7 @@ public class Main {
 	// [-37,0,0] ?
     }
 
-    static void beispielVier() {
+    static void beispielvier() {
 
 	// Gegeben einen Vektor [50,50,50],
 	// 1. Drehe ihn zu der x-Achse
@@ -66,6 +66,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-	beispielVier();
+	beispielvier();
     }
 }

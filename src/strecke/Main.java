@@ -11,7 +11,7 @@ import druck.strecke.Streckedrucker;
 
 public class Main {
 
-    static void beispielEins() {
+    static void beispieleins() {
 	Dreivektor pa = new Dreivektor(1,1,1);
 	Dreivektor pb = new Dreivektor(2,2,2);
 	Dreistrecke ds = new Dreistrecke(pa, pb);
@@ -19,7 +19,7 @@ public class Main {
 	System.out.println(Streckedrucker.drucke(ds));
     }
 
-    static void beispielZwei() {
+    static void beispielzwei() {
 	Dreivektor pa = new Dreivektor(1,1,1);
 	Dreivektor pb = new Dreivektor(2,2,2);
 	Dreistrecke ds = new Dreistrecke(pa, pb);
@@ -28,7 +28,7 @@ public class Main {
 	System.out.println(Streckedrucker.drucke(ds));    
     }
     
-    static void beispielDrei() {
+    static void beispieldrei() {
 	Zweivektor pa = new Zweivektor(1,1);
 	Zweivektor pb = new Zweivektor(2,2);
 	Zweistrecke zs = new Zweistrecke(pa, pb);
@@ -38,6 +38,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-	beispielDrei();
+	beispieldrei();
     }
 }

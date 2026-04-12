@@ -8,7 +8,7 @@ import druck.vektor.Vektordrucker;
 */
 
 public class Main {
-    static void beispielEins() {
+    static void beispieleins() {
 	Dreivektor va = new Dreivektor(1,2,3);
 	Dreivektor vb = new Dreivektor(1,1,1);
 	va.addiere(vb);
@@ -21,7 +21,7 @@ public class Main {
 	System.out.println(Vektordrucker.drucke(vb));
     }
     
-    static void beispielZwei() {
+    static void beispielzwei() {
 	Zweivektor va = new Zweivektor(1,2);
 	Zweivektor vb = new Zweivektor(1,1);
 	va.addiere(vb);
@@ -32,6 +32,6 @@ public class Main {
     }
     
     public static void main(String[] args) {
-	beispielZwei();
+	beispielzwei();
     }
 }

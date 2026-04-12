@@ -18,7 +18,7 @@ import vielflach.kubus.Kubus;
 
 public class Main {
 
-    static void beispielEins() {
+    static void beispieleins() {
 	// Mache die Vektore.
 	Quadrat q = new Quadrat(50);
 	Zweivektor[] pl = q.nehmeecken();
@@ -37,7 +37,7 @@ public class Main {
 	frame.setVisible(true);
     }
 
-    static void beispielZwei() {
+    static void beispielzwei() {
 	// Mache die dreidimensionalen Daten.
 	Kubus k = new Kubus(2);
 	Dreivektor[] dpl = k.nehmeecken();
@@ -69,7 +69,7 @@ public class Main {
     }
 
     public static void main(String[] args){
-	beispielEins();
+	beispieleins();
     }
 }
 
