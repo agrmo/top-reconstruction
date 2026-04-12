@@ -7,15 +7,13 @@ import sicht.vieleck.Vielecksicht;
 import vektor.Zweivektor;
 import verschieber.Verschieber;
 import welt.vieleck.Vieleckwelt;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.KeyListener;
+import handlung.Handlung;
 
 // Eine Handlung, in dem wir die Welt und Sichten verändern können.
 //
 // TGFH: Verschieben die ursprüngliche Vektoren der Vielflachwelt.
 // Mouse: Drucken und verschieben gleichzeitig alle Körper.
-public class Vieleckhandlung implements MouseListener, MouseMotionListener, KeyListener {
+public class Vieleckhandlung extends Handlung {
 
     Maler m;
     Vieleckwelt welt;
@@ -87,29 +85,5 @@ public class Vieleckhandlung implements MouseListener, MouseMotionListener, KeyL
 	if (veraendert == true) {
 	    this.m.repaint();
 	}
-    }
-
-    public void mouseExited(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseEntered(MouseEvent me) {
-	// nichts
-    }
-    
-    public void mouseClicked(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseMoved(MouseEvent me) {
-	// nichts
-    }
-
-    public void keyReleased(KeyEvent ke) {
-	// nichts
-    }
-
-    public void keyPressed(KeyEvent ke) {
-	// nichts
     }
 }

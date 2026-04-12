@@ -7,9 +7,7 @@ import sicht.vielflach.linearschief.Linearschiefsicht;
 import verschieber.Verschieber;
 import welt.vielflach.Vielflachwelt;
 import maler.Maler;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import handlung.Handlung;
 
 // Eine Handlung, in dem wir die Welt und Sichten verändern können.
 //
@@ -18,7 +16,7 @@ import java.awt.event.MouseMotionListener;
 // []: Verschieben die Tiefe der Schiefsicht.
 // Hoch Runter Links Rechts: Verschieben die Sicht verhältnismäßig.
 // Mouse: Drucken und verschieben das Vielflach.
-public class Schiefhandlung implements MouseListener, MouseMotionListener, KeyListener {
+public class Schiefhandlung extends Handlung {
 
     Maler m;
     Linearschiefsicht lss;
@@ -148,29 +146,5 @@ public class Schiefhandlung implements MouseListener, MouseMotionListener, KeyLi
 	if (veraendert == true) {
 	    this.m.repaint();
 	}
-    }
-
-    public void mouseExited(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseEntered(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseReleased(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseClicked(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseMoved(MouseEvent me) {
-	// nichts
-    }
-
-    public void keyReleased(KeyEvent ke) {
-	// nichts
     }
 }

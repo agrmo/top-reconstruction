@@ -5,8 +5,7 @@ import java.awt.event.MouseEvent;
 import vektor.Dreivektor;
 import sicht.vielflach.giernick.Giernicksicht;
 import welt.vielflach.Vielflachwelt;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import handlung.Handlung;
 import maler.Maler;
 
 // Das Giernickhandlung benuzt zur Drehung nur zwei Winkel: einen in der
@@ -14,7 +13,7 @@ import maler.Maler;
 // richtig gut am Anfang. Das Problem ist nach einer Drehung. Nach
 // einer Drehung sind die Gier und Nick-Achsen anders als am
 // Anfang. Deshalb sieht die Drehungen nachdem nicht richtig aus.
-public class Giernickhandlung implements MouseListener, MouseMotionListener {
+public class Giernickhandlung extends Handlung {
 
     Maler m;
     Giernicksicht gs;
@@ -52,25 +51,5 @@ public class Giernickhandlung implements MouseListener, MouseMotionListener {
 	this.gs.nick = this.nickanfang + nickunterschied;
 	
 	this.m.repaint();
-    }
-
-    public void mouseExited(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseEntered(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseReleased(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseClicked(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseMoved(MouseEvent me) {
-	// nichts
     }
 }

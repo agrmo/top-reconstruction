@@ -5,16 +5,15 @@ import dreher.vektor.Vektordreher;
 import druck.matrix.Matrixdrucker;
 import druck.vektor.Vektordrucker;
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
 import maler.Maler;
 import matrix.Dreimatrix;
 import sicht.vielflach.auge.Augesicht;
 import vektor.Dreivektor;
 import welt.vielflach.Vielflachwelt;
 import dreher.achse.Achsedreher;
-import java.awt.event.KeyListener;
+import handlung.Handlung;
 
-public class Augehandlung implements KeyListener {
+public class Augehandlung extends Handlung {
 
     Maler m;
     Augesicht vas;
@@ -91,13 +90,5 @@ public class Augehandlung implements KeyListener {
 	if (veraendert == true) {
 	    this.m.repaint();
 	}
-    }
-
-    public void keyPressed(KeyEvent ke) {
-	// nichts
-    }
-
-    public void keyReleased(KeyEvent ke) {
-	// nichts
     }
 }

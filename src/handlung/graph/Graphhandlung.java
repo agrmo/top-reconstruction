@@ -3,18 +3,16 @@ package handlung.graph;
 import dreher.matrix.Matrixdreher;
 import dreher.vektor.Vektordreher;
 import druck.matrix.Matrixdrucker;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import maler.Maler;
 import matrix.Dreimatrix;
 import sicht.graph.drei.Dreigraphaugesicht;
 import vektor.Dreivektor;
 import welt.graph.Dreigraphwelt;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import handlung.Handlung;
 
 // Eine Handlung, das einen dreidimensionalen Graph darstellt.
-public class Graphhandlung implements MouseListener, MouseMotionListener  {
+public class Graphhandlung extends Handlung {
 
     Maler m;
     Dreigraphaugesicht ds;
@@ -64,21 +62,5 @@ public class Graphhandlung implements MouseListener, MouseMotionListener  {
 	this.mousevory = jetzty;
 
 	this.m.repaint();
-    }
-
-    public void mouseExited(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseEntered(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseClicked(MouseEvent me) {
-	// nichts
-    }
-
-    public void mouseMoved(MouseEvent me) {
-	// nichts
     }
 }
