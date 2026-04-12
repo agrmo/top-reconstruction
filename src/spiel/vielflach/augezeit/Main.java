@@ -1,6 +1,6 @@
 package spiel.vielflach.augezeit;
 
-import handlung.spiel.SpielHandlung;
+import handlung.spiel.Spielhandlung;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -41,7 +41,7 @@ public class Main {
 	Augezeitspiel s = new Augezeitspiel(m, as, vw);
 
 	// Mache die Handlung.
-	SpielHandlung sh = new SpielHandlung(s);
+	Spielhandlung sh = new Spielhandlung(s);
 
 	// Darstellen.
 	JFrame frame = new JFrame();

@@ -1,6 +1,6 @@
 package spiel.nichts;
 
-import handlung.spiel.SpielHandlung;
+import handlung.spiel.Spielhandlung;
 import javax.swing.JFrame;
 import spiel.Spiel;
 
@@ -16,7 +16,7 @@ public class Main {
 	Nichtsspiel s = new Nichtsspiel();
 
 	// Die Handlungen werden das Spiel anrufen.
-	SpielHandlung sh = new SpielHandlung(s);
+	Spielhandlung sh = new Spielhandlung(s);
 
 	// Fangen die Handlung an.
 	JFrame frame = new JFrame();

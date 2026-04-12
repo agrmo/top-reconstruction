@@ -1,7 +1,7 @@
 package spiel.graph;
 
 import graph.Nachbarschaftsliste;
-import handlung.spiel.SpielHandlung;
+import handlung.spiel.Spielhandlung;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -49,7 +49,7 @@ public class Main {
 	Graphspiel gs = new Graphspiel(m, ds, dgw);
 
 	// Mache die Handlung.
-	SpielHandlung sh = new SpielHandlung(gs);
+	Spielhandlung sh = new Spielhandlung(gs);
 
 	// Fangen die Handlung an.
 	JFrame frame = new JFrame();

@@ -1,6 +1,6 @@
 package spiel.vielflach.auge;
 
-import handlung.spiel.SpielHandlung;
+import handlung.spiel.Spielhandlung;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -23,6 +23,16 @@ import welt.vielflach.Vielflachwelt;
 
 public class Main {
     static void beispieleins() {
+	// Hier ist die Lösung des Problems, das wir im Giernickspiel
+	// gefunden hatten. Eine Drehung mit der Mouse nach einem
+	// Kopfstehen des Kubus fällt uns unrichtig. Die Lösung ist
+	// die Bearbeitung nicht nur einer Matrix, sondern zweier
+	// Matrizen. Die erste Matrix is die vorherige Matrix. Die
+	// zweite Matrix is die jetzige Matrix. Die Mouse dreht die
+	// zweite Matrix. Nach die Lösung der Mouse multiplizieren wir
+	// die zwei Matrizen, speichern diese Matrix als vorherige,
+	// und erneuen die zweite Matrix.
+
 	// Mache die Welt.
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(new Kubus(60));
@@ -43,7 +53,7 @@ public class Main {
 	Augespiel s = new Augespiel(m, as, vw);
 
 	// Mache die Handlung.
-	SpielHandlung sh = new SpielHandlung(s);
+	Spielhandlung sh = new Spielhandlung(s);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -58,15 +68,6 @@ public class Main {
     }
 
     static void beispielzwei() {
-	// Hier ist die Lösung des Problems, das wir im Giernickspiel
-	// gefunden hatten. Eine Drehung mit der Mouse nach einem
-	// Kopfstehen des Kubus fällt uns unrichtig. Die Lösung ist
-	// die Bearbeitung nicht nur einer Matrix, sondern zweier
-	// Matrizen. Die erste Matrix is die vorherige Matrix. Die
-	// zweite Matrix is die jetzige Matrix. Die Mouse dreht die
-	// zweite Matrix. Nach die Lösung der Mouse multiplizieren wir
-	// die zwei Matrizen, speichern diese Matrix als vorherige,
-	// und erneuen die zweite Matrix.
 	
 	// Mache die Welt.
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
@@ -89,7 +90,7 @@ public class Main {
 	Augespiel s = new Augespiel(m, as, vw);
 
 	// Mache die Handlung.
-	SpielHandlung sh = new SpielHandlung(s);
+	Spielhandlung sh = new Spielhandlung(s);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -104,9 +105,46 @@ public class Main {
 	frame.setVisible(true);
     }
 
-    
+    static void beispieldrei() {
+	// Mache die Welt.
+	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
+	kl.add(new Kubus(30));
+	kl.add(new Kubus(30));
+	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
+	ol.add(new Dreivektor(-15,-15,-15));
+	ol.add(new Dreivektor(-15,30,30));
+	Vielflachwelt vw = new Vielflachwelt(kl, ol);
+	
+	// Mache die Sicht.
+	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
+	double breite = bildschirm.getWidth();
+	double hoehe = bildschirm.getHeight();
+	Dreivektor ap = new Dreivektor(50,50,0);
+	Augesicht as = new Augesicht(vw, ap, 500, breite, hoehe);
+	Augetextsicht ats = new Augetextsicht(as);
+
+	Maler m = new Maler(new Sicht[] {as, ats});
+	
+	// Mache das Spiel.
+	Augespiel s = new Augespiel(m, as, vw);
+
+	// Mache die Handlung.
+	Spielhandlung sh = new Spielhandlung(s);
+
+	// Geh.
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.getContentPane().setBackground(Color.BLACK);
+	frame.getContentPane().setForeground(Color.WHITE);
+	frame.setSize((int) breite, (int) hoehe);
+	frame.add(m);
+	frame.addMouseListener(sh);
+	frame.addMouseMotionListener(sh);
+	frame.addKeyListener(sh);
+	frame.setVisible(true);
+    }
     
     public static void main(String[] args) {
-	beispielzwei();
+	beispieldrei();
     }
 }

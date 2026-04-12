@@ -1,6 +1,6 @@
 package spiel.vielflach.giernick;
 
-import handlung.spiel.SpielHandlung;
+import handlung.spiel.Spielhandlung;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -53,7 +53,7 @@ public class Main {
 	Giernickspiel s = new Giernickspiel(m, gs, vw);
 
 	// Mache die Handlung.
-	SpielHandlung sh = new SpielHandlung(s);
+	Spielhandlung sh = new Spielhandlung(s);
 
 	// Geh.
 	JFrame frame = new JFrame();

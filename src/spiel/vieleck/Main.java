@@ -1,6 +1,6 @@
 package spiel.vieleck;
 
-import handlung.spiel.SpielHandlung;
+import handlung.spiel.Spielhandlung;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -37,7 +37,7 @@ public class Main {
 	Vieleckspiel s = new Vieleckspiel(m, welt);
 
 	// Mache die Handlungen.
-	SpielHandlung sh = new SpielHandlung(s);
+	Spielhandlung sh = new Spielhandlung(s);
 
 	// Stelle die Daten dar.
 	JFrame frame = new JFrame();

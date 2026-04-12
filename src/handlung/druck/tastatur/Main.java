@@ -14,7 +14,7 @@ public class Main {
 	frame.setSize(1200, 600);
 
 	// Das Spiel tut nichts. Benutzen irgendeine Handlung.
-	DruckTastaturHandlung h = new DruckTastaturHandlung();
+	Drucktastaturhandlung h = new Drucktastaturhandlung();
 	
 	frame.addKeyListener(h);
 	frame.setVisible(true);	

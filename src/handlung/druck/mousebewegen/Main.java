@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes handlung.druck.mouse.Main
+  && java -cp classes handlung.druck.mousebewegen.Main
 */
 
 public class Main {
@@ -14,7 +14,7 @@ public class Main {
 	frame.setSize(1200, 600);
 
 	// Das Spiel tut nichts. Benutzen irgendeine Handlung.
-	DruckMouseBewegenHandlung h = new DruckMouseBewegenHandlung();
+	Druckmousebewegenhandlung h = new Druckmousebewegenhandlung();
 	
 	frame.addMouseMotionListener(h);
 	frame.setVisible(true);

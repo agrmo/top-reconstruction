@@ -14,7 +14,7 @@ public class Main {
 	frame.setSize(1200, 600);
 
 	// Das Spiel tut nichts. Benutzen irgendeine Handlung.
-	DruckMouseHandlung h = new DruckMouseHandlung();
+	Druckmousehandlung h = new Druckmousehandlung();
 	
 	frame.addMouseListener(h);
 	frame.setVisible(true);

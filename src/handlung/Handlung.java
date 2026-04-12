@@ -1,7 +1,7 @@
 package handlung;
 
-// Die Handlung ist ein Verfahren zur Wechselwirkung zwischen Mensch und
-// Computer. Insbesondere versuchen wir die Mouse und Tastatur zum
+// Die Handlung ist ein Verfahren zur Wechselwirkung zwischen Mensch
+// und Computer. Insbesondere versuchen wir die Mouse und Tastatur zum
 // Code verbinden, sodaß wir in einer Welt verlaufen können.
 //
 // Das Handlung enthält keine Daten, kein Bild, keinen Körper und keine

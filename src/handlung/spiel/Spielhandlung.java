@@ -7,13 +7,13 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import spiel.Spiel;
 
-// Eine SpielHandlung nimmt Ereignissen von einem Mensch, und gibt das
+// Eine Spielhandlung nimmt Ereignissen von einem Mensch, und gibt das
 // Spiel den Befehl, etwas zu reagieren.
-public class SpielHandlung implements MouseListener, MouseMotionListener, KeyListener {
+public class Spielhandlung implements MouseListener, MouseMotionListener, KeyListener {
 
     Spiel spiel;
 
-    public SpielHandlung(Spiel s) {
+    public Spielhandlung(Spiel s) {
 	this.spiel = s;
     }
 
