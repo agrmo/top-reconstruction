@@ -1,22 +1,24 @@
-package spiel.vielflach.schief;
+package handlung.vielflach.schief;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import vektor.Dreivektor;
 import sicht.vielflach.linearschief.Linearschiefsicht;
-import spiel.Spiel;
 import verschieber.Verschieber;
 import welt.vielflach.Vielflachwelt;
 import maler.Maler;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
-// Ein Spiel, in dem wir die Welt und Sichten verändern können.
+// Eine Handlung, in dem wir die Welt und Sichten verändern können.
 //
 // WSAD: Verschieben die Sicht mit Hilfe der Linearschiefsicht
 // TGFH: Verschieben die ursprüngliche Vektoren der Vielflachwelt.
 // []: Verschieben die Tiefe der Schiefsicht.
 // Hoch Runter Links Rechts: Verschieben die Sicht verhältnismäßig.
 // Mouse: Drucken und verschieben das Vielflach.
-public class Schiefspiel extends Spiel {
+public class Schiefhandlung implements MouseListener, MouseMotionListener, KeyListener {
 
     Maler m;
     Linearschiefsicht lss;
@@ -26,15 +28,15 @@ public class Schiefspiel extends Spiel {
     double anfangbx;
     double anfangby;
 
-    public Schiefspiel(Maler m,
-		       Linearschiefsicht l,
-		       Vielflachwelt vw) {
+    public Schiefhandlung(Maler m,
+			  Linearschiefsicht l,
+			  Vielflachwelt vw) {
 	this.m = m;
 	this.lss = l;
 	this.vw = vw;
     }
     
-    public void handelnMouseDrucken(MouseEvent me) {
+    public void mousePressed(MouseEvent me) {
 	this.mouseanfangx = me.getX();
 	this.mouseanfangy = me.getY();
 
@@ -42,27 +44,7 @@ public class Schiefspiel extends Spiel {
 	this.anfangby = this.lss.by;
     }
     
-    public void handelnMouseLösen(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseEin(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseAus(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouse(MouseEvent me) {
-	// nichts
-    }
-
-    public void handelnMouseBewegen(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseSchleifen(MouseEvent me) {
+    public void mouseDragged(MouseEvent me) {
 
 	int jetztx = me.getX();
 	int jetzty = me.getY();
@@ -80,7 +62,7 @@ public class Schiefspiel extends Spiel {
 	Verschieber.verschieben(this.vw, verschiebenvektor);
     }
     
-    public void handelnTastatur(KeyEvent ke) {
+    public void keyTyped(KeyEvent ke) {
 	int id = ke.getID();
 	boolean veraendert = false;
 	
@@ -134,7 +116,7 @@ public class Schiefspiel extends Spiel {
 	}
     }
     
-    public void handelnTastaturDrucken(KeyEvent ke) {
+    public void keyPressed(KeyEvent ke) {
 	int keyCode = ke.getKeyCode();
 	boolean veraendert = false;
 	    
@@ -167,8 +149,28 @@ public class Schiefspiel extends Spiel {
 	    this.m.repaint();
 	}
     }
-    
-    public void handelnTastaturLösen(KeyEvent ke) {
+
+    public void mouseExited(MouseEvent me) {
+	// nichts
+    }
+
+    public void mouseEntered(MouseEvent me) {
+	// nichts
+    }
+
+    public void mouseReleased(MouseEvent me) {
+	// nichts
+    }
+
+    public void mouseClicked(MouseEvent me) {
+	// nichts
+    }
+
+    public void mouseMoved(MouseEvent me) {
+	// nichts
+    }
+
+    public void keyReleased(KeyEvent ke) {
 	// nichts
     }
 }

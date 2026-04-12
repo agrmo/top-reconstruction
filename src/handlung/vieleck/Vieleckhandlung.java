@@ -1,26 +1,28 @@
-package spiel.vieleck;
+package handlung.vieleck;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import maler.Maler;
 import sicht.vieleck.Vielecksicht;
-import spiel.Spiel;
 import vektor.Zweivektor;
 import verschieber.Verschieber;
 import welt.vieleck.Vieleckwelt;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.KeyListener;
 
-// Ein Spiel, in dem wir die Welt und Sichten verändern können.
+// Eine Handlung, in dem wir die Welt und Sichten verändern können.
 //
 // TGFH: Verschieben die ursprüngliche Vektoren der Vielflachwelt.
 // Mouse: Drucken und verschieben gleichzeitig alle Körper.
-public class Vieleckspiel extends Spiel {
+public class Vieleckhandlung implements MouseListener, MouseMotionListener, KeyListener {
 
     Maler m;
     Vieleckwelt welt;
     int mouseAnfangX;
     int mouseAnfangY;
 
-    public Vieleckspiel(Maler m, Vieleckwelt welt) {
+    public Vieleckhandlung(Maler m, Vieleckwelt welt) {
 	this.m = m;
 	this.welt = welt;
 
@@ -28,39 +30,23 @@ public class Vieleckspiel extends Spiel {
 	this.mouseAnfangY = 0;
     }
     
-    public void handelnMouseDrucken(MouseEvent me) {
+    public void mousePressed(MouseEvent me) {
 	this.mouseAnfangX = me.getX();
 	this.mouseAnfangY = me.getY();
     }
     
-    public void handelnMouseLösen(MouseEvent me) {
+    public void mouseReleased(MouseEvent me) {
 	this.mouseAnfangX = 0;
 	this.mouseAnfangY = 0;
     }
     
-    public void handelnMouseEin(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseAus(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouse(MouseEvent me) {
-	// nichts
-    }
-
-    public void handelnMouseBewegen(MouseEvent me) {
-	// nichts
-    }
-
     // Verschiebe die ursprüngliche Vektoren der Welt nach dx, dy.
     void verschieben(int dx, int dy) {
 	Zweivektor verschiebenvektor = new Zweivektor(dx,dy);
 	Verschieber.verschieben(this.welt, verschiebenvektor);
     }
     
-    public void handelnMouseSchleifen(MouseEvent me) {
+    public void mouseDragged(MouseEvent me) {
 
 	int jetztX = me.getX();
 	int jetztY = me.getY();
@@ -75,7 +61,7 @@ public class Vieleckspiel extends Spiel {
 	this.m.repaint();
     }
     
-    public void handelnTastatur(KeyEvent ke) {
+    public void keyTyped(KeyEvent ke) {
 	int id = ke.getID();
 	boolean veraendert = false;
 	
@@ -101,12 +87,28 @@ public class Vieleckspiel extends Spiel {
 	    this.m.repaint();
 	}
     }
-    
-    public void handelnTastaturDrucken(KeyEvent ke) {
+
+    public void mouseExited(MouseEvent me) {
+	// nichts
+    }
+
+    public void mouseEntered(MouseEvent me) {
 	// nichts
     }
     
-    public void handelnTastaturLösen(KeyEvent ke) {
+    public void mouseClicked(MouseEvent me) {
+	// nichts
+    }
+
+    public void mouseMoved(MouseEvent me) {
+	// nichts
+    }
+
+    public void keyReleased(KeyEvent ke) {
+	// nichts
+    }
+
+    public void keyPressed(KeyEvent ke) {
 	// nichts
     }
 }

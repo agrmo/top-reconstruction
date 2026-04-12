@@ -4,7 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 // Nur zu drucken.
-public class DruckMouseHandlung implements MouseListener {
+public class Druckmousehandlung implements MouseListener {
 
     public void mousePressed(MouseEvent e) {
 	drucke("Mouse gedruckt (# von Berührungen: "

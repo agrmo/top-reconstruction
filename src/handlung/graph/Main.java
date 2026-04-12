@@ -1,7 +1,6 @@
-package spiel.graph;
+package handlung.graph;
 
 import graph.Nachbarschaftsliste;
-import handlung.spiel.Spielhandlung;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -15,11 +14,10 @@ import welt.graph.Dreigraphwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.graph.Main
+  && java -cp classes handlung.graph.Main
 */
 
 public class Main {
-    
     static void beispieleins() {
 	// Der Graph.
 	int[][] paare = {{1,2},{2,0}};
@@ -45,11 +43,8 @@ public class Main {
 						       breite, hoehe);
 	Maler m = new Maler(new Sicht[] {ds});
 	
-	// Mache das Spiel.
-	Graphspiel gs = new Graphspiel(m, ds, dgw);
-
 	// Mache die Handlung.
-	Spielhandlung sh = new Spielhandlung(gs);
+	Graphhandlung handlung = new Graphhandlung(m, ds, dgw);
 
 	// Fangen die Handlung an.
 	JFrame frame = new JFrame();
@@ -58,15 +53,11 @@ public class Main {
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
-	frame.addMouseListener(sh);
-	frame.addMouseMotionListener(sh);
+	frame.addMouseListener(handlung);
+	frame.addMouseMotionListener(handlung);
 	frame.setVisible(true);
     }
 
-    static void beispielzwei() {
-	
-    }
-    
     public static void main(String[] args) {
 	beispieleins();
     }

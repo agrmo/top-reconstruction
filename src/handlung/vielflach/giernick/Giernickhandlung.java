@@ -1,19 +1,20 @@
-package spiel.vielflach.giernick;
+package handlung.vielflach.giernick;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import vektor.Dreivektor;
 import sicht.vielflach.giernick.Giernicksicht;
-import spiel.Spiel;
 import welt.vielflach.Vielflachwelt;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import maler.Maler;
 
-// Das Giernickspiel benuzt zur Drehung nur zwei Winkel: einen in der
+// Das Giernickhandlung benuzt zur Drehung nur zwei Winkel: einen in der
 // Gier-Richtung und einen in der Nick-Richtung. Das funktioniert
 // richtig gut am Anfang. Das Problem ist nach einer Drehung. Nach
 // einer Drehung sind die Gier und Nick-Achsen anders als am
 // Anfang. Deshalb sieht die Drehungen nachdem nicht richtig aus.
-public class Giernickspiel extends Spiel {
+public class Giernickhandlung implements MouseListener, MouseMotionListener {
 
     Maler m;
     Giernicksicht gs;
@@ -23,15 +24,15 @@ public class Giernickspiel extends Spiel {
     double gieranfang;
     double nickanfang;
 
-    public Giernickspiel(Maler m,
-			 Giernicksicht gs,
-			 Vielflachwelt vw) {
+    public Giernickhandlung(Maler m,
+			    Giernicksicht gs,
+			    Vielflachwelt vw) {
 	this.m = m;
 	this.gs = gs;
 	this.vw = vw;
     }
     
-    public void handelnMouseDrucken(MouseEvent me) {
+    public void mousePressed(MouseEvent me) {
 	this.mouseanfangx = me.getX();
 	this.mouseanfangy = me.getY();
 
@@ -39,27 +40,7 @@ public class Giernickspiel extends Spiel {
 	this.nickanfang = this.gs.nick;
     }
     
-    public void handelnMouseLösen(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseEin(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseAus(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouse(MouseEvent me) {
-	// nichts
-    }
-
-    public void handelnMouseBewegen(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseSchleifen(MouseEvent me) {
+    public void mouseDragged(MouseEvent me) {
 	int jetztx = me.getX();
 	int jetzty = me.getY();
 	int unterschiedx = jetztx - this.mouseanfangx;
@@ -72,16 +53,24 @@ public class Giernickspiel extends Spiel {
 	
 	this.m.repaint();
     }
-    
-    public void handelnTastatur(KeyEvent ke) {
+
+    public void mouseExited(MouseEvent me) {
 	// nichts
     }
-    
-    public void handelnTastaturDrucken(KeyEvent ke) {
+
+    public void mouseEntered(MouseEvent me) {
 	// nichts
     }
-    
-    public void handelnTastaturLösen(KeyEvent ke) {
+
+    public void mouseReleased(MouseEvent me) {
+	// nichts
+    }
+
+    public void mouseClicked(MouseEvent me) {
+	// nichts
+    }
+
+    public void mouseMoved(MouseEvent me) {
 	// nichts
     }
 }

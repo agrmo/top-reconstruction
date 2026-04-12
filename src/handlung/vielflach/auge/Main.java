@@ -1,6 +1,5 @@
-package spiel.vielflach.auge;
+package handlung.vielflach.auge;
 
-import handlung.spiel.Spielhandlung;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -18,12 +17,12 @@ import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.vielflach.auge.Main;
+  && java -cp classes handlung.vielflach.auge.Main;
 */
 
 public class Main {
     static void beispieleins() {
-	// Hier ist die Lösung des Problems, das wir im Giernickspiel
+	// Hier ist die Lösung des Problems, das wir im Giernickhandlung
 	// gefunden hatten. Eine Drehung mit der Mouse nach einem
 	// Kopfstehen des Kubus fällt uns unrichtig. Die Lösung ist
 	// die Bearbeitung nicht nur einer Matrix, sondern zweier
@@ -49,11 +48,8 @@ public class Main {
 
 	Maler m = new Maler(new Sicht[] {as});
 	
-	// Mache das Spiel.
-	Augespiel s = new Augespiel(m, as, vw);
-
 	// Mache die Handlung.
-	Spielhandlung sh = new Spielhandlung(s);
+	Augehandlung h = new Augehandlung(m, as, vw);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -62,8 +58,7 @@ public class Main {
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
-	frame.addMouseListener(sh);
-	frame.addMouseMotionListener(sh);
+	frame.addKeyListener(h);
 	frame.setVisible(true);
     }
 
@@ -86,11 +81,8 @@ public class Main {
 
 	Maler m = new Maler(new Sicht[] {as, ats});
 	
-	// Mache das Spiel.
-	Augespiel s = new Augespiel(m, as, vw);
-
 	// Mache die Handlung.
-	Spielhandlung sh = new Spielhandlung(s);
+	Augehandlung h = new Augehandlung(m, as, vw);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -99,9 +91,7 @@ public class Main {
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
-	frame.addMouseListener(sh);
-	frame.addMouseMotionListener(sh);
-	frame.addKeyListener(sh);
+	frame.addKeyListener(h);
 	frame.setVisible(true);
     }
 
@@ -125,11 +115,8 @@ public class Main {
 
 	Maler m = new Maler(new Sicht[] {as, ats});
 	
-	// Mache das Spiel.
-	Augespiel s = new Augespiel(m, as, vw);
-
 	// Mache die Handlung.
-	Spielhandlung sh = new Spielhandlung(s);
+	Augehandlung h = new Augehandlung(m, as, vw);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -138,9 +125,7 @@ public class Main {
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
-	frame.addMouseListener(sh);
-	frame.addMouseMotionListener(sh);
-	frame.addKeyListener(sh);
+	frame.addKeyListener(h);
 	frame.setVisible(true);
     }
     

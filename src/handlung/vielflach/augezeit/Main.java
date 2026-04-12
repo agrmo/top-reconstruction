@@ -1,6 +1,5 @@
-package spiel.vielflach.augezeit;
+package handlung.vielflach.augezeit;
 
-import handlung.spiel.Spielhandlung;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -17,7 +16,7 @@ import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.vielflach.augezeit.Main
+  && java -cp classes handlung.vielflach.augezeit.Main
 */
 
 public class Main {
@@ -37,11 +36,8 @@ public class Main {
 	Augesicht as = new Augesicht(vw, ap, 500, breite, hoehe);
 	Maler m = new Maler(new Sicht[] {as});
 	
-	// Mache das Spiel.
-	Augezeitspiel s = new Augezeitspiel(m, as, vw);
-
 	// Mache die Handlung.
-	Spielhandlung sh = new Spielhandlung(s);
+	Augezeithandlung h = new Augezeithandlung(m, as, vw);
 
 	// Darstellen.
 	JFrame frame = new JFrame();
@@ -50,9 +46,9 @@ public class Main {
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
-	frame.addMouseListener(sh);
-	frame.addMouseMotionListener(sh);
-	frame.addKeyListener(sh);
+	frame.addMouseListener(h);
+	frame.addMouseMotionListener(h);
+	frame.addKeyListener(h);
 	frame.setVisible(true);
     }
     

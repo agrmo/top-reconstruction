@@ -1,4 +1,4 @@
-package spiel.graph;
+package handlung.graph;
 
 import dreher.matrix.Matrixdreher;
 import dreher.vektor.Vektordreher;
@@ -8,12 +8,13 @@ import java.awt.event.MouseEvent;
 import maler.Maler;
 import matrix.Dreimatrix;
 import sicht.graph.drei.Dreigraphaugesicht;
-import spiel.Spiel;
 import vektor.Dreivektor;
 import welt.graph.Dreigraphwelt;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
-// Ein Spiel, das einen dreidimensionalen Graph darstellt.
-public class Graphspiel extends Spiel {
+// Eine Handlung, das einen dreidimensionalen Graph darstellt.
+public class Graphhandlung implements MouseListener, MouseMotionListener  {
 
     Maler m;
     Dreigraphaugesicht ds;
@@ -21,7 +22,7 @@ public class Graphspiel extends Spiel {
     int mousevorx;
     int mousevory;
 
-    public Graphspiel(Maler m,
+    public Graphhandlung(Maler m,
 		      Dreigraphaugesicht ds,
 		      Dreigraphwelt dgw) {
 	this.m = m;
@@ -32,35 +33,19 @@ public class Graphspiel extends Spiel {
 	this.mousevory = 0;
     }
     
-    public void handelnMouseDrucken(MouseEvent me) {
+    public void mousePressed(MouseEvent me) {
 	this.mousevorx = me.getX();
 	this.mousevory = me.getY();
     }
     
-    public void handelnMouseLösen(MouseEvent me) {
+    public void mouseReleased(MouseEvent me) {
 	this.mousevorx = 0;
 	this.mousevory = 0;
 
 	this.m.repaint();
     }
     
-    public void handelnMouseEin(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseAus(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouse(MouseEvent me) {
-	// nichts
-    }
-
-    public void handelnMouseBewegen(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseSchleifen(MouseEvent me) {
+    public void mouseDragged(MouseEvent me) {
 	int jetztx = me.getX();
 	int jetzty = me.getY();
 	int unterschiedX = jetztx - this.mousevorx;
@@ -80,16 +65,20 @@ public class Graphspiel extends Spiel {
 
 	this.m.repaint();
     }
-    
-    public void handelnTastatur(KeyEvent ke) {
+
+    public void mouseExited(MouseEvent me) {
 	// nichts
     }
-    
-    public void handelnTastaturDrucken(KeyEvent ke) {
+
+    public void mouseEntered(MouseEvent me) {
 	// nichts
     }
-    
-    public void handelnTastaturLösen(KeyEvent ke) {
+
+    public void mouseClicked(MouseEvent me) {
+	// nichts
+    }
+
+    public void mouseMoved(MouseEvent me) {
 	// nichts
     }
 }

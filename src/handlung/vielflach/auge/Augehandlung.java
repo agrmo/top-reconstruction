@@ -1,4 +1,4 @@
-package spiel.vielflach.auge;
+package handlung.vielflach.auge;
 
 import dreher.matrix.Matrixdreher;
 import dreher.vektor.Vektordreher;
@@ -9,12 +9,12 @@ import java.awt.event.MouseEvent;
 import maler.Maler;
 import matrix.Dreimatrix;
 import sicht.vielflach.auge.Augesicht;
-import spiel.Spiel;
 import vektor.Dreivektor;
 import welt.vielflach.Vielflachwelt;
 import dreher.achse.Achsedreher;
+import java.awt.event.KeyListener;
 
-public class Augespiel extends Spiel {
+public class Augehandlung implements KeyListener {
 
     Maler m;
     Augesicht vas;
@@ -22,43 +22,15 @@ public class Augespiel extends Spiel {
     int mousevorx;
     int mousevory;
 
-    public Augespiel(Maler m,
-		     Augesicht vas,
-		     Vielflachwelt vw) {
+    public Augehandlung(Maler m,
+			Augesicht vas,
+			Vielflachwelt vw) {
 	this.m = m;
 	this.vas = vas;
 	this.vw = vw;
     }
     
-    public void handelnMouseDrucken(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseLösen(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseEin(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseAus(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouse(MouseEvent me) {
-	// nichts
-    }
-
-    public void handelnMouseBewegen(MouseEvent me) {
-	// nichts
-    }
-
-    public void handelnMouseSchleifen(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnTastatur(KeyEvent ke) {
+    public void keyTyped(KeyEvent ke) {
 	int id = ke.getID();
 	boolean veraendert = false;
 	
@@ -120,12 +92,12 @@ public class Augespiel extends Spiel {
 	    this.m.repaint();
 	}
     }
-    
-    public void handelnTastaturDrucken(KeyEvent ke) {
+
+    public void keyPressed(KeyEvent ke) {
 	// nichts
     }
-    
-    public void handelnTastaturLösen(KeyEvent ke) {
+
+    public void keyReleased(KeyEvent ke) {
 	// nichts
     }
 }

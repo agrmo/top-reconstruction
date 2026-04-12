@@ -4,7 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 // Nur zu drucken.
-public class DruckTastaturHandlung implements KeyListener {
+public class Drucktastaturhandlung implements KeyListener {
 
     public void keyTyped(KeyEvent e) {
         drucke("Getastet: ", e);

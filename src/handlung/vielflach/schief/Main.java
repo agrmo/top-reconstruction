@@ -1,6 +1,5 @@
-package spiel.vielflach.schief;
+package handlung.vielflach.schief;
 
-import handlung.spiel.Spielhandlung;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -14,7 +13,7 @@ import sicht.Sicht;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.vielflach.schief.Main
+  && java -cp classes handlung.vielflach.schief.Main
 */
 
 public class Main {
@@ -40,12 +39,9 @@ public class Main {
 						      mx, bx, my, by);
 	Maler m = new Maler(new Sicht[] {lss});
 	
-	// Mache das Spiel.
-	Schiefspiel s = new Schiefspiel(m, lss, vw);
-
-	// Mache die Handlungen.
-	Spielhandlung sh = new Spielhandlung(s);
-
+	// Mache die Handlung.
+	Schiefhandlung h = new Schiefhandlung(m, lss, vw);
+	
 	// Geh.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,9 +49,9 @@ public class Main {
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize(1200, 600);
 	frame.add(m);
-	frame.addKeyListener(sh);
-	frame.addMouseListener(sh);
-	frame.addMouseMotionListener(sh);
+	frame.addKeyListener(h);
+	frame.addMouseListener(h);
+	frame.addMouseMotionListener(h);
 	frame.setVisible(true);	
     }
 }

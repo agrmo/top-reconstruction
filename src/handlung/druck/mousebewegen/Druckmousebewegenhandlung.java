@@ -4,7 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 
 // Nur zu drucken.
-public class DruckMouseBewegenHandlung implements MouseMotionListener {
+public class Druckmousebewegenhandlung implements MouseMotionListener {
 
     public void mouseDragged(MouseEvent e) {
 	System.out.println("Mouse schleifen auf " + e.getX() + " " + e.getY());

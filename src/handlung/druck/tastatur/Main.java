@@ -13,7 +13,7 @@ public class Main {
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
 
-	// Das Spiel tut nichts. Benutzen irgendeine Handlung.
+	// Die Handlung tut nichts. Benutzen irgendeine Handlung.
 	Drucktastaturhandlung h = new Drucktastaturhandlung();
 	
 	frame.addKeyListener(h);

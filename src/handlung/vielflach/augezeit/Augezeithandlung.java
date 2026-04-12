@@ -1,4 +1,4 @@
-package spiel.vielflach.augezeit;
+package handlung.vielflach.augezeit;
 
 import dreher.matrix.Matrixdreher;
 import dreher.vektor.Vektordreher;
@@ -8,13 +8,15 @@ import java.awt.event.MouseEvent;
 import maler.Maler;
 import matrix.Dreimatrix;
 import sicht.vielflach.auge.Augesicht;
-import spiel.Spiel;
 import vektor.Dreivektor;
 import welt.vielflach.Vielflachwelt;
 import wesen.Vielflachbasiswesen;
 import zeit.Zeitdauer;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
-public class Augezeitspiel extends Spiel {
+public class Augezeithandlung implements MouseListener, MouseMotionListener, KeyListener {
 
     Maler m;
     Augesicht as;
@@ -23,9 +25,9 @@ public class Augezeitspiel extends Spiel {
     int mousevory;
     Vielflachbasiswesen vbw;
 
-    public Augezeitspiel(Maler m,
-			 Augesicht as,
-			 Vielflachwelt vw) {
+    public Augezeithandlung(Maler m,
+			    Augesicht as,
+			    Vielflachwelt vw) {
 	this.m = m;
 	this.as = as;
 	this.vw = vw;
@@ -34,36 +36,44 @@ public class Augezeitspiel extends Spiel {
 	this.mousevorx = 0;
 	this.mousevory = 0;
     }
+
+    public void mouseEntered(MouseEvent me) {
+	// nichts
+    }
+
+    public void mouseExited(MouseEvent me) {
+	// nichts
+    }
+
+    public void mouseClicked(MouseEvent me) {
+	// nichts
+    }
+
+    public void mouseMoved(MouseEvent me) {
+	// nichts
+    }
+
+    public void keyPressed(KeyEvent ke) {
+	// nichts
+    }
+
+    public void keyReleased(KeyEvent ke) {
+	// nichts
+    }
     
-    public void handelnMouseDrucken(MouseEvent me) {
+    public void mousePressed(MouseEvent me) {
 	this.mousevorx = me.getX();
 	this.mousevory = me.getY();
     }
     
-    public void handelnMouseLösen(MouseEvent me) {
+    public void mouseReleased(MouseEvent me) {
 	this.mousevorx = 0;
 	this.mousevory = 0;
 
 	this.m.repaint();
     }
-    
-    public void handelnMouseEin(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseAus(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouse(MouseEvent me) {
-	// nichts
-    }
-
-    public void handelnMouseBewegen(MouseEvent me) {
-	// nichts
-    }
-    
-    public void handelnMouseSchleifen(MouseEvent me) {
+        
+    public void mouseDragged(MouseEvent me) {
 	int jetztx = me.getX();
 	int jetzty = me.getY();
 	int unterschiedX = jetztx - this.mousevorx;
@@ -83,7 +93,7 @@ public class Augezeitspiel extends Spiel {
 	this.m.repaint();
     }
     
-    public void handelnTastatur(KeyEvent ke) {
+    public void keyTyped(KeyEvent ke) {
 	int id = ke.getID();
 	boolean veraendert = false;
 	
@@ -99,13 +109,5 @@ public class Augezeitspiel extends Spiel {
 	if (veraendert == true) {
 	    this.m.repaint();
 	}
-    }
-    
-    public void handelnTastaturDrucken(KeyEvent ke) {
-	// nichts
-    }
-    
-    public void handelnTastaturLösen(KeyEvent ke) {
-	// nichts
     }
 }

@@ -1,6 +1,5 @@
-package spiel.vielflach.giernick;
+package handlung.vielflach.giernick;
 
-import handlung.spiel.Spielhandlung;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -17,13 +16,13 @@ import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes spiel.vielflach.giernick.Main
+  && java -cp classes handlung.vielflach.giernick.Main
 */
 
 public class Main {
     public static void main(String[] args) {
 	
-	// Ein Spiel, in dem wir einen Kubus drehen können. Eigenlich
+	// Eine Handlung, in dem wir einen Kubus drehen können. Eigenlich
 	// gibt es hier ein Problem. Sobald wir den Kubus auf dem Kopf
 	// stehen, ist es nicht mehr möglich, die Mouse richtig in der
 	// Gier-Achse zu drehen. Die Mouse geht rechts, und der Kubus
@@ -31,8 +30,8 @@ public class Main {
 	//
 	// Eine mögliche Lösung dafur ist, daß wir die Basisvektoren
 	// wiederaufstehen sollen, sofort nach jeder Drehung des
-	// Kubus. Hier gibt es keine Lösung. Die Lösung ist das
-	// "Basismousespiel."
+	// Kubus. Hier gibt es keine Lösung. Die Lösung ist die
+	// "Augehandlung."
 	
 	// Mache die Welt.
 	ArrayList<Vielflach> vl = new ArrayList<Vielflach>();
@@ -49,11 +48,8 @@ public class Main {
 	Giernicksicht gs = new Giernicksicht(vw, ap, 500, breite, hoehe, 0.0, 0.0);
 	Maler m = new Maler(new Sicht[] {gs});
 	
-	// Mache das Spiel.
-	Giernickspiel s = new Giernickspiel(m, gs, vw);
-
 	// Mache die Handlung.
-	Spielhandlung sh = new Spielhandlung(s);
+	Giernickhandlung h = new Giernickhandlung(m, gs, vw);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -62,8 +58,8 @@ public class Main {
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
-	frame.addMouseListener(sh);
-	frame.addMouseMotionListener(sh);
+	frame.addMouseListener(h);
+	frame.addMouseMotionListener(h);
 	frame.setVisible(true);	
     }
 }
