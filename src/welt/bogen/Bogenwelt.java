@@ -6,10 +6,10 @@ import vektor.Dreivektor;
 public class Bogenwelt {
 
     public Bogen[] bogen;
-    public Dreivektor[] orten;
+    public Dreivektor[] orte;
 
-    public Bogenwelt(Bogen[] bl, Dreivektor[] ol) {
-	this.bogen = bl;
-	this.orten = ol;
+    public Bogenwelt(Bogen[] bogen, Dreivektor[] orte) {
+	this.bogen = bogen;
+	this.orte = orte;
     }
 }
