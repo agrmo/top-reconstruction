@@ -27,10 +27,6 @@ public class Handlung implements MouseListener, MouseMotionListener, KeyListener
     public void mouseClicked(MouseEvent me) {
 	// nichts
     }
-
-    public void mouseMoved(MouseEvent me) {
-	// nichts
-    }
     
     public void mousePressed(MouseEvent me) {
 	// nichts
@@ -39,11 +35,15 @@ public class Handlung implements MouseListener, MouseMotionListener, KeyListener
     public void mouseReleased(MouseEvent me) {
 	// nichts
     }
-        
+
+    public void mouseMoved(MouseEvent me) {
+	// nichts
+    }
+
     public void mouseDragged(MouseEvent me) {
 	// nichts
     }
-    
+            
     public void keyTyped(KeyEvent ke) {
 	// nichts
     }

@@ -37,9 +37,10 @@ public class Main {
 	double breite = 1200;
 	double hoehe = 600;
 	double brennweite = 500;
-	Dreivektor augevektor = new Dreivektor(0,0,0);
-	Dreigraphaugesicht s = new Dreigraphaugesicht(dgw, augevektor, brennweite,
-						      breite, hoehe);
+	Dreivektor entfernung = new Dreivektor(0,0,0);
+	Dreigraphaugesicht s = new Dreigraphaugesicht(dgw, entfernung, brennweite,
+						      breite, hoehe,
+						      0, 0, 0);
 	Maler m = new Maler(new Sicht[] {s});
   
         // Stellen die Daten dar.

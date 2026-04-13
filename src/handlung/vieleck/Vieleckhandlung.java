@@ -49,10 +49,10 @@ public class Vieleckhandlung extends Handlung {
 
 	int jetztX = me.getX();
 	int jetztY = me.getY();
-	int unterschiedX = jetztX - this.mouseAnfangX;
-	int unterschiedY = jetztY - this.mouseAnfangY;
+	int unterschiedx = jetztX - this.mouseAnfangX;
+	int unterschiedy = jetztY - this.mouseAnfangY;
 
-	this.verschieben(unterschiedX, unterschiedY);
+	this.verschieben(unterschiedx, unterschiedy);
 	
 	this.mouseAnfangX = jetztX;
 	this.mouseAnfangY = jetztY;

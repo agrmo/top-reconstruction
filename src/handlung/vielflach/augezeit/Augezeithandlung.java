@@ -50,10 +50,10 @@ public class Augezeithandlung extends Handlung {
     public void mouseDragged(MouseEvent me) {
 	int jetztx = me.getX();
 	int jetzty = me.getY();
-	int unterschiedX = jetztx - this.mousevorx;
-	int unterschiedY = jetzty - this.mousevory;
-	double winkelgier = ((double) unterschiedX) / this.as.breite;
-	double winkelnick = -((double) unterschiedY) / this.as.hoehe;
+	int unterschiedx = jetztx - this.mousevorx;
+	int unterschiedy = jetzty - this.mousevory;
+	double winkelgier = ((double) unterschiedx) / this.as.breite;
+	double winkelnick = -((double) unterschiedy) / this.as.hoehe;
 
 	Dreimatrix giermatrix = Matrixdreher.nehmedrehery(winkelgier);
 	Dreimatrix nickmatrix = Matrixdreher.nehmedreherx(winkelnick);

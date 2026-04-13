@@ -40,7 +40,8 @@ public class Main {
 	double brennweite = 500;
 	Dreivektor augevektor = new Dreivektor(0,0,100);
 	Dreigraphaugesicht ds = new Dreigraphaugesicht(dgw, augevektor, brennweite,
-						       breite, hoehe);
+						       breite, hoehe,
+						       0, 0, 0);
 	Maler m = new Maler(new Sicht[] {ds});
 	
 	// Mache die Handlung.
@@ -53,8 +54,7 @@ public class Main {
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
-	frame.addMouseListener(handlung);
-	frame.addMouseMotionListener(handlung);
+	frame.addKeyListener(handlung);
 	frame.setVisible(true);
     }
 

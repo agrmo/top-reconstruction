@@ -10,57 +10,83 @@ import sicht.graph.drei.Dreigraphaugesicht;
 import vektor.Dreivektor;
 import welt.graph.Dreigraphwelt;
 import handlung.Handlung;
+import java.awt.event.KeyEvent;
 
 // Eine Handlung, das einen dreidimensionalen Graph darstellt.
 public class Graphhandlung extends Handlung {
 
     Maler m;
-    Dreigraphaugesicht ds;
+    Dreigraphaugesicht dgas;
     Dreigraphwelt dgw;
-    int mousevorx;
-    int mousevory;
 
     public Graphhandlung(Maler m,
-			 Dreigraphaugesicht ds,
+			 Dreigraphaugesicht dgas,
 			 Dreigraphwelt dgw) {
 	this.m = m;
-	this.ds = ds;
+	this.dgas = dgas;
 	this.dgw = dgw;
-
-	this.mousevorx = 0;
-	this.mousevory = 0;
     }
-    
-    public void mousePressed(MouseEvent me) {
-	this.mousevorx = me.getX();
-	this.mousevory = me.getY();
-    }
-    
-    public void mouseReleased(MouseEvent me) {
-	this.mousevorx = 0;
-	this.mousevory = 0;
 
-	this.m.repaint();
-    }
-    
-    public void mouseDragged(MouseEvent me) {
-	int jetztx = me.getX();
-	int jetzty = me.getY();
-	int unterschiedX = jetztx - this.mousevorx;
-	int unterschiedY = jetzty - this.mousevory;
-	double winkelgier = ((double) unterschiedX) / this.ds.breite;
-	double winkelnick = -((double) unterschiedY) / this.ds.hoehe;
-
-	Dreimatrix giermatrix = Matrixdreher.nehmedrehery(winkelgier);
-	Dreimatrix nickmatrix = Matrixdreher.nehmedreherx(winkelnick);
-
-	// Richtig...?
-	this.ds.augevektor = giermatrix.punkt(this.ds.augevektor);
-	this.ds.augevektor = nickmatrix.punkt(this.ds.augevektor);
+    public void keyTyped(KeyEvent ke) {
+	int id = ke.getID();
+	boolean veraendert = false;
 	
-	this.mousevorx = jetztx;
-	this.mousevory = jetzty;
+        if (id == KeyEvent.KEY_TYPED) {
+            char kc = ke.getKeyChar();
 
-	this.m.repaint();
+	    if (kc == 'w') {
+		this.dgas.entfernung.zwei -= 10.0;
+		veraendert = true;
+		
+	    } else if (kc == 's') {
+		this.dgas.entfernung.zwei += 10.0;
+		veraendert = true;
+		
+	    } else if (kc == 'a') {
+		this.dgas.entfernung.eins -= 10.0;
+		veraendert = true;
+		
+	    } else if (kc == 'd') {
+		this.dgas.entfernung.eins += 10.0;
+		veraendert = true;
+		
+	    } else if (kc == 't') {
+		this.dgas.entfernung.drei += 10;
+		veraendert = true;
+		
+	    } else if (kc == 'g') {
+		this.dgas.entfernung.drei -= 10;
+		veraendert = true;
+		
+	    } else if (kc == 'h') {
+		this.dgas.winkeleins += 0.05;
+		veraendert = true;
+		
+	    } else if (kc == 'j') {
+		this.dgas.winkelzwei += 0.05;		
+		veraendert = true;
+		
+	    } else if (kc == 'k') {
+		this.dgas.winkeldrei += 0.05;		
+		veraendert = true;
+		
+	    } else if (kc == 'y') {
+		this.dgas.winkeleins -= 0.05;
+		veraendert = true;
+		
+	    } else if (kc == 'u') {
+		this.dgas.winkelzwei -= 0.05;		
+		veraendert = true;
+		
+	    } else if (kc == 'i') {
+		this.dgas.winkeldrei -= 0.05;		
+		veraendert = true;
+	    }
+	    
+        }
+
+	if (veraendert == true) {
+	    this.m.repaint();
+	}
     }
 }

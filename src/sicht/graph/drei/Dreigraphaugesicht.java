@@ -16,31 +16,48 @@ import welt.strecke.Zweistreckewelt;
 // Sie wandelt die Zweigraphwelt mit nur einer Verlegung: einer vektoren
 // Verlegung.
 public class Dreigraphaugesicht extends Sicht {
-
+    
     public Dreigraphwelt dgw;
-    public Dreivektor augevektor;
+
+    // Ein Vektor, mit dem wir die Weltkoordinaten verschieben
+    // werden. Er funktioniert wie ein Augenpaar. Er zeigt wovon wir
+    // uns die Welt anschauen.
+    public Dreivektor entfernung;
+
+    // Die Eigenschaften dieser Augen.
     public double breite;
     public double brennweite;
     public double hoehe;
 
+    // Die Eulerwinkel.
+    public double winkeleins;
+    public double winkelzwei;
+    public double winkeldrei;
+
     public Dreigraphaugesicht(Dreigraphwelt dgw,
-			      Dreivektor augevektor, double brennweite,
-			      double breite, double hoehe) {
+			      Dreivektor entfernung, double brennweite,
+			      double breite, double hoehe,
+			      double winkeleins, double winkelzwei, double winkeldrei) {
 
 	this.dgw = dgw;
-	this.augevektor = augevektor;
+	this.entfernung = entfernung;
 	this.brennweite = brennweite;
 	this.breite = breite;
 	this.hoehe = hoehe;
+	this.winkeleins = winkeleins;
+	this.winkelzwei = winkelzwei;
+	this.winkeldrei = winkeldrei;
     }
 
     public void darstellen(Graphics g) {
 	
 	// Benutzen den Verleger.	
 	Zweigraphwelt zgw = Augeverleger.verlege(this.dgw,
-						 this.augevektor, this.brennweite,
+						 this.entfernung, this.brennweite,
 						 this.breite, this.hoehe,
-						 0, 0, 0);
+						 this.winkeleins,
+						 this.winkelzwei,
+						 this.winkeldrei);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.
