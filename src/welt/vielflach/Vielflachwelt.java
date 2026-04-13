@@ -28,20 +28,20 @@ public class Vielflachwelt {
     // Wir sind mit eine Reihe von Körpern gegeben. Ein Körper kennt
     // nur seine Eigenschaften. Die Vielflachwelt versteht nicht nur
     // seine Eigenschaften, sondern auch wo er steht.
-    public ArrayList<Vielflach> vielflachliste;
-    public ArrayList<Dreivektor> ortliste;
+    public ArrayList<Vielflach> vielflache;
+    public ArrayList<Dreivektor> orte;
 
     public Vielflachwelt(ArrayList<Vielflach> kl, ArrayList<Dreivektor> ol) {
-	this.vielflachliste = kl;
-	this.ortliste = ol;
+	this.vielflache = kl;
+	this.orte = ol;
     }
 
     // Nehme die Anzahl aller Strecken dieser Welt.
     int nehmekantenanzahl() {
 	int kantenanzahl = 0;
 
-	for (int i = 0; i < this.vielflachliste.size(); i++) {
-	    kantenanzahl += this.vielflachliste.get(i).nehmekantenanzahl();
+	for (int i = 0; i < this.vielflache.size(); i++) {
+	    kantenanzahl += this.vielflache.get(i).nehmekantenanzahl();
 	}
 
 	return kantenanzahl;
@@ -61,16 +61,16 @@ public class Vielflachwelt {
 	
 	// Für alle Körper der Welt
 	int streckezeichen = 0;
-	for (int i = 0; i < this.vielflachliste.size(); i++) {
+	for (int i = 0; i < this.vielflache.size(); i++) {
 
 	    // Nehme den Körper. Er kennt seinen Ort nicht.
-	    Vielflach k = this.vielflachliste.get(i);
+	    Vielflach k = this.vielflache.get(i);
 
 	    // Er gibt uns seine Strecken, dessen Ursprung aber auf ihm
 	    // selbst liegt.
 	    Dreistrecke[] kl = k.nehmekanten();
 
-	    Dreivektor ap = this.ortliste.get(i);
+	    Dreivektor ap = this.orte.get(i);
 
 	    // Für alle seine Strecken
 	    for (int j = 0; j < kl.length; j++) {
