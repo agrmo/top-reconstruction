@@ -13,7 +13,7 @@ import welt.vielflach.Vielflachwelt;
 import dreher.achse.Achsedreher;
 import handlung.Handlung;
 
-public class Augehandlung extends Handlung {
+public class Vielflachaugehandlung extends Handlung {
 
     Maler m;
     Augesicht vas;
@@ -21,7 +21,7 @@ public class Augehandlung extends Handlung {
     int mousevorx;
     int mousevory;
 
-    public Augehandlung(Maler m,
+    public Vielflachaugehandlung(Maler m,
 			Augesicht vas,
 			Vielflachwelt vw) {
 	this.m = m;

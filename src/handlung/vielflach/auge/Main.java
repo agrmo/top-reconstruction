@@ -49,7 +49,7 @@ public class Main {
 	Maler m = new Maler(new Sicht[] {as});
 	
 	// Mache die Handlung.
-	Augehandlung h = new Augehandlung(m, as, vw);
+	Vielflachaugehandlung h = new Vielflachaugehandlung(m, as, vw);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -82,7 +82,7 @@ public class Main {
 	Maler m = new Maler(new Sicht[] {as, ats});
 	
 	// Mache die Handlung.
-	Augehandlung h = new Augehandlung(m, as, vw);
+	Vielflachaugehandlung h = new Vielflachaugehandlung(m, as, vw);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -116,7 +116,7 @@ public class Main {
 	Maler m = new Maler(new Sicht[] {as, ats});
 	
 	// Mache die Handlung.
-	Augehandlung h = new Augehandlung(m, as, vw);
+	Vielflachaugehandlung h = new Vielflachaugehandlung(m, as, vw);
 
 	// Geh.
 	JFrame frame = new JFrame();

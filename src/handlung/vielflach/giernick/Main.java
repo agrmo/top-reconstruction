@@ -31,7 +31,7 @@ public class Main {
 	// Eine mögliche Lösung dafur ist, daß wir die Basisvektoren
 	// wiederaufstehen sollen, sofort nach jeder Drehung des
 	// Kubus. Hier gibt es keine Lösung. Die Lösung ist die
-	// "Augehandlung."
+	// "Vielflachaugehandlung."
 	
 	// Mache die Welt.
 	ArrayList<Vielflach> vl = new ArrayList<Vielflach>();
