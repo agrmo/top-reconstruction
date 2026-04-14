@@ -5,7 +5,7 @@ import graph.Nachbarschaftsmatrix;
 
 // Ein Objekt, das einen Graph darstellen können. Die Art von
 // Darstellung wird nur schriftlich aus Text angegeben.
-public class GraphText {
+public class Graphtext {
 
     // Drucke eine Nachbarschaftsliste.
     public String drucke(Nachbarschaftsliste n) {

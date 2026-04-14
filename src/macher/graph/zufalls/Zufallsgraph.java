@@ -1,4 +1,4 @@
-package graph.zufalls;
+package macher.graph.zufalls;
 
 import graph.Nachbarschaftsliste;
 import java.util.ArrayList;
@@ -10,7 +10,6 @@ import liste.Liste;
 // die Wahrscheinlichkeit p, jedes Paar von Knoten eine Kante zu
 // tragen.
 public class Zufallsgraph {
-    public Nachbarschaftsliste nachbarschaftsliste;    
     
     // n: Anzahl von Knoten
     // Nehme alle Paare von Knoten.  Ein ungerichteter Graph besitzt
@@ -19,7 +18,7 @@ public class Zufallsgraph {
     // z.B.
     // Die Zahl n ergibt die liste von Paaren:
     // [[0,1],[0,2],[1,2]]
-    private ArrayList<int[]> nehmePaare(int n, double p) {
+    private static ArrayList<int[]> nehmePaare(int n, double p) {
 
 	// Wir kennen schon die Größe eines Paars: 2.  Aber wir kennen
 	// nicht schon die Anzahl der Paare, also wir brauchen ein
@@ -50,11 +49,11 @@ public class Zufallsgraph {
     // p ist die Wahrscheinlichkeit, daß je ein Paar von Knoten eine
     // Kante trägt. Sobald das Object erzeugt wird, bauen den Graph
     // auf.
-    public Zufallsgraph(int n, double p) {
+    public static Nachbarschaftsliste machezufallsgraph(int n, double p) {
 	ArrayList<int[]> paare = nehmePaare(n, p);
 
 	int[][] paareArray = Liste.nehmeArrayListArrayInteger(paare);
 
-	nachbarschaftsliste = new Nachbarschaftsliste(paareArray, n);
+	return new Nachbarschaftsliste(paareArray, n);
     }
 }

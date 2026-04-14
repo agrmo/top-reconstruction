@@ -11,7 +11,7 @@ import graph.Nachbarschaftsmatrix;
 public class Main {
 
     static void beispieleins() {
-	GraphText gd = new GraphText();
+	Graphtext gd = new Graphtext();
 	
 	int[][] paare = {{1,2},{2,0}};
 	int groese = 3;
@@ -23,7 +23,7 @@ public class Main {
     }
 
     static void beispielzwei() {
-	GraphText gd = new GraphText();
+	Graphtext gd = new Graphtext();
 	int[][] paare = {{1,2},{2,0}};
 	int groese = 3;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);

@@ -2,7 +2,7 @@ package druck.graph.tgf;
 
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
-import graph.zufalls.Zufallsgraph;
+import macher.graph.zufalls.Zufallsgraph;
 
 /*
   javac -d classes $(find src -type f) && java -cp classes druck.graph.tgf.Main

@@ -2,7 +2,7 @@ package graph.rechnen.kanteverteilung;
 
 import graph.Nachbarschaftsliste;
 import druck.graph.tgf.GraphTGF;
-import graph.zufalls.Zufallsgraph;
+import macher.graph.zufalls.Zufallsgraph;
 import liste.Liste;
 
 /*
@@ -25,13 +25,13 @@ public class Main {
 
     // Kanteverteilung eines Zufallsgraphen
     public static void beispielzwei() {
-	Zufallsgraph zg = new Zufallsgraph(5, 0.3);
+	Nachbarschaftsliste nl = Zufallsgraph.machezufallsgraph(5, 0.3);
     	GraphTGF gtgf = new GraphTGF();
-	System.out.println(gtgf.macheGepheiTGF(zg.nachbarschaftsliste));
+	System.out.println(gtgf.macheGepheiTGF(nl));
 
-	int[][] verteilung = Kanteverteilung.kanteVerteilung(zg.nachbarschaftsliste);
+	int[][] verteilung = Kanteverteilung.kanteVerteilung(nl);
 	String verteilungString = Liste.nehmeStringVonArrayArray(verteilung);
-	System.out.println(verteilungString);	
+	System.out.println(verteilungString);
     }    
 
     public static void main(String[] args) {

@@ -3,7 +3,7 @@ package graph.rechnen.teile;
 import java.util.ArrayList;
 import graph.Nachbarschaftsliste;
 import graph.Doppelnachbarschaftsliste;
-import graph.zufalls.Zufallsgraph;
+import macher.graph.zufalls.Zufallsgraph;
 import druck.graph.tgf.GraphTGF;
 import liste.Liste;
 
@@ -57,11 +57,10 @@ public class Main {
     }
 
     public static void beispieldrei() {
-	Zufallsgraph zg = new Zufallsgraph(500, 0.01);
+	Nachbarschaftsliste nl = Zufallsgraph.machezufallsgraph(500, 0.01);
 	GraphTGF gtgf = new GraphTGF();
-	System.out.println(gtgf.macheGepheiTGF(zg.nachbarschaftsliste));
+	System.out.println(gtgf.macheGepheiTGF(nl));
 
-	Nachbarschaftsliste nl = zg.nachbarschaftsliste;
 	Doppelnachbarschaftsliste dnl = new Doppelnachbarschaftsliste(nl);
 	
 	int[][] tTeile = Teile.teile(dnl);
@@ -97,8 +96,7 @@ public class Main {
 
 	for (int i = 0; i < pListe.length; i++) {
 	    double p = pListe[i];
-	    Zufallsgraph zg = new Zufallsgraph(500, p);
-	    Nachbarschaftsliste nl = zg.nachbarschaftsliste;
+	    Nachbarschaftsliste nl = Zufallsgraph.machezufallsgraph(500, p);
 	    Doppelnachbarschaftsliste dnl = new Doppelnachbarschaftsliste(nl);
 	    int groesste = Teile.groessterTeil(dnl);
 	    pZuBetrag[i] = new double[] {p, groesste};
