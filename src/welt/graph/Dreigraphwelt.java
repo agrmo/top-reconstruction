@@ -95,7 +95,7 @@ public class Dreigraphwelt {
     public Dreistrecke[] nehmekanten() {
 
 	// Zuerst berechne wie viele Kanten es gibt.
-	int laenge = Kanteanzahl.berechnen(this.graph);
+	int laenge = Kanteanzahl.kanteanzahl(this.graph);
 
 	// Wir kennen wir viele Kanten dieser Graph gibt.
 	Dreistrecke[] kanten = new Dreistrecke[laenge];

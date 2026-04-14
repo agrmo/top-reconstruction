@@ -94,7 +94,7 @@ public class Zweigraphwelt {
     public Zweistrecke[] nehmekanten() {
 
 	// Zuerst berechne wie viele Kanten es gibt.
-	int ka = Kanteanzahl.berechnen(this.graph);
+	int ka = Kanteanzahl.kanteanzahl(this.graph);
 
 	// Wir kennen wir viele Kanten dieser Graph gibt.
 	Zweistrecke[] kanten = new Zweistrecke[ka];

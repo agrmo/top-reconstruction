@@ -4,9 +4,6 @@ import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
 
 public class HatKante {
-    public HatKante() {
-	
-    }
 
     // Ist die Kante von v bis b (oder umgekehrt) im Graph?
     public static boolean hatKante(Nachbarschaftsliste n, int v, int b) {

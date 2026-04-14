@@ -13,7 +13,7 @@ public class Main {
 	int[][] paare = {{1,2},{2,0}};
 	int betrag = 3;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
-	int ka = Kanteanzahl.berechnen(nl);
+	int ka = Kanteanzahl.kanteanzahl(nl);
 	System.out.println(ka);
     }
 
@@ -37,7 +37,7 @@ public class Main {
 	int[][] paare = {{1,7},{7,3},{3,4},{3,0},{7,0},{6,2},{2,8},{6,8}};
 	int betrag = 10;
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
-	int ka = Kanteanzahl.berechnen(nl);
+	int ka = Kanteanzahl.kanteanzahl(nl);
 
 	// Soll 8 geben.
 	System.out.println(ka);

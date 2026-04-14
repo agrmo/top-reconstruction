@@ -37,7 +37,9 @@ public class Dreigraphaugesicht extends Sicht {
     public Dreigraphaugesicht(Dreigraphwelt dgw,
 			      Dreivektor entfernung, double brennweite,
 			      double breite, double hoehe,
-			      double winkeleins, double winkelzwei, double winkeldrei) {
+			      double winkeleins,
+			      double winkelzwei,
+			      double winkeldrei) {
 
 	this.dgw = dgw;
 	this.entfernung = entfernung;
