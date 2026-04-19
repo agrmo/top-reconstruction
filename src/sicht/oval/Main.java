@@ -1,12 +1,12 @@
 package sicht.oval;
 
+import figur.oval.Oval;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import figur.oval.Oval;
-import vektor.Zweivektor;
 import maler.Maler;
 import sicht.Sicht;
+import vektor.Zweivektor;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -31,8 +31,6 @@ public class Main {
 	
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
-	// frame.getContentPane().setBackground(Color.BLACK);
-        // frame.getContentPane().setForeground(Color.WHITE);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
 	frame.add(m);

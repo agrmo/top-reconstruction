@@ -41,7 +41,7 @@ public class Augesicht extends Sicht {
 	this.brennweite = brennweite;
 	this.breite = breite;
 	this.hoehe = hoehe;
-	this.entfernung = new Dreivektor(0,0,0);
+	this.entfernung = entfernung;
 	this.winkeleins = 0;
 	this.winkelzwei = 0;
 	this.winkeldrei = 0;

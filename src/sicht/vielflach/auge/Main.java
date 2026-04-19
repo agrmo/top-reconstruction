@@ -8,6 +8,8 @@ import vektor.Dreivektor;
 import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
 import welt.vielflach.Vielflachwelt;
+import java.awt.Toolkit;
+import java.awt.Dimension;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -16,8 +18,7 @@ import welt.vielflach.Vielflachwelt;
 
 public class Main {
 
-    public static void main(String[] args){	
-
+    static void beispieleins() {
 	// Mache die Welt.
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(new Kubus(30));
@@ -39,5 +40,35 @@ public class Main {
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
 	frame.setVisible(true);
+    }
+
+    static void beispielzwei() {
+	// Mache die Welt.
+	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
+	kl.add(new Kubus(30));
+	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
+	ol.add(new Dreivektor(-15,-15,-15));
+	Vielflachwelt vw = new Vielflachwelt(kl, ol);
+	
+	// Mache die Sicht.
+	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
+	double breite = bildschirm.getWidth();
+	double hoehe = bildschirm.getHeight();
+	Dreivektor ap = new Dreivektor(0,0,100);
+	Augesicht as = new Augesicht(vw, ap, 500, breite, hoehe);
+	Augetextsicht ats = new Augetextsicht(as);
+
+	Maler m = new Maler(new Sicht[] {as, ats});
+	
+	// Geh.
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize((int) breite, (int) hoehe);
+	frame.add(m);
+	frame.setVisible(true);
+    }
+
+    public static void main(String[] args){
+	beispielzwei();
     }
 }

@@ -63,7 +63,6 @@ public class Main {
     }
 
     static void beispielzwei() {
-	
 	// Mache die Welt.
 	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
 	kl.add(new Kubus(30));
