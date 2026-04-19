@@ -1,4 +1,4 @@
-package graph.rechnen.teile;
+package rechner.graph.teile;
 
 import java.util.ArrayList;
 import graph.Nachbarschaftsliste;
@@ -9,7 +9,7 @@ import liste.Liste;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes graph.rechnen.teile.Main
+  && java -cp classes rechner.graph.teile.Main
 */
 
 public class Main {
@@ -88,8 +88,8 @@ public class Main {
 	// Aus:
 	// [[0.0001,3],[0.001,9],[0.01,490]]
 	//
-	// Also wir glauben, daß der Betrag des größten Teiles nimmt
-	// mit der Wahrscheinlichkeit zu.
+	// Also wir glauben, daß der Betrag des größten Teiles mit der
+	// Wahrscheinlichkeit zunimmt.
 
 	double[] pListe = new double[] {0.0001, 0.001, 0.002, 0.003, 0.004, 0.005, 0.006, 0.007, 0.008, 0.009, 0.01};
 	double[][] pZuBetrag = new double[pListe.length][];

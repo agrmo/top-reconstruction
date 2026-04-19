@@ -1,4 +1,4 @@
-package graph.rechnen.breitensuche;
+package rechner.graph.breitensuche;
 
 import graph.Nachbarschaftsliste;
 import graph.Doppelnachbarschaftsliste;

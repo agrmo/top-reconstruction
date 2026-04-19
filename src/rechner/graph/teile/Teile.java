@@ -1,4 +1,4 @@
-package graph.rechnen.teile;
+package rechner.graph.teile;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,14 +6,14 @@ import java.util.HashSet;
 import java.util.Iterator;
 import graph.Nachbarschaftsliste;
 import graph.Doppelnachbarschaftsliste;
-import graph.rechnen.tiefensuche.Tiefensuche;
+import rechner.graph.tiefensuche.Tiefensuche;
 import liste.Liste;
 
 public class Teile {
 
     // Wie viele Teile leben im Graph?
     // z.B.
-    // ein:
+    // Der Graph ist
     // 0: []
     // 1: []
     // 2: [3]
@@ -22,8 +22,8 @@ public class Teile {
     // 5: [6]
     // 6: []
     // Es gibt 2 Knoten, die allein stehen. Also es gibt 2 1-Teile.
-    // Es gibt 2 Knoten, die in einem Teil stehen. Es gibt 1 2-Teile.
-    // Es gibt 3 Knoten, die in einem Teil stehen. Es gibt 1 3-Teile.    
+    // Es gibt 2 Knoten, die in einer Gruppe stehen. Es gibt 1 2-Teile.
+    // Es gibt 3 Knoten, die in einer Gruppe stehen. Es gibt 1 3-Teile.    
     // aus:
     // [[1,2],[2,1],[3,1]]
     public static int[][] teile(Doppelnachbarschaftsliste dnl) {

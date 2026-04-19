@@ -1,8 +1,8 @@
-package graph.rechnen.kantedurchschnitt;
+package rechner.graph.kantedurchschnitt;
 
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
-import graph.rechnen.kanteverteilung.Kanteverteilung;
+import rechner.graph.kanteverteilung.Kanteverteilung;
 
 public class Kantedurchschnitt {
     

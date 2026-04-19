@@ -6,7 +6,7 @@ import vektor.Zweivektor;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes bauer.graph.gitter.Main
+  && java -cp classes macher.graph.gitter.Main
 */
 
 public class Main {

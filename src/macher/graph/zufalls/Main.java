@@ -5,7 +5,7 @@ import druck.graph.csv.GraphCSV;
 import druck.graph.tgf.GraphTGF;
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
-import graph.rechnen.kanteverteilung.Kanteverteilung;
+import rechner.graph.kanteverteilung.Kanteverteilung;
 import liste.Liste;
 
 /*

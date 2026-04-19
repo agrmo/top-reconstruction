@@ -1,4 +1,4 @@
-package graph.rechnen.kanteverteilung;
+package rechner.graph.kanteverteilung;
 
 import liste.Liste;
 import graph.Nachbarschaftsliste;

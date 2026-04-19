@@ -1,4 +1,4 @@
-package graph.rechnen.breitensuche;
+package rechner.graph.tiefensuche;
 
 import graph.Nachbarschaftsliste;
 import graph.Doppelnachbarschaftsliste;
@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes graph.rechnen.breitensuche.Main
+  && java -cp classes rechner.graph.tiefensuche.Main
 */
 
 public class Main {
@@ -17,7 +17,7 @@ public class Main {
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
 	Doppelnachbarschaftsliste dnl = new Doppelnachbarschaftsliste(nl);
 
-	int[] gesehen = Breitensuche.breitensuche(dnl, 1);
+	int[] gesehen = Tiefensuche.tiefensuche(dnl, 1);
 	System.out.println(Arrays.toString(gesehen));	
     }
 
@@ -46,27 +46,27 @@ public class Main {
 	Doppelnachbarschaftsliste dnl = new Doppelnachbarschaftsliste(nl);
 
 	// Soll 9 geben.
-	int[] gesehenEins = Breitensuche.breitensuche(dnl, 9);
+	int[] gesehenEins = Tiefensuche.tiefensuche(dnl, 9);
 	System.out.println(Arrays.toString(gesehenEins));
 
-	// Soll [7, 1, 0, 3, 4] geben.
-	int[] gesehenZwei = Breitensuche.breitensuche(dnl, 7);
+	// Soll [7, 3, 4, 1, 0] geben.
+	int[] gesehenZwei = Tiefensuche.tiefensuche(dnl, 7);
 	System.out.println(Arrays.toString(gesehenZwei));
 
 	// Soll [1, 7, 3, 0, 4] geben.
-	int[] gesehenDrei = Breitensuche.breitensuche(dnl, 1);
+	int[] gesehenDrei = Tiefensuche.tiefensuche(dnl, 1);
 	System.out.println(Arrays.toString(gesehenDrei));
-	
+
 	// Soll [6,2,8] oder [6,8,2] geben.
-	int[] gesehenVier = Breitensuche.breitensuche(dnl, 6);
+	int[] gesehenVier = Tiefensuche.tiefensuche(dnl, 6);
 	System.out.println(Arrays.toString(gesehenVier));
 
 	// Soll [8,2,6] oder [8,6,2] geben.
-	int[] gesehenFuenf = Breitensuche.breitensuche(dnl, 8);
+	int[] gesehenFuenf = Tiefensuche.tiefensuche(dnl, 8);
 	System.out.println(Arrays.toString(gesehenFuenf));
     }
 
-        public static void beispieldrei() {
+    public static void beispieldrei() {
 	/*
 	  
                      5       4
@@ -88,10 +88,9 @@ public class Main {
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
 	Doppelnachbarschaftsliste dnl = new Doppelnachbarschaftsliste(nl);
 
-	int[] gesehenEins = Breitensuche.breitensuche(dnl, 1);
+	int[] gesehenEins = Tiefensuche.tiefensuche(dnl, 1);
 	System.out.println(Arrays.toString(gesehenEins));
     }
-
     
     public static void main(String[] args) {
 	beispieldrei();

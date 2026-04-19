@@ -1,15 +1,15 @@
-package graph.rechnen.kantedurchschnitt;
+package rechner.graph.kantedurchschnitt;
 
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
 import druck.graph.tgf.GraphTGF;
 import macher.graph.zufalls.Zufallsgraph;
-import graph.rechnen.kanteverteilung.Kanteverteilung;
+import rechner.graph.kanteverteilung.Kanteverteilung;
 import liste.Liste;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes graph.rechnen.kantedurchschnitt.Main
+  && java -cp classes rechner.graph.kantedurchschnitt.Main
 */
 
 public class Main {

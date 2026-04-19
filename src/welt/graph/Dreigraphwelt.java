@@ -2,7 +2,7 @@ package welt.graph;
 
 import graph.Nachbarschaftsliste;
 import vektor.Dreivektor;
-import graph.rechnen.kanteanzahl.Kanteanzahl;
+import rechner.graph.kanteanzahl.Kanteanzahl;
 import verdoppler.vektor.Vektorverdoppler;
 import strecke.Dreistrecke;
 

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 //
 // Dieser Graph besitzt eine Kante, und diese Kante ist nur einmal in
 // der Liste bezeichnet. Doch besitzt der Knoten 1 eine
-// Kante. Manchmal wollen wir alle Kanten unmittelbar in ihrer Liste
+// Kante. Manchmal wollen wir alle Kanten unmittelbar in ihre Liste
 // gezeigt zu sein.
 //
 // z.B. ein:
@@ -17,30 +17,30 @@ import java.util.ArrayList;
 // aus:
 // 0: [1]
 // 1: [0]
-// Bauen wir solchen Graphen auf.
+//
+// Bauen wir solche Funktion auf.
 public class Doppelnachbarschaftsliste extends Nachbarschaftsliste {
 
-    public Doppelnachbarschaftsliste(Nachbarschaftsliste nEin) {
-	this.betrag = nEin.betrag;
+    public Doppelnachbarschaftsliste(Nachbarschaftsliste ein) {
+	this.betrag = ein.betrag;
 
-	// Achtung: Wir addiere einen Zeiger! Wir nehmen an, daß
-	// der ursprüngliche Graph nEin nicht mehr bearbeitet
-	// wird.
-	this.n = nEin.n;
+	// Achtung: Wir addiere einen Zeiger! Wir nehmen an, daß der
+	// ursprüngliche Graph ein nicht mehr bearbeitet wird.
+	this.n = ein.n;
 
 	// this.n ist genau gleich wie der eingehende Graph. Nun
-	// verdoppeln jede Kante. 
+	// verdoppele jede Kante. 
 	
 	for (int i = 0; i < n.size(); i++) {
 	    ArrayList<Integer> knoten = n.get(i);
 
-	    // Für keden Knoten, setzen seine Kanten in den anderen
+	    // Für jeden Knoten, setzen seine Kanten in den anderen
 	    // Knoten ein. 
 	    for (int j = 0; j < knoten.size(); j++) {
 
 		/*
-		  Diese Kante konnte die verdoppelte Kante sein, oder
-		  die ursprüngliche Kante sein.
+		  Diese Kante, j, konnte die ursprüngliche Kante oder
+		  die verdoppelte Kante sein.
 		  
 		  Beispiel:
 		  Anfang:
@@ -48,13 +48,13 @@ public class Doppelnachbarschaftsliste extends Nachbarschaftsliste {
                   1: [2]
                   2: [0]
                   
-                  Schritt: [1,2]: Setzen ein: Von: 2 bis: 1
+                  Schritt: [1,2]: Setze ein: Von: 2 bis: 1
 
-		  Schritt: [2,0]: Setzen ein: Von: 0 bis: 2
+		  Schritt: [2,0]: Setze ein: Von: 0 bis: 2
 
 		  Schritt: [2,1]:
 		  Beide Kanten [2,1] und [1,2] stehen schon im Graphen.
-                  Setzen nicht ein: Von: 2 bis: 1
+                  Setze nicht ein: Von: 2 bis: 1
 
 		  Ende:
                   0: [2]

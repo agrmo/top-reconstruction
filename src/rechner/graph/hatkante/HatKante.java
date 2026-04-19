@@ -1,4 +1,4 @@
-package graph.rechnen.hatkante;
+package rechner.graph.hatkante;
 
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;

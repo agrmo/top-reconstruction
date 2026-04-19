@@ -1,10 +1,10 @@
-package graph.rechnen.kanteanzahl;
+package rechner.graph.kanteanzahl;
 
 import graph.Nachbarschaftsliste;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes graph.rechnen.kanteanzahl.Main
+  && java -cp classes rechner.graph.kanteanzahl.Main
 */
 
 public class Main {

@@ -1,7 +1,8 @@
 package graph;
 
 /*
-  javac src/graph/*.java -d classes && java -cp classes graph.Main
+  javac src/graph/*.java -d classes \
+  && java -cp classes graph.Main
 */
 
 public class Main {
@@ -16,11 +17,18 @@ public class Main {
 	// Mache eine Nachbarschaftsliste.
 	int[][] paare = {{1,2},{2,0}};
 	int betrag = 3;
-	
 	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
+    }
+
+    static void beispieldrei() {
+	// Mach eine Doppelnachbarschaftsliste.
+	int[][] paare = {{1,2},{2,0}};
+	int betrag = 3;
+	Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, 3);
+	Doppelnachbarschaftsliste dnl = new Doppelnachbarschaftsliste(nl);
     }
     
     public static void main(String[] args) {
-	beispieleins();
+	beispieldrei();
     }
 }
