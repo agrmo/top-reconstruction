@@ -5,20 +5,17 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import matrix.Dreimatrix;
 import sicht.Sicht;
-import sicht.punkt.Zweipunktsicht;
-import sicht.strecke.Streckesicht;
-import strecke.Dreistrecke;
-import strecke.Zweistrecke;
+import sicht.graph.zwei.Zweigraphsicht;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
 import verleger.auge.Augeverleger;
 import welt.graph.Dreigraphwelt;
-import welt.punkt.Zweipunktwelt;
-import welt.strecke.Zweistreckewelt;
+import welt.graph.Zweigraphwelt;
 
 // Eine Sicht, die eine dreidimensionale Graphwelt darstellt.
 public class Dreigraphaugesicht extends Sicht {
-    
+
+    // Die Welt.
     public Dreigraphwelt dgw;
 
     // Jeder Knoten ist als einen Kreis dargestellt.
@@ -98,47 +95,32 @@ public class Dreigraphaugesicht extends Sicht {
 
     public void darstellen(Graphics g) {
 
-	Dreivektor[] knoten = this.dgw.nehmeknoten();
-	Dreistrecke[] kanten = this.dgw.nehmekanten();
+	// Wandle eine Dreigraphsicht zu einer Zweigraphsicht.  Wir
+	// müssen nur die dreidimensionale Stellen zu
+	// zweidimensionalen verlegen.
+
+	Dreivektor[] dreiorten = this.dgw.nehmeknoten();
+	Zweivektor[] zweiorten = new Zweivektor[dreiorten.length];
 
 	// Für jeden Knoten, verbessere den Knoten.
-	for (int i = 0; i < knoten.length; i++) {
-	    this.verbessereknoten(knoten[i]);
+	for (int i = 0; i < dreiorten.length; i++) {
+	    this.verbessereknoten(dreiorten[i]);
 	}
 
-	Zweivektor[] verlegteknoten = new Zweivektor[knoten.length];
-	Zweistrecke[] verlegtekanten = new Zweistrecke[kanten.length];
-
+	// Für jeden Knoten, verlegen den Knoten.
 	Dreimatrix drehung = Eulerdreher.nehmedrehung(this.winkeleins,
 						      this.winkelzwei,
 						      this.winkeldrei);
-	
-	// Verlege die Knoten.
-	// Verlege den Dreivektor zu einem Zweivektor.
-	for (int i = 0; i < knoten.length; i++) {
-	    verlegteknoten[i] = Augeverleger.verlege(knoten[i],
-						     this.entfernung, this.brennweite,
-						     this.breite, this.hoehe,
-						     drehung);
+
+	// Verlege jeden Vektor. 
+	for (int i = 0; i < zweiorten.length; i++) {
+	    zweiorten[i] = Augeverleger.verlege(dreiorten[i], this.entfernung, this.brennweite,
+						 this.breite, this.hoehe,
+						 drehung);
 	}
 
-	// Verlege die Kanten.
-	// Verlege die Dreistrecke zu einer Zweistrecke.
-	for (int i = 0; i < kanten.length; i++) {
-	    verlegtekanten[i] = Augeverleger.verlege(kanten[i],
-						     this.entfernung, this.brennweite,
-						     this.breite, this.hoehe,
-						     drehung);
-	}
-
-	// Stelle die Knoten dar.
-	Zweipunktwelt pw = new Zweipunktwelt(verlegteknoten);
-	Zweipunktsicht ps = new Zweipunktsicht(pw, this.durchmesser);
-	ps.darstellen(g);
-
-	// Stelle die Kanten dar.
-	Zweistreckewelt sw = new Zweistreckewelt(verlegtekanten);
-	Streckesicht ss = new Streckesicht(sw);
-	ss.darstellen(g);
+	Zweigraphwelt zw = new Zweigraphwelt(this.dgw.graph, zweiorten);
+	Zweigraphsicht zs = new Zweigraphsicht(zw, this.durchmesser);
+	zs.darstellen(g);
     }
 }

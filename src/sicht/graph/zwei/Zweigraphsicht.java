@@ -75,16 +75,12 @@ public class Zweigraphsicht extends Sicht {
 	    this.verbessereknoten(knoten[i]);
 	}
 
-	// Mache die untereinanderliegende Sichten.
+	// Mache die unterliegende Sichten.
 	Streckesicht ss = new Streckesicht(zsw);
-
 	Zweipunktwelt pw = new Zweipunktwelt(knoten);
 	Zweipunktsicht ps = new Zweipunktsicht(pw, this.durchmesser);
 
 	ss.darstellen(g);
-	ps.darstellen(g);
-	ps.darstellen(g);
-	ps.darstellen(g);
 	ps.darstellen(g);
     }
 }
