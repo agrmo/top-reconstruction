@@ -1,12 +1,12 @@
 package sicht.bogen;
 
-import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import bogen.Bogen;
 import vektor.Zweivektor;
 import maler.Maler;
 import sicht.Sicht;
+import welt.bogen.Zweibogenwelt;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -17,22 +17,23 @@ public class Main {
 
     public static void main(String[] args){
 	
-	// Mache die Daten.
-	Bogen[] bl = new Bogen[2];
-	Zweivektor[] ol = new Zweivektor[2];
-	bl[0] = new Bogen(60,40,0,-90);
-	bl[1] = new Bogen(50,30,0,90);
-	ol[0] = new Zweivektor(200, 200);
-	ol[1] = new Zweivektor(100, 100);
+	// Mache die Welt.
+	Bogen[] bl = new Bogen[] {
+	    new Bogen(60,40,0,-90),
+	    new Bogen(50,30,0,90)};
+	
+	Zweivektor[] ol = new Zweivektor[] {
+	    new Zweivektor(200, 200),
+	    new Zweivektor(100, 100)};
+	
+	Zweibogenwelt zbw = new Zweibogenwelt(bl, ol);
 
 	// Mache die Sicht.
-	Bogensicht s = new Bogensicht(bl, ol);
+	Zweibogensicht s = new Zweibogensicht(zbw);
 	Maler m = new Maler(new Sicht[] {s});
 	
-	// Stellen die Daten dar.
+	// Geh.
 	JFrame frame = new JFrame();
-	frame.getContentPane().setBackground(Color.BLACK);
-        frame.getContentPane().setForeground(Color.WHITE);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
 	frame.add(m);

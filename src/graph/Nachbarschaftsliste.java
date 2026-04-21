@@ -40,9 +40,7 @@ public class Nachbarschaftsliste {
     */
     public ArrayList<ArrayList<Integer>> n;
 
-    /*
-      
-     */
+    // Die Anzahl der Knoten.
     public int betrag;
 
     /*
