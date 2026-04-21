@@ -61,27 +61,27 @@ public class Vielflachaugehandlung extends Handlung {
 		veraendert = true;
 		
 	    } else if (kc == 'h') {
-		this.vas.winkeleins += 0.05;
+		this.vas.winkeleins += 0.03;
 		veraendert = true;
 		
 	    } else if (kc == 'j') {
-		this.vas.winkelzwei += 0.05;		
+		this.vas.winkelzwei += 0.03;		
 		veraendert = true;
 		
 	    } else if (kc == 'k') {
-		this.vas.winkeldrei += 0.05;		
+		this.vas.winkeldrei += 0.03;		
 		veraendert = true;
 		
 	    } else if (kc == 'y') {
-		this.vas.winkeleins -= 0.05;
+		this.vas.winkeleins -= 0.03;
 		veraendert = true;
 		
 	    } else if (kc == 'u') {
-		this.vas.winkelzwei -= 0.05;		
+		this.vas.winkelzwei -= 0.03;		
 		veraendert = true;
 		
 	    } else if (kc == 'i') {
-		this.vas.winkeldrei -= 0.05;		
+		this.vas.winkeldrei -= 0.03;		
 		veraendert = true;
 	    }
 	    

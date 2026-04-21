@@ -50,7 +50,6 @@ public class Main {
         int groesse = 100;
 	double p = 0.01;
         Nachbarschaftsliste nl = Zufallsgraph.mache(groesse, p);
-
 	int xmin = 10;
 	int xmax = 500;
 	int ymin = 10;

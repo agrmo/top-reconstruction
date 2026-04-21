@@ -11,6 +11,9 @@ import sicht.Sicht;
 import sicht.graph.drei.Dreigraphaugesicht;
 import vektor.Dreivektor;
 import welt.graph.Dreigraphwelt;
+import graph.zufalls.Zufallsgraph;
+import welt.graph.zufaellig.Zufaelligdreigraphwelt;
+
 
 /*
   javac -d classes $(find src -type f) \
@@ -61,7 +64,54 @@ public class Main {
 	frame.setVisible(true);
     }
 
+    static void beispielzwei() {
+	// Mache die Welt.
+        int groesse = 100;
+	double p = 0.01;
+        Nachbarschaftsliste nl = Zufallsgraph.mache(groesse, p);
+	int xmin = -100;
+	int xmax = 100;
+	int ymin = -100;
+	int ymax = 100;
+	int zmin = -100;
+	int zmax = 100;
+        Dreivektor[] orte = Zufaelligdreigraphwelt.mache(groesse,
+							 xmin, xmax,
+							 ymin, ymax,
+							 zmin, zmax);
+	Dreigraphwelt dgw = new Dreigraphwelt(nl, orte);
+
+	// Mache die Sicht.
+	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
+	double breite = bildschirm.getWidth();
+	double hoehe = bildschirm.getHeight();
+	
+	double brennweite = 500;
+	double durchmesser = 20;
+	Dreivektor augevektor = new Dreivektor(0,0,300);
+	Dreigraphaugesicht ds = new Dreigraphaugesicht(dgw,
+						       durchmesser,
+						       augevektor, brennweite,
+						       breite, hoehe,
+						       0, 0, 0);
+	Maler m = new Maler(new Sicht[] {ds});
+	
+	// Mache die Handlung.
+	Graphhandlung handlung = new Graphhandlung(m, ds, dgw);
+
+	// Fangen die Handlung an.
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.getContentPane().setBackground(Color.BLACK);
+	frame.getContentPane().setForeground(Color.WHITE);
+	frame.setSize((int) breite, (int) hoehe);
+	frame.add(m);
+	frame.addKeyListener(handlung);
+	frame.setVisible(true);
+
+    }
+
     public static void main(String[] args) {
-	beispieleins();
+	beispielzwei();
     }
 }
