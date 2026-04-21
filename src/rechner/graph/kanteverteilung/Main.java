@@ -2,7 +2,7 @@ package rechner.graph.kanteverteilung;
 
 import graph.Nachbarschaftsliste;
 import druck.graph.tgf.GraphTGF;
-import macher.graph.zufalls.Zufallsgraph;
+import graph.zufalls.Zufallsgraph;
 import liste.Liste;
 
 /*

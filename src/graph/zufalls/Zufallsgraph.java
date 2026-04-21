@@ -1,4 +1,4 @@
-package macher.graph.zufalls;
+package graph.zufalls;
 
 import graph.Nachbarschaftsliste;
 import java.util.ArrayList;

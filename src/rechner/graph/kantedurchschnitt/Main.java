@@ -3,7 +3,7 @@ package rechner.graph.kantedurchschnitt;
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
 import druck.graph.tgf.GraphTGF;
-import macher.graph.zufalls.Zufallsgraph;
+import graph.zufalls.Zufallsgraph;
 import rechner.graph.kanteverteilung.Kanteverteilung;
 import liste.Liste;
 

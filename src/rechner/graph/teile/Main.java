@@ -3,7 +3,7 @@ package rechner.graph.teile;
 import java.util.ArrayList;
 import graph.Nachbarschaftsliste;
 import graph.Doppelnachbarschaftsliste;
-import macher.graph.zufalls.Zufallsgraph;
+import graph.zufalls.Zufallsgraph;
 import druck.graph.tgf.GraphTGF;
 import liste.Liste;
 

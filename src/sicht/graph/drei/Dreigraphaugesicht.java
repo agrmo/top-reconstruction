@@ -64,9 +64,6 @@ public class Dreigraphaugesicht extends Sicht {
 	Dreivektor[] dreiorten = this.dgw.nehmeknoten();
 	Zweivektor[] zweiorten = new Zweivektor[dreiorten.length];
 
-	// Wir brauchen nicht...die Knoten hier zu verschieben...?
-	// Die Zweigraphsicht wird die Knoten richtig verschieben...?
-
 	// Für jeden Knoten, verlegen den Knoten.
 	Dreimatrix drehung = Eulerdreher.nehmedrehung(this.winkeleins,
 						      this.winkelzwei,
@@ -75,11 +72,15 @@ public class Dreigraphaugesicht extends Sicht {
 	// Verlege jeden Vektor. 
 	for (int i = 0; i < zweiorten.length; i++) {
 	    zweiorten[i] = Augeverleger.verlege(dreiorten[i], this.entfernung, this.brennweite,
-						 this.breite, this.hoehe,
-						 drehung);
+						this.breite, this.hoehe,
+						drehung);
 	}
 
 	Zweigraphwelt zw = new Zweigraphwelt(this.dgw.graph, zweiorten);
+
+	// Die Zweigraphsicht wird die Knoten richtig verschieben,
+	// sodaß jeweilige Kante in das Zentrum des Knoten gesetzt
+	// wird. Interessant, daß das in nur zwei Dimensionen gilt.
 	Zweigraphsicht zs = new Zweigraphsicht(zw, this.durchmesser);
 	zs.darstellen(g);
     }

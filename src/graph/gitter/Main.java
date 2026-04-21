@@ -1,4 +1,4 @@
-package macher.graph.gitter;
+package graph.gitter;
 
 import welt.graph.Zweigraphwelt;
 import graph.Nachbarschaftsliste;
@@ -6,7 +6,7 @@ import vektor.Zweivektor;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes macher.graph.gitter.Main
+  && java -cp classes graph.gitter.Main
 */
 
 public class Main {

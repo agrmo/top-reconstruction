@@ -1,4 +1,4 @@
-package macher.graph.zufalls;
+package graph.zufalls;
 
 import druck.graph.Graphtext;
 import druck.graph.csv.GraphCSV;
@@ -10,7 +10,7 @@ import liste.Liste;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes macher.graph.zufalls.Main
+  && java -cp classes graph.zufalls.Main
 */
 
 public class Main {

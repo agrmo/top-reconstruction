@@ -1,4 +1,4 @@
-package macher.graph.gitter;
+package graph.gitter;
 
 import graph.Nachbarschaftsliste;
 import vektor.Zweivektor;
