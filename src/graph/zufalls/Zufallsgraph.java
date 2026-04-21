@@ -49,7 +49,7 @@ public class Zufallsgraph {
     // p ist die Wahrscheinlichkeit, daß je ein Paar von Knoten eine
     // Kante trägt. Sobald das Object erzeugt wird, bauen den Graph
     // auf.
-    public static Nachbarschaftsliste machezufallsgraph(int n, double p) {
+    public static Nachbarschaftsliste mache(int n, double p) {
 	ArrayList<int[]> paare = nehmePaare(n, p);
 
 	int[][] paareArray = Liste.nehmeArrayListArrayInteger(paare);

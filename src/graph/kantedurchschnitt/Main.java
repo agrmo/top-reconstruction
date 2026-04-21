@@ -32,7 +32,7 @@ public class Main {
 	// ALSO DIE KANTEDURCHSCHNITT WURDE VERÄNDERT!
 	// (Nicht ein Bug, aber man konnte einen Fehler machen...)
 	
-	Nachbarschaftsliste nl = Zufallsgraph.machezufallsgraph(500, 0.01);
+	Nachbarschaftsliste nl = Zufallsgraph.mache(500, 0.01);
 	GraphTGF gtgf = new GraphTGF();
 	System.out.println(gtgf.macheGepheiTGF(nl));
 

@@ -57,7 +57,7 @@ public class Main {
     }
 
     public static void beispieldrei() {
-	Nachbarschaftsliste nl = Zufallsgraph.machezufallsgraph(500, 0.01);
+	Nachbarschaftsliste nl = Zufallsgraph.mache(500, 0.01);
 	GraphTGF gtgf = new GraphTGF();
 	System.out.println(gtgf.macheGepheiTGF(nl));
 
@@ -96,7 +96,7 @@ public class Main {
 
 	for (int i = 0; i < pListe.length; i++) {
 	    double p = pListe[i];
-	    Nachbarschaftsliste nl = Zufallsgraph.machezufallsgraph(500, p);
+	    Nachbarschaftsliste nl = Zufallsgraph.mache(500, p);
 	    Doppelnachbarschaftsliste dnl = new Doppelnachbarschaftsliste(nl);
 	    int groesste = Teile.groessterTeil(dnl);
 	    pZuBetrag[i] = new double[] {p, groesste};

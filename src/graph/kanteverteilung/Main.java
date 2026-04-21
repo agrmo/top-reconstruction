@@ -25,7 +25,7 @@ public class Main {
 
     // Kanteverteilung eines Zufallsgraphen
     public static void beispielzwei() {
-	Nachbarschaftsliste nl = Zufallsgraph.machezufallsgraph(5, 0.3);
+	Nachbarschaftsliste nl = Zufallsgraph.mache(5, 0.3);
     	GraphTGF gtgf = new GraphTGF();
 	System.out.println(gtgf.macheGepheiTGF(nl));
 

@@ -15,7 +15,7 @@ import liste.Liste;
 
 public class Main {
     public static void main(String[] args) {
-	Nachbarschaftsliste nl = Zufallsgraph.machezufallsgraph(10, 0.1);
+	Nachbarschaftsliste nl = Zufallsgraph.mache(10, 0.1);
 
 	// GraphCSV gcsv = new GraphCSV();
 	// System.out.println(gcsv.macheGepheiCSV(z.nachbarschaftsliste));
