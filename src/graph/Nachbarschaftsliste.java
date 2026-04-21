@@ -3,7 +3,7 @@ package graph;
 import java.util.List;
 import java.util.ArrayList;
 
-// Ein ungerichteter, ungewichteter Graph. 
+// Ein ungerichteter ungewichteter Graph. 
 //
 // Der Graph besitzt n Knoten und am höchstens (1/2)N(N-1) Kanten.
 //
@@ -22,11 +22,7 @@ import java.util.ArrayList;
 public class Nachbarschaftsliste {
 
     /*
-      Die Daten der Nachbarschaftsliste. Es gibt zwei Arten von dieser
-      Nachbarschaftsliste: eine ohne Verdopplungen und eine mit
-      Verdopplungen. Die Ordnung der Kanten ist ganz unwichtig. Die
-      Ordnung der Knoten in der Liste ist wichtig, weil nur das
-      Kennzeichen zeigt, welcher von der Knoten er ist.
+      Die Daten der Nachbarschaftsliste. 
 
       Beispiel:
       paare: [[1,2],[0,2],[0,1]]
@@ -35,8 +31,18 @@ public class Nachbarschaftsliste {
       0: [1]
       1: [2]
       2: [0]
+
+      in Form von
+
+      [[1],[2],[0]]
+
+      d.h., der Index der Liste zeigt den Namen des Knoten.
     */
     public ArrayList<ArrayList<Integer>> n;
+
+    /*
+      
+     */
     public int betrag;
 
     /*

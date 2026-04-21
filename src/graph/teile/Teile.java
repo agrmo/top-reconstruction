@@ -1,4 +1,4 @@
-package rechner.graph.teile;
+package graph.teile;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import graph.Nachbarschaftsliste;
 import graph.Doppelnachbarschaftsliste;
-import rechner.graph.tiefensuche.Tiefensuche;
+import graph.tiefensuche.Tiefensuche;
 import liste.Liste;
 
 public class Teile {

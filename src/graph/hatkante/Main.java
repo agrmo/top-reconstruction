@@ -1,11 +1,11 @@
-package rechner.graph.hatkante;
+package graph.hatkante;
 
 import graph.Nachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes rechner.graph.hatkante.Main
+  && java -cp classes graph.hatkante.Main
 */
 
 public class Main {

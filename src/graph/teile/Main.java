@@ -1,4 +1,4 @@
-package rechner.graph.teile;
+package graph.teile;
 
 import java.util.ArrayList;
 import graph.Nachbarschaftsliste;
@@ -9,7 +9,7 @@ import liste.Liste;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes rechner.graph.teile.Main
+  && java -cp classes graph.teile.Main
 */
 
 public class Main {

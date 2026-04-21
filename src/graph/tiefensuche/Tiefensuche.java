@@ -1,4 +1,4 @@
-package rechner.graph.tiefensuche;
+package graph.tiefensuche;
 
 import graph.Nachbarschaftsliste;
 import graph.Doppelnachbarschaftsliste;

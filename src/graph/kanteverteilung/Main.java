@@ -1,4 +1,4 @@
-package rechner.graph.kanteverteilung;
+package graph.kanteverteilung;
 
 import graph.Nachbarschaftsliste;
 import druck.graph.tgf.GraphTGF;
@@ -7,7 +7,7 @@ import liste.Liste;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes rechner.graph.kanteverteilung.Main
+  && java -cp classes graph.kanteverteilung.Main
 */
 
 public class Main {

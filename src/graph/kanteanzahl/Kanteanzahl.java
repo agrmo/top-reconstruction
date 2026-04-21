@@ -1,4 +1,4 @@
-package rechner.graph.kanteanzahl;
+package graph.kanteanzahl;
 
 import graph.Nachbarschaftsliste;
     

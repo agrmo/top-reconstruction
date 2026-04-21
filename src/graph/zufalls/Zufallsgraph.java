@@ -31,8 +31,8 @@ public class Zufallsgraph {
 		    double r = Math.random();
 
 		    // Würfe eine "Münze," die Wahrscheinlichkeit p hat.
-		    // Falls "ja," setzen eine neue Kante {i,j} ein.
-		    // Falls "nein," tu nichts.
+		    // Falls "ja," setze eine neue Kante [i,j] ein.
+		    // Falls "nein," tue nichts.
 		    if (r < p) {
 			paare.add(new int[] {i,j});
 		    }    
