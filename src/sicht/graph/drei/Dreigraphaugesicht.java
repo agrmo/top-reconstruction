@@ -54,45 +54,7 @@ public class Dreigraphaugesicht extends Sicht {
 	this.winkelzwei = winkelzwei;
 	this.winkeldrei = winkeldrei;
     }
-
-    /*
-      Das Zentrum von drawCircle() von Java ist nicht genau auf dem
-      gegebenen Ort dargestellt. Zum Beispiel
-      
-      Knoten (0,0,0) Durchmesser 3
-      Kante (0,0,0) bis (10,10,10)
-      
-      Gewünscht:
-      
-      |---|
-      | \ |
-      |--\|
-          \
-           \
-            ...
-
-      Aber Java wird die beiden wieso darstellen,
-
-      \
-      |---|
-      |\  |
-      |-\-|
-         \
-          \
-           ...
-	     
-      weil das Zentrum des Kreises nicht auf (0,0,0) steht. Wir sollen
-      die Stellen des Knoten verbessern. In diesem Beispiel
-      verschieben wir die Stellen des Kreises -3 in die x-,
-      y- und z-Richtung.
-    */
-    void verbessereknoten(Dreivektor zp) {
-	Dreivektor unterschied = new Dreivektor(-(this.durchmesser / 32.0),
-						-(this.durchmesser / 32.0),
-						-(this.durchmesser / 32.0));
-	zp.addiere(unterschied);
-    }
-
+    
     public void darstellen(Graphics g) {
 
 	// Wandle eine Dreigraphsicht zu einer Zweigraphsicht.  Wir
@@ -102,10 +64,8 @@ public class Dreigraphaugesicht extends Sicht {
 	Dreivektor[] dreiorten = this.dgw.nehmeknoten();
 	Zweivektor[] zweiorten = new Zweivektor[dreiorten.length];
 
-	// Für jeden Knoten, verbessere den Knoten.
-	for (int i = 0; i < dreiorten.length; i++) {
-	    this.verbessereknoten(dreiorten[i]);
-	}
+	// Wir brauchen nicht...die Knoten hier zu verschieben...?
+	// Die Zweigraphsicht wird die Knoten richtig verschieben...?
 
 	// Für jeden Knoten, verlegen den Knoten.
 	Dreimatrix drehung = Eulerdreher.nehmedrehung(this.winkeleins,

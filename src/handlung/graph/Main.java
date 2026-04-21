@@ -38,7 +38,7 @@ public class Main {
 	double breite = 1200;
 	double hoehe = 600;
 	double brennweite = 500;
-	double durchmesser = 10;
+	double durchmesser = 20;
 	Dreivektor augevektor = new Dreivektor(0,0,100);
 	Dreigraphaugesicht ds = new Dreigraphaugesicht(dgw,
 						       durchmesser,
