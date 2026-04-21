@@ -18,12 +18,13 @@ import strecke.Dreistrecke;
   ihn anschauen können. Das tut man ohne Berechnungen, aber ein
   Computer ist kein Mensch.
 
-  Wie stellte man die Orten eines Graphen? Die Knoten überliegen sich
+  Eine Graphwelt ist eine Welt des Graphen. Es könne verschiedene
+  Welte eines Graphen geben.
+
+  Wie stellt man die Orten eines Graphen dar? Die Knoten überliegen sich
   nicht. Die Strecken sind geradlinige. Die Strecken überliegen so wenig
   andere Strecken wie möglich. Und so weiter. Diese Grundlagen muss man
   rechnerich beitragen.
-
-  Eine Graphwelt ist eine Welt des Graphen.
 */
 public class Dreigraphwelt {
 
@@ -38,54 +39,14 @@ public class Dreigraphwelt {
 	this.orten = o;
     }
 
-    /*
-      Das Zentrum von drawCircle() von Java ist nicht genau auf dem
-      gegebenen Ort dargestellt. Zum Beispiel
-      
-      Knoten (0,0,0) Durchmesser 3
-      Kante (0,0,0) bis (10,10,10)
-      
-      Gewünscht:
-      
-      |---|
-      | \ |
-      |--\|
-          \
-           \
-            ...
-
-      Aber Java wird die beiden wieso darstellen,
-
-      \
-      |---|
-      |\  |
-      |-\-|
-         \
-          \
-           ...
-	     
-      weil das Zentrum des Kreises nicht auf (0,0,0) steht. Wir sollen
-      die Stellen des Knoten verbessern. In diesem Beispiel
-      verschieben wir die Stellen des Kreises -3 in die x-,
-      y- und z-Richtung.
-    */
-    void verbessernknoten(Dreivektor zp, int durchmesser) {
-	Dreivektor unterschied = new Dreivektor(-(durchmesser / 2.0),
-						-(durchmesser / 2.0),
-						-(durchmesser / 2.0));
-	zp.addiere(unterschied);
-    }
-
     // ein: ganze Zahl
     // Sie gibt neue Vektore aus.
-    // Diese Welt kennt wie groß ein Knoten ist.
-    public Dreivektor[] nehmeKnoten(int durchmesser) {
+    public Dreivektor[] nehmeknoten() {
 
 	Dreivektor[] ausvektoren = new Dreivektor[this.orten.length];
 	
 	for (int i = 0; i < this.orten.length; i++) {
 	    ausvektoren[i] = Vektorverdoppler.verdoppeln(this.orten[i]);
-	    verbessernknoten(ausvektoren[i], durchmesser);
 	}
 	
 	return ausvektoren;

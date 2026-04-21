@@ -16,20 +16,22 @@ import welt.graph.Zweigraphwelt;
 public class Main {
 
     static void beispieleins() {
-	// Der Graph.
+
+	// Mache die Welt.
 	int[][] paare = {{1,2},{2,0}};
         int betrag = 3;
         Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, betrag);
-
-	// Die Orten.
+	
         Zweivektor[] orten = {
 	    new Zweivektor(10,10),
 	    new Zweivektor(50,50),
 	    new Zweivektor(100,40)
 	};
-
 	Zweigraphwelt zgw = new Zweigraphwelt(nl, orten);
-	Zweigraphsicht zgs = new Zweigraphsicht(zgw);
+
+	// Mache die Sicht.
+	double durchmesser = 20;
+	Zweigraphsicht zgs = new Zweigraphsicht(zgw, durchmesser);
 	Maler m = new Maler(new Sicht[] {zgs});
   
         // Stellen die Daten dar.

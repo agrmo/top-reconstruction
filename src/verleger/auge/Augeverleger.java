@@ -122,43 +122,4 @@ public class Augeverleger {
 
 	return zsw;
     }
-
-    // Die Kanten und Knoten dieses Graphen werden von drei
-    // Dimensionen zu zwei Dimensionen verlegen.
-    public static Zweigraphwelt verlege(Dreigraphwelt dgw,
-					Dreivektor entfernung, double brennweite,
-					double breite, double hoehe,
-					double winkeleins,
-					double winkelzwei,
-					double winkeldrei) {
-
-	// Die dreidimensionale Knoten sind dgw.orten.  Wir brauchen
-	// nicht, die Kanten zu verlegen.  Wir müssen nur die
-	// Dreivektoren innerhalb dgw.orten verlegen. Die Orten von
-	// dgw.orten bestimmen die Kanten.  Es gibt nichts innerhalb
-	// der Nachbarschaftsliste zu verlegen. Sie enthält keine
-	// Orten. Nach der Verlegung von dgw.orten, können wir
-	// nehmekanten() von der Zweigraphwelt nehmen. Fertig.
-
-	// Berechne die nötige Drehung.
-	Dreimatrix drehung = Eulerdreher.nehmedrehung(winkeleins,
-						      winkelzwei,
-						      winkeldrei);
-
-	// Die zweidimensionale Knoten.
-	Zweivektor[] zweiorten = new Zweivektor[dgw.orten.length];
-
-	for (int i = 0; i < dgw.orten.length; i++) {
-	    
-	    // dgw.orten[i] Dreivektor -> zweiorten[i] Zweivektor
-	    zweiorten[i] = Augeverleger.verlege(dgw.orten[i],
-						entfernung, brennweite,
-						breite, hoehe,
-						drehung);
-	}
-
-	Zweigraphwelt zgw = new Zweigraphwelt(dgw.graph, zweiorten);
-
-	return zgw;
-    }
 }

@@ -1,6 +1,6 @@
 package figur;
 
-// Eine Figur ist ein zweidimensionaler Ding.
+// Eine Figur ist ein zweidimensionaler Ding. 
 //
 // Eine Figur besitzt immer wie der Körper einen Inhalt.
 //

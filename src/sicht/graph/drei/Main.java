@@ -1,8 +1,8 @@
 package sicht.graph.drei;
 
 import java.awt.Color;
-import javax.swing.JFrame;
 import vektor.Zweivektor;
+import javax.swing.JFrame;
 import vektor.Dreivektor;
 import graph.Nachbarschaftsliste;
 import welt.graph.Dreigraphwelt;
@@ -37,8 +37,10 @@ public class Main {
 	double breite = 1200;
 	double hoehe = 600;
 	double brennweite = 500;
+	double durchmesser = 20;
 	Dreivektor entfernung = new Dreivektor(0,0,0);
-	Dreigraphaugesicht s = new Dreigraphaugesicht(dgw, entfernung, brennweite,
+	Dreigraphaugesicht s = new Dreigraphaugesicht(dgw, durchmesser,
+						      entfernung, brennweite,
 						      breite, hoehe,
 						      0, 0, 0);
 	Maler m = new Maler(new Sicht[] {s});

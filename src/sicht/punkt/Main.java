@@ -10,6 +10,7 @@ import vektor.Zweivektor;
 import verleger.giernick.Giernickverleger;
 import vieleck.quadrat.Quadrat;
 import vielflach.kubus.Kubus;
+import welt.punkt.Zweipunktwelt;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -24,7 +25,9 @@ public class Main {
 	Zweivektor[] pl = q.nehmeecken();
 
 	// Mache die Sicht.
-	Punktsicht s = new Punktsicht(pl, 10);
+	Zweipunktwelt pw = new Zweipunktwelt(pl);
+	int durchmesser = 10;
+	Zweipunktsicht s = new Zweipunktsicht(pw, durchmesser);
 	Maler m = new Maler(new Sicht[] {s});
 
 	// Stellen die Daten dar.
@@ -42,8 +45,6 @@ public class Main {
 	Kubus k = new Kubus(2);
 	Dreivektor[] dpl = k.nehmeecken();
 
-	// Verlegen die dreidimensionalen Daten.
-
 	// Mache die Sicht.
 	int breite = 1200;
 	int hoehe = 600;
@@ -52,10 +53,11 @@ public class Main {
 	double gier = 0.0;
 	double nick = 0.3;
 	Zweivektor[] zpl = Giernickverleger.verlege(dpl, augevektor, brennweite,
-						     breite, hoehe,
-						     gier, nick);
-	int radius = 10;
-	Punktsicht s = new Punktsicht(zpl, radius);
+						    breite, hoehe,
+						    gier, nick);
+	int durchmesser = 10;
+	Zweipunktwelt pw = new Zweipunktwelt(zpl);
+	Zweipunktsicht s = new Zweipunktsicht(pw, durchmesser);
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Daten dar.
@@ -69,7 +71,7 @@ public class Main {
     }
 
     public static void main(String[] args){
-	beispieleins();
+	beispielzwei();
     }
 }
 
