@@ -10,7 +10,6 @@ public class Bogen {
     public int unterschiedwinkel;
 
     public Bogen(int b, int h, int aw, int uw) {
-
 	this.breite = b;
 	this.hoehe = h;
 	this.anfangwinkel = aw;

@@ -70,9 +70,15 @@ public class Dreimatrix {
 	this.i -= m.i;
     }
 
-    // Multipliziere diese 3x3 Matrix mit dem 3x1 Vektor v.
-    public Dreivektor multipliziere(Dreivektor v) {
-	
+    /* Multipliziere diese Matrix mit dem Vektor.
+
+       |abc|   |j|     
+       |def| * |k|  = ein Dreivektor
+       |ghi|   |l|     
+    
+    */
+    public Dreivektor punkt(Dreivektor v) {
+
 	return new Dreivektor(this.a * v.eins + this.b * v.zwei + this.c * v.drei,
 			      this.d * v.eins + this.e * v.zwei + this.f * v.drei,
 			      this.g * v.eins + this.h * v.zwei + this.i * v.drei);
@@ -96,19 +102,5 @@ public class Dreimatrix {
 			      this.g * m.a + this.h * m.d + this.i * m.g,
 			      this.g * m.b + this.h * m.e + this.i * m.h,
 			      this.g * m.c + this.h * m.f + this.i * m.i);
-    }
-
-    /* Multipliziere diese Matrix mit dem Vektor.
-
-       |abc|   |j|     
-       |def| * |k|  = ein Dreivektor
-       |ghi|   |l|     
-    
-    */
-    public Dreivektor punkt(Dreivektor v) {
-
-	return new Dreivektor(this.a * v.eins + this.b * v.zwei + this.c * v.drei,
-			      this.d * v.eins + this.e * v.zwei + this.f * v.drei,
-			      this.g * v.eins + this.h * v.zwei + this.i * v.drei);
     }
 }

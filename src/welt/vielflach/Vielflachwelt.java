@@ -57,27 +57,24 @@ public class Vielflachwelt {
 
 	int kantenanzahl = this.nehmekantenanzahl();
 	
+	// Die Kanten sind einfach Strecken.
 	Dreistrecke[] strecken = new Dreistrecke[kantenanzahl];
 	
-	// Für alle Körper der Welt
+	// Wir kennen nun, wie viele Kanten es in der Welt insgesamt gibt.
+	// Wir kennen nicht, wie viele Kanten es in jeweiligem Körper gibt.
+	// Also mache einen Index für die Strecken.
 	int streckezeichen = 0;
+	
+	// Für alle Körper der Welt, nehme den Körper, dann nehme
+	// seine Kanten, dann stellen seine Kanten zum richtigen Ort.
+	
 	for (int i = 0; i < this.vielflache.size(); i++) {
-
-	    // Nehme den Körper. Er kennt seinen Ort nicht.
 	    Vielflach k = this.vielflache.get(i);
-
-	    // Er gibt uns seine Strecken, dessen Ursprung aber auf ihm
-	    // selbst liegt.
 	    Dreistrecke[] kl = k.nehmekanten();
+	    Dreivektor ort = this.orte.get(i);
 
-	    Dreivektor ap = this.orte.get(i);
-
-	    // Für alle seine Strecken
 	    for (int j = 0; j < kl.length; j++) {
-		// addiere seinen Ort zu den Strecken des Körpers.
-		kl[j].addiere(ap);
-
-		// Nur dann fügen die Strecke in der Liste zu.
+		kl[j].addiere(ort);
 		strecken[streckezeichen] = kl[j];
 		streckezeichen += 1;
 	    }

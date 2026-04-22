@@ -10,7 +10,6 @@ import matrix.Dreimatrix;
 import sicht.vielflach.auge.Augesicht;
 import vektor.Dreivektor;
 import welt.vielflach.Vielflachwelt;
-import dreher.achse.Achsedreher;
 import handlung.Handlung;
 
 public class Vielflachaugehandlung extends Handlung {

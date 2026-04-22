@@ -3,6 +3,7 @@ package matrix;
 import druck.matrix.Matrixdrucker;
 import druck.vektor.Vektordrucker;
 import vektor.Dreivektor;
+import vektor.Zweivektor;
 
 /*
   javac -d classes $(find src -type f) \
@@ -49,16 +50,39 @@ public class Main {
     }
 
     static void beispielsechs() {
+	Zweimatrix m = new Zweimatrix(1,2,3,4);
+	Zweivektor v = new Zweivektor(5,6);
+	System.out.println(Vektordrucker.drucke(m.punkt(v)));
+
+	/*
+	  |17|
+	  |39|
+	 */
+    }
+
+    static void beispielsieben() {
+	Zweimatrix ma = new Zweimatrix(1,2,3,4);
+	Zweimatrix mb = new Zweimatrix(5,6,7,8);
+	Zweimatrix mc = ma.punkt(mb);
+	System.out.println(Matrixdrucker.drucke(mc));
+
+	/*
+	  |19 22|
+	  |43 50|
+	*/	
+    }
+
+    static void beispielacht() {
 	Dreimatrix ma = new Dreimatrix(1,2,3,4,5,6,7,8,9);
 	Dreimatrix mb = new Dreimatrix(3,2,1,6,5,4,9,8,7);
 	Dreimatrix mc = ma.punkt(mb);
 	System.out.println(Matrixdrucker.drucke(mc));
 
 	/*
-         |42.0 36.0 30.0|
-         |96.0 81.0 66.0|
-         |150.0 126.0 102.0|
-	*/
+	  |42 36 30|
+	  |96 81 66|
+	  |150 126 102|
+	*/	
     }
 
     public static void main(String[] args) {

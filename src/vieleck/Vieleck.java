@@ -3,20 +3,21 @@ package vieleck;
 import vektor.Zweivektor;
 import strecke.Zweistrecke;
 
-// Ein Vieleck ist eine Vieleck, die aus mindestens drei durch Linien
-// verbundenen, voneinander verschiedenen Zweivektoren besteht.
+// Ein Vieleck ist eine Art Figur, die aus mindestens drei durch
+// Linien verbundenen, voneinander verschiedenen Zweivektoren gebaut
+// ist.
 //
 // Ein Vieleck ist eine Liste von zweidimensionalen Vektoren. Das
 // Vieleck kann eine Fläche eines dreidimensionalen Körpers zeigen.
 //
 // Ein Vieleck kennt seinen Ort in einer Welt nicht.
 //
-// Eine Vieleck ist ein zweidimensionaler Ding.
+// Ein Vieleck ist ein zweidimensionaler Ding.
 //
-// Eine Vieleck besitzt immer wie der Körper einen Inhalt.
+// Ein Vieleck besitzt immer wie der Körper einen Inhalt.
 //
-// Eine Strecke, ein Weg und ein Vektor sind nicht Vielecken oder
-// Körpern.
+// Eine Strecke, ein Weg oder ein Vektor sind kein Vieleck noch
+// kein Körper.
 public abstract class Vieleck {
     
     // aus: ganze Zahl

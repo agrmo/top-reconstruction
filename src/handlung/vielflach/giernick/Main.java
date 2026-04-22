@@ -22,16 +22,17 @@ import welt.vielflach.Vielflachwelt;
 public class Main {
     public static void main(String[] args) {
 	
-	// Eine Handlung, in dem wir einen Kubus drehen können. Eigenlich
-	// gibt es hier ein Problem. Sobald wir den Kubus auf dem Kopf
-	// stehen, ist es nicht mehr möglich, die Mouse richtig in der
-	// Gier-Achse zu drehen. Die Mouse geht rechts, und der Kubus
-	// geht links. Problem!
+	// Eine Handlung, in dem wir einen Kubus drehen
+	// können. Eigenlich gibt es hier ein Problem. Sobald wir den
+	// Kubus auf dem Kopf stehen, ist es nicht mehr möglich, die
+	// Mouse richtig in der Gier-Achse zu drehen. Die Mouse geht
+	// rechts, und der Kubus geht links. Das Problem ist, daß die
+	// Drehung immer die gleiche Basis annimmt.
 	//
 	// Eine mögliche Lösung dafur ist, daß wir die Basisvektoren
 	// wiederaufstehen sollen, sofort nach jeder Drehung des
-	// Kubus. Hier gibt es keine Lösung. Die Lösung ist die
-	// "Vielflachaugehandlung."
+	// Kubus. Diese Lösung ist in "Vielflachaugehandlung"
+	// durchgeführt.
 	
 	// Mache die Welt.
 	ArrayList<Vielflach> vl = new ArrayList<Vielflach>();

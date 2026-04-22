@@ -6,20 +6,22 @@ import vektor.Dreivektor;
 // Ein Vektordreher dreht einen Vektor um eine Achse. Die Achse ist
 // entweder die x-, y- oder z-Achse.
 //
-// Für die zweite Dimension
+// In zwei Dimensionen
 // x' = cos(theta) x - sin(theta) y
 // y' = sin(theta) x + cos(theta) y
 //
-// Fur die dritte Dimension gibt es:
-// - Eine Drehung um die x-Achse
-// - Eine Drehung um die y-Achse
-// - Eine Drehung um die z-Achse
+// In drei Dimensionen gibt es
+// - eine Drehung um die x-Achse
+// - eine Drehung um die y-Achse
+// - eine Drehung um die z-Achse
 //
 // Wir sollen eine allgemeine Drehung mit dieser drei einheitliche
 // Drehungen aufbauen.
 public class Vektordreher {
 
-    // Dreh einen zweidimensionalen Vektor um den Ursprung gegen den
+    // In zwei Dimensionen
+
+    // Dreh den zweidimensionalen Vektor um den Ursprung gegen den
     // Uhrzeigersinn. Theta hat die Einheit Rad.
     public static Zweivektor drehen(Zweivektor zp, double theta) {
 	double xneu = Math.cos(theta)*zp.eins - Math.sin(theta)*zp.zwei;
@@ -28,8 +30,9 @@ public class Vektordreher {
 	return new Zweivektor(xneu, yneu);
     }
 
-    // Drehen den Vektor in um die x-Achse (in die yz-Fläche). Es
-    // heißt Nick.
+    // In drei Dimensionen
+
+    // Dreh den Vektor in um die x-Achse (in die yz-Fläche).
     public static Dreivektor drehex(Dreivektor p, double theta) {
 
 	Zweivektor yz = Vektordreher.drehen(new Zweivektor(p.zwei, p.drei), theta);
@@ -44,8 +47,7 @@ public class Vektordreher {
 	return pgedreht;
     }
 
-    // Drehen den Vektor um die y-Achse (in die xz-Fläche). Es heißt
-    // Roll.
+    // Dreh den Vektor um die y-Achse (in die xz-Fläche).
     public static Dreivektor drehey(Dreivektor p, double theta) {
 
 	Zweivektor xz = Vektordreher.drehen(new Zweivektor(p.eins, p.drei), theta);
@@ -60,7 +62,7 @@ public class Vektordreher {
 	return pgedreht;
     }
 
-    // Drehen den Vektor um die z-Achse (in die xy-Fläche). Es heißt Gier.
+    // Dreh den Vektor um die z-Achse (in die xy-Fläche).
     public static Dreivektor drehez(Dreivektor p, double theta) {
 
 	Zweivektor xy = Vektordreher.drehen(new Zweivektor(p.eins, p.zwei), theta);

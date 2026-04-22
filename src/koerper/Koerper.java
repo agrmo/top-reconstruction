@@ -16,6 +16,6 @@ import strecke.Dreistrecke;
 // Lorentz-Beschleunigung anders aussehen. Die Welt wird uns den
 // Unterschied erklären.
 //
-public abstract class Koerper {
+public class Koerper {
 
 }

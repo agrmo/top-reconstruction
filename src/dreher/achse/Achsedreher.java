@@ -7,9 +7,9 @@ import dreher.vektor.Vektordreher;
 
 public class Achsedreher {
 	
-    // Berechne die Drehungmatrix, um den Punkt auf die x-Achse zu
-    // legen. Solche Drehung nennen wir "Achsedrehung" weil ich dumm
-    // bin.
+    // Berechne die Drehungmatrix, um den gegebenen Punkt auf die
+    // x-Achse zu verlegen. Solche Drehung nennen wir "Achsedrehung"
+    // weil ich dumm bin.
     public static Dreimatrix nehmexachsedrehung(Dreivektor va) {
 	double thetaeins = Math.atan(va.drei / va.zwei);
 	Dreivektor vb = Vektordreher.drehex(va, -1 * thetaeins);

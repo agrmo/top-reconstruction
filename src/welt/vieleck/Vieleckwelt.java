@@ -35,6 +35,18 @@ public class Vieleckwelt {
 	this.ortliste = ol;
     }
 
+    // Nehme die Anzahl aller Strecken dieser Welt.
+    int nehmekantenanzahl() {
+	int kantenanzahl = 0;
+	
+	// Nehme die gesamte Anzahl der Strecken der Vielecken.
+	for (int i = 0; i < this.vieleckliste.size(); i++) {
+	    kantenanzahl += this.vieleckliste.get(i).nehmekantenanzahl();
+	}
+
+	return kantenanzahl;
+    }
+
     // aus: Liste von Zweistrecke
     //
     // Nehme alle Zweistrecken aller Vieleck dieser Welt in genau einer
@@ -43,34 +55,25 @@ public class Vieleckwelt {
     // einem anderen Vieleck steht.
     public Zweistrecke[] nehmekanten() {
 
-	int streckeanzahl = 0;
+	// Wir kennen nun, wie viele Kanten es in der Welt insgesamt gibt.
+	// Wir kennen nicht, wie viele Kanten es in jeweiligem Körper gibt.
+	// Also mache einen Index für die Strecken.
+	int kantenanzahl = this.nehmekantenanzahl();
 
-	// Nehme die gesamte Anzahl der Strecken der Vielecken.
-	for (int i = 0; i < this.vieleckliste.size(); i++) {
-	    streckeanzahl += this.vieleckliste.get(i).nehmekantenanzahl();
-	}
-
-	Zweistrecke[] strecken = new Zweistrecke[streckeanzahl];
+	Zweistrecke[] strecken = new Zweistrecke[kantenanzahl];
 	
-	// Für alle Vieleck der Welt
+	// Für alle Vieleck der Welt, nehme den Vieleck, dann nehme
+	// seine Kanten, dann verschiebe alle Kanten zum richtigen
+	// Ort.
 	int streckenzeichen = 0;
 	for (int i = 0; i < this.vieleckliste.size(); i++) {
 
-	    // Nehme den Vieleck. Er kennt seinen Ort nicht.
 	    Vieleck k = this.vieleckliste.get(i);
-
-	    // Er gibt uns seine Strecken, dessen Ursprung aber auf ihm
-	    // selbst liegt.
 	    Zweistrecke[] kl = k.nehmekanten();
-
 	    Zweivektor vieleckvektor = this.ortliste.get(i);
 
-	    // Für alle seine Strecken
 	    for (int j = 0; j < kl.length; j++) {
-		// addiere ihren Ort zu ihren Strecken.
 		kl[j].addiere(vieleckvektor);
-
-		// Nur dann fügen die Strecke in der Liste zu.
 		strecken[streckenzeichen] = kl[j];
 		streckenzeichen += 1;
 	    }
