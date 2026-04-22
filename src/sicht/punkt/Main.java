@@ -1,6 +1,5 @@
 package sicht.punkt;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 import maler.Maler;
@@ -32,8 +31,6 @@ public class Main {
 
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
-	frame.getContentPane().setBackground(Color.BLACK);
-        frame.getContentPane().setForeground(Color.WHITE);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);
 	frame.add(m);
@@ -62,8 +59,6 @@ public class Main {
 	
 	// Stellen die Daten dar.
 	JFrame frame = new JFrame();
-	frame.getContentPane().setBackground(Color.BLACK);
-        frame.getContentPane().setForeground(Color.WHITE);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(breite, hoehe);
 	frame.add(m);

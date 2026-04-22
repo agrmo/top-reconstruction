@@ -1,4 +1,4 @@
-package sicht.bogen;
+package sicht.bogen.zwei;
 
 import java.awt.Graphics;
 import vektor.Zweivektor;
