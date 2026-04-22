@@ -1,4 +1,4 @@
-package welt.graph.zufaellig;
+package welt.graph.zufalls;
 
 import vektor.Dreivektor;
 import vektor.Zweivektor;
@@ -8,7 +8,7 @@ import welt.graph.Dreigraphwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes welt.graph.zufaellig.Main
+  && java -cp classes welt.graph.zufalls.Main
 */
 
 public class Main {
@@ -20,7 +20,7 @@ public class Main {
         Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, groesse);
 
 	// Die Orten wird zufällig gebaut.
-        Zweivektor[] orten = Zufaelligzweigraphwelt.mache(groesse,
+        Zweivektor[] orten = Zufallszweigraphwelt.mache(groesse,
 							  0, 50, 0, 50);
   
         // Die Welt.
@@ -37,7 +37,7 @@ public class Main {
         Nachbarschaftsliste nl = new Nachbarschaftsliste(paare, groesse);
 
 	// Die Orten wird zufällig gebaut.
-        Dreivektor[] orten = Zufaelligdreigraphwelt.mache(groesse,
+        Dreivektor[] orten = Zufallsdreigraphwelt.mache(groesse,
 							  0, 50,
 							  0, 50,
 							  0, 50);

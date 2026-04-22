@@ -55,7 +55,7 @@ public class Main {
 	Zweivektor[] zpl = Giernickverleger.verlege(dpl, augevektor, brennweite,
 						    breite, hoehe,
 						    gier, nick);
-	int durchmesser = 10;
+	int durchmesser = 20;
 	Zweipunktwelt pw = new Zweipunktwelt(zpl);
 	Zweipunktsicht s = new Zweipunktsicht(pw, durchmesser);
 	Maler m = new Maler(new Sicht[] {s});

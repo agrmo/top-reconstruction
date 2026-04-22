@@ -12,7 +12,7 @@ import sicht.graph.drei.Dreigraphaugesicht;
 import vektor.Dreivektor;
 import welt.graph.Dreigraphwelt;
 import graph.zufalls.Zufallsgraph;
-import welt.graph.zufaellig.Zufaelligdreigraphwelt;
+import welt.graph.zufalls.Zufallsdreigraphwelt;
 
 
 /*
@@ -75,7 +75,7 @@ public class Main {
 	int ymax = 100;
 	int zmin = -100;
 	int zmax = 100;
-        Dreivektor[] orte = Zufaelligdreigraphwelt.mache(groesse,
+        Dreivektor[] orte = Zufallsdreigraphwelt.mache(groesse,
 							 xmin, xmax,
 							 ymin, ymax,
 							 zmin, zmax);
@@ -102,8 +102,8 @@ public class Main {
 	// Fangen die Handlung an.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.getContentPane().setBackground(Color.BLACK);
-	frame.getContentPane().setForeground(Color.WHITE);
+	// frame.getContentPane().setBackground(Color.BLACK);
+	// frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
 	frame.addKeyListener(handlung);

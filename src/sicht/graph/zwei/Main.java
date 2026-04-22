@@ -7,7 +7,7 @@ import graph.Nachbarschaftsliste;
 import maler.Maler;
 import sicht.Sicht;
 import welt.graph.Zweigraphwelt;
-import welt.graph.zufaellig.Zufaelligzweigraphwelt;
+import welt.graph.zufalls.Zufallszweigraphwelt;
 import graph.zufalls.Zufallsgraph;
 
 /*
@@ -54,7 +54,7 @@ public class Main {
 	int xmax = 500;
 	int ymin = 10;
 	int ymax = 500;
-        Zweivektor[] orte = Zufaelligzweigraphwelt.mache(groesse,
+        Zweivektor[] orte = Zufallszweigraphwelt.mache(groesse,
 							 xmin, xmax,
 							 ymin, ymax);
 	Zweigraphwelt zgw = new Zweigraphwelt(nl, orte);

@@ -1,9 +1,9 @@
-package welt.graph.zufaellig;
+package welt.graph.zufalls;
 
 import java.util.Random;
 import vektor.Dreivektor;
 
-public class Zufaelligdreigraphwelt {
+public class Zufallsdreigraphwelt {
 
     /*
       Mache die Orte der Knoten des Graphen, die zufällig gestellt
