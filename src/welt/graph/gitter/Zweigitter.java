@@ -8,7 +8,7 @@ import welt.graph.Zweigraphwelt;
 import druck.vektor.Vektordrucker;
 
 /*
-  Eine Gitter ist eine Art von Graphen, die wie eine Gitter aussieht.
+  Ein Gitter ist eine Art von Graphen, die wie ein Gitter aussieht.
 
   Wir sollen nicht nur den Graphen und seine Kanten bauen, sondern
   auch natürlich die Stelle der Knoten. Lassen wir zwei Funktionen
@@ -17,7 +17,7 @@ import druck.vektor.Vektordrucker;
   Hier haben wir drei wichtige Funktionen:
   1. Eine Funktion, die den Graph baut.
   2. Eine Funktion, die die Orte des Graphen baut.
-  3. Eine Funktion, die die Welt solcher Gitter baut.
+  3. Eine Funktion, die die Welt solches Gitter baut.
   
 */  
 public class Zweigitter {
@@ -29,8 +29,8 @@ public class Zweigitter {
     static int nehmekantenanzahl(int xknoten, int yknoten) {
 	// Sobald wir die Anzahl der Knoten in die x-Richtung und die
 	// Anzahl der Knoten in die y-Richtung kennen, kennen wir ganz
-	// einfach, wie viele Kanten es in einer zweidimensionalen
-	// Gitter geben würde.
+	// einfach, wie viele Kanten es in eines zweidimensionalen
+	// Gitters geben würde.
 	//
 	// Beispiel
 	//
@@ -46,7 +46,7 @@ public class Zweigitter {
 	return kantenanzahl;
     }
 
-    // Mache einen zweidimensionalen Graphen für eine neue Gitter.
+    // Mache einen zweidimensionalen Graphen für ein neues Gitter.
     static Nachbarschaftsliste machegraph(int xknoten, int yknoten) {
 
 	// Der Platz an der x-Achse und y-Achse.
@@ -149,7 +149,7 @@ public class Zweigitter {
     }
 
     /*
-      Mache eine zweidimensionale Graphwelt, die eine Gitter enthält.
+      Mache eine zweidimensionale Graphwelt, die ein Gitter enthält.
       
       xknoten: Die Anzahl von Knoten in der x-Richtung.
       yknoten: Die Anzahl von Knoten in der y-Richtung.
