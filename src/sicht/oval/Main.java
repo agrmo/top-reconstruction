@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
 import vektor.Zweivektor;
+import welt.oval.Ovalwelt;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -17,16 +18,19 @@ public class Main {
 
     public static void main(String[] args){
 	
-	// Mache die Daten.
-	Oval[] kl = new Oval[2];
-	Zweivektor[] ol = new Zweivektor[2];
-	kl[0] = new Oval(30,20);
-	kl[1] = new Oval(10,20);
-	ol[0] = new Zweivektor(100, 100);
-	ol[1] = new Zweivektor(50, 50);
+	// Mache die Welt.
+	Oval[] ovale = new Oval[] {
+	    new Oval(30,20),
+	    new Oval(10,20)
+	};
+	Zweivektor[] orte = new Zweivektor[] {
+	    new Zweivektor(100, 100),
+	    new Zweivektor(50, 50)
+	};
+	Ovalwelt ow = new Ovalwelt(ovale, orte);
 
 	// Mache die Sicht.
-	Ovalsicht s = new Ovalsicht(kl, ol);
+	Ovalsicht s = new Ovalsicht(ow);
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Daten dar.
