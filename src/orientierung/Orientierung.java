@@ -6,15 +6,14 @@ package orientierung;
   für verschiedene dreidimensionalen Körper.
 
   Wir haben auch schon Code für das räumliche Verorten der
-  zweidimensionalen Figuren und dreidimensionalen Körper: die Welt.
+  zweidimensionalen Figuren und dreidimensionaler Körper: die Welt.
 
   Aber dieser Code kann nicht solche Dingen orientieren.
 
-  Zum Beispiel, wie bauen wir einen Kubus, der auf einer seinen Ecke
-  steht? Das können wir nicht Bauen. Eine Vielflachwelt kann nur den
-  Ort eines Kubus zeigen, aber nicht seine Orientierung.
-
-  Zum Beispiel, wie bauen wir einen Kegel, der auf seiner Spitze steht?
+  Zum Beispiel, wie bauen wir einen Kubus, der auf einer seinen Ecken
+  steht? Oder wie bauen wir einen Kegel, der auf seiner Spitze steht?
+  Das können wir nicht Bauen. Eine Vielflachwelt kann nur den Ort
+  eines Kubus zeigen, aber nicht seine Orientierung.
 
  */
 public abstract class Orientierung {

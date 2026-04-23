@@ -1,12 +1,13 @@
 package sicht.kreis;
 
+import figur.kreis.Kreis;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import figur.kreis.Kreis;
-import vektor.Zweivektor;
 import maler.Maler;
 import sicht.Sicht;
+import vektor.Zweivektor;
+import welt.kreis.Kreiswelt;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -17,16 +18,19 @@ public class Main {
 
     public static void main(String[] args){
 	
-	// Mache die Daten.
-	Kreis[] kl = new Kreis[2];
-	Zweivektor[] ol = new Zweivektor[2];
-	kl[0] = new Kreis(5);
-	kl[1] = new Kreis(10);
-	ol[0] = new Zweivektor(100, 100);
-	ol[1] = new Zweivektor(50, 50);
+	// Mache die Welt.
+	Kreis[] kreise = new Kreis[] {
+	    new Kreis(5),
+	    new Kreis(10)
+	};
+	Zweivektor[] orte = new Zweivektor[] {
+	    new Zweivektor(100, 100),
+	    new Zweivektor(50, 50)
+	};
+	Kreiswelt kw = new Kreiswelt(kreise, orte);
 
 	// Mache die Sicht.
-	Kreissicht s = new Kreissicht(kl, ol);
+	Kreissicht s = new Kreissicht(kw);
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Daten dar.

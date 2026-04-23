@@ -66,8 +66,8 @@ public class Main {
 
     static void beispielzwei() {
 	// Mache die Welt.
-        int groesse = 100;
-	double p = 0.01;
+        int groesse = 200;
+	double p = 0.005;
         Nachbarschaftsliste nl = Zufallsgraph.mache(groesse, p);
 	int xmin = -100;
 	int xmax = 100;
@@ -112,6 +112,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-	beispielzwei();
+	beispieleins();
     }
 }
