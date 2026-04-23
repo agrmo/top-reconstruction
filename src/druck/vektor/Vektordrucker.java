@@ -25,4 +25,19 @@ public class Vektordrucker {
 	sb.append("]");
 	return sb.toString();
     }
+
+    // Drucke eine Liste von Zweivektoren.
+    public static String drucke(Zweivektor[] vl) {
+	StringBuilder sb = new StringBuilder();
+	sb.append("[");
+	for (int i = 0; i < vl.length; i++) {
+	    sb.append(Vektordrucker.drucke(vl[i]));
+	    if (i + 1 != vl.length) {
+		sb.append(",");
+	    }
+	}
+	sb.append("]");
+
+	return sb.toString();
+    }
 }

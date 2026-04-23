@@ -9,6 +9,7 @@ import sicht.Sicht;
 import welt.graph.Zweigraphwelt;
 import welt.graph.zufalls.Zufallszweigraphwelt;
 import graph.zufalls.Zufallsgraph;
+import welt.graph.gitter.Zweigitter;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -73,8 +74,27 @@ public class Main {
         frame.add(m);
         frame.setVisible(true);
     }
+    
+    static void beispieldrei() {
+	// Mache die Welt.
+	Zweigraphwelt zgw = Zweigitter.machewelt(10, 10, 50);
+
+	// Mache die Sicht.
+	double durchmesser = 20;
+	Zweigraphsicht zgs = new Zweigraphsicht(zgw, durchmesser);
+	Maler m = new Maler(new Sicht[] {zgs});
+  
+        // Stellen die Daten dar.
+        JFrame frame = new JFrame();
+	frame.getContentPane().setBackground(Color.BLACK);
+        frame.getContentPane().setForeground(Color.WHITE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1200, 600);
+        frame.add(m);
+        frame.setVisible(true);
+    }
 
     public static void main(String[] args){
-	beispielzwei();
+	beispieldrei();
     }
 }

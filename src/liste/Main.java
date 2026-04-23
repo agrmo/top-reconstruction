@@ -11,7 +11,7 @@ javac -d classes $(find src -type f) && java -cp classes liste.Main
 
 public class Main {
 
-    public static void listeInteger() {
+    static void beispieleins() {
 	// drucken eine Liste von Liste von ganzen Zahlen...
 	ArrayList<int[]> a = new ArrayList<int[]>();
 	a.add(new int[] {1,2});
@@ -32,7 +32,7 @@ public class Main {
 	}	
     }
 
-    public static void listeDouble() {
+    static void beispielzwei() {
 	// drucken eine Liste von Liste von Double...
 	ArrayList<double[]> a = new ArrayList<double[]>();
 	a.add(new double[] {1.53,2.371});
@@ -53,7 +53,7 @@ public class Main {
 	}	
     }
 
-    public static void arrayArrayAbbildung() {
+    static void beispieldrei() {
 	// Benutzen die Funktion nehmeArrayArrayVonAbbildung
 
 	HashMap<Integer,Integer> m = new HashMap<Integer,Integer>();
@@ -66,7 +66,7 @@ public class Main {
 	System.out.println(arrayarrayString);
     }
 
-    public static void beispieleins() {
+    static void beispielvier() {
 	HashSet<Integer> s = new HashSet<Integer>();
 	s.add(1);
 	s.add(2);
@@ -77,7 +77,7 @@ public class Main {
 	System.out.println(Arrays.toString(a));
     }
 
-    public static void beispielzwei() {
+    static void beispielfuenf() {
 	Liste l = new Liste();
 	double[][] doubleArrayArray = new double[2][];
 	doubleArrayArray[0] = new double[] {0.01,0.25};
@@ -86,23 +86,26 @@ public class Main {
 	System.out.println(doubleArrayArrayString);	
     }
 
-    public static void beispieldrei() {
+    static void beispielsechs() {
 	ArrayList<Integer> l = new ArrayList<Integer>();
 	l.add(4);
 	l.add(5);
 	System.out.println(Arrays.toString(Liste.nehmeArrayInt(l)));
     }
+
+    static void beispielsieben() {
+	int[][] a = new int[5][2];
+
+	a[0] = new int[]{1,2};
+	a[1] = new int[]{3,4};
+	a[2] = new int[]{5,6};
+	a[3] = new int[]{7,8};
+	a[4] = new int[]{9,10};
+
+	System.out.println(Liste.nehmeStringVonArrayArray(a));
+    }
     
     public static void main(String[] args) {
-
-	// listeInteger();	
-	// und noch mal für Double	
-	// listeDouble();
-	
-	// arrayArrayAbbildung();
-
-	// beispielzwei();
-
-	beispieldrei();
+	beispielsieben();
     }
 }

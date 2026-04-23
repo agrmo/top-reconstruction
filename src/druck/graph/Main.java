@@ -5,7 +5,8 @@ import graph.Doppelnachbarschaftsliste;
 import graph.Nachbarschaftsmatrix;
 
 /*
-  javac -d classes $(find src -type f) && java -cp classes druck.graph.Main
+  javac -d classes $(find src -type f) \
+  && java -cp classes druck.graph.Main
 */
 
 public class Main {

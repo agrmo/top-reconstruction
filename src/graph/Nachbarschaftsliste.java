@@ -69,23 +69,23 @@ public class Nachbarschaftsliste {
     }
     
     public Nachbarschaftsliste(int[][] paare, int inBetrag) {
-	betrag = inBetrag;
+	this.betrag = inBetrag;
 	
 	// Am Anfang gibt es keine Kante.  Erzeugen die
 	// Nachbarschaftsliste mit Größe "inBetrag" und erzeugen eine
 	// leere Liste dahin.
-	n = new ArrayList<ArrayList<Integer>>();
+	this.n = new ArrayList<ArrayList<Integer>>();
 
 	// Für jede Knote, mach eine leere Liste für die Kanten.
 	for (int i = 0; i < inBetrag; i++) {
-	    n.add(new ArrayList<Integer>());
+	    this.n.add(new ArrayList<Integer>());
 	}
 	
  	// Setzen die Kanten ein.
 	for (int i = 0; i < paare.length; i++) {
 	    // Kante von Knoten bis Knoten
 	    int[] paar = paare[i];
-	    n.get(paar[0]).add(paar[1]);
+	    this.n.get(paar[0]).add(paar[1]);
 	}
     }
 }
