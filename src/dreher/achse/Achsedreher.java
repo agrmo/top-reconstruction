@@ -3,7 +3,7 @@ package dreher.achse;
 import vektor.Dreivektor;
 import matrix.Dreimatrix;
 import dreher.dreimatrix.Dreimatrixdreher;
-import dreher.vektor.Vektordreher;
+import dreher.dreivektor.Dreivektordreher;
 
 /*
   Hier stellen wir die Frage: wie drehen wir einen Vektor, sodaß er
@@ -18,7 +18,7 @@ public class Achsedreher {
     // weil ich dumm bin.
     public static Dreimatrix nehmexachsedrehung(Dreivektor va) {
 	double thetaeins = Math.atan(va.drei / va.zwei);
-	Dreivektor vb = Vektordreher.drehex(va, -1 * thetaeins);
+	Dreivektor vb = Dreivektordreher.drehex(va, -1 * thetaeins);
 	double thetazwei = Math.atan(vb.zwei / vb.eins);
 	
 	Dreimatrix ma = Dreimatrixdreher.nehmedreherx(-1 * thetaeins);
@@ -35,7 +35,7 @@ public class Achsedreher {
     public static Dreimatrix nehmexachsedrehungumkehrung(Dreivektor va) {
 	
 	double thetaeins = Math.atan(va.drei / va.zwei);
-	Dreivektor vb = Vektordreher.drehex(va, -1 * thetaeins);
+	Dreivektor vb = Dreivektordreher.drehex(va, -1 * thetaeins);
 	double thetazwei = Math.atan(vb.zwei / vb.eins);
 	Dreimatrix ma = Dreimatrixdreher.nehmedreherx(thetaeins);
 	Dreimatrix mb = Dreimatrixdreher.nehmedreherz(thetazwei);

@@ -1,9 +1,7 @@
 package handlung.vielflach.auge;
 
 import dreher.dreimatrix.Dreimatrixdreher;
-import dreher.vektor.Vektordreher;
 import druck.matrix.Matrixdrucker;
-import druck.vektor.Vektordrucker;
 import java.awt.event.KeyEvent;
 import maler.Maler;
 import matrix.Dreimatrix;

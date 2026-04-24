@@ -3,7 +3,6 @@ package wesen;
 import vektor.Dreivektor;
 import sicht.vielflach.auge.Augesicht;
 import maler.Maler;
-import dreher.vektor.Vektordreher;
 
 // Das Wesen nimmt den Verlauf der Zeit auf.
 public class Vielflachbasiswesen implements Runnable {

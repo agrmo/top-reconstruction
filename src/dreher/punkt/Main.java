@@ -1,6 +1,5 @@
 package dreher.punkt;
 
-import dreher.vektor.Vektordreher;
 import dreher.zweimatrix.Zweimatrixdreher;
 import druck.matrix.Matrixdrucker;
 import druck.vektor.Vektordrucker;

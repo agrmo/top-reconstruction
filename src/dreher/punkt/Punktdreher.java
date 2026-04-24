@@ -1,6 +1,5 @@
 package dreher.punkt;
 
-import dreher.vektor.Vektordreher;
 import matrix.Dreimatrix;
 import matrix.Zweimatrix;
 import vektor.Dreivektor;

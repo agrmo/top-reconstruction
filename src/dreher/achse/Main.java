@@ -1,6 +1,5 @@
 package dreher.achse;
 
-import dreher.vektor.Vektordreher;
 import druck.vektor.Vektordrucker;
 import druck.matrix.Matrixdrucker;
 import matrix.Dreimatrix;

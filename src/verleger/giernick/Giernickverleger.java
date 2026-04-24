@@ -1,7 +1,6 @@
 package verleger.giernick;
 
-import dreher.vektor.Vektordreher;
-import dreher.vektor.Vektordreher;
+import dreher.dreivektor.Dreivektordreher;
 import strecke.Dreistrecke;
 import strecke.Zweistrecke;
 import vektor.Dreivektor;
@@ -31,8 +30,8 @@ public class Giernickverleger {
 			      double breite, double hoehe,
 			      double gier, double nick) {
 
-	Dreivektor pb = Vektordreher.drehey(pa, gier);
-	Dreivektor pc = Vektordreher.drehex(pb, nick);
+	Dreivektor pb = Dreivektordreher.drehey(pa, gier);
+	Dreivektor pc = Dreivektordreher.drehex(pb, nick);
 
 	// Trennen das Auge vom Ursprung der Welt.
 	pc.eins -= augevektor.eins;

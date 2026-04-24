@@ -1,7 +1,6 @@
 package handlung.graph;
 
 import dreher.dreimatrix.Dreimatrixdreher;
-import dreher.vektor.Vektordreher;
 import druck.matrix.Matrixdrucker;
 import java.awt.event.MouseEvent;
 import maler.Maler;
