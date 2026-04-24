@@ -1,8 +1,8 @@
-package dreher.zwei;
+package dreher.zweimatrix;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes dreher.zwei.Main
+  && java -cp classes dreher.zweimatrix.Main
 */
 
 public class Main {

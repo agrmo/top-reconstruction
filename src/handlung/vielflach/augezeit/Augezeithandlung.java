@@ -1,6 +1,6 @@
 package handlung.vielflach.augezeit;
 
-import dreher.matrix.Matrixdreher;
+import dreher.dreimatrix.Dreimatrixdreher;
 import dreher.vektor.Vektordreher;
 import druck.matrix.Matrixdrucker;
 import java.awt.event.KeyEvent;
@@ -55,8 +55,8 @@ public class Augezeithandlung extends Handlung {
 	double winkelgier = ((double) unterschiedx) / this.as.breite;
 	double winkelnick = -((double) unterschiedy) / this.as.hoehe;
 
-	Dreimatrix giermatrix = Matrixdreher.nehmedrehery(winkelgier);
-	Dreimatrix nickmatrix = Matrixdreher.nehmedreherx(winkelnick);
+	Dreimatrix giermatrix = Dreimatrixdreher.nehmedrehery(winkelgier);
+	Dreimatrix nickmatrix = Dreimatrixdreher.nehmedreherx(winkelnick);
 
 	this.as.entfernung = giermatrix.punkt(this.as.entfernung);
 	this.as.entfernung = nickmatrix.punkt(this.as.entfernung);

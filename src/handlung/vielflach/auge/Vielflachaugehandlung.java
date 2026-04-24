@@ -1,6 +1,6 @@
 package handlung.vielflach.auge;
 
-import dreher.matrix.Matrixdreher;
+import dreher.dreimatrix.Dreimatrixdreher;
 import dreher.vektor.Vektordreher;
 import druck.matrix.Matrixdrucker;
 import druck.vektor.Vektordrucker;

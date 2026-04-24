@@ -1,7 +1,7 @@
 package dreher.euler;
 
 import matrix.Dreimatrix;
-import dreher.matrix.Matrixdreher;
+import dreher.dreimatrix.Dreimatrixdreher;
 
 public class Eulerdreher {
 
@@ -15,9 +15,9 @@ public class Eulerdreher {
 					  double winkelzwei,
 					  double winkeldrei) {
 
-	Dreimatrix matrixeins = Matrixdreher.nehmedreherx(winkeleins);
-	Dreimatrix matrixzwei = Matrixdreher.nehmedreherz(winkelzwei);
-	Dreimatrix matrixdrei = Matrixdreher.nehmedreherx(winkeldrei);
+	Dreimatrix matrixeins = Dreimatrixdreher.nehmedreherx(winkeleins);
+	Dreimatrix matrixzwei = Dreimatrixdreher.nehmedreherz(winkelzwei);
+	Dreimatrix matrixdrei = Dreimatrixdreher.nehmedreherx(winkeldrei);
 
 	return matrixeins.punkt(matrixzwei.punkt(matrixdrei));
     }

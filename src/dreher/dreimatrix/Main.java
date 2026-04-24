@@ -1,4 +1,4 @@
-package dreher.matrix;
+package dreher.dreimatrix;
 
 import vektor.Zweivektor;
 import vektor.Dreivektor;
@@ -8,14 +8,14 @@ import druck.matrix.Matrixdrucker;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes dreher.matrix.Main
+  && java -cp classes dreher.dreimatrix.Main
 */
 
 public class Main {
     static void beispieleins() {
-	Dreimatrix mx = Matrixdreher.nehmedreherx(Math.PI);
-	Dreimatrix my = Matrixdreher.nehmedrehery(Math.PI);
-	Dreimatrix mz = Matrixdreher.nehmedreherz(Math.PI);
+	Dreimatrix mx = Dreimatrixdreher.nehmedreherx(Math.PI);
+	Dreimatrix my = Dreimatrixdreher.nehmedrehery(Math.PI);
+	Dreimatrix mz = Dreimatrixdreher.nehmedreherz(Math.PI);
 
 	System.out.println(Matrixdrucker.drucke(mx));
 	System.out.println(Matrixdrucker.drucke(my));
@@ -23,9 +23,9 @@ public class Main {
     }
 
     static void beispielzwei() {
-	Dreimatrix mx = Matrixdreher.nehmedreherx(Math.PI);
-	Dreimatrix my = Matrixdreher.nehmedrehery(Math.PI);
-	Dreimatrix mz = Matrixdreher.nehmedreherz(Math.PI);
+	Dreimatrix mx = Dreimatrixdreher.nehmedreherx(Math.PI);
+	Dreimatrix my = Dreimatrixdreher.nehmedrehery(Math.PI);
+	Dreimatrix mz = Dreimatrixdreher.nehmedreherz(Math.PI);
 	
 	Dreivektor v = new Dreivektor(1,0,0);
 
@@ -67,8 +67,8 @@ public class Main {
 	double thetazwei = -0.955;
 
 	// Nehme die zwei Drehungmatrizen.
-	Dreimatrix ma = Matrixdreher.nehmedreherx(thetaeins);
-	Dreimatrix mb = Matrixdreher.nehmedreherz(thetazwei);
+	Dreimatrix ma = Dreimatrixdreher.nehmedreherx(thetaeins);
+	Dreimatrix mb = Dreimatrixdreher.nehmedreherz(thetazwei);
 
 	// Was ist die richtige Anwendung der zwei Matrizen?
 

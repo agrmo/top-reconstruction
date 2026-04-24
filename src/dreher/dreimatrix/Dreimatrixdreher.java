@@ -1,9 +1,8 @@
-package dreher.matrix;
+package dreher.dreimatrix;
 
 import matrix.Dreimatrix;
 
-// Dreidreher...?
-public class Matrixdreher {
+public class Dreimatrixdreher {
 
     /* Bauen eine Matrix, die um die x-Achse (in der yz-Fläche) dreht.
        Oder der Nickwinkel.

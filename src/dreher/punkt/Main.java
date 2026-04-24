@@ -1,7 +1,7 @@
 package dreher.punkt;
 
 import dreher.vektor.Vektordreher;
-import dreher.zwei.Zweidreher;
+import dreher.zweimatrix.Zweimatrixdreher;
 import druck.matrix.Matrixdrucker;
 import druck.vektor.Vektordrucker;
 import matrix.Dreimatrix;
@@ -21,7 +21,7 @@ public class Main {
 	Zweivektor va = new Zweivektor(50,50);
 	Zweivektor drehpunkt = new Zweivektor(0,0);
 	double theta = Math.PI / 2.0;
-	Zweimatrix drehung = Zweidreher.nehmedrehung(theta);
+	Zweimatrix drehung = Zweimatrixdreher.nehmedrehung(theta);
 
 	Zweivektor vb = Punktdreher.drehe(va, drehpunkt, drehung);
 	System.out.println(Vektordrucker.drucke(vb));

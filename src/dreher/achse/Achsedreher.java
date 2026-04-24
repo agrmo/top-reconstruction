@@ -2,7 +2,7 @@ package dreher.achse;
 
 import vektor.Dreivektor;
 import matrix.Dreimatrix;
-import dreher.matrix.Matrixdreher;
+import dreher.dreimatrix.Dreimatrixdreher;
 import dreher.vektor.Vektordreher;
 
 /*
@@ -21,8 +21,8 @@ public class Achsedreher {
 	Dreivektor vb = Vektordreher.drehex(va, -1 * thetaeins);
 	double thetazwei = Math.atan(vb.zwei / vb.eins);
 	
-	Dreimatrix ma = Matrixdreher.nehmedreherx(-1 * thetaeins);
-	Dreimatrix mb = Matrixdreher.nehmedreherz(-1 * thetazwei);
+	Dreimatrix ma = Dreimatrixdreher.nehmedreherx(-1 * thetaeins);
+	Dreimatrix mb = Dreimatrixdreher.nehmedreherz(-1 * thetazwei);
 
 	// Die richtige Ordnung der Multiplikation ist
 	// ((mb*ma)*va)
@@ -37,8 +37,8 @@ public class Achsedreher {
 	double thetaeins = Math.atan(va.drei / va.zwei);
 	Dreivektor vb = Vektordreher.drehex(va, -1 * thetaeins);
 	double thetazwei = Math.atan(vb.zwei / vb.eins);
-	Dreimatrix ma = Matrixdreher.nehmedreherx(thetaeins);
-	Dreimatrix mb = Matrixdreher.nehmedreherz(thetazwei);
+	Dreimatrix ma = Dreimatrixdreher.nehmedreherx(thetaeins);
+	Dreimatrix mb = Dreimatrixdreher.nehmedreherz(thetazwei);
 
 	return ma.punkt(mb);
     }

@@ -1,8 +1,8 @@
-package dreher.zwei;
+package dreher.zweimatrix;
 
 import matrix.Zweimatrix;
 
-public class Zweidreher {
+public class Zweimatrixdreher {
 
     /* Baue eine Matrix, um eine zweidimensionale Drehung zu machen.
        
