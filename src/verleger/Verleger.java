@@ -12,6 +12,6 @@ package verleger;
 // Ein Verleger enthält keine Welt. Er nimmt eine Welt ein, und gibt
 // eine Welt aus. Manchmal wäre es besser aber, den Inhalt einer
 // eigenen Welt zu verändern. Das ist manchmal rechnerisch schneller.
-public abstract class Verleger {
+public class Verleger {
     
 }

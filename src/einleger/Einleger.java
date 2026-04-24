@@ -1,4 +1,4 @@
-package orientierung;
+package einleger;
 
 /*
 
@@ -20,9 +20,9 @@ package orientierung;
      -> Verleger
   
   2. Ein zweidimensionale Figur in drei Dimensionen einsetzen
-     -> Orientierung
+     -> Einleger
 
  */
-public abstract class Orientierung {
+public class Einleger {
     
 }

@@ -1,8 +1,8 @@
-package orientierung;
+package einleger;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes orientierung.Main
+  && java -cp classes einleger.Main
 */
 
 public class Main {
