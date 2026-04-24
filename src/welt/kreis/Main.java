@@ -1,6 +1,6 @@
 package welt.kreis;
 
-import figur.kreis.Kreis;
+import kreis.Kreis;
 import vektor.Zweivektor;
 
 /*

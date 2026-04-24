@@ -1,6 +1,6 @@
 package sicht.oval;
 
-import figur.oval.Oval;
+import oval.Oval;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;

@@ -1,4 +1,4 @@
-package koerper.zylinder;
+package zylinder;
 
 public class Zylinder {
     

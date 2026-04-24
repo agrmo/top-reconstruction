@@ -1,6 +1,6 @@
 package sicht.kreis;
 
-import figur.kreis.Kreis;
+import kreis.Kreis;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;

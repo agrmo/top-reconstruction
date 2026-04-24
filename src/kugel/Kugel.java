@@ -1,4 +1,4 @@
-package koerper.kugel;
+package kugel;
 
 // Die Kugel.
 public class Kugel {

@@ -1,4 +1,4 @@
-package koerper.kegel;
+package kegel;
 
 // Der Kegel.
 public class Kegel {

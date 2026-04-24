@@ -1,7 +1,7 @@
 package welt.kreis;
 
 import vektor.Zweivektor;
-import figur.kreis.Kreis;
+import kreis.Kreis;
 
 public class Kreiswelt {
 

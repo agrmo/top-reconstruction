@@ -1,4 +1,4 @@
-package koerper.rohr;
+package rohr;
 
 public class Rohr {
     public int innenradius;

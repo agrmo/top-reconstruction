@@ -1,4 +1,4 @@
-package figur.kreis;
+package kreis;
 
 public class Kreis {
     public int radius;

@@ -1,4 +1,4 @@
-package figur.oval;
+package oval;
 
 public class Oval {
     public int breite;

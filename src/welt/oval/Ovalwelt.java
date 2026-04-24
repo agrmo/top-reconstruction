@@ -1,7 +1,7 @@
 package welt.oval;
 
 import vektor.Zweivektor;
-import figur.oval.Oval;
+import oval.Oval;
 
 public class Ovalwelt {
 

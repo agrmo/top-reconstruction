@@ -1,6 +1,6 @@
 package welt.oval;
 
-import figur.oval.Oval;
+import oval.Oval;
 import vektor.Zweivektor;
 
 /*
