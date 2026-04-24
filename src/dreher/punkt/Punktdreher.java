@@ -6,8 +6,8 @@ import vektor.Dreivektor;
 import vektor.Zweivektor;
 
 /*
-  Ähnlich wie der Achsedreher stellen wir eine klare und bestimmte
-  Frage und benennen dem Problem einen schlechten Namen.
+  Ähnlich wie der Achsedreher stellen wir eine klare bestimmte Frage
+  und benennen dem Problem einen schlechten Namen.
 
   Frage: Wie drehen wir einen Vektor um einen Punkt herum?
 

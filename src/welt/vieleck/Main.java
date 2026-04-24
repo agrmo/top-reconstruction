@@ -3,7 +3,6 @@ package welt.vieleck;
 import vektor.Zweivektor;
 import vieleck.dreieck.Dreieck;
 import vieleck.Vieleck;
-import java.util.ArrayList;
 import druck.strecke.Streckedrucker;
 import strecke.Zweistrecke;
 
@@ -24,12 +23,10 @@ public class Main {
 	Zweivektor p = new Zweivektor(100,100);
 
 	// Liste von Vielecken.
-	ArrayList<Vieleck> fl = new ArrayList<Vieleck>();
-	fl.add(k);
+	Vieleck[] fl = new Vieleck[] {k};
 
 	// Liste von Orten.
-	ArrayList<Zweivektor> ol = new ArrayList<Zweivektor>();
-	ol.add(p);
+	Zweivektor[] ol = new Zweivektor[] {p};
 	
 	// Mache die Welt.
 	Vieleckwelt welt = new Vieleckwelt(fl, ol);

@@ -1,6 +1,5 @@
 package welt.vieleck;
     
-import java.util.ArrayList;
 import vieleck.Vieleck;
 import strecke.Zweistrecke;
 import vektor.Zweivektor;
@@ -27,12 +26,12 @@ public class Vieleckwelt {
     // Wir sind mit eine Reihe von Vielecken gegeben. Ein Vieleck
     // kennt nur seine Eigenschaften. Die Welt versteht nicht nur seine
     // Eigenschaften, sondern auch wo sie in der Welt steht.
-    public ArrayList<Vieleck> vieleckliste;
-    public ArrayList<Zweivektor> ortliste;
+    public Vieleck[] vieleckliste;
+    public Zweivektor[] ortliste;
 
-    public Vieleckwelt(ArrayList<Vieleck> fl, ArrayList<Zweivektor> ol) {
-	this.vieleckliste = fl;
-	this.ortliste = ol;
+    public Vieleckwelt(Vieleck[] vielecke, Zweivektor[] orte) {
+	this.vieleckliste = vielecke;
+	this.ortliste = orte;
     }
 
     // Nehme die Anzahl aller Strecken dieser Welt.
@@ -40,8 +39,8 @@ public class Vieleckwelt {
 	int kantenanzahl = 0;
 	
 	// Nehme die gesamte Anzahl der Strecken der Vielecken.
-	for (int i = 0; i < this.vieleckliste.size(); i++) {
-	    kantenanzahl += this.vieleckliste.get(i).nehmekantenanzahl();
+	for (int i = 0; i < this.vieleckliste.length; i++) {
+	    kantenanzahl += this.vieleckliste[i].nehmekantenanzahl();
 	}
 
 	return kantenanzahl;
@@ -66,11 +65,11 @@ public class Vieleckwelt {
 	// seine Kanten, dann verschiebe alle Kanten zum richtigen
 	// Ort.
 	int streckenzeichen = 0;
-	for (int i = 0; i < this.vieleckliste.size(); i++) {
+	for (int i = 0; i < this.vieleckliste.length; i++) {
 
-	    Vieleck k = this.vieleckliste.get(i);
+	    Vieleck k = this.vieleckliste[i];
 	    Zweistrecke[] kl = k.nehmekanten();
-	    Zweivektor vieleckvektor = this.ortliste.get(i);
+	    Zweivektor vieleckvektor = this.ortliste[i];
 
 	    for (int j = 0; j < kl.length; j++) {
 		kl[j].addiere(vieleckvektor);

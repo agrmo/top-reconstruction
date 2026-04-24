@@ -1,6 +1,5 @@
 package sicht.vieleck;
 
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
@@ -21,10 +20,8 @@ public class Main {
 	// Mache die Welt.
 	Dreieck k = new Dreieck(50);
 	Zweivektor p = new Zweivektor(100,100);
-	ArrayList<Vieleck> fl = new ArrayList<Vieleck>();
-	fl.add(k);
-	ArrayList<Zweivektor> ol = new ArrayList<Zweivektor>();
-	ol.add(p);
+	Vieleck[] fl = new Vieleck[] {k};
+	Zweivektor[] ol = new Zweivektor[] {p};
 	Vieleckwelt fw = new Vieleckwelt(fl, ol);
 	
 	// Mache die Sicht.

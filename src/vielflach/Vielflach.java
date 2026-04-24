@@ -19,7 +19,7 @@ public abstract class Vielflach {
 
     // aus: Liste von Vektoren
     //
-    // Nehme alle Strecken dieses Körpers.
+    // Nehme die Orte aller Ecken dieses Körpers.
     public abstract Dreivektor[] nehmeecken();
     
     // aus: Liste von Strecken
