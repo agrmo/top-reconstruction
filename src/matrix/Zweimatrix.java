@@ -49,8 +49,8 @@ public class Zweimatrix {
     /*
       Multipliziere diese 2x2 Matrix mit dem 2x1 Vektor v.
 
-      |ab|   |e|  = ein Zweivektor   
-      |cd| * |f|  
+      |ab| * |e|  = ein zweidimensionaler Vektor   
+      |cd|   |f|  
 
      */
     public Zweivektor punkt(Zweivektor v) {
@@ -61,8 +61,8 @@ public class Zweimatrix {
 
     /* Multipliziere diese 2x2 Matrix mit dem 2x2 Matrix m.
 
-       |ab|   |ef| = eine 2x2 Matrix
-       |cd| * |gh| 
+       |ab| * |ef| = eine 2x2 Matrix
+       |cd|   |gh| 
        
      */
     public Zweimatrix punkt(Zweimatrix m) {

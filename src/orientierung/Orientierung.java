@@ -15,6 +15,13 @@ package orientierung;
   Das können wir nicht Bauen. Eine Vielflachwelt kann nur den Ort
   eines Kubus zeigen, aber nicht seine Orientierung.
 
+  Wir können entweder,
+  1. Ein dreidimensionaler Körper in zwei Dimensionen verlegen
+     -> Verleger
+  
+  2. Ein zweidimensionale Figur in drei Dimensionen einsetzen
+     -> Orientierung
+
  */
 public abstract class Orientierung {
     

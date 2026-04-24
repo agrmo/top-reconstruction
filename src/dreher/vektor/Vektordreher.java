@@ -19,7 +19,7 @@ import vektor.Dreivektor;
 // Drehungen aufbauen.
 public class Vektordreher {
 
-    // In zwei Dimensionen
+    // In zwei Dimensionen.
 
     // Dreh den zweidimensionalen Vektor um den Ursprung gegen den
     // Uhrzeigersinn. Theta hat die Einheit Rad.
@@ -30,7 +30,7 @@ public class Vektordreher {
 	return new Zweivektor(xneu, yneu);
     }
 
-    // In drei Dimensionen
+    // In drei Dimensionen.
 
     // Dreh den Vektor in um die x-Achse (in die yz-Fläche).
     public static Dreivektor drehex(Dreivektor p, double theta) {
@@ -76,13 +76,5 @@ public class Vektordreher {
 	Dreivektor pgedreht = new Dreivektor(xy.eins, xy.zwei, p.drei);
 	return pgedreht;
     }
-
-    // Dreh einen zweidimensionalen Vektor nicht um den Ursprung,
-    // sondern um den anderen gegebenen Vektor.
-    // public static Zweivektor drehen(Zweivektor vektor, Zweivektor drehvektor)
-
-    // Dreh einen dreidimensionalen Vektor nicht um den Ursprung,
-    // sondern um den anderen gegebenen Vektor.
-    // public static Dreivektor drehen(Dreivektor vektor, Dreivektor drehvektor)
 }
 

@@ -5,6 +5,12 @@ import matrix.Dreimatrix;
 import dreher.matrix.Matrixdreher;
 import dreher.vektor.Vektordreher;
 
+/*
+  Hier stellen wir die Frage: wie drehen wir einen Vektor, sodaß er
+  parallel zu der x-Achse liegt?
+
+  Ich habe noch keinen Nuzen dafür. Aber hier ist die Antwort.
+ */
 public class Achsedreher {
 	
     // Berechne die Drehungmatrix, um den gegebenen Punkt auf die
@@ -25,7 +31,7 @@ public class Achsedreher {
 	return mb.punkt(ma);
     }
 
-    // Die umhekrung von nehmexachsedrehung
+    // Die Umhekrung von nehmexachsedrehung.
     public static Dreimatrix nehmexachsedrehungumkehrung(Dreivektor va) {
 	
 	double thetaeins = Math.atan(va.drei / va.zwei);

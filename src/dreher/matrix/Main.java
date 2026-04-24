@@ -97,9 +97,6 @@ public class Main {
 	System.out.println(Vektordrucker.drucke(vd));
     }
 
-    static void beispielvier() {
-    }
-    
     public static void main(String[] args) {
 	beispieldrei();
     }
