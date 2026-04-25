@@ -1,9 +1,9 @@
 package welt.graph.gitter;
 
 import graph.Nachbarschaftsliste;
+import graph.gitter.Zweigitter;
 import vektor.Zweivektor;
 import welt.graph.Zweigraphwelt;
-import graph.gitter.Zweigitter;
 
 public class Zweigitterwelt {
     /*
