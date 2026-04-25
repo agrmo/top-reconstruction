@@ -1,4 +1,4 @@
-package welt.graph.gitter;
+package graph.gitter;
 
 import java.util.Random;
 import graph.Nachbarschaftsliste;
@@ -14,7 +14,9 @@ import graph.Nachbarschaftsliste;
   1. Eine Funktion, die den Graphen baut (Zweigitter)
   2. Eine Funktion, die die Orte des Graphen baut (Zweigitterorte).
   3. Eine Funktion, die die Welt solches Gitter baut (Zweigitterwelt).
-  
+
+  Diese Durchführung ist sehr ähnlich wie ein Zufallsgraph. Man baut
+  zuerst den Graphen, dann die Orte, dann die Welt.
 */  
 public class Zweigitter {
 
@@ -43,7 +45,7 @@ public class Zweigitter {
     }
 
     // Mache einen zweidimensionalen Graphen für ein neues Gitter.
-    static Nachbarschaftsliste machegraph(int xknoten, int yknoten) {
+    public static Nachbarschaftsliste machegraph(int xknoten, int yknoten) {
 
 	// Der Platz an der x-Achse und y-Achse.
 	int xindex = 0;
