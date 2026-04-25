@@ -8,7 +8,7 @@ import sicht.Sicht;
 import sicht.graph.zwei.Zweigraphsicht;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
-import verleger.vielflach.Vielflachverleger;
+import verleger.punkt.Punktverleger;
 import welt.graph.Dreigraphwelt;
 import welt.graph.Zweigraphwelt;
 
@@ -71,9 +71,9 @@ public class Dreigraphaugesicht extends Sicht {
 
 	// Verlege jeden Vektor. 
 	for (int i = 0; i < zweiorten.length; i++) {
-	    zweiorten[i] = Vielflachverleger.verlege(dreiorten[i], this.entfernung, this.brennweite,
-						this.breite, this.hoehe,
-						drehung);
+	    zweiorten[i] = Punktverleger.verlege(dreiorten[i], this.entfernung, this.brennweite,
+						 this.breite, this.hoehe,
+						 drehung);
 	}
 
 	Zweigraphwelt zw = new Zweigraphwelt(this.dgw.graph, zweiorten);

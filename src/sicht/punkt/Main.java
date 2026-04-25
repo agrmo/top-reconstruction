@@ -9,7 +9,7 @@ import vektor.Zweivektor;
 import vieleck.quadrat.Quadrat;
 import vielflach.kubus.Kubus;
 import welt.punkt.Zweipunktwelt;
-import verleger.vielflach.Vielflachverleger;
+import verleger.punkt.Punktverleger;
 import dreher.dreimatrix.Dreimatrixdreher;
 import matrix.Dreimatrix;
 
@@ -54,10 +54,11 @@ public class Main {
 	Dreimatrix drehung = Dreimatrixdreher.nehmedreherx(0.1);
 	
 	for (int i = 0; i < dpl.length; i++) {
-	    zpl[i] = Vielflachverleger.verlege(dpl[i], entfernung, brennweite,
-					  breite, hoehe,
-					  drehung);
+	    zpl[i] = Punktverleger.verlege(dpl[i], entfernung, brennweite,
+					   breite, hoehe,
+					   drehung);
 	}
+	
 	int durchmesser = 20;
 	Zweipunktwelt pw = new Zweipunktwelt(zpl);
 	Zweipunktsicht s = new Zweipunktsicht(pw, durchmesser);

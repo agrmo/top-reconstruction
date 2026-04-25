@@ -7,6 +7,8 @@ import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
 import welt.strecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
+import verleger.punkt.Punktverleger;
+import verleger.strecke.Streckeverleger;
 
 /*
   javac -d classes $(find src -type f) \
