@@ -65,25 +65,25 @@ public class Main {
     }
 
     static void beispielacht() {
-	Zweivektor[] orte = Zweigitter.macheorte(1, 1, 5);
+	Zweivektor[] orte = Zweigitterorte.macheorte(1, 1, 5);
 	System.out.println(Vektordrucker.drucke(orte));
 	// Nur ein Ort, [0,0].
     }
 
     static void beispielneun() {
-	Zweivektor[] orte = Zweigitter.macheorte(2, 1, 5);
+	Zweivektor[] orte = Zweigitterorte.macheorte(2, 1, 5);
 	System.out.println(Vektordrucker.drucke(orte));
 	// Zwei Orte, [0,0] und [5,0].
     }
 
     static void beispielzehn() {
-	Zweivektor[] orte = Zweigitter.macheorte(3, 1, 5);
+	Zweivektor[] orte = Zweigitterorte.macheorte(3, 1, 5);
 	System.out.println(Vektordrucker.drucke(orte));
 	// Drei Orte, [0,0], [5,0], [10,0]
     }
 
     static void beispielelf() {
-	Zweivektor[] orte = Zweigitter.macheorte(3, 2, 5);
+	Zweivektor[] orte = Zweigitterorte.macheorte(3, 2, 5);
 	System.out.println(Vektordrucker.drucke(orte));
 	/*
 
@@ -96,7 +96,7 @@ public class Main {
     }
 
     static void beispielzwoelf() {
-	Zweigraphwelt zgw = Zweigitter.machewelt(2, 3, 5);
+	Zweigraphwelt zgw = Zweigitterwelt.machewelt(2, 3, 5);
 	// Ok das passt...
     }
     

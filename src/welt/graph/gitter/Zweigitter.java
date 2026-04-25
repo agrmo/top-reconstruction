@@ -1,11 +1,7 @@
 package welt.graph.gitter;
 
 import java.util.Random;
-import vektor.Zweivektor;
 import graph.Nachbarschaftsliste;
-import vektor.Zweivektor;
-import welt.graph.Zweigraphwelt;
-import druck.vektor.Vektordrucker;
 
 /*
   Ein Gitter ist eine Art von Graphen, die wie ein Gitter aussieht.
@@ -15,17 +11,17 @@ import druck.vektor.Vektordrucker;
   dafür machen: eine für den Graphen und eine für die Stellen.
 
   Hier haben wir drei wichtige Funktionen:
-  1. Eine Funktion, die den Graph baut.
-  2. Eine Funktion, die die Orte des Graphen baut.
-  3. Eine Funktion, die die Welt solches Gitter baut.
+  1. Eine Funktion, die den Graphen baut (Zweigitter)
+  2. Eine Funktion, die die Orte des Graphen baut (Zweigitterorte).
+  3. Eine Funktion, die die Welt solches Gitter baut (Zweigitterwelt).
   
 */  
 public class Zweigitter {
 
     // static int nehmeknotenanzahl()
     // ... Einfach nur xknoten * yknoten ...
-
-    // Ein bißchen komplizierter,
+    // Ein bißchen komplizierter ist nehmekantenanzahl.
+    
     static int nehmekantenanzahl(int xknoten, int yknoten) {
 	// Sobald wir die Anzahl der Knoten in die x-Richtung und die
 	// Anzahl der Knoten in die y-Richtung kennen, kennen wir ganz
@@ -128,44 +124,5 @@ public class Zweigitter {
 	Nachbarschaftsliste graph = new Nachbarschaftsliste(paare, inBetrag);
 
 	return graph;
-    }
-    
-    // Berechne die zweidimensionalen Orte jedes Knoten. Diese
-    // Funktion baut die Stellen gleich wie der Graph in machegraph()
-    // gebaut würde. D.h., orte[0] ist die Stelle des ersten Knoten 0.
-    static Zweivektor[] macheorte(int xknoten, int yknoten, int weg) {
-
-	Zweivektor[] orte = new Zweivektor[xknoten * yknoten];
-
-	for (int i = 0; i < yknoten; i++) {
-	    for (int j = 0; j < xknoten; j++) {
-
-		int knotenindex = (i * xknoten) + j;
-		orte[knotenindex] = new Zweivektor(j * weg, i * weg);
-	    }
-	}
-
-	return orte;
-    }
-
-    /*
-      Mache eine zweidimensionale Graphwelt, die ein Gitter enthält.
-      
-      xknoten: Die Anzahl von Knoten in der x-Richtung.
-      yknoten: Die Anzahl von Knoten in der y-Richtung.
-      weg: Der räumliche Entfernung zwischen zwei Knoten.
-    */
-    public static Zweigraphwelt machewelt(int xknoten, int yknoten, int weg) {
-
-	// Der Graph kennt seine Stellen nicht. Wichtig.
-	Nachbarschaftsliste graph = Zweigitter.machegraph(xknoten, yknoten);
-
-	// Die Welt kennt die Stellen aller Knoten. Wichtig.
-	Zweivektor[] orte = Zweigitter.macheorte(xknoten, yknoten, weg);
-
-	// Nun baue die Welt.
-	Zweigraphwelt zgw = new Zweigraphwelt(graph, orte);
-
-	return zgw;
     }
 }

@@ -1,5 +1,6 @@
 package rohr;
 
+// Das Rohr.
 public class Rohr {
     public int innenradius;
     public int aussenradius;

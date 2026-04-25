@@ -9,7 +9,7 @@ import sicht.Sicht;
 import welt.graph.Zweigraphwelt;
 import welt.graph.zufalls.Zufallszweigraphwelt;
 import graph.zufalls.Zufallsgraph;
-import welt.graph.gitter.Zweigitter;
+import welt.graph.gitter.Zweigitterwelt;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -77,7 +77,7 @@ public class Main {
     
     static void beispieldrei() {
 	// Mache die Welt.
-	Zweigraphwelt zgw = Zweigitter.machewelt(10, 10, 50);
+	Zweigraphwelt zgw = Zweigitterwelt.machewelt(10, 10, 50);
 
 	// Mache die Sicht.
 	double durchmesser = 20;

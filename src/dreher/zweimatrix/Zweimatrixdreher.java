@@ -9,8 +9,7 @@ public class Zweimatrixdreher {
        |cos  -sin|
        |sin  cos |
     */
-    public static Zweimatrix nehmedrehung(double theta) {
-	
+    public static Zweimatrix nehmedrehung(double theta) {	
 	return new Zweimatrix(Math.cos(theta), -Math.sin(theta),
 			      Math.sin(theta), Math.cos(theta));
     }
