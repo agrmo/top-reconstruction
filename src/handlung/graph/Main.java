@@ -4,7 +4,6 @@ import graph.Nachbarschaftsliste;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;

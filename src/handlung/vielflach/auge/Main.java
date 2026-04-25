@@ -3,7 +3,6 @@ package handlung.vielflach.auge;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
@@ -33,11 +32,9 @@ public class Main {
 	// und erneuen die zweite Matrix.
 
 	// Mache die Welt.
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(new Kubus(60));
-	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
-	ol.add(new Dreivektor(-30,-30,-30));
-	Vielflachwelt vw = new Vielflachwelt(kl, ol);
+	Vielflach[] vl = new Vielflach[] {new Kubus(60)};
+	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(-30,-30,-30)};
+	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
@@ -64,11 +61,9 @@ public class Main {
 
     static void beispielzwei() {
 	// Mache die Welt.
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(new Kubus(30));
-	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
-	ol.add(new Dreivektor(-15,-15,-15));
-	Vielflachwelt vw = new Vielflachwelt(kl, ol);
+	Vielflach[] vl = new Vielflach[] {new Kubus(30)};
+	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(-15,-15,-15)};
+	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
@@ -96,13 +91,15 @@ public class Main {
 
     static void beispieldrei() {
 	// Mache die Welt.
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(new Kubus(30));
-	kl.add(new Kubus(30));
-	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
-	ol.add(new Dreivektor(-15,-15,-15));
-	ol.add(new Dreivektor(-15,30,30));
-	Vielflachwelt vw = new Vielflachwelt(kl, ol);
+	Vielflach[] vl = new Vielflach[] {
+	    new Kubus(30),
+	    new Kubus(30)
+	};
+	Dreivektor[] ol = new Dreivektor[] {
+	    new Dreivektor(-15,-15,-15),
+	    new Dreivektor(-15,30,30)
+	};
+	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();

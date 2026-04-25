@@ -3,7 +3,6 @@ package handlung.vielflach.augezeit;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
@@ -22,11 +21,9 @@ import welt.vielflach.Vielflachwelt;
 public class Main {
     static void beispieleins() {
 	// Mache die Welt.
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(new Kubus(60));
-	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
-	ol.add(new Dreivektor(-30,-30,-30));
-	Vielflachwelt vw = new Vielflachwelt(kl, ol);
+	Vielflach[] vl = new Vielflach[] {new Kubus(60)};
+	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(-30,-30,-30)};
+	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();

@@ -2,7 +2,6 @@ package sicht.oval;
 
 import oval.Oval;
 import java.awt.Color;
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;

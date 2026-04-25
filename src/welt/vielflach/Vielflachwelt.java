@@ -1,6 +1,5 @@
 package welt.vielflach;
     
-import java.util.ArrayList;
 import vektor.Dreivektor;
 import strecke.Dreistrecke;
 import vielflach.Vielflach;
@@ -28,10 +27,10 @@ public class Vielflachwelt {
     // Wir sind mit eine Reihe von Körpern gegeben. Ein Körper kennt
     // nur seine Eigenschaften. Die Vielflachwelt versteht nicht nur
     // seine Eigenschaften, sondern auch wo er steht.
-    public ArrayList<Vielflach> vielflache;
-    public ArrayList<Dreivektor> orte;
+    public Vielflach[] vielflache;
+    public Dreivektor[] orte;
 
-    public Vielflachwelt(ArrayList<Vielflach> kl, ArrayList<Dreivektor> ol) {
+    public Vielflachwelt(Vielflach[] kl, Dreivektor[] ol) {
 	this.vielflache = kl;
 	this.orte = ol;
     }
@@ -40,8 +39,8 @@ public class Vielflachwelt {
     int nehmekantenanzahl() {
 	int kantenanzahl = 0;
 
-	for (int i = 0; i < this.vielflache.size(); i++) {
-	    kantenanzahl += this.vielflache.get(i).nehmekantenanzahl();
+	for (int i = 0; i < this.vielflache.length; i++) {
+	    kantenanzahl += this.vielflache[i].nehmekantenanzahl();
 	}
 
 	return kantenanzahl;
@@ -50,9 +49,9 @@ public class Vielflachwelt {
     // aus: Liste von Dreistrecke
     //
     // Nehme alle Dreistrecken aller Körper dieser Welt in genau einer
-    // großen Liste. Die Dreistreckeliste hat nur Tiefe 1. Also wir
-    // kennen nachdem nicht, ob eine Strecke in einem Körper oder in
-    // einem anderen Körper steht.
+    // großen Liste. Also wir kennen von dieser Liste nicht, ob eine
+    // Strecke in einem Körper oder in einem anderen Körper
+    // ursprünglich stand.
     public Dreistrecke[] nehmekanten() {
 
 	int kantenanzahl = this.nehmekantenanzahl();
@@ -68,10 +67,10 @@ public class Vielflachwelt {
 	// Für alle Körper der Welt, nehme den Körper, dann nehme
 	// seine Kanten, dann stellen seine Kanten zum richtigen Ort.
 	
-	for (int i = 0; i < this.vielflache.size(); i++) {
-	    Vielflach k = this.vielflache.get(i);
+	for (int i = 0; i < this.vielflache.length; i++) {
+	    Vielflach k = this.vielflache[i];
 	    Dreistrecke[] kl = k.nehmekanten();
-	    Dreivektor ort = this.orte.get(i);
+	    Dreivektor ort = this.orte[i];
 
 	    for (int j = 0; j < kl.length; j++) {
 		kl[j].addiere(ort);

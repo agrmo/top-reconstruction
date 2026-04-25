@@ -1,6 +1,5 @@
 package sicht.vielflach.giernick;
 
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
@@ -19,10 +18,8 @@ public class Main {
     public static void main(String[] args){
 
 	// Mache die Welt.
-	ArrayList<Vielflach> vl = new ArrayList<Vielflach>();
-	vl.add(new Kubus(30));
-	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
-	ol.add(new Dreivektor(0,0,100));
+	Vielflach[] vl = new Vielflach[] {new Kubus(30)};
+	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(0,0,100)};
 	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 
 	// Mache die Sicht.

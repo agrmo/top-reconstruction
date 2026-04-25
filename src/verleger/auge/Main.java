@@ -1,6 +1,5 @@
 package verleger.auge;
 
-import java.util.ArrayList;
 import matrix.Dreimatrix;
 import strecke.Zweistrecke;
 import vektor.Dreivektor;
@@ -20,10 +19,8 @@ public class Main {
 	// Mache die dreidimensionale Welt.
 	Kubus k = new Kubus(50);
 	Dreivektor p = new Dreivektor(100,100,100);
-	ArrayList<Vielflach> vl = new ArrayList<Vielflach>();
-	vl.add(k);
-	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
-	ol.add(p);
+	Vielflach[] vl = new Vielflach[] {k};
+	Dreivektor[] ol = new Dreivektor[] {p};
 	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 
 	// Verlegen die Welt.

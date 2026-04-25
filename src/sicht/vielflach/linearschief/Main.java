@@ -1,6 +1,5 @@
 package sicht.vielflach.linearschief;
 
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
@@ -20,11 +19,9 @@ public class Main {
 	// Mache die Welt.
 	Kubus k = new Kubus(50);
 	Dreivektor p = new Dreivektor(100, 100, 100);
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(k);
-	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
-	ol.add(p);
-	Vielflachwelt welt = new Vielflachwelt(kl, ol);
+	Vielflach[] vl = new Vielflach[] {k};
+	Dreivektor[] ol = new Dreivektor[] {p};
+	Vielflachwelt welt = new Vielflachwelt(vl, ol);
 
 	// Der Verleger vergrößert die stellen der Kanten. Nicht nur
 	// wird den Abstand zwischen den Vektoren vergrößert, sondern

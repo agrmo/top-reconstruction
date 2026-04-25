@@ -1,6 +1,5 @@
 package sicht.vielflach.auge;
 
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
@@ -20,11 +19,9 @@ public class Main {
 
     static void beispieleins() {
 	// Mache die Welt.
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(new Kubus(30));
-	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
-	ol.add(new Dreivektor(0,0,200));
-	Vielflachwelt welt = new Vielflachwelt(kl, ol);
+	Vielflach[] vl = new Vielflach[] {new Kubus(30)};
+	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(0,0,200)};
+	Vielflachwelt welt = new Vielflachwelt(vl, ol);
 
 	// Mache die Sicht.
 	double breite = 1200;
@@ -44,11 +41,9 @@ public class Main {
 
     static void beispielzwei() {
 	// Mache die Welt.
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(new Kubus(30));
-	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
-	ol.add(new Dreivektor(-15,-15,-15));
-	Vielflachwelt vw = new Vielflachwelt(kl, ol);
+	Vielflach[] vl = new Vielflach[] {new Kubus(30)};
+	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(-15,-15,-15)};
+	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();

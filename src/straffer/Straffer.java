@@ -1,6 +1,5 @@
 package straffer;
 
-import java.util.ArrayList;
 import vektor.Zweivektor;
 import strecke.Zweistrecke;
 import welt.strecke.Zweistreckewelt;

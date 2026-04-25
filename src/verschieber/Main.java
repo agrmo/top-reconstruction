@@ -1,6 +1,5 @@
 package verschieber;
 
-import java.util.ArrayList;
 import vielflach.kubus.Kubus;
 import vektor.Dreivektor;
 import vielflach.Vielflach;
@@ -18,11 +17,9 @@ public class Main {
 	// Diese Welt enthält einen Kubus auf der Stelle (100,100,100).
 	Kubus k = new Kubus(50);
 	Dreivektor o = new Dreivektor(100,100,100);
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(k);
-	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
-	ol.add(o);
-	Vielflachwelt vw = new Vielflachwelt(kl, ol);
+	Vielflach[] vl = new Vielflach[] {k};
+	Dreivektor[] ol = new Dreivektor[] {o};
+	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 
 	// Benutzen den Verleger.
 	Dreivektor vp = new Dreivektor(100,100,100);

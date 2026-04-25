@@ -1,7 +1,6 @@
 package welt.vielflach;
 
 import druck.strecke.Streckedrucker;
-import java.util.ArrayList;
 import vektor.Dreivektor;
 import strecke.Dreistrecke;
 import vielflach.Vielflach;
@@ -25,15 +24,13 @@ public class Main {
 	Dreivektor p = new Dreivektor(100,100,100);
 
 	// Liste von Vielflachn.
-	ArrayList<Vielflach> kl = new ArrayList<Vielflach>();
-	kl.add(k);
+	Vielflach[] vl = new Vielflach[] {k};
 
 	// Liste von Orten.
-	ArrayList<Dreivektor> orten = new ArrayList<Dreivektor>();
-	orten.add(p);
+	Dreivektor[] ol = new Dreivektor[] {p};
 	
 	// Mache die Welt.
-	Vielflachwelt welt = new Vielflachwelt(kl, orten);
+	Vielflachwelt welt = new Vielflachwelt(vl, ol);
 
 	// Überprüfen die Strecken.
 	Dreistrecke[] strecken = welt.nehmekanten();

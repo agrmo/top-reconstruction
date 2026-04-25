@@ -3,7 +3,6 @@ package handlung.vielflach.giernick;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
@@ -35,10 +34,8 @@ public class Main {
 	// durchgeführt.
 	
 	// Mache die Welt.
-	ArrayList<Vielflach> vl = new ArrayList<Vielflach>();
-	vl.add(new Kubus(60));
-	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
-	ol.add(new Dreivektor(-30,-30,-30));
+	Vielflach[] vl = new Vielflach[] {new Kubus(60)};
+	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(-30,-30,-30)};
 	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 	
 	// Mache die Sicht.

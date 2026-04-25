@@ -1,6 +1,5 @@
 package sicht.bogen.zwei;
 
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import bogen.Bogen;
 import vektor.Zweivektor;

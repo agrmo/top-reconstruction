@@ -1,6 +1,5 @@
 package sicht.vielflach.schief;
 
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import vielflach.kubus.Kubus;
 import vektor.Dreivektor;
@@ -21,10 +20,8 @@ public class Main {
 	// Mache die Welt.
 	Kubus k = new Kubus(50);
 	Dreivektor p = new Dreivektor(100,100,100);
-	ArrayList<Vielflach> vl = new ArrayList<Vielflach>();
-	vl.add(k);
-	ArrayList<Dreivektor> ol = new ArrayList<Dreivektor>();
-	ol.add(p);
+	Vielflach[] vl = new Vielflach[] {k};
+	Dreivektor[] ol = new Dreivektor[] {p};
 	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 
 	// Mache die Sicht.

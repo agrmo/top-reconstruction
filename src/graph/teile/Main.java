@@ -1,6 +1,5 @@
 package graph.teile;
 
-import java.util.ArrayList;
 import graph.Nachbarschaftsliste;
 import graph.Doppelnachbarschaftsliste;
 import graph.zufalls.Zufallsgraph;

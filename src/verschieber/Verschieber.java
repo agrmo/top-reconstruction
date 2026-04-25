@@ -61,8 +61,8 @@ public class Verschieber {
 
 	// Für jeden Orten der Welt, addiere zu ihm den Verschiebenvektor.
 	
-	for (int i = 0; i < welt.orte.size(); i++) {
-	    welt.orte.get(i).addiere(verschiebenvektor);
+	for (int i = 0; i < welt.orte.length; i++) {
+	    welt.orte[i].addiere(verschiebenvektor);
 	}
     }
 }
