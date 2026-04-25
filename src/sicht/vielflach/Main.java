@@ -1,4 +1,4 @@
-package sicht.vielflach.auge;
+package sicht.vielflach;
 
 import javax.swing.JFrame;
 import maler.Maler;
@@ -12,7 +12,7 @@ import java.awt.Dimension;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.vielflach.auge.Main
+  && java -cp classes sicht.vielflach.Main
 */
 
 public class Main {
@@ -20,15 +20,15 @@ public class Main {
     static void beispieleins() {
 	// Mache die Welt.
 	Vielflach[] vl = new Vielflach[] {new Kubus(30)};
-	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(0,0,200)};
+	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(0,0,0)};
 	Vielflachwelt welt = new Vielflachwelt(vl, ol);
 
 	// Mache die Sicht.
 	double breite = 1200;
 	double hoehe = 600;
 	double brennweite = 500;
-	Dreivektor ap = new Dreivektor(100,100,100);
-	Augesicht as = new Augesicht(welt, ap, brennweite, breite, hoehe);
+	Dreivektor ap = new Dreivektor(0,0,100);
+	Vielflachsicht as = new Vielflachsicht(welt, ap, brennweite, breite, hoehe);
 	Maler m = new Maler(new Sicht[] {as});
 	
 	// Stelle die Daten dar.
@@ -50,8 +50,8 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0,0,100);
-	Augesicht as = new Augesicht(vw, ap, 500, breite, hoehe);
-	Augetextsicht ats = new Augetextsicht(as);
+	Vielflachsicht as = new Vielflachsicht(vw, ap, 500, breite, hoehe);
+	Vielflachtextsicht ats = new Vielflachtextsicht(as);
 
 	Maler m = new Maler(new Sicht[] {as, ats});
 	
@@ -64,6 +64,6 @@ public class Main {
     }
 
     public static void main(String[] args){
-	beispielzwei();
+	beispieleins();
     }
 }

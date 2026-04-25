@@ -1,20 +1,20 @@
-package sicht.vielflach.auge;
+package sicht.vielflach;
 
 import druck.vektor.Vektordrucker;
 import java.awt.Graphics;
 import sicht.Sicht;
 import sicht.text.Textsicht;
-import sicht.vielflach.auge.Augesicht;
+import sicht.vielflach.Vielflachsicht;
 import vektor.Zweivektor;
 
 // Eine Sicht, die einen Text der Eigenschaften der
-// Augesicht auf dem Bildschirm schreibt.
-public class Augetextsicht extends Sicht {
+// Vielflachsicht auf dem Bildschirm schreibt.
+public class Vielflachtextsicht extends Sicht {
 
-    Augesicht as;
+    Vielflachsicht as;
     Textsicht textsicht;
 
-    public Augetextsicht(Augesicht as) {
+    public Vielflachtextsicht(Vielflachsicht as) {
 	this.as = as;
 	this.textsicht = new Textsicht(new String[] {},
 				       new Zweivektor[] {});

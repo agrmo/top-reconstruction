@@ -1,16 +1,16 @@
 package wesen;
 
 import vektor.Dreivektor;
-import sicht.vielflach.auge.Augesicht;
+import sicht.vielflach.Vielflachsicht;
 import maler.Maler;
 
 // Das Wesen nimmt den Verlauf der Zeit auf.
 public class Vielflachbasiswesen implements Runnable {
 
     Maler m;
-    Augesicht vas;
+    Vielflachsicht vas;
     
-    public Vielflachbasiswesen(Augesicht vas, Maler m) {
+    public Vielflachbasiswesen(Vielflachsicht vas, Maler m) {
 	this.m = m;
 	this.vas = vas;
     }

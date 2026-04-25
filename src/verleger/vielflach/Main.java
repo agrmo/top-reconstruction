@@ -1,4 +1,4 @@
-package verleger.auge;
+package verleger.vielflach;
 
 import matrix.Dreimatrix;
 import strecke.Zweistrecke;
@@ -10,7 +10,7 @@ import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes verleger.auge.Main
+  && java -cp classes verleger.vielflach.Main
 */
 
 public class Main {
@@ -24,7 +24,7 @@ public class Main {
 	Vielflachwelt vw = new Vielflachwelt(vl, ol);
 
 	// Verlegen die Welt.
-	Zweistreckewelt zsw = Augeverleger.verlege(vw,
+	Zweistreckewelt zsw = Vielflachverleger.verlege(vw,
 						   new Dreivektor(0,0,0), 500,
 						   1200, 600,
 						   0,0,0);

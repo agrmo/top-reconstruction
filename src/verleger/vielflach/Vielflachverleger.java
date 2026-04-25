@@ -1,4 +1,4 @@
-package verleger.auge;
+package verleger.vielflach;
 
 import dreher.euler.Eulerdreher;
 import druck.matrix.Matrixdrucker;
@@ -12,7 +12,7 @@ import welt.graph.Zweigraphwelt;
 import welt.strecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 
-// Ein Augeverleger verlegt eine dreidimensionale Welt von
+// Ein Vielflachverleger verlegt eine dreidimensionale Welt von
 // Vielflächen zu einer zweidimensionalen Welt von Vektoren und
 // Strecken.
 //
@@ -22,7 +22,7 @@ import welt.vielflach.Vielflachwelt;
 // 3. Entfernen die Kamera vom Ursprung.
 // 4. Projizieren alle Vektoren zu einer zweidimensionalen Fläche.
 // 5. Verschieben alle Vektoren zum Zentrum des Bildchirms.
-public class Augeverleger {
+public class Vielflachverleger {
     
     // ein: Dreivektor, ...
     // aus: Zweivektor
@@ -63,12 +63,12 @@ public class Augeverleger {
 				      double breite, double hoehe,
 				      Dreimatrix drehung) {
 	
-	Zweivektor verlegterVektorVon = Augeverleger.verlege(ds.von,
+	Zweivektor verlegterVektorVon = Vielflachverleger.verlege(ds.von,
 							     entfernung, brennweite,
 							     breite, hoehe,
 							     drehung);
 	
-	Zweivektor verlegterVektorBis = Augeverleger.verlege(ds.bis,
+	Zweivektor verlegterVektorBis = Vielflachverleger.verlege(ds.bis,
 							     entfernung, brennweite,
 							     breite, hoehe,
 							     drehung);
@@ -109,7 +109,7 @@ public class Augeverleger {
 	for (int i = 0; i < dsl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zs = Augeverleger.verlege(dsl[i], entfernung, brennweite,
+	    Zweistrecke zs = Vielflachverleger.verlege(dsl[i], entfernung, brennweite,
 						  breite, hoehe,
 						  drehung);
 	    

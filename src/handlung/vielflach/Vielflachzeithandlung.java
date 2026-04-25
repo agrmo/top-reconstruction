@@ -1,4 +1,4 @@
-package handlung.vielflach.augezeit;
+package handlung.vielflach;
 
 import dreher.dreimatrix.Dreimatrixdreher;
 import druck.matrix.Matrixdrucker;
@@ -6,25 +6,25 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import maler.Maler;
 import matrix.Dreimatrix;
-import sicht.vielflach.auge.Augesicht;
+import sicht.vielflach.Vielflachsicht;
 import vektor.Dreivektor;
 import welt.vielflach.Vielflachwelt;
 import wesen.Vielflachbasiswesen;
 import zeit.Zeitdauer;
 import handlung.Handlung;
 
-public class Augezeithandlung extends Handlung {
+public class Vielflachzeithandlung extends Handlung {
 
     Maler m;
-    Augesicht as;
+    Vielflachsicht as;
     Vielflachwelt vw;
     int mousevorx;
     int mousevory;
     Vielflachbasiswesen vbw;
 
-    public Augezeithandlung(Maler m,
-			    Augesicht as,
-			    Vielflachwelt vw) {
+    public Vielflachzeithandlung(Maler m,
+				 Vielflachsicht as,
+				 Vielflachwelt vw) {
 	this.m = m;
 	this.as = as;
 	this.vw = vw;

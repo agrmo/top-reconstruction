@@ -1,4 +1,4 @@
-package sicht.vielflach.auge;
+package sicht.vielflach;
 
 import java.awt.Graphics;
 import javax.swing.JComponent;
@@ -6,14 +6,14 @@ import matrix.Dreimatrix;
 import sicht.Sicht;
 import sicht.strecke.Streckesicht;
 import vektor.Dreivektor;
-import verleger.auge.Augeverleger;
+import verleger.vielflach.Vielflachverleger;
 import welt.strecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 
 // Eine Sicht, die eine dreidimensionale Vielflachwelt einnimmt.
 // Sie wandelt die Vielflachwelt mit nur einer Verlegung: einer vektoren
 // Verlegung. Sie gibt am Ende eine Zweistreckewelt ab.
-public class Augesicht extends Sicht {
+public class Vielflachsicht extends Sicht {
 
     // Die ursprünglichen Daten der Welt, aber nicht bearbeitet.
     public Vielflachwelt vw;
@@ -33,7 +33,7 @@ public class Augesicht extends Sicht {
     public double winkelzwei;
     public double winkeldrei;
 
-    public Augesicht(Vielflachwelt vw,
+    public Vielflachsicht(Vielflachwelt vw,
 		     Dreivektor entfernung, double brennweite,
 		     double breite, double hoehe) {
 
@@ -50,11 +50,11 @@ public class Augesicht extends Sicht {
     public void darstellen(Graphics g) {
 	
 	// Benutzen den Verleger.  
-	Zweistreckewelt zsw = Augeverleger.verlege(this.vw, this.entfernung, this.brennweite,
-						   this.breite, this.hoehe,
-						   this.winkeleins,
-						   this.winkelzwei,
-						   this.winkeldrei);
+	Zweistreckewelt zsw = Vielflachverleger.verlege(this.vw, this.entfernung, this.brennweite,
+							this.breite, this.hoehe,
+							this.winkeleins,
+							this.winkelzwei,
+							this.winkeldrei);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.
