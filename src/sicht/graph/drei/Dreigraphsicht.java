@@ -13,7 +13,7 @@ import welt.graph.Dreigraphwelt;
 import welt.graph.Zweigraphwelt;
 
 // Eine Sicht, die eine dreidimensionale Graphwelt darstellt.
-public class Dreigraphaugesicht extends Sicht {
+public class Dreigraphsicht extends Sicht {
 
     // Die Welt.
     public Dreigraphwelt dgw;
@@ -36,7 +36,7 @@ public class Dreigraphaugesicht extends Sicht {
     public double winkelzwei;
     public double winkeldrei;
     
-    public Dreigraphaugesicht(Dreigraphwelt dgw,
+    public Dreigraphsicht(Dreigraphwelt dgw,
 			      double durchmesser,
 			      Dreivektor entfernung, double brennweite,
 			      double breite, double hoehe,

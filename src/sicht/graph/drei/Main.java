@@ -39,7 +39,7 @@ public class Main {
 	double brennweite = 500;
 	double durchmesser = 20;
 	Dreivektor entfernung = new Dreivektor(0,0,0);
-	Dreigraphaugesicht s = new Dreigraphaugesicht(dgw, durchmesser,
+	Dreigraphsicht s = new Dreigraphsicht(dgw, durchmesser,
 						      entfernung, brennweite,
 						      breite, hoehe,
 						      0, 0, 0);

@@ -7,7 +7,7 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
-import sicht.graph.drei.Dreigraphaugesicht;
+import sicht.graph.drei.Dreigraphsicht;
 import vektor.Dreivektor;
 import welt.graph.Dreigraphwelt;
 import graph.zufalls.Zufallsgraph;
@@ -41,10 +41,10 @@ public class Main {
 	double hoehe = 600;
 	double brennweite = 500;
 	double durchmesser = 20;
-	Dreivektor augevektor = new Dreivektor(0,0,100);
-	Dreigraphaugesicht ds = new Dreigraphaugesicht(dgw,
+	Dreivektor entfernung = new Dreivektor(0,0,100);
+	Dreigraphsicht ds = new Dreigraphsicht(dgw,
 						       durchmesser,
-						       augevektor, brennweite,
+						       entfernung, brennweite,
 						       breite, hoehe,
 						       0, 0, 0);
 	Maler m = new Maler(new Sicht[] {ds});
@@ -87,12 +87,12 @@ public class Main {
 	
 	double brennweite = 500;
 	double durchmesser = 20;
-	Dreivektor augevektor = new Dreivektor(0,0,300);
-	Dreigraphaugesicht ds = new Dreigraphaugesicht(dgw,
-						       durchmesser,
-						       augevektor, brennweite,
-						       breite, hoehe,
-						       0, 0, 0);
+	Dreivektor entfernung = new Dreivektor(0,0,300);
+	Dreigraphsicht ds = new Dreigraphsicht(dgw,
+					       durchmesser,
+					       entfernung, brennweite,
+					       breite, hoehe,
+					       0, 0, 0);
 	Maler m = new Maler(new Sicht[] {ds});
 	
 	// Mache die Handlung.

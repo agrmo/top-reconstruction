@@ -5,7 +5,7 @@ import druck.matrix.Matrixdrucker;
 import java.awt.event.MouseEvent;
 import maler.Maler;
 import matrix.Dreimatrix;
-import sicht.graph.drei.Dreigraphaugesicht;
+import sicht.graph.drei.Dreigraphsicht;
 import vektor.Dreivektor;
 import welt.graph.Dreigraphwelt;
 import handlung.Handlung;
@@ -15,11 +15,11 @@ import java.awt.event.KeyEvent;
 public class Graphhandlung extends Handlung {
 
     Maler m;
-    Dreigraphaugesicht dgas;
+    Dreigraphsicht dgas;
     Dreigraphwelt dgw;
 
     public Graphhandlung(Maler m,
-			 Dreigraphaugesicht dgas,
+			 Dreigraphsicht dgas,
 			 Dreigraphwelt dgw) {
 	this.m = m;
 	this.dgas = dgas;
