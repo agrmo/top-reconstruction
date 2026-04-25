@@ -6,10 +6,12 @@ import maler.Maler;
 import sicht.Sicht;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
-import verleger.giernick.Giernickverleger;
 import vieleck.quadrat.Quadrat;
 import vielflach.kubus.Kubus;
 import welt.punkt.Zweipunktwelt;
+import verleger.auge.Augeverleger;
+import dreher.dreimatrix.Dreimatrixdreher;
+import matrix.Dreimatrix;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -45,13 +47,17 @@ public class Main {
 	// Mache die Sicht.
 	int breite = 1200;
 	int hoehe = 600;
-	Dreivektor augevektor = new Dreivektor(0,0,10);
+	Dreivektor entfernung = new Dreivektor(0,0,10);
 	int brennweite = 500;
-	double gier = 0.0;
-	double nick = 0.3;
-	Zweivektor[] zpl = Giernickverleger.verlege(dpl, augevektor, brennweite,
-						    breite, hoehe,
-						    gier, nick);
+
+	Zweivektor[] zpl = new Zweivektor[dpl.length];
+	Dreimatrix drehung = Dreimatrixdreher.nehmedreherx(0.1);
+	
+	for (int i = 0; i < dpl.length; i++) {
+	    zpl[i] = Augeverleger.verlege(dpl[i], entfernung, brennweite,
+					  breite, hoehe,
+					  drehung);
+	}
 	int durchmesser = 20;
 	Zweipunktwelt pw = new Zweipunktwelt(zpl);
 	Zweipunktsicht s = new Zweipunktsicht(pw, durchmesser);
