@@ -11,7 +11,7 @@ import sicht.Sicht;
 
 // Eine Sicht, die eine dreidimensionale Vielflachwelt einnimmt.  Sie
 // wandelt die Vielflachwelt mit nur zwei Winkeln: einem in die
-// Gier-Richung und einem in die Nick-Richtung.. Sie gibt am Ende eine
+// Gier-Richung und einem in die Nick-Richtung. Sie gibt am Ende eine
 // Zweistreckewelt ab.
 public class Giernicksicht extends Sicht {
 

@@ -9,8 +9,6 @@ package welt;
  Eine Welt ist ein Paar von:
  - Liste von Dingen
  - Liste von Orten
-
- Aber der Begriff "Welt" ist zu einfach, in Code zu schreiben.
 */
 public abstract class Welt {
     
