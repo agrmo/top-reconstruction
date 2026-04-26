@@ -8,8 +8,8 @@ import vektor.Dreivektor;
 // - Orientierung
 public class Dreistellung {
 
-    Dreivektor ort;
-    Orientierung orientierung;
+    public Dreivektor ort;
+    public Orientierung orientierung;
 
     public Dreistellung(Dreivektor ort,
 			Orientierung orientierung) {

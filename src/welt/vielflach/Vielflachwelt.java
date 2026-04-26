@@ -3,9 +3,12 @@ package welt.vielflach;
 import vektor.Dreivektor;
 import strecke.Dreistrecke;
 import vielflach.Vielflach;
+import stellung.vielflach.Vielflachstellung;
 
 /*
-  Eine Vielflachwelt ist eine Liste von Körpern.
+  Eine Vielflachwelt ist ein Triplett von
+  - Liste von Körpern
+  - Liste von Stellungen
   
   Die Vielflachwelt zeigt uns die Stellen verschiedener Körper.
 
@@ -16,10 +19,9 @@ import vielflach.Vielflach;
   Inhalten nicht wichtig sind, sondern ihre Ecken und Orten?
 
   Man soll nur die Ecken und Verbindungen zwischen den Ecken
-  darstellen, sodaß er den ganzen Körper gut kennen können, unabhängig
-  von ihre Farbe oder Beschaffenheit.
+  darstellen, sodaß er den ganzen Körper gut kennen können.
 
-  Die Vielflachwelt zeigt uns nicht, wie sie aussieht! Die Welt enthält
+  Die Vielflachwelt zeigt uns nicht, wie sie aussieht. Die Welt enthält
   die wesentliche Daten. Später stellen wir die Daten dar.
 */
 public class Vielflachwelt {

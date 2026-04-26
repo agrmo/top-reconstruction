@@ -1,13 +1,11 @@
 package orientierung;
 
-// Eine Orientierung ist ein Triplett von
-// - Zahl
-// - Zahl
-// - Zahl
+// Eine Orientierung ist ein Triplett von drei Zahlen.
+// Sie ist mit der eulerschen Winkel "ZXZ" bestimmt.
 public class Orientierung {
-    double winkeleins;
-    double winkelzwei;
-    double winkeldrei;
+    public double winkeleins;
+    public double winkelzwei;
+    public double winkeldrei;
 
     public Orientierung(double winkeleins,
 			double winkelzwei,

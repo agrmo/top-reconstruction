@@ -50,7 +50,8 @@ public class Kubus extends Vielflach {
     // aus: Liste von Dreistrecken
     //
     // Nehme die die die Dreistrecken dieses Körpers beleuchten. Wir
-    // speichern die Werte der Dreistrecken gar nicht! 
+    // speichern die Werte der Dreistrecken gar nicht.  Die ausgehende
+    // Vektoren sind verdoppelt.
     public Dreistrecke[] nehmekanten() {
 	Dreistrecke[] strecken = new Dreistrecke[12];
 
@@ -65,10 +66,6 @@ public class Kubus extends Vielflach {
 					  Vektorverdoppler.verdoppeln(ecken[streckenzeichen[i][1]])); 
 	}
 
-	// Wir sollen die Vektore verdoppeln, sodaß die Zeiger der
-	// Strecken nicht voneinander abhängig sind. Das ist viel
-	// einfacher in einem Programm.
-	
 	return strecken;
     }
 }
