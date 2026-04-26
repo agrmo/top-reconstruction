@@ -31,12 +31,12 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0, 0, 200);
-	Vielflachsicht as = new Vielflachsicht(vw, ap, 500, breite, hoehe);
-
-	Maler m = new Maler(new Sicht[] {as});
+	Vielflachsicht vs = new Vielflachsicht(vw, ap, 500, breite, hoehe);
+	
+	Maler m = new Maler(new Sicht[] {vs});
 	
 	// Mache die Handlung.
-	Vielflachhandlung h = new Vielflachhandlung(m, as, vw);
+	Vielflachhandlung h = new Vielflachhandlung(m, vs, vw);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -60,13 +60,13 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(50,50,0);
-	Vielflachsicht as = new Vielflachsicht(vw, ap, 500, breite, hoehe);
-	Vielflachtextsicht ats = new Vielflachtextsicht(as);
+	Vielflachsicht vs = new Vielflachsicht(vw, ap, 500, breite, hoehe);
+	Vielflachtextsicht ats = new Vielflachtextsicht(vs);
 
-	Maler m = new Maler(new Sicht[] {as, ats});
+	Maler m = new Maler(new Sicht[] {vs, ats});
 	
 	// Mache die Handlung.
-	Vielflachhandlung h = new Vielflachhandlung(m, as, vw);
+	Vielflachhandlung h = new Vielflachhandlung(m, vs, vw);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -96,13 +96,13 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(50,50,0);
-	Vielflachsicht as = new Vielflachsicht(vw, ap, 500, breite, hoehe);
-	Vielflachtextsicht ats = new Vielflachtextsicht(as);
+	Vielflachsicht vs = new Vielflachsicht(vw, ap, 500, breite, hoehe);
+	Vielflachtextsicht ats = new Vielflachtextsicht(vs);
 
-	Maler m = new Maler(new Sicht[] {as, ats});
+	Maler m = new Maler(new Sicht[] {vs, ats});
 	
 	// Mache die Handlung.
-	Vielflachhandlung h = new Vielflachhandlung(m, as, vw);
+	Vielflachhandlung h = new Vielflachhandlung(m, vs, vw);
 
 	// Geh.
 	JFrame frame = new JFrame();
@@ -126,11 +126,11 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0, 0, 100);
-	Vielflachsicht as = new Vielflachsicht(vw, ap, 500, breite, hoehe);
-	Maler m = new Maler(new Sicht[] {as});
+	Vielflachsicht vs = new Vielflachsicht(vw, ap, 500, breite, hoehe);
+	Maler m = new Maler(new Sicht[] {vs});
 	
 	// Mache die Handlung.
-	Vielflachzeithandlung h = new Vielflachzeithandlung(m, as, vw);
+	Vielflachzeithandlung h = new Vielflachzeithandlung(m, vs, vw);
 
 	// Darstellen.
 	JFrame frame = new JFrame();
@@ -146,6 +146,6 @@ public class Main {
     }
     
     public static void main(String[] args) {
-	beispieldrei();
+	beispieleins();
     }
 }

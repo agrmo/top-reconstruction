@@ -11,11 +11,11 @@ import vektor.Zweivektor;
 // Vielflachsicht auf dem Bildschirm schreibt.
 public class Vielflachtextsicht extends Sicht {
 
-    Vielflachsicht as;
+    Vielflachsicht vs;
     Textsicht textsicht;
 
-    public Vielflachtextsicht(Vielflachsicht as) {
-	this.as = as;
+    public Vielflachtextsicht(Vielflachsicht vs) {
+	this.vs = vs;
 	this.textsicht = new Textsicht(new String[] {},
 				       new Zweivektor[] {});
     }
@@ -23,17 +23,17 @@ public class Vielflachtextsicht extends Sicht {
     public void darstellen(Graphics g) {
 	StringBuilder sba = new StringBuilder();
 	sba.append("Betrag: ");
-	sba.append(this.as.entfernung.betrag());
+	sba.append(this.vs.entfernung.betrag());
 	StringBuilder sbb = new StringBuilder();
 	sbb.append("Drehung: ");
-	sbb.append(this.as.winkeleins);
+	sbb.append(this.vs.winkeleins);
 	sbb.append(", ");
-	sbb.append(this.as.winkelzwei);
+	sbb.append(this.vs.winkelzwei);
 	sbb.append(", ");
-	sbb.append(this.as.winkeldrei);
+	sbb.append(this.vs.winkeldrei);
 	
 	String[] texte = new String[] {
-	    Vektordrucker.drucke(this.as.entfernung),
+	    Vektordrucker.drucke(this.vs.entfernung),
 	    sba.toString(),
 	    sbb.toString()
 	};

@@ -16,19 +16,19 @@ import handlung.Handlung;
 public class Vielflachzeithandlung extends Handlung {
 
     Maler m;
-    Vielflachsicht as;
+    Vielflachsicht vs;
     Vielflachwelt vw;
     int mousevorx;
     int mousevory;
     Vielflachbasiswesen vbw;
 
     public Vielflachzeithandlung(Maler m,
-				 Vielflachsicht as,
+				 Vielflachsicht vs,
 				 Vielflachwelt vw) {
 	this.m = m;
-	this.as = as;
+	this.vs = vs;
 	this.vw = vw;
-	this.vbw = new Vielflachbasiswesen(as, m);
+	this.vbw = new Vielflachbasiswesen(vs, m);
 
 	this.mousevorx = 0;
 	this.mousevory = 0;
@@ -51,14 +51,14 @@ public class Vielflachzeithandlung extends Handlung {
 	int jetzty = me.getY();
 	int unterschiedx = jetztx - this.mousevorx;
 	int unterschiedy = jetzty - this.mousevory;
-	double winkelgier = ((double) unterschiedx) / this.as.breite;
-	double winkelnick = -((double) unterschiedy) / this.as.hoehe;
+	double winkelgier = ((double) unterschiedx) / this.vs.breite;
+	double winkelnick = -((double) unterschiedy) / this.vs.hoehe;
 
 	Dreimatrix giermatrix = Dreimatrixdreher.nehmedrehery(winkelgier);
 	Dreimatrix nickmatrix = Dreimatrixdreher.nehmedreherx(winkelnick);
 
-	this.as.entfernung = giermatrix.punkt(this.as.entfernung);
-	this.as.entfernung = nickmatrix.punkt(this.as.entfernung);
+	this.vs.entfernung = giermatrix.punkt(this.vs.entfernung);
+	this.vs.entfernung = nickmatrix.punkt(this.vs.entfernung);
 	
 	this.mousevorx = jetztx;
 	this.mousevory = jetzty;

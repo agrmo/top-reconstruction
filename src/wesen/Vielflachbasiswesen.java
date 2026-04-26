@@ -8,15 +8,15 @@ import maler.Maler;
 public class Vielflachbasiswesen implements Runnable {
 
     Maler m;
-    Vielflachsicht vas;
+    Vielflachsicht vs;
     
-    public Vielflachbasiswesen(Vielflachsicht vas, Maler m) {
+    public Vielflachbasiswesen(Vielflachsicht vs, Maler m) {
 	this.m = m;
-	this.vas = vas;
+	this.vs = vs;
     }
 
     public void run() {
-	this.vas.entfernung.addiere(new Dreivektor(0, 0, 1));
+	this.vs.entfernung.addiere(new Dreivektor(0, 0, 1));
 	this.m.repaint();
     }
 }

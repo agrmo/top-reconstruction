@@ -28,8 +28,8 @@ public class Main {
 	double hoehe = 600;
 	double brennweite = 500;
 	Dreivektor ap = new Dreivektor(0,0,100);
-	Vielflachsicht as = new Vielflachsicht(welt, ap, brennweite, breite, hoehe);
-	Maler m = new Maler(new Sicht[] {as});
+	Vielflachsicht vs = new Vielflachsicht(welt, ap, brennweite, breite, hoehe);
+	Maler m = new Maler(new Sicht[] {vs});
 	
 	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
@@ -50,10 +50,10 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0,0,100);
-	Vielflachsicht as = new Vielflachsicht(vw, ap, 500, breite, hoehe);
-	Vielflachtextsicht ats = new Vielflachtextsicht(as);
+	Vielflachsicht vs = new Vielflachsicht(vw, ap, 500, breite, hoehe);
+	Vielflachtextsicht ats = new Vielflachtextsicht(vs);
 
-	Maler m = new Maler(new Sicht[] {as, ats});
+	Maler m = new Maler(new Sicht[] {vs, ats});
 	
 	// Geh.
 	JFrame frame = new JFrame();
