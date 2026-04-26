@@ -1,6 +1,7 @@
 package handlung.graph;
 
 import graph.Nachbarschaftsliste;
+import graph.zufalls.Zufallsgraph;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -10,9 +11,7 @@ import sicht.Sicht;
 import sicht.graph.drei.Dreigraphsicht;
 import vektor.Dreivektor;
 import welt.graph.Dreigraphwelt;
-import graph.zufalls.Zufallsgraph;
 import welt.graph.zufalls.Zufallsdreigraphwelt;
-
 
 /*
   javac -d classes $(find src -type f) \
