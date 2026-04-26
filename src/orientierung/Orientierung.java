@@ -1,5 +1,9 @@
 package orientierung;
 
+// Eine Orientierung ist ein Triplett von
+// - Zahl
+// - Zahl
+// - Zahl
 public class Orientierung {
     double winkeleins;
     double winkelzwei;

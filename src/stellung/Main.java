@@ -1,8 +1,8 @@
-package einleger;
+package Stellung;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes einleger.Main
+  && java -cp classes Stellung.Main
 */
 
 public class Main {
@@ -11,6 +11,5 @@ public class Main {
     }
     
     public static void main(String[] args) {
-	beispieleins();
     }
 }
