@@ -1,6 +1,5 @@
 package sicht.graph.drei;
 
-import dreher.euler.Eulerdreher;
 import java.awt.Graphics;
 import javax.swing.JComponent;
 import matrix.Dreimatrix;
@@ -8,9 +7,9 @@ import sicht.Sicht;
 import sicht.graph.zwei.Zweigraphsicht;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
-import verleger.punkt.Punktverleger;
 import welt.graph.Dreigraphwelt;
 import welt.graph.Zweigraphwelt;
+import verleger.graph.Dreigraphverleger;
 
 // Eine Sicht, die eine dreidimensionale Graphwelt darstellt.
 public class Dreigraphsicht extends Sicht {
@@ -61,27 +60,17 @@ public class Dreigraphsicht extends Sicht {
 	// müssen nur die dreidimensionale Stellen zu
 	// zweidimensionalen verlegen.
 
-	Dreivektor[] dreiorten = this.dgw.nehmeknoten();
-	Zweivektor[] zweiorten = new Zweivektor[dreiorten.length];
-
-	// Für jeden Knoten, verlegen den Knoten.
-	Dreimatrix drehung = Eulerdreher.nehmedrehung(this.winkeleins,
+	Zweigraphwelt zgw = Dreigraphverleger.verlege(this.dgw, this.entfernung,
+						      this.brennweite,
+						      this.breite, this.hoehe,
+						      this.winkeleins,
 						      this.winkelzwei,
 						      this.winkeldrei);
-
-	// Verlege jeden Vektor. 
-	for (int i = 0; i < zweiorten.length; i++) {
-	    zweiorten[i] = Punktverleger.verlege(dreiorten[i], this.entfernung, this.brennweite,
-						 this.breite, this.hoehe,
-						 drehung);
-	}
-
-	Zweigraphwelt zw = new Zweigraphwelt(this.dgw.graph, zweiorten);
 
 	// Die Zweigraphsicht wird die Knoten richtig verschieben,
 	// sodaß jeweilige Kante in das Zentrum des Knoten gesetzt
 	// wird. Interessant, daß das in nur zwei Dimensionen gilt.
-	Zweigraphsicht zs = new Zweigraphsicht(zw, this.durchmesser);
+	Zweigraphsicht zs = new Zweigraphsicht(zgw, this.durchmesser);
 	zs.darstellen(g);
     }
 }

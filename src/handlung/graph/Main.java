@@ -101,8 +101,8 @@ public class Main {
 	// Fangen die Handlung an.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	// frame.getContentPane().setBackground(Color.BLACK);
-	// frame.getContentPane().setForeground(Color.WHITE);
+	frame.getContentPane().setBackground(Color.BLACK);
+	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
 	frame.addKeyListener(handlung);
@@ -111,6 +111,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-	beispieleins();
+	beispielzwei();
     }
 }
