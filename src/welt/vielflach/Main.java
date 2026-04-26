@@ -5,6 +5,8 @@ import vektor.Dreivektor;
 import strecke.Dreistrecke;
 import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
+import orientierung.Orientierung;
+import stellung.Dreistellung;
 
 /*
   javac -d classes $(find src -type f) \
@@ -21,16 +23,18 @@ public class Main {
 	
 	// Ein Kubus und dessen Ort.
 	Kubus k = new Kubus(50);
-	Dreivektor p = new Dreivektor(100,100,100);
 
 	// Liste von Vielflachn.
 	Vielflach[] vl = new Vielflach[] {k};
 
 	// Liste von Orten.
-	Dreivektor[] ol = new Dreivektor[] {p};
+	Dreistellung[] sl = new Dreistellung[] {
+	    new Dreistellung(new Dreivektor(100,100,100),
+			     new Orientierung(0,0,0))
+	};
 	
 	// Mache die Welt.
-	Vielflachwelt welt = new Vielflachwelt(vl, ol);
+	Vielflachwelt welt = new Vielflachwelt(vl, sl);
 
 	// Überprüfen die Strecken.
 	Dreistrecke[] strecken = welt.nehmekanten();

@@ -1,8 +1,8 @@
-package Stellung;
+package stellung;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes Stellung.Main
+  && java -cp classes stellung.Main
 */
 
 public class Main {

@@ -4,6 +4,8 @@ import vielflach.kubus.Kubus;
 import vektor.Dreivektor;
 import vielflach.Vielflach;
 import welt.vielflach.Vielflachwelt;
+import stellung.Dreistellung;
+import orientierung.Orientierung;
 
 /*
   javac -d classes $(find src -type f) \
@@ -16,10 +18,12 @@ public class Main {
 	// Mache eine dreidimensionale Vielflachwelt.
 	// Diese Welt enthält einen Kubus auf der Stelle (100,100,100).
 	Kubus k = new Kubus(50);
-	Dreivektor o = new Dreivektor(100,100,100);
 	Vielflach[] vl = new Vielflach[] {k};
-	Dreivektor[] ol = new Dreivektor[] {o};
-	Vielflachwelt vw = new Vielflachwelt(vl, ol);
+	Dreistellung[] sl = new Dreistellung[] {
+	    new Dreistellung(new Dreivektor(100,100,100),
+			     new Orientierung(0,0,0))
+	};
+	Vielflachwelt vw = new Vielflachwelt(vl, sl);
 
 	// Benutzen den Verleger.
 	Dreivektor vp = new Dreivektor(100,100,100);

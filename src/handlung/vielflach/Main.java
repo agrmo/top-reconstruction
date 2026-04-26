@@ -5,9 +5,11 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 import maler.Maler;
+import orientierung.Orientierung;
 import sicht.Sicht;
 import sicht.vielflach.Vielflachsicht;
 import sicht.vielflach.Vielflachtextsicht;
+import stellung.Dreistellung;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
 import vielflach.Vielflach;
@@ -23,8 +25,11 @@ public class Main {
     static void beispieleins() {
 	// Mache die Welt.
 	Vielflach[] vl = new Vielflach[] {new Kubus(60)};
-	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(-30,-30,-30)};
-	Vielflachwelt vw = new Vielflachwelt(vl, ol);
+	Dreistellung[] sl = new Dreistellung[] {
+	    new Dreistellung(new Dreivektor(-30,-30,-30),
+			 new Orientierung(0,0,0))
+	};
+	Vielflachwelt vw = new Vielflachwelt(vl, sl);
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
@@ -52,8 +57,11 @@ public class Main {
     static void beispielzwei() {
 	// Mache die Welt.
 	Vielflach[] vl = new Vielflach[] {new Kubus(30)};
-	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(-15,-15,-15)};
-	Vielflachwelt vw = new Vielflachwelt(vl, ol);
+	Dreistellung[] sl = new Dreistellung[] {
+	    new Dreistellung(new Dreivektor(-15,-15,-15),
+			     new Orientierung(0,0,0))
+	};
+	Vielflachwelt vw = new Vielflachwelt(vl, sl);
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
@@ -85,11 +93,13 @@ public class Main {
 	    new Kubus(30),
 	    new Kubus(30)
 	};
-	Dreivektor[] ol = new Dreivektor[] {
-	    new Dreivektor(-15,-15,-15),
-	    new Dreivektor(-15,30,30)
+	Dreistellung[] sl = new Dreistellung[] {
+	    new Dreistellung(new Dreivektor(-15,-15,-15),
+			     new Orientierung(0,0,0)),
+	    new Dreistellung(new Dreivektor(-15,30,30),
+			     new Orientierung(Math.PI / 4.0,0,0))
 	};
-	Vielflachwelt vw = new Vielflachwelt(vl, ol);
+	Vielflachwelt vw = new Vielflachwelt(vl, sl);
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
@@ -118,8 +128,11 @@ public class Main {
     static void beispielvier() {
 	// Mache die Welt.
 	Vielflach[] vl = new Vielflach[] {new Kubus(30)};
-	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(-15,-15,-15)};
-	Vielflachwelt vw = new Vielflachwelt(vl, ol);
+	Dreistellung[] sl = new Dreistellung[] {
+	    new Dreistellung(new Dreivektor(-15,-15,-15),
+			     new Orientierung(0,0,0))
+	};
+	Vielflachwelt vw = new Vielflachwelt(vl, sl);
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
@@ -146,6 +159,6 @@ public class Main {
     }
     
     public static void main(String[] args) {
-	beispielzwei();
+	beispieldrei();
     }
 }

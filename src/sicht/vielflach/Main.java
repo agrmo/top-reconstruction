@@ -1,14 +1,16 @@
 package sicht.vielflach;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JFrame;
 import maler.Maler;
+import orientierung.Orientierung;
 import sicht.Sicht;
+import stellung.Dreistellung;
 import vektor.Dreivektor;
 import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
 import welt.vielflach.Vielflachwelt;
-import java.awt.Toolkit;
-import java.awt.Dimension;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -20,8 +22,11 @@ public class Main {
     static void beispieleins() {
 	// Mache die Welt.
 	Vielflach[] vl = new Vielflach[] {new Kubus(30)};
-	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(0,0,0)};
-	Vielflachwelt welt = new Vielflachwelt(vl, ol);
+	Dreistellung[] sl = new Dreistellung[] {
+	    new Dreistellung(new Dreivektor(0,0,0),
+			     new Orientierung(0,0,0))
+	};
+	Vielflachwelt welt = new Vielflachwelt(vl, sl);
 
 	// Mache die Sicht.
 	double breite = 1200;
@@ -42,8 +47,11 @@ public class Main {
     static void beispielzwei() {
 	// Mache die Welt.
 	Vielflach[] vl = new Vielflach[] {new Kubus(30)};
-	Dreivektor[] ol = new Dreivektor[] {new Dreivektor(-15,-15,-15)};
-	Vielflachwelt vw = new Vielflachwelt(vl, ol);
+	Dreistellung[] sl = new Dreistellung[] {
+	    new Dreistellung(new Dreivektor(-15,-15,-15),
+			     new Orientierung(0,0,0))
+	};
+	Vielflachwelt vw = new Vielflachwelt(vl, sl);
 	
 	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();

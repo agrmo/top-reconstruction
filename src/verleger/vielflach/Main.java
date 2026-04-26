@@ -9,6 +9,8 @@ import welt.strecke.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 import verleger.punkt.Punktverleger;
 import verleger.strecke.Streckeverleger;
+import stellung.Dreistellung;
+import orientierung.Orientierung;
 
 /*
   javac -d classes $(find src -type f) \
@@ -20,10 +22,12 @@ public class Main {
 
 	// Mache die dreidimensionale Welt.
 	Kubus k = new Kubus(50);
-	Dreivektor p = new Dreivektor(100,100,100);
 	Vielflach[] vl = new Vielflach[] {k};
-	Dreivektor[] ol = new Dreivektor[] {p};
-	Vielflachwelt vw = new Vielflachwelt(vl, ol);
+	Dreistellung[] sl = new Dreistellung[] {
+	    new Dreistellung(new Dreivektor(100,100,100),
+			     new Orientierung(0,0,0))
+	};
+	Vielflachwelt vw = new Vielflachwelt(vl, sl);
 
 	// Verlegen die Welt.
 	Zweistreckewelt zsw = Vielflachverleger.verlege(vw,

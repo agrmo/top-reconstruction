@@ -4,6 +4,7 @@ import vektor.Dreivektor;
 import strecke.Dreistrecke;
 import vielflach.Vielflach;
 import stellung.vielflach.Vielflachstellung;
+import stellung.Dreistellung;
 
 /*
   Eine Vielflachwelt ist ein Triplett von
@@ -30,11 +31,11 @@ public class Vielflachwelt {
     // nur seine Eigenschaften. Die Vielflachwelt versteht nicht nur
     // seine Eigenschaften, sondern auch wo er steht.
     public Vielflach[] vielflache;
-    public Dreivektor[] orte;
+    public Dreistellung[] stellungen;
 
-    public Vielflachwelt(Vielflach[] kl, Dreivektor[] ol) {
+    public Vielflachwelt(Vielflach[] kl, Dreistellung[] sl) {
 	this.vielflache = kl;
-	this.orte = ol;
+	this.stellungen = sl;
     }
 
     // Nehme die Anzahl aller Strecken dieser Welt.
@@ -66,19 +67,18 @@ public class Vielflachwelt {
 	// Also mache einen Index für die Strecken.
 	int streckezeichen = 0;
 	
-	// Für alle Körper der Welt, nehme den Körper, dann nehme
-	// seine Kanten, dann stellen seine Kanten zum richtigen Ort.
-	
-	for (int i = 0; i < this.vielflache.length; i++) {
-	    Vielflach k = this.vielflache[i];
-	    Dreistrecke[] kl = k.nehmekanten();
-	    Dreivektor ort = this.orte[i];
+	// Für alle Vielflache der Welt, nehme den Körper, dann nehme
+	// seine Kanten, drehen die Kanten, dann stellen seine Kanten
+	// zum richtigen Ort.
 
-	    for (int j = 0; j < kl.length; j++) {
-		kl[j].addiere(ort);
-		strecken[streckezeichen] = kl[j];
+	for (int i = 0; i < this.vielflache.length; i++) {
+	    Dreistrecke[] vstrecken = Vielflachstellung.stelle(this.vielflache[i],
+							       this.stellungen[i]);
+	
+	    for (int j = 0; j < vstrecken.length; j++) {
+		strecken[streckezeichen] = vstrecken[j];
 		streckezeichen += 1;
-	    }
+	    }	    
 	}
 
 	return strecken;
