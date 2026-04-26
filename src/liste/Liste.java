@@ -2,8 +2,6 @@ package liste;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
 
 // Funktionen an Listen.
 public class Liste {
@@ -11,7 +9,7 @@ public class Liste {
     // ein: ArrayList<Integer>
     // aus: int[]
     //
-    // Warum existiert diese Funktion nicht...?
+    // Warum existiert diese Funktion nicht?
     public static int[] nehmeArrayInt(ArrayList<Integer> l) {
 	int[] aus = new int[l.size()];
 
@@ -135,40 +133,5 @@ public class Liste {
 	return sb.toString();	
     }
 
-    // Gegeben eine Map<Integer,Integer>, geben eine int[][] ab.
-    // z.B.: ein:
-    // 0: 5
-    // 1: 2
-    // aus:
-    // [[0,5],[1,2]]
-    public static int[][] nehmeArrayArrayVonAbbildung(HashMap<Integer,Integer> m) {
-	int[][] arrayarray = new int[m.size()][];
-
-	int i = 0;
-	for (Integer schluessel : m.keySet()) {
-	    arrayarray[i] = new int[] {schluessel, m.get(schluessel)};
-	    i++;
-	}
-
-	return arrayarray;
-    }
-
-    // Gegeben eine Menge von ganzen Zahlen, gib eine int[] Liste ab.
-    // z.B.: ein:
-    // {0,1,2,5,6}
-    // aus:
-    // [0,1,2,5,6]
-    //
-    // n.b. die ursprüngliche Menge hat keine Reihenfolge
-    public static int[] nehmeArrayVonMenge(HashSet<Integer> s) {
-	int[] array = new int[s.size()];
-
-	int i = 0;
-	for (Integer intInS : s) {
-	    array[i] = intInS;
-	    i++;
-	}
-
-	return array;
-    }
+    
 }

@@ -6,7 +6,7 @@ import java.util.Iterator;
 import graph.Nachbarschaftsliste;
 import graph.Doppelnachbarschaftsliste;
 import graph.tiefensuche.Tiefensuche;
-import liste.Liste;
+import abbildung.Abbildung;
 
 public class Teile {
 
@@ -131,8 +131,7 @@ public class Teile {
 
 	// Fertig mit dem Verfahren. Es gibt keinen neuen Knoten.
 
-	Liste l = new Liste();
-	int[][] teileArrayArray = l.nehmeArrayArrayVonAbbildung(teile);
+	int[][] teileArrayArray = Abbildung.nehmeArrayArrayVonAbbildung(teile);
 	
 	return teileArrayArray;
     }

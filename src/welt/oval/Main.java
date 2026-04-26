@@ -18,7 +18,7 @@ public class Main {
 	Zweivektor[] orte = new Zweivektor[] {
 	    new Zweivektor(5,5)
 	};
-	Ovalwelt ow = new Ovalwelt(ovale, orte);
+	Zweiovalwelt ow = new Zweiovalwelt(ovale, orte);
     }
 
     public static void main(String[] args) {

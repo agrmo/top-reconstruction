@@ -3,12 +3,12 @@ package welt.oval;
 import vektor.Zweivektor;
 import oval.Oval;
 
-public class Ovalwelt {
+public class Zweiovalwelt {
 
     public Oval[] ovale;
     public Zweivektor[] orte;
 
-    public Ovalwelt(Oval[] ovale, Zweivektor[] orte) {
+    public Zweiovalwelt(Oval[] ovale, Zweivektor[] orte) {
 	this.ovale = ovale;
 	this.orte = orte;
     }

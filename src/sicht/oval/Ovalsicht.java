@@ -1,15 +1,15 @@
 package sicht.oval;
 
 import java.awt.Graphics;
-import welt.oval.Ovalwelt;
+import welt.oval.Zweiovalwelt;
 import sicht.Sicht;
 
 // Stellen eine Reihe von Ovalen dar.
 public class Ovalsicht extends Sicht {
     
-    Ovalwelt ow;
+    Zweiovalwelt ow;
     
-    public Ovalsicht(Ovalwelt ow) {
+    public Ovalsicht(Zweiovalwelt ow) {
 	this.ow = ow;
     }
     

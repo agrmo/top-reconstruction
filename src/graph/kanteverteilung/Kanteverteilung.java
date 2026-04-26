@@ -1,6 +1,6 @@
 package graph.kanteverteilung;
 
-import liste.Liste;
+import abbildung.Abbildung;
 import graph.Nachbarschaftsliste;
 import graph.Doppelnachbarschaftsliste;
 import java.util.HashMap;
@@ -79,7 +79,7 @@ public class Kanteverteilung {
 	// Schon fertig, aber wir wollen eine int[][] zeigen, nicht
 	// eine Abbildung von int bis int.
 
-	int[][] intkv = Liste.nehmeArrayArrayVonAbbildung(kv);
+	int[][] intkv = Abbildung.nehmeArrayArrayVonAbbildung(kv);
 
 	return intkv;
     }

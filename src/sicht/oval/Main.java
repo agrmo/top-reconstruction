@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
 import vektor.Zweivektor;
-import welt.oval.Ovalwelt;
+import welt.oval.Zweiovalwelt;
 
 /*
   javac -d classes $(find src -type f)	\
@@ -26,7 +26,7 @@ public class Main {
 	    new Zweivektor(100, 100),
 	    new Zweivektor(50, 50)
 	};
-	Ovalwelt ow = new Ovalwelt(ovale, orte);
+	Zweiovalwelt ow = new Zweiovalwelt(ovale, orte);
 
 	// Mache die Sicht.
 	Ovalsicht s = new Ovalsicht(ow);
