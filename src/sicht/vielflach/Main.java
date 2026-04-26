@@ -51,9 +51,9 @@ public class Main {
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(0,0,100);
 	Vielflachsicht vs = new Vielflachsicht(vw, ap, 500, breite, hoehe);
-	Vielflachtextsicht ats = new Vielflachtextsicht(vs);
+	Vielflachtextsicht vts = new Vielflachtextsicht(vs);
 
-	Maler m = new Maler(new Sicht[] {vs, ats});
+	Maler m = new Maler(new Sicht[] {vs, vts});
 	
 	// Geh.
 	JFrame frame = new JFrame();

@@ -61,9 +61,9 @@ public class Main {
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(50,50,0);
 	Vielflachsicht vs = new Vielflachsicht(vw, ap, 500, breite, hoehe);
-	Vielflachtextsicht ats = new Vielflachtextsicht(vs);
+	Vielflachtextsicht vts = new Vielflachtextsicht(vs);
 
-	Maler m = new Maler(new Sicht[] {vs, ats});
+	Maler m = new Maler(new Sicht[] {vs, vts});
 	
 	// Mache die Handlung.
 	Vielflachhandlung h = new Vielflachhandlung(m, vs, vw);
@@ -97,9 +97,9 @@ public class Main {
 	double hoehe = bildschirm.getHeight();
 	Dreivektor ap = new Dreivektor(50,50,0);
 	Vielflachsicht vs = new Vielflachsicht(vw, ap, 500, breite, hoehe);
-	Vielflachtextsicht ats = new Vielflachtextsicht(vs);
+	Vielflachtextsicht vts = new Vielflachtextsicht(vs);
 
-	Maler m = new Maler(new Sicht[] {vs, ats});
+	Maler m = new Maler(new Sicht[] {vs, vts});
 	
 	// Mache die Handlung.
 	Vielflachhandlung h = new Vielflachhandlung(m, vs, vw);
@@ -146,6 +146,6 @@ public class Main {
     }
     
     public static void main(String[] args) {
-	beispieleins();
+	beispielzwei();
     }
 }
