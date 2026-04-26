@@ -12,7 +12,7 @@ public class Bogendrucker {
 	sb.append(", Hoehe ");
 	sb.append(b.hoehe);
 	sb.append(", von ");
-	sb.append(b.anfangwinkel);
+	sb.append(b.anfangswinkel);
 	sb.append(" bis ");
 	sb.append(b.unterschiedwinkel);
 	sb.append("\n");

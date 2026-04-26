@@ -20,7 +20,7 @@ public class Zweibogensicht extends Sicht {
 	for (int i = 0; i < this.zbw.bogen.length; i++) {
 	    g.drawArc((int) this.zbw.orte[i].eins, (int) this.zbw.orte[i].zwei,
 		      this.zbw.bogen[i].breite, this.zbw.bogen[i].hoehe,
-		      this.zbw.bogen[i].anfangwinkel, this.zbw.bogen[i].unterschiedwinkel);
+		      this.zbw.bogen[i].anfangswinkel, this.zbw.bogen[i].unterschiedwinkel);
 	}
     }
 }

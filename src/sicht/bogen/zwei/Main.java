@@ -18,8 +18,8 @@ public class Main {
 	
 	// Mache die Welt.
 	Bogen[] bl = new Bogen[] {
-	    new Bogen(60,40,0,-90),
-	    new Bogen(50,30,0,90)};
+	    new Bogen(200,100,0,-90),
+	    new Bogen(200,200,100,100)};
 	Zweivektor[] ol = new Zweivektor[] {
 	    new Zweivektor(200, 200),
 	    new Zweivektor(100, 100)};
