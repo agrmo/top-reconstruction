@@ -42,10 +42,10 @@ public class Main {
 	double durchmesser = 20;
 	Dreivektor entfernung = new Dreivektor(0,0,100);
 	Dreigraphsicht ds = new Dreigraphsicht(dgw,
-						       durchmesser,
-						       entfernung, brennweite,
-						       breite, hoehe,
-						       0, 0, 0);
+					       durchmesser,
+					       entfernung, brennweite,
+					       breite, hoehe,
+					       0, 0, 0);
 	Maler m = new Maler(new Sicht[] {ds});
 	
 	// Mache die Handlung.
@@ -74,9 +74,9 @@ public class Main {
 	int zmin = -100;
 	int zmax = 100;
         Dreivektor[] orte = Zufallsdreigraphwelt.mache(groesse,
-							 xmin, xmax,
-							 ymin, ymax,
-							 zmin, zmax);
+						       xmin, xmax,
+						       ymin, ymax,
+						       zmin, zmax);
 	Dreigraphwelt dgw = new Dreigraphwelt(nl, orte);
 
 	// Mache die Sicht.

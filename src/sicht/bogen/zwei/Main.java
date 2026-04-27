@@ -1,10 +1,10 @@
 package sicht.bogen.zwei;
 
-import javax.swing.JFrame;
 import bogen.Bogen;
-import vektor.Zweivektor;
+import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
+import vektor.Zweivektor;
 import welt.bogen.Zweibogenwelt;
 
 /*
@@ -18,10 +18,14 @@ public class Main {
 	
 	// Mache die Welt.
 	Bogen[] bl = new Bogen[] {
-	    new Bogen(200,100,0,-90),
-	    new Bogen(200,200,100,100)};
+	    new Bogen(800,200,10,90),
+	    new Bogen(400,200,10,90),
+	    new Bogen(200,200,10,90),
+	    new Bogen(100,200,10,90)};
 	Zweivektor[] ol = new Zweivektor[] {
-	    new Zweivektor(200, 200),
+	    new Zweivektor(100, 100),
+	    new Zweivektor(100, 100),
+	    new Zweivektor(100, 100),
 	    new Zweivektor(100, 100)};
 	Zweibogenwelt zbw = new Zweibogenwelt(bl, ol);
 
