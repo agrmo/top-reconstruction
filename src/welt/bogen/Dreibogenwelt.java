@@ -4,6 +4,7 @@ import bogen.Bogen;
 import vektor.Dreivektor;
 import stellung.Dreistellung;
 import orientierung.Orientierung;
+import stellung.Dreistellung;
 
 public class Dreibogenwelt {
 

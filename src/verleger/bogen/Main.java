@@ -1,16 +1,14 @@
-package winkel;
+package verleger.dreibogen;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes winkel.Main
+  && java -cp classes verleger.dreibogen.Main
 */
 
 public class Main {
-    static void beispieleins() {
-	
-    }
-
     public static void main(String[] args) {
-	beispieleins();
+
+	// ...
+	
     }
 }
