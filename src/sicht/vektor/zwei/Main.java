@@ -1,4 +1,4 @@
-package sicht.vektor;
+package sicht.vektor.zwei;
 
 import java.awt.Color;
 import javax.swing.JFrame;
@@ -9,7 +9,7 @@ import welt.vektor.Zweivektorwelt;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.vektor.Main
+  && java -cp classes sicht.vektor.zwei.Main
 */
 
 public class Main {

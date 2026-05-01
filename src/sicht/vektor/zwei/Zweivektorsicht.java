@@ -1,12 +1,12 @@
-package sicht.vektor;
+package sicht.vektor.zwei;
 
+import dreher.zweivektor.Zweivektordreher;
 import java.awt.Graphics;
-import welt.vektor.Zweivektorwelt;
 import sicht.Sicht;
-import verdoppler.vektor.Vektorverdoppler;
 import vektor.Zweivektor;
 import vektor.fort.Zweifortvektor;
-import dreher.zweivektor.Zweivektordreher;
+import verdoppler.vektor.Vektorverdoppler;
+import welt.vektor.Zweivektorwelt;
 
 // Stellen eine Reihe von Vektoren dar.
 public class Zweivektorsicht extends Sicht {
