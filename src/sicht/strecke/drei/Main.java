@@ -55,7 +55,7 @@ public class Main {
 	frame.getContentPane().setBackground(Color.BLACK);
         frame.getContentPane().setForeground(Color.WHITE);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setSize(1200, 600);
+	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
 	frame.setVisible(true);
     }
