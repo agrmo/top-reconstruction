@@ -1,4 +1,4 @@
-package welt.strecke;
+package welt.strecke.zwei;
     
 import welt.Welt;
 import strecke.Zweistrecke;

@@ -5,7 +5,7 @@ import strecke.Zweistrecke;
 import vektor.Dreivektor;
 import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
-import welt.strecke.Zweistreckewelt;
+import welt.strecke.zwei.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 import verleger.punkt.Punktverleger;
 import verleger.strecke.Streckeverleger;

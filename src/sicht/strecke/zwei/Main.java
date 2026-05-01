@@ -9,7 +9,7 @@ import sicht.Sicht;
 import strecke.Zweistrecke;
 import vektor.Zweivektor;
 import verschieber.Verschieber;
-import welt.strecke.Zweistreckewelt;
+import welt.strecke.zwei.Zweistreckewelt;
 
 /*
   javac -d classes $(find src -type f)	\

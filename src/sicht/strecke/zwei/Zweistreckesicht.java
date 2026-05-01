@@ -2,7 +2,7 @@ package sicht.strecke.zwei;
 
 import javax.swing.JComponent;
 import java.awt.Graphics;
-import welt.strecke.Zweistreckewelt;
+import welt.strecke.zwei.Zweistreckewelt;
 import strecke.Zweistrecke;
 import sicht.Sicht;
 

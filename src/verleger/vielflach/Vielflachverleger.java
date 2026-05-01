@@ -6,7 +6,7 @@ import matrix.Dreimatrix;
 import strecke.Dreistrecke;
 import strecke.Zweistrecke;
 import vektor.Dreivektor;
-import welt.strecke.Zweistreckewelt;
+import welt.strecke.zwei.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 import verleger.strecke.Streckeverleger;
 

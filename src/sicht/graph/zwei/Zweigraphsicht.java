@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import vektor.Zweivektor;
 import welt.graph.Zweigraphwelt;
 import sicht.Sicht;
-import welt.strecke.Zweistreckewelt;
+import welt.strecke.zwei.Zweistreckewelt;
 import welt.punkt.Zweipunktwelt;
 import strecke.Zweistrecke;
 import sicht.punkt.Zweipunktsicht;

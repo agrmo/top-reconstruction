@@ -1,11 +1,11 @@
-package welt.strecke;
+package welt.strecke.zwei;
 
 import strecke.Zweistrecke;
 import vektor.Zweivektor;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes welt.strecke.Main
+  && java -cp classes welt.strecke.zwei.Main
 */
 
 public class Main {

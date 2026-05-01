@@ -7,7 +7,7 @@ import sicht.Sicht;
 import sicht.strecke.zwei.Zweistreckesicht;
 import vektor.Dreivektor;
 import verleger.vielflach.Vielflachverleger;
-import welt.strecke.Zweistreckewelt;
+import welt.strecke.zwei.Zweistreckewelt;
 import welt.vielflach.Vielflachwelt;
 
 // Eine Sicht, die eine dreidimensionale Vielflachwelt einnimmt.
