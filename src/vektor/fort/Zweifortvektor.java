@@ -9,7 +9,7 @@ public class Zweifortvektor {
 
     // va: Der gegebene Vektor
     // betrag: Betrag des ausgehenden Vektors
-    static Zweivektor mache(Zweivektor va, double betrag) {
+    public static Zweivektor mache(Zweivektor va, double betrag) {
 
 	double theta = Math.atan2(va.zwei, va.eins);
 	Zweivektor vb = new Zweivektor(betrag, 0);
