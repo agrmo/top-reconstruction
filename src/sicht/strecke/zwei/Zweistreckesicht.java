@@ -17,8 +17,8 @@ public class Zweistreckesicht extends Sicht {
 	this.zsw = zsw;
     }
 
-    // Die Strecken stehen schon auf einer Ebene. Stellen sie dar.
-    public void darstellenstrecke(Graphics g, Zweistrecke k) {
+    // Stelle eine Strecke dar.
+    void darstellestrecke(Graphics g, Zweistrecke k) {
 	g.drawLine((int) k.von.eins, (int) k.von.zwei,
 		   (int) k.bis.eins, (int) k.bis.zwei);
     }
@@ -26,7 +26,7 @@ public class Zweistreckesicht extends Sicht {
     public void darstellen(Graphics g) {
 	// Stelle jede Strecke dieser Welt dar.
 	for (int i = 0; i < this.zsw.strecken.length; i++) {
-	    this.darstellenstrecke(g, this.zsw.strecken[i]);
+	    this.darstellestrecke(g, this.zsw.strecken[i]);
 	}
     }
 }

@@ -13,7 +13,8 @@ import verdoppler.vektor.Vektorverdoppler;
 import welt.strecke.drei.Dreistreckewelt;
 import welt.vektor.Dreivektorwelt;
 
-// Stellen eine Reihe von Vektoren dar.
+// Stellen eine Reihe von Vektoren dar. Ein Vektor wird wie ein Pfeil
+// dargestellt.
 public class Dreivektorsicht extends Sicht {
     
     Dreivektorwelt dreivektorwelt;
@@ -138,10 +139,10 @@ public class Dreivektorsicht extends Sicht {
 	    Dreivektor spitzedreibis = Vektorverdoppler.verdoppeln(schwanzbis);
 	    spitzedreibis.addiere(f);
 
-	    dsl[i] = new Dreistrecke(schwanzvon, schwanzbis);
-	    dsl[i+1] = new Dreistrecke(spitzeeinsvon, spitzeeinsbis);
-	    dsl[i+2] = new Dreistrecke(spitzezweivon, spitzezweibis);
-	    dsl[i+3] = new Dreistrecke(spitzedreivon, spitzedreibis);
+	    dsl[i * 4] = new Dreistrecke(schwanzvon, schwanzbis);
+	    dsl[(i * 4) + 1] = new Dreistrecke(spitzeeinsvon, spitzeeinsbis);
+	    dsl[(i * 4) + 2] = new Dreistrecke(spitzezweivon, spitzezweibis);
+	    dsl[(i * 4) + 3] = new Dreistrecke(spitzedreivon, spitzedreibis);
 	}
 
 	// Nun stelle alle Strecken dar. Wir benutzen eine

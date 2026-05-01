@@ -19,10 +19,12 @@ public class Main {
     static void beispieleins() {
 	// Mache die Welt.
 	Dreivektor[] v = new Dreivektor[] {
-	    new Dreivektor(30,50,20)
+	    new Dreivektor(30,50,20),
+	    new Dreivektor(-20,10,-20)
 	};
 	Dreivektor[] o = new Dreivektor[] {
-	    new Dreivektor(20, 20, 20)
+	    new Dreivektor(20, 20, 20),
+	    new Dreivektor(40,40,40)
 	};
 	Dreivektorwelt dvw = new Dreivektorwelt(v, o);
 
