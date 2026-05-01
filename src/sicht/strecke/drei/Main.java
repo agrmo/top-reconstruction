@@ -37,10 +37,10 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	double brennweite = 500;
-	Dreivektor entfernung = new Dreivektor(0,0,100);
+	Dreivektor entfernung = new Dreivektor(0,20,70);
 	double winkeleins = 0;
-	double winkelzwei = 0;
-	double winkeldrei = 0;
+	double winkelzwei = 0.5;
+	double winkeldrei = 0.2;
 	
 	Dreistreckesicht s = new Dreistreckesicht(dsw, entfernung,
 						  brennweite,
