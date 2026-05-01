@@ -38,6 +38,14 @@ public class Dreivektor {
     }
     
     // ein: Dreivektor
+    // Multipliziere den gegebenen Dreivektor mit a.
+    public void multipliziere(double a) {
+	this.eins = this.eins * a;
+	this.zwei = this.zwei * a;
+	this.drei = this.drei * a;
+    }
+    
+    // ein: Dreivektor
     // Multipliziere teilweise den gegebenen Dreivektor zu diesem.  
     public void punkt(Dreivektor v) {
 	this.eins = this.eins * v.eins;

@@ -1,18 +1,18 @@
-package vektor.fort;
+package vektor.fort.drei;
 
 import druck.vektor.Vektordrucker;
-import vektor.Zweivektor;
+import vektor.Dreivektor;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes vektor.fort.Main
+  && java -cp classes vektor.fort.drei.Main
 */
 
 public class Main {
     static void beispieleins() {
-	Zweivektor va = new Zweivektor(3,5);
-	double b = 5.8309;
-	Zweivektor vb = Zweifortvektor.mache(va, b);
+	Dreivektor va = new Dreivektor(4,5,6);
+	double b = 8.7749;
+	Dreivektor vb = Dreifortvektor.mache(va, b);
 	System.out.println(Vektordrucker.drucke(vb));
 	    
 	// Soll den gleichen Vektor ausgeben.

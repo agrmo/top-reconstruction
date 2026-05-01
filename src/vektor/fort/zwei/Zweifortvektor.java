@@ -1,4 +1,4 @@
-package vektor.fort;
+package vektor.fort.zwei;
 
 import vektor.Zweivektor;
 import dreher.zweivektor.Zweivektordreher;

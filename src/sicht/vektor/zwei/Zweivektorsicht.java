@@ -4,7 +4,7 @@ import dreher.zweivektor.Zweivektordreher;
 import java.awt.Graphics;
 import sicht.Sicht;
 import vektor.Zweivektor;
-import vektor.fort.Zweifortvektor;
+import vektor.fort.zwei.Zweifortvektor;
 import verdoppler.vektor.Vektorverdoppler;
 import welt.vektor.Zweivektorwelt;
 
