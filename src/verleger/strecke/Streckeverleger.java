@@ -28,19 +28,19 @@ public class Streckeverleger {
 				      double breite, double hoehe,
 				      Dreimatrix drehung) {
 	
-	Zweivektor verlegterVektorVon = Punktverleger.verlege(ds.von,
+	Zweivektor verlegtervektorvon = Punktverleger.verlege(ds.von,
 							      entfernung, brennweite,
 							      breite, hoehe,
 							      drehung);
 	
-	Zweivektor verlegterVektorBis = Punktverleger.verlege(ds.bis,
+	Zweivektor verlegtervektorbis = Punktverleger.verlege(ds.bis,
 							      entfernung, brennweite,
 							      breite, hoehe,
 							      drehung);
 	
 	// Diese ist die neue Strecke, die nur in zwei Dimensionen
 	// liegt. 
-	Zweistrecke zs = new Zweistrecke(verlegterVektorVon, verlegterVektorBis);
+	Zweistrecke zs = new Zweistrecke(verlegtervektorvon, verlegtervektorbis);
 	
 	return zs;
     }

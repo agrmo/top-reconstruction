@@ -32,8 +32,8 @@ public class Main {
 	double breite = 1200;
 	double hoehe = 600;
 	double brennweite = 500;
-	Dreivektor ap = new Dreivektor(0,0,100);
-	Vielflachsicht vs = new Vielflachsicht(welt, ap, brennweite, breite, hoehe);
+	Dreivektor entfernung = new Dreivektor(0,0,100);
+	Vielflachsicht vs = new Vielflachsicht(welt, entfernung, brennweite, breite, hoehe);
 	Maler m = new Maler(new Sicht[] {vs});
 	
 	// Stelle die Daten dar.

@@ -41,7 +41,7 @@ public class Verschieber {
 					      double dx,
 					      double dy) {
 	
-	Zweistrecke[] zsl = zsw.streckenliste;
+	Zweistrecke[] zsl = zsw.strecken;
 	Zweistrecke[] zslNeu = Streckeverdoppler.verdoppeln(zsl);
 	
 	for (int i = 0; i < zsl.length; i++) {

@@ -34,8 +34,8 @@ public class Vielflachsicht extends Sicht {
     public double winkeldrei;
 
     public Vielflachsicht(Vielflachwelt vw,
-		     Dreivektor entfernung, double brennweite,
-		     double breite, double hoehe) {
+			  Dreivektor entfernung, double brennweite,
+			  double breite, double hoehe) {
 
 	this.vw = vw;
 	this.brennweite = brennweite;

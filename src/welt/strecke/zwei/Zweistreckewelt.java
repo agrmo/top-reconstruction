@@ -15,9 +15,9 @@ import strecke.Zweistrecke;
   der Figur enthält.
 */
 public class Zweistreckewelt {
-    public Zweistrecke[] streckenliste;
+    public Zweistrecke[] strecken;
 
     public Zweistreckewelt(Zweistrecke[] zsl) {
-	this.streckenliste = zsl;
+	this.strecken = zsl;
     }
 }

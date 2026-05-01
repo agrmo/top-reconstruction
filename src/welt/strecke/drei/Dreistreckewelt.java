@@ -7,9 +7,9 @@ import strecke.Dreistrecke;
   Eine Dreistreckewelt ist eine Liste von dreidimensionalen Strecken.
 */
 public class Dreistreckewelt {
-    public Dreistrecke[] streckenliste;
+    public Dreistrecke[] strecken;
 
     public Dreistreckewelt(Dreistrecke[] dsl) {
-	this.streckenliste = dsl;
+	this.strecken = dsl;
     }
 }

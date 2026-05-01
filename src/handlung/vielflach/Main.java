@@ -35,8 +35,8 @@ public class Main {
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
-	Dreivektor ap = new Dreivektor(0, 0, 200);
-	Vielflachsicht vs = new Vielflachsicht(vw, ap, 500, breite, hoehe);
+	Dreivektor entfernung = new Dreivektor(0, 0, 200);
+	Vielflachsicht vs = new Vielflachsicht(vw, entfernung, 500, breite, hoehe);
 	
 	Maler m = new Maler(new Sicht[] {vs});
 	
