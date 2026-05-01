@@ -27,7 +27,7 @@ public class Main {
 	Vielflach[] vl = new Vielflach[] {new Kubus(60)};
 	Dreistellung[] sl = new Dreistellung[] {
 	    new Dreistellung(new Dreivektor(-30,-30,-30),
-			 new Orientierung(0,0,0))
+			     new Orientierung(0,0,0))
 	};
 	Vielflachwelt vw = new Vielflachwelt(vl, sl);
 	
@@ -159,6 +159,6 @@ public class Main {
     }
     
     public static void main(String[] args) {
-	beispieldrei();
+	beispielvier();
     }
 }

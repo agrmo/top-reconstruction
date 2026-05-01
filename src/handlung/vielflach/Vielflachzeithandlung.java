@@ -9,7 +9,7 @@ import matrix.Dreimatrix;
 import sicht.vielflach.Vielflachsicht;
 import vektor.Dreivektor;
 import welt.vielflach.Vielflachwelt;
-import wesen.Vielflachbasiswesen;
+import wesen.vielflach.Vielflachbasiswesen;
 import zeit.Zeitdauer;
 import handlung.Handlung;
 

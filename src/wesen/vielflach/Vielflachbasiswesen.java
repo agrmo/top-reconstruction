@@ -1,4 +1,4 @@
-package wesen;
+package wesen.vielflach;
 
 import vektor.Dreivektor;
 import sicht.vielflach.Vielflachsicht;
