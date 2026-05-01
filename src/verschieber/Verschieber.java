@@ -42,7 +42,7 @@ public class Verschieber {
 					      double dy) {
 	
 	Zweistrecke[] zsl = zsw.strecken;
-	Zweistrecke[] zslNeu = Streckeverdoppler.verdoppeln(zsl);
+	Zweistrecke[] zslNeu = Streckeverdoppler.verdoppele(zsl);
 	
 	for (int i = 0; i < zsl.length; i++) {
 	    Verschieber.verschiebenStrecke(zslNeu[i], dx, dy);

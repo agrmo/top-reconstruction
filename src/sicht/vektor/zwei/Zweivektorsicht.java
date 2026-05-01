@@ -70,16 +70,16 @@ public class Zweivektorsicht extends Sicht {
 	    
 	    // Nun verschiebe alle drei Vektoren zum richtigen Ort.
 
-	    Zweivektor schwanzvon = Vektorverdoppler.verdoppeln(this.zweivektorwelt.orte[i]);
-	    Zweivektor schwanzbis = Vektorverdoppler.verdoppeln(this.zweivektorwelt.orte[i]);
+	    Zweivektor schwanzvon = Vektorverdoppler.verdoppele(this.zweivektorwelt.orte[i]);
+	    Zweivektor schwanzbis = Vektorverdoppler.verdoppele(this.zweivektorwelt.orte[i]);
 	    schwanzbis.addiere(this.zweivektorwelt.vektoren[i]);
 
-	    Zweivektor spitzeeinsvon = Vektorverdoppler.verdoppeln(schwanzbis);
-	    Zweivektor spitzeeinsbis = Vektorverdoppler.verdoppeln(schwanzbis);
+	    Zweivektor spitzeeinsvon = Vektorverdoppler.verdoppele(schwanzbis);
+	    Zweivektor spitzeeinsbis = Vektorverdoppler.verdoppele(schwanzbis);
 	    spitzeeinsbis.addiere(b);
 
-	    Zweivektor spitzezweivon = Vektorverdoppler.verdoppeln(schwanzbis);
-	    Zweivektor spitzezweibis = Vektorverdoppler.verdoppeln(schwanzbis);
+	    Zweivektor spitzezweivon = Vektorverdoppler.verdoppele(schwanzbis);
+	    Zweivektor spitzezweibis = Vektorverdoppler.verdoppele(schwanzbis);
 	    spitzezweibis.addiere(d);
 
 	    zsl[i * 3] = new Zweistrecke(schwanzvon, schwanzbis);

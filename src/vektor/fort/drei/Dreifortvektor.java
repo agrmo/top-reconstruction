@@ -17,7 +17,7 @@ public class Dreifortvektor {
     public static Dreivektor mache(Dreivektor va, double betrag) {
 
 	double betraga = va.betrag();
-	Dreivektor vb = Vektorverdoppler.verdoppeln(va);
+	Dreivektor vb = Vektorverdoppler.verdoppele(va);
 	vb.multipliziere(betrag / betraga);
 	
 	return vb;

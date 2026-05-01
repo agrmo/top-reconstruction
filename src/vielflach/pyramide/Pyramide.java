@@ -49,8 +49,8 @@ public class Pyramide extends Vielflach {
 					       {0,4},{1,4},{2,4},{3,4}};
 
 	for (int i = 0; i < streckenzeichen.length; i++) {
-	    strecken[i] = new Dreistrecke(Vektorverdoppler.verdoppeln(ecken[streckenzeichen[i][0]]),
-					  Vektorverdoppler.verdoppeln(ecken[streckenzeichen[i][1]])); 
+	    strecken[i] = new Dreistrecke(Vektorverdoppler.verdoppele(ecken[streckenzeichen[i][0]]),
+					  Vektorverdoppler.verdoppele(ecken[streckenzeichen[i][1]])); 
 	}
 
 	// Wir sollen die Vektore verdoppeln, sodaß die Zeiger der

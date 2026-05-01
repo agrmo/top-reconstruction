@@ -17,7 +17,7 @@ public class Main {
 	    new Zweistrecke(new Zweivektor(1,2), new Zweivektor(2,3))
 	};
 
-	Zweistrecke[] klNeu = Streckeverdoppler.verdoppeln(kl);
+	Zweistrecke[] klNeu = Streckeverdoppler.verdoppele(kl);
 	
 	kl[1].addiere(new Zweivektor(5,5));
 

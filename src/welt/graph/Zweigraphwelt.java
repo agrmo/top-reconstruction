@@ -46,7 +46,7 @@ public class Zweigraphwelt {
 	Zweivektor[] ausvektoren = new Zweivektor[this.orten.length];
 	
 	for (int i = 0; i < this.orten.length; i++) {
-	    ausvektoren[i] = Vektorverdoppler.verdoppeln(this.orten[i]);
+	    ausvektoren[i] = Vektorverdoppler.verdoppele(this.orten[i]);
 	}
 	
 	return ausvektoren;

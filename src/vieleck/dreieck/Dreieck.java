@@ -41,14 +41,14 @@ public class Dreieck extends Vieleck {
 
 	Zweistrecke[] strecken = new Zweistrecke[3];
 
-	strecken[0] = new Zweistrecke(Vektorverdoppler.verdoppeln(ecken[0]),
-				      Vektorverdoppler.verdoppeln(ecken[1]));
+	strecken[0] = new Zweistrecke(Vektorverdoppler.verdoppele(ecken[0]),
+				      Vektorverdoppler.verdoppele(ecken[1]));
 
-	strecken[1] = new Zweistrecke(Vektorverdoppler.verdoppeln(ecken[1]),
-				      Vektorverdoppler.verdoppeln(ecken[2]));
+	strecken[1] = new Zweistrecke(Vektorverdoppler.verdoppele(ecken[1]),
+				      Vektorverdoppler.verdoppele(ecken[2]));
 
-	strecken[2] = new Zweistrecke(Vektorverdoppler.verdoppeln(ecken[2]),
-				      Vektorverdoppler.verdoppeln(ecken[0]));
+	strecken[2] = new Zweistrecke(Vektorverdoppler.verdoppele(ecken[2]),
+				      Vektorverdoppler.verdoppele(ecken[0]));
 
 	return strecken;
     }

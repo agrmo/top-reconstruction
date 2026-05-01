@@ -124,19 +124,19 @@ public class Dreivektorsicht extends Sicht {
 	    // Nun verschiebe alle vier Vektoren zum richtigen Ort.
 
 	    Dreivektor schwanzvon = this.dreivektorwelt.orte[i];
-	    Dreivektor schwanzbis = Vektorverdoppler.verdoppeln(this.dreivektorwelt.orte[i]);
+	    Dreivektor schwanzbis = Vektorverdoppler.verdoppele(this.dreivektorwelt.orte[i]);
 	    schwanzbis.addiere(this.dreivektorwelt.vektoren[i]);
 
-	    Dreivektor spitzeeinsvon = Vektorverdoppler.verdoppeln(schwanzbis);
-	    Dreivektor spitzeeinsbis = Vektorverdoppler.verdoppeln(schwanzbis);
+	    Dreivektor spitzeeinsvon = Vektorverdoppler.verdoppele(schwanzbis);
+	    Dreivektor spitzeeinsbis = Vektorverdoppler.verdoppele(schwanzbis);
 	    spitzeeinsbis.addiere(d);
 
-	    Dreivektor spitzezweivon = Vektorverdoppler.verdoppeln(schwanzbis);
-	    Dreivektor spitzezweibis = Vektorverdoppler.verdoppeln(schwanzbis);
+	    Dreivektor spitzezweivon = Vektorverdoppler.verdoppele(schwanzbis);
+	    Dreivektor spitzezweibis = Vektorverdoppler.verdoppele(schwanzbis);
 	    spitzezweibis.addiere(e);
 
-	    Dreivektor spitzedreivon = Vektorverdoppler.verdoppeln(schwanzbis);
-	    Dreivektor spitzedreibis = Vektorverdoppler.verdoppeln(schwanzbis);
+	    Dreivektor spitzedreivon = Vektorverdoppler.verdoppele(schwanzbis);
+	    Dreivektor spitzedreibis = Vektorverdoppler.verdoppele(schwanzbis);
 	    spitzedreibis.addiere(f);
 
 	    dsl[i * 4] = new Dreistrecke(schwanzvon, schwanzbis);

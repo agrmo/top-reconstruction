@@ -62,8 +62,8 @@ public class Kubus extends Vielflach {
 					       {0,4},{1,5},{2,6},{3,7}};
 
 	for (int i = 0; i < streckenzeichen.length; i++) {
-	    strecken[i] = new Dreistrecke(Vektorverdoppler.verdoppeln(ecken[streckenzeichen[i][0]]),
-					  Vektorverdoppler.verdoppeln(ecken[streckenzeichen[i][1]])); 
+	    strecken[i] = new Dreistrecke(Vektorverdoppler.verdoppele(ecken[streckenzeichen[i][0]]),
+					  Vektorverdoppler.verdoppele(ecken[streckenzeichen[i][1]])); 
 	}
 
 	return strecken;
