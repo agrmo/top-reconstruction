@@ -40,15 +40,16 @@ public class Main {
 	Einskalafeld esf = new Einskalafeld(eintrag, werte);
 
 	// Mache die Sicht.
-	Einskalafeldsicht s = new Einskalafeldsicht(esf, 50);
+	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
+	double breite = bildschirm.getWidth();
+	double hoehe = bildschirm.getHeight();
+	Einskalafeldsicht s = new Einskalafeldsicht(esf, 20,
+						    breite, hoehe);
 
 	// Mache den Maler.
 	Maler m = new Maler(new Sicht[] {s});
 
 	// Stelle die Daten dar.
-	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
-	double breite = bildschirm.getWidth();
-	double hoehe = bildschirm.getHeight();
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize((int) breite, (int) hoehe);

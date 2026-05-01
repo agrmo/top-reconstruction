@@ -17,11 +17,18 @@ import vektor.Zweivektor;
 public class Einskalafeldsicht extends Sicht {
 
     public Einskalafeld esf;
-    public double breite;
+    public double abstand;
 
-    public Einskalafeldsicht(Einskalafeld esf, double breite) {
+    // Bildschirm
+    public double breite;
+    public double hoehe;
+
+    public Einskalafeldsicht(Einskalafeld esf, double abstand,
+			     double breite, double hoehe) {
 	this.esf = esf;
+	this.abstand = abstand;
 	this.breite = breite;
+	this.hoehe = hoehe;
     }
 
     public void darstellen(Graphics g) {
@@ -30,7 +37,9 @@ public class Einskalafeldsicht extends Sicht {
 	Zweivektor[] vektoren = new Zweivektor[this.esf.orte.length];
 	
 	for (int i = 0; i < this.esf.orte.length; i++) {
-	    orte[i] = new Zweivektor(i * this.breite, 100);
+	    orte[i] = new Zweivektor((0.5 * this.breite) + i * this.abstand,
+				     (0.5 * this.hoehe));
+	    
 	    vektoren[i] = new Zweivektor(0, this.esf.werte[i]);
 	}
 
