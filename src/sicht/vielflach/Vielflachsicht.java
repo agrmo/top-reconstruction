@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import matrix.Dreimatrix;
 import sicht.Sicht;
-import sicht.strecke.Streckesicht;
+import sicht.strecke.zwei.Zweistreckesicht;
 import vektor.Dreivektor;
 import verleger.vielflach.Vielflachverleger;
 import welt.strecke.Zweistreckewelt;
@@ -58,7 +58,7 @@ public class Vielflachsicht extends Sicht {
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.
-	Streckesicht ss = new Streckesicht(zsw);
+	Zweistreckesicht ss = new Zweistreckesicht(zsw);
 	ss.darstellen(g);
     }
 }

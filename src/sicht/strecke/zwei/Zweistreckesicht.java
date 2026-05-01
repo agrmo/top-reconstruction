@@ -1,4 +1,4 @@
-package sicht.strecke;
+package sicht.strecke.zwei;
 
 import javax.swing.JComponent;
 import java.awt.Graphics;
@@ -6,14 +6,14 @@ import welt.strecke.Zweistreckewelt;
 import strecke.Zweistrecke;
 import sicht.Sicht;
 
-// Eine Streckesicht kann Strecken darstellen.
-public class Streckesicht extends Sicht {
+// Eine Zweistreckesicht kann Strecken darstellen.
+public class Zweistreckesicht extends Sicht {
 
     // Wir müssen die Welt in die Sicht einsetzen, weil Java sie
     // irgendwann anrufen wird, die Welt darzustellen. 
     public Zweistreckewelt zsw;
     
-    public Streckesicht(Zweistreckewelt zsw) {
+    public Zweistreckesicht(Zweistreckewelt zsw) {
 	this.zsw = zsw;
     }
 

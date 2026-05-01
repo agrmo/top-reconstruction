@@ -1,4 +1,4 @@
-package sicht.strecke;
+package sicht.strecke.zwei;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -13,7 +13,7 @@ import welt.strecke.Zweistreckewelt;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.strecke.Main
+  && java -cp classes sicht.strecke.zwei.Main
 */
 
 public class Main {
@@ -29,8 +29,8 @@ public class Main {
 	Zweistrecke[] zsl = new Zweistrecke[] {zka, zkb};
 	Zweistreckewelt zsw = new Zweistreckewelt(zsl);
 	
-	// Mache eine Streckesicht.
-	Streckesicht s = new Streckesicht(zsw);
+	// Mache eine Zweistreckesicht.
+	Zweistreckesicht s = new Zweistreckesicht(zsw);
 	Maler m = new Maler(new Sicht[] {s});
 
 	// Stellen die Daten dar.
@@ -61,7 +61,7 @@ public class Main {
 	
 	Zweistreckewelt zswNeu = Verschieber.verschieben(zsw, halbBreite, halbHoehe);
 	    
-	Streckesicht s = new Streckesicht(zswNeu);
+	Zweistreckesicht s = new Zweistreckesicht(zswNeu);
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stellen die Daten dar.

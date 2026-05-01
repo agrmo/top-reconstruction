@@ -8,7 +8,7 @@ import welt.strecke.Zweistreckewelt;
 import welt.punkt.Zweipunktwelt;
 import strecke.Zweistrecke;
 import sicht.punkt.Zweipunktsicht;
-import sicht.strecke.Streckesicht;
+import sicht.strecke.zwei.Zweistreckesicht;
 
 // Eine Sicht der zweidimensionalen Graphwelt.
 public class Zweigraphsicht extends Sicht {
@@ -76,7 +76,7 @@ public class Zweigraphsicht extends Sicht {
 	}
 
 	// Mache die unterliegende Sichten.
-	Streckesicht ss = new Streckesicht(zsw);
+	Zweistreckesicht ss = new Zweistreckesicht(zsw);
 	Zweipunktwelt pw = new Zweipunktwelt(knoten);
 	Zweipunktsicht ps = new Zweipunktsicht(pw, this.durchmesser);
 
