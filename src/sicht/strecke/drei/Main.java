@@ -32,7 +32,7 @@ public class Main {
 	
 	Dreistreckewelt dsw = new Dreistreckewelt(dsl);
 	
-	// Mache eine Zweistreckesicht.
+	// Mache die Sicht.
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
@@ -48,6 +48,8 @@ public class Main {
 						  winkeleins,
 						  winkelzwei,
 						  winkeldrei);
+
+	// Mache den Maler.
 	Maler m = new Maler(new Sicht[] {s});
 
 	// Stellen die Daten dar.
