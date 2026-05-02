@@ -1,8 +1,8 @@
 package feld.eins.skala;
 
-// Eindimensionale Skalafeld.
-// Die Stellen sind stellen.
-// Die Werte sind die Reihe von double.
+// Eindimensionale Skalafeld.  Der Eintrag is eindimensional, und die
+// Ausgabe ist eindimensional.  Eine Stelle ist eine eindimensionale
+// Zahl.  Ein Wert ist ein eindimensionale Zahl.
 public class Einskalafeld {
 
     public double[] orte;
