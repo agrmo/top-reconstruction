@@ -32,6 +32,7 @@ public class Bogenverleger {
 	double zb = endx.eins * b.breite;
 
 	// Nehme den y-Teil von endy. Die zweidimensionale Höhe.
+	// Ja, das Problem ist, daß zh nicht negativ sein kann...
 	double zh = endy.zwei * b.hoehe;
 
 	// Die Anfangswinkel und Unterschiedwinkel sind unverändert.
