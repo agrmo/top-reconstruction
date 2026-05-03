@@ -1,8 +1,8 @@
-package verleger.dreibogen;
+package verleger.bogen;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes verleger.dreibogen.Main
+  && java -cp classes verleger.bogen.Main
 */
 
 public class Main {

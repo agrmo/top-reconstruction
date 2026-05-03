@@ -4,12 +4,12 @@ package bogen;
 // dem Anfangswinkel an und breitet bei dem Unterschiedwinkel weiter.
 public class Bogen {
 
-    public int breite;
-    public int hoehe;
-    public int anfangswinkel;
-    public int unterschiedwinkel;
+    public double breite;
+    public double hoehe;
+    public double anfangswinkel;
+    public double unterschiedwinkel;
 
-    public Bogen(int b, int h, int aw, int uw) {
+    public Bogen(double b, double h, double aw, double uw) {
 	this.breite = b;
 	this.hoehe = h;
 	this.anfangswinkel = aw;
