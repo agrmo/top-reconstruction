@@ -67,7 +67,10 @@ public class Dreibogensicht extends Sicht {
 	for (int i = 0; i < this.dbw.bogen.length; i++) {
 	    // Verlege den Bogen.
 	    zweibogen[i] = Bogenverleger.verlege(this.dbw.bogen[i],
-						 this.dbw.stellungen[i].orientierung);
+						 this.dbw.stellungen[i].orientierung,
+						 this.winkeleins,
+						 this.winkelzwei,
+						 this.winkeldrei);
 
 	    // Verlege den Ort.
 	    zweiorte[i] = Punktverleger.verlege(this.dbw.stellungen[i].ort,
@@ -75,9 +78,9 @@ public class Dreibogensicht extends Sicht {
 						this.brennweite,
 						this.breite,
 						this.hoehe,
-						Eulerdreher.nehmedrehung(this.dbw.stellungen[i].orientierung.winkeleins,
-									 this.dbw.stellungen[i].orientierung.winkelzwei,
-									 this.dbw.stellungen[i].orientierung.winkeldrei));
+						Eulerdreher.nehmedrehung(this.dbw.stellungen[i].orientierung.winkeleins + this.winkeleins,
+									 this.dbw.stellungen[i].orientierung.winkelzwei + this.winkelzwei,
+									 this.dbw.stellungen[i].orientierung.winkeldrei + this.winkeldrei));
 	}
 	
 	Zweibogenwelt zbw = new Zweibogenwelt(zweibogen,

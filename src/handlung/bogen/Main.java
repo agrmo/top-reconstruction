@@ -22,8 +22,8 @@ public class Main {
     static void beispieleins() {
 	// Mache die Welt.
 	Bogen[] bl = new Bogen[] {
-	    new Bogen(800,200,10,90),
-	    new Bogen(800,200,10,90)};
+	    new Bogen(200,200,0,90),
+	    new Bogen(200,200,0,180)};
 
 	Dreistellung[] sl = new Dreistellung[] {
 	    new Dreistellung(new Dreivektor(-30,-30,-30),
