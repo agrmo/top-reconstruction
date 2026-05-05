@@ -34,8 +34,28 @@ public class Main {
 	frame.setVisible(true);
     }
 
+    static void beispielzwei() {
+	// Mache die Sicht.
+	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
+	double breite = bildschirm.getWidth();
+	double hoehe = bildschirm.getHeight();
+	int radius = 100;
+	int nullradius = 5;
+	double winkel = 0.8;
+	Winkelsichtzwei s = new Winkelsichtzwei(winkel, breite, hoehe,
+						radius, nullradius);
+	Maler m = new Maler(new Sicht[] {s});
+
+	// Stellen die Daten dar.
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize((int) breite, (int) hoehe);
+	frame.add(m);
+	frame.setVisible(true);
+    }
+
     public static void main(String[] args){
-	beispieleins();
+	beispielzwei();
     }
 }
 
