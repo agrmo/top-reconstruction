@@ -76,14 +76,18 @@ public class Winkelsicht extends Sicht {
 		   yachseuntenx, yachseunteny);
     }
 
-    // Stelle einen Kreise für den Nullpunkt 0 Grad dar.
-    public void darstellenull(Graphics g) {
+    // Stelle einen Kreis für den Endpunkt des Bogens dar.
+    public void darstelleendpunkt(Graphics g) {
 
-	// Das Zentrum des Nullpunkts.
-	int nullx = (int) ((this.breite / 2.0) + this.radius - this.nullradius);
-	int nully = (int) ((this.hoehe / 2.0) - this.nullradius);
+	// Drehe den Nullpunkt zum Endpunkt des Bogens.
+	Zweivektor a = new Zweivektor(this.radius, 0);
+	Zweivektor b = Zweivektordreher.drehen(a, -this.winkel);
 
-	g.drawArc(nullx, nully, this.nullradius * 2, this.nullradius * 2,
+	// Verschiebe zum Zentrum des Bildschirms.
+	int endpunktx = (int) (b.eins + (this.breite / 2.0) - this.nullradius);
+	int endpunkty = (int) (b.zwei + (this.hoehe / 2.0) - this.nullradius);
+
+	g.drawArc(endpunktx, endpunkty, this.nullradius * 2, this.nullradius * 2,
 		  0, 360);
     }
 
@@ -122,9 +126,9 @@ public class Winkelsicht extends Sicht {
 
     // Stelle jeden Vektor dar.
     public void darstellen(Graphics g) {
-	this.darstellenull(g);
+	this.darstelleendpunkt(g);
 	this.darstelleachsen(g);
-	this.darstellewinkel(g);
+	// this.darstellewinkel(g);
 	this.darstellehypotenuse(g);
     }
 }
