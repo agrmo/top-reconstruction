@@ -21,7 +21,7 @@ public class Main {
 	double hoehe = bildschirm.getHeight();
 	int radius = 100;
 	int nullradius = 10;
-	double winkel = 3.14;
+	double winkel = 0.8;
 	Winkelsicht s = new Winkelsicht(winkel, breite, hoehe,
 					radius, nullradius);
 	Maler m = new Maler(new Sicht[] {s});

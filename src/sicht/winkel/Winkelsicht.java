@@ -2,11 +2,13 @@ package sicht.winkel;
 
 import java.awt.Graphics;
 import sicht.Sicht;
+import vektor.Zweivektor;
+import dreher.zweivektor.Zweivektordreher;
 
 // Stelle einen Winkel dar. 
 public class Winkelsicht extends Sicht {
 
-    // Der Winkel.
+    // Der Radiant des Winkels.
     // Nehmen wir an, daß der Winkel 0 < theta < 2pi ist.
     double winkel;
 
@@ -85,11 +87,29 @@ public class Winkelsicht extends Sicht {
 		  0, 360);
     }
 
+    // Stelle die "Hypotenuse" des Bogens dar.
+    public void darstellehypotenuse(Graphics g) {
+
+	// Eine Seite der Strecke.
+	int anfangx = (int)(this.breite / 2.0);
+	int anfangy = (int)(this.hoehe / 2.0);
+
+	// Ende der Strecke. Es liegt am Bogen.
+	Zweivektor a = new Zweivektor(this.radius, 0);
+	Zweivektor b = Zweivektordreher.drehen(a, this.winkel);
+
+	int endex = (int) (b.eins + (this.breite / 2.0));
+	int endey = (int) (b.zwei + (this.hoehe / 2.0));
+
+	g.drawLine(anfangx, anfangy, endex, endey);
+    }
+
     // Stelle jeden Vektor dar.
     public void darstellen(Graphics g) {
 	this.darstellenull(g);
 	this.darstelleachsen(g);
 	this.darstellewinkel(g);
+	this.darstellehypotenuse(g);
     }
 }
 

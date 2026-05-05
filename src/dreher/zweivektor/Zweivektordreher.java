@@ -11,7 +11,7 @@ import vektor.Zweivektor;
 public class Zweivektordreher {
 
     // Dreh den zweidimensionalen Vektor um den Ursprung gegen den
-    // Uhrzeigersinn. Theta hat die Einheit Rad.
+    // Uhrzeigersinn. Theta hat die Einheit Radiant.
     public static Zweivektor drehen(Zweivektor zp, double theta) {
 	double xneu = Math.cos(theta)*zp.eins - Math.sin(theta)*zp.zwei;
 	double yneu = Math.sin(theta)*zp.eins + Math.cos(theta)*zp.zwei;
