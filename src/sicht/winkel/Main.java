@@ -20,7 +20,7 @@ public class Main {
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
 	int radius = 100;
-	int nullradius = 10;
+	int nullradius = 5;
 	double winkel = 0.8;
 	Winkelsicht s = new Winkelsicht(winkel, breite, hoehe,
 					radius, nullradius);

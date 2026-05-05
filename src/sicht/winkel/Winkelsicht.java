@@ -96,7 +96,23 @@ public class Winkelsicht extends Sicht {
 
 	// Ende der Strecke. Es liegt am Bogen.
 	Zweivektor a = new Zweivektor(this.radius, 0);
-	Zweivektor b = Zweivektordreher.drehen(a, this.winkel);
+
+	/* Sehr wichtig zu beachten:
+	   Java benutzt eine zweidimensionale Fläche, wobei
+	   +y nach unten geht. Das bedeutet, daß eine Drehung
+
+	   ( cos -sin )
+	   ( sin  cos )
+
+	   geht nicht gegen den Uhrzeigersinn, sondern in den
+	   Uhrseigersinn.
+
+	   Wir müssen eine -1 in der Drehung einsetzen.
+
+	   Wir müssen nicht eine -1 in drawArc() einsetzen.
+	*/
+	
+	Zweivektor b = Zweivektordreher.drehen(a, -this.winkel);
 
 	int endex = (int) (b.eins + (this.breite / 2.0));
 	int endey = (int) (b.zwei + (this.hoehe / 2.0));
