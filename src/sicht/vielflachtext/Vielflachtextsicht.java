@@ -1,4 +1,4 @@
-package sicht.vielflach;
+package sicht.vielflachtext;
 
 import druck.vektor.Vektordrucker;
 import java.awt.Graphics;
