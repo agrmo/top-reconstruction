@@ -8,7 +8,6 @@ javac -d classes $(find src -type f) && java -cp classes liste.Main
 */
 
 public class Main {
-
     static void beispieleins() {
 	// drucken eine Liste von Liste von ganzen Zahlen...
 	ArrayList<int[]> a = new ArrayList<int[]>();

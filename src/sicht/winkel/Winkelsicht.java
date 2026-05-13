@@ -1,15 +1,16 @@
 package sicht.winkel;
 
+import dreher.zweivektor.Zweivektordreher;
 import java.awt.Graphics;
 import sicht.Sicht;
 import vektor.Zweivektor;
-import dreher.zweivektor.Zweivektordreher;
 
-// Stelle einen Winkel dar. 
+// Stelle einen einzelnen Winkel dar. 
 public class Winkelsicht extends Sicht {
 
-    // Der Radiant des Winkels.
-    // Nehmen wir an, daß der Winkel 0 < theta < 2pi ist.
+    // Der Radiant des Winkels.  Nehmen wir an, daß der Winkel 0 <
+    // theta < 2pi ist.  Oder sollen wir vielleicht Grad benutzen,
+    // weil innerhalb Java das viel mehr häufig und gebrauchlich ist?
     double winkel;
 
     // Radius des Kreises.
