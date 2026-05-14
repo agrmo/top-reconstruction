@@ -1,7 +1,7 @@
-wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 tar -xf install-tl-unx.tar.gz
-sudo perl install-tl
-export PATH=$PATH:/usr/local/texlive/2024/bin/x86_64-linux
+perl install-tl
+export PATH=$PATH:/home/user1/code/tex/texlive/bin/x86_64-linux/
 tlmgr install koma-script etaremune floatrow geometry xkeyval biblatex times courier cbfonts standalone babel caption enumitem mathtools beamer preview cancel ulem
 
 \textrm \rmfamily
@@ -56,7 +56,7 @@ zitat
 \e{\lab{ref}a=b}
 Der Gleichung \eref{ref} ...
 
-Rahm
+Rahmen
 \usepackage{geometry}
 \geometry{top=1in,bottom=1in,left=1in,right=1in}
 
@@ -68,7 +68,7 @@ Rahm
 \e{a&=1\\
 \Aboxed{b&=2}}
 
-tafel mit automatisch gleichungen
+Tafel mit automatisch gleichungen
 \usepackage{floatrow}
 \usepackage{array}
 \newcolumntype{L}{>{$}l<{$}}
@@ -83,7 +83,7 @@ a & b\\
 c & d
 }
 
-verbatim
+Code
 \usepackage{etoolbox}
 \makeatletter
 \patchcmd{\@verbatim}
@@ -92,7 +92,7 @@ verbatim
   {}{}
 \makeatother
 
-normalische kistende Gleichung
+normalische gekistete Gleichung
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \begin{equation}
@@ -104,7 +104,7 @@ a=b
 \setlength{\tabcolsep}{5pt}
 \renewcommand{\arraystretch}{1.2}
 
-Kiste ober Gleichung mit Liniebrechung
+Kiste ober Gleichung mit Linienbrechung
 \[ \! \boxed{\begin{aligned} a\\
 b
 \end{aligned}} \]
@@ -122,5 +122,5 @@ diagonale Strich
 
 -
 
-%\item A. E. Romero and V. A. Dolgashev. High Efficiency Travelling Wave X-Band Linac With Tunable Output Energy (SLAC-PUB-17681). SLAC National Accelerator Laboratory, 2022.
-%\item A. E. Romero and K. Kim. RF Demodulation Theory (LCLSII-2.7-EN-2010). SLAC National Accelerator Laboratory, 2021.
+Lasing from Heat: The odd phenomenon that a laser can cool itself.^C
+~ $ A self-cooling laser has been demonstrated at Stanford for the first time. We would like to explore in this journal talk its underlying quantum mechanical mechanism.
