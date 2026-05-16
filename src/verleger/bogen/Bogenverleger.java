@@ -52,11 +52,11 @@ public class Bogenverleger {
 	Dreivektor endx = drehung.punkt(anfangx);
 	Dreivektor endy = drehung.punkt(anfangy);
 
-	StringBuilder sb = new StringBuilder();
-	sb.append(Vektordrucker.drucke(endx));
-	sb.append(" ");
-	sb.append(Vektordrucker.drucke(endy));
-	System.out.println(sb.toString());
+	// StringBuilder sb = new StringBuilder();
+	// sb.append(Vektordrucker.drucke(endx));
+	// sb.append(" ");
+	// sb.append(Vektordrucker.drucke(endy));
+	// System.out.println(sb.toString());
 
 	// Nehme den x-Teil von endx. Die zweidimensionale Breite.
 	double zb = Math.abs(endx.eins) * b.breite;
