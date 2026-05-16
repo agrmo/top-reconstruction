@@ -1,5 +1,6 @@
 package verleger.vielflach;
 
+import auge.Auge;
 import dreher.euler.Eulerdreher;
 import druck.matrix.Matrixdrucker;
 import matrix.Dreimatrix;
@@ -25,24 +26,19 @@ public class Vielflachverleger {
     // ein: Vielflachwelt, ...
     // aus: Zweistreckewelt
     //
-    // Verlegen die dreidimensionale Vielflachwelt zu einer
+    // Verlege die dreidimensionale Vielflachwelt zu einer
     // zweidimensionale Zweistreckewelt.
-    public static Zweistreckewelt verlege(Vielflachwelt vw,
-					  Dreivektor entfernung, double brennweite,
-					  double breite, double hoehe,
-					  double winkeleins,
-					  double winkelzwei,
-					  double winkeldrei) {
+    public static Zweistreckewelt verlege(Vielflachwelt vw, Auge auge) {
 	
 	// Liste von Dreistrecken. Nehme die Strecken der
 	// dreidimensionalen Welt. Jede Strecke hier wird zu einer
 	// zweidimensionalen Fläche verlegt.
 	Dreistrecke[] dsl = vw.nehmekanten();
 
-	// Berechne die nötige Drehung.
-	Dreimatrix drehung = Eulerdreher.nehmedrehung(winkeleins,
-						      winkelzwei,
-						      winkeldrei);
+	// Berechne die Drehung von den ZXZ-Euler-Winkeln.
+	Dreimatrix drehung = Eulerdreher.nehmedrehung(auge.winkeleins,
+						      auge.winkelzwei,
+						      auge.winkeldrei);
 	
 	// Liste von Zweistrecken. Mache die Strecken für eine
 	// zweidimensionale Zweistreckewelt.
@@ -51,8 +47,9 @@ public class Vielflachverleger {
 	for (int i = 0; i < dsl.length; i++) {
 	    // Nehme die neue Strecke. Sie ist Teil einer neuen Welt,
 	    // die Zweistreckewelt.
-	    Zweistrecke zs = Streckeverleger.verlege(dsl[i], entfernung, brennweite,
-						     breite, hoehe,
+	    Zweistrecke zs = Streckeverleger.verlege(dsl[i], auge.entfernung,
+						     auge.brennweite,
+						     auge.breite, auge.hoehe,
 						     drehung);
 	    
 	    // Fügen sie zu der Liste ein.

@@ -2,13 +2,17 @@ package auge;
 
 import vektor.Dreivektor;
 
-// Das Auge. Er besizt die Eigenschaften eines Augenpaars.
+// Das Auge. Man sieht die Welt mithilfe seiner Augen.
 public class Auge {
-    
-    public double breite;
-    public double hoehe;
+
     public Dreivektor entfernung;
     public double brennweite;
+    
+    // Bildschirm.
+    public double breite;
+    public double hoehe;
+
+    // ZXZ Euler Winkel.
     public double winkeleins;
     public double winkelzwei;
     public double winkeldrei;

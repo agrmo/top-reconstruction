@@ -1,15 +1,13 @@
 package sicht.graph.drei;
 
+import auge.Auge;
 import java.awt.Graphics;
 import javax.swing.JComponent;
-import matrix.Dreimatrix;
 import sicht.Sicht;
 import sicht.graph.zwei.Zweigraphsicht;
-import vektor.Dreivektor;
-import vektor.Zweivektor;
+import verleger.graph.Dreigraphverleger;
 import welt.graph.Dreigraphwelt;
 import welt.graph.Zweigraphwelt;
-import verleger.graph.Dreigraphverleger;
 
 // Eine Sicht, die eine dreidimensionale Graphwelt darstellt.
 public class Dreigraphsicht extends Sicht {
@@ -20,52 +18,22 @@ public class Dreigraphsicht extends Sicht {
     // Jeder Knoten ist als einen Kreis dargestellt.
     double durchmesser;
 
-    // Ein Vektor, mit dem wir die Weltkoordinaten verschieben
-    // werden. Er funktioniert wie ein Augenpaar. Er zeigt wovon wir
-    // uns die Welt anschauen.
-    public Dreivektor entfernung;
-
-    // Die Eigenschaften dieser Augen.
-    public double breite;
-    public double brennweite;
-    public double hoehe;
-
-    // Die Eulerwinkel.
-    public double winkeleins;
-    public double winkelzwei;
-    public double winkeldrei;
+    // Das Auge.
+    Auge auge;
     
-    public Dreigraphsicht(Dreigraphwelt dgw,
-			      double durchmesser,
-			      Dreivektor entfernung, double brennweite,
-			      double breite, double hoehe,
-			      double winkeleins,
-			      double winkelzwei,
-			      double winkeldrei) {
-
+    public Dreigraphsicht(Dreigraphwelt dgw, double durchmesser, Auge auge) {
 	this.dgw = dgw;
 	this.durchmesser = durchmesser;
-	this.entfernung = entfernung;
-	this.brennweite = brennweite;
-	this.breite = breite;
-	this.hoehe = hoehe;
-	this.winkeleins = winkeleins;
-	this.winkelzwei = winkelzwei;
-	this.winkeldrei = winkeldrei;
+	this.auge = auge;
     }
     
     public void darstellen(Graphics g) {
 
-	// Wandle eine Dreigraphsicht zu einer Zweigraphsicht.  Wir
-	// müssen nur die dreidimensionale Stellen zu
-	// zweidimensionalen verlegen.
-
-	Zweigraphwelt zgw = Dreigraphverleger.verlege(this.dgw, this.entfernung,
-						      this.brennweite,
-						      this.breite, this.hoehe,
-						      this.winkeleins,
-						      this.winkelzwei,
-						      this.winkeldrei);
+	// Wandle eine Dreigraphsicht zu einer Zweigraphsicht um.  Wir
+	// müssen nur die dreidimensionalen Stellen zu
+	// zweidimensionalen verlegen. Die Verbindungen der Knoten
+	// werden nicht verändert.
+	Zweigraphwelt zgw = Dreigraphverleger.verlege(this.dgw, this.auge);
 
 	// Die Zweigraphsicht wird die Knoten richtig verschieben,
 	// sodaß jeweilige Kante in das Zentrum des Knoten gesetzt

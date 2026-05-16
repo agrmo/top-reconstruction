@@ -1,5 +1,6 @@
 package verleger.graph;
 
+import auge.Auge;
 import dreher.euler.Eulerdreher;
 import matrix.Dreimatrix;
 import vektor.Dreivektor;
@@ -13,28 +14,23 @@ public class Dreigraphverleger {
     // ein: Dreigraphwelt, ...
     // aus: Zweigraphwelt
     //
-    // Verlegen die dreidimensionale Dreigraphwelt zu einer
+    // Verlege die dreidimensionale Dreigraphwelt zu einer
     // zweidimensionale Zweigraphwelt.
-    public static Zweigraphwelt verlege(Dreigraphwelt dgw,
-					Dreivektor entfernung, double brennweite,
-					double breite, double hoehe,
-					double winkeleins,
-					double winkelzwei,
-					double winkeldrei) {
+    public static Zweigraphwelt verlege(Dreigraphwelt dgw, Auge auge) {
 
 	Dreivektor[] dreiorten = dgw.nehmeknoten();
 	Zweivektor[] zweiorten = new Zweivektor[dreiorten.length];
 
 	// Für jeden Knoten, verlegen den Knoten.
-	Dreimatrix drehung = Eulerdreher.nehmedrehung(winkeleins,
-						      winkelzwei,
-						      winkeldrei);
+	Dreimatrix drehung = Eulerdreher.nehmedrehung(auge.winkeleins,
+						      auge.winkelzwei,
+						      auge.winkeldrei);
 
 	// Verlege jeden Vektor. 
 	for (int i = 0; i < zweiorten.length; i++) {
 	    zweiorten[i] = Punktverleger.verlege(dreiorten[i],
-						 entfernung, brennweite,
-						 breite, hoehe,
+						 auge.entfernung, auge.brennweite,
+						 auge.breite, auge.hoehe,
 						 drehung);
 	}
 

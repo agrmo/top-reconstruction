@@ -55,7 +55,7 @@ public class Main {
 	// Mache die Handlung.
 	Vielflachhandlung h = new Vielflachhandlung(m, vs, vw);
 
-	// Geh.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.getContentPane().setBackground(Color.BLACK);
@@ -103,7 +103,7 @@ public class Main {
 	// Mache die Handlung.
 	Vielflachhandlung h = new Vielflachhandlung(m, vs, vw);
 
-	// Geh.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.getContentPane().setBackground(Color.BLACK);

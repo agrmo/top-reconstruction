@@ -1,7 +1,9 @@
 package handlung.graph;
 
+import auge.Auge;
 import graph.Nachbarschaftsliste;
 import graph.zufalls.Zufallsgraph;
+import handlung.auge.Augehandlung;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -36,20 +38,29 @@ public class Main {
 	Dreigraphwelt dgw = new Dreigraphwelt(nl, orten);
 
 	// Mache die Sicht.
+	
+	// Wir brauchen nicht, eine bestimmte Klasse für die Handlung
+	// des Graphen zu bauen, wie z.B. eine "Graphhandlung."
+	// Sondern wir brauchen nur eine Augehandlung, weil wir nur
+	// die Eigenschaften der Augen verändern wollen.
+	double durchmesser = 20;
 	double breite = 1200;
 	double hoehe = 600;
 	double brennweite = 500;
-	double durchmesser = 20;
 	Dreivektor entfernung = new Dreivektor(0,0,100);
-	Dreigraphsicht ds = new Dreigraphsicht(dgw,
-					       durchmesser,
-					       entfernung, brennweite,
-					       breite, hoehe,
-					       0, 0, 0);
+	double winkeleins = 0;
+	double winkelzwei = 0;
+	double winkeldrei = 0;
+	Auge auge = new Auge(entfernung, brennweite,
+			     breite, hoehe,
+			     winkeleins,
+			     winkelzwei,
+			     winkeldrei);
+	Dreigraphsicht ds = new Dreigraphsicht(dgw, durchmesser, auge);
 	Maler m = new Maler(new Sicht[] {ds});
 	
 	// Mache die Handlung.
-	Graphhandlung handlung = new Graphhandlung(m, ds, dgw);
+	Augehandlung handlung = new Augehandlung(m, auge);
 
 	// Fangen die Handlung an.
 	JFrame frame = new JFrame();
@@ -80,22 +91,25 @@ public class Main {
 	Dreigraphwelt dgw = new Dreigraphwelt(nl, orte);
 
 	// Mache die Sicht.
+	double durchmesser = 20;
+	Dreivektor entfernung = new Dreivektor(0,0,300);
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
-	
 	double brennweite = 500;
-	double durchmesser = 20;
-	Dreivektor entfernung = new Dreivektor(0,0,300);
-	Dreigraphsicht ds = new Dreigraphsicht(dgw,
-					       durchmesser,
-					       entfernung, brennweite,
-					       breite, hoehe,
-					       0, 0, 0);
+	double winkeleins = 0;
+	double winkelzwei = 0;
+	double winkeldrei = 0;
+	Auge auge = new Auge(entfernung, brennweite,
+			     breite, hoehe,
+			     winkeleins,
+			     winkelzwei,
+			     winkeldrei);
+	Dreigraphsicht ds = new Dreigraphsicht(dgw, durchmesser, auge);
 	Maler m = new Maler(new Sicht[] {ds});
 	
 	// Mache die Handlung.
-	Graphhandlung handlung = new Graphhandlung(m, ds, dgw);
+	Augehandlung handlung = new Augehandlung(m, auge);
 
 	// Fangen die Handlung an.
 	JFrame frame = new JFrame();
@@ -106,7 +120,6 @@ public class Main {
 	frame.add(m);
 	frame.addKeyListener(handlung);
 	frame.setVisible(true);
-
     }
 
     public static void main(String[] args) {

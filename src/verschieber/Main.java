@@ -25,7 +25,7 @@ public class Main {
 	};
 	Vielflachwelt vw = new Vielflachwelt(vl, sl);
 
-	// Benutzen den Verleger.
+	// Benutze den Verleger.
 	Dreivektor vp = new Dreivektor(100,100,100);
 	Verschieber.verschieben(vw, vp);
     }

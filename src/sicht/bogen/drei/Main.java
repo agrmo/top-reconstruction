@@ -53,7 +53,7 @@ public class Main {
 	Dreibogensicht s = new Dreibogensicht(dbw, auge);
 	Maler m = new Maler(new Sicht[] {s});
 	
-	// Geh.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.getContentPane().setBackground(Color.BLACK);

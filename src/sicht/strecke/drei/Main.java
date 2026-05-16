@@ -52,7 +52,7 @@ public class Main {
 	// Mache den Maler.
 	Maler m = new Maler(new Sicht[] {s});
 
-	// Stellen die Daten dar.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.getContentPane().setBackground(Color.BLACK);
         frame.getContentPane().setForeground(Color.WHITE);

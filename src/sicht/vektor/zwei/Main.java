@@ -30,7 +30,7 @@ public class Main {
 	Zweivektorsicht s = new Zweivektorsicht(ow);
 	Maler m = new Maler(new Sicht[] {s});
 	
-	// Stellen die Daten dar.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);

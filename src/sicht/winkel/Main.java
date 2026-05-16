@@ -27,7 +27,7 @@ public class Main {
 					radius, nullradius);
 	Maler m = new Maler(new Sicht[] {s});
 
-	// Stellen die Daten dar.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize((int) breite, (int) hoehe);
@@ -55,7 +55,7 @@ public class Main {
 	
 	Maler m = new Maler(new Sicht[] {sa,sb});
 
-	// Stellen die Daten dar.
+	// Stelle die Daten dar.!
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize((int) breite, (int) hoehe);

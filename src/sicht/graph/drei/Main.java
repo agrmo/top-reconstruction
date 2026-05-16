@@ -1,5 +1,6 @@
 package sicht.graph.drei;
 
+import auge.Auge;
 import java.awt.Color;
 import vektor.Zweivektor;
 import javax.swing.JFrame;
@@ -39,13 +40,19 @@ public class Main {
 	double brennweite = 500;
 	double durchmesser = 20;
 	Dreivektor entfernung = new Dreivektor(0,0,0);
-	Dreigraphsicht s = new Dreigraphsicht(dgw, durchmesser,
-						      entfernung, brennweite,
-						      breite, hoehe,
-						      0, 0, 0);
+	double winkeleins = 0;
+	double winkelzwei = 0;
+	double winkeldrei = 0;
+	Auge auge = new Auge(entfernung, brennweite,
+			     breite, hoehe,
+			     winkeleins,
+			     winkelzwei,
+			     winkeldrei);
+	
+	Dreigraphsicht s = new Dreigraphsicht(dgw, durchmesser, auge);
 	Maler m = new Maler(new Sicht[] {s});
   
-        // Stellen die Daten dar.
+        // Stelle die Daten dar.
         JFrame frame = new JFrame();
 	frame.getContentPane().setBackground(Color.BLACK);
         frame.getContentPane().setForeground(Color.WHITE);

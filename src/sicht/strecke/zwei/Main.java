@@ -33,7 +33,7 @@ public class Main {
 	Zweistreckesicht s = new Zweistreckesicht(zsw);
 	Maler m = new Maler(new Sicht[] {s});
 
-	// Stellen die Daten dar.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.getContentPane().setBackground(Color.BLACK);
         frame.getContentPane().setForeground(Color.WHITE);
@@ -64,7 +64,7 @@ public class Main {
 	Zweistreckesicht s = new Zweistreckesicht(zswNeu);
 	Maler m = new Maler(new Sicht[] {s});
 	
-	// Stellen die Daten dar.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.getContentPane().setBackground(Color.BLACK);
         frame.getContentPane().setForeground(Color.WHITE);

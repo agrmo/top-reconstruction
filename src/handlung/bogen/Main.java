@@ -55,7 +55,7 @@ public class Main {
 	// Mache die Handlung.
 	Bogenhandlung handlung = new Bogenhandlung(m, s, dbw);
 
-	// Spiele.
+	// Stelle die Daten dar..
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.getContentPane().setBackground(Color.BLACK);

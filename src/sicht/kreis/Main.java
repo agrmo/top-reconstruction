@@ -32,7 +32,7 @@ public class Main {
 	Kreissicht s = new Kreissicht(kw);
 	Maler m = new Maler(new Sicht[] {s});
 	
-	// Stellen die Daten dar.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.getContentPane().setBackground(Color.BLACK);
         frame.getContentPane().setForeground(Color.WHITE);

@@ -36,7 +36,7 @@ public class Main {
 	Zweigraphsicht zgs = new Zweigraphsicht(zgw, durchmesser);
 	Maler m = new Maler(new Sicht[] {zgs});
   
-        // Stellen die Daten dar.
+        // Stelle die Daten dar.
         JFrame frame = new JFrame();
 	frame.getContentPane().setBackground(Color.BLACK);
         frame.getContentPane().setForeground(Color.WHITE);
@@ -65,7 +65,7 @@ public class Main {
 	Zweigraphsicht zgs = new Zweigraphsicht(zgw, durchmesser);
 	Maler m = new Maler(new Sicht[] {zgs});
   
-        // Stellen die Daten dar.
+        // Stelle die Daten dar.
         JFrame frame = new JFrame();
 	frame.getContentPane().setBackground(Color.BLACK);
         frame.getContentPane().setForeground(Color.WHITE);
@@ -84,7 +84,7 @@ public class Main {
 	Zweigraphsicht zgs = new Zweigraphsicht(zgw, durchmesser);
 	Maler m = new Maler(new Sicht[] {zgs});
   
-        // Stellen die Daten dar.
+        // Stelle die Daten dar.
         JFrame frame = new JFrame();
 	frame.getContentPane().setBackground(Color.BLACK);
         frame.getContentPane().setForeground(Color.WHITE);

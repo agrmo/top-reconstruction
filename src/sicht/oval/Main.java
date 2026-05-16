@@ -32,7 +32,7 @@ public class Main {
 	Ovalsicht s = new Ovalsicht(ow);
 	Maler m = new Maler(new Sicht[] {s});
 	
-	// Stellen die Daten dar.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize(1200, 600);

@@ -70,7 +70,7 @@ public class Main {
 	// Mache die Handlung.
 	Augehandlung handlung = new Augehandlung(m, auge);
 	
-	// Spiele.
+	// Stelle die Daten dar..
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.getContentPane().setBackground(Color.BLACK);

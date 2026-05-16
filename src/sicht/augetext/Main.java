@@ -49,7 +49,7 @@ public class Main {
 
 	Maler m = new Maler(new Sicht[] {vs, ats});
 	
-	// Geh.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setSize((int) breite, (int) hoehe);

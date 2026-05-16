@@ -1,5 +1,6 @@
 package verleger.vielflach;
 
+import auge.Auge;
 import matrix.Dreimatrix;
 import strecke.Zweistrecke;
 import vektor.Dreivektor;
@@ -29,10 +30,12 @@ public class Main {
 	};
 	Vielflachwelt vw = new Vielflachwelt(vl, sl);
 
+	// Mache das Auge.
+	Auge auge = new Auge(new Dreivektor(0,0,0), 500,
+			     1200, 600,
+			     0,0,0);
+	
 	// Verlegen die Welt.
-	Zweistreckewelt zsw = Vielflachverleger.verlege(vw,
-						   new Dreivektor(0,0,0), 500,
-						   1200, 600,
-						   0,0,0);
+	Zweistreckewelt zsw = Vielflachverleger.verlege(vw, auge);
     }
 }

@@ -30,12 +30,7 @@ public class Vielflachsicht extends Sicht {
     public void darstellen(Graphics g) {
 	
 	// Benutzen den Verleger.  
-	Zweistreckewelt zsw = Vielflachverleger.verlege(this.vw, this.auge.entfernung,
-							this.auge.brennweite,
-							this.auge.breite, this.auge.hoehe,
-							this.auge.winkeleins,
-							this.auge.winkelzwei,
-							this.auge.winkeldrei);
+	Zweistreckewelt zsw = Vielflachverleger.verlege(this.vw, this.auge);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.
