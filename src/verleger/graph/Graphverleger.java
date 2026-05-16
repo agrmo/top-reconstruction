@@ -9,7 +9,7 @@ import verleger.punkt.Punktverleger;
 import welt.graph.Dreigraphwelt;
 import welt.graph.Zweigraphwelt;
 
-public class Dreigraphverleger {
+public class Graphverleger {
     
     // ein: Dreigraphwelt, ...
     // aus: Zweigraphwelt

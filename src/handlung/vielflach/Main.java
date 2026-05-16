@@ -1,6 +1,7 @@
 package handlung.vielflach;
 
 import auge.Auge;
+import handlung.auge.Augehandlung;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -11,7 +12,6 @@ import sicht.Sicht;
 import sicht.vielflach.Vielflachsicht;
 import stellung.Dreistellung;
 import vektor.Dreivektor;
-import vektor.Zweivektor;
 import vielflach.Vielflach;
 import vielflach.kubus.Kubus;
 import welt.vielflach.Vielflachwelt;
@@ -32,11 +32,16 @@ public class Main {
 	Vielflachwelt vw = new Vielflachwelt(vl, sl);
 	
 	// Mache die Sicht.
+
+	// Wir brauchen nicht, eine bestimmte Klasse für die Handlung
+	// der Vielflache zu bauen, wie z.B. eine "Vielflachhandlung."
+	// Sondern wir brauchen nur eine Augehandlung, weil wir nur
+	// die Eigenschaften der Augen verändern wollen.
+	Dreivektor entfernung = new Dreivektor(0,0,100);
+	double brennweite = 500;
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
-	Dreivektor entfernung = new Dreivektor(0, 0, 200);
-	double brennweite = 500;
 	double winkeleins = 0;
 	double winkelzwei = 0;
 	double winkeldrei = 0;
@@ -49,7 +54,7 @@ public class Main {
 	Maler m = new Maler(new Sicht[] {vs});
 	
 	// Mache die Handlung.
-	Vielflachhandlung h = new Vielflachhandlung(m, vs, vw);
+	Augehandlung handlung = new Augehandlung(m, auge);
 
 	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
@@ -58,7 +63,7 @@ public class Main {
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
-	frame.addKeyListener(h);
+	frame.addKeyListener(handlung);
 	frame.setVisible(true);
     }
 

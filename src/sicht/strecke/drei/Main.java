@@ -1,5 +1,6 @@
 package sicht.strecke.drei;
 
+import auge.Auge;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Color;
@@ -33,21 +34,20 @@ public class Main {
 	Dreistreckewelt dsw = new Dreistreckewelt(dsl);
 	
 	// Mache die Sicht.
+	Dreivektor entfernung = new Dreivektor(0,20,70);
+	double brennweite = 500;
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
-	double brennweite = 500;
-	Dreivektor entfernung = new Dreivektor(0,20,70);
 	double winkeleins = 0;
 	double winkelzwei = 0.5;
 	double winkeldrei = 0.2;
-	
-	Dreistreckesicht s = new Dreistreckesicht(dsw, entfernung,
-						  brennweite,
-						  breite, hoehe,
-						  winkeleins,
-						  winkelzwei,
-						  winkeldrei);
+	Auge auge = new Auge(entfernung, brennweite,
+			     breite, hoehe,
+			     winkeleins,
+			     winkelzwei,
+			     winkeldrei);
+	Dreistreckesicht s = new Dreistreckesicht(dsw, auge);
 
 	// Mache den Maler.
 	Maler m = new Maler(new Sicht[] {s});

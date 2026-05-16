@@ -1,5 +1,6 @@
 package sicht.vektor.drei;
 
+import auge.Auge;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -29,21 +30,20 @@ public class Main {
 	Dreivektorwelt dvw = new Dreivektorwelt(v, o);
 
 	// Mache die Sicht.
+	Dreivektor entfernung = new Dreivektor(0,0,200);
+	double brennweite = 500;
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
-	double brennweite = 500;
-	Dreivektor entfernung = new Dreivektor(0,0,200);
 	double winkeleins = 0;
 	double winkelzwei = 0;
 	double winkeldrei = 0;
-	Dreivektorsicht s = new Dreivektorsicht(dvw,
-						entfernung,
-						brennweite,
-						breite, hoehe,
-						winkeleins,
-						winkelzwei,
-						winkeldrei);
+	Auge auge = new Auge(entfernung, brennweite,
+			     breite, hoehe,
+			     winkeleins,
+			     winkelzwei,
+			     winkeldrei);
+	Dreivektorsicht s = new Dreivektorsicht(dvw, auge);
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stelle die Daten dar.

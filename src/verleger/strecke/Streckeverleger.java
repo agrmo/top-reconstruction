@@ -38,8 +38,7 @@ public class Streckeverleger {
 							      breite, hoehe,
 							      drehung);
 	
-	// Diese ist die neue Strecke, die nur in zwei Dimensionen
-	// liegt. 
+	// Die neue Strecke, die nur in zwei Dimensionen liegt.
 	Zweistrecke zs = new Zweistrecke(verlegtervektorvon, verlegtervektorbis);
 	
 	return zs;

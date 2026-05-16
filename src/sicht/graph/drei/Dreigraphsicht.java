@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import sicht.Sicht;
 import sicht.graph.zwei.Zweigraphsicht;
-import verleger.graph.Dreigraphverleger;
+import verleger.graph.Graphverleger;
 import welt.graph.Dreigraphwelt;
 import welt.graph.Zweigraphwelt;
 
@@ -33,7 +33,7 @@ public class Dreigraphsicht extends Sicht {
 	// müssen nur die dreidimensionalen Stellen zu
 	// zweidimensionalen verlegen. Die Verbindungen der Knoten
 	// werden nicht verändert.
-	Zweigraphwelt zgw = Dreigraphverleger.verlege(this.dgw, this.auge);
+	Zweigraphwelt zgw = Graphverleger.verlege(this.dgw, this.auge);
 
 	// Die Zweigraphsicht wird die Knoten richtig verschieben,
 	// sodaß jeweilige Kante in das Zentrum des Knoten gesetzt

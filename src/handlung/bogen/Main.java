@@ -1,6 +1,7 @@
 package handlung.bogen;
 
 import auge.Auge;
+import handlung.auge.Augehandlung;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -36,11 +37,16 @@ public class Main {
 	Dreibogenwelt dbw = new Dreibogenwelt(bl, sl);
 
 	// Mache die Sicht.
+
+	// Wir brauchen nicht, eine bestimmte Klasse für die Handlung
+	// der Bogen zu bauen, wie z.B. eine "Bogenhandlung."  Sondern
+	// wir brauchen nur eine Augehandlung, weil wir nur die
+	// Eigenschaften der Augen verändern wollen.
+	Dreivektor entfernung = new Dreivektor(0,0,100);
+	double brennweite = 500;
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
-	double brennweite = 500;
-	Dreivektor entfernung = new Dreivektor(0,0,100);
 	double winkeleins = 0;
 	double winkelzwei = 0;
 	double winkeldrei = 0;
@@ -53,7 +59,7 @@ public class Main {
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Mache die Handlung.
-	Bogenhandlung handlung = new Bogenhandlung(m, s, dbw);
+	Augehandlung handlung = new Augehandlung(m, auge);
 
 	// Stelle die Daten dar..
 	JFrame frame = new JFrame();

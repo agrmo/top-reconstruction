@@ -1,6 +1,6 @@
 package sicht.vektor.drei;
 
-import dreher.euler.Eulerdreher;
+import auge.Auge;
 import dreher.euler.Eulerdreher;
 import java.awt.Graphics;
 import matrix.Dreimatrix;
@@ -16,33 +16,19 @@ import welt.vektor.Dreivektorwelt;
 // Stellen eine Reihe von Vektoren dar. Ein Vektor wird wie ein Pfeil
 // dargestellt.
 public class Dreivektorsicht extends Sicht {
-    
-    Dreivektorwelt dreivektorwelt;
-    Dreivektor entfernung;
-    double brennweite;
-    double breite;
-    double hoehe;
-    double winkeleins;
-    double winkelzwei;
-    double winkeldrei;
 
+    // Die Welt.
+    Dreivektorwelt dreivektorwelt;
+    
     // Die Größe der Spitze des Vektors. 
     int spitze = 10;
+
+    // Das Auge.
+    Auge auge;
     
-    public Dreivektorsicht(Dreivektorwelt dreivektorwelt,
-			   Dreivektor entfernung, double brennweite,
-			   double breite, double hoehe,
-			   double winkeleins,
-			   double winkelzwei,
-			   double winkeldrei) {
+    public Dreivektorsicht(Dreivektorwelt dreivektorwelt, Auge auge) {
 	this.dreivektorwelt = dreivektorwelt;
-	this.entfernung = entfernung;
-	this.brennweite = brennweite;
-	this.breite = breite;
-	this.hoehe = hoehe;
-	this.winkeleins = winkeleins;
-	this.winkelzwei = winkelzwei;
-	this.winkeldrei = winkeldrei;
+	this.auge = auge;
     }
     
     public void darstellen(Graphics g) {
@@ -150,13 +136,7 @@ public class Dreivektorsicht extends Sicht {
 
 	Dreistreckewelt dsw = new Dreistreckewelt(dsl);
 
-	Dreistreckesicht dss = new Dreistreckesicht(dsw,
-						    this.entfernung,
-						    this.brennweite,
-						    this.breite, this.hoehe,
-						    this.winkeleins,
-						    this.winkelzwei,
-						    this.winkeldrei);
+	Dreistreckesicht dss = new Dreistreckesicht(dsw, this.auge);
 
 	dss.darstellen(g);
     }

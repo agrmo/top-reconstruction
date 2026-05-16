@@ -38,16 +38,17 @@ public class Main {
 	Dreigraphwelt dgw = new Dreigraphwelt(nl, orten);
 
 	// Mache die Sicht.
+	double durchmesser = 20;
 	
 	// Wir brauchen nicht, eine bestimmte Klasse für die Handlung
 	// des Graphen zu bauen, wie z.B. eine "Graphhandlung."
 	// Sondern wir brauchen nur eine Augehandlung, weil wir nur
 	// die Eigenschaften der Augen verändern wollen.
-	double durchmesser = 20;
-	double breite = 1200;
-	double hoehe = 600;
-	double brennweite = 500;
 	Dreivektor entfernung = new Dreivektor(0,0,100);
+	double brennweite = 500;
+	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
+	double breite = bildschirm.getWidth();
+	double hoehe = bildschirm.getHeight();
 	double winkeleins = 0;
 	double winkelzwei = 0;
 	double winkeldrei = 0;
@@ -62,7 +63,7 @@ public class Main {
 	// Mache die Handlung.
 	Augehandlung handlung = new Augehandlung(m, auge);
 
-	// Fangen die Handlung an.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.getContentPane().setBackground(Color.BLACK);
@@ -111,7 +112,7 @@ public class Main {
 	// Mache die Handlung.
 	Augehandlung handlung = new Augehandlung(m, auge);
 
-	// Fangen die Handlung an.
+	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.getContentPane().setBackground(Color.BLACK);
@@ -123,6 +124,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-	beispielzwei();
+	beispieleins();
     }
 }

@@ -1,7 +1,7 @@
 package handlung.augetext;
 
 import auge.Auge;
-import handlung.vielflach.Vielflachhandlung;
+import handlung.auge.Augehandlung;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -53,7 +53,7 @@ public class Main {
 	Maler m = new Maler(new Sicht[] {vs, ats});
 	
 	// Mache die Handlung.
-	Vielflachhandlung h = new Vielflachhandlung(m, vs, vw);
+	Augehandlung handlung = new Augehandlung(m, auge);
 
 	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
@@ -62,7 +62,7 @@ public class Main {
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
-	frame.addKeyListener(h);
+	frame.addKeyListener(handlung);
 	frame.setVisible(true);
 
     }
@@ -101,7 +101,7 @@ public class Main {
 	Maler m = new Maler(new Sicht[] {vs, ats});
 	
 	// Mache die Handlung.
-	Vielflachhandlung h = new Vielflachhandlung(m, vs, vw);
+	Augehandlung handlung = new Augehandlung(m, auge);
 
 	// Stelle die Daten dar.
 	JFrame frame = new JFrame();
@@ -110,7 +110,7 @@ public class Main {
 	frame.getContentPane().setForeground(Color.WHITE);
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
-	frame.addKeyListener(h);
+	frame.addKeyListener(handlung);
 	frame.setVisible(true);
     }
 

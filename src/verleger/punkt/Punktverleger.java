@@ -3,7 +3,6 @@ package verleger.punkt;
 import matrix.Dreimatrix;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
-import welt.strecke.zwei.Zweistreckewelt;
 
 // Ein Punktverleger verlegt einen dreidimensionalen Punkt von einer
 // zweidimensionalen Punkt mit Hilfe der Ein-Punkt-Perspektive.
