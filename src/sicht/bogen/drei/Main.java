@@ -1,5 +1,6 @@
 package sicht.bogen.drei;
 
+import auge.Auge;
 import bogen.Bogen;
 import javax.swing.JFrame;
 import java.awt.Dimension;
@@ -43,12 +44,13 @@ public class Main {
 	double winkeleins = 0;
 	double winkelzwei = 0;
 	double winkeldrei = 0;
-	Dreibogensicht s = new Dreibogensicht(dbw,
-					      entfernung, brennweite,
-					      breite, hoehe,
-					      winkeleins,
-					      winkelzwei,
-					      winkeldrei);
+	Auge auge = new Auge(entfernung, brennweite,
+			     breite, hoehe,
+			     winkeleins,
+			     winkelzwei,
+			     winkeldrei);
+	
+	Dreibogensicht s = new Dreibogensicht(dbw, auge);
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Geh.
@@ -59,6 +61,5 @@ public class Main {
 	frame.setSize((int) breite, (int) hoehe);
 	frame.add(m);
 	frame.setVisible(true);
-
     }
 }

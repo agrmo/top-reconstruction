@@ -1,5 +1,6 @@
 package sicht.vielflach;
 
+import auge.Auge;
 import java.awt.Graphics;
 import javax.swing.JComponent;
 import matrix.Dreimatrix;
@@ -15,46 +16,26 @@ import welt.vielflach.Vielflachwelt;
 // Verlegung. Sie gibt am Ende eine Zweistreckewelt ab.
 public class Vielflachsicht extends Sicht {
 
-    // Die ursprünglichen Daten der Welt, aber nicht bearbeitet.
+    // Die Welt.
     public Vielflachwelt vw;
 
-    // Die Eigenschaften dieser Augen.
-    public double breite;
-    public double brennweite;
-    public double hoehe;
+    // Die Augen.
+    public Auge auge;
 
-    // Ein Vektor, mit dem wir die Weltkoordinaten verschieben
-    // werden. Er funktioniert wie ein Augenpaar. Er zeigt wovon wir
-    // uns die Welt anschauen.
-    public Dreivektor entfernung;
-
-    // Die Eulerwinkel.
-    public double winkeleins;
-    public double winkelzwei;
-    public double winkeldrei;
-
-    public Vielflachsicht(Vielflachwelt vw,
-			  Dreivektor entfernung, double brennweite,
-			  double breite, double hoehe) {
-
+    public Vielflachsicht(Vielflachwelt vw, Auge auge) {
 	this.vw = vw;
-	this.brennweite = brennweite;
-	this.breite = breite;
-	this.hoehe = hoehe;
-	this.entfernung = entfernung;
-	this.winkeleins = 0;
-	this.winkelzwei = 0;
-	this.winkeldrei = 0;
+	this.auge = auge;
     }
 
     public void darstellen(Graphics g) {
 	
 	// Benutzen den Verleger.  
-	Zweistreckewelt zsw = Vielflachverleger.verlege(this.vw, this.entfernung, this.brennweite,
-							this.breite, this.hoehe,
-							this.winkeleins,
-							this.winkelzwei,
-							this.winkeldrei);
+	Zweistreckewelt zsw = Vielflachverleger.verlege(this.vw, this.auge.entfernung,
+							this.auge.brennweite,
+							this.auge.breite, this.auge.hoehe,
+							this.auge.winkeleins,
+							this.auge.winkelzwei,
+							this.auge.winkeldrei);
 
 	// Wir haben schon eine Sicht, die die Zweistreckewelt
 	// darstellen kann. Benutzen sie.

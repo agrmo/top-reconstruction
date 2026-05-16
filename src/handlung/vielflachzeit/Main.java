@@ -1,5 +1,6 @@
 package handlung.vielflachzeit;
 
+import auge.Auge;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -8,7 +9,6 @@ import maler.Maler;
 import orientierung.Orientierung;
 import sicht.Sicht;
 import sicht.vielflach.Vielflachsicht;
-import sicht.vielflachtext.Vielflachtextsicht;
 import stellung.Dreistellung;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
@@ -36,8 +36,17 @@ public class Main {
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
-	Dreivektor ap = new Dreivektor(0, 0, 100);
-	Vielflachsicht vs = new Vielflachsicht(vw, ap, 500, breite, hoehe);
+	Dreivektor entfernung = new Dreivektor(0, 0, 100);
+	double brennweite = 500;
+	double winkeleins = 0;
+	double winkelzwei = 0;
+	double winkeldrei = 0;
+	Auge auge = new Auge(entfernung, brennweite,
+			     breite, hoehe,
+			     winkeleins,
+			     winkelzwei,
+			     winkeldrei);
+	Vielflachsicht vs = new Vielflachsicht(vw, auge);
 	Maler m = new Maler(new Sicht[] {vs});
 	
 	// Mache die Handlung.

@@ -1,12 +1,11 @@
 package sicht.bogen.drei;
 
+import auge.Auge;
 import bogen.Bogen;
 import dreher.euler.Eulerdreher;
 import java.awt.Graphics;
-import matrix.Dreimatrix;
 import sicht.Sicht;
 import sicht.bogen.zwei.Zweibogensicht;
-import vektor.Dreivektor;
 import vektor.Zweivektor;
 import verleger.bogen.Bogenverleger;
 import verleger.punkt.Punktverleger;
@@ -17,37 +16,14 @@ import welt.bogen.Zweibogenwelt;
 public class Dreibogensicht extends Sicht {
 
     // Die Welt.
-    Dreibogenwelt dbw;
+    public Dreibogenwelt dbw;
 
-    // Die Eigenschaften dieser Augen.
-    public double breite;
-    public double brennweite;
-    public double hoehe;
-
-    // Ein Vektor, mit dem wir die Weltkoordinaten verschieben
-    // werden. Er funktioniert wie ein Augenpaar. Er zeigt wovon wir
-    // uns die Welt anschauen.
-    public Dreivektor entfernung;
-
-    // Die Eulerwinkel.
-    public double winkeleins;
-    public double winkelzwei;
-    public double winkeldrei;
-
-    public Dreibogensicht(Dreibogenwelt dbw,
-			  Dreivektor entfernung, double brennweite,
-			  double breite, double hoehe,
-			  double winkeleins,
-			  double winkelzwei,
-			  double winkeldrei) {
+    // Die Augen, mit denen wir uns die Welt anschauen werden.
+    public Auge auge;
+    
+    public Dreibogensicht(Dreibogenwelt dbw, Auge auge) {
 	this.dbw = dbw;
-	this.entfernung = entfernung;
-	this.brennweite = brennweite;
-	this.breite = breite;
-	this.hoehe = hoehe;
-	this.winkeleins = winkeleins;
-	this.winkelzwei = winkelzwei;
-	this.winkeldrei = winkeldrei;
+	this.auge = auge;
     }
 
     public void darstellen(Graphics g) {
@@ -68,23 +44,22 @@ public class Dreibogensicht extends Sicht {
 	    // Verlege den Bogen.
 	    zweibogen[i] = Bogenverleger.verlege(this.dbw.bogen[i],
 						 this.dbw.stellungen[i].orientierung,
-						 this.winkeleins,
-						 this.winkelzwei,
-						 this.winkeldrei);
+						 this.auge.winkeleins,
+						 this.auge.winkelzwei,
+						 this.auge.winkeldrei);
 
 	    // Verlege den Ort.
 	    zweiorte[i] = Punktverleger.verlege(this.dbw.stellungen[i].ort,
-						this.entfernung,
-						this.brennweite,
-						this.breite,
-						this.hoehe,
-						Eulerdreher.nehmedrehung(this.dbw.stellungen[i].orientierung.winkeleins + this.winkeleins,
-									 this.dbw.stellungen[i].orientierung.winkelzwei + this.winkelzwei,
-									 this.dbw.stellungen[i].orientierung.winkeldrei + this.winkeldrei));
+						this.auge.entfernung,
+						this.auge.brennweite,
+						this.auge.breite,
+						this.auge.hoehe,
+						Eulerdreher.nehmedrehung(this.dbw.stellungen[i].orientierung.winkeleins + this.auge.winkeleins,
+									 this.dbw.stellungen[i].orientierung.winkelzwei + this.auge.winkelzwei,
+									 this.dbw.stellungen[i].orientierung.winkeldrei + this.auge.winkeldrei));
 	}
 	
-	Zweibogenwelt zbw = new Zweibogenwelt(zweibogen,
-					      zweiorte);
+	Zweibogenwelt zbw = new Zweibogenwelt(zweibogen, zweiorte);
 
 	Zweibogensicht zbs = new Zweibogensicht(zbw);
 

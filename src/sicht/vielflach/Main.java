@@ -1,5 +1,6 @@
 package sicht.vielflach;
 
+import auge.Auge;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
@@ -26,14 +27,22 @@ public class Main {
 	    new Dreistellung(new Dreivektor(0,0,0),
 			     new Orientierung(0,0,0))
 	};
-	Vielflachwelt welt = new Vielflachwelt(vl, sl);
+	Vielflachwelt vw = new Vielflachwelt(vl, sl);
 
 	// Mache die Sicht.
 	double breite = 1200;
 	double hoehe = 600;
 	double brennweite = 500;
 	Dreivektor entfernung = new Dreivektor(0,0,100);
-	Vielflachsicht vs = new Vielflachsicht(welt, entfernung, brennweite, breite, hoehe);
+	double winkeleins = 0;
+	double winkelzwei = 0;
+	double winkeldrei = 0;
+	Auge auge = new Auge(entfernung, brennweite,
+			     breite, hoehe,
+			     winkeleins,
+			     winkelzwei,
+			     winkeldrei);
+	Vielflachsicht vs = new Vielflachsicht(vw, auge);
 	Maler m = new Maler(new Sicht[] {vs});
 	
 	// Stelle die Daten dar.

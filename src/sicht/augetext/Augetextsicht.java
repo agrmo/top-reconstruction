@@ -1,21 +1,21 @@
-package sicht.vielflachtext;
+package sicht.augetext;
 
+import auge.Auge;
 import druck.vektor.Vektordrucker;
 import java.awt.Graphics;
 import sicht.Sicht;
 import sicht.text.Textsicht;
-import sicht.vielflach.Vielflachsicht;
 import vektor.Zweivektor;
 
 // Eine Sicht, die einen Text der Eigenschaften der
-// Vielflachsicht auf dem Bildschirm schreibt.
-public class Vielflachtextsicht extends Sicht {
+// Augen auf dem Bildschirm schreibt.
+public class Augetextsicht extends Sicht {
 
-    Vielflachsicht vs;
+    Auge auge;
     Textsicht textsicht;
 
-    public Vielflachtextsicht(Vielflachsicht vs) {
-	this.vs = vs;
+    public Augetextsicht(Auge auge) {
+	this.auge = auge;
 	this.textsicht = new Textsicht(new String[] {},
 				       new Zweivektor[] {});
     }
@@ -23,17 +23,17 @@ public class Vielflachtextsicht extends Sicht {
     public void darstellen(Graphics g) {
 	StringBuilder sba = new StringBuilder();
 	sba.append("Betrag: ");
-	sba.append(this.vs.entfernung.betrag());
+	sba.append(this.auge.entfernung.betrag());
 	StringBuilder sbb = new StringBuilder();
 	sbb.append("Drehung: ");
-	sbb.append(this.vs.winkeleins);
+	sbb.append(this.auge.winkeleins);
 	sbb.append(", ");
-	sbb.append(this.vs.winkelzwei);
+	sbb.append(this.auge.winkelzwei);
 	sbb.append(", ");
-	sbb.append(this.vs.winkeldrei);
+	sbb.append(this.auge.winkeldrei);
 	
 	String[] texte = new String[] {
-	    Vektordrucker.drucke(this.vs.entfernung),
+	    Vektordrucker.drucke(this.auge.entfernung),
 	    sba.toString(),
 	    sbb.toString()
 	};
@@ -50,5 +50,3 @@ public class Vielflachtextsicht extends Sicht {
 	this.textsicht.darstellen(g);
     }
 }
-
-

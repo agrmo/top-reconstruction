@@ -51,14 +51,14 @@ public class Vielflachzeithandlung extends Handlung {
 	int jetzty = me.getY();
 	int unterschiedx = jetztx - this.mousevorx;
 	int unterschiedy = jetzty - this.mousevory;
-	double winkelgier = ((double) unterschiedx) / this.vs.breite;
-	double winkelnick = -((double) unterschiedy) / this.vs.hoehe;
+	double winkelgier = ((double) unterschiedx) / this.vs.auge.breite;
+	double winkelnick = -((double) unterschiedy) / this.vs.auge.hoehe;
 
 	Dreimatrix giermatrix = Dreimatrixdreher.nehmedrehery(winkelgier);
 	Dreimatrix nickmatrix = Dreimatrixdreher.nehmedreherx(winkelnick);
 
-	this.vs.entfernung = giermatrix.punkt(this.vs.entfernung);
-	this.vs.entfernung = nickmatrix.punkt(this.vs.entfernung);
+	this.vs.auge.entfernung = giermatrix.punkt(this.vs.auge.entfernung);
+	this.vs.auge.entfernung = nickmatrix.punkt(this.vs.auge.entfernung);
 	
 	this.mousevorx = jetztx;
 	this.mousevory = jetzty;

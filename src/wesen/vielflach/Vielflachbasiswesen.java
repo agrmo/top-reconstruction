@@ -16,7 +16,7 @@ public class Vielflachbasiswesen implements Runnable {
     }
 
     public void run() {
-	this.vs.entfernung.addiere(new Dreivektor(0, 0, 1));
+	this.vs.auge.entfernung.addiere(new Dreivektor(0, 0, 1));
 	this.m.repaint();
     }
 }

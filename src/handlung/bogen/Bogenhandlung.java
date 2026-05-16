@@ -31,54 +31,53 @@ public class Bogenhandlung extends Handlung {
             char kc = ke.getKeyChar();
 
 	    if (kc == 'w') {
-		this.dbs.entfernung.zwei -= 10.0;
+		this.dbs.auge.entfernung.zwei -= 10.0;
 		veraendert = true;
 		
 	    } else if (kc == 's') {
-		this.dbs.entfernung.zwei += 10.0;
+		this.dbs.auge.entfernung.zwei += 10.0;
 		veraendert = true;
 		
 	    } else if (kc == 'a') {
-		this.dbs.entfernung.eins -= 10.0;
+		this.dbs.auge.entfernung.eins -= 10.0;
 		veraendert = true;
 		
 	    } else if (kc == 'd') {
-		this.dbs.entfernung.eins += 10.0;
+		this.dbs.auge.entfernung.eins += 10.0;
 		veraendert = true;
 		
 	    } else if (kc == 't') {
-		this.dbs.entfernung.drei += 10;
+		this.dbs.auge.entfernung.drei += 10;
 		veraendert = true;
 		
 	    } else if (kc == 'g') {
-		this.dbs.entfernung.drei -= 10;
+		this.dbs.auge.entfernung.drei -= 10;
 		veraendert = true;
 		
 	    } else if (kc == 'h') {
-		this.dbs.winkeleins += 0.05;
+		this.dbs.auge.winkeleins += 0.05;
 		veraendert = true;
 		
 	    } else if (kc == 'j') {
-		this.dbs.winkelzwei += 0.05;		
+		this.dbs.auge.winkelzwei += 0.05;		
 		veraendert = true;
 		
 	    } else if (kc == 'k') {
-		this.dbs.winkeldrei += 0.05;		
+		this.dbs.auge.winkeldrei += 0.05;		
 		veraendert = true;
 		
 	    } else if (kc == 'y') {
-		this.dbs.winkeleins -= 0.05;
+		this.dbs.auge.winkeleins -= 0.05;
 		veraendert = true;
 		
 	    } else if (kc == 'u') {
-		this.dbs.winkelzwei -= 0.05;		
+		this.dbs.auge.winkelzwei -= 0.05;		
 		veraendert = true;
 		
 	    } else if (kc == 'i') {
-		this.dbs.winkeldrei -= 0.05;		
+		this.dbs.auge.winkeldrei -= 0.05;		
 		veraendert = true;
 	    }
-	    
         }
 
 	if (veraendert == true) {

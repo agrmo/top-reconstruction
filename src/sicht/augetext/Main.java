@@ -1,5 +1,6 @@
-package sicht.vielflachtext;
+package sicht.augetext;
 
+import auge.Auge;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
@@ -15,7 +16,7 @@ import sicht.vielflach.Vielflachsicht;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.vielflachtext.Main
+  && java -cp classes sicht.augetext.Main
 */
 
 public class Main {
@@ -33,11 +34,20 @@ public class Main {
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
-	Dreivektor ap = new Dreivektor(0,0,100);
-	Vielflachsicht vs = new Vielflachsicht(vw, ap, 500, breite, hoehe);
-	Vielflachtextsicht vts = new Vielflachtextsicht(vs);
+	Dreivektor entfernung = new Dreivektor(0,0,100);
+	double brennweite = 500;
+	double winkeleins = 0;
+	double winkelzwei = 0;
+	double winkeldrei = 0;
+	Auge auge = new Auge(entfernung, brennweite,
+			     breite, hoehe,
+			     winkeleins,
+			     winkelzwei,
+			     winkeldrei);
+	Vielflachsicht vs = new Vielflachsicht(vw, auge);
+	Augetextsicht ats = new Augetextsicht(auge);
 
-	Maler m = new Maler(new Sicht[] {vs, vts});
+	Maler m = new Maler(new Sicht[] {vs, ats});
 	
 	// Geh.
 	JFrame frame = new JFrame();

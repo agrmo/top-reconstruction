@@ -1,5 +1,6 @@
-package handlung.vielflachtext;
+package handlung.augetext;
 
+import auge.Auge;
 import handlung.vielflach.Vielflachhandlung;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -9,7 +10,7 @@ import maler.Maler;
 import orientierung.Orientierung;
 import sicht.Sicht;
 import sicht.vielflach.Vielflachsicht;
-import sicht.vielflachtext.Vielflachtextsicht;
+import sicht.augetext.Augetextsicht;
 import stellung.Dreistellung;
 import vektor.Dreivektor;
 import vektor.Zweivektor;
@@ -19,7 +20,7 @@ import welt.vielflach.Vielflachwelt;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes handlung.vielflachtext.Main;
+  && java -cp classes handlung.augetext.Main;
 */
 
 public class Main {
@@ -36,11 +37,20 @@ public class Main {
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
-	Dreivektor ap = new Dreivektor(50,50,0);
-	Vielflachsicht vs = new Vielflachsicht(vw, ap, 500, breite, hoehe);
-	Vielflachtextsicht vts = new Vielflachtextsicht(vs);
+	Dreivektor entfernung = new Dreivektor(50,50,0);
+	double brennweite = 500;
+	double winkeleins = 0;
+	double winkelzwei = 0;
+	double winkeldrei = 0;
+	Auge auge = new Auge(entfernung, brennweite,
+			     breite, hoehe,
+			     winkeleins,
+			     winkelzwei,
+			     winkeldrei);
+	Vielflachsicht vs = new Vielflachsicht(vw, auge);
+	Augetextsicht ats = new Augetextsicht(auge);
 
-	Maler m = new Maler(new Sicht[] {vs, vts});
+	Maler m = new Maler(new Sicht[] {vs, ats});
 	
 	// Mache die Handlung.
 	Vielflachhandlung h = new Vielflachhandlung(m, vs, vw);
@@ -75,11 +85,20 @@ public class Main {
 	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
 	double breite = bildschirm.getWidth();
 	double hoehe = bildschirm.getHeight();
-	Dreivektor ap = new Dreivektor(50,50,0);
-	Vielflachsicht vs = new Vielflachsicht(vw, ap, 500, breite, hoehe);
-	Vielflachtextsicht vts = new Vielflachtextsicht(vs);
+	Dreivektor entfernung = new Dreivektor(50,50,0);
+	double brennweite = 500;
+	double winkeleins = 0;
+	double winkelzwei = 0;
+	double winkeldrei = 0;
+	Auge auge = new Auge(entfernung, brennweite,
+			     breite, hoehe,
+			     winkeleins,
+			     winkelzwei,
+			     winkeldrei);
+	Vielflachsicht vs = new Vielflachsicht(vw, auge);
+	Augetextsicht ats = new Augetextsicht(auge);
 
-	Maler m = new Maler(new Sicht[] {vs, vts});
+	Maler m = new Maler(new Sicht[] {vs, ats});
 	
 	// Mache die Handlung.
 	Vielflachhandlung h = new Vielflachhandlung(m, vs, vw);
