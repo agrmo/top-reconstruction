@@ -3,9 +3,7 @@ package dreher.punkt;
 import dreher.zweimatrix.Zweimatrixdreher;
 import druck.matrix.Matrixdrucker;
 import druck.vektor.Vektordrucker;
-import matrix.Dreimatrix;
 import matrix.Zweimatrix;
-import vektor.Dreivektor;
 import vektor.Zweivektor;
 
 /*
