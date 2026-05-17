@@ -18,7 +18,6 @@ import vielflach.kubus.Kubus;
 import welt.bogen.Dreibogenwelt;
 import welt.vielflach.Vielflachwelt;
 
-
 /*
   javac -d classes $(find src -type f) \
   && java -cp classes handlung.auge.Main
@@ -28,13 +27,10 @@ public class Main {
     static void beispieleins() {
 	// Mache die Welt.
 	Bogen[] bl = new Bogen[] {
-	    new Bogen(200,200,0,90),
 	    new Bogen(200,200,0,180)};
 
 	Dreistellung[] sl = new Dreistellung[] {
-	    new Dreistellung(new Dreivektor(-30,-30,-30),
-			     new Orientierung(0,0,0)),
-	    new Dreistellung(new Dreivektor(30,30,30),
+	    new Dreistellung(new Dreivektor(0,0,0),
 			     new Orientierung(0,0,0))
 	};
 	Dreibogenwelt dbw = new Dreibogenwelt(bl, sl);
@@ -48,10 +44,11 @@ public class Main {
 	Vielflachwelt vw = new Vielflachwelt(vl, vsl);
 
 	// Mache die Sicht.
-	double breite = 1200;
-	double hoehe = 600;
+	Dreivektor entfernung = new Dreivektor(0,0,-100);
 	double brennweite = 500;
-	Dreivektor entfernung = new Dreivektor(0,0,100);
+	Dimension bildschirm = Toolkit.getDefaultToolkit().getScreenSize();
+	double breite = bildschirm.getWidth();
+	double hoehe = bildschirm.getHeight();
 	double winkeleins = 0;
 	double winkelzwei = 0;
 	double winkeldrei = 0;

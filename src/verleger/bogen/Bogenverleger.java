@@ -42,27 +42,24 @@ public class Bogenverleger {
 	  Das ist alles.
 	*/
 
-	Dreivektor anfangx = new Dreivektor(1,0,0);
-	Dreivektor anfangy = new Dreivektor(0,1,0);
-
 	Dreimatrix drehung = Eulerdreher.nehmedrehung(s.winkeleins + winkeleins,
 						      s.winkelzwei + winkelzwei,
 						      s.winkeldrei + winkeldrei);
 
+	Dreivektor anfangx = new Dreivektor(1,0,0);
+	anfangx.multipliziere(b.breite);
+	
+	Dreivektor anfangy = new Dreivektor(0,1,0);
+	anfangy.multipliziere(b.hoehe);
+
 	Dreivektor endx = drehung.punkt(anfangx);
 	Dreivektor endy = drehung.punkt(anfangy);
 
-	// StringBuilder sb = new StringBuilder();
-	// sb.append(Vektordrucker.drucke(endx));
-	// sb.append(" ");
-	// sb.append(Vektordrucker.drucke(endy));
-	// System.out.println(sb.toString());
+	// Berechne die zweidimensionale Breite.
+	double zb = Math.abs(endx.eins);
 
-	// Nehme den x-Teil von endx. Die zweidimensionale Breite.
-	double zb = Math.abs(endx.eins) * b.breite;
-
-	// Nehme den y-Teil von endy. Die zweidimensionale Höhe.
-	double zh = Math.abs(endy.zwei) * b.hoehe;
+	// Berechne die zweidimensionale Höhe.
+	double zh = Math.abs(endy.zwei);
 
 	double anfangswinkel = b.anfangswinkel;
 	double unterschiedwinkel = b.unterschiedwinkel;

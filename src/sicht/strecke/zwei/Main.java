@@ -59,7 +59,7 @@ public class Main {
 	int halbBreite = (int) (screenSize.getWidth() / 2.0);
 	int halbHoehe = (int) (screenSize.getHeight() / 2.0);
 	
-	Zweistreckewelt zswNeu = Verschieber.verschieben(zsw, halbBreite, halbHoehe);
+	Zweistreckewelt zswNeu = Verschieber.verschiebe(zsw, halbBreite, halbHoehe);
 	    
 	Zweistreckesicht s = new Zweistreckesicht(zswNeu);
 	Maler m = new Maler(new Sicht[] {s});

@@ -29,9 +29,9 @@ public class Vieleckhandlung extends Handlung {
     }
 
     // Verschiebe die ursprüngliche Vektoren der Welt nach dx, dy.
-    void verschieben(int dx, int dy) {
+    void verschiebe(int dx, int dy) {
 	Zweivektor verschiebenvektor = new Zweivektor(dx,dy);
-	Verschieber.verschieben(this.welt, verschiebenvektor);
+	Verschieber.verschiebe(this.welt, verschiebenvektor);
     }
     
     
@@ -52,7 +52,7 @@ public class Vieleckhandlung extends Handlung {
 	int unterschiedx = jetztX - this.mouseAnfangX;
 	int unterschiedy = jetztY - this.mouseAnfangY;
 
-	this.verschieben(unterschiedx, unterschiedy);
+	this.verschiebe(unterschiedx, unterschiedy);
 	
 	this.mouseAnfangX = jetztX;
 	this.mouseAnfangY = jetztY;
@@ -68,16 +68,16 @@ public class Vieleckhandlung extends Handlung {
             char kc = ke.getKeyChar();
 
 	    if (kc == 'w') {
-		this.verschieben(0,-10);
+		this.verschiebe(0,-10);
 		veraendert = true;		
 	    } else if (kc == 's') {
-		this.verschieben(0,10);
+		this.verschiebe(0,10);
 		veraendert = true;		
 	    } else if (kc == 'a') {
-		this.verschieben(-10,0);
+		this.verschiebe(-10,0);
 		veraendert = true;
 	    } else if (kc == 'd') {
-		this.verschieben(10,0);
+		this.verschiebe(10,0);
 		veraendert = true;
 	    }
         }

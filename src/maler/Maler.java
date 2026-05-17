@@ -4,10 +4,10 @@ import javax.swing.JComponent;
 import java.awt.Graphics;
 import sicht.Sicht;
 
-// Java hat die Fähigkeit nicht, eine Reihe von JComponenten
-// darzustellen. Darum müssen wir genau ein JComponent erzeugen und
-// dahin eine Reihe von paintComponent() aufrufen. Es gibt immer nur
-// ein Maler. Er mält eine Liste von Kunstwerken auf der Tafel.
+// Der Maler. Es gibt immer nur ein Maler. Er mält eine Liste von
+// Kunstwerken auf der Tafel. Er kennt die Eigenschaften eines
+// Augenpaars, sodaß er verschiedene Dinge auf unserem Bildschirm
+// darstellen kann.
 public class Maler extends JComponent {
 
     public Sicht[] sichte;

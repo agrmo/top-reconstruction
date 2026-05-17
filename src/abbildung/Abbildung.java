@@ -2,7 +2,7 @@ package abbildung;
 
 import java.util.HashMap;
 
-// Funktionen an Abbildunge
+// Die mathematische Abbildung.
 public class Abbildung {
 
     // Gegeben eine Map<Integer,Integer>, geben eine int[][] ab.

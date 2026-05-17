@@ -12,7 +12,7 @@ import welt.strecke.zwei.Zweistreckewelt;
 public class Verschieber {
 
     // ein: Zweistrecke, Double, Double
-    public static void verschiebenStrecke(Zweistrecke zs, double dx, double dy) {
+    public static void verschiebe(Zweistrecke zs, double dx, double dy) {
 	Zweivektor von = zs.von;
 	Zweivektor bis = zs.bis;
 	
@@ -27,8 +27,8 @@ public class Verschieber {
     //
     // Verlegen die zweidimensionale Vieleckwelt zu einer
     // gleichen Welt, mit alle Orten verschoben.
-    public static void verschieben(Vieleckwelt welt,
-				   Zweivektor verschiebenvektor) {
+    public static void verschiebe(Vieleckwelt welt,
+				  Zweivektor verschiebenvektor) {
 
 	// Für jeden Orten der Welt, addiere zu ihm den Verschiebenvektor.
 	for (int i = 0; i < welt.ortliste.length; i++) {
@@ -37,15 +37,15 @@ public class Verschieber {
     }
 
     // ein: Zweistreckewelt, Double, Double
-    public static Zweistreckewelt verschieben(Zweistreckewelt zsw,
-					      double dx,
-					      double dy) {
+    public static Zweistreckewelt verschiebe(Zweistreckewelt zsw,
+					     double dx,
+					     double dy) {
 	
 	Zweistrecke[] zsl = zsw.strecken;
 	Zweistrecke[] zslNeu = Streckeverdoppler.verdoppele(zsl);
 	
 	for (int i = 0; i < zsl.length; i++) {
-	    Verschieber.verschiebenStrecke(zslNeu[i], dx, dy);
+	    Verschieber.verschiebe(zslNeu[i], dx, dy);
 	}
 	
 	return new Zweistreckewelt(zslNeu);
@@ -56,8 +56,8 @@ public class Verschieber {
     // Verlegen die dreidimensionale Vielflachwelt zu einer
     // zweidimensionale Zweistreckewelt.
     //
-    public static void verschieben(Vielflachwelt welt,
-				   Dreivektor verschiebenvektor) {
+    public static void verschiebe(Vielflachwelt welt,
+				  Dreivektor verschiebenvektor) {
 
 	// Für jeden Orten der Welt, addiere zu ihm den Verschiebenvektor.
 	

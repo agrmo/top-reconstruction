@@ -27,6 +27,6 @@ public class Main {
 
 	// Benutze den Verleger.
 	Dreivektor vp = new Dreivektor(100,100,100);
-	Verschieber.verschieben(vw, vp);
+	Verschieber.verschiebe(vw, vp);
     }
 }
