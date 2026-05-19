@@ -122,5 +122,19 @@ diagonale Strich
 
 -
 
-Lasing from Heat: The odd phenomenon that a laser can cool itself.^C
-~ $ A self-cooling laser has been demonstrated at Stanford for the first time. We would like to explore in this journal talk its underlying quantum mechanical mechanism.
+\vspace{5mm}
+    Inserts a vertical spaces whose length is 5mm. Other LaTeX units can be used with this command.
+
+\vfill
+    Inserts a blank space that will stretch accordingly to fill the vertical space available. That's why the line "Text at the bottom of the page." is moved to the bottom, and the rest of the space is filled in.
+
+There are other three commands commonly used to insert vertical blank spaces
+
+\smallskip
+    Adds a 3pt space plus or minus 1pt depending on other factors (document type, available space, etc)
+
+\medskip
+    Adds a 6pt space plus or minus 2pt depending on other factors (document type, available space, etc)
+
+\bigskip
+    Adds a 12pt space plus or minus 4pt depending on other factors (document type, available space, etc)
