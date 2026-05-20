@@ -4,3 +4,9 @@
 *.log
 *.out
 *.pdf
+*.xml
+*.bib
+*.nav
+*.toc
+*.snm
+texlive/

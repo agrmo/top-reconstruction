@@ -122,19 +122,16 @@ diagonale Strich
 
 -
 
-\vspace{5mm}
-    Inserts a vertical spaces whose length is 5mm. Other LaTeX units can be used with this command.
+\vspace{5mm} 
+\smallskip 3pt space = vspace 3pt
+\medskip 6pt space = vspace 6pt
+\bigskip 12pt space = vspace 12pt
+\vfill vertical space until bottom of page
 
-\vfill
-    Inserts a blank space that will stretch accordingly to fill the vertical space available. That's why the line "Text at the bottom of the page." is moved to the bottom, and the rest of the space is filled in.
+-
 
-There are other three commands commonly used to insert vertical blank spaces
-
-\smallskip
-    Adds a 3pt space plus or minus 1pt depending on other factors (document type, available space, etc)
-
-\medskip
-    Adds a 6pt space plus or minus 2pt depending on other factors (document type, available space, etc)
-
-\bigskip
-    Adds a 12pt space plus or minus 4pt depending on other factors (document type, available space, etc)
+% Keine Liniebrechung
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
