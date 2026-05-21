@@ -1,11 +1,11 @@
-package welt.kreis;
+package welt.kreis.zwei;
 
 import kreis.Kreis;
 import vektor.Zweivektor;
 
 /*
   javac -d classes $(find src -type f) \
-  && java -cp classes welt.kreis.Main
+  && java -cp classes welt.kreis.zwei.Main
 */
 
 public class Main {
@@ -20,7 +20,7 @@ public class Main {
 	    new Zweivektor(5,5)
 	};
 
-	Kreiswelt pw = new Kreiswelt(kl, ol);
+	Zweikreiswelt pw = new Zweikreiswelt(kl, ol);
     }
 
     public static void main(String[] args) {

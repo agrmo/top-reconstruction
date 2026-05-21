@@ -1,7 +1,8 @@
 package bogen;
 
-// Der Bogen. Er hat eine Breite und eine Höhe. Der Bogen fängt mit
-// dem Anfangswinkel an und breitet bei dem Unterschiedwinkel weiter.
+// Der Bogen. Er besitzt eine Breite und eine Höhe. Der Bogen fängt 
+// mit dem Anfangswinkel an und verbreitet sich mit dem
+// Unterschiedwinkel weiter.
 public class Bogen {
 
     public double breite;

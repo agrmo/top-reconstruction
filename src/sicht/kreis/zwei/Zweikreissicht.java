@@ -1,15 +1,15 @@
-package sicht.kreis;
+package sicht.kreis.zwei;
 
 import java.awt.Graphics;
 import sicht.Sicht;
-import welt.kreis.Kreiswelt;
+import welt.kreis.zwei.Zweikreiswelt;
 
-// Stellen eine Reihe von Kreisen dar.
-public class Kreissicht extends Sicht {
+// Stellen eine Reihe von Kreisen in einer zweidimensionalen Welt dar.
+public class Zweikreissicht extends Sicht {
 
-    Kreiswelt kw;
+    Zweikreiswelt kw;
 
-    public Kreissicht(Kreiswelt kw) {
+    public Zweikreissicht(Zweikreiswelt kw) {
 	this.kw = kw;
     }
 

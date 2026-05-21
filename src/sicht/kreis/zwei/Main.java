@@ -1,4 +1,4 @@
-package sicht.kreis;
+package sicht.kreis.zwei;
 
 import kreis.Kreis;
 import java.awt.Color;
@@ -6,11 +6,11 @@ import javax.swing.JFrame;
 import maler.Maler;
 import sicht.Sicht;
 import vektor.Zweivektor;
-import welt.kreis.Kreiswelt;
+import welt.kreis.zwei.Zweikreiswelt;
 
 /*
   javac -d classes $(find src -type f)	\
-  && java -cp classes sicht.kreis.Main
+  && java -cp classes sicht.kreis.zwei.Main
 */
 
 public class Main {
@@ -26,10 +26,10 @@ public class Main {
 	    new Zweivektor(100, 100),
 	    new Zweivektor(50, 50)
 	};
-	Kreiswelt kw = new Kreiswelt(kreise, orte);
+	Zweikreiswelt kw = new Zweikreiswelt(kreise, orte);
 
 	// Mache die Sicht.
-	Kreissicht s = new Kreissicht(kw);
+	Zweikreissicht s = new Zweikreissicht(kw);
 	Maler m = new Maler(new Sicht[] {s});
 	
 	// Stelle die Daten dar.
