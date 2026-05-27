@@ -17,16 +17,15 @@
 \n{ept}{e^{i\theta(x)}}
 \n{ent}{e^{-i\theta(x)}}
 \n{pdp}{(\pz+\dph)}
-\n{thdan}{\pl(\pz+\dph)\pu(\pz+\dph)+(\pl\theta(x))(\pu\theta(x))(\pz+\dph)^2-r(\pz+\dph)^2-\lam(\pz+\dph)^4}
 \n{ce}{\fr{c}{e}}
 \n{fmm}{\fr{1}{16\pi}F_{\mu\nu}F^{\mu \nu}}
-\n{fra}{(\fr{e}{c})^2A_\mu B^\mu}
+\n{fra}{(\fr{e}{c})^2A_\mu A^\mu}
 \n{pppa}{\fr{\p}{\p(\p_\mu B_\nu)}}
 \n{fmnfmn}{F_{\mu\nu}F^{\mu\nu}}
 \n{frs}{\fr{1}{16\pi}}
 \n{ppa}{\fr{\p}{\p B_\nu}}
 \n{gml}{g^{\mu \lam}}
-\n{pan}{\fr{\p}{\p A_\nu}}
+\n{pan}{\fr{\p}{\p B_\nu}}
 \n{va}{\vec{A}}
 \n{vb}{\vec{B}}
 \n{ve}{\vec{E}}
@@ -61,15 +60,15 @@ To the graders, thank you very much for a great course. It was an excellent oppo
 &=4F^{\mu\nu}}
 \e{\pppa \scl&=\frs \pppa F_{\mu \nu}F^{\mu \nu}\\
 &=-\fr{1}{4\pi} F^{\mu\nu}}
-\e{\fr{\p}{\p A_\nu}(A_\mu A^\mu)&=\fr{\p}{\p A_\nu} (g^{\mu \lam} A_\mu A_\lam)\\
-&=\gml A_\mu \pan A_\lam + \gml \pan A_\mu A_\lam + A_\mu A_\nu (\pan \gml)\\
-&=\gml A_\mu (\pan A_\lam)+\gml (\pan A_\mu) A_\lam\\
-&=\gml A_\mu \delta^\nu_\lam+\gml\delta^\nu_\mu A_\lam\\
-&=A^\lam \delta^\nu_\lam + A^\mu\delta^\nu_\mu\\
-&=2A^\nu}
+\e{\fr{\p}{\p B_\nu}(B_\mu B^\mu)&=\fr{\p}{\p B_\nu} (g^{\mu \lam} B_\mu B_\lam)\\
+&=\gml B_\mu \pan B_\lam + \gml \pan B_\mu B_\lam + B_\mu B_\nu (\pan \gml)\\
+&=\gml B_\mu (\pan B_\lam)+\gml (\pan B_\mu) B_\lam\\
+&=\gml B_\mu \delta^\nu_\lam+\gml\delta^\nu_\mu B_\lam\\
+&=B^\lam \delta^\nu_\lam + B^\mu\delta^\nu_\mu\\
+&=2B^\nu}
 \e{\ppa \scl = \p_\mu (\pppa \scl)}
-\e{\fr{(mc)^2}{8\pi}2A^\nu=-\fr{4}{16\pi}\p_\mu F^{\mu \nu}}
-\e{\boxed{(mc)^2A^\nu = -\p_\mu F^{\mu \nu}}}
+\e{\fr{(mc)^2}{8\pi}2B^\nu=-\fr{4}{16\pi}\p_\mu F^{\mu \nu}}
+\e{\boxed{(mc)^2B^\nu = -\p_\mu F^{\mu \nu}}}
 These are the equations of motion.
 \section*{Question 1.b.}
 \e{\p_\mu \int e^{ik_\nu x^\nu} b^\mu d^4k&=\int((\p_\mu b^\mu)+b^\mu(\p_mu e^{i k_\nu x^\nu}))d^4k\\
@@ -78,18 +77,19 @@ These are the equations of motion.
 &=ik_\mu b^\mu}
 \e{(mc)^2A^\nu=\p_\mu F^{\mu \nu}}
 \e{(mc)^2 (\int d^4k (e^{ikx}b^\nu+e^{-ikx}b^{*\nu}))&=\p_\mu \p^\mu (\int d^4k (e^{ikx}b^\nu+e^{-ikx}b^{*\nu}))-\p_\mu \p^\nu (\int d^4k (e^{ikx}b^\mu+e^{-ikx}b^{*\mu}))}
-\e{\boxed{(mc)^2b^\nu-k_\mu k^\mu b^\nu + \p^\nu \p_\mu b^\mu=0}}
+\e{\label{8nas}\boxed{(mc)^2b^\nu-k^2b^\nu+k^\nu k_\mu b^\mu=0}}
 After substituting $A$, evaluating the integrals, and rearranging, we get the equations of motion in Fourier space.
 \section*{Question 1.c.}
 \e{k_\mu k^\mu =(mc)^2}
-\e{(mc)^2b^\nu-k_\mu k^\mu b^\nu + \p^\nu \p_\mu b^\mu=0}
-\e{\boxed{\p^\nu \p_\mu b^\mu=0}}
-There are two independent components.
+\e{(mc)^2b^\nu-(mc)^2b^\nu + k^\nu k_\mu b^\mu=0}
+\e{\boxed{k_\mu b^\mu=0}}
+Starting from \eref{8nas} we find the solution assuming $k\neq 0$. This means $k$ does not contract with $b$ in one component, which leaves \fbox{3 independent components}.
 \section*{Question 1.d.}
 \e{k_\mu b^\mu=0}
 \e{\int ik_\mu b e^{ikx}dk=0}
 \e{\p_\mu \int b e^{ik}=0}
 \e{\label{lasjdnf}\boxed{\p_\mu B^\mu=0}}
+By Fourier transforming into position space we find the ``transverse condition.''
 \section*{Question 1.e.}
 \e{\p_\mu B^\mu=0}
 \e{\label{ajan}B_\mu\rightarrow B_\mu+\p_\mu \chi}
@@ -127,20 +127,20 @@ $\vpp$ when $r>0$ is minimized at $\phi=0$
 \e{\label{192b}\phi=(-\fr{r}{2\lambda})^{\fr{1}{2}}e^{i\theta}}
 $\vpp$ when $r<0$ is minimized at \eref{192b}. The global U(1) symmetry for \eref{1asjdn} is ``broken'' into the local U(1) symmetry because the field $\theta$ can be a function of spacetime.
 \section*{Question 3.c.}
-\e{\phi=(\pz+\dph)\ept}
+\e{\phi=(\pz+\dph(x))\ept}
 \e{\scl&=(\pl \phi^*)(\pu \phi)-r\phi^*\phi-\lam(\phi^*\phi)^2\\
 &=(\pl ((\pz+\dph)\ent))(\pu((\pz+\dph)\ept))-r(\pz+\dph)\ent(\pz+\dph)\ept-\lam(\pz+\dph)^4\\
-&=\thdan}
-\e{\boxed{\scl=\thdan}}
-This is $\scl$ in terms of $\pz$ and $\dph$.
+&=\pl(\pz+\dph)\pu(\pz+\dph)+(\pl\theta(x))(\pu\theta(x))(\pz+\dph)^2-r(\pz+\dph)^2-\lam(\pz+\dph)^4}
+\e{\boxed{\scl=(\pl\dph)(\pu\dph)+(\pl\theta(x))(\pu\theta(x))(\pz+\dph)^2-r(\pz+\dph)^2-\lam(\pz+\dph)^4}}
+This is $\scl$ in terms of $\pz$ and $\dph(x)$.
 \section*{Question 3.d.}
-Nothing to answer.
+Indubitably.
 \section*{Question 3.e.}
 \e{\phi=0}
 \e{\phi=(-\fr{r}{2\lambda})^{\fr{1}{2}}e^{i\theta}}
 \e{\scl&=(D_\mu \phi)^*(D^\mu \phi)-\fmm-r\phi^*\phi-\lam(\phi^*\phi)^2\\
 &=\pl\pdp\pu\pdp+(\p_\mu \theta)(\p^\mu \theta)\pdp^2+\fra \pdp^2-r\pdp^2-\lam\pdp^4-\fmm}
-\e{\boxed{\scl=\pl\pdp\pu\pdp+((\pl \theta)(\pu \theta)+\fra-r)\pdp^2-\lam\pdp^4}}
+\e{\boxed{\scl=\pl\pdp\pu\pdp+((\pl \theta)(\pu \theta)+\fra-r)\pdp^2-\lam\pdp^4-\fr{1}{16\pi}F_{\mu\nu}F^{\mu\nu}}}
 \section*{Question 3.f.}
 \e{F_{\mu\nu}&=\p_\mu(A'_\nu+\ce\p_\nu\theta)-\p_\nu(A'_\mu+\ce\p_\mu\theta)\\
 &=\p_\mu A'_\nu-\p_\nu A'_\mu+\ce\p_\mu \p_\nu\theta-\ce \p_\nu\p_\mu\theta\\
@@ -149,7 +149,15 @@ Nothing to answer.
 &=\p_\mu\pdp\p^\mu\pdp+((\p_\mu\theta)(\p^\mu\theta)+(\fr{e}{c})^2A_\mu A^\mu-r)\pdp^2-\lam\pdp^4-\fr{1}{16\pi}F_{\mu\nu}F^{\mu\nu}\\
 &=\p_\mu\pdp\p^\mu\pdp+((\p_\mu\theta)(\p^\mu\theta)+(\fr{e}{c})^2(A'_\mu A'^\mu+(\fr{c}{e})^2(\p_\mu\theta)(\p^\mu\theta)-2\fr{c}{e}(\p_\mu\theta)A'^\mu)-r)\pdp^2-\lam\pdp^4-\fr{1}{16\pi}F_{\mu\nu}F^{\mu\nu}\\
 &=\p_\mu\pdp\p^\mu\pdp+(3(\p_\mu\theta)(\p^\mu\theta)+(\fr{e}{c})^2A'_\mu A'^\mu-2\fr{e}{c}(\p_\mu\theta)A'^\mu-r)\pdp^2\\&+\lam\pdp^4-\fr{1}{16\pi}(\p_\mu A'_\nu-\p_\nu A'_\mu)(\p^\mu A'^\nu-\p^\nu A'^\mu)}
-\e{\scl&=\p_\mu\pdp\p^\mu\pdp+(3(\p_\mu\theta)(\p^\mu\theta)+(\fr{e}{c})^2A'_\mu A'^\mu-2\fr{e}{c}(\p_\mu\theta)A'^\mu-r)\pdp^2\\&+\lam\pdp^4-\fr{1}{16\pi}(\p_\mu A'_\nu-\p_\nu A'_\mu)(\p^\mu A'^\nu-\p^\nu A'^\mu)}
+\begin{equation}
+\boxed{
+\begin{aligned}
+\scl=\p_\mu\pdp\p^\mu\pdp+(3(\p_\mu\theta)(\p^\mu\theta)+(\fr{e}{c})^2A'_\mu A'^\mu-2\fr{e}{c}(\p_\mu\theta)A'^\mu-r)\pdp^2\\+\lam\pdp^4-\fr{1}{16\pi}(\p_\mu A'_\nu-\p_\nu A'_\mu)(\p^\mu A'^\nu-\p^\nu A'^\mu)
+\end{aligned}
+}
+\end{equation}
+\e{\boxed{m^2=(\fr{e}{c})^2\pdp^2}}
+This is the Lagrangian. It has a mass term for the vector field $A'$.
 \section*{Question 4}
 \section*{Question 5.a.}
 From Homework 2, we know $F^{\mu\nu}$ in 2+1 dimensions. Let the indices be $\mu\in\{0,1,2\}$. First find the Maxwell equations, then find TE equation of motion.
@@ -225,8 +233,9 @@ We showed the Action is invariant under $A_\mu\rightarrow A_\mu+\p_\mu\chi$. The
 &=\gamma^6(-\vaa^2+(\vaa\times\vbb)^2)}
 \e{\prel&=\fr{2e^2}{3m^2c^3}(\fr{d}{d\tau}\p_\mu\fr{d}{d\tau}p^\mu)\\
 &=\fr{2e^2}{3c^3}(a_\mu a^\mu)\\
-&=\fr{2e^2\gamma^6}{3c^3}(a^2-((\vbb\times\vaa)^2))}
-\e{\label{12un3}\boxed{\prel=\fr{2e^2\gamma^6}{3c^3}(a^2-((\vbb\times\vaa)^2))}}
+&=\fr{2e^2\gamma^6}{3c^3}(a^2-(\vbb\times\vaa)^2)}
+\e{\label{12un3}\boxed{\prel=\fr{2e^2\gamma^6}{3c^3}(a^2-(\vbb\times\vaa)^2)}}
+Starting with $a^\mu$, contracting it, and rearranging we find $\prel$.
 \section*{Question 7.a.}
 \e{|\ddtau\vp|&=|\ddtau t||\ddt m\vp|=\gamma m|vaa|\\
 &=\gamma m|\ddt \vpp|=\gamma m \omega^2 R = \gamma \omega m |\vv|=\gamma\omega|\vp|}
