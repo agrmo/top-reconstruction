@@ -1,0 +1,22 @@
+package handlung.druck.mousebewegen;
+
+import javax.swing.JFrame;
+
+/*
+  javac -d classes $(find src -type f) \
+  && java -cp classes handlung.druck.mousebewegen.Main
+*/
+
+public class Main {
+    public static void main(String[] args) {
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize(1200, 600);
+
+	// Die Handlung tut nichts. Benutzen irgendeine Handlung.
+	Druckmousebewegenhandlung h = new Druckmousebewegenhandlung();
+	
+	frame.addMouseMotionListener(h);
+	frame.setVisible(true);
+    }
+}
