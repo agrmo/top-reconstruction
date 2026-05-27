@@ -10,22 +10,105 @@
 \geometry{top=1in,bottom=1in,left=1in,right=1in}
 \begin{document}
 \begin{center}
-\Large{Problem Set 4}\\~\\
+\textbf{\Large{Problem Set 4}}\\~\\
 \begin{tabular}{l l}
 Student&Agustin Romero\\
-Instructor&Professor Savas Dimopoulos\\
-Assistants&Jed Thomson\\
+Email&ar1@stanford.edu\\
+Instructor&Savas Dimopoulos\\
+Assistant&Jed Thomson\\
 Course&Standard Model\\
 Institution&Stanford University\\
 Date&\today\\
 \end{tabular}
 \end{center}
 \section*{Problem 1}
-
+For $\pi^+ \rightarrow \mu^+ \nu_\mu$, let $\pi^+=1$, $\nu_\mu=2$, $\mu^+=3$.
+The muon energy is
+\e{\boxed{E_3=\fr{1}{2m_1^2}(m_1^2+m_3^2-m_2^2)}}
+The absolute value of the muon momentum vector is
+\e{\label{a9s8n}p_3&=\fr{1}{2m_1}((m_1^2-m_2^2-m_3^2)^2-4m_2^2m_2^2)^{1/2}
+\intertext{Use $m_1=139.57\un{MeV}$, $m_2=0\un{GeV}$, $m_3=105.65\un{MeV}$}
+&=\boxed{2.97982\ten{7}\un{eV}}}
+When $m_\nu=0.1\un{MeV}$ the absolute value of the muon momentum vector is, using \eref{a9s8n},
+\e{p_3=2.9798\ten{7}\un{MeV}}
+So the relative change in momentum between the two cases is
+\e{\boxed{\fr{2.97982\ten{7}\un{eV}}{2.9798\ten{7}\un{MeV}}=1.0000067}}
 \section*{Problem 2.a.}
+\e{\begin{pmatrix}\nu_e \\ \nu_\mu \end{pmatrix}&=\pma{\cos(\theta)&\sin(\theta)\\ -\sin(\theta)&\cos(\theta)}\pma{\nu_1 \\ \nu_2}}
+Invert the matrix,
+\e{\pma{\nu_1 \\ \nu_2}&=\pma{\cos(\theta)&-\sin(\theta)\\ \sin(\theta)&\cos(\theta)}\pma{\nu_e \\ \nu_\mu}}
+$|\nu_2\rangle$ in terms of $|\nu_e\rangle$ and $|\nu_\mu \rangle$ is
+\e{\boxed{\nu_2=\sin(\theta)\nu_e+\cos(\theta)\nu_\mu}}
+The probability that $|\nu_2\rangle$ is detected as $\nu_e$ is
+\e{P&=|(\cos(\theta)\langle \nu_1 | + \sin(\theta) \langle \nu_2 |)|\nu_2\rangle|^2\\
+&=\boxed{\sin^2(\theta)}}
 \section*{Problem 2.b.}
+The question asks to calculate the mixing from $|\nu_2\rangle$ to $|\nu_e\rangle$ propagating through the Earth, accounting for a constant matter density. The distance evolution equation is
+\e{i\fr{d}{dL}\pma{|\nu_1\rangle \\ |\nu_2\rangle} = (\fr{\Delta m^2}{2E}\pma{\sin^2(\theta) & \cos(\theta)\sin(\theta) \\ \cos(\theta)\sin(\theta) & \cos^2(\theta)} + \pma{A & 0 \\ 0 & 0}) \pma{|\nu_1\rangle \\ |\nu_2\rangle}}
+Using
+\e{\Delta_M=(\Delta^2\sin^2(2\theta)+(\Delta \cos(2\theta)-2^{1/2}G_F N_e)^2)^{1/2}}
+\e{\Delta=\fr{\Delta m^2}{2E_\nu}}
+\e{\Delta_M \sin(2\theta_M)=\Delta\sin(2\theta)}
+\e{\Delta_M \cos(2\theta_M)=\Delta(\cos(2\theta)-2^{1/2}G_F N_e)}
+the probability that $|\nu\rangle$ is detected as $\nu_e$ is
+\e{P&=\sin^2(2\theta_M)\sin^2(\oot \Delta_M L)\\
+&=\label{9ans5}\boxed{(\fr{\Delta}{\Delta_M} \sin(2\theta))^2 \sin^2(\oot \Delta_M L)}}
 \section*{Problem 2.c.}
+We are given $L=3000\un{km}$, $2^{1/2}G_F N_e = 1.5\ten{-7}\un{eV}^2\un{MeV}^{-1}$, $\Delta m^2=1\ten{-5}\un{eV}^2$, $\sin(\theta)^2=0.3$, $E_\nu=8\un{MeV}$. Use \eref{9ans5}. Because during the daytime the distance propagted is $L=0$,
+\e{P^{day}_{ee}=(\fr{\Delta}{\Delta_M} \sin(2\theta))^2 \sin^2(\oot \Delta_M 0)=0}
+\e{\Delta=6.25\ten{-19}\un{MeV}}
+\e{\cos(\theta)^2=1-\sin(\theta)^2=0.7}
+\e{\cos(2\theta)=1-2\sin(\theta)^2=0.4}
+\e{\sin(2\theta)^2=4\cos(\theta)^2\sin(\theta)^2=1.12}
+\e{\Delta_M=6.67\ten{-19}\un{MeV}}
+\e{P^{night}_{e e}&=P(L=3000\un{km})=(\fr{\Delta}{\Delta_M})^2\sin(2\theta)^2\sin(\fr{\Delta_M L}{2\hbar c})^2\\
+&=0.877}
+The probability $P^{night}_{ee}-P^{day}_{ee}$ is
+\e{\boxed{P_{ee}=0.877}}
 \section*{Problem 3.a.}
+First calculate the incoming antineutrino energy. This is 2-2 scattering in Euclidean space with relativistic energy $E$ and  momentum $p$. Let $1=\bar{\nu}_e$, $2=p$, $3=e^+$, $4=n$. We are given $\vec{p}_2=0$, $m_1=0$, $m_3=0$. Then $E_1=p_1$, $E_3=p_3$. We can choose the coordinate system where $p_2$ is at rest, $p_3$ scatters at angle $\theta_3$, and $p_4$ scatters at angle $\theta_4$. One coordinate axis can be aligned with $p_1$, the antineutrino, and the two other axes can be aligned in the plane of the two final particles.
+\e{E_1\neq 0\quad \vec{p_1}=(E_1,0)}
+\e{E_2\neq 0\quad \vec{p_2}=0}
+\e{E_3\neq 0\quad \vec{p_3}=(p_3\cos(\theta_3),p_3\sin(\theta_3))}
+\e{E_4\neq 0\quad \vec{p_4}=(p_4\cos(\theta_4),p_4\sin(\theta_4))}
+Now use kinematics to find $E_1$, the energy of the electron antineutrino, as function of $E_3$, $m_2$, $m_4$, $\theta_3$.
+\e{E_1+E_2=E_3+E_4}
+\e{p_4=\vec{p_3}\cos(\theta_3)+P-4\cos(\theta_4)}
+\e{p_3\sin(\theta_3)=p_4\sin(\theta_4)}
+\e{E_4^2=m_4^2=p_4^2=p_3^2 \fr{\sin(\theta_3)^2}{\sin(\theta_4)^2}=p_3^2\sin(\theta_3)^2(\cos(\theta_4)^2+1)}
+\e{\cot(\theta_4)&=\fr{p_4\cos(\theta_4)}{p_4\sin(\theta_4)}=\fr{p_3\cos(\theta_3)-E_1}{p_3\sin(\theta_3)}\\
+&=\cot(\theta_4)-\fr{E_1}{E_3}\fr{1}{\sin(\theta_3)}}
+\e{\cot(\theta_4)=\cot(\theta_3)-\fr{E_1}{E_3}\fr{1}{\sin(\theta_3)}}
+\e{\cot(\theta_4)^2=\cos(\theta_3)^3+\fr{E_1^2}{E_3^2}-2\fr{E_1}{E_3}\fr{\cos(\theta_3)^2}{\sin(\theta_3)^2}}
+\e{E_4^2-m_4^2&=E_3^2(\cos(\theta_3)^2+\fr{E_1^2}{E_3^2}-2\fr{E_1}{E_3}\cos(\theta_3)+\sin(\theta_3)^2)\\
+&=E_3^2+E_1^2-2E_1E_3\cos(\theta_3)}
+\e{(E_1+m_2-E_3)^2=E_3^2+E_1^2-2E_1E_3\cos(\theta)}
+\e{E_1^2+m_2^2+E_3^2+2E_1E_3-2m_2E_3-2E_1E_3=E_3^2+E_1^2-2E_1E_3\cos(\theta)}
+\e{2E_1(m_2-E_3+E_3\cos(\theta_3))=2E_3m_2-m_2^2+m_4^2}
+\e{E_1(m_2-E_3+E_3\cos(\theta_3))=E_3m_2+\oot(m_4^2-m_2^2)}
+\e{\boxed{\fr{E_3m_2+\oot(m_4^2-m_2^2)}{m_2-E_3+E_3\cos(\theta_3)}}}
+Refer to Table I in the citation. The highest energy event observed is $E_3=35.4\un{MeV}$, $\theta_3=32\degree$, using the proton mass $m_2=938.272\un{MeV}$, neutron mass $m_4=939.565\un{MeV}$. The electron antineutrino energy is
+\e{\boxed{E_1=36.9\un{MeV}}}
+The lowest energy event observed is $E_3=6.3\un{MeV}$, $\theta_3=68\degree$. The electron antineutrino energy is
+\e{\boxed{E_1=7.62\un{MeV}}}
+These results are order of 10 MeV, which is consistent with supernova neutrino production theory.
 \section*{Problem 3.b.}
+\e{E^2=m^2c^4+p^2c^2}
+\e{E^2=m^2c^4+(\gamma mv)^2c^2}
+\e{(\fr{E}{mc})^2=c^2+\fr{v^2}{1-(v/c)^2}=c^2+\fr{v^2c^2}{c^2-v^2}}
+\e{(\fr{E}{mc^2})^2=\fr{c^2}{c^2-v^2}=\fr{1}{1-(v/c)^2}}
+This is the relationship between mass and the relativistic $\gamma$ factor, as expected. We want to see how differences in mass change relativistic lengths and relativistic time.
+\e{v=\fr{L}{\fr{L}{c}+t}}
+\e{\fr{v}{c}=\fr{\fr{L}{c}}{\fr{L}{c}+t}=\fr{1}{1+\fr{tc}{L}}}
+Plug them into eachother.
+\e{(\fr{E}{mc^2})^2=\fr{1}{1-(v/c)^2}=\fr{1}{1-(1+\fr{tc}{L})}=\fr{L}{tc}}
+Thus we have a simple relationship between lengths, time, and mass according in special relativity.
+\e{\boxed{m=(\fr{E^2t}{Lc^3})^{1/2}}}
+\e{\boxed{t=\fr{m^2Lc^3}{E^2}}}
+The relative arrival time of two antineutrinos with different energies is the difference in $t$.
+\e{\boxed{\Delta t=\fr{m_1^2Lc^3}{E_1^2}-\fr{m_2^2Lc^3}{E_2^2}}}
+In this experiment, electron antineutrinos arrive into the detector at different times, with different energy, and different distance traveled. Higher energy electron antineutrinos $E$ have a smaller time duration $t$.  The experimental upper bound on $m_{\bar{\nu}_e}$ is therefore the event in the dataset which maximizes $m$. Kamiokande is about 100 meters in length. Using event number 9, $E=19.8\un{MeV}$, $t=1.915\un{s}$,
+\e{\boxed{m=(\fr{E^2\Delta t}{Lc^3})=47\un{GeV}}}
+The time delay in arrival of the positrons and their energy gives an upper bound on the electron antineutrino mass.
 \printbibliography
 \end{document}
