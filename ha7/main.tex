@@ -128,7 +128,7 @@ Bjorken $x$ is
 \e{\lab{xn1283n}x=\fr{Q^2}{2m_p(E_1-E_3)}}
 Start with the cross section differential in $E_3$ and $\Omega$, write it as a differential $x$ and $Q^2$, then use our previous results to find the answer. Take care not to assume that $x=1$ which is only true for elastic scattering. Start with \eref{n1827bask}
 \e{\fr{d}{d E_3}\fr{d}{d\Omega}\sigma &= \fr{E_1 E_3}{\pi}\fr{2m_p x^2}{Q^2}\fr{d}{dx}\fr{d}{dQ^2}\sigma
-\intertext{Plug in $\fr{d}{dx}\fr{d}{dQ^2}\sigma$ which is given in the assignment and also Thomson Eq. 8.11.}
+\intertext{Plug in $\fr{d}{dx}\fr{d}{dQ^2}\sigma$ which is given in the assignment and also Thomson (8.11).}
 &= \fr{E_1 E_3 2 m_p x^2}{\pi Q^2}\fr{4\pi \alpha^2}{Q^4}((1-y-\fr{m_p^2 y^2}{Q^2})\fr{F_2}{x}+y^2 F_1)
 \intertext{Simplify, distribute $x^2$, and use \eref{n182x3}.}
 &=\fr{E_1 E_3 8 m_p \alpha^2}{Q^6}(\fr{E_3 x}{E_1}\cos^2(\fr{\theta}{2})F_2+x^2 y^2 F_1)
@@ -161,7 +161,7 @@ The maximum value for the product $E_1E_3$ is $E_1=20\un{GeV}$ and then necessar
 Using the kinematics of deep inelastic $e^{-}p$ scattering and the given constraints, we find the possible range of the electron scattering angle $\theta$.
 \section*{Problem 3.}
 This is elastic $e^{-}p$ scattering. The proton propagates from $p_2$ to $p_4$, and the electron propagates from $p_1$ to $p_3$, and the photon travels from the electron to proton with $q$. 
-\e{p_4=q+p_2\quad p_2q==\fr{1}{2}q^2 \quad p_2^2=(m_p c)^2}
+\e{p_4=q+p_2\quad p_2q=\fr{1}{2}q^2 \quad p_2^2=(m_p c)^2}
 The spin averaged amplitude is
 \e{\langle \abs{M}^2 \rangle = \fr{g_e^4}{q^4}L_e^{\mu\nu}L_{\mu\nu p}}
 where
@@ -177,13 +177,13 @@ and by assuming the proton is point-like,
 where $K^{\mu \nu}$ is an unknown quantity. By Griffiths' line of arguments, we arrive this form of $K^{\mu\nu}$ in (8.18),
 \e{K^{\mu\nu}=K_1(-g^{\mu\nu}+\fr{q^\mu q^\nu}{q^2})+\fr{K_2}{(m_p c)^2}(p_2^\mu + \fr{1}{2}q^\mu)(p_2^\nu + \fr{1}{2}q^\nu)}
 By comparison, we find that
-\e{\boxed{K_1=-q^2 \quad K_2=4(m_p c)^2}}
+\e{\boxed{K_1=-q^2 \quad K_2=(2m_p c)^2}}
 and 
 \e{K_1=-q^2 G_M^2 = -q^2 \Rightarrow \boxed{G_M^2=1}}
 \e{K_2=(2m_p c)^2 \fr{G_E^2-\fr{q^2}{(2m_p c)^2}G_M^2}{1-\fr{q^2}{(2m_p c)^2}}\Rightarrow \boxed{G_E^2=1}}
 \section*{Problem 4.a.}
-The electromagnetic coupling is given in Griffiths 8.92,
-\e{\lab{vnuqbr}\alpha(\abs{q^2})=\fr{\alpha(0)}{1-\fr{\alpha(0)}{4\pi}\ln(\fr{\abs{q^2}}{(mc)^2})}}
+The electromagnetic coupling is given in Griffiths (8.92),
+\e{\lab{vnuqbr}\alpha(\abs{q^2})=\fr{\alpha(0)}{1-\fr{\alpha(0)}{3\pi}\ln(\fr{\abs{q^2}}{(mc)^2})}}
 $\alpha$ diverges at 
 \e{\ln(\fr{\abs{q^2}}{(mc)^2})&=\fr{3\pi}{\alpha(0)}=411\pi\\
 \abs{q^2}&=(mc)^2 e^{411\pi}\\
@@ -192,15 +192,15 @@ $\alpha$ diverges at
 In agreement with Griffiths' calculation.
 \section*{Problem 4.b.}
 Use \eref{vnuqbr}, and solve for the momentum transfer $\abs{q^2}$ required for a 1\% deviation in $\alpha$.
-\e{\alpha(\abs{q^2})&= \fr{\alpha(0)}{1-\fr{\alpha(0)}{4\pi}\ln(\fr{\abs{q^2}}{(mc)^2})} =1.01\alpha(0)\\
-1.01(1-\fr{\alpha(0)}{4\pi}\ln(\fr{\abs{q^2}}{(mc)^2}))&= 1\\
+\e{\alpha(\abs{q^2})&= \fr{\alpha(0)}{1-\fr{\alpha(0)}{3\pi}\ln(\fr{\abs{q^2}}{(mc)^2})} =1.01\alpha(0)\\
+1.01(1-\fr{\alpha(0)}{3\pi}\ln(\fr{\abs{q^2}}{(mc)^2}))&= 1\\
 1.01-1&= \fr{1.01\alpha(0)}{3\pi}\ln(\fr{\abs{q^2}}{(mc)^2})\\
 \fr{3\pi(1.01-1)}{1.01\alpha(0)}&= \ln(\fr{\abs{q^2}}{(mc)^2})\\
 \abs{q^2}&=e^{\fr{3\pi(1.01-1)}{1.01\alpha(0)}} (mc)^2\\
 (\abs{q^2}c^2)^{\fr{1}{2}}&= (e^{\fr{3\pi(1.01-1)}{1.01\alpha(0)}} (0.511\un{MeV})^2)^{\fr{1}{2}} = \boxed{305\un{MeV}}}
 In QED, the momentum transfer required to cause a 1\% deviation in the electromagnetic coupling $\alpha$ is 305 MeV. This is \fbox{easily possible in experiment}.
 \section*{Problem 5.}
-The strong interaction coupling constant $\alpha_s$ is given by Griffiths 8.93,
+The strong interaction coupling constant $\alpha_s$ is given by Griffiths (8.93),
 \e{\lab{n1283b}\alpha_s(\abs{q^2})=\fr{\alpha_s(\mu^2)}{1+\fr{\alpha_s(\mu^2)}{12\pi}(11n-2f)\ln(\fr{\abs{q^2}}{\mu^2})}}
 \e{\lab{nc71z}\fr{1}{\alpha_s(\abs{q^2})}=\fr{1}{\alpha_s(\mu^2)}+\fr{11n-2f}{12\pi}\ln(\fr{\abs{q^2}}{\mu^2})}
 Assume that a solution exists for \eref{nc71z} at some $\mu=\mu_a$,
