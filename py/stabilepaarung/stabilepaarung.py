@@ -68,7 +68,7 @@ def get_pair_map(man_preference_map, woman_preference_map):
     # in
     # man_list List of Man
     # woman_list List of Woman
-    # man_preference_list man from Man to Preference
+    # man_preference_list map from Man to Preference
     # woman_preference_list map from Woman to Preference
     # out
     # Match
@@ -86,20 +86,3 @@ def get_pair_map(man_preference_map, woman_preference_map):
     return pair_map
     
 
-def main():
-    man_preference_map = {
-        1: [4,6,5],
-        2: [6,4,5],
-        3: [4,5,6]
-    }
-    woman_preference_map = {
-        4: [2,3,1],
-        5: [3,1,2],
-        6: [2,3,1]
-    }
-    pair_map = get_pair_map(man_preference_map, woman_preference_map)
-
-    print(pair_map)
-
-if __name__ == "__main__":
-    main()
