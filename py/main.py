@@ -1,5 +1,8 @@
+# Die einfachste Funktion.
+# python main.py
+
 def main():
-    print('Was ist passiert?')
+    print('Hallo Welt!')
 
 if __name__ == "__main__":
     main()

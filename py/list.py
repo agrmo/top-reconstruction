@@ -5,7 +5,3 @@ adjwlist = [(1,[1,2]), (4,[0,1]), (2,[0])]
 # that one uses a tuple
 awdwllist = [[1,1,2], [4,0,1], [2,0]]
 # that one just uses the first entry as the weight
-
-# good stack implementations
-# list
-# collections deque
