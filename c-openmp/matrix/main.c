@@ -6,38 +6,41 @@
 // gcc -fopenmp matrix/main.c -o main
 
 int main(int argc, char **argv) {
+  
   struct timespec ts_start, ts_end;
   int size = 1000;
   int a[size][size];
   int i, j;
 
   // Am Anfang hat alle Zahlen den Wert 1
-  for (i=0; i<size; i++) {
-    for (j=0; j<size; j++) {
+  for (i = 0; i < size; i++) {
+    for (j=0; j < size; j++) {
       a[i][j] = 1;
     }
   }
+  
+  // Mache eine Summe jedes Teiles der Matrix.
+  // Aber die Summe wird in size-mal Schlaufen verteilt.
+  int total = 0;
   int c[size];
 
   // Zero the accumulator 
-  for (i=0; i<size; i++) {
+  for (i = 0; i < size; i++) {
     c[i] = 0;
   }
-  int total = 0;
   float time_total;
   
   clock_gettime(CLOCK_MONOTONIC, &ts_start);
   
-  // In dieser Schlaufe gibt es ein Problem. 
   
 #pragma omp parallel for
-  for (i = 0; i<size; i++) {
-    for (j=0; j<size; j++) {
+  for (i = 0; i < size; i++) {
+    for (j = 0; j < size; j++) {
       c[i] = c[i] + a[i][j];
     }
   }
   
-  for (i=0; i<size; i++) {
+  for (i = 0; i < size; i++) {
     total = total + c[i];
   }
   
