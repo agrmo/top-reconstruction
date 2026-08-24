@@ -1,8 +1,0 @@
-xterm*foreground: white
-xterm*background: black
-xterm*selectToClipboard: true
-xterm*metaSendsEscape: true
-xterm*backarrowKey: false
-xterm.ttyModes: erase ^?
-xterm*translations: #override \n\
-	Super <Key>V: insert-selection(CLIPBOARD)

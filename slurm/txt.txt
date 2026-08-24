@@ -1,3 +1,0 @@
-Slurm
-https://southgreenplatform.github.io/trainings/hpc/hpcSlurmPractice/
-https://research-computing.git-pages.rit.edu/docs/slurm_quick_start_tutorial.html
