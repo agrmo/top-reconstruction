@@ -1,8 +1,6 @@
 import ROOT
 import pathlib
-
-def get_efficiency_keys():
-    return ["trackeff_vs_pT", "trackeff_vs_phi", "trackeff_vs_eta", "fakerate_vs_pT", "fakerate_vs_eta", "fakerate_vs_phi", "duplicationRate_vs_pT", "duplicationRate_vs_eta", "duplicationRate_vs_phi"]
+import get_efficiency_keys
 
 def get_efficiency_titles():
     return ['Track Efficiency', 'Track Efficiency', 'Track Efficiency', 'Track Fake Rate', 'Track Fake Rate', 'Track Fake Rate', 'Track Duplicate Rate', 'Track Duplicate Rate', 'Track Duplicate Rate']
@@ -13,15 +11,19 @@ def get_efficiency_png(tefficiency, title, filename, dirpath):
     tefficiency.SetTitle(title)
     tcanvas.Print(str(dirpath / (filename + '.png')))
 
-def get_efficiency_pngs(root_path):
-    efficiency_keys = get_efficiency_keys()
+def get_efficiency_pngs(dirpath):
+    efficiency_keys = get_efficiency_keys.get_efficiency_keys()
     efficiency_titles = get_efficiency_titles()
-    tfile = ROOT.TFile.Open(str(root_path))
+    tfile = ROOT.TFile.Open(str(dirpath / 'performance_ckf.root'))
+
+    outpath = dirpath / 'single'
+    if not outpath.exists():
+        outpath.mkdir()
     
     for i, key in enumerate(efficiency_keys):
         tefficiency = tfile.Get(key)
         title = efficiency_titles[i]
-        get_efficiency_png(tefficiency, title, key, root_path.parent)
+        get_efficiency_png(tefficiency, title, key, outpath)
 
 # Get the legend for these histograms with these labels. For some
 # reason, the legend has to be drawn in the same code scope as the
@@ -42,15 +44,23 @@ def get_legend(labels, thisograms):
 
     return legend
 
+def get_efficiency_pngs_combined_ranged(dirpaths, labels):
+    get_efficiency_pngs_combined(dirpaths, labels, 0, 1)
+    get_efficiency_pngs_combined(dirpaths, labels, 0.9, 1)
+    get_efficiency_pngs_combined(dirpaths, labels, 0, 0.1)
     
 # Make all efficiency plots from the root files, combining the ones of
 # the same type.
-def get_efficiency_pngs_combined(dirstrings, labels):
-    dirpaths = [pathlib.Path(d) for d in dirstrings]
+def get_efficiency_pngs_combined(dirpaths, labels, min, max):
     rootpaths = [d / 'performance_ckf.root' for d in dirpaths]
     tfiles = [ROOT.TFile.Open(str(r)) for r in rootpaths]
-    efficiency_keys = get_efficiency_keys()
+    efficiency_keys = get_efficiency_keys.get_efficiency_keys()
     efficiency_titles = get_efficiency_titles()
+
+    outpath = dirpaths[0] / ('compare-' + str(min) + '-' + str(max))
+    if not outpath.exists():
+        outpath.mkdir()
+        
     for i, key in enumerate(efficiency_keys):
         tcanvas = ROOT.TCanvas()
         tefficiencies = []
@@ -67,10 +77,10 @@ def get_efficiency_pngs_combined(dirstrings, labels):
             tefficiency.SetTitle(efficiency_titles[i])
             ROOT.gPad.Update()
             graph = tefficiency.GetPaintedGraph()
-            graph.SetMinimum(0)
-            graph.SetMaximum(1)
+            graph.SetMinimum(min)
+            graph.SetMaximum(max)
 
         legend = get_legend(labels, tefficiencies)
         legend.Draw()
-        tcanvas.Print(key + '.png')
+        tcanvas.Print(str(outpath / (key + '.png')))
 

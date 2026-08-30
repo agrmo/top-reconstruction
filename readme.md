@@ -1,3 +1,20 @@
+Data structures
+
+```
+A Score is a float
+
+A Parameter is one of
+- float
+- int
+
+A Trial is
+- List of Parameter
+- Score
+
+A Study is
+- List of Trial
+```
+
 Install
 
 ```
